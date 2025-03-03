@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>VCC_Share_with_Tele_EC_Group</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>When OwnerID is blank share records with Tele-EC Users</description>
+        <label>Share with Tele EC Group</label>
+        <sharedTo>
+            <group>Tele_EC_Public_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>VCC_Share_with_VAHC_Base_Users</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>When OwnerID is blank share records with VAHC_Base_Users</description>
+        <label>Share with VAHC Base Users</label>
+        <sharedTo>
+            <group>VAHC_Base_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

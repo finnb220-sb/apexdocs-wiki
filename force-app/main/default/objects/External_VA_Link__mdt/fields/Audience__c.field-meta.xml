@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Audience__c</fullName>
+    <description>This field determines which users a given link will be displayed to.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>This field determines which users a given link will be displayed to.</inlineHelpText>
+    <label>Audience</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>All</fullName>
+                <default>true</default>
+                <label>All</label>
+            </value>
+            <value>
+                <fullName>VCC</fullName>
+                <default>false</default>
+                <label>VCC</label>
+            </value>
+            <value>
+                <fullName>TUC</fullName>
+                <default>false</default>
+                <label>TUC</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

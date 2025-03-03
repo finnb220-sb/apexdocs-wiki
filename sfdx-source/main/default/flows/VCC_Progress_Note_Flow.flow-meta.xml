@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <assignments>
+        <description>If there is an inactive value in the Caller Relation field, we will assign that field to &apos;Other&apos; and place the inactive value in the Caller Relation Type Other field.</description>
+        <name>Assign_Variables_to_Caller_Relation_and_Caller_Relation_Type_Other_Fields</name>
+        <label>Assign Variables to Caller Relation and Caller Relation Type Other Fields</label>
+        <locationX>27</locationX>
+        <locationY>855</locationY>
+        <assignmentItems>
+            <assignToReference>varCallerRelation</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Other</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varOtherRelation</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.VCC_Case__r.VCC_Caller_Relation__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Caller_Information_from_Case</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Since the Caller Relation field doesn&apos;t contain any inactive picklist values, we will assign the matching field values from the Case record to the Progress Note.</description>
+        <name>Assigning_Caller_Relation_Variables</name>
+        <label>Assigning Caller Relation Variables</label>
+        <locationX>268</locationX>
+        <locationY>848</locationY>
+        <assignmentItems>
+            <assignToReference>varCallerRelation</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.VCC_Case__r.VCC_Caller_Relation__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varOtherRelation</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.VCC_Case__r.VCC_Relation_Type_Other__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Caller_Information_from_Case</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Caller_Information_from_Case</name>
+        <label>Update Caller Information from Case</label>
+        <locationX>145</locationX>
+        <locationY>1010</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.VCC_Relative_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varCallerRelation</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.VCC_Caller_Name_Text__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.VCC_Case__r.VCC_Caller_Name__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.VCC_If_Other_Describe_Relation_Patient__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varOtherRelation</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Update_COVID_Screening_Field</name>
+        <label>Update COVID Screening Field</label>
+        <locationX>776</locationX>
+        <locationY>713</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.VCC_COVID_Screening__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Update current Progress Note Record</description>
+        <name>Update_DoB_Gender</name>
+        <label>Update DoB Gender</label>
+        <locationX>272</locationX>
+        <locationY>424</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.VCC_Date_of_Birth__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.VCC_Case__r.Contact.Birthdate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.VCC_Gender__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Progress_Note_Gender_Value</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_not_VCV_Progress_Note</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Update Triage Date to Now.</description>
+        <name>Update_Triage_Date</name>
+        <label>Update Triage Date</label>
+        <locationX>561</locationX>
+        <locationY>667</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.VCC_Triage_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.VCC_Logistical_Recommendation_WHEN__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Nurses_Recommendation_WHEN_map_value</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.VCC_Logistical_Recommendation_WHERE__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Nurses_Recommendation_WHERE_map_value</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>COVID_Results</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>COVID_Results</name>
+        <label>COVID Results</label>
+        <locationX>767</locationX>
+        <locationY>577</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>COVID_Screening_Results</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.VCC_Results__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Positive</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Results__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Negative</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_COVID_Screening_Field</targetReference>
+            </connector>
+            <label>COVID Screening Results</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determine if triggered flow record is created or updated.</description>
+        <name>Created_or_Updated</name>
+        <label>Created or Updated</label>
+        <locationX>452</locationX>
+        <locationY>315</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Created</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Id</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Update_DoB_Gender</targetReference>
+            </connector>
+            <label>Created</label>
+        </rules>
+        <rules>
+            <name>Updated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Id</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Progress_Note_Updates</targetReference>
+            </connector>
+            <label>Updated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Checking to see if the Caller/Recipient Relation to Patient (VCC_Relative_Type__c) includes an inactive picklist value.</description>
+        <name>Does_the_Caller_Relation_Field_Include_Inactive_Values</name>
+        <label>Does the Caller Relation Field Include Inactive Values?</label>
+        <locationX>143</locationX>
+        <locationY>736</locationY>
+        <defaultConnector>
+            <targetReference>Assigning_Caller_Relation_Variables</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.VCC_Case__r.VCC_Caller_Relation__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Psychiatrist</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Case__r.VCC_Caller_Relation__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Anonymous</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Case__r.VCC_Caller_Relation__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Aunt</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Case__r.VCC_Caller_Relation__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Daughter</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Case__r.VCC_Caller_Relation__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Father</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Case__r.VCC_Caller_Relation__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Home Health</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Case__r.VCC_Caller_Relation__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Mother</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Case__r.VCC_Caller_Relation__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Neighbor</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Case__r.VCC_Caller_Relation__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sibling</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Case__r.VCC_Caller_Relation__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Son</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Case__r.VCC_Caller_Relation__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Spouse</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Case__r.VCC_Caller_Relation__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Uncle</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Case__r.VCC_Caller_Relation__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Relative</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Variables_to_Caller_Relation_and_Caller_Relation_Type_Other_Fields</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_not_VCV_Progress_Note</name>
+        <label>Is not VCV Progress Note?</label>
+        <locationX>263</locationX>
+        <locationY>590</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Not_VCV_PN</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>VCC_Virtual_Visit_Progress_Note</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Does_the_Caller_Relation_Field_Include_Inactive_Values</targetReference>
+            </connector>
+            <label>Not VCV PN</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Progress Note update decisions.</description>
+        <name>Progress_Note_Updates</name>
+        <label>Progress Note Updates</label>
+        <locationX>626</locationX>
+        <locationY>456</locationY>
+        <defaultConnector>
+            <targetReference>COVID_Results</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>TXCC_Complete</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.VCC_Triage_Complete__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Triage_Date</targetReference>
+            </connector>
+            <label>TXCC Complete</label>
+        </rules>
+    </decisions>
+    <description>Flow built on the Progress Note object to handle record updates.
+Auto-populate DoB and Gender from related Case.Contact when a Progress Note is created, as well as Caller Information.
+-----
+Added check for inactive picklist values in the Caller Relation field for CCCM-23293</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>Nurses_Recommendation_WHEN_map_value</name>
+        <dataType>String</dataType>
+        <expression>CASE({!$Record.VCC_System_RFI__c}, 
+&quot;Now, 911&quot;, &quot;911&quot;,
+&quot;Now&quot;, &quot;Now&quot;,
+&quot;Within 8 Hours&quot;, &quot;Within 8 Hours&quot;,
+&quot;Within 24 Hours&quot;, &quot;Within 24 Hours&quot;,
+&quot;Within 3 Days&quot;, &quot;Within 3 Days&quot;,
+&quot;Within 2 Weeks&quot;, &quot;Within 2 Weeks&quot;,
+&quot;Self-care&quot;, &quot;Selfcare&quot;,
+&quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>Nurses_Recommendation_WHERE_map_value</name>
+        <dataType>String</dataType>
+        <expression>CASE({!$Record.VCC_System_RFL__c}, 
+&quot;Emergency department&quot;, &quot;ED VA&quot;,
+&quot;Urgent care center&quot;, &quot;Urgent VA&quot;,
+&quot;Clinic&quot;, &quot;Clinic/VAMC&quot;,
+&quot;Dentist Office&quot;, &quot;Dentist&quot;,
+&quot;Virtual care&quot;, &quot;Virtual Video Visit&quot;,
+&quot;Home&quot;, &quot;Home Care&quot;,
+&quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <description>Transform Contact Gender to Progress Note Gender value</description>
+        <name>Progress_Note_Gender_Value</name>
+        <dataType>String</dataType>
+        <expression>CASE( {!var_Case_Contact_Gender}, 
+&quot;Male&quot;, &quot;M&quot;,
+&quot;M&quot;, &quot;M&quot;,
+&quot;Female&quot;, &quot;F&quot;,
+&quot;F&quot;, &quot;F&quot;,
+&quot;&quot;)</expression>
+    </formulas>
+    <interviewLabel>VCC Progress Note Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>VCC Progress Note Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>334</locationX>
+        <locationY>56</locationY>
+        <connector>
+            <targetReference>Created_or_Updated</targetReference>
+        </connector>
+        <object>VCC_Progress_Note__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Contact Gender (HealthCloudGA__Gender__c) value</description>
+        <name>var_Case_Contact_Gender</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Record.VCC_Case__r.Contact.HealthCloudGA__Gender__c</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <name>varCallerRelation</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varOtherRelation</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

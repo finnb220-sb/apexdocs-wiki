@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lookup_Identifier__c</fullName>
+    <externalId>false</externalId>
+    <formula>Last_Name__c + &quot;-&quot; + Last_Four__c + &quot;-&quot; + TEXT(MONTH(Consult_Date__c ))+&quot;/&quot; +TEXT(DAY(Consult_Date__c ))+&quot;/&quot;
+        +TEXT(YEAR(Consult_Date__c ))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Lookup Identifier</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

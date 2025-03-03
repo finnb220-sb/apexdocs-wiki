@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Patient_is_in_crisis__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked when the patient is in crisis</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if the patient is in crisis</inlineHelpText>
+    <label>Patient is in crisis</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

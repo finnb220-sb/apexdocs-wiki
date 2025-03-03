@@ -1,0 +1,410 @@
+{
+    "sites": [
+        {
+            "results": {
+                "labs": {
+                    "total": "43",
+                    "lab": [
+                        {
+                            "resulted": {
+                                "value": "3170711.161016"
+                            },
+                            "performingLab": {
+                                "value": "SLC4 TEST LAB"
+                            },
+                            "test": {
+                                "value": "SUD Test"
+                            },
+                            "orderID": {},
+                            "collected": {
+                                "value": "3170711.160744"
+                            },
+                            "units": {
+                                "value": "mMol/L"
+                            },
+                            "type": {
+                                "value": "CH"
+                            },
+                            "sample": {
+                                "value": "BLOOD"
+                            },
+                            "vuid": {
+                                "value": "4671912"
+                            },
+                            "result": {
+                                "value": "45"
+                            },
+                            "localName": {
+                                "value": "NA"
+                            },
+                            "groupName": {
+                                "value": "CH 0711 4"
+                            },
+                            "high": {
+                                "value": "145"
+                            },
+                            "interpretation": {
+                                "value": "L*"
+                            },
+                            "low": {
+                                "value": "137"
+                            },
+                            "provider": {
+                                "code": "59920",
+                                "service": "GENERAL MED/MEDICAL",
+                                "name": "VCCMPHYSICIANONE,FIRST",
+                                "officePhone": "8889991111",
+                                "analogPager": "8889991112",
+                                "taxonomyCode": "204C00000X",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine"
+                            },
+                            "specimen": {
+                                "code": "T0X500",
+                                "name": "SERUM"
+                            },
+                            "comment": {
+                                "content": "For eGFR: Race unknown, if African American multiply result by 1.210 Ordering Provider: First Vccmphysicianone Report Released Date/Time: Jul 11, 2017@16:10\r\n Performing Lab: SLC4 TEST LAB"
+                            },
+                            "id": {
+                                "value": "CH;6829287.839256;5"
+                            },
+                            "facility": {
+                                "code": "991",
+                                "name": "SLC4 TEST LAB"
+                            },
+                            "labOrderID": {
+                                "value": "7644"
+                            },
+                            "loinc": {
+                                "value": "14316-4"
+                            },
+                            "status": {
+                                "value": "completed"
+                            }
+                        },
+                        {
+                            "resulted": {
+                                "value": "3170711.161016"
+                            },
+                            "performingLab": {
+                                "value": "SLC4 TEST LAB"
+                            },
+                            "test": {
+                                "value": "POTASSIUM"
+                            },
+                            "orderID": {},
+                            "collected": {
+                                "value": "3170711.160744"
+                            },
+                            "units": {
+                                "value": "mMol/L"
+                            },
+                            "type": {
+                                "value": "CH"
+                            },
+                            "sample": {
+                                "value": "BLOOD"
+                            },
+                            "vuid": {
+                                "value": "4670505"
+                            },
+                            "result": {
+                                "value": "35"
+                            },
+                            "localName": {
+                                "value": "K"
+                            },
+                            "groupName": {
+                                "value": "CH 0711 4"
+                            },
+                            "high": {
+                                "value": "5.2"
+                            },
+                            "interpretation": {
+                                "value": "H*"
+                            },
+                            "low": {
+                                "value": "3.8"
+                            },
+                            "provider": {
+                                "code": "59920",
+                                "service": "GENERAL MED/MEDICAL",
+                                "name": "VCCMPHYSICIANONE,FIRST",
+                                "officePhone": "8889991111",
+                                "analogPager": "8889991112",
+                                "taxonomyCode": "204C00000X",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine"
+                            },
+                            "specimen": {
+                                "code": "T0X500",
+                                "name": "SERUM"
+                            },
+                            "comment": {
+                                "content": "For eGFR: Race unknown, if African American multiply result by 1.210 Ordering Provider: First Vccmphysicianone Report Released Date/Time: Jul 11, 2017@16:10\r\n Performing Lab: SLC4 TEST LAB"
+                            },
+                            "id": {
+                                "value": "CH;6829287.839256;6"
+                            },
+                            "facility": {
+                                "code": "991",
+                                "name": "SLC4 TEST LAB"
+                            },
+                            "labOrderID": {
+                                "value": "7644"
+                            },
+                            "loinc": {
+                                "value": "2823-3"
+                            },
+                            "status": {
+                                "value": "completed"
+                            }
+                        },
+                        {
+                            "resulted": {
+                                "value": "3170711.161016"
+                            },
+                            "performingLab": {
+                                "value": "SLC4 TEST LAB"
+                            },
+                            "test": {
+                                "value": "CHLORIDE"
+                            },
+                            "orderID": {},
+                            "collected": {
+                                "value": "3170711.160744"
+                            },
+                            "units": {
+                                "value": "mMol/L"
+                            },
+                            "type": {
+                                "value": "CH"
+                            },
+                            "sample": {
+                                "value": "BLOOD"
+                            },
+                            "vuid": {
+                                "value": "4662584"
+                            },
+                            "result": {
+                                "value": "12"
+                            },
+                            "localName": {
+                                "value": "CL"
+                            },
+                            "groupName": {
+                                "value": "CH 0711 4"
+                            },
+                            "high": {
+                                "value": "108"
+                            },
+                            "interpretation": {
+                                "value": "L"
+                            },
+                            "low": {
+                                "value": "100"
+                            },
+                            "provider": {
+                                "code": "59920",
+                                "service": "GENERAL MED/MEDICAL",
+                                "name": "VCCMPHYSICIANONE,FIRST",
+                                "officePhone": "8889991111",
+                                "analogPager": "8889991112",
+                                "taxonomyCode": "204C00000X",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine"
+                            },
+                            "specimen": {
+                                "code": "T0X500",
+                                "name": "SERUM"
+                            },
+                            "comment": {
+                                "content": "For eGFR: Race unknown, if African American multiply result by 1.210 Ordering Provider: First Vccmphysicianone Report Released Date/Time: Jul 11, 2017@16:10\r\n Performing Lab: SLC4 TEST LAB"
+                            },
+                            "id": {
+                                "value": "CH;6829287.839256;7"
+                            },
+                            "facility": {
+                                "code": "991",
+                                "name": "SLC4 TEST LAB"
+                            },
+                            "labOrderID": {
+                                "value": "7644"
+                            },
+                            "loinc": {
+                                "value": "2075-0"
+                            },
+                            "status": {
+                                "value": "completed"
+                            }
+                        },
+                        {
+                            "resulted": {
+                                "value": "3170711.161016"
+                            },
+                            "performingLab": {
+                                "value": "SLC4 TEST LAB"
+                            },
+                            "test": {
+                                "value": "CO2"
+                            },
+                            "orderID": {},
+                            "collected": {
+                                "value": "3170711.160744"
+                            },
+                            "units": {
+                                "value": "mMol/L"
+                            },
+                            "type": {
+                                "value": "CH"
+                            },
+                            "sample": {
+                                "value": "BLOOD"
+                            },
+                            "vuid": {
+                                "value": "4662085"
+                            },
+                            "result": {
+                                "value": "52"
+                            },
+                            "localName": {
+                                "value": "CO2"
+                            },
+                            "groupName": {
+                                "value": "CH 0711 4"
+                            },
+                            "high": {
+                                "value": "32"
+                            },
+                            "interpretation": {
+                                "value": "H*"
+                            },
+                            "low": {
+                                "value": "22"
+                            },
+                            "provider": {
+                                "code": "59920",
+                                "service": "GENERAL MED/MEDICAL",
+                                "name": "VCCMPHYSICIANONE,FIRST",
+                                "officePhone": "8889991111",
+                                "analogPager": "8889991112",
+                                "taxonomyCode": "204C00000X",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine"
+                            },
+                            "specimen": {
+                                "code": "T0X500",
+                                "name": "SERUM"
+                            },
+                            "comment": {
+                                "content": "For eGFR: Race unknown, if African American multiply result by 1.210 Ordering Provider: First Vccmphysicianone Report Released Date/Time: Jul 11, 2017@16:10\r\n Performing Lab: SLC4 TEST LAB"
+                            },
+                            "id": {
+                                "value": "CH;6829287.839256;8"
+                            },
+                            "facility": {
+                                "code": "991",
+                                "name": "SLC4 TEST LAB"
+                            },
+                            "labOrderID": {
+                                "value": "7644"
+                            },
+                            "loinc": {
+                                "value": "2028-9"
+                            },
+                            "status": {
+                                "value": "completed"
+                            }
+                        },
+                        {
+                            "resulted": {
+                                "value": "3170711.161016"
+                            },
+                            "performingLab": {
+                                "value": "SLC4 TEST LAB"
+                            },
+                            "test": {
+                                "value": "UREA NITROGEN"
+                            },
+                            "orderID": {},
+                            "collected": {
+                                "value": "3170711.160744"
+                            },
+                            "units": {
+                                "value": "mg/dL"
+                            },
+                            "type": {
+                                "value": "CH"
+                            },
+                            "sample": {
+                                "value": "BLOOD"
+                            },
+                            "vuid": {
+                                "value": "4673484"
+                            },
+                            "result": {
+                                "value": "78"
+                            },
+                            "localName": {
+                                "value": "UREA N"
+                            },
+                            "groupName": {
+                                "value": "CH 0711 4"
+                            },
+                            "high": {
+                                "value": "25"
+                            },
+                            "interpretation": {
+                                "value": "H"
+                            },
+                            "low": {
+                                "value": "5"
+                            },
+                            "provider": {
+                                "code": "59920",
+                                "service": "GENERAL MED/MEDICAL",
+                                "name": "VCCMPHYSICIANONE,FIRST",
+                                "officePhone": "8889991111",
+                                "analogPager": "8889991112",
+                                "taxonomyCode": "204C00000X",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine"
+                            },
+                            "specimen": {
+                                "code": "T0X500",
+                                "name": "SERUM"
+                            },
+                            "comment": {
+                                "content": "For eGFR: Race unknown, if African American multiply result by 1.210 Ordering Provider: First Vccmphysicianone Report Released Date/Time: Jul 11, 2017@16:10\r\n Performing Lab: SLC4 TEST LAB"
+                            },
+                            "id": {
+                                "value": "CH;6829287.839256;3"
+                            },
+                            "facility": {
+                                "code": "991",
+                                "name": "SLC4 TEST LAB"
+                            },
+                            "labOrderID": {
+                                "value": "7644"
+                            },
+                            "loinc": {
+                                "value": "3094-0"
+                            },
+                            "status": {
+                                "value": "completed"
+                            }
+                        }
+                    ]
+                },
+                "timeZone": "-0400",
+                "version": "1.13"
+            },
+            "errorSection": {
+                "errors": [],
+                "fatalErrors": [],
+                "warnings": []
+            }
+        }
+    ]
+}

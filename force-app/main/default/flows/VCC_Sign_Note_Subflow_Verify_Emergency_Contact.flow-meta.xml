@@ -1,0 +1,1360 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <actionCalls>
+        <name>Log_Flow_Error</name>
+        <label>Log Flow Error</label>
+        <locationX>1106</locationX>
+        <locationY>458</locationY>
+        <actionName>FlowLogEntry</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Flow_Error</targetReference>
+        </connector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>flowName</name>
+            <value>
+                <stringValue>VCC_Sign_Note_Subflow_Verify_Emergency_Contact</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>message</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>saveLog</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>FlowLogEntry</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <description>Performing a callout to get info from MPI to use within this flow.</description>
+        <name>MPI_Callout_Action</name>
+        <label>MPI Callout Action</label>
+        <locationX>446</locationX>
+        <locationY>350</locationY>
+        <actionName>VCC_MPIFlowAction</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>VerifyEmergencyContact</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Log_Flow_Error</targetReference>
+        </faultConnector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>getRelatedAccountFields.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>VCC_MPIFlowAction</nameSegment>
+        <offset>0</offset>
+        <outputParameters>
+            <assignToReference>branchOfService</assignToReference>
+            <name>branchOfService</name>
+        </outputParameters>
+        <outputParameters>
+            <assignToReference>militaryServiceNumber</assignToReference>
+            <name>militaryServiceNumber</name>
+        </outputParameters>
+        <outputParameters>
+            <assignToReference>serviceDates</assignToReference>
+            <name>serviceDates</name>
+        </outputParameters>
+        <outputParameters>
+            <assignToReference>spouseName</assignToReference>
+            <name>spouseName</name>
+        </outputParameters>
+    </actionCalls>
+    <apiVersion>55.0</apiVersion>
+    <assignments>
+        <description>Assigning the patientBooleanVar as to the value from the Verify Emergency Contact screen.</description>
+        <name>Assign_Checkbox_to_patientBooleanVar</name>
+        <label>Assign Checkbox to patientBooleanVar</label>
+        <locationX>578</locationX>
+        <locationY>674</locationY>
+        <assignmentItems>
+            <assignToReference>patientBooleanVar</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>PatientIdentifierCheckbox</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Was_Caller_Recipient_Relation_to_Patient_filled_in</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assigning the updated progress note record.</description>
+        <name>Assign_Updated_Progress_Note_Record</name>
+        <label>Assign Updated Progress Note Record</label>
+        <locationX>50</locationX>
+        <locationY>1190</locationY>
+        <assignmentItems>
+            <assignToReference>progressNote</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Updated_Progress_Note</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Assigning the patientBooleanVar as checked to be used in the verifyEmergencyContactandAddress Update Records element.</description>
+        <name>Set_patientBooleanVar_to_Two_Patient_Field_Value</name>
+        <label>Set patientBooleanVar to Two Patient Field Value</label>
+        <locationX>314</locationX>
+        <locationY>674</locationY>
+        <assignmentItems>
+            <assignToReference>patientBooleanVar</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>patientIdentifierIsChecked</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Was_Caller_Recipient_Relation_to_Patient_filled_in</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Deciding if the check box for &apos;Two patient identifiers have been stated by the patient/contact&apos; is checked on the verification screen.</description>
+        <name>Is_Two_Patient_Identifiers_already_checked_on_the_Progress_Note</name>
+        <label>Is Two Patient Identifiers already checked on the Progress Note?</label>
+        <locationX>446</locationX>
+        <locationY>566</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Checkbox_to_patientBooleanVar</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_its_checked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>patientIdentifierIsChecked</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_patientBooleanVar_to_Two_Patient_Field_Value</targetReference>
+            </connector>
+            <label>Yes its checked</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determining if the Caller/Recipient Relation to Patient field has been completed.</description>
+        <name>Was_Caller_Recipient_Relation_to_Patient_filled_in</name>
+        <label>Was Caller/Recipient Relation to Patient filled in?</label>
+        <locationX>446</locationX>
+        <locationY>866</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>VerifyEmergencyContact</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Caller_Recipient_Filled_In</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Caller_Recipient_Relation_to_Patient</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>verifyEmergencyContactandAddress</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>Subflow for the VCC_Sign_Note_with_Callouts_2 to Update VCV Progress Note Records that are missing verifications.
+
+Release 1.11.0: CCCM-32494 - Removed VA Identity. Retrieved Place of Birth - City, Place of Birth - State and Mother&apos;s Maiden Name from Account. Updated formBlankPlaceOfBirthCityAndState as well as Mother&apos;s Maiden Name on the screen component.
+
+Release 1.12.0: CCCM-31700 - Added Current Patient Care Facility to Patient Verification Screen. VCC_Caller_Name_Text__c added to VerifyEmergencyContact Screen Element.
+
+Release 1.15.0: CCCM-35068 - Added Preferred Name and Pronoun to the verify screen. 
+
+Release 1.20.1: CCCM-42876 - Updated error messages to be 508 compliant</description>
+    <dynamicChoiceSets>
+        <description>Caller/Recipient Relation to Patient Picklist Choice Set</description>
+        <name>Caller_Recipient_Relation_to_Patient_Picklist_Choice_Set</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>VCC_Relative_Type__c</picklistField>
+        <picklistObject>VCC_Progress_Note__c</picklistObject>
+    </dynamicChoiceSets>
+    <environments>Default</environments>
+    <formulas>
+        <description>Acknowledge Checkbox field value true if VCC_Caller_Recipient_Verified__c and VCC_Emergency_Contact_Info_Verified__c and VCC_Current_Address_Phone_Verified__c are true.</description>
+        <name>acknowledgeCheckBox_value</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!progressNote.VCC_Caller_Recipient_Verified__c},
+{!progressNote.VCC_Emergency_Contact_Info_Verified__c},
+{!progressNote.VCC_Current_Address_Phone_Verified__c}
+)</expression>
+    </formulas>
+    <formulas>
+        <description>This formula inserts a line break if there&apos;s no data returned for the Branch of Service field. This maintains the formatting for the Sign Note screen.</description>
+        <name>formBlankBranchOfService</name>
+        <dataType>String</dataType>
+        <expression>IF(
+ISBLANK({!branchOfService}), 
+BR(),
+{!branchOfService}
+)</expression>
+    </formulas>
+    <formulas>
+        <description>This formula inserts a line break if there&apos;s no data returned for the military service number field. This maintains the formatting for the Sign Note screen.</description>
+        <name>formBlankMilitaryServiceNumber</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!militaryServiceNumber}),
+BR(), 
+{!militaryServiceNumber}
+)</expression>
+    </formulas>
+    <formulas>
+        <description>This formula inserts a line break if there&apos;s no data returned for the Date of Birth field. This maintains the formatting for the Sign Note screen.</description>
+        <name>formBlankPatientDOB</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK( {!getRelatedAccountFields.HealthCloudGA__BirthDate__pc}),
+BR(),
+ {!getRelatedAccountFields.HealthCloudGA__BirthDate__pc}
+)</expression>
+    </formulas>
+    <formulas>
+        <description>This formula inserts a line break if there&apos;s no data returned for the Patient Name field. This maintains the formatting for the Sign Note screen.</description>
+        <name>formBlankPatientName</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!progressNote.VCC_Patient_Name__c}),
+BR(),
+{!progressNote.VCC_Patient_Name__c}
+)</expression>
+    </formulas>
+    <formulas>
+        <description>This formula inserts a line break if there&apos;s no data returned for the Patient Primary Address field. This maintains the formatting for the Sign Note screen.</description>
+        <name>formBlankPatientPrimaryAddress</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    ISBLANK({!getRelatedAccountFields.BillingStreet}) &amp;&amp;
+    ISBLANK({!getRelatedAccountFields.BillingCity}) &amp;&amp;
+    ISBLANK({!getRelatedAccountFields.BillingState}) &amp;&amp;
+    ISBLANK({!getRelatedAccountFields.BillingPostalCode}),
+    BR(),
+    {!getRelatedAccountFields.BillingStreet} &amp; BR() &amp;
+    {!getRelatedAccountFields.BillingCity} &amp; &quot;, &quot; &amp;
+    {!getRelatedAccountFields.BillingState} &amp; &quot; &quot; &amp;
+    {!getRelatedAccountFields.BillingPostalCode}
+)</expression>
+    </formulas>
+    <formulas>
+        <description>This formula inserts a line break if there&apos;s no data returned for the Patient Primary Mobile Phone field. This maintains the formatting for the Sign Note screen.</description>
+        <name>formBlankPatientPrimaryMobilePhone</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!getRelatedAccountFields.PersonMobilePhone}),
+BR(),
+{!getRelatedAccountFields.PersonMobilePhone}
+)</expression>
+    </formulas>
+    <formulas>
+        <description>This formula field inserts a break if there is no data returned for the Patient Primary Phone. This maintains the formatting if no data is returned for the Sign Note screen.</description>
+        <name>formBlankPatientPrimaryPhone</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK( {!getRelatedAccountFields.Phone}),
+BR(),
+{!getRelatedAccountFields.Phone}
+)</expression>
+    </formulas>
+    <formulas>
+        <description>This formula inserts a line break if there&apos;s no data returned for the Patient SSN field. This maintains the formatting for the Sign Note screen.</description>
+        <name>formBlankPatientSSN</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK( {!getRelatedAccountFields.HealthCloudGA__TaxId__c}),
+BR(),
+{!getRelatedAccountFields.HealthCloudGA__TaxId__c}
+)</expression>
+    </formulas>
+    <formulas>
+        <description>This formula inserts a line break if there&apos;s no data returned for the Patient Birth Place field. This maintains the formatting for the Sign Note screen.</description>
+        <name>formBlankPlaceOfBirthCityAndState</name>
+        <dataType>String</dataType>
+        <expression>IF(
+ISBLANK({!getRelatedAccountFields.Place_of_Birth_City__pc}) &amp;&amp; ISBLANK({!getRelatedAccountFields.Place_of_Birth_State__pc}), 
+BR(),  
+{!getRelatedAccountFields.Place_of_Birth_City__pc} &amp; &quot;, &quot; &amp; {!getRelatedAccountFields.Place_of_Birth_State__pc}
+)</expression>
+    </formulas>
+    <formulas>
+        <description>This formula inserts a line break if there&apos;s no data returned for the Service Dates field. This maintains the formatting for the Sign Note screen.</description>
+        <name>formBlankServiceDates</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!serviceDates}),
+BR(), 
+{!serviceDates}
+)</expression>
+    </formulas>
+    <formulas>
+        <description>This formula inserts a line break if there&apos;s no data returned for the Patient Spouse Name field. This maintains the formatting for the Sign Note screen.</description>
+        <name>formBlankSpouseName</name>
+        <dataType>String</dataType>
+        <expression>IF(
+ISBLANK({!spouseName}), 
+BR(),
+{!spouseName}
+)</expression>
+    </formulas>
+    <formulas>
+        <description>Checking if the VCC_Verified_Patient_Identifiers field on the Progress Note is checked.</description>
+        <name>patientIdentifierIsChecked</name>
+        <dataType>Boolean</dataType>
+        <expression>{!progressNote.VCC_Verified_Patient_Identifiers__c}</expression>
+    </formulas>
+    <interviewLabel>VCC Sign Note Subflow Verify Emergency Contact {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>VCC Sign Note Subflow Verify Emergency Contact</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <description>Re-query the Progress Note record to pass updated values as the Output</description>
+        <name>Get_Updated_Progress_Note</name>
+        <label>Get Updated Progress Note</label>
+        <locationX>50</locationX>
+        <locationY>1082</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Updated_Progress_Note_Record</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Log_Flow_Error</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>progressNote.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>VCC_Progress_Note__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Gets the account information related to the Case retrieved in getRelatedCase.</description>
+        <name>getRelatedAccountFields</name>
+        <label>getRelatedAccountFields</label>
+        <locationX>446</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>MPI_Callout_Action</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Log_Flow_Error</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>getRelatedCase.AccountId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Gets the case related to the progress note.</description>
+        <name>getRelatedCase</name>
+        <label>getRelatedCase</label>
+        <locationX>446</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>getRelatedAccountFields</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Log_Flow_Error</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>progressNote.VCC_Case__r.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Case</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>AccountId</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Setting the field values and updating the Progress Note record.</description>
+        <name>verifyEmergencyContactandAddress</name>
+        <label>verifyEmergencyContactandAddress</label>
+        <locationX>50</locationX>
+        <locationY>974</locationY>
+        <connector>
+            <targetReference>Get_Updated_Progress_Note</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Log_Flow_Error</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>progressNote.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>VCC_Caller_Name_Text__c</field>
+            <value>
+                <elementReference>Caller_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Caller_Recipient_Verified__c</field>
+            <value>
+                <elementReference>acknowledgeCheckBox</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Current_Address_Phone_Verified__c</field>
+            <value>
+                <elementReference>acknowledgeCheckBox</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Current_Address__c</field>
+            <value>
+                <elementReference>currentAddressText</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Current_Phone__c</field>
+            <value>
+                <elementReference>currentPhoneText</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Emergency_Contact1__c</field>
+            <value>
+                <elementReference>emergencyContactText</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Emergency_Contact_Info_Verified__c</field>
+            <value>
+                <elementReference>acknowledgeCheckBox</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Emergency_Contact_Phone1__c</field>
+            <value>
+                <elementReference>emergencyContactPhoneText</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_If_Other_Describe_Relation_Patient__c</field>
+            <value>
+                <elementReference>If_Other_Describe_Relation_to_Patient</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Relative_Type__c</field>
+            <value>
+                <elementReference>Caller_Recipient_Relation_to_Patient</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Verified_Patient_Identifiers__c</field>
+            <value>
+                <elementReference>patientBooleanVar</elementReference>
+            </value>
+        </inputAssignments>
+        <object>VCC_Progress_Note__c</object>
+    </recordUpdates>
+    <screens>
+        <description>The verify emergency contact screen.</description>
+        <name>VerifyEmergencyContact</name>
+        <label>VerifyEmergencyContact</label>
+        <locationX>446</locationX>
+        <locationY>458</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Is_Two_Patient_Identifiers_already_checked_on_the_Progress_Note</targetReference>
+        </connector>
+        <fields>
+            <name>CallerRecipient_Blank_Important_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(237, 41, 41);&quot;&gt;Important! You may not sign this Progress Note with a blank value in the &quot;Caller Recipient/Relation to Patient&quot; field. Please update your selection to proceed.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Caller_Recipient_Relation_to_Patient</leftValueReference>
+                    <operator>EqualTo</operator>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>VerifyEmergencyContactPhoneandAddress</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Verify Caller/Recipient Relation to Patient, Emergency Contact, Current Location and Call Back Number&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>VerifyEmergencyContact_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>VerifyEmergencyContact_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>VerifyEmergencyContact_Section2</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>VerifyEmergencyContact_Section2_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>primaryAddressDisplayText</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Patient Primary Address &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!formBlankPatientPrimaryAddress}&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>VerifyEmergencyContact_Section2_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>primaryPhoneDisplayText</name>
+                    <fieldText>&lt;p&gt;&lt;strong&gt;Patient Primary Phone &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!formBlankPatientPrimaryPhone}&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>VerifyEmergencyContact_Section2_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>primaryMobilePhoneDisplayText</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Patient Primary Mobile Phone  &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!formBlankPatientPrimaryMobilePhone}&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>progressNote.VCC_Verified_Patient_Identifiers__c</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>true</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>VerifyEmergencyContact_Section3</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>VerifyEmergencyContact_Section3_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>PatientName</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Patient Name&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!progressNote.VCC_Patient_Name__c}&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>VerifyEmergencyContact_Section3_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>SSN</name>
+                    <fieldText>&lt;p&gt;&lt;strong&gt;SSN&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!formBlankPatientSSN}&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>VerifyEmergencyContact_Section3_Column3</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>progressNote.VCC_Verified_Patient_Identifiers__c</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>VerifyEmergencyContact_Section4</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>VerifyEmergencyContact_Section4_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>displayPreferredName</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Preferred Name&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!getRelatedAccountFields.HealthCloudGA__PreferredName__pc}&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>VerifyEmergencyContact_Section4_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>displayPronoun</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Pronoun&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!getRelatedAccountFields.Pronoun__pc}&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>VerifyEmergencyContact_Section4_Column3</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>progressNote.VCC_Verified_Patient_Identifiers__c</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>VerifyEmergencyContact_Section5</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>VerifyEmergencyContact_Section5_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>patientDOB</name>
+                    <fieldText>&lt;p&gt;&lt;strong&gt;Patient Date of Birth&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!formBlankPatientDOB}&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>VerifyEmergencyContact_Section5_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>patientPlaceOfBirth</name>
+                    <fieldText>&lt;p&gt;&lt;strong&gt;Patient Place of Birth&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!formBlankPlaceOfBirthCityAndState}&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>VerifyEmergencyContact_Section5_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>patientCareFacility</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: var(--lwc-fontFamily,-apple-system, BlinkMacSystemFont, &apos;Segoe UI&apos;, Roboto, Helvetica, Arial, sans-serif, &apos;Apple Color Emoji&apos;, &apos;Segoe UI Emoji&apos;, &apos;Segoe UI Symbol&apos;); font-size: var(--lwc-fontSize3,0.8125rem); color: var(--slds-g-color-neutral-base-30, var(--lwc-colorTextWeak,rgb(68, 68, 68))); background-color: var(--slds-g-color-neutral-base-100, var(--lwc-colorBackgroundInput,rgb(255, 255, 255)));&quot;&gt;Current Patient Care Facility&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: var(--lwc-fontFamily,-apple-system, BlinkMacSystemFont, &apos;Segoe UI&apos;, Roboto, Helvetica, Arial, sans-serif, &apos;Apple Color Emoji&apos;, &apos;Segoe UI Emoji&apos;, &apos;Segoe UI Symbol&apos;); font-size: var(--lwc-fontSize3,0.8125rem); color: var(--slds-g-color-neutral-base-30, var(--lwc-colorTextWeak,rgb(68, 68, 68))); background-color: var(--slds-g-color-neutral-base-100, var(--lwc-colorBackgroundInput,rgb(255, 255, 255)));&quot;&gt;{!progressNote.VCC_Current_Patient_Care_Facility__c}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>progressNote.VCC_Verified_Patient_Identifiers__c</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>VerifyEmergencyContact_Section6</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>VerifyEmergencyContact_Section6_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>patientPrimaryAddress</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Patient Primary Address                          &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!formBlankPatientPrimaryAddress}&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>VerifyEmergencyContact_Section6_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>patientPrimaryPhone</name>
+                    <fieldText>&lt;p&gt;&lt;strong&gt;Patient Primary Phone&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!formBlankPatientPrimaryPhone}&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>VerifyEmergencyContact_Section6_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>patientPrimaryMobilePhone</name>
+                    <fieldText>&lt;p&gt;&lt;strong&gt;Patient Primary Mobile Phone&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!formBlankPatientPrimaryMobilePhone}&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>progressNote.VCC_Verified_Patient_Identifiers__c</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>VerifyEmergencyContact_Section7</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>VerifyEmergencyContact_Section7_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>branchOfServiceDisplay</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Branch of Service&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!formBlankBranchOfService}&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>VerifyEmergencyContact_Section7_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>serviceDatesDisplay</name>
+                    <fieldText>&lt;p&gt;&lt;strong&gt;Service Dates&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!formBlankServiceDates}&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>VerifyEmergencyContact_Section7_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>militaryServiceNumberDisplay</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Military Service Number&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;{!formBlankMilitaryServiceNumber}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>progressNote.VCC_Verified_Patient_Identifiers__c</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>VerifyEmergencyContact_Section8</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>VerifyEmergencyContact_Section8_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>mothersMaidenNameDisplay</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Mother&apos;s Maiden Name&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;{!getRelatedAccountFields.Mother_s_Maiden_Name__pc}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>VerifyEmergencyContact_Section8_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>spousesNameDisplay</name>
+                    <fieldText>&lt;p&gt;&lt;strong&gt;Spouse&apos;s Name&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!formBlankSpouseName}&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>VerifyEmergencyContact_Section8_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>nextOfKinDisplay</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Next of Kin&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;{!getRelatedAccountFields.VCC_Next_of_Kin__pc}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>progressNote.VCC_Verified_Patient_Identifiers__c</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Caller_Recipient_Relation_to_Patient</name>
+            <choiceReferences>Caller_Recipient_Relation_to_Patient_Picklist_Choice_Set</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>progressNote.VCC_Relative_Type__c</elementReference>
+            </defaultValue>
+            <fieldText>Caller/Recipient Relation to Patient</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>If_Other_Describe_Relation_to_Patient</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>progressNote.VCC_If_Other_Describe_Relation_Patient__c</elementReference>
+            </defaultValue>
+            <fieldText>If Other Describe Relation to Patient</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <validationRule>
+                <errorMessage>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(247, 2, 2);&quot;&gt;Text for If Other Describe Relation to Patient is too long. Please limit the text to 80 characters or less.&lt;/span&gt;&lt;/p&gt;</errorMessage>
+                <formulaExpression>LEN({!If_Other_Describe_Relation_to_Patient}) &lt;= 80</formulaExpression>
+            </validationRule>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Caller_Recipient_Relation_to_Patient</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Other</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Caller_Name</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>progressNote.VCC_Caller_Name_Text__c</elementReference>
+            </defaultValue>
+            <fieldText>Caller Name</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <validationRule>
+                <errorMessage>&lt;p&gt;&lt;span style=&quot;color: rgb(247, 2, 2); background-color: rgb(255, 255, 255);&quot;&gt;Text for Caller Name is too long. Please limit the text to 50 characters or less.&lt;/span&gt;&lt;/p&gt;</errorMessage>
+                <formulaExpression>LEN({!Caller_Name}) &lt;= 50</formulaExpression>
+            </validationRule>
+            <visibilityRule>
+                <conditionLogic>or</conditionLogic>
+                <conditions>
+                    <leftValueReference>Caller_Recipient_Relation_to_Patient</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Caregiver</stringValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>Caller_Recipient_Relation_to_Patient</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Power of Attorney</stringValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>Caller_Recipient_Relation_to_Patient</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Other</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>emergencyContactText</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>progressNote.VCC_Emergency_Contact1__c</elementReference>
+            </defaultValue>
+            <fieldText>Emergency Contact</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <validationRule>
+                <errorMessage>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(247, 2, 2);&quot;&gt;Text is too long for Emergency Contact. Please limit text to 254 characters or less.&lt;/span&gt;&lt;/p&gt;</errorMessage>
+                <formulaExpression>LEN({!emergencyContactText}) &lt;= 254</formulaExpression>
+            </validationRule>
+        </fields>
+        <fields>
+            <name>emergencyContactPhoneText</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>progressNote.VCC_Emergency_Contact_Phone1__c</elementReference>
+            </defaultValue>
+            <fieldText>Emergency Contact Phone</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <validationRule>
+                <errorMessage>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(247, 2, 2);&quot;&gt;The Emergency Contact Phone Number is too long. Please limit phone number to 40 digits or less.&lt;/span&gt;&lt;/p&gt;</errorMessage>
+                <formulaExpression>LEN({!emergencyContactPhoneText}) &lt;= 40</formulaExpression>
+            </validationRule>
+        </fields>
+        <fields>
+            <name>currentAddressText</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>progressNote.VCC_Current_Address__c</elementReference>
+            </defaultValue>
+            <fieldText>Current Location</fieldText>
+            <fieldType>InputField</fieldType>
+            <helpText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 11.36px; font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);&quot;&gt;Current location of patient, if different from Primary Address&lt;/span&gt;&lt;/p&gt;</helpText>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>currentPhoneText</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>progressNote.VCC_Current_Phone__c</elementReference>
+            </defaultValue>
+            <fieldText>Call Back Number</fieldText>
+            <fieldType>InputField</fieldType>
+            <helpText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 11.36px; font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);&quot;&gt;Current location of patient, if different from Primary Address&lt;/span&gt;&lt;/p&gt;</helpText>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <validationRule>
+                <errorMessage>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(247, 2, 2);&quot;&gt;The Call Back Number is too long. Please limit phone number to 40 digits or less.&lt;/span&gt;&lt;/p&gt;</errorMessage>
+                <formulaExpression>LEN({!currentPhoneText}) &lt;= 40</formulaExpression>
+            </validationRule>
+        </fields>
+        <fields>
+            <name>acknowledgeCheckBox</name>
+            <dataType>Boolean</dataType>
+            <defaultValue>
+                <elementReference>acknowledgeCheckBox_value</elementReference>
+            </defaultValue>
+            <fieldText>I acknowledge that I have verified the Caller/Recipient Relation to Patient, Emergency Contact Information, Current Location and Call Back Number</fieldText>
+            <fieldType>InputField</fieldType>
+            <helpText>&lt;p&gt;All three corresponding checkboxes on the progress note need to be selected OR select this checkbox to confirm all three.&lt;/p&gt;</helpText>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <validationRule>
+                <errorMessage>&lt;p&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;{!$Label.VCC_Caller_Recipient_Verified_c_Error}&lt;/span&gt;&lt;/p&gt;</errorMessage>
+                <formulaExpression>{!acknowledgeCheckBox} = TRUE</formulaExpression>
+            </validationRule>
+        </fields>
+        <fields>
+            <name>PatientIdentifierCheckbox</name>
+            <dataType>Boolean</dataType>
+            <defaultValue>
+                <elementReference>patientIdentifierIsChecked</elementReference>
+            </defaultValue>
+            <fieldText>Two patient identifiers have been stated by the patient/contact</fieldText>
+            <fieldType>InputField</fieldType>
+            <helpText>&lt;p&gt;Patient must be verified with their full name and at least two of the following: SSN, military service number, branch of service, service dates, date of birth, place of birth, home address, spouse’s name, mother&apos;s maiden name, or next of kin.&lt;/p&gt;</helpText>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <validationRule>
+                <errorMessage>&lt;p&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;{!$Label.VCC_Verified_Patient_Identifiers_c_Error}&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;</errorMessage>
+                <formulaExpression>{!PatientIdentifierCheckbox} = TRUE</formulaExpression>
+            </validationRule>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>progressNote.VCC_Verified_Patient_Identifiers__c</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>vccDirectives</name>
+            <extensionName>c:vccDirectives</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>getRelatedAccountFields.Id</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>objectApiName</name>
+                <value>
+                    <stringValue>Account</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>VerifyEmergencyContact_Section9</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>VerifyEmergencyContact_Section9_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>VerifyEmergencyContact_Section10</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>VerifyEmergencyContact_Section10_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>VerifyEmergencyContact_Section11</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>VerifyEmergencyContact_Section11_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>VerifyEmergencyContact_Section12</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>VerifyEmergencyContact_Section12_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>VerifyEmergencyContact_Section13</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>VerifyEmergencyContact_Section13_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>320</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>getRelatedCase</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Flow_Error</name>
+        <label>Flow Error</label>
+        <locationX>1106</locationX>
+        <locationY>566</locationY>
+        <flowName>VCC_Flow_Error_Display</flowName>
+        <inputAssignments>
+            <name>SYSTEM_ERROR</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <variables>
+        <description>Storing the branch of service from the MPI callout into this variable.</description>
+        <name>branchOfService</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Caller_Recipient_Error</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>militaryServiceNumber</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>patientBooleanVar</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>progressNote</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>VCC_Progress_Note__c</objectType>
+    </variables>
+    <variables>
+        <name>progressNoteID</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>VCC_Progress_Note__c</objectType>
+    </variables>
+    <variables>
+        <name>serviceDates</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>spouseName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

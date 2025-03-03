@@ -1,0 +1,112 @@
+<template>
+    <c-logger></c-logger>
+    <lightning-modal-header tabindex="-1" label={modalTitle}></lightning-modal-header>
+    <lightning-modal-body>
+        <div class="warning-label" tabindex="0">
+            <template lwc:if={hasError}>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-13 slds-large-size_1-of-12"></div>
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_10-of-12">
+                        <c-base-accordion
+                            text={accordionErrorLabel}
+                            icon-name="utility:error"
+                            color-background="#ba0517"
+                            color-icon="white"
+                            color-font="white">
+                            <div class="slds-var-p-top_medium">
+                                <ul>
+                                    <template for:each={getErrorList} for:item="errorItem">
+                                        <li key={errorItem.key} class="slds-var-m-bottom_medium">
+                                            <h3><b>{errorItem.header}</b></h3>
+                                            <div class="slds-var-p-horizontal_large">
+                                                <ul class="slds-var-m-horizontal_large" style="list-style: initial">
+                                                    <template for:each={errorItem.messages} for:item="siteMessage">
+                                                        <li key={siteMessage.key} class="slds-var-m-bottom_medium">
+                                                            {siteMessage.message}
+                                                        </li>
+                                                    </template>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>
+                        </c-base-accordion>
+                    </div>
+                    <div class="slds-col slds-size_1-of-13 slds-large-size_1-of-12"></div>
+                </div>
+            </template>
+            <template lwc:else>
+                <c-base-error-message
+                    variant="warning"
+                    message="If the temporary address and/or Mailing Address are not correct update the address below">
+                </c-base-error-message>
+            </template>
+        </div>
+        <div lwc:if={profileAddress} class="address slds-m-top_small" tabindex="0">
+            <b>VA Profile Mailing Address:</b>
+            <lightning-formatted-address
+                street={profileAddress.PersonMailingAddress.street}
+                city={profileAddress.PersonMailingAddress.city}
+                province={profileAddress.PersonMailingAddress.state}
+                postal-code={profileAddress.PersonMailingAddress.postalCode}
+                disabled></lightning-formatted-address>
+        </div>
+        <div>
+            <div class="slds-m-top_small">
+                <lightning-button label="Edit Mailing Address" onclick={editMailing}></lightning-button>
+                <lightning-button class="slds-var-m-left_small" label="Edit Temporary Address"></lightning-button>
+                <lightning-button
+                    class="slds-float_right"
+                    label="Refresh"
+                    icon-name="utility:refresh"
+                    disabled={refreshing}
+                    onclick={refreshCalls}></lightning-button>
+            </div>
+        </div>
+
+        <div class="slds-m-top_small">
+            <div lwc:if={dataLoadSpinner} class="spinner-container">
+                <lightning-spinner alternative-text="Loading" class="slds_is_absolute" variant="brand" size="medium">
+                </lightning-spinner>
+            </div>
+            <lightning-datatable
+                lwc:else
+                key-field="facilityId"
+                data={data}
+                columns={columns}
+                selected-rows={selectedRowKeys}
+                onrowselection={handleRowSelection}
+                class="slds-table_col-bordered">
+            </lightning-datatable>
+        </div>
+
+        <template if:false={isAccountPage}>
+            <div class="slds-m-top_small">
+                <lightning-radio-group
+                    name="radioGroup"
+                    label="Please confirm one of the following actions"
+                    options={verifyOptions}
+                    value={verifyValue}
+                    type="radio"
+                    required
+                    onchange={handleSelection}>
+                </lightning-radio-group>
+            </div>
+        </template>
+    </lightning-modal-body>
+    <lightning-modal-footer>
+        <template lwc:if={isAccountPage}>
+            <lightning-button label="Close" onclick={handleCancel}></lightning-button>
+        </template>
+        <template lwc:else>
+            <lightning-button label="Cancel" onclick={handleCancel}></lightning-button>
+            <lightning-button
+                label="Confirm"
+                variant="brand"
+                class="slds-var-m-left_small"
+                onclick={handleConfirm}
+                disabled={isButtonDisabled}></lightning-button>
+        </template>
+    </lightning-modal-footer>
+</template>

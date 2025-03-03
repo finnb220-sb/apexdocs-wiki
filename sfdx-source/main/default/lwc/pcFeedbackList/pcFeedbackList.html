@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Feedback To Complete">
+        <template if:true={showSpinner}>
+            <lightning-spinner variant="brand" size="medium" alternative-text="Fetching Cases ..."> </lightning-spinner>
+        </template>
+        <div style="margin: 10px">
+            <lightning-datatable if:false={showEmpty} key-field="Id" data={data} columns={columns} hide-checkbox-column="true" onrowaction={handleRowAction}> </lightning-datatable>
+            <div class="empty-list-message" if:true={showEmpty}>You do not have any feedback to complete.</div>
+        </div>
+    </lightning-card>
+</template>

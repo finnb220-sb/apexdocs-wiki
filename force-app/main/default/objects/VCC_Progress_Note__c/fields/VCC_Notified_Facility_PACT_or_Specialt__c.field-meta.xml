@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Notified_Facility_PACT_or_Specialt__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Generated message to facility/pact or specialty care.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Generated message to facility/pact or specialty care.</inlineHelpText>
+    <label>Notified Facility/PACT or Specialty Care</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

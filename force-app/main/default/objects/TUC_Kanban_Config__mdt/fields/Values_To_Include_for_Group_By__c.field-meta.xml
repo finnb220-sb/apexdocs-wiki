@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Values_To_Include_for_Group_By__c</fullName>
+    <description
+    >Use a semi-colon separated list if to include the values for the Group By. For example, if the object is Case and the columns are Grouped on the field Status. To exclude
+        &quot;New&quot; and &quot;Closed&quot; cases, enter in this field: New;Closed Make sure the order is the proper order as well.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText
+    >Use a semi-colon separated list if to include the values for the Group By. For example, if the object is Case and the columns are Grouped on the field Status. To exclude
+        &quot;New&quot; and &quot;Closed&quot; cases, enter in this field: New;Closed Make sure the order is the proper order as well.</inlineHelpText>
+    <label>Values To Include for Group By</label>
+    <length>2000</length>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

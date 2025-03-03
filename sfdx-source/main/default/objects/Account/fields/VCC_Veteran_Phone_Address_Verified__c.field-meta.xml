@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Veteran_Phone_Address_Verified__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Veteran&apos;s insurance and primary phone and address should be verified every 90 days.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if Veteran&apos;s Insurance &amp; Primary Phone &amp; Address were verified during CCC call.</inlineHelpText>
+    <label>Veteran Ins, Phone &amp; Address Verified</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

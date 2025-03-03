@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Sign the Progress Note (TUC Version)</description>
+    <flowDefinition>TUC_Sign_Note_with_Callouts_2</flowDefinition>
+    <label>Sign Note</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

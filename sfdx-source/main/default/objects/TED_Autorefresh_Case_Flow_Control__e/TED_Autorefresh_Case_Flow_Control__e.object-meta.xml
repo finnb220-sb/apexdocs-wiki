@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>f a user pauses or resumes the queues, using the component &apos;Case Flow Control,&apos; the component will automatically update for all users.</description>
+    <eventType>HighVolume</eventType>
+    <label>TED Autorefresh Case Flow Control</label>
+    <pluralLabel>TED Autorefresh Case Flow Controls</pluralLabel>
+    <publishBehavior>PublishAfterCommit</publishBehavior>
+</CustomObject>

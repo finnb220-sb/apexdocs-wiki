@@ -1,0 +1,103 @@
+<template>
+    <div slot="header" class="card-title">
+        <div class="slds-media__figure">
+            <lightning-icon
+                size="small"
+                icon-name="standard:individual"
+                alternative-text={componentTitle}
+                title={componentTitle}></lightning-icon>
+        </div>
+        <div class="slds-media__body">
+            <h2 class="slds-card__header-title">Consult Details</h2>
+        </div>
+    </div>
+
+    <section class="container">
+        <div class="grid" tabindex="0">
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Request Date</p>
+                </div>
+                <div class="horizontal info">
+                    <p>
+                        <lightning-formatted-date-time
+                            value={selectedRecord.requested}
+                            lwc:spread={dateOptions}></lightning-formatted-date-time>
+                    </p>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Consult Number ID</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{selectedRecord.id}</p>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Status</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{selectedRecord.status}</p>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>To Service</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{selectedRecord.name}</p>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>From Clinic</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{selectedRecord.facilityName}</p>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Requestor</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{selectedRecord.provDxName}</p>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Urgency</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{selectedRecord.urgency}</p>
+                </div>
+            </div>
+
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Report Details</p>
+                </div>
+                <div class="horizontal info contentWrap">
+                    <p>{selectedRecord.reason}</p>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <div class="title">
+                <p>Consult Activity</p>
+            </div>
+
+            <div class="data-table-wrapper">
+                <lightning-datatable
+                    key-field="id"
+                    data={selectedRecord.requestActivities}
+                    columns={columns}
+                    hide-checkbox-column="true">
+                </lightning-datatable>
+            </div>
+        </section>
+    </section>
+</template>

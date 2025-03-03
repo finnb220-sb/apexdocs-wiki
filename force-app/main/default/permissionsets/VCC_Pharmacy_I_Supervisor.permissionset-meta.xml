@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>VAHC_Pharmacy_Supervisor</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>VAHC_Pharmacy_Tier_I_Supervisor</name>
+    </customPermissions>
+    <description
+    >VCC User who is a Pharmacy User. Used to control visibility to components based on user type, used in Validation rules, and specific Case FLS differences.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>VAHC Tier I Supervisor</label>
+</PermissionSet>

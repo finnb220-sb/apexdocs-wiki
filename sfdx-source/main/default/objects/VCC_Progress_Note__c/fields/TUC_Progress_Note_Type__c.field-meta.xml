@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TUC_Progress_Note_Type__c</fullName>
+    <description>TUC Medical Progress Note Type. Used in Flow to identify the Evaluation Type, controlling field for Type of Visit.</description>
+    <externalId>false</externalId>
+    <label>Progress Note Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Tele-EC MP Chart Review Progress Note</fullName>
+                <default>false</default>
+                <label>Tele-EC MP Chart Review Progress Note</label>
+            </value>
+            <value>
+                <fullName>Virtual Visit Note</fullName>
+                <default>false</default>
+                <label>Tele-EC MP Virtual Visit Progress Note</label>
+            </value>
+            <value>
+                <fullName>RN Consult Note</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>RN Consult Note</label>
+            </value>
+            <value>
+                <fullName>Tele-EC Nurse Progress Note</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Tele-EC Nurse Progress Note</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

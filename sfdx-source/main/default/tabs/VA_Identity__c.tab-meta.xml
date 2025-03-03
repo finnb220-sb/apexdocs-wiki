@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customObject>true</customObject>
+    <description
+    >Goal is to create a Salesforce VA SOR Identity object (separate from Account/Contact) deployed in multiple Salesforce Orgs Allows middleware to work with a consistent
+        pattern of objects/fields across all Orgs Not required by DIP, but would simplify configuration and reduce complexity In the future, this core VA SOR Identify Object could
+        be part of a Salesforce common package, distributable and available for dependency management orchestration</description>
+    <motif>Custom15: People</motif>
+</CustomTab>

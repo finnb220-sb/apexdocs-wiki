@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Confirm_CovidExposure_last_14_days</fullName>
+    <active>true</active>
+    <description>When an RN completes the COVID screening and checks the &quot;Confirms exposure in the last 14 days&quot;, they must</description>
+    <errorConditionFormula
+    >BEGINS( RecordType.DeveloperName, &quot;VCC_&quot;) &amp;&amp; !$Permission.DisableTriggersFlag &amp;&amp; AND( OR( ISPICKVAL(VCC_CS_Confirms_exposure_in_the_last_14__c,
+        &quot;Close exposure (within 6 feet for more than 15 minutes) to someone with a febrile/respiratory illness&quot;), ISPICKVAL(VCC_CS_Confirms_exposure_in_the_last_14__c,
+        &quot;Close exposure (within 6 feet for more than 15 minutes) to someone with known or suspected case of COVID-19&quot;) ), VCC_CS_Someone_with_febrilerespiratory__c =
+        FALSE, VCC_CS_Someone_with_knownsuspected_COVID__c = FALSE, RecordType.DeveloperName = &quot;VCC_Clinical_Triage_Note_Progress_Note&quot;, NOT
+        $Permission.VCC_Disable_Progress_Note_Assignment_Rules )</errorConditionFormula>
+    <errorDisplayField>VCC_CS_Confirms_exposure_in_the_last_14__c</errorDisplayField>
+    <errorMessage>Patient has confirmed exposure in the last 14 days, please check the options on the right.</errorMessage>
+</ValidationRule>

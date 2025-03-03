@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Consult_Urgency_or_Earliest_Date__c</fullName>
+    <description>The consult urgency date OR the earliest date the request should be fulfilled. This value is computed from URGENCY and CLINICAL INDICATED DATE.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <label>Consult Urgency or Earliest Date</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

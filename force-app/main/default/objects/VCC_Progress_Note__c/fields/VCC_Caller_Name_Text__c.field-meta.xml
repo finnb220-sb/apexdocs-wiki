@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Caller_Name_Text__c</fullName>
+    <description>Caller Name is populated from the Phone Call/Case, if different from the Veteran.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>Caller Name is populated from the Phone Call/Case, if different from the Veteran.</inlineHelpText>
+    <label>Caller Name</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

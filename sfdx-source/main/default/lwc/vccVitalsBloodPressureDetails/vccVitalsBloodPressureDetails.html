@@ -1,0 +1,42 @@
+<!-- Vcc Vitals Blood Pressure Details -->
+<template>
+    <div tabindex="0" class="blood-pressure-container">
+        <template lwc:if={measurementsToDisplay} for:each={measurementsToDisplay} for:item="measurement">
+            <div tabindex="0" class="measurement-container" key={measurement.id}>
+                <div tabindex="0" class="timestamp">{measurement.takenFormatted}</div>
+                <div tabindex="0" class="blood-pressure">
+                    <div tabindex="0" class="measurement">
+                        <div tabindex="0" class="label">Blood Pressure</div>
+                        <div tabindex="0" class="value">{measurement.value}</div>
+                    </div>
+                    <div tabindex="0" class="measurement">
+                        <div tabindex="0" class="label">Systolic</div>
+                        <div tabindex="0" class="value reading">
+                            <p tabindex="0">{measurement.systolic}</p>
+                            <p tabindex="0">{measurement.units}</p>
+                            <lightning-icon
+                                tabindex="0"
+                                class={measurement.systolicCalculatedReading.class}
+                                size="xx-small"
+                                icon-name={measurement.systolicCalculatedReading.icon}></lightning-icon>
+                            <p tabindex="0">{measurement.systolicCalculatedReading.message}</p>
+                        </div>
+                    </div>
+                    <div tabindex="0" class="measurement">
+                        <div tabindex="0" class="label">Diastolic</div>
+                        <div tabindex="0" class="value reading">
+                            <p tabindex="0">{measurement.diastolic}</p>
+                            <p tabindex="0">{measurement.units}</p>
+                            <lightning-icon
+                                tabindex="0"
+                                class={measurement.diastolicCalculatedReading.class}
+                                size="xx-small"
+                                icon-name={measurement.diastolicCalculatedReading.icon}></lightning-icon>
+                            <p tabindex="0">{measurement.diastolicCalculatedReading.message}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

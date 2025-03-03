@@ -1,0 +1,43 @@
+<template>
+    <!-- Loading -->
+    <template if:true={isLoading}>
+        <div class="spinnerwrapper slds-is-relative">
+            <lightning-spinner
+                class="slds-is-absolute"
+                size="medium"
+                alternative-text="Loading"
+                variant="brand"></lightning-spinner>
+        </div>
+    </template>
+
+    <lightning-card
+        class="slds-var-m-vertical_small"
+        if:false={isLoading}
+        title={cardTitle}
+        icon-name="standard:search">
+        <lightning-layout class="slds-var-p-horizontal_large">
+            <lightning-layout-item size="12">
+                <!-- Patient Search -->
+                <c-pc-add-patient-search if:true={showSearch} onsearchcrm={handleSearchCrm}></c-pc-add-patient-search>
+
+                <!-- Search Results -->
+                <c-pc-add-patient-search-result
+                    if:true={showResults}
+                    kind={searchResultKind}
+                    search-results={searchResults}
+                    onbacktosearch={handleBackToSearch}
+                    onbacktocrm={handleBackToCrm}
+                    onsearchmpi={handleSearchMpi}
+                    onaddvet={handleAddVet}
+                    ongotoaccount={handleGoToAccount}
+                    ongotopatientinfo={handleGoToPatientInfo}></c-pc-add-patient-search-result>
+
+                <!-- Patient Verification -->
+                <c-pc-add-patient-verification
+                    if:true={showVerification}
+                    onbacktosearch={handleBackToSearch}
+                    patient-record-id={selectedPatientAccountId}></c-pc-add-patient-verification>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

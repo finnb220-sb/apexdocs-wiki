@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <description>Names a CRM Service VISN Assignment record: &apos;(Service selected) for (VISN selected)&apos;</description>
+    <environments>Default</environments>
+    <interviewLabel>VCC_CRM Service VISN Assignment Naming Convention {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>VCC SOT CRM Service VISN Assignment Naming Convention</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>VCC_Create_Name_for_Record_SOT_App</name>
+        <label>Create Name for Record SOT App</label>
+        <locationX>176</locationX>
+        <locationY>311</locationY>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>{!$Record.VCC_CRM_Service_Picklist__c} for VISN {!$Record.VCC_VISN__c}</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>VCC_Create_Name_for_Record_SOT_App</targetReference>
+        </connector>
+        <object>VCC_CRM_VISN_Service_Assignment__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

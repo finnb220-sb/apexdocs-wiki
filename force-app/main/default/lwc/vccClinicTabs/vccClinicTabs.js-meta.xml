@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+  <description>Component used to display an array of Clinics in a lightning-tabset. On select, the component will publish an event to its parent to get the clinic details and the clinics timeslots for the calendar. </description>
+    <isExposed>false</isExposed>
+</LightningComponentBundle>

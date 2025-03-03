@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Is_SLA_Time_to_Close_Delinquent__c</fullName>
+    <description>Indicates if the case been open too long</description>
+    <externalId>false</externalId>
+    <formula
+    >IF( ((NOW() - CreatedDate)*24) &gt;= Case ( RecordType.Name , &quot;Clinical Triage Case&quot;, $CustomMetadata.VCC_Report_Setting__mdt.VCC_Clinical_Triage.SLA_Hours__c ,
+        &quot;Administrative and Scheduling Case&quot;, $CustomMetadata.VCC_Report_Setting__mdt.VCC_Admin.SLA_Hours__c , &quot;Virtual Clinic Visit Case&quot;,
+        $CustomMetadata.VCC_Report_Setting__mdt.VCC_Virtual_Care.SLA_Hours__c , &quot;Pharmacy Case&quot;, $CustomMetadata.VCC_Report_Setting__mdt.VCC_Pharmacy.SLA_Hours__c , 24 ),
+        TRUE, FALSE )</formula>
+    <inlineHelpText>SLA values can be found in Object Manager &gt; Custom Metadata Types &gt; VCC Report Setting</inlineHelpText>
+    <label>Is SLA Time to Close Delinquent</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

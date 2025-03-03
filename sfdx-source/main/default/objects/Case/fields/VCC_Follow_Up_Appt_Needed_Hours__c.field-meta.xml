@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Follow_Up_Appt_Needed_Hours__c</fullName>
+    <description>Calculate hours / Render hours based on VCC_Follow_Up_Appt_Needed__c - Returned values are hours example 8,24,72 CCCM-18442</description>
+    <externalId>false</externalId>
+    <formula>IF( TEXT(VCC_Follow_Up_Appt_Needed__c) = &apos;Within 8 hours&apos;, 8, IF( TEXT(VCC_Follow_Up_Appt_Needed__c) = &apos;Within 24 hours&apos;, 24, IF(
+        TEXT(VCC_Follow_Up_Appt_Needed__c) = &apos;Within 24 Hrs&apos;, 24, IF( TEXT(VCC_Follow_Up_Appt_Needed__c) = &apos;Within 3 days&apos;, 72, IF(
+        TEXT(VCC_Follow_Up_Appt_Needed__c) = &apos;Within 24-72 Hrs&apos;, 54, IF( TEXT(VCC_Follow_Up_Appt_Needed__c) = &apos;Within 2 weeks&apos;, 336, 1000000 ) ) ) ) )
+        )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>VCC Follow Up Appt Needed Hours</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

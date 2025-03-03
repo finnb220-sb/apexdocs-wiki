@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TUC_Pause_Reason__c</fullName>
+    <description>This field is meant to help understand reasons the Tele-EC is placed on pause and realize any underlying trends.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field is meant to help understand reasons the Tele-EC is placed on pause and realize any underlying trends.</inlineHelpText>
+    <label>Pause Reason</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Provider unavailable- service at capacity</fullName>
+                <default>false</default>
+                <label>Provider unavailable- service at capacity</label>
+            </value>
+            <value>
+                <fullName>Provider unavailable- on break</fullName>
+                <default>false</default>
+                <label>Provider unavailable- on break</label>
+            </value>
+            <value>
+                <fullName>Tele-EC closed (after hours)</fullName>
+                <default>false</default>
+                <label>Tele-EC closed (after hours)</label>
+            </value>
+            <value>
+                <fullName>Technical issue (i.e, power outage, wifi)</fullName>
+                <default>false</default>
+                <label>Technical issue (i.e, power outage, wifi)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

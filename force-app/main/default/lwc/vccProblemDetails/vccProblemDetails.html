@@ -1,0 +1,94 @@
+<template>
+    <div slot="header" class="card-title">
+        <div class="slds-media__figure">
+            <lightning-icon
+                size="small"
+                icon-name="standard:document_reference"
+                alternative-text="Problem Details"
+                title="Problem Details"></lightning-icon>
+        </div>
+        <div class="slds-media__body">
+            <h2 class="slds-card__header-title">Problem Details</h2>
+        </div>
+    </div>
+    <section class="container">
+        <div class="grid" tabindex="0">
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Name</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{selectedRecord.name}</p>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Onset Date</p>
+                </div>
+                <div class="horizontal info">
+                    <lightning-formatted-date-time
+                        value={selectedRecord.onsetdate}
+                        year="numeric"
+                        month="numeric"
+                        day="numeric"
+                        time-zone="UTC"></lightning-formatted-date-time>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Status</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{selectedRecord.statusName}</p>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Last Updated</p>
+                </div>
+                <div class="horizontal info">
+                    <lightning-formatted-date-time
+                        value={selectedRecord.updatedDate}
+                        year="numeric"
+                        month="numeric"
+                        day="numeric"
+                        time-zone="UTC"></lightning-formatted-date-time>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>ICD Code</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{selectedRecord.icd}</p>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Description</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{selectedRecord.icdd}</p>
+                </div>
+            </div>
+            <lightning-accordion allow-multiple-sections-open>
+                <lightning-accordion-section
+                    class="slds-p-around_none"
+                    if:true={selectedRecord}
+                    label="Comments"
+                    name="comments"
+                    key={selectedRecord.vtcId}>
+                    <!-- <div class="slds-card__body">
+						<pre>{selectedLab.content}</pre>
+					</div> -->
+                    <lightning-datatable
+                        hide-checkbox-column
+                        columns={commentColumns}
+                        data={selectedRecord.comments}
+                        key-field="id">
+                    </lightning-datatable>
+                </lightning-accordion-section>
+            </lightning-accordion>
+        </div>
+    </section>
+</template>

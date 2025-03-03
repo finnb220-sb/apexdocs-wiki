@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VistA_Ids__c</fullName>
+    <complianceGroup>PII</complianceGroup>
+    <deprecated>false</deprecated>
+    <description>The VistA Station and DUZ mapping from IAM SSOi.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>The VistA Station and DUZ mapping from IAM SSOi.</inlineHelpText>
+    <label>VistA Ids</label>
+    <length>131072</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

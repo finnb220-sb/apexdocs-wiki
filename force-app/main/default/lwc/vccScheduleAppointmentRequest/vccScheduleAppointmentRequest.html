@@ -1,0 +1,107 @@
+<template>
+    <c-logger></c-logger>
+    <h1
+        class="slds-text-heading_medium slds-border_bottom slds-align_absolute-center slds-p-around_x-small"
+        aria-label="Schedule Appointment">
+        Schedule Appointment
+    </h1>
+    <template lwc:if={timeSlotSelected}>
+        <c-vcc-schedule-appointment
+            onbacktocalendar={handleBackToCalendar}
+            selectedtimeslots={selectedTimeslots}
+            appt-request={apptRequest}
+            clinic-i-e-n={clinicIEN}
+            clinic-name={clinicName}
+            clinic-time-zone={clinicDetails.timezone}
+            clinic-i-a-n-a-time-zone={clinicTimezoneSettings.timeZone}
+            clinic-stop-code-number={clinicStopCodeNumber}
+            record-id={recordId}></c-vcc-schedule-appointment>
+    </template>
+    <template lwc:else>
+        <lightning-layout>
+            <lightning-layout-item size="11">
+                <c-vcc-appointment-request-details appt-request={apptRequest}></c-vcc-appointment-request-details>
+            </lightning-layout-item>
+            <lightning-layout-item size="1">
+                <div class="slds-float_right slds-p-around_small">
+                    <lightning-button
+                        label="Next"
+                        alternative-text="Next"
+                        variant="brand"
+                        onclick={handleNavigateToConfirmationScreen}></lightning-button>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+        <!--These lwc have yet to be created-->
+        <lightning-tabset variant="scoped" active-tab-value={activeTab}>
+            <lightning-tab label="Clinic" value="Clinic" onactive={handleClinicTabActive}>
+                <template lwc:if={isNotRecallAppointmentRequest}>
+                    <c-vcc-clinic-lookup
+                        site-id={apptRequest.FacilityStationId}
+                        onselectedclinic={handleSelectClinic}></c-vcc-clinic-lookup>
+                </template>
+                <c-vcc-clinic-details
+                    site-id={apptRequest.FacilityStationId}
+                    clinic-i-e-n={clinicIEN}
+                    onclinicdetails={handleSetClinicDetails}
+                    ondefaultprovider={handleDefaultProvider}></c-vcc-clinic-details>
+            </lightning-tab>
+            <template lwc:if={isNotRecallAppointmentRequest}>
+                <lightning-tab label="Provider" value="Provider" onactive={handleProviderTabActive}>
+                    <c-vcc-provider-lookup
+                        site-id={apptRequest.FacilityStationId}
+                        onselectedprovider={handleSelectProvider}
+                        selected-provider-name={providerName}>
+                    </c-vcc-provider-lookup>
+                    <template lwc:if={formattedClinicsByProvider}>
+                        <c-vcc-clinic-tabs
+                            state="Provider"
+                            site-id={apptRequest.FacilityStationId}
+                            formatted-clinics-by-provider={formattedClinicsByProvider}
+                            onclinicdetails={handleSetClinicDetails}
+                            onclinicselect={handleChangeClinic}></c-vcc-clinic-tabs>
+                    </template>
+                </lightning-tab>
+                <lightning-tab label="Clinic Group" value="Clinic Group" onactive={handleClinicGroupTabActive}>
+                    <c-vcc-clinic-group-lookup
+                        site-id={apptRequest.FacilityStationId}
+                        onselectedclinicgroup={handleSelectClinicGroup}></c-vcc-clinic-group-lookup>
+                    <template lwc:if={formattedClinicsByClinicGroup}>
+                        <c-vcc-clinic-tabs
+                            state="ClinicGroup"
+                            site-id={apptRequest.FacilityStationId}
+                            onclinicdetails={handleSetClinicDetails}
+                            onclinicselect={handleChangeClinic}
+                            formatted-clinics-by-clinic-group={formattedClinicsByClinicGroup}></c-vcc-clinic-tabs>
+                    </template>
+                </lightning-tab>
+            </template>
+        </lightning-tabset>
+        <template lwc:if={loading}>
+            <div class="loading-container-height">
+                <lightning-spinner alternative-text="Loading Time Slots" size="large"></lightning-spinner>
+            </div>
+        </template>
+        <template lwc:else>
+            <template lwc:if={showCalendar}>
+                <c-vcc-calendar
+                    class="calendarPosition"
+                    onselected={handleSelectedTimeSlot}
+                    ondaterangechange={handleDateRangeChange}
+                    calendar-options={calendarOptions}
+                    time-slots={timeSlots}
+                    clinic-display-start-time={clinicDetails.hourClinicDisplayBegins}
+                    clinic-overbooking-limit={clinicDetails.maxOverBooksPerDay}
+                    is-variable-length-appointment={clinicDetails.isVariableLengthAppointment}
+                    provider-time-slots={providerTimeSlots}></c-vcc-calendar>
+            </template>
+        </template>
+        <div class="slds-float_right slds-p-around_small">
+            <lightning-button
+                label="Next"
+                alternative-text="Next"
+                variant="brand"
+                onclick={handleNavigateToConfirmationScreen}></lightning-button>
+        </div>
+    </template>
+</template>

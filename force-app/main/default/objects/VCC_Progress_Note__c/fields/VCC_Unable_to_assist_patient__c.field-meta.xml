@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Unable_to_assist_patient__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked if the Agent is unable to assist the patient.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if you are unable to assist the patient. Enter a comment</inlineHelpText>
+    <label>Unable to assist patient</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

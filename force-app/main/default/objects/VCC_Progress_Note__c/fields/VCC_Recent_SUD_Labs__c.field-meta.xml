@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Recent_SUD_Labs__c</fullName>
+    <description>The recent Substance Use Disorder labs</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>The recent Substance Use Disorder labs will populate on Save if Controlled Medication is selected.</inlineHelpText>
+    <label>Recent SUD Labs</label>
+    <length>5000</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_MSA_Prevent_Closing_Cases</fullName>
+    <active>true</active>
+    <description
+    >MSA Users cannot close an administrative and scheduling case if the following fields are not populated: Subject, Case Sub-Type, Case Reason, and Case Outcome</description>
+    <errorConditionFormula
+    >!$Permission.DisableTriggersFlag &amp;&amp; RecordType.DeveloperName = &apos;VCC_Administrative&apos; &amp;&amp; ISCHANGED(Status) &amp;&amp; OR( ISPICKVAL(Status,
+        &quot;Closed - Resolved&quot;), ISPICKVAL(Status, &quot;Closed - Transferred&quot;)) &amp;&amp; OR( ISBLANK( Subject ) , ISPICKVAL( VCC_Case_Sub_Type__c , &quot;&quot;),
+        ISBLANK( VCC_Case_Outcome_Multi__c), ISBLANK(VCC_Case_Reason_Multi__c) ) &amp;&amp; !$Permission.VCC_Disable_Case_Validation_Rules</errorConditionFormula>
+    <errorMessage
+    >You cannot close an administrative and scheduling case if the following fields are not populated: Subject, Case Sub-Type, Case Reason, and Case Outcome.</errorMessage>
+</ValidationRule>

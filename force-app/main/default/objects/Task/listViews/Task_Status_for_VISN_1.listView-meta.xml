@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Task_Status_for_VISN_1</fullName>
+    <booleanFilter>1 AND 2 AND ((3 AND 4) OR 5)</booleanFilter>
+    <columns>SUBJECT</columns>
+    <columns>WHO_NAME</columns>
+    <columns>WHAT_NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>DUE_DATE</columns>
+    <columns>TED_Provider_Completing_the_Task__c</columns>
+    <columns>TED_Facility__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Task.TED_Task</value>
+    </filters>
+    <filters>
+        <field>TED_VISN_Number__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>TED_Task_Resolution_Date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>N_DAYS_AGO:14</value>
+    </filters>
+    <filters>
+        <field>STATUS</field>
+        <operation>equals</operation>
+        <value>Completed,Canceled</value>
+    </filters>
+    <filters>
+        <field>STATUS</field>
+        <operation>equals</operation>
+        <value>New,Results Pending,Results Ready</value>
+    </filters>
+    <label>Task Status for VISN 1</label>
+    <sharedTo>
+        <group>TUC_1_New_England</group>
+    </sharedTo>
+</ListView>

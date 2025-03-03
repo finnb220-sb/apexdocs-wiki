@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description
+    >This mdt is used to seperate out which locations have which visn. Each record is separated by VISN, with one field on each record containing all possible Facility IDs.
+        This is used in the TUC_Escalated_to_TED flow to provide a more dynamic selection of Facilties by using a mixture of custom metadata and the Location Object
+        data.</description>
+    <label>TUC Location by VISN</label>
+    <pluralLabel>TUC Locations by VISN</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

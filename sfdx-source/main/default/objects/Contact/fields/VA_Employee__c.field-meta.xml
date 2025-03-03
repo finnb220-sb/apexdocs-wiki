@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VA_Employee__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Flag used to mark a person account as VA Employee. Will be populated via automation and scheduled updates via integration with CDW.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Marked true if the record is related to a VA Employee</inlineHelpText>
+    <label>VA Employee</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

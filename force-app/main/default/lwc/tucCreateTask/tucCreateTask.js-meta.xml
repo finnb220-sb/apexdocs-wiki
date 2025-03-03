@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <isExposed>true</isExposed>
+
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property
+                name="AvailableSubjects"
+                type="String"
+                datasource="Columbia +, COV test only, COVID Rx/T2T, Culture, Lab, Pharmacy, Radiology, Travel, Follow Up Appointment or Consult Confirmed, Other"
+                label="Available Subjects"
+            />
+            <property name="SelectedSubject" type="String" label="Selected Subject" />
+            <property name="SelectedDueDate" type="Date" label="Selected Due Date" />
+            <property name="SelectedOrderDate" type="Date" label="Selected Order Date" />
+            <property name="SpecificOrder" type="String" label="Specific Order" />
+            <property name="CommentsProgress" type="String" label="Comments/Progress" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

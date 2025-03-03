@@ -1,0 +1,72 @@
+<template>
+    <!-- record-id="{recordId}" -->
+    <!-- onsubmit="{handleSubmit}" -->
+    <!-- onsuccess="{handleSuccess}" -->
+    <lightning-record-edit-form object-api-name={objectApiName} onsubmit={handleSubmit} onsuccess={handleSuccess}>
+        <lightning-messages> </lightning-messages>
+
+        <lightning-input-field field-name={callDateTimeField}></lightning-input-field>
+
+        <!-- <div class="slds-m-top_medium"></div> -->
+        <lightning-button variant="brand" type="submit" name="Save" label="Track Call 2"> </lightning-button>
+    </lightning-record-edit-form>
+
+    <template if:true={data}>
+        <!-- Using Infinite Scrolling to Load More Rows -->
+        <!-- isloading -->
+        <lightning-datatable key-field="Id" data={data} columns={columns} onrowaction={handleRowAction} onsave={handleSave} draft-values={draftValues} hide-checkbox-column>
+        </lightning-datatable>
+    </template>
+
+    <!-- <template if:true={data.error}> -->
+    <!-- handle Apex error -->
+    <!-- </template> -->
+
+    <!-- Appointment section -->
+    <!-- mgs
+    selected-rows={selectedRows}
+    default-sort-direction={defaultSortDirection}
+    sorted-direction={sortDirection}
+    sorted-by={sortedBy}
+    onsort={handleSort} -->
+    <!-- <template if:true={showApts}>
+        <lightning-datatable
+            key-field="key"
+            data={appointmentList}
+            columns={columns}
+            onrowaction={handleRowClick}
+            hide-checkbox-column
+        >
+        </lightning-datatable>
+    </template>
+     -->
+    <!-- <template if:true={showApts}>
+        <c-vcc-modal prevent-close={formLoading} title="Add Associated Appointment To Progress Note" size="medium" onescape={handleEscape}
+            onenter={submit}>
+            <div>
+                <lightning-card class="slds-p-around_medium">
+                    <h2 slot="title" if:true={records.length}> Appointments ({records.length})</h2>
+                    <lightning-button-group slot="actions">
+                        <lightning-button disabled={formLoading} label="Add Selected" onclick={handleAddSelected}>
+                        </lightning-button>
+                        <lightning-button disabled={formLoading} label="Add All" onclick={handleAddAll} variant="brand">
+                        </lightning-button>
+                    </lightning-button-group>
+
+                    <div style="height: 280px" class="slds-scrollable">
+                        <lightning-datatable data={tableData} columns={columns} key-field="key"
+                            sorted-direction={sortDirection} sorted-by={sortedBy} onsort={handleSort}
+                            selected-rows={selectedRows} onrowselection={handleRowSelected}
+                            enable-infinite-loading={enableInfiniteLoading} onloadmore={handleLoadMore}
+                            load-more-offset="40">
+                        </lightning-datatable>
+                    </div>
+
+                    <lightning-spinner alternative-text="Loading records..." if:true={tableLoading}></lightning-spinner>
+                </lightning-card>
+            </div>
+
+            <lightning-button variant="brand" slot="footer" label="Submit" onclick={submit}></lightning-button>
+        </c-vcc-modal>
+    </template> -->
+</template>

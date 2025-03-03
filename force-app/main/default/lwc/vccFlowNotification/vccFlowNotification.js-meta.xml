@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Flow Notification</masterLabel>
+    <targets>
+        <target>lightning__FlowScreen</target>
+        <target>lightning__RecordAction</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="title" label="Title" type="String" role="inputOnly" />
+            <property name="message" label="Message Text" type="String" role="inputOnly" />
+            <property name="urlLabel" label="Message Url Label" type="String" role="inputOnly" />
+            <property name="variant" label="Variant" type="String" role="inputOnly" description="Possible values: error, success, info, warning" />
+            <property name="mode" label="Mode" type="String" role="inputOnly" default="dismissible" description="Possible values: dismissible, pester, sticky" />
+            <property name="recordId" label="Object Record Id" type="String" role="inputOnly" />
+            <property name="delay" label="Delay" type="Integer" role="inputOnly" description="Time in milli seconds If you want the delay to display the toast." />
+            <property name="triggerNavigationNextEvent" label="Triggers Next Navigation" type="Boolean" role="inputOnly" />
+            <property
+                name="flowAvaliableActions"
+                label="Available Navigation Type"
+                type="String"
+                role="inputOnly"
+                description="Possible values: next and/or finish (i.e. next, finish)"
+            />
+            <property name="messageChannel" label="Message Channel" type="String" role="inputOnly" />
+            <property name="messageJSON" label="Message JSON" type="String" role="inputOnly" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

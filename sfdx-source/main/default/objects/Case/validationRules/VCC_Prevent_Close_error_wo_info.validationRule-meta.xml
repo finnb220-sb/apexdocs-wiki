@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Prevent_Close_error_wo_info</fullName>
+    <active>true</active>
+    <description>Users cannot select status Opened in Error a case and Error Details as Other if the Other Error Description field is blank</description>
+    <errorConditionFormula>BEGINS( RecordType.DeveloperName, &quot;VCC_&quot;)
+&amp;&amp;
+!$Permission.DisableTriggersFlag
+&amp;&amp;
+
+
+ISCHANGED(Status) &amp;&amp;
+ISPICKVAL(Status, &quot;Opened in Error&quot;)
+
+&amp;&amp;
+ISPICKVAL(VCC_Opened_in_Error__c, &quot;Other&quot;)
+
+&amp;&amp;
+ISBLANK(  VCC_Other_Information__c ) 
+
+&amp;&amp; VCC_Progress_Notes_Count__c &lt;1
+
+&amp;&amp;
+!$Permission.VCC_Disable_Case_Validation_Rules</errorConditionFormula>
+    <errorMessage>ERROR: The Error Status Details field cannot be blank.</errorMessage>
+</ValidationRule>

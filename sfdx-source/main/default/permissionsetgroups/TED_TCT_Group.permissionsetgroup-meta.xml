@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>PSG for TCT Persona. Holds the TCT Permission set and basic other permissions for general use of Tele-EC Tracker and TCT use</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Tele-EC TCT Group</label>
+    <permissionSets>Accounts_Tab_Salesforce</permissionSets>
+    <permissionSets>LoggerEndUser</permissionSets>
+    <permissionSets>LoggerLogCreator</permissionSets>
+    <permissionSets>Tele_EC_Apex_Class</permissionSets>
+    <permissionSets>Tele_EC_Escalation_Status_Access_CRE</permissionSets>
+    <permissionSets>Tele_EC_Order_Component</permissionSets>
+    <permissionSets>Tele_EC_Platform_Events</permissionSets>
+    <permissionSets>Tele_EC_TCT_User</permissionSets>
+    <permissionSets>Tele_EC_TCT_and_RO_addition</permissionSets>
+    <permissionSets>VAF_Base_User</permissionSets>
+    <permissionSets>VAHC_eGain_Permission_Set</permissionSets>
+    <permissionSets>VCC_VAHC_E911_User</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

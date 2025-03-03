@@ -1,0 +1,32 @@
+{
+    "values": [
+        {
+            "label": "Prospect",
+            "value": "Prospect"
+        },
+        {
+            "label": "Customer - Direct",
+            "value": "Customer - Direct"
+        },
+        {
+            "label": "Customer - Channel",
+            "value": "Customer - Channel"
+        },
+        {
+            "label": "Channel Partner / Reseller",
+            "value": "Channel Partner / Reseller"
+        },
+        {
+            "label": "Installation Partner",
+            "value": "Installation Partner"
+        },
+        {
+            "label": "Technology Partner",
+            "value": "Technology Partner"
+        },
+        {
+            "label": "Other",
+            "value": "Other"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Prevent_Clsd_Error_Progress_Note</fullName>
+    <active>true</active>
+    <description>As a VAHC user, I need to be prevented from using the Opened in Error status when the Case has an existing Progress Note.</description>
+    <errorConditionFormula>BEGINS( RecordType.DeveloperName, &quot;VCC_&quot;)
+&amp;&amp;
+!$Permission.DisableTriggersFlag
+&amp;&amp;
+
+
+ISCHANGED(Status) 
+&amp;&amp;
+ISPICKVAL(Status, &quot;Opened in Error&quot;)
+&amp;&amp;
+VCC_Progress_Notes_Count__c &gt; 0
+&amp;&amp;
+!$Permission.VCC_Disable_Case_Validation_Rules</errorConditionFormula>
+    <errorMessage>ERROR: You cannot set the status to &quot;Opened in Error&quot; when there is a related Progress Note. Please choose either the &quot;Closed - Transferred&quot; or &quot;Closed - Resolved&quot; option to close the case.</errorMessage>
+</ValidationRule>

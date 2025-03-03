@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Patient_will_call_back_if_symptoms_w__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Patient will call back if symptoms worsen or fail to improve over 48 hours; emergency department warnings reviewed. True if medical practitioner reviewed emergency
+        department warnings during virtual visit</description>
+    <externalId>false</externalId>
+    <inlineHelpText
+    >Patient will call back if symptoms worsen or fail to improve over 48 hours; emergency department warnings reviewed. True if medical practitioner reviewed emergency
+        department warnings during virtual visit</inlineHelpText>
+    <label>Patient will call back if symptoms worse</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

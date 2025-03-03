@@ -1,0 +1,1563 @@
+{
+    "sites": [
+        {
+            "apiVersion": "1.01",
+            "params": {
+                "domain": "TEST.MARTINSBURG.MED.VA.GOV",
+                "systemId": "9ABC"
+            },
+            "data": {
+                "updated": "20210730093631",
+                "totalItems": "24",
+                "items": [
+                    {
+                        "documentClass": "DISCHARGE SUMMARY",
+                        "documentTypeCode": "DS",
+                        "documentTypeName": "Discharge Summary",
+                        "encounterName": "6A_DET Jun 08, 2000",
+                        "encounterUid": "urn:va:visit:9ABC:33183:2759641",
+                        "entered": "20000613151148",
+                        "facilityCode": "613",
+                        "facilityName": "MARTINSBURG VAMC",
+                        "localId": "806939",
+                        "localTitle": "Discharge Summary",
+                        "nationalTitle": {
+                            "title": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4693715"
+                        },
+                        "nationalTitleType": {
+                            "type": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4696112"
+                        },
+                        "referenceDateTime": "20000612083640",
+                        "statusName": "completed",
+                        "text": [
+                            {
+                                "clinicians": [
+                                    {
+                                        "name": "MULLINIX,RANDY L",
+                                        "role": "A",
+                                        "uid": "urn:va:user:9ABC:533"
+                                    },
+                                    {
+                                        "name": "WELLS,HAWEY A JR",
+                                        "role": "S",
+                                        "uid": "urn:va:user:9ABC:2747",
+                                        "signature": "HAWEY A. WELLS JR DOM PHYSICIAN",
+                                        "signedDateTime": "20000620074803"
+                                    },
+                                    {
+                                        "name": "WELLS,HAWEY A JR",
+                                        "role": "C",
+                                        "uid": "urn:va:user:9ABC:2747",
+                                        "signature": "HAWEY A. WELLS JR DOM PHYSICIAN",
+                                        "signedDateTime": "20000620074803"
+                                    },
+                                    {
+                                        "name": "WELLS,HAWEY A JR",
+                                        "role": "X",
+                                        "uid": "urn:va:user:9ABC:2747"
+                                    }
+                                ],
+                                "content": "DISCHARGE DIAGNOSES:\r\nAXIS I.      Acute alcohol intoxication.\r\n             Alcohol dependence.\r\nAXIS II.     Borderline personality disorder.\r\nAXIS III.    Chronic hepatitis C.\r\nAXIS IV.     Problems with housing.\r\n             Problems with occupation.\r\n             Problems with primary support.\r\nAXIS V.      Global assessment of functioning on admission, 40; \r\n             Current 44.\r\n \r\nSUBJECTIVE FINDINGS:\r\nThis is one of multiple admissions for Mr. Striplin.  The last several\r\nhave been to Psychiatry.  He just left the Homeless Program on the 1st of\r\nJune.  Got his check.  Went out and got a hotel and began drinking.  Comes\r\nin with a breath alcohol of .3.  Denies any legal problems.  Is now\r\nhomeless again.\r\n \r\nOBJECTIVE FINDINGS:\r\nHis physical examination is not significantly changed from his exam less\r\nthan a month ago.  \r\n \r\nLaboratory is unremarkable.\r\n \r\nHOSPITAL COURSE:\r\nThe patient was admitted with a BA of .30.  He is detoxified in the usual\r\nand customary manner.  Denies any homicidal or suicidal thoughts.  He is\r\nbegun back on his medications which consist of hydroxyzine 50 qhs, Prozac\r\n20 mg q daily, Risperidone 2 mg twice daily.  He has had an unremarkable\r\ndetox.  He is set up for discharge on the 12th of June.  At the time of\r\ndischarge he stated that he wanted to go back to the Homeless Program.  I\r\nadvised him that he can place a packet for himself as an outpatient and he\r\ncan go down and talk to them about that.  He is discharged in good\r\ncondition to keep his follow up appointments with Psychiatry and to follow\r\nup with Dr. Wells at his next available appointment in clinic.\r\n \r\n \r\nss d: 06/13/00; t: 06/13/00\r\n",
+                                "dateTime": "20000612083640",
+                                "status": "completed",
+                                "uid": "urn:va:document:9ABC:33183:806939"
+                            },
+                            {
+                                "clinicians": [
+                                    {
+                                        "name": "SANTOS,GRACIA Z",
+                                        "role": "A",
+                                        "uid": "urn:va:user:9ABC:560"
+                                    }
+                                ],
+                                "content": " You may not PRINT this UNRELEASED Addendum.\r\n",
+                                "dateTime": "20000612083640",
+                                "status": "UNRELEASED",
+                                "uid": "urn:va:document:9ABC:33183:813845"
+                            }
+                        ],
+                        "uid": "urn:va:document:9ABC:33183:806939",
+                        "nationalTitleSubject": {},
+                        "nationalTitleService": {},
+                        "nationalTitleRole": {},
+                        "nationalTitleSetting": {},
+                        "urgency": "routine",
+                        "attendingName": "WELLS,HAWEY A JR",
+                        "attendingUid": "urn:va:user:9ABC:2747"
+                    },
+                    {
+                        "documentClass": "DISCHARGE SUMMARY",
+                        "documentTypeCode": "DS",
+                        "documentTypeName": "Discharge Summary",
+                        "encounterName": "D_PODHP May 17, 2000",
+                        "encounterUid": "urn:va:visit:9ABC:33183:2706838",
+                        "entered": "20000619075547",
+                        "facilityCode": "613",
+                        "facilityName": "MARTINSBURG VAMC",
+                        "localId": "813849",
+                        "localTitle": "Discharge Summary",
+                        "nationalTitle": {
+                            "title": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4693715"
+                        },
+                       "nationalTitleType": {
+                            "type": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4696112"
+                        },
+                        "referenceDateTime": "200006011500",
+                        "statusName": "completed",
+                        "text": [
+                            {
+                                "clinicians": [
+                                    {
+                                        "name": "SANTOS,GRACIA Z",
+                                        "role": "A",
+                                        "uid": "urn:va:user:9ABC:560"
+                                    },
+                                    {
+                                        "name": "SANTOS,GRACIA Z",
+                                        "role": "S",
+                                        "uid": "urn:va:user:9ABC:560",
+                                        "signature": "GRACIA Z. SANTOS M.D.",
+                                        "signedDateTime": "20000619172303"
+                                    },
+                                    {
+                                        "name": "SANTOS,GRACIA Z",
+                                        "role": "X",
+                                        "uid": "urn:va:user:9ABC:560"
+                                    }
+                                ],
+                                "content": "FINAL DIAGNOSES:\r\nAXIS I.  Alcohol dependence.\r\nHistory of opiate abuse.\r\nAXIS II.  Borderline personality disorder.\r\nAXIS III.  Chronic hepatitis-C.\r\nThrombocytopenia.\r\nPulmonary fibrosis.\r\nAXIS IV.  Homelessness, level 3.\r\nAXIX V.  Global assessment of functioning score, 35.\r\n \r\n \r\n \r\n \r\n \r\n \r\nSUBJECTIVE:  This is a 46-year-old white male, transferred from Acute\r\nPsychiatry to the Homeless program on 5/17/00.  He has a long history of\r\npolysubstance abuse, borderline personality disorder.  He has had numerous\r\nhospitalizations in this facility to Psychiatry, Detox., Rehab. And\r\nDomiciliary for the past six years.  He has a history of Hepatitis-C\r\ndiagnosed in 1995.  He was not felt to be a good candidate when seen in\r\nthe D.C. VA for therapy.  He had also been told that he had an enlarged\r\nheart and labile hypertension.  History of compression fractures of the\r\nneck.  He has also had tonsillectomy in childhood.  He has used heroin.\r\nHis last use was two months ago.  He denies cocaine dependence.  He was\r\ndetoxed from Dilaudid two months ago in Key West.  He is a smoker, one\r\npack per day.  \r\n \r\nOBJECTIVE:  He was a well-developed, well-nourished white male, in no\r\nacute distress.  Drums were obscured by cerumen bilaterally.  Chest and\r\nlungs were within normal limits.  The rest of his exam was essentially\r\nunremarkable.  On admission to Homeless, his platelets were low at 48,000,\r\nwith a white count of 2,500.  Two weeks later, this improved, with\r\nplatelets of 76,000, and a white count of 4,800.  Hemoglobin and\r\nhematocrit, normal.  Urinalysis was normal.  He had a UTI, recently\r\ntreated.  His BUN and creatinine was normal.  His sodium was slightly high\r\nat 147.  His SMA12 in Psychiatry was essentially normal, except for an AST\r\nof 75.  Thyroid was 2.296, within normal.  He had an AST which was 2.2.\r\nCRNA was positive on this admission.  Chest X-ray done in Acute Psychiatry\r\nshowed fibrosis, with pleural thickening.  EKG showed left ventricular\r\nhypertrophy.  There was no significant change from an EKG of November,\r\n1998.\r\n \r\nDOMICILIARY COURSE:  the patient was admitted to the Homeless program, and\r\non admission, he signed the Domiciliary code of conduct, and the\r\nAbstainer'' contract.  he was seen by Nutrition, and had a Vocational\r\nassessment and social work assessment.  He was also seen by Dental during\r\nhis stay.  On 5/31, he came into the Clinic for follow-up, and improvement\r\nof Thrombocytopenia was noted.  He mentioned, at that time, that he would\r\nbe taking a discharge the following Friday.  He was apparently moving to\r\nFlorida the following Friday, after he received his check.  He has decided\r\nnot to finish the program.  He says that there is a Peacock program in Key\r\nWest, and he had been seen at the VA satellite Clinic at Key West in the\r\npast.  He would be planning to have his follow-up visits there.  At the\r\ntime of discharge, he was on the following medications:  Albuterol\r\nInhaler, two puffs, QID, Thiamin, 100, once a day, ibuprofen, 400 mg., Q8\r\nhours, Risperidone, two mg., BID, Hydroxyzine Pamoate, 75 mg., at bedtime,\r\nProzac, 20 mg., every day.  He was noted to be stable and competent, at\r\nthe time of discharge.  He has plans for follow-up care.  He was oriented.\r\n He was advised to continue a regular diet and regular activities, at the\r\ntime of discharge.\r\n \r\n \r\nSJ7\r\n",
+                                "dateTime": "200006011500",
+                                "status": "completed",
+                                "uid": "urn:va:document:9ABC:33183:813849"
+                            }
+                        ],
+                        "uid": "urn:va:document:9ABC:33183:813849",
+                        "nationalTitleSubject": {},
+                        "nationalTitleService": {},
+                        "nationalTitleRole": {},
+                        "nationalTitleSetting": {},
+                        "urgency": "routine",
+                        "attendingName": "SANTOS,GRACIA Z",
+                        "attendingUid": "urn:va:user:9ABC:560"
+                    },
+                    {
+                        "documentClass": "DISCHARGE SUMMARY",
+                        "documentTypeCode": "DS",
+                        "documentTypeName": "Discharge Summary",
+                        "encounterName": "4M May 06, 2000",
+                        "encounterUid": "urn:va:visit:9ABC:33183:2682230",
+                        "entered": "20000516131326",
+                        "facilityCode": "613",
+                        "facilityName": "MARTINSBURG VAMC",
+                        "localId": "769662",
+                        "localTitle": "Discharge Summary",
+                        "nationalTitle": {
+                            "title": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4693715"
+                        },
+                        "nationalTitleType": {
+                            "type": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4696112"
+                        },
+                        "referenceDateTime": "20000517124122",
+                        "statusName": "completed",
+                        "text": [
+                            {
+                                "clinicians": [
+                                    {
+                                        "name": "BYRD,HARMON G JR",
+                                        "role": "A",
+                                        "uid": "urn:va:user:9ABC:639"
+                                    },
+                                    {
+                                        "name": "ARASTU,KHUSRO Y",
+                                        "role": "S",
+                                        "uid": "urn:va:user:9ABC:6992",
+                                        "signature": "KHUSRO Y ARASTU PHYSICIAN",
+                                        "signedDateTime": "20000516151245"
+                                    },
+                                    {
+                                        "name": "ARASTU,KHUSRO Y",
+                                        "role": "C",
+                                        "uid": "urn:va:user:9ABC:6992",
+                                        "signature": "KHUSRO Y ARASTU PHYSICIAN",
+                                        "signedDateTime": "20000516151245"
+                                    },
+                                    {
+                                        "name": "ARASTU,KHUSRO Y",
+                                        "role": "X",
+                                        "uid": "urn:va:user:9ABC:6992"
+                                    }
+                                ],
+                                "content": "DIAGNOSES:\r\nAXIS I.        Alcohol dependence and opiate abuse.\r\nAXIS II.       Borderline personality disorder.\r\nAXIS III.      Chronic hepatitis C.\r\nAXIS IV.       No diagnosis.\r\nAXIS V.        Global assessment of functioning admission, 35.\r\n \r\nPROCEDURES:\r\nGroup therapy.\r\n \r\nSUBJECTIVE:\r\nMr. Striplin is a 46-year-old male white who presents with a chief\r\ncomplaint of \"I freaked out\".  This man has a long history of substance\r\ndependence and borderline personality disorder.  He has had over twenty\r\nadmission to 6A in the past six years for alcohol detoxification, suicide\r\nattempts or suicidal thoughts.  He was hospitalized on 6A in July of 98.\r\nAt that time he was suicidal because he was facing a prison sentence.\r\nFollowing discharge from that admission he fled to Oklahoma but the bounty\r\nhunters found him and brought him back to West Virginia.  He then served\r\nsix months in the regional jail for driving on a suspended license.  After\r\nhe got out of prison he went to Key West where he ended up living the life\r\nof an alcoholic vagabond.  He spent some time in psychiatric facility\r\nthere before deciding to return to the Martinsburg area.  He was admitted\r\nto 6 A for reasons that were unclear about two and half weeks ago.  He was\r\nthen transferred to the substance abuse treatment program.  He left the\r\nDOM substance abuse program on the 1st day of May after he got his\r\nnon-service connected check.  He checked into a motel and began drinking\r\nand used some heroin.  He was apparently picked up on the streets by the\r\npolice and brought to the Emergency Room where he was found to be\r\ndehydrated and in need of a medical admission.  \r\n \r\nOBJECTIVE MENTAL STATUS EXAMINATION:\r\nThe patient presents as a tremulous white male.  Speech is coherent and\r\nnormal in tempo.  Affect is somewhat anxious but otherwise unremarkable.\r\nHe has a history of intermittent derogatory auditory hallucinations but\r\nnone recently.  He was admitted to \"wanting to die\" but has not had\r\nspecific suicidal plans.  He says that if he were discharged he would \"be\r\nskating on thin ice\".  Cognitive functions were not formally tested at\r\nthis time.  When tested on 6A he did serial 7s poorly and could not\r\nremember any of the three items after the serial 7s task.  He was able to\r\nrecount recent news events.  \r\n \r\nHOSPITAL COURSE:\r\nThe patient was admitted to the medical unit where he received IV therapy\r\nfor his dehydration and was seen on psychiatric consults.  He was\r\ntransferred to the Psychiatry Service where he has remained for several\r\ndays during which time he has participated in group therapy sessions.  He\r\nhas shown no evidence of suicidality although he at times attempts to use\r\nthat as a threat but shows no evidence of depression.  He is homeless and\r\nhas requested referral to the homeless program and as it is felt he is\r\nstable at this time his request was honored.  He has been accepted to the\r\nhomeless program and is being transferred to the same.  \r\n \r\nPLAN:\r\nMr. Striplin is to be discharged to the homeless program.  He is currently\r\non medications that include:  Hydroxyzine 75 mg qhs, multi-vitamins one\r\ntablet daily, thiamine 100 mg daily, fluoxetine 20 mg daily, Risperidone 2\r\nmg bid.  He is on a regular diet.  His condition is considered stable and\r\nhe is considered competent.\r\n \r\nss d: 05/15/00; t: 05/15/00\r\n",
+                                "dateTime": "20000517124122",
+                                "status": "completed",
+                                "uid": "urn:va:document:9ABC:33183:769662"
+                            }
+                        ],
+                        "uid": "urn:va:document:9ABC:33183:769662",
+                        "nationalTitleSubject": {},
+                        "nationalTitleService": {},
+                        "nationalTitleRole": {},
+                        "nationalTitleSetting": {},
+                        "urgency": "routine",
+                        "attendingName": "ARASTU,KHUSRO Y",
+                        "attendingUid": "urn:va:user:9ABC:6992"
+                    },
+                    {
+                        "documentClass": "DISCHARGE SUMMARY",
+                        "documentTypeCode": "DS",
+                        "documentTypeName": "Discharge Summary",
+                        "encounterName": "D_209AS Apr 28, 2000",
+                        "encounterUid": "urn:va:visit:9ABC:33183:2661994",
+                        "entered": "20000516134724",
+                        "facilityCode": "613",
+                        "facilityName": "MARTINSBURG VAMC",
+                        "localId": "769767",
+                        "localTitle": "Discharge Summary",
+                        "nationalTitle": {
+                            "title": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4693715"
+                        },
+                        "nationalTitleType": {
+                            "type": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4696112"
+                        },
+                        "referenceDateTime": "20000501114658",
+                        "statusName": "completed",
+                        "text": [
+                            {
+                                "clinicians": [
+                                    {
+                                        "name": "ALLISON,RICHARD A",
+                                        "role": "A",
+                                        "uid": "urn:va:user:9ABC:532"
+                                    },
+                                    {
+                                        "name": "WELLS,HAWEY A JR",
+                                        "role": "S",
+                                        "uid": "urn:va:user:9ABC:2747",
+                                        "signature": "HAWEY A. WELLS JR DOM PHYSICIAN",
+                                        "signedDateTime": "20000522144249"
+                                    },
+                                    {
+                                        "name": "WELLS,HAWEY A JR",
+                                        "role": "C",
+                                        "uid": "urn:va:user:9ABC:2747",
+                                        "signature": "HAWEY A. WELLS JR DOM PHYSICIAN",
+                                        "signedDateTime": "20000522144249"
+                                    },
+                                    {
+                                        "name": "WELLS,HAWEY A JR",
+                                        "role": "X",
+                                        "uid": "urn:va:user:9ABC:2747"
+                                    }
+                                ],
+                                "content": "DISCHARGE DIAGNOSES:\r\nAXIS I:    Alcohol dependence.\r\n           Bipolar disorder by history.\r\nAXIS II:   Borderline personality disorder.\r\nAXIS III:  Chronic hepatitis C.\r\nAXIS IV:   No diagnosis.\r\nAXIS V:    Global assessment of functioning on admission, 40; at \r\n            discharge 40.\r\n \r\nSUBJECTIVE:  Patient is 46-year-old white male who was referred from the\r\nDetox Unit for admission to PPEU.  He states his last drink was on 4/8/00\r\nand admits to a 12-pack of beer at that time.  He claims to have been\r\ndrinking for two weeks at this time.  He last smoked marijuana on 4/4/00\r\nand admits to just a few \"tokes\".  His last AA/NA attendance was for\r\n4/1/00.  He claims he has a sponsor but does not use him.  \r\n \r\nOBJECTIVE:  Patient was admitted for the Preprogram Evaluation Unit after\r\ndetoxification at this facility.   \r\n \r\nPHYSICAL EXAM:  Height 68\", weight 150 lbs, temperature 97.2, pulse 98,\r\nblood pressure 138/74, respirations 18.\r\nHEENT:  Pupils are equal.  He is edentulous.  He has cerumen occluded ear\r\ncanals. \r\nNECK:  He complains of pain in the neck due to an old injury.  \r\nCHEST:  Lungs are clear to A&P.  \r\nHEART:  There is a 2/6 murmur at the apex.  \r\nABDOMEN:  Bowel sounds are active.  Soft, tender liver palpable to the\r\numbilicus.  Spleen is also palpable.  \r\nGU:  Patient was recently treated for urinary tract infection.  \r\nEXTREMITIES:  Patient has mild tremors of the upper extremities.  \r\nSKIN:  Multiple tatoos on the upper extremities are noted. \r\n \r\nLAB DATA:  Laboratory studies were requested; however, they were not on\r\nthe chart at the time of dictation.  \r\n \r\nHOSPITAL COURSE:  Patient entered the Preprogram Evaluation Unit where he\r\nwas to attend individual and group counseling as well as maintenance for\r\nrecovery.  He came in on a Friday and left against medical advice on a\r\nMonday.  It should be noted that this patient's roommate reported to the\r\nstaff that the patient had told him that he was here for housing until he\r\nrecieved a check and then he was planning on leaving.  \r\n \r\nPatient was recently treated for urinary tract infection.  While on this\r\nunit, he was again given ciprofloxacin 500mg q12h.  He has a history of\r\nbipolar disorder and was maintained on his usual medications of hydroxyzin\r\n50mg two at bedtime, olanzopine 5mg one at bedtime.  A Psychiatry consult\r\nwas submitted for follow-up while in the Preprogram Evaluation Unit.  \r\n \r\nDISPOSITION:  Patient is being discharged against medical advice.\r\nPatient, apparently, packed his belongings and left without discussing\r\nwith staff.  While on the Ward, he tolerated a regular diet and may resume\r\nthe same upon discharge.  He is unemployed.  He may resume prehospital\r\nactivities upon discharge.  Patient cannot be considered competent to\r\nhandle funds if he continues to drink or use drugs.  \r\n \r\nkmp     D: 5/19/00      T: 5/22/00\r\n",
+                                "dateTime": "20000501114658",
+                                "status": "completed",
+                                "uid": "urn:va:document:9ABC:33183:769767"
+                            }
+                        ],
+                        "uid": "urn:va:document:9ABC:33183:769767",
+                        "nationalTitleSubject": {},
+                        "nationalTitleService": {},
+                        "nationalTitleRole": {},
+                        "nationalTitleSetting": {},
+                        "urgency": "routine",
+                        "attendingName": "WELLS,HAWEY A JR",
+                        "attendingUid": "urn:va:user:9ABC:2747"
+                    },
+                    {
+                        "documentClass": "DISCHARGE SUMMARY",
+                        "documentTypeCode": "DS",
+                        "documentTypeName": "Discharge Summary",
+                        "encounterName": "6A_PSYCH Apr 20, 2000",
+                        "encounterUid": "urn:va:visit:9ABC:33183:2645161",
+                        "entered": "20000427080048",
+                        "facilityCode": "613",
+                        "facilityName": "MARTINSBURG VAMC",
+                        "localId": "744383",
+                        "localTitle": "Discharge Summary",
+                        "nationalTitle": {
+                            "title": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4693715"
+                        },
+                        "nationalTitleType": {
+                            "type": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4696112"
+                        },
+                        "referenceDateTime": "20000428083122",
+                        "statusName": "completed",
+                        "text": [
+                            {
+                                "clinicians": [
+                                    {
+                                        "name": "BYRD,HARMON G JR",
+                                        "role": "A",
+                                        "uid": "urn:va:user:9ABC:639"
+                                    },
+                                    {
+                                        "name": "HILL,JAMES H",
+                                        "role": "S",
+                                        "uid": "urn:va:user:9ABC:3004",
+                                        "signature": "JAMES H HILL staff psychiatrist",
+                                        "signedDateTime": "20000427142631"
+                                    },
+                                    {
+                                        "name": "HILL,JAMES H",
+                                        "role": "C",
+                                        "uid": "urn:va:user:9ABC:3004",
+                                        "signature": "JAMES H HILL staff psychiatrist",
+                                        "signedDateTime": "20000427142631"
+                                    },
+                                    {
+                                        "name": "HILL,JAMES H",
+                                        "role": "X",
+                                        "uid": "urn:va:user:9ABC:3004"
+                                    }
+                                ],
+                                "content": "DIAGNOSES:\r\n \r\nAXIS I:    Alcohol dependence.\r\n           Bipolar disorder by history.\r\nAXIS II:   Borderline personality disorder.\r\nAXIS III:  Acute urinary tract infection.\r\n           Chronic Hepatitis C.\r\nAXIS IV:   No diagnosis.\r\nAXIS V:    Global assessment of functioning on admission 40.\r\n \r\n \r\nSUBJECTIVE:  Mr. Striplin is a 46-year-old separated white male presents\r\nwith a chief complaint of \"I have been out of control\".  This man has had\r\napproximately twenty admissions to 6A in the past six years for alcohol\r\ndetoxification, suicide attempts with suicidal thoughts.  In the past, he\r\nhas called the Mental Hygiene Clinic in an intoxicated state, threatening\r\nto shoot himself.  He was lost hospitalized on 6A in July 1998.  At that\r\ntime, he was suicidal because he was facing a prison sentence.  Following\r\ndischarge from admission, he fled to Oklahoma, but the bounty hunters\r\nfound him and brought him back to West Virginia.  He then served six\r\nmonths in the Regional Jail for driving on a suspended license.  His\r\nlicense has been suspended because of DWI offenses.  After he got out of\r\nprison, he went to Key West where he essentially lived a life of an\r\nalcohol vagabound.  He ended up sleeping on the streets.  He was robbed\r\nseveral times.  He had severals admissions to a Psychiatric facility down\r\nthere for reasons which are unclear.  He said that he had trouble\r\ncontrolling his temper and was frequently angry, fighting and suicidal as\r\nwell as drinking.  He left there two days ago and came back to Martinsburg\r\nwith the intent of entering alcohol rehab.  He says that while he was in\r\nWest Palm Beach, he was treated with a variety of medications including\r\nDepakote which caused is white count to drop.  \r\n \r\nPAST MEDICAL HISTORY:  The patient has chronic Hepatitis C.\r\n \r\nSOCIAL HISTORY:  He lives on a nonservice connected pension.\r\n \r\nOBJECTIVE:  Mental Status Examination:  The patient presents as a poorly\r\ngroomed white male, speech is coherent and normal in tempo.  Motor\r\nbehavior is unremarkable.  Affect appears euthymic at this time.  He\r\nadmits to occasional auditory hallucinations.  These apparently have been\r\npresent for many years and are sometimes derogatory.  On cognitive\r\nfunction testing, he was oriented in all three spheres.  Immediate recall\r\nof three items was intact.  He did poorly on serial sevens and was unable\r\nto remember any of the three items after the serial sevens passed.  He was\r\nable to recount recent events in the news.\r\n \r\nLABORATORY TESTS:  Includes a CBC which shows an elevated lymphs and\r\nmonos, repeat is within normal limits, urinalysis shows initially 16-20\r\nWBC with 3+ bacteria and 0-1 RBC, a repeat shows an increase in WBC to\r\n60-65 with 2+ bacteria, SMA 12 shows an elevated GGT of 499, otherwise is\r\nessentially normal, RPR is nonreactive, a urine for drug screening shows\r\nno drugs of abuse.\r\n \r\nASSESSMENT:  Alcohol dependent.\r\n             Bipolar disorder by history.\r\n             Borderline personality disorder.\r\n             Acute urinary tract infection.\r\n             Chronic Hepatitis C.\r\n \r\nHOSPITAL COURSE:  Mr. Striplin was admitted to the Psychiatric Service\r\nwhere he was placed on Lorazepam for a possible withdraw, he was also\r\nstarted on Olanzapine and Hydroxyzine and after several days of\r\nobservation, the Olanzapine was increased.  Because of his urinary tract\r\ninfection, he was also started on Cipro.  He was referred to the Urology\r\nService who recommended that the Cipro be increased to 500 mg q12h for ten\r\ndays.  Mr. Striplin appears to be stable on his psychotropic medications,\r\nhe has been referred to the substance abuse program and accepted for the\r\nPre Program Group.\r\n \r\nPLAN:  Mr. Striplin is to be discharged to the Pre Program Group, he is\r\ncurrently on Cipro 500 mg q12h to last through May 6, at which point a\r\nrepeat urinalysis should be done.  He is also on multivitamins one tablet\r\ndaily, Thiamine 100 mg daily, Hydroxyzine 50 mg qhs, Olanzapine 5 mg qhs.\r\nHe is on a regular no salt added diet, his condition is considered stable,\r\nhe is considered competent.\r\n \r\n \r\n \r\ncdm\r\nd: 04/26/00\r\nt: 04/27/00\r\n",
+                                "dateTime": "20000428083122",
+                                "status": "completed",
+                                "uid": "urn:va:document:9ABC:33183:744383"
+                            }
+                        ],
+                        "uid": "urn:va:document:9ABC:33183:744383",
+                        "nationalTitleSubject": {},
+                        "nationalTitleService": {},
+                        "nationalTitleRole": {},
+                        "nationalTitleSetting": {},
+                        "urgency": "routine",
+                        "attendingName": "HILL,JAMES H",
+                        "attendingUid": "urn:va:user:9ABC:3004"
+                    },
+                    {
+                        "documentClass": "DISCHARGE SUMMARY",
+                        "documentTypeCode": "DS",
+                        "documentTypeName": "Discharge Summary",
+                        "encounterName": "6A_PSYCH Jul 15, 1998",
+                        "encounterUid": "urn:va:visit:9ABC:33183:1256024",
+                        "entered": "19980727140504",
+                        "facilityCode": "613",
+                        "facilityName": "MARTINSBURG VAMC",
+                        "localId": "239380",
+                        "localTitle": "Discharge Summary",
+                        "nationalTitle": {
+                            "title": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4693715"
+                        },
+                        "nationalTitleType": {
+                            "type": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4696112"
+                        },
+                        "referenceDateTime": "19980721180511",
+                        "statusName": "completed",
+                        "text": [
+                            {
+                                "clinicians": [
+                                    {
+                                        "name": "BYRD,HARMON G JR",
+                                        "role": "A",
+                                        "uid": "urn:va:user:9ABC:639"
+                                    },
+                                    {
+                                        "name": "HILL,JAMES H",
+                                        "role": "S",
+                                        "uid": "urn:va:user:9ABC:3004",
+                                        "signature": "JAMES H HILL staff psychiatrist",
+                                        "signedDateTime": "19980728124156"
+                                    },
+                                    {
+                                        "name": "HILL,JAMES H",
+                                        "role": "C",
+                                        "uid": "urn:va:user:9ABC:3004",
+                                        "signature": "JAMES H HILL staff psychiatrist",
+                                        "signedDateTime": "19980728124156"
+                                    },
+                                    {
+                                        "name": "HILL,JAMES H",
+                                        "role": "X",
+                                        "uid": "urn:va:user:9ABC:3004"
+                                    }
+                                ],
+                                "content": "DIAGNOSIS: \r\n \r\nAXIS I:    Alcohol dependence and alcohol withdrawal.\r\n           Bipolar disorder, by history.\r\nAXIS II:   Borderline personality disorder.\r\nAXIS III:  Hepatitis C.\r\n           History of compression fracture, C6.\r\n           Possible coronary artery disease.\r\nAXIS IV:   No diagnosis.\r\nAXIS V:    Global assessment of functioning - past 48, admission 30.\r\n \r\n \r\n \r\nOPERATIONS/PROCEDURES:\r\n \r\nAlcohol detox on 7/15/98.\r\n \r\n \r\nSUBJECTIVE:  This patient had approximately 19 admissions to this hospital\r\nin the past 4 years for either alcohol detoxification, depression,\r\nsuicidal thoughts or suicidal threats.  He was last admitted from 5/28 to\r\n5/30 for alcohol detoxification.  At that point he had fallen and\r\nlacerated his head.  He had a detox admission from 5/15 to 5/18 and an\r\nadmission for suicidal thoughts from 4/9 to 4/20.  In the past year he\r\nadmitted to a history of auditory hallucinations that had been going on\r\nfor many years and was consequently started on Risperidone and was\r\nrecently changed to Olanzepine.  He had an arrest for driving while\r\nintoxicated on a suspended license several months ago.  His court case has\r\nrepeatedly been continued leaving the patient chronically on edge and\r\nanxious about his prospect for going to prison.  He is very fearful of\r\ngoing to prison and has threatened suicide if he is forced to go there.\r\nApparently he had a court hearing yesterday which he forgot about.\r\nInstead he was drinking all day yesterday.  He finally showed up in front\r\nof the migastrate this morning who continued the case again.  He came in\r\nto be seen unscheduled in the mental hygiene clinic this morning.  At that\r\ntime he was anxious and tremulous and admitted to drinking continuously\r\nfor at least the past 24 hrs.  He again said that he was prepared to make\r\na suicidal attempt at the migastrate had sent him to jail by overdosing on\r\nNitroglycerin tablets.  He was accordingly admitted to the hospital.  \r\n \r\nPAST MEDICAL HISTORY:  The patient has chronic hepatitis C in addition to\r\nalcoholic liver disease.  He has been diagnosed as having coronary artery\r\ndisease as mentioned he has an old compression fracture of C6.  He also\r\ncarries a diagnosis of bipolar disorder and describes manic episodes in\r\nthe past, although these have not been witnessed during the past 4 years.\r\nIn any event he does not take Lithium to prevent the manic episodes.\r\n \r\nSOCIAL HISTORY:  The patient currently lives alone.  He gets a small\r\nnonservice connected benefit and Social Security Disability.  \r\n \r\nOBJECTIVE:\r\nMental status examination - The patient presents as a thin depressed\r\ntremulous white male.  Speech is coherent and normal in tempo.  Motor\r\nbehavior is tense and tremulous.  Affect as indicated above is depressed\r\nand anxious.  He reinterated his intention to make a suicidal attempt if\r\nhe were forced to go to prison.  No apparent delusions were present.  He\r\nhas given a history of auditory hallucinations as indicated above.\r\nCognitive function testing was deferred, although the patient has not had\r\nany difficulty recalling details of his recent and remote history.  \r\n \r\nLABORATORY DATA:  CBC which shows an elevated MCH of 31.1, MPV of 12.3,\r\neosinophils 8.7, platelets are low at 100.  His urine shows 2+ mucous and\r\n4-5 WBC's, otherwise is normal.  His SMA 12 shows a total bilirubin\r\nelevation of 1.5 and AST of 82, GGT of 1,297.  RPR is nonreactive.\r\n \r\nASSESSMENT:  Alcohol dependence and alcohol withdrawal, bipolar disorder\r\nby history, borderline personality disorder, hepatitis C, history of\r\ncompression fracture of C6, possible coronary artery disease.\r\n \r\nHOSPITAL COURSE:  Mr. Striplin was admitted to the psychiatric service\r\nwhere he was detoxified with the use of Lithium.  He had an hypertensive\r\nepisode for which he was given a stat dose of Clonidine which was\r\neffective.  He remained here for several days during which time his\r\ncondition was stabilized and once he was completely detoxed he showed no\r\nevidence of depression.  At that point it was felt that he had reached\r\nmaximum hospital benefits and should be discharged to be followed in the\r\nmental hygiene clinic as well as in the medical clinic.\r\n \r\nPLAN:  Mr. Striplin was discharged OPT/NSC with follow-up appointment in\r\nthe mental hygiene clinic and the medical clinic as mentioned above.  At\r\nthe time of discharge he was on Albuterol 2 puffs q 6 hrs, Buspirone 20mg\r\nbid, Fluoxetine 40mg daily, Hydroxyzine 100mg q hs, Nitroglycerin 0.4mg SL\r\nprn for angina, Thiamine 100mg daily, Vitamin E 400 units bid, Lithium\r\n300mg in am and 600mg in pm, Clonidine 0.1mg in am and 0.5mg q hs.  He is\r\non a regular diet.  His condition is considered stable and he is\r\nconsidered competent.\r\n \r\n \r\ntls\r\n",
+                                "dateTime": "19980721180511",
+                                "status": "completed",
+                                "uid": "urn:va:document:9ABC:33183:239380"
+                            }
+                        ],
+                        "uid": "urn:va:document:9ABC:33183:239380",
+                        "nationalTitleSubject": {},
+                        "nationalTitleService": {},
+                        "nationalTitleRole": {},
+                        "nationalTitleSetting": {},
+                        "urgency": "routine",
+                        "attendingName": "HILL,JAMES H",
+                        "attendingUid": "urn:va:user:9ABC:3004"
+                    },
+                    {
+                        "documentClass": "DISCHARGE SUMMARY",
+                        "documentTypeCode": "DS",
+                        "documentTypeName": "Discharge Summary",
+                        "encounterName": "6A_DET May 15, 1998",
+                        "encounterUid": "urn:va:visit:9ABC:33183:1138482",
+                        "entered": "19980526111207",
+                        "facilityCode": "613",
+                        "facilityName": "MARTINSBURG VAMC",
+                        "localId": "220372",
+                        "localTitle": "Discharge Summary",
+                        "nationalTitle": {
+                            "title": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4693715"
+                        },
+                        "nationalTitleType": {
+                            "type": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4696112"
+                        },
+                        "referenceDateTime": "19980518100133",
+                        "statusName": "completed",
+                        "text": [
+                            {
+                                "clinicians": [
+                                    {
+                                        "name": "MULLINIX,RANDY L",
+                                        "role": "A",
+                                        "uid": "urn:va:user:9ABC:533"
+                                    },
+                                    {
+                                        "name": "WELLS,HAWEY A JR",
+                                        "role": "S",
+                                        "uid": "urn:va:user:9ABC:2747",
+                                        "signature": "HAWEY A. WELLS JR DOM PHYSICIAN",
+                                        "signedDateTime": "19980608070458"
+                                    },
+                                    {
+                                        "name": "WELLS,HAWEY A JR",
+                                        "role": "C",
+                                        "uid": "urn:va:user:9ABC:2747",
+                                        "signature": "HAWEY A. WELLS JR DOM PHYSICIAN",
+                                        "signedDateTime": "19980608070458"
+                                    },
+                                    {
+                                        "name": "WELLS,HAWEY A JR",
+                                        "role": "X",
+                                        "uid": "urn:va:user:9ABC:2747"
+                                    }
+                                ],
+                                "content": "DIAGNOSIS: \r\nAXIS:    I.  Alcohol dependence; polydrug abuse - marijuana;\r\n             bipolar disorder with psychotic feataures, by\r\n             history.\r\n        II.  Borderline personality disorder, cluster personality \r\n             disorder features.\r\n       III.  Hepatitis C by history; compression fracture - C6;\r\n             coronary artery disease by history; hypertension by history; \r\n             chronic obstructive pulmonary disease by history.\r\n        IV.  Level 1\r\n         V.  Global assessment of function, 32, current 48\r\n \r\n \r\nOPERATIONS/PROCEDURES:\r\n \r\n \r\n \r\nSUBJECTIVE:  Mr. Striplin is admitted to the Detox. Unit on 05/15/98. He\r\nstates that he has been drinking for the past two weeks and had been\r\nthinking about killing himself with a shotgun.  He stated that he had put\r\na gun to his head this morning, but he could not pull the trigger so he\r\nthought he would come in here.  Last year on the 20th of 1998 at that time\r\nhe was on psychiatry.  Apparently, he has not been to any AAs since he\r\nleft.\r\n \r\nOBJECTIVE:  There are no significant changes in the objective findings on\r\nhim. An EKG revealed a sinus tach with some mild left ventricular\r\nhypertrophy.  There was some early repolarization.  There is no evidence\r\nof ischemia presently.  Blood gases revealed a pH of 7.64, PC02 18, P02\r\n112 and an 02 saturation of 99.  His urine for drugs revealed a\r\ncannabinoid level of 72.6 nanograms per dl.  SMA-6 and 12 revealed a GGT\r\nof 1344 and an AST of 90 with a total bilirubin of 1.7, a nonfasting\r\nglucose of 158. UA revealed two urobilinogen, trace of protein, negative\r\nglucose, 15 of keytones.  CBC revealed a WBC of 10.01, MCH of 31.1 with a\r\nplatelet count of 68,000; a MPV of 11.4 with 80.9% neutrophils.\r\n \r\nHOSPITAL COURSE:  Mr. Striplin apparently had not been taking his\r\nmedications and was admitted to the Detox. Unit.  His BA at the time of\r\nadmisison was .05.  He was detoxified in the usual and customary manner\r\nand started back on his regular medications of Olanzapine, 10 mg qhs,\r\nFluoxetine, 20 mg qAM; Lithium, 300 mg qAM and 600 mg qPM and Albuterol\r\nInhaler.  He was continued on a low sodium, low cholesterol diet.  The\r\npatient had a rather uneventful detoxification and requested to be\r\ndischargd on the 18th of May.  He is discharged and he states that he has\r\nenough of his medications at home.  He is discharge in good condition.  We\r\nrecommended for him to get to AA and begin working a program of sobriety\r\nand get a sponsor.  \r\n \r\ndc\r\n",
+                                "dateTime": "19980518100133",
+                                "status": "completed",
+                                "uid": "urn:va:document:9ABC:33183:220372"
+                            }
+                        ],
+                        "uid": "urn:va:document:9ABC:33183:220372",
+                        "nationalTitleSubject": {},
+                        "nationalTitleService": {},
+                        "nationalTitleRole": {},
+                        "nationalTitleSetting": {},
+                        "urgency": "routine",
+                        "attendingName": "WELLS,HAWEY A JR",
+                        "attendingUid": "urn:va:user:9ABC:2747"
+                    },
+                    {
+                        "documentClass": "DISCHARGE SUMMARY",
+                        "documentTypeCode": "DS",
+                        "documentTypeName": "Discharge Summary",
+                        "encounterName": "6A_PSYCH Apr 09, 1998",
+                        "encounterUid": "urn:va:visit:9ABC:33183:1053282",
+                        "entered": "19980422103420",
+                        "facilityCode": "613",
+                        "facilityName": "MARTINSBURG VAMC",
+                        "localId": "209832",
+                        "localTitle": "Discharge Summary",
+                        "nationalTitle": {
+                            "title": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4693715"
+                        },
+                        "nationalTitleType": {
+                            "type": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4696112"
+                        },
+                        "referenceDateTime": "19980421101543",
+                        "statusName": "completed",
+                        "text": [
+                            {
+                                "clinicians": [
+                                    {
+                                        "name": "BYRD,HARMON G JR",
+                                        "role": "A",
+                                        "uid": "urn:va:user:9ABC:639"
+                                    },
+                                    {
+                                        "name": "HILL,JAMES H",
+                                        "role": "S",
+                                        "uid": "urn:va:user:9ABC:3004",
+                                        "signature": "JAMES H HILL staff psychiatrist",
+                                        "signedDateTime": "19990713103904"
+                                    },
+                                    {
+                                        "name": "HILL,JAMES H",
+                                        "role": "C",
+                                        "uid": "urn:va:user:9ABC:3004",
+                                        "signature": "JAMES H HILL staff psychiatrist",
+                                        "signedDateTime": "19990713103904"
+                                    },
+                                    {
+                                        "name": "HILL,JAMES H",
+                                        "role": "X",
+                                        "uid": "urn:va:user:9ABC:3004"
+                                    }
+                                ],
+                                "content": "DIAGNOSIS: \r\n \r\n  AXIS I   Alcohol dependence.\r\n           Bipolar disorder by history.\r\n AXIS II   Borderline personality disorder.\r\n           Cluster A personality disorder features.\r\nAXIS III   Hepatitis C.\r\n           Compression fracture C6.\r\n           Coronary artery disease.\r\n AXIS IV   Problems in the social environment. \r\n  AXIS V   Global assessment of function; past - unknown, present - 30.\r\n \r\nOPERATIONS/PROCEDURES:\r\n \r\n 1.  Alcohol detox 4/9/98.\r\n 2.  Group therapy 4/10/98.\r\n \r\nSUBJECTIVE:  Mr. Striplin is a 44-year-old divorced white male, who\r\npresents with a chief complaint of \"my nerves are shot\".  This patient has\r\nhad a total of 16 admissions to the hospital in the past 4 years for detox\r\nfrom alcohol, depression, suicidal thoughts, and suicidal threats.  He was\r\nadmitted in November 1997 for suicidal thoughts precipiated by a falling\r\nout with his girlfriend.  In December, his roommate of many years died. He\r\nwas admitted in mid-January of this year for alcoholism and alcohol\r\nintoxication.  He was admitted again on 2/3/98 after fighting with his new\r\nroommate.  At that time, he was brought in by ambulance.  While in the\r\nhospital, he was discovered to have a compression fracture of C6 that was\r\nfelt by the orthopedic consultant to be an old fracture.  Also during a\r\nrecent admission, he admitted to a history of many years of auditory\r\nhallucinations.  For that reason, he was started on Risperidone.  He was\r\nadmitted again in February of this year after he called saying that he was\r\nseriously considering suicide and was in an intoxicated state.  This time,\r\nhe reports that he was able to stay sober for about a week after leaving\r\nthe hospital.  Then several of his problems began to make him feelin\r\nincreasingly anxious.  His biggest worry that his social security\r\ndisability has been reviewed and he is afraid that he will lose it because\r\nof his alcoholism.  He was also recently upset by a quarrel with his\r\ngirlfriend,  She no longer talks to him.  In addition, he is facing a\r\nprobable prison sentence for driving on a suspended license.  The license\r\nwas suspended because of DWI.  He came in this time after holding a\r\nshotgun to his head and threatened to committ suicide.  He was persuaded\r\nby a friend to come to the hospital instead.  He again arrived in an\r\nintoxicated state.\r\n \r\nPAST MEDICAL HISTORY:  The patient has chronic hepatitis C in addition to\r\nalcoholic liver disease.  He also has been diagnosed as having CAD.  As\r\nmentioned, he has an old compression fracture of C6.  A brace has been\r\nprescribed, which he wears sporadically.  He also carries a diagnosis of\r\nbipolar disorder and describes manic episodes in the past, although these\r\nhave not been witnessed during the past 4 years.  In any event, he does\r\ntake lithium carbonate to prevent the manic episodes. \r\n \r\nSOCIAL HISTORY:  The patient currently lives alone.  He gets a small NSC\r\nbenefit and social security disability.\r\n \r\nOBJECTIVE:  Mental status examination; the patient presents as an unkept\r\ntremulous white male.  Affect is depressed and anxious.  He described\r\nhaving recent suicidal thoughts as indicated above.  He also reports\r\nauditory hallucinations.  The exact nature of these at present are\r\nunclear.  Cognitive funciton testing was deferred because the patient was\r\nin the middle of alcohol withdrawl.  He does appear alert and gully\r\noriented.  \r\n \r\nLABORATORY:  Serum lithium levels, which on admission, were less than 0.2.\r\nRepeat was 0.5.  RPR is non-reactive.  TSH is WNL.  SMA 12 shows a low BUN\r\nat 8, protein is elevated at 8.5, T bili 1.8, AST 168, SGPT 125, GGT\r\n2,529, LDH 637, otherwise normal.  CBC is WNL.  Urine for drug screening\r\nshows no drugs of abuse.  U/A is normal.\r\n \r\nASSESSMENT:  \r\n \r\n 1.  Alcohol dependence.\r\n 2.  Bipolar disorder by history.\r\n 3.  Borderline personality disorder.\r\n 4.  Cluster A personality disorder.  \r\n 5.  Hepatitis C compression fracture C6. \r\n 6.  Coronary artery disease.\r\n \r\nHOSPITAL COURSE:  Mr. Striplin was admitted to the psychiatric service,\r\nwhere he was detoxified with the use of librium.  After further\r\nassessment, he was continued on his previous medication.  He was started\r\non Olanzapine 5 mg qhs.  He remained on thsi medication for several days,\r\nduring which time his medications were reassessed and his Prozac was\r\nincreased, as well as his Olanzapine.  Mr. Striplin attended group therapy\r\nsessions on a regular basis and after several days, he was given of fward\r\nprivileges.  Mr. Striplin continued to have problems with irritability and\r\nwas easily agitated throughout his hospital stay.  There was no evidence\r\nof manic episodes or hallucinations during his stay.  Because of a\r\nquestion of possible tremors, he was placed on vitamin E.  After several\r\ndays of hospitalization, it was felt that he had reached MHB and could be\r\ndischarged and be followed on an outpatient basis.\r\n \r\nPLAN:  Mr. Stripline was discharged OPT-NSC with a follow-up appointment\r\nin the MHC with Dr. Hill.  At the time of discharge, he continued on\r\nAlbuterol inhaler 2 puffs q6hrs, Buspirone 10 mg tid, Prozac 40 mg qam,\r\nmultivitamin 1 TAB qd, Olanzapine 10 mg qhs, Thiamine 100 mg qd, vitamin E\r\n800 units bid, Vistaril 100 mg qhs, Lithium carbonate 300mg qam and 600 mg\r\nqhs.  Mr. Striplin is on a regular diet.  His condition is considered\r\nstable.  He is considered competent.  \r\n \r\n \r\ngo 4/22/98\r\n",
+                                "dateTime": "19980421101543",
+                                "status": "completed",
+                                "uid": "urn:va:document:9ABC:33183:209832"
+                            }
+                        ],
+                        "uid": "urn:va:document:9ABC:33183:209832",
+                        "nationalTitleSubject": {},
+                        "nationalTitleService": {},
+                        "nationalTitleRole": {},
+                        "nationalTitleSetting": {},
+                        "urgency": "routine",
+                        "attendingName": "HILL,JAMES H",
+                        "attendingUid": "urn:va:user:9ABC:3004"
+                    },
+                    {
+                        "documentClass": "DISCHARGE SUMMARY",
+                        "documentTypeCode": "DS",
+                        "documentTypeName": "Discharge Summary",
+                        "encounterName": "6A_PSYCH Feb 17, 1998",
+                        "encounterUid": "urn:va:visit:9ABC:33183:1045782",
+                        "entered": "19980302",
+                        "facilityCode": "613",
+                        "facilityName": "MARTINSBURG VAMC",
+                        "localId": "195427",
+                        "localTitle": "Discharge Summary",
+                        "nationalTitle": {
+                            "title": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4693715"
+                        },
+                        "nationalTitleType": {
+                            "type": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4696112"
+                        },
+                        "referenceDateTime": "19980224140003",
+                        "statusName": "completed",
+                        "text": [
+                            {
+                                "clinicians": [
+                                    {
+                                        "name": "BYRD,HARMON G JR",
+                                        "role": "A",
+                                        "uid": "urn:va:user:9ABC:639"
+                                    },
+                                    {
+                                        "name": "HILL,JAMES H",
+                                        "role": "S",
+                                        "uid": "urn:va:user:9ABC:3004",
+                                        "signature": "JAMES H HILL staff psychiatrist",
+                                        "signedDateTime": "19980302"
+                                    },
+                                    {
+                                        "name": "HILL,JAMES H",
+                                        "role": "C",
+                                        "uid": "urn:va:user:9ABC:3004",
+                                        "signature": "JAMES H HILL staff psychiatrist",
+                                        "signedDateTime": "19980302"
+                                    },
+                                    {
+                                        "name": "HILL,JAMES H",
+                                        "role": "X",
+                                        "uid": "urn:va:user:9ABC:3004"
+                                    }
+                                ],
+                                "content": "DIAGNOSES:\r\n \r\n  AXIS I.  Alcohol dependence.\r\n           Alcohol withdrawal.\r\n           Bipolar disorder, by history.\r\n AXIS II.  Borderline personality disorder.\r\nAXIS III.  Coronary artery disease, by history.\r\n           Chronic Hepatitis-C.\r\n           Compression fracture of C-6.\r\n AXIS IV.  Problems with the social environment.\r\n  AXIS V.  Global assessment of functioning, present, 35.\r\n \r\nPROCEDURES:\r\nGroup therapy.\r\n2/18/98.\r\n \r\nSUBJECTIVE:  This is a 44-year-old, divorced, white male, who\r\npresents himself with a chief complaint, \"I'm thinking seriously of\r\nkilling myself.\"  This patient has had multiple admissions to this\r\nhospital for depression, alcoholism, suicidal thoughts, and\r\nattempts.  He was admitted here in November, 1997, for suicidal\r\nthoughts, precipitated by a falling out with his girlfriend.  In\r\nDecember, his roommate of many years died.  This aggravated his\r\npsychiatric condition.  He was admitted in Mid-January of this year\r\nfor alcoholism and alcohol intoxication.  He was  admitted yet\r\nagain on 2/3/98, after fighting with his roommate.  At that time,\r\nhe was brought in by ambulance.  While in the hospital, he was\r\ndiscovered to have had a compression fracture of C6 that was felt\r\nby the Orthopedic consult to be old.  During a previous admission,\r\nhe admittted to a many-year history of auditory hallucinations and\r\nhad been started on Risperidone.  Today, he called Dr. Hill in the\r\nMental Hygiene Clinic, intoxicated, crying, and saying that he had\r\na bottle of pills, with which he was seriously considering suicide\r\nby overdose.  He was persuaded to call 911, and was again brought\r\nto the hospital by ambulance, in an intoxicated state.\r\n \r\nPAST MEDICAL HISTORY:  The patient had chronic hepatitis-C.  He has\r\nbeen diagnosed as having CAD.  He also has a compression fracture\r\nof C-6, as mentioned.\r\nSOCIAL HISTORY:  The patient is divorced.  He has not been employed\r\nfor several years.  He lives on a VA pension.\r\n \r\nOBJECTIVE:  Mental status examination:  The patient is oriented and\r\nalert, but inrtoxicated.  Further mental status testing was\r\ndeferred, pending the patient's detox. from alcohol.\r\n \r\nlaboratory tests included a CBC, which was within normal limits, a\r\nurinalysis, which is normal.  SMA12 showed an AST of 124; sgpt of\r\n90, and ggt of 1,236.  RPR is nonreactive.  Urine for drug\r\nscreening showed positivity for cannabinoids.\r\n \r\nASSESSMENT;  Alcohol dependence.  Alcohol withdrawal.  Bipolar\r\ndisorder, by history.  Borderline personality disorder.  CAD. \r\nChronic hepatitis-C.  Compression fracture, C-6.\r\n \r\nHOSPITAL COURSE:  Mr. Striplin was admitted to the Psychiatric\r\nService, where he was detoxified with the use of Librium.  He was\r\nreturned to his previous regimen of medications, to which\r\nRisperidone was increased to one mg., in the morning, and two mg.,\r\nat night.  After several days of hospitalization, during which\r\ntime, he attended Group Therapy sessions, and showed no problems,\r\nas far as depression, he was discharged.\r\n \r\nPLAN:  Mr. Striplin was discharged OPT-NSC, with a follow-up\r\nappointment in the Mental Hygiene Clinic.  At the time of\r\ndischarge, he continued on medications, which included Albuterol,\r\ntwo puffs, Q6 hours, Atenolol, 25 mg., daily, Fluoxatine, 20 mg.,\r\nQAM, Vistaril, 50 mg., QHS, Multivitamins, one tablet daily,\r\nRisperidone, one mg., QAM, and two mg. at night, Thiamine 100 mg.,\r\ndaily.  He is on a regular diet.  His condition is considered\r\nstable.  He is considered competent.\r\n \r\n \r\nSJ\r\n",
+                                "dateTime": "19980224140003",
+                                "status": "completed",
+                                "uid": "urn:va:document:9ABC:33183:195427"
+                            }
+                        ],
+                        "uid": "urn:va:document:9ABC:33183:195427",
+                        "nationalTitleSubject": {},
+                        "nationalTitleService": {},
+                        "nationalTitleRole": {},
+                        "nationalTitleSetting": {},
+                        "urgency": "routine",
+                        "attendingName": "HILL,JAMES H",
+                        "attendingUid": "urn:va:user:9ABC:3004"
+                    },
+                    {
+                        "documentClass": "DISCHARGE SUMMARY",
+                        "documentTypeCode": "DS",
+                        "documentTypeName": "Discharge Summary",
+                        "encounterName": "6A_PSYCH Feb 02, 1998",
+                        "encounterUid": "urn:va:visit:9ABC:33183:1045737",
+                        "entered": "19980226",
+                        "facilityCode": "613",
+                        "facilityName": "MARTINSBURG VAMC",
+                        "localId": "195383",
+                        "localTitle": "Discharge Summary",
+                        "nationalTitle": {
+                            "title": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4693715"
+                        },
+                        "nationalTitleType": {
+                            "type": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4696112"
+                        },
+                        "referenceDateTime": "19980209113649",
+                        "statusName": "amended",
+                        "text": [
+                            {
+                                "clinicians": [
+                                    {
+                                        "name": "BYRD,HARMON G JR",
+                                        "role": "A",
+                                        "uid": "urn:va:user:9ABC:639"
+                                    },
+                                    {
+                                        "name": "HILL,JAMES H",
+                                        "role": "S",
+                                        "uid": "urn:va:user:9ABC:3004",
+                                        "signature": "JAMES H HILL staff psychiatrist",
+                                        "signedDateTime": "19980226"
+                                    },
+                                    {
+                                        "name": "HILL,JAMES H",
+                                        "role": "C",
+                                        "uid": "urn:va:user:9ABC:3004",
+                                        "signature": "JAMES H HILL staff psychiatrist",
+                                        "signedDateTime": "19980226"
+                                    },
+                                    {
+                                        "name": "HILL,JAMES H",
+                                        "role": "X",
+                                        "uid": "urn:va:user:9ABC:3004"
+                                    }
+                                ],
+                                "content": "HARMON BYRD, PA-C.\r\nJAMES H. HILL, M.D.\r\n \r\nSTRIPPLIN, BRUCE\r\n560-94-7243\r\n \r\n2/17/98  2/25/98\r\n \r\n2/2/98\r\n2/9/98\r\n \r\nDIAGNOSES:\r\nAXIS I.  Alcohol dependence.\r\nAlcohol withdrawal.\r\nBipolar disorder, by history.\r\nAXIS II.  Borderline personality disorder.\r\nAXIS III.  Coronary artery disease, by history.\r\nChronic Hepatitis-C.\r\nC6 compression fracture.\r\nAXIS IV.  Problems in the social environment.\r\nAXIS V.  Global assessment of functioning, present, 35.\r\n \r\n \r\n \r\n \r\n \r\n \r\nOPERATIONS & PROCEDURES:\r\nGroup therapy.\r\n2/4/98.\r\nEchocardiogram.\r\n2/6/98.\r\n \r\nSUBJECTIVE:  This is a 44-year-old, divorced white male, who\r\npresents with a chief complaint, \"I got into a fight.\"  This man\r\nhas had multiple admissions to the hospital for alcoholism and\r\ndepression.  He has a history of multiple suicidal attempts, and\r\nadmissions for suicidal thoughts.  He was admitted here in November\r\nfor suicidal thoughts, precipitated by a falling out with his\r\ngirlfriend.  During the past month, he has been depressed, because\r\nof the death of a roommate, who has been with him for eight years. \r\nHe was admitted here on 1/14/98, with alcoholism, alcoholic\r\nintoxication, and depression.  This time, he was brought in by\r\nambulance, after getting into a fight with his roommate.  He said\r\nthat he called the police to remove the roommate, but they brought\r\nhim to the hospital by ambulance instead.  Apparently, the patient\r\nhad voiced a concern that he might have injured his neck.\r\n \r\nPAST MEDICAL HISTORY:  The patient has chronic hepatitis-C, and has\r\nbeen diagnosed as having CAD.  \r\n \r\nSOCIAL HISTORY:  The patient is divorced.  He has not been employed\r\nfor several years.  He lives on a VA pension.  \r\n \r\nOBJECTIVE:  Mental status examination:  The patient presents as a\r\ndisheveled white male, tremulous.  Speech is coherent, and normal\r\nin tempo.  Motor behavior shows evidence of alcohol withdrawal and\r\ntremulousness.  The patient admits to a long history of auditory\r\nhallucinations.  For this reason, he was placed on Risperidone\r\nduring his admission, but he has apparently not been taking it\r\nregularly.  Cognitive functioning was not formally tested, but he\r\nis fully oriented, at this time.\r\n \r\nLaboratory tests included an echocardiogram, which was normal; left\r\nventricle, normal mitral valve, without evidence of mitral valve\r\nprolapse.  Other laboratory tests include a CBC, which showed an\r\nelevated MCV of 94.3; MPV of 11.9, and neutrophils, 75%; otherwise,\r\nnormal.  His urinalysis is normal.  His SMA12 shows a low BUN of 8,\r\nand elevated protein of 8.7; AST, 133; otherwise, normal.  Lithium\r\nlevel, .6.  Urine for drug abuse showed positive for cannabinoids,\r\nat 41.1 NG per ml.  TSH is within normal limits.  X-rays of the\r\ncervical spine showed a compression fracture of c6, and chest X-ray\r\nshowed old granulomatous disease, with fibrosis in the left lower\r\nlobe, and pleural calcification.  No change from previous X-rays.\r\n \r\nASSESSMENT:  Alcohol dependence.  Alcohol withdrawal.  Bipolar\r\ndisorder, by history.  Borderline personality disorder, by history. \r\nCAD, by history.  Chronic Hepatitis-c.  c-6 compression fracture.\r\n \r\nHOSPITAL COURSE:  Mr. Stripplin was admittted to the Psychiatric\r\nService, where he was detoxified, with the use of Librium.  He was\r\nreferred to the Orthopedic Service, because of difficulty with\r\nrange of motion of his neck, X-rays being positive for compression\r\nfracture, which was six weeks old, and he was put in a four-post\r\ncervical brace.  He was continued on his previous regimen of\r\nmedications, and after several days of hospitalization, he denied\r\nthat he ever had any thoughts of suicide and requested a discharge.\r\n \r\nPLAN:  Mr. Stripplin was discharged OPT-NSC, with a follow-up in\r\nthe Mental Hygiene Clinic.  At the time of discharge, he was on\r\naspirin, 325 mg., daily, Atenolol, 25 mg., daily, Nitropatch, .1\r\nmg. per hour, applied in the morning and removed at night, Paxil,\r\n20 mg., daily, Albuterol oral inhaler, two puffs, QID, Lithium\r\nCarbonate, 300 mg., TID, Risperidone, one mg., Q12 hours.  He is on\r\na regular diet.  His condition is considered stable.  He is\r\nconsidered competent.\r\n \r\n \r\nsj\r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n   \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n   \r\n \r\n           \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n           \r\n \r\n \r\n \r\n",
+                                "dateTime": "19980209113649",
+                                "status": "amended",
+                                "uid": "urn:va:document:9ABC:33183:195383"
+                            }
+                        ],
+                        "uid": "urn:va:document:9ABC:33183:195383",
+                        "nationalTitleSubject": {},
+                        "nationalTitleService": {},
+                        "nationalTitleRole": {},
+                        "nationalTitleSetting": {},
+                        "urgency": "routine",
+                        "attendingName": "HILL,JAMES H",
+                        "attendingUid": "urn:va:user:9ABC:3004"
+                    },
+                    {
+                        "documentClass": "DISCHARGE SUMMARY",
+                        "documentTypeCode": "DS",
+                        "documentTypeName": "Discharge Summary",
+                        "encounterName": "6A_DET Jan 14, 1998",
+                        "encounterUid": "urn:va:visit:9ABC:33183:1045393",
+                        "entered": "19980127",
+                        "facilityCode": "613",
+                        "facilityName": "MARTINSBURG VAMC",
+                        "localId": "195036",
+                        "localTitle": "Discharge Summary",
+                        "nationalTitle": {
+                            "title": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4693715"
+                        },
+                        "nationalTitleType": {
+                            "type": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4696112"
+                        },
+                        "referenceDateTime": "19980120101250",
+                        "statusName": "completed",
+                        "text": [
+                            {
+                                "clinicians": [
+                                    {
+                                        "name": "MULLINIX,RANDY L",
+                                        "role": "A",
+                                        "uid": "urn:va:user:9ABC:533"
+                                    },
+                                    {
+                                        "name": "WELLS,HAWEY A JR",
+                                        "role": "S",
+                                        "uid": "urn:va:user:9ABC:2747",
+                                        "signature": "HAWEY A. WELLS JR DOM PHYSICIAN",
+                                        "signedDateTime": "19980127"
+                                    },
+                                    {
+                                        "name": "WELLS,HAWEY A JR",
+                                        "role": "C",
+                                        "uid": "urn:va:user:9ABC:2747",
+                                        "signature": "HAWEY A. WELLS JR DOM PHYSICIAN",
+                                        "signedDateTime": "19980127"
+                                    },
+                                    {
+                                        "name": "WELLS,HAWEY A JR",
+                                        "role": "X",
+                                        "uid": "urn:va:user:9ABC:2747"
+                                    }
+                                ],
+                                "content": "DIAGNOSIS:\r\nAXIS   I:      Alcohol dependent.\r\n               Polydrug dependent, marijuana.\r\n               Bipolar disorder.\r\nAXIS   II:     Personality disorder, unspecified.\r\nAXIS   III:    Coronary artery disease, by history.\r\nAXIS   IV:     Level one.\r\nAXIS   V:      Global assessment of functioning, past 38, currrent 60.\r\n \r\n \r\n \r\n \r\nOPERATIONS/PROCEDURES:\r\n \r\n \r\n \r\nSUBJECTIVE:   This is one of multiple admissions to the Detox Unit for Mr.\r\nStriplin.  He comes in intoxicated at this time.  He states he has not\r\nbeen taking his medicines and having thoughts of harming himself.  He is\r\nrequesting to be detoxed and to get started back on his medications.  \r\n \r\nOBJECTIVE:  Eyes - Injected bulbar conjunctiva bilaterally.  Chest -\r\nscattered inspiratory wheezes with a slight decrease in breath sounds at\r\nthe bilateral bases.  The liver is 4cm below the right costal margin and\r\ntender to deep palpation.  Extremities are without edema.  Skin reveals a\r\nmild superficial exfoliation of the palmar aspect of the hands.  \r\n \r\nLABORATORY DATA:    CBC reveals a platelet count of 92,000.  Lithium level\r\nis 0.4 on 1/19/98.  SMA-6 & 12 reveals a GGT of 930.  \r\n \r\nHOSPITAL COURSE:  Mr. Striplin is admitted to the Detox Unit on 1/13/98.\r\nHe is detoxified in the usual and customary manner.  He is started back on\r\nhis Albuterol inhaler 2 puffs q6h, ASA 325mg EC qd, Atenolol 25mg qhs,\r\nVistaril 50mg qhs, Lithium 300mg tid, NTG 0.4mg one SL prn for chest pain,\r\nPaxil 20mg qam and Risperidone 2mg qhs, and 1mg qam.  After being\r\ndetoxified in the usual and customary manner he was started back on his\r\nLithium.  His Lithium level came up to nearly therapeutic level.  He\r\nappeared much brighter.  He stated he was feeling very good.  He was\r\ncooperative and participated in all the group activities.  He is not\r\ninterested in our inpatient alcohol and drug program at this time.  He is\r\ndischarged out with all the aforementioned medications, but his only given\r\na weeks supply of the Risperidone and the Lithium.  He has been instructed\r\nto return to the Mental Health Clinic next week to have those\r\nre-evaluated and renewed.  We will obtain a Lithium level at that time.\r\nHe is discharged in good condition.  It was recommended that he attend AA\r\nand begin working a program of sobriety.  He is agreeable doing this and\r\nis discharged in good condition. \r\n \r\n \r\nmlc\r\n",
+                                "dateTime": "19980120101250",
+                                "status": "completed",
+                                "uid": "urn:va:document:9ABC:33183:195036"
+                            }
+                        ],
+                        "uid": "urn:va:document:9ABC:33183:195036",
+                        "nationalTitleSubject": {},
+                        "nationalTitleService": {},
+                        "nationalTitleRole": {},
+                        "nationalTitleSetting": {},
+                        "urgency": "routine",
+                        "attendingName": "WELLS,HAWEY A JR",
+                        "attendingUid": "urn:va:user:9ABC:2747"
+                    },
+                    {
+                        "documentClass": "DISCHARGE SUMMARY",
+                        "documentTypeCode": "DS",
+                        "documentTypeName": "Discharge Summary",
+                        "encounterName": "4M Dec 19, 1997",
+                        "encounterUid": "urn:va:visit:9ABC:33183:1045231",
+                        "entered": "19980112",
+                        "facilityCode": "613",
+                        "facilityName": "MARTINSBURG VAMC",
+                        "localId": "194877",
+                        "localTitle": "Discharge Summary",
+                        "nationalTitle": {
+                            "title": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4693715"
+                        },
+                        "nationalTitleType": {
+                            "type": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4696112"
+                        },
+                        "referenceDateTime": "19971222092034",
+                        "statusName": "completed",
+                        "text": [
+                            {
+                                "clinicians": [
+                                    {
+                                        "name": "HAMILTON,ALAN F",
+                                        "role": "A",
+                                        "uid": "urn:va:user:9ABC:918"
+                                    },
+                                    {
+                                        "name": "HAMILTON,ALAN F",
+                                        "role": "S",
+                                        "uid": "urn:va:user:9ABC:918",
+                                        "signature": "ALAN F HAMILTON M.D.",
+                                        "signedDateTime": "19980112"
+                                    },
+                                    {
+                                        "name": "HAMILTON,ALAN F",
+                                        "role": "C",
+                                        "uid": "urn:va:user:9ABC:918",
+                                        "signature": "ALAN F HAMILTON M.D.",
+                                        "signedDateTime": "19980112"
+                                    },
+                                    {
+                                        "name": "HAMILTON,ALAN F",
+                                        "role": "X",
+                                        "uid": "urn:va:user:9ABC:918"
+                                    }
+                                ],
+                                "content": "DISCHARGE DIAGNOSIS:\r\n \r\n 1.  Right lower lobe pneumonia.\r\n 2.  Chronic alcohol dependence.\r\n 3.  Bacteremia with alpha hemolytic Streptococcus.  \r\n \r\nSUBJECTIVE:  The patient is a 44-year-old white male with alcohol\r\ndependency and borderline personality disorder, who has had many\r\nadmissions to the VAMC Martinsburg for these problems including four\r\nsuicide attempts.  \r\n \r\nPAST MEDICAL HISTORY:  Significant for possible CAD and several positive\r\nhepatitis C status.  \r\n \r\nThe patient developed lower respiratory tract symptoms about two weeks\r\nprior to admission, accompanied by malaise, anorexia, productive cough,\r\nand fluidic bilateral chest pain.  The patient was brought to the hospital\r\nby ambulance for further evaluation.  \r\n \r\nOBJECTIVE:  On admission, the patient was in no acute distress and PE\r\nshowed no signs of acute trauma, skin rashes or ulcers.  There were a few\r\nbasilar rales, especially in the right base.  Heart sounds were\r\ntachycardic and regular.  There was tenderness to palpation in the\r\nepigastric area and the RUQ of the abdomen.  The liver was felt 2 cm below\r\nthe right costal margin.  The rest of the PE was unremarkable, except for\r\nsigns of early alcohol withdrawl.  \r\n \r\nHOSPITAL COURSE:  Detoxification with Librium was attempted and the\r\npatient was started on IV antibiotic treatment with Rocephin.\r\n \r\nThe EKG showed a sinus tachycardia and evidence of left ventricular\r\nhypertrophy.  The initial WBC count was 19,890 with 84+ SEGS.  By the\r\nfollowing day, the WBC count had come down to 10,170 but the leftward\r\nshift persisted.  Cardiac enzymes were WNL.  Cultures were taken and were\r\nlater reported as showing ina ll four bottles, alpha hemolytic\r\nStreptococcus.  \r\n \r\nOn 12/22/97, the patient requested a discharge to take care of personal\r\nproblems.  It was explained to him that he had a significant infection\r\nwith bacteremia and a right lower lobe pneumonia.  It was felt that he\r\nshould remain in the hospital for continuation of treatment.  He persisted\r\nin resolve to leave and was allowed to leave AMA with the advise that he\r\nreturn to the hospital for treatment if he can conclude his personal\r\nbusiness as soon as possible.  The patient was discharged to continue\r\ntaking Albuterol medi-haler, which he has at home, Hydroxyzine 50 mg qhs,\r\nLithium carbonate, which he has at home, Nitroglycerin patch, which he has\r\nat home, Paroxetine, Risperidone, and penicillin VK 500 mg qid.  \r\n \r\n \r\ngo 1/12/98\r\n",
+                                "dateTime": "19971222092034",
+                                "status": "completed",
+                                "uid": "urn:va:document:9ABC:33183:194877"
+                            }
+                        ],
+                        "uid": "urn:va:document:9ABC:33183:194877",
+                        "nationalTitleSubject": {},
+                        "nationalTitleService": {},
+                        "nationalTitleRole": {},
+                        "nationalTitleSetting": {},
+                        "urgency": "routine",
+                        "attendingName": "HAMILTON,ALAN F",
+                        "attendingUid": "urn:va:user:9ABC:918"
+                    },
+                    {
+                        "documentClass": "DISCHARGE SUMMARY",
+                        "documentTypeCode": "DS",
+                        "documentTypeName": "Discharge Summary",
+                        "encounterName": "6A_PSYCH Nov 12, 1997",
+                        "encounterUid": "urn:va:visit:9ABC:33183:1044872",
+                        "entered": "19971201",
+                        "facilityCode": "613",
+                        "facilityName": "MARTINSBURG VAMC",
+                        "localId": "194507",
+                        "localTitle": "Discharge Summary",
+                        "nationalTitle": {
+                            "title": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4693715"
+                        },
+                        "nationalTitleType": {
+                            "type": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4696112"
+                        },
+                        "referenceDateTime": "19971119091055",
+                        "statusName": "completed",
+                        "text": [
+                            {
+                                "clinicians": [
+                                    {
+                                        "name": "BYRD,HARMON G JR",
+                                        "role": "A",
+                                        "uid": "urn:va:user:9ABC:639"
+                                    },
+                                    {
+                                        "name": "HILL,JAMES H",
+                                        "role": "S",
+                                        "uid": "urn:va:user:9ABC:3004",
+                                        "signature": "JAMES H HILL staff psychiatrist",
+                                        "signedDateTime": "19971201"
+                                    },
+                                    {
+                                        "name": "HILL,JAMES H",
+                                        "role": "C",
+                                        "uid": "urn:va:user:9ABC:3004",
+                                        "signature": "JAMES H HILL staff psychiatrist",
+                                        "signedDateTime": "19971201"
+                                    },
+                                    {
+                                        "name": "HILL,JAMES H",
+                                        "role": "X",
+                                        "uid": "urn:va:user:9ABC:3004"
+                                    }
+                                ],
+                                "content": "DIAGNOSIS:\r\n \r\n  AXIS I   Alcohol dependence.\r\n AXIS II   Borderline personality disorder.\r\nAXIS III   Suspected condition, coronary artery disease.\r\n           Chronic hepatitis C.\r\n AXIS IV   Legal problems.  \r\n  AXIS V   Global assessment of function; present - 30.\r\n \r\nPROCEDURES:\r\n \r\n 1.  Group therapy 11/17/97.\r\n \r\nSUBJECTIVE:  This is a 44-year-old divorced white male, who presents with\r\na chief complaint of \"I want to see Jesus\".  This man has had multiple\r\nadmissions to this institution for alcoholism and depression.  He has a\r\nhistory of at least four suicide attempts and the most recent being two\r\nweeks ago, when he held a gun to his head.  He has been diagnosed in the\r\npast as bipolar disorder.  He has been on Lithium carbonate for many\r\nyears.  He frequently becomes acutely agitated and depressed in crisis.\r\nDuring these times, he drinks to intoxication.  He has had an arrest for\r\nDWI.  However, despite all of this, he was doing reasonably well until a\r\nmonth ago when he had to come to the hospital for chest pain.\r\nSubsequently, he was told that his hepatitis C could be sexually\r\ntransmitted.  He has been sexually active with two different women.  After\r\nhe advised them of this fact and advised to get a blood test, they refused\r\nto see him again.  One of the girls, he intended to ask to marry.  In\r\naddition, he was recently arrested for driving on a suspended drivers\r\nlicense related to the recent DWI arrest.  He is now facing six months to\r\na year in prision for this offense.  As a result of these misfortunes, he\r\nhas become suicidal and recently held a gun to his head before being\r\npersuaded not to kill himself by his mother.  He has also had thoughts of\r\nshooting his roommate because \"he talks too much\".  He is no being\r\nadmitted because of his suicidal thoughts.  \r\n \r\nPAST MEDICAL HISTORY:  The patient is being treated for CAD.  He has\r\nhepatitis C.\r\n \r\nSOCIAL HISTORY:  The patient has been married in the past and recently\r\nlearned that he is divorced.\r\n \r\nOBJECTIVE:  Mental status examination:  The patient presents as an\r\nadequately groomed white male.  His speech is coherent and normal in\r\ntempo.  Motor behavior showed some tremulousness.  Affect is depressed.\r\nThe patient admitts to auditory hallucinations although it is very\r\ndifficult to pin him down as regards to whether these are acutal voices or\r\nthoughts.  It does appear that he has had auditory hallucinations for\r\nseveral years.  Cognitive functions were not formally tested at this time\r\nbecause of the patient's emotional state.  \r\n \r\nLABORATORY TESTS\"  CBC; increased MPV -  11.9, NEUT - 70.8%, otherwise\r\nnormal.  U/A was WNL.  SMA 12 showed an elevated FBS - 144, T bili - 1.8,\r\nAST - 62.0, SGPT - 236, the remainder was WNL.  RPR is non-reactive.  TSH\r\nis WNL.  Sputum is 2+ Neisseria meningitis and 2+ Haemophilus influenza.\r\nChest X-ray shows old granulomatous disease with fibrosis in the left\r\nlung.  \r\n \r\nASSESSMENT:  \r\n \r\n 1.  Alcohol abuse.\r\n 2.  Borderline personality disorder.\r\n 3.  Rule out CAD.\r\n 4.  Hepatitis C.\r\n \r\nHOSPITAL COURSE:  Mr. Striplin was admitted to to the psychiatric service,\r\nwhere he was incorporated into the therapeutic community and continue don\r\nhis previous regimen of medications with the addition of Risperidone 1 mg\r\nq12hrs, which was increased during his hospital stay.  He was also placed\r\non Paroxetine 20 mg qd.  As a result of his suptum sepcimen, he was palced\r\non Amoxicillin 500 mg q8hrs.  Mr. Striplin remained in the hospital for\r\nseveral days, during which time he showed improvement in his depressed\r\nthinking.  One it was felt that he was stable to be followed on an\r\noutpatient basis, he was discharged.\r\n \r\nPLAN:  Mr. Striplin was discharged OPT-NSC with follow-up appointments in\r\nCPC 1 and also in the MHC.  \r\n \r\nDISCHARGE MEDICATIONS:\r\n \r\n 1.  Albuterol 2 puffs q6hrs PRN.\r\n 2.  Amoxicillin 500 mg q8hrs for six days and then D/C.\r\n 3.  ASA 325 mg qd.\r\n 4.  Atenolol 25 mg qd.\r\n 5.  Vistaril 100 mg qhs.\r\n 6.  Lithium carbonate 300 mg tid.\r\n 7.  Nitroglycerin 0.1 mg per hour, apply qam and remove qhs.  \r\n 8.  Nitroglycerin 0.4 mg SL PRN.\r\n 9.  Paroxetine 20 mg qd.\r\n10.  Risperidone 1 mg qam and 3 mg qhs.\r\n \r\n \r\nDIET:  He was on a regular diet.  \r\n \r\nCONDITION ON DISCHARGE:  His condition is considered stable.  He is\r\nconsidered competent.  \r\n \r\n \r\ngo 12/1/97\r\n",
+                                "dateTime": "19971119091055",
+                                "status": "completed",
+                                "uid": "urn:va:document:9ABC:33183:194507"
+                            }
+                        ],
+                        "uid": "urn:va:document:9ABC:33183:194507",
+                        "nationalTitleSubject": {},
+                        "nationalTitleService": {},
+                        "nationalTitleRole": {},
+                        "nationalTitleSetting": {},
+                        "urgency": "routine",
+                        "attendingName": "HILL,JAMES H",
+                        "attendingUid": "urn:va:user:9ABC:3004"
+                    },
+                    {
+                        "documentClass": "DISCHARGE SUMMARY",
+                        "documentTypeCode": "DS",
+                        "documentTypeName": "Discharge Summary",
+                        "encounterName": "D 209S Jan 16, 1997",
+                        "encounterUid": "urn:va:visit:9ABC:33183:1041908",
+                        "entered": "19970207",
+                        "facilityCode": "613",
+                        "facilityName": "MARTINSBURG VAMC",
+                        "localId": "191477",
+                        "localTitle": "Discharge Summary",
+                        "nationalTitle": {
+                            "title": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4693715"
+                        },
+                        "nationalTitleType": {
+                            "type": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4696112"
+                        },
+                        "referenceDateTime": "19970203074511",
+                        "statusName": "completed",
+                        "text": [
+                            {
+                                "clinicians": [
+                                    {
+                                        "name": "ALLISON,RICHARD A",
+                                        "role": "A",
+                                        "uid": "urn:va:user:9ABC:532"
+                                    },
+                                    {
+                                        "name": "HARRIS,BARTON ALDIS MD",
+                                        "role": "S",
+                                        "uid": "urn:va:user:9ABC:2844",
+                                        "signature": "BARTON ALDIS HARRIS STAFF PHYSICIAN",
+                                        "signedDateTime": "19970207"
+                                    },
+                                    {
+                                        "name": "HARRIS,BARTON ALDIS MD",
+                                        "role": "C",
+                                        "uid": "urn:va:user:9ABC:2844",
+                                        "signature": "BARTON ALDIS HARRIS STAFF PHYSICIAN",
+                                        "signedDateTime": "19970207"
+                                    },
+                                    {
+                                        "name": "HARRIS,BARTON ALDIS MD",
+                                        "role": "X",
+                                        "uid": "urn:va:user:9ABC:2844"
+                                    }
+                                ],
+                                "content": "DIAGNOSIS:\r\n \r\nAlcohol dependence.\r\nBipolar disorder. \r\n \r\n \r\n \r\nHISTORY OF PRESENT ILLNESS:  The patient is a 43-year-old white male who\r\nwas recently detoxified and evaluated for the acute rehab program.  He\r\nalso has a history of bipolar disorder and has been treated with Lithium\r\n300mg tid, Risperidone 1mg bid and Hydroxyzine pamoate 25mg po tid.  He\r\nwas continued on these medications throughout his acute rehab stay.  \r\n \r\nPast medical history, system review and physical exam were reviewed and\r\naccepted.\r\n \r\nLABORATORY DATA:  Hemoglobin 16.7, hematocrit 49.2, platelet count\r\n143,000.  SMA 12 was essentially within normal limits.  The patient has a\r\ncholesterol of 172.  RPR was nonreactive.  Serial urinalysis for drug\r\nscreen shows no substances detected.  PSA was 0.65.\r\n \r\nHOSPITAL COURSE:  The patient followed treatment directions following\r\ndischarge from the detox unit and was admitted to the acute rehab program\r\nin the domiciliary.  In the program he participated in individual and\r\ngroup counseling as well as 12 step meetings for recovery.  He did well on\r\nwritten and verbal exercises while in the program.  He was open and honest\r\nabout how his addiction has caused problems in his life.  He has expressed\r\nhis desire to live a sober and drug free life.  He has taken some risks in\r\nsharing personal information about himself to the community and staff.\r\nThe patient has taken an active role in formulating his treatment plan\r\nwhich includes attending AA in the community and returning for scheduled\r\nappointments with the mental health clinic.  Throughout his hospital stay\r\nhe was compliant with medication regimen.  \r\n \r\nHe will be discharged OPT/NSC to return to his scheduled appointments.\r\nWhile on the unit he tolerated a regular diet and may resume the same upon\r\ndischarge.  He is unemployed. He may resume his usual preadmission\r\nactivities.  \r\n \r\n \r\ntls\r\n",
+                                "dateTime": "19970203074511",
+                                "status": "completed",
+                                "uid": "urn:va:document:9ABC:33183:191477"
+                            }
+                        ],
+                        "uid": "urn:va:document:9ABC:33183:191477",
+                        "nationalTitleSubject": {},
+                        "nationalTitleService": {},
+                        "nationalTitleRole": {},
+                        "nationalTitleSetting": {},
+                        "urgency": "routine",
+                        "attendingName": "HARRIS,BARTON ALDIS MD",
+                        "attendingUid": "urn:va:user:9ABC:2844"
+                    },
+                    {
+                        "documentClass": "DISCHARGE SUMMARY",
+                        "documentTypeCode": "DS",
+                        "documentTypeName": "Discharge Summary",
+                        "encounterName": "6A_DET Jan 06, 1997",
+                        "encounterUid": "urn:va:visit:9ABC:33183:1041722",
+                        "entered": "19970127",
+                        "facilityCode": "613",
+                        "facilityName": "MARTINSBURG VAMC",
+                        "localId": "191294",
+                        "localTitle": "Discharge Summary",
+                        "nationalTitle": {
+                            "title": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4693715"
+                        },
+                        "nationalTitleType": {
+                            "type": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4696112"
+                        },
+                        "referenceDateTime": "19970109150017",
+                        "statusName": "completed",
+                        "text": [
+                            {
+                                "clinicians": [
+                                    {
+                                        "name": "MULLINIX,RANDY L",
+                                        "role": "A",
+                                        "uid": "urn:va:user:9ABC:533"
+                                    },
+                                    {
+                                        "name": "WELLS,HAWEY A JR",
+                                        "role": "S",
+                                        "uid": "urn:va:user:9ABC:2747",
+                                        "signature": "HAWEY A. WELLS JR DOM PHYSICIAN",
+                                        "signedDateTime": "19970127"
+                                    },
+                                    {
+                                        "name": "WELLS,HAWEY A JR",
+                                        "role": "C",
+                                        "uid": "urn:va:user:9ABC:2747",
+                                        "signature": "HAWEY A. WELLS JR DOM PHYSICIAN",
+                                        "signedDateTime": "19970127"
+                                    },
+                                    {
+                                        "name": "WELLS,HAWEY A JR",
+                                        "role": "X",
+                                        "uid": "urn:va:user:9ABC:2747"
+                                    }
+                                ],
+                                "content": "DIAGNOSIS:\r\nAXIS I:   Alcohol dependent\r\n          Bipolar disorder\r\nAXIS II:  0\r\nAXIS III: 0\r\nAXIS IV:  Level 1\r\nAXIS  V:  Global assessment of function 40, current 42\r\n \r\nOPERATIONS/PROCEDURES:\r\n \r\n \r\nSUBJECTIVE: This is one of multiple admissions to the Detox. for Mr.\r\nStriplin. He is admitted on 1-6-97 requesting detox. this time stating\r\nthat he stopped taking his medications, has been drinking about 12-24\r\nbeers a day plus 2-3 shots of Tequila. Denies any legal problems. Wants\r\ndetoxed and the program. \r\n \r\nOBJECTIVE: Pertinent physical examination; pertinent positive findings; 43\r\nYO WN WM in no acute distress. Eyes; strabismus. Ears; TM's dull. Mouth;\r\nedentulous. Heart; rapid rate 80 per min. No murmur. Abdomen: tender liver\r\nis palpable below the right costal margin. Rectal reveals positive\r\nHemoccult +1. Neurological reveals mild tremors of the upper extremities\r\nand skin reveals multiple tattoos. \r\n \r\nLABORATORY FINDINGS: CBC essentially normal. SMA-6 and 12 revealed a total\r\nprotein of 8.7, AST of 62, GGT of 259 with an LDH of 453. VDRL is\r\nnon-reactive. Urine drug screen revealed none. Routine UA negative. EKG\r\nrevealed NSR, questionable very mild left ventricular hypertrophy that was\r\nread by Dr. Morgan and is not felt to be any significant change from his\r\nold EKG's.\r\n \r\nHOSPITAL COURSE: The patient was admitted to the Detox. Unit on 1-6-97.\r\nHis BA was .110. He is detoxified in the usual and customary manner. He\r\nstarted back on his medications of Lithium 300mg. 1 capsule tid,\r\nRisperidone 1mg. bid, Vistaril 25mg. tid. Lithium Level was ordered for\r\n1-9-97. He had an uneventful detox. He is discharged out on 1-9-97. He has\r\nenough medicines on the outside. He is to keep his outpatient Mental\r\nHealth appointments and is to begin coming back for Day Care on 1-10-97\r\nwith Mr. Pittman on Ward 6-A. He is to continue with his Risperidone 1mg.\r\nbid, Lithium 300mg. tid and Vistaril 25mg. tid. It is recommended he get\r\nto AA 7 meetings a week, get a sponsor and begin working a program of\r\nsobriety.\r\n \r\njsb\r\n",
+                                "dateTime": "19970109150017",
+                                "status": "completed",
+                                "uid": "urn:va:document:9ABC:33183:191294"
+                            }
+                        ],
+                        "uid": "urn:va:document:9ABC:33183:191294",
+                        "nationalTitleSubject": {},
+                        "nationalTitleService": {},
+                        "nationalTitleRole": {},
+                        "nationalTitleSetting": {},
+                        "urgency": "routine",
+                        "attendingName": "WELLS,HAWEY A JR",
+                        "attendingUid": "urn:va:user:9ABC:2747"
+                    },
+                    {
+                        "documentClass": "DISCHARGE SUMMARY",
+                        "documentTypeCode": "DS",
+                        "documentTypeName": "Discharge Summary",
+                        "encounterName": "6A_DET Nov 11, 1996",
+                        "encounterUid": "urn:va:visit:9ABC:33183:1040568",
+                        "entered": "19961115",
+                        "facilityCode": "613",
+                        "facilityName": "MARTINSBURG VAMC",
+                        "localId": "190646",
+                        "localTitle": "Discharge Summary",
+                        "nationalTitle": {
+                            "title": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4693715"
+                        },
+                        "nationalTitleType": {
+                            "type": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4696112"
+                        },
+                        "referenceDateTime": "19961114104438",
+                        "statusName": "completed",
+                        "text": [
+                            {
+                                "clinicians": [
+                                    {
+                                        "name": "ALLISON,RICHARD A",
+                                        "role": "A",
+                                        "uid": "urn:va:user:9ABC:532"
+                                    },
+                                    {
+                                        "name": "WELLS,HAWEY A JR",
+                                        "role": "S",
+                                        "uid": "urn:va:user:9ABC:2747",
+                                        "signature": "HAWEY A. WELLS JR DOM PHYSICIAN",
+                                        "signedDateTime": "19961118"
+                                    },
+                                    {
+                                        "name": "WELLS,HAWEY A JR",
+                                        "role": "C",
+                                        "uid": "urn:va:user:9ABC:2747",
+                                        "signature": "HAWEY A. WELLS JR DOM PHYSICIAN",
+                                        "signedDateTime": "19961118"
+                                    },
+                                    {
+                                        "name": "WELLS,HAWEY A JR",
+                                        "role": "X",
+                                        "uid": "urn:va:user:9ABC:2747"
+                                    }
+                                ],
+                                "content": "DIAGNOSIS:\r\n \r\nAXIS I:   Alcohol dependence.\r\n          Bipolar disorder.\r\nAXIS II:  Deferred.\r\nAXIS III: No diagnosis.\r\nAXIS IV:  Unemployed.\r\nAXIS V:   Global assessment of function - current 60, past 55.\r\n \r\n \r\nOPERATIONS/PROCEDURES:\r\n \r\nAlcohol detoxification.\r\n \r\n \r\nSUMMARY\r\nSUBJECTIVE:  The patient was admitted requesting detoxification.  He\r\nadmits to drinking a case of beer daily for about 11 days on this episode.\r\nHe also admits to drinking a few shots of whiskey daily in that same time\r\nperiod.  He denies any other drug usage.  He admits to insomnia, tremors,\r\nheadaches, early morning drinking, nausea and vomiting, and diarrhea on\r\nthis episode.  The patient has already completed a rehab program at the VA\r\nin Coatesville in 1989 and he has also been in the recovery enhancement\r\nprogram at this facility.  His last AA attendance was on 10/31/96 and he\r\nadmits that he did not have a sponsor at the time.  He is unemployed.  He\r\ndenies legal problems.  He has an apartment but plans on going to the\r\nlocal mission upon discharge.  \r\n \r\nPHYSICAL EXAM:  The patient is a 42-year-old white male who is well known\r\nto the detox staff and again admitted with a negative breath alcohol.  He\r\nstates that he quit taking his medications and began drinking.   Height\r\n5'8\", weight 161 lbs, temperature 96.6, pulse 127, B/P 166/88,\r\nrespirations 22.  Heent - strabismus was noted.  He has a sluggish\r\nreactive light pupil.  The patient is edentulous.  Neck - supply, no\r\npalpable masses.  Chest - rales are noted in the bases.  Heart -\r\ntachycardia with a rate of 127 per minute, no murmur.  Abdomen - tender\r\nliver is palpable to the umbilicus.  Extremities - the patient has mild\r\ntremors of the upper extremities.  Skin - there are multiple tattos noted\r\non the upper extremities.  \r\n \r\nLAB STUDIES:  Urinalysis is essentially within normal limits.  CBC -\r\nhemoglobin 16, hematocrit 47.2, platelet count 121,000, 73.1 neut%.  TSH\r\n3.21.  RPR is nonreactive.  SMA 12 to include the SGPT and electrolytes -\r\nglucose 109, AST 55, ALT 66, Lithium level was 0.51.  Chest x-ray and EKG\r\nwere not obtained on this admission.  \r\n \r\nHOSPITAL COURSE:  The patient was detoxified with no severe withdrawal\r\nsymptoms using the standard detox regimen.  While on the ward he attended\r\ngroup education, films, etc.  The patient had previously been accepted for\r\nthe ADRU program, however, he began to drink and lost his date.  He now\r\nstates that he is interested in ADRU again.  He initially stated that he\r\nwould like to be transferred to the psychiatry service for a longer length\r\nof stay and was seen by Dr. Wells on 11/14/96.  The patient will be\r\ndischarged OPT/NSC to return to Dr. Wells preprogram groups daily.  The\r\npatient has a history of bipolar disorder.  He has been taking Lithium\r\n300mg tid, Risperidone 1mg 2 tabs bid and using Hydroxyzine 50mg at hs\r\nprn.  He states that he has some medication at home and has been\r\ninstructed to follow with the medical health clinic for reevaluation and\r\ncontinued prescriptions for his medication.  He is also using an Albuterol\r\ninhaler prn.  \r\n \r\nDISPOSITION:  The patient is being discharged OPT/NSC to return to\r\nscheduled appointments.  While on the ward he tolerated a regular diet and\r\nmay resume the same upon discharge.  He is not service connected.  He is\r\nunemployed.  He is employable.  The patient can not be considered\r\ncompetent to handle funds if he is drinking or using drugs.\r\n \r\ntls\r\n",
+                                "dateTime": "19961114104438",
+                                "status": "completed",
+                                "uid": "urn:va:document:9ABC:33183:190646"
+                            }
+                        ],
+                        "uid": "urn:va:document:9ABC:33183:190646",
+                        "nationalTitleSubject": {},
+                        "nationalTitleService": {},
+                        "nationalTitleRole": {},
+                        "nationalTitleSetting": {},
+                        "urgency": "routine",
+                        "attendingName": "WELLS,HAWEY A JR",
+                        "attendingUid": "urn:va:user:9ABC:2747"
+                    },
+                    {
+                        "documentClass": "DISCHARGE SUMMARY",
+                        "documentTypeCode": "DS",
+                        "documentTypeName": "Discharge Summary",
+                        "encounterName": "6A_DET Oct 16, 1996",
+                        "encounterUid": "urn:va:visit:9ABC:33183:1040496",
+                        "entered": "19961108",
+                        "facilityCode": "613",
+                        "facilityName": "MARTINSBURG VAMC",
+                        "localId": "190573",
+                        "localTitle": "Discharge Summary",
+                        "nationalTitle": {
+                            "title": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4693715"
+                        },
+                        "nationalTitleType": {
+                            "type": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4696112"
+                        },
+                        "referenceDateTime": "19961025140323",
+                        "statusName": "completed",
+                        "text": [
+                            {
+                                "clinicians": [
+                                    {
+                                        "name": "ALLISON,RICHARD A",
+                                        "role": "A",
+                                        "uid": "urn:va:user:9ABC:532"
+                                    },
+                                    {
+                                        "name": "WELLS,HAWEY A JR",
+                                        "role": "S",
+                                        "uid": "urn:va:user:9ABC:2747",
+                                        "signature": "HAWEY A. WELLS JR DOM PHYSICIAN",
+                                        "signedDateTime": "19961108"
+                                    },
+                                    {
+                                        "name": "WELLS,HAWEY A JR",
+                                        "role": "C",
+                                        "uid": "urn:va:user:9ABC:2747",
+                                        "signature": "HAWEY A. WELLS JR DOM PHYSICIAN",
+                                        "signedDateTime": "19961108"
+                                    },
+                                    {
+                                        "name": "WELLS,HAWEY A JR",
+                                        "role": "X",
+                                        "uid": "urn:va:user:9ABC:2747"
+                                    }
+                                ],
+                                "content": "DIAGNOSIS:\r\nAXIS   I:      Alcohol dependence.\r\n               Bipolar disorder.\r\nAXIS   II:     Deferred.\r\nAXIS   III:    No diagnosis.\r\nAXIS   IV:     Unemployed.\r\nAXIS   V:      Global assessment function, current 65, past 60.\r\n \r\n \r\n \r\n \r\nOPERATIONS/PROCEDURES:\r\nAlcohol detoxification.\r\n \r\n \r\nSUMMARY\r\nSUBJECTIVE:  The patient was admitted requesting detoxification.  He\r\nadmits to drinking at least a 12 pack of beer daily for 5 months on this\r\nepisode.  He admits to tremors and audio and visual hallucinosis on this\r\nepisode.  He states his last AA attendance was about 10 days prior to\r\nadmission.   He is unemployed.  He denies current legal problems.  He\r\nlives alone in an apartment and plans to return there upon discharge.  \r\n \r\nOBJECTIVE:  The patient is a 42-year-old white male who was admitted with\r\na negative breath alcohol.  \r\n \r\nPHYSICAL EXAM:  Ht. 5'8\", Wt. 150 lbs.  Temp. 98.8, pulse 98, BP 138/70,\r\nresp. 20.  HEENT - Strabismus is noted.  TMs appear dull.  He is\r\nedentulous.  CHEST - lungs are clear to A&P.  HEART - rapid rate at 98 per\r\nminute, no murmur.  ABDOMEN -  tender liver is palpable below the right\r\ncostal margin.  ANOGENITAL - Positive hemoccult.  NEUROLOGICAL - he has\r\nmild tremors of the upper extremities.  SKIN - Multiple tattoos are noted.\r\n \r\nLABORATORY DATA:  RPR is non reactive.  UA is essentially within normal\r\nlimits.  CBC revealed a Hgb 16.4, HCT 47.4, platelet count 197,000 with\r\n10.5 mono %.  SMA-12 to include the SGPT and electrolytes revealed a GGT\r\n121.  Stool for occult blood was negative for 3 specimens.  \r\n \r\nHOSPITAL COURSE:  The patient was detoxified with no severe withdrawal\r\nsymptoms using the standard detox regimen.  While on the ward, he attended\r\ngroup education, films, etc.  After sufficient detoxification, the patient\r\nrequested evaluation for the ADRU program.  He has been accepted for ADRU\r\non 11/12/96.  While awaiting placement he plans on returning home where he\r\nwill attend AA in the community and return for pre-program groups.  \r\n \r\nThe patient has a history of bipolar disorder.  He has been taking Lithium\r\n300mg tid.  While on the ward he was maintained on this medication and\r\nwill be provided with a prescription upon discharge.  He was also started\r\non Respiridone and at the time of discharge was taking 2mg in the morning\r\nand 2mg in the evening.  He will be provided with a prescription upon\r\ndischarge.  The patient had previously been on Hydroxyzine.  He continued\r\nto complain of sleep disorder throughout his hospitalization.  He was\r\nagain started on Hydroxyzine prior to his discharge.  He will be provided\r\nwith a prescription upon discharge.  \r\n \r\nDISCHARGE DISPOSITION:   He is being discharged OPT/NSC to return for\r\nscheduled appointments.  While on the ward, he tolerated a regular diet\r\nand may resume the same upon discharge.  He is unemployed.  He may resume\r\npre-hospital activities upon discharge.  He is not service connected.  The\r\npatient cannot be considered competent to handle funds if he is drinking\r\nor using drugs.  \r\n \r\nR. Allison, P.A. for H. Wells, M.D.\r\n \r\nmlc\r\n",
+                                "dateTime": "19961025140323",
+                                "status": "completed",
+                                "uid": "urn:va:document:9ABC:33183:190573"
+                            }
+                        ],
+                        "uid": "urn:va:document:9ABC:33183:190573",
+                        "nationalTitleSubject": {},
+                        "nationalTitleService": {},
+                        "nationalTitleRole": {},
+                        "nationalTitleSetting": {},
+                        "urgency": "routine",
+                        "attendingName": "WELLS,HAWEY A JR",
+                        "attendingUid": "urn:va:user:9ABC:2747"
+                    },
+                    {
+                        "documentClass": "DISCHARGE SUMMARY",
+                        "documentTypeCode": "DS",
+                        "documentTypeName": "Discharge Summary",
+                        "encounterName": "6A_PSYCH Jul 17, 1996",
+                        "encounterUid": "urn:va:visit:9ABC:33183:1039366",
+                        "entered": "19960731",
+                        "facilityCode": "613",
+                        "facilityName": "MARTINSBURG VAMC",
+                        "localId": "189407",
+                        "localTitle": "Discharge Summary",
+                        "nationalTitle": {
+                            "title": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4693715"
+                        },
+                        "nationalTitleType": {
+                            "type": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4696112"
+                        },
+                        "referenceDateTime": "19960723125517",
+                        "statusName": "completed",
+                        "text": [
+                            {
+                                "clinicians": [
+                                    {
+                                        "name": "BYRD,HARMON G JR",
+                                        "role": "A",
+                                        "uid": "urn:va:user:9ABC:639"
+                                    },
+                                    {
+                                        "name": "SOMPALLI,BALASUBRAMANYA P",
+                                        "role": "S",
+                                        "uid": "urn:va:user:9ABC:3176",
+                                        "signature": "BALASUBRAMANYA P SOMPALLI M.D.",
+                                        "signedDateTime": "19960801"
+                                    },
+                                    {
+                                        "name": "SOMPALLI,BALASUBRAMANYA P",
+                                        "role": "C",
+                                        "uid": "urn:va:user:9ABC:3176",
+                                        "signature": "BALASUBRAMANYA P SOMPALLI M.D.",
+                                        "signedDateTime": "19960801"
+                                    },
+                                    {
+                                        "name": "SOMPALLI,BALASUBRAMANYA P",
+                                        "role": "X",
+                                        "uid": "urn:va:user:9ABC:3176"
+                                    }
+                                ],
+                                "content": "DIAGNOSIS:\r\nAXIS I:    Bipolar disorder with hypomania (mild) noncompliant with  \r\n              medications \r\n           History of alcohol and marijuana abuse \r\nAXIS II:   Deferred  \r\nAXIS III:  None \r\nAXIS IV:   Loss of primary support group \r\nAXIS V:    Global assessment of function - past 50, present 48 \r\n \r\n \r\nOPERATIONS/PROCEDURES: \r\nGroup therapy 7/18/96\r\n \r\n \r\nSUMMARY\r\nSUBJECTIVE:  Patient is a 42-year-old white male veteran with history\r\nof alcohol dependence, marijuana abuse, and bipolar disorder who\r\ncomes to the MHC unscheduled complaining of sleeping difficulties,\r\nmood swings, restless, inappropriate spending of money, using alcohol\r\nand marijuana, and noncompliant with medications.  He was seen by    \r\nDr. Asghar and admitted to 6A for observation.  His chief complaint\r\nas per patient since his discharge from 6A in April had one admission\r\nto 6B for alcohol and marijuana abuse and later moved to PA and\r\nliving with a friend who was drinking heavy.  Started drinking\r\nalcohol and used marijuana.  The last time he drank was two weeks\r\nago.  Marijuana was one week ago.  He's noncompliant with\r\nmedications since three weeks.  Veteran started experiencing\r\nrestlessness, sleeping difficulties, felt like hearing some muffled\r\nvoices that bothered him, and had impulsive spending ($400 for a car\r\neven though does not have enough money to buy a car).  Patient\r\nmentioned that he had an argument with a friend, left him\r\nimpulsively, and came to the VAMC.  Patient mentioned at times,\r\nespecially when he is on alcohol, thought of hurting himself but\r\nhas no specific plans.  At the time of interview not feeling suicidal\r\nor homicidal.  Patient has difficulty with memory (short-term) and\r\nalso difficulty with concentration.  Patient denies feeling\r\ndepressed, no loss of weight, appetite is fine, feels helpless at\r\ntimes, mentioned not able to get rid of alcohol and marijuana uses. \r\nPatient made contract with staff at this time that he will come to\r\nstaff if suicidal ideations come to his mind.    \r\n \r\nPAST MEDICAL HISTORY:  Nonsignificant. \r\n \r\nPAST PSYCHIATRIC HISTORY:  Borderline personality disorder and\r\nalcohol and marijuana dependence. \r\n \r\nEMPLOYMENT HISTORY:  Served in the military as an E2 from 1969-71\r\nwith an Honorable Discharge. \r\n \r\nSOCIAL HISTORY:  Divorced x3.  SSD $530.  Not on VA pension.  Alcohol\r\nand marijuana abuse. \r\n \r\nFAMILY HISTORY:  History of mother having bipolar disorder. \r\n \r\nOBJECTIVE MENTAL STATUS EXAMINATION:  Patient's alert, he's oriented\r\nx3, his speech is normal, his mood is normal, his affect is\r\nappropriate, his motor activity is normal, his thought flow is\r\nnormal, his thought content has no paranoia noted, no delusions, \r\nnot hallucinating, and not feeling depressed.  No suicidal or\r\nhomicidal ideations.  His memory is decreased for short-term.  His\r\nremote is fair.  His impulse control is fair at this time; impaired\r\nprior to admission.  His judgment is fair at this time.  Insight is\r\naware of problems and will agree to treatment. \r\n \r\nLABORATORY TESTING:  Includes a CBC which shows his platelets to be\r\nlow at 113.  UA is WNL. SMA12 shows the protein to be elevated at\r\n8.3.  Otherwise it's normal.   \r\n \r\nASSESSMENT:  Bipolar disorder with hypomania (mild), noncompliant\r\nwith medications, substance abuse alcohol and marijuana. \r\n \r\nHOSPITAL COURSE:  Patient was admitted to the PS where he was\r\nincorporated into the therapeutic community and started on\r\nmedications which included haldol 5 mg bid, Cogentin 0.5 mg bid,\r\nProzac 20 mg daily, and lithium carbonate 300 mg tid.  After further\r\nassessment his Prozac was discontinued and his haldol dose was\r\nchanged to 5 mg in AM and hs.  Patient's symptoms seemed to improve\r\nafter being admitted with the exception of his depression which\r\ncontinued to be apparent in several of his sessions with the social\r\nworker.  After several days though he continued to show improvement\r\nto the point where it was felt that he could be discharged and\r\nfollowed on an outpatient basis.   \r\n \r\nPLAN:  Patient was discharged OPT-NSC with follow-up appointments in\r\nthe MHC with Dr. Stealin on 8/20/96 and CPC-1 on 8/8/96 with Dr.\r\nPowers and with Dr. Wells on 8/28/96.  At the time of discharge he\r\nwas on a regular diet.  His medications included Cogentin 0.5 mg bid,\r\nlithium carbonate 300 mg tid, and haldol 5 mg bid.  His condition is\r\nconsidered stable.  He is considered competent. \r\n \r\n \r\nbrj\r\n",
+                                "dateTime": "19960723125517",
+                                "status": "completed",
+                                "uid": "urn:va:document:9ABC:33183:189407"
+                            }
+                        ],
+                        "uid": "urn:va:document:9ABC:33183:189407",
+                        "nationalTitleSubject": {},
+                        "nationalTitleService": {},
+                        "nationalTitleRole": {},
+                        "nationalTitleSetting": {},
+                        "urgency": "routine",
+                        "attendingName": "SOMPALLI,BALASUBRAMANYA P",
+                        "attendingUid": "urn:va:user:9ABC:3176"
+                    },
+                    {
+                        "documentClass": "DISCHARGE SUMMARY",
+                        "documentTypeCode": "DS",
+                        "documentTypeName": "Discharge Summary",
+                        "encounterName": "6B DET May 14, 1996",
+                        "encounterUid": "urn:va:visit:9ABC:33183:1038551",
+                        "entered": "19960523",
+                        "facilityCode": "613",
+                        "facilityName": "MARTINSBURG VAMC",
+                        "localId": "188586",
+                        "localTitle": "Discharge Summary",
+                        "nationalTitle": {
+                            "title": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4693715"
+                        },
+                        "nationalTitleType": {
+                            "type": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4696112"
+                        },
+                        "referenceDateTime": "19960521163150",
+                        "statusName": "completed",
+                        "text": [
+                            {
+                                "clinicians": [
+                                    {
+                                        "name": "ALLISON,RICHARD A",
+                                        "role": "A",
+                                        "uid": "urn:va:user:9ABC:532"
+                                    },
+                                    {
+                                        "name": "MEYER,ANDREW P",
+                                        "role": "S",
+                                        "uid": "urn:va:user:9ABC:2849",
+                                        "signature": "ANDREW P MEYER STAFF PSYCHIATRIST",
+                                        "signedDateTime": "19960528"
+                                    },
+                                    {
+                                        "name": "MEYER,ANDREW P",
+                                        "role": "C",
+                                        "uid": "urn:va:user:9ABC:2849",
+                                        "signature": "ANDREW P MEYER STAFF PSYCHIATRIST",
+                                        "signedDateTime": "19960528"
+                                    },
+                                    {
+                                        "name": "MEYER,ANDREW P",
+                                        "role": "X",
+                                        "uid": "urn:va:user:9ABC:2849"
+                                    }
+                                ],
+                                "content": "DIAGNOSIS:\r\nAXIS I:     Alcohol dependence \r\n            Gambling addiction \r\n            Marijuana abuse \r\n            Bipolar disorder \r\nAXIS II:    No diagnosis \r\nAXIS III:   Neck pain secondary to old injury \r\nAXIS IV:    Unemployed \r\nAXIS V:     Global assessment of function - past 60, current 65 \r\n \r\n \r\nOPERATIONS/PROCEDURES:  \r\nAlcohol and drug detoxification \r\n \r\nSUMMARY\r\nSUBJECTIVE:  Patient was admitted requesting detoxification.  He\r\nstates that he has been drinking a case of beer daily for four days\r\non this episode.  He also admits to drinking four or five mixed\r\ndrinks usually consisting of Tequilla or Schnapp's or rum during the\r\nsame period of time.  He also admits to smoking marijuana.  He claims\r\nhe spent over $1,000 gambling in the past month--$700 of that had\r\nbeen within the 11 days prior to admission.  He admits to blackouts,\r\ninsomnia, tremors, audio hallucinosis, headaches, early morning\r\ndrinking, nausea and vomiting, diarrhea, leg cramps, palpitations,\r\nand chest pain on this episode.  Patient states he has already\r\ncompleted a rehab program at VACoatesville in 1988.  He has not\r\nattended an AA meeting in 4-5 months.  He did not have a sponsor\r\nwhen he did attend AA.  He denies ever using Antabuse in the past. \r\nHe claims that he has an 11th grade education with 1 1/2 years of\r\ncollege education.  He is unemployed since 1989.  He admits to\r\ndrinking on the job and has lost upwards of 20 jobs as the result of\r\nhis drinking.  Although he denies current legal problems, he does\r\nadmit to having been arrested at least once for DUI in September of\r\n'95.  He has also been arrested at least twice for public\r\nintoxication and once for assault.  He has been married and divorced\r\nthree times.  He claims his last marriage which ended in 1986 was a\r\nresult of his drinking.  He currently lives alone and he rents a room\r\nand he plans on returning to live there upon discharge. \r\n \r\nOBJECTIVE:  Patient is a 42-year-old white male who is well known to\r\nthe Detox staff.  Returns with a negative BA.  Physical exam:  height\r\n5'8\", weight 150 pounds, temp 98.3, pulse 100, respirations 20, BP\r\n154/80.  HEENT - Pupils are equal.  Patient is edentulous.  Neck\r\nsupple.  No palpable masses.  Chest and lungs are clear to A&P. \r\nHeart - There is a questionable Grade 2/6 murmur heard.  Abdomen -\r\nTender.  Liver is palpable to the umbilicus.  Extremities - Patient\r\nhas mild tremors of the upper extremities.  Skin - Multiple tattoos\r\nare noted on the extremities.  Lab studies:  Urinalysis is\r\nessentially WNL.  CBC:  hemoglobin 16.1; hematocrit 46.8; platelet\r\ncount 145,000; RPR is nonreactive; SMA12 to include the SGPT and\r\nelectrolytes; GGT 156; lithium level <0.15.  Urinalysis for drug\r\nscreen detected cannabinoids at 30.78 ng/ml.  Patient had an\r\nechocardiogram on 5/15/96.   \r\n \r\nHOSPITAL COURSE:  Patient was detoxified with no severe withdrawal\r\nsymptoms using the standard detox regimen.  While on the ward he\r\nattended group education, films, etc.  After sufficient\r\ndetoxification patient requested evaluation for the ADRU program.  He\r\nhas successfully completed written exercises.  Patient has been\r\naccepted for ADRU on 6/12/96.  He will be scheduled to return for\r\npreprogram group on 5/22, 5/29, and 6/5 at 1PM.  It has also been\r\nsuggested that he attend AA in the community.  Patient will be\r\nadmitted to ADRU provided he is in compliance with the treatment\r\nplan.   \r\n \r\nPatient has a history of bipolar disorder.  He had been taking Prozac\r\n20 mg qAM along with lithium 300 mg qid.  He has been noncompliant\r\nwith his medications.  Prozac and lithium were restarted and he will\r\nbe provided with a prescription upon discharge.  Patient also\r\ncomplained of some intrusive thoughts.  He was started on Haldol 5 mg\r\nq12h. Cogentin 0.5 mg was also started bid.  At the time of discharge\r\npatient reported improvement in his symptoms.  He will be provided\r\nwith medications upon discharge.\r\n \r\nPatient complains of neck and shoulder pain from an old injury.  He\r\nhad been using Ben-Gay at home.  He was given Ben-Gay on the ward to\r\nuse bid.  He has medications at home and will not require a refill at\r\nthis time.  Patient also has complaints of wheezing and productive\r\ncough.  He has been using an albuterol inhaler and was maintained on\r\nalbuterol while on the ward.  He will also be provided with the\r\nmedication upon discharge. \r\n \r\nDISPOSITION:  Patient is being discharged OPT-NSC to return to\r\nscheduled appointments.  While on the ward he tolerated a regular\r\ndiet and may resume the same upon discharge.  He is not\r\nservice-connected.  He cannot be considered competent to handle funds\r\nif he continues to drink or use drugs. \r\n \r\n \r\nbrj\r\n",
+                                "dateTime": "19960521163150",
+                                "status": "completed",
+                                "uid": "urn:va:document:9ABC:33183:188586"
+                            }
+                        ],
+                        "uid": "urn:va:document:9ABC:33183:188586",
+                        "nationalTitleSubject": {},
+                        "nationalTitleService": {},
+                        "nationalTitleRole": {},
+                        "nationalTitleSetting": {},
+                        "urgency": "routine",
+                        "attendingName": "MEYER,ANDREW P",
+                        "attendingUid": "urn:va:user:9ABC:2849"
+                    },
+                    {
+                        "documentClass": "DISCHARGE SUMMARY",
+                        "documentTypeCode": "DS",
+                        "documentTypeName": "Discharge Summary",
+                        "encounterName": "6A_PSYCH Apr 16, 1996",
+                        "encounterUid": "urn:va:visit:9ABC:33183:1038562",
+                        "entered": "19960523",
+                        "facilityCode": "613",
+                        "facilityName": "MARTINSBURG VAMC",
+                       "localId": "188597",
+                        "localTitle": "Discharge Summary",
+                        "nationalTitle": {
+                            "title": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4693715"
+                        },
+                        "nationalTitleType": {
+                            "type": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4696112"
+                        },
+                        "referenceDateTime": "19960423115753",
+                        "statusName": "completed",
+                        "text": [
+                            {
+                                "clinicians": [
+                                    {
+                                        "name": "BYRD,HARMON G JR",
+                                        "role": "A",
+                                        "uid": "urn:va:user:9ABC:639"
+                                    },
+                                    {
+                                        "name": "SOMPALLI,BALASUBRAMANYA P",
+                                        "role": "S",
+                                        "uid": "urn:va:user:9ABC:3176",
+                                        "signature": "BALASUBRAMANYA P SOMPALLI M.D.",
+                                        "signedDateTime": "19960529"
+                                    },
+                                    {
+                                        "name": "SOMPALLI,BALASUBRAMANYA P",
+                                        "role": "C",
+                                        "uid": "urn:va:user:9ABC:3176",
+                                        "signature": "BALASUBRAMANYA P SOMPALLI M.D.",
+                                        "signedDateTime": "19960529"
+                                    },
+                                    {
+                                        "name": "SOMPALLI,BALASUBRAMANYA P",
+                                        "role": "X",
+                                        "uid": "urn:va:user:9ABC:3176"
+                                    }
+                                ],
+                                "content": "DIAGNOSIS:\r\nAXIS I:     Bipolar disorder with mild depression \r\n            Alcohol dependence \r\nAXIS II:    Borderline personality disorder \r\nAXIS III:   Muscle strain \r\nAXIS IV:    Loss of primary support group \r\nAXIS V:     Global assessment of function - present 50 \r\n \r\n \r\nOPERATIONS/PROCEDURES: \r\nGroup therapy on 4/17/96 \r\nAssertiveness training 4/22/96 \r\n \r\n \r\nSUMMARY\r\nSUBJECTIVE:  Patient is a 42-year-old white male veteran with history\r\nof alcohol dependence, borderline personality disorder, and bipolar\r\ndisorder.  Had an irregular discharge on 4/16/96 and returned back to\r\nthe ER and requested for admission to 6A stating \"otherwise you will\r\nread my obituary in the paper.\"  Claims homeless.  Seen by Dr. Asghar\r\nand admitted to 6A.  As per patient at the time of the interview\r\ntoday, he mentioned that he was sorry for the whole incident which\r\nhappened yesterday.  Claims himself as homeless.  Feels not\r\nsignificantly depressed.  At times gets moody, irritable, angry, and\r\nreacts quickly.  Not taking lithium and other medications for some\r\ntime.  Vaguely talks about voices which he denied yesterday.  Not\r\nsignificantly bothering him.  No suicidal ideations or homicidal\r\nideations.  Patient expressed intent for staying in 6A, get\r\nstabilized, and plans to rent an apartment.  Wants follow-up in the\r\nfuture with the Mental Hygiene Clinic.  Patient made contract with\r\nstaff.     \r\n \r\nOBJECTIVE MENTAL STATUS EXAMINATION:  Patient's alert, he's oriented\r\nx3, his speech is normal, his mood is normal, his affect is\r\nappropriate, his thought flow is normal, his thought content is not\r\ndelusion, and he's not hallucinating presently.  Not feeling\r\nsignficantly depressed.  No suicidal ideations or homicidal\r\nideations.  His memory is decreased for short-term.  His remote is\r\nfair.  His impulse control is fair.  His judgment is fair.  Insight\r\nis aware of problems and will cooperate with treatment.   \r\n \r\nASSESSMENT:  Bipolar disorder with mild depression, alcohol\r\ndependence, borderline personality disorder, and muscle strain. \r\n \r\nHOSPITAL COURSE:  Patient was admitted to the Psychiatric Service\r\nwhere he was incorporated into the therapeutic community.  Because of\r\na complaint of injury to his neck he was seen by his primary care\r\nphysician who recommended that he be placed on Motrin for his muscle\r\nstrain.  He was referred to Mr. Gooch for psychosocial assessment and\r\nindividual psychotherapy at which point patient refused stating that\r\nhe was not interested in individual therapy and would be leaving the\r\narea as soon as he felt stable and only requested the names of\r\nVA's in either Arizona or Tennessee that he might go for further\r\nfollow-up.  He was seen for psychological testing and evaluation for\r\nhis Type II characterological features which were very likely those\r\nof borderline features.  However, his current addiction makes a \r\ndifficult diagnostic impression. \r\n \r\nPatient remained on the unit for several days during which time he\r\nactively participated in group therapy and assertiveness training. \r\nOnce he was felt stable he requested a discharge and it was granted. \r\n \r\nPLAN:  Patient was discharged OPT-NSC with follow-up appointment in\r\nthe Mental Hygiene Clinic.  At the time of discharge he was on\r\nalbuterol inhaler two puffs qid, Prozac 20 mg daily, Vistaril 25 mg\r\ntid, Motrin 400 mg bid prn for his neck pain, lithium carbonate 300\r\nmg qid.  He is on a regular diet.  His condition is considered\r\nstable.  He is considered competent.   \r\n \r\n \r\nbrj\r\n",
+                                "dateTime": "19960423115753",
+                                "status": "completed",
+                                "uid": "urn:va:document:9ABC:33183:188597"
+                            }
+                        ],
+                        "uid": "urn:va:document:9ABC:33183:188597",
+                        "nationalTitleSubject": {},
+                        "nationalTitleService": {},
+                        "nationalTitleRole": {},
+                        "nationalTitleSetting": {},
+                        "urgency": "routine",
+                        "attendingName": "SOMPALLI,BALASUBRAMANYA P",
+                        "attendingUid": "urn:va:user:9ABC:3176"
+                    },
+                    {
+                        "documentClass": "DISCHARGE SUMMARY",
+                        "documentTypeCode": "DS",
+                        "documentTypeName": "Discharge Summary",
+                        "encounterName": "6B ADRU Oct 11, 1995",
+                        "encounterUid": "urn:va:visit:9ABC:33183:1036310",
+                        "entered": "19951201",
+                        "facilityCode": "613",
+                        "facilityName": "MARTINSBURG VAMC",
+                        "localId": "186302",
+                        "localTitle": "Discharge Summary",
+                        "nationalTitle": {
+                            "title": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4693715"
+                        },
+                        "nationalTitleType": {
+                            "type": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4696112"
+                        },
+                        "referenceDateTime": "19951016141052",
+                        "statusName": "completed",
+                        "text": [
+                            {
+                                "clinicians": [
+                                    {
+                                        "name": "MEYER,ANDREW P",
+                                        "role": "A",
+                                        "uid": "urn:va:user:9ABC:2849"
+                                    },
+                                    {
+                                        "name": "MEYER,ANDREW P",
+                                        "role": "S",
+                                        "uid": "urn:va:user:9ABC:2849",
+                                        "signature": "ANDREW P MEYER STAFF PSYCHIATRIST",
+                                        "signedDateTime": "19951201"
+                                    },
+                                    {
+                                        "name": "MEYER,ANDREW P",
+                                        "role": "C",
+                                        "uid": "urn:va:user:9ABC:2849",
+                                        "signature": "ANDREW P MEYER STAFF PSYCHIATRIST",
+                                        "signedDateTime": "19951201"
+                                    },
+                                    {
+                                        "name": "MEYER,ANDREW P",
+                                        "role": "X",
+                                        "uid": "urn:va:user:9ABC:2849"
+                                    }
+                                ],
+                                "content": "DIAGNOSIS:\r\nAXIS I:   Alcohol dependence\r\n          Bipolar disorder by history\r\nAXIS II:  Possible borderline personality disorder\r\nAXIS III: Alcoholic liver disease\r\n \r\n \r\nOPERATIONS/PROCEDURES:\r\n \r\n \r\nSUBJECTIVE: The patient is a 41 YOWM who is admitted initially to 6-B\r\nDetox on 9-20-95. At the time of that admission, the patient reported\r\ndrinking some 3 beers on the day prior to admission. He also reported\r\nusing Marijuana, smoking some 4-5 joints daily 2-3 times per month. The\r\npatient had also reported history of blackouts, as well as headaches and\r\nearly morning drinking and had been treated in the past for delerium\r\ntremens. He reported that he had completed a Rehab. Program at the VA in\r\nCoatesville and also has been in the Domiciliary program at this\r\nfacility in the Recovery Enhancement Program. He reports that he had been\r\nsober for approximately 6 months prior to this admission. He reports\r\nfurther that he had used AA and also had a sponsor during that time. The\r\npatient had an uneventful detox and given his history appeared not to have\r\nused much alcohol prior to admission. He applied for and was accepted to\r\nthe ADRU Program and given a bed date for 10-11-95. The patient also has a\r\nhistory of possible bipolar disorder and had been on the medication\r\nLithium in the past. He has also previously been diagnosed as having\r\nborderline personality disorder and has been admitted to this facility to\r\nthe Inpatient Psychiatry floor in the past. \r\n \r\nMENTAL STATUS EXAMINATION: The patient was noted to be pleasant,\r\ncooperative. He was appropriately attired and both groom and hygiene\r\nappeared good. Speech was clear with normal rate and volume. Mood appeared\r\ngood. Affect showed good range. There was no psycho-motor agitation or\r\nretardation noted. He was alert and oriented times three and memory\r\nappeared grossly intact. There was no evidence of psychosis noted. The\r\npatient denied suicidal or homicidal ideation or plan. \r\n \r\nBRIEF HOSPITAL COURSE: On 10-11-95 the patient was admitted to ADRU\r\nProgram and was also continued on his prior medications consisting of\r\nProzac 20mg. q a.m, Lithium 300mg. po tid and Hydroxyzine 25mg. qd at hs.\r\nIn addition, the patient was also continued on Alubterol Inhaler 2 puffs\r\nq6h prn for breathing problems. The patient was seen by various memebers\r\nof the treatment team and a BioPsychoSocial Assessment was completed. The\r\npatient was in the ADRU for several days and on 11-16-95 approached Staff\r\nwith the request to leave treatment. He subsequently was seen by Staff and\r\npresented a request to leave AMA. At that time, the patient reported that\r\nhe was involved in a possible law suit from an accident he had been in. He\r\nsubsequently also complained that he did not feel he could concentrate on\r\nhis daily assignments in the group. The patient was seen by members of the\r\ntreatment team as well as Dr. Wells and was subsequently discharged on an\r\nIrregular Discharge. He was informed that he could return and re-apply for\r\nadmission after 60 days should he desire further treatment.\r\n \r\nDISCHARGE CONDITIONS AND INSTRUCTIONS: On 10-16-95 the patient was\r\ndischarged therapeutically Irregular. He was noted to be stable and\r\nambulatory at the time of discharge and voiced no medical or psychiatric\r\ncomplaints. Follow up was arranged for the patient in the Mental Hygiene\r\nClinic following discharge and he was instructed to continue on his\r\ncurrent medications of which he reported he had a supply. The patient\r\nreported to Staff that he would continue to go to AA Meetings as well as\r\nuse a sponsor. The patient is considered both competent and employable.\r\n \r\njsb\r\n",
+                                "dateTime": "19951016141052",
+                                "status": "completed",
+                                "uid": "urn:va:document:9ABC:33183:186302"
+                            }
+                        ],
+                        "uid": "urn:va:document:9ABC:33183:186302",
+                        "nationalTitleSubject": {},
+                        "nationalTitleService": {},
+                        "nationalTitleRole": {},
+                        "nationalTitleSetting": {},
+                        "urgency": "routine",
+                        "attendingName": "MEYER,ANDREW P",
+                        "attendingUid": "urn:va:user:9ABC:2849"
+                    },
+                    {
+                        "documentClass": "DISCHARGE SUMMARY",
+                        "documentTypeCode": "DS",
+                        "documentTypeName": "Discharge Summary",
+                        "encounterName": "6B DET Sep 20, 1995",
+                        "encounterUid": "urn:va:visit:9ABC:33183:1035662",
+                        "entered": "19951005",
+                        "facilityCode": "613",
+                        "facilityName": "MARTINSBURG VAMC",
+                        "localId": "185648",
+                        "localTitle": "Discharge Summary",
+                        "nationalTitle": {
+                            "title": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4693715"
+                        },
+                        "nationalTitleType": {
+                            "type": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4696112"
+                        },
+                        "referenceDateTime": "19951003074537",
+                        "statusName": "completed",
+                        "text": [
+                            {
+                                "clinicians": [
+                                    {
+                                        "name": "ALLISON,RICHARD A",
+                                        "role": "A",
+                                        "uid": "urn:va:user:9ABC:532"
+                                    },
+                                    {
+                                        "name": "MEYER,ANDREW P",
+                                        "role": "S",
+                                        "uid": "urn:va:user:9ABC:2849",
+                                        "signature": "ANDREW P MEYER STAFF PSYCHIATRIST",
+                                        "signedDateTime": "19951005"
+                                    },
+                                    {
+                                        "name": "MEYER,ANDREW P",
+                                        "role": "C",
+                                        "uid": "urn:va:user:9ABC:2849",
+                                        "signature": "ANDREW P MEYER STAFF PSYCHIATRIST",
+                                        "signedDateTime": "19951005"
+                                    },
+                                    {
+                                        "name": "MEYER,ANDREW P",
+                                        "role": "X",
+                                        "uid": "urn:va:user:9ABC:2849"
+                                    }
+                                ],
+                                "content": "DIAGNOSIS:\r\nAXIS I:     Alcohol dependence, marijuana group \r\n            Bipolar disorder by history\r\nAXIS II:    None\r\nAXIS III:   Alcoholic liver disease \r\nAXIS IV:    Homeless, legal problems\r\nAXIS V:     Global assessment of function, past 65, current 70\r\n \r\n \r\n \r\nOPERATIONS/PROCEDURES:\r\nAlcohol and drug detoxification\r\n \r\n \r\n \r\nSUBJECTIVE:  Patient admits to drinking 3 beers on 1 day for this episode.\r\nHe also admits to smoking marijuana 4 or 5 joints daily which he does 2 or\r\n3 times monthly.  He admits to blackouts, headaches, early morning\r\ndrinking and has been treated for DT's in the past.  He admits to having\r\nbeen detoxed in Boston at least twice and in Atlantic City at least 9\r\ntimes.  He claims that he has already completed a rehab program at VA in\r\nCoatesville in 1988 and went through the Recovery Enhancement  Program at\r\nthis facility.  He claims that his last AA attempts was about 6 months\r\nprior to admission.  He claims that he had a sponsor at that time.  He\r\ndenies ever using Antabuse in the past.  He claims he has an 11th grade\r\neducation but has also compeleted at least a year and a half of college.\r\nHe is currently unemployed since 1989 when he worked as a nursing\r\nassistant.  He admits to drinking on the job in the past and admits to\r\nlosing at least 20 jobs as a result of his drinking.  Patient claims that\r\nhe was arrested for DUI charge on 9/1/95.  He has spent 20 days in jail\r\nand still owes a fine.  He claims that his license will be suspended.\r\nPatient has been married and divorced 3 times.  He claims that 2 of those\r\ndivorces are a result of his drinking.  Patient is currently homeless.  He\r\nplans on going to the Mission to await ADRU placement.  \r\n \r\nOBJECTIVE:  Patient is a 41-year-old white male who was admitted with a\r\nnegative breath alcohol.  Physical exam:  Height 5 feet 8 inches, weight\r\n154 pounds, temperature 97, pulse 88, blood pressure 122/70, respirations\r\n20.  HEENT:  Strabismus is noted.  TM's were dull.  He is edentulous.\r\nChest: Lungs are clear to A&P.  Heart:  Regular sinus rhythm, no murmur.\r\nAbdomen: Nontender liver is palpable below the right costal margin.\r\nSpleen tip is palpable.  Skin: Patient has multiple tattoo's on his arms.\r\n \r\nLAB STUDIES:  The RPR was nonreactive.  Urinalysis is essentially within\r\nwithin normal limits.  Urinalysis for drug screen to include marijuana,\r\ndetected cannabinoids at 46.39ng.  CBC:  Hemoglobin 15, hematocrit 44.3,\r\nplatelet count 137,000, 5.1 EO%.  SMA 12 to include the SGPT in\r\nelectrolytes, AST 38, SGPT 58, GGT 132.  Chest x-ray was not obtained.\r\nX-ray of the cervical spine shows normal cervical spine.  EKG was not\r\nobtained on this admission.\r\n \r\nHOSPITAL COURSE:  The patient was detoxified with no severe withdrawal\r\nsymptoms, using the standard detox regimen.  While on the Ward, he\r\nattended group education, films, etc.  After sufficient detoxification,\r\npatient requested evaluation for the ADRU Program.  He has successfully\r\ncompleted written assignments and has been scheduled for admission to ADRU\r\non 10/17.  In the interim, patient plans on going to the local Mission\r\nwhere he will attend AA in the community and return for preprogram groups.\r\n \r\nPatient has complained of neck pain.  He was sent for an x-ray of the\r\ncervical spine.  He was also started on Ibuprofen 800mg po tid with food.\r\nAt the time of discharge, patient had no further complaints of neck pain.\r\nPatient has complained of blurred vision.  A consult has been submitted\r\nto Ophthalmology.\r\n \r\nPatient has a history of Bipolar disorder.  While on the Ward, he was\r\nmaintained on his usual medications of Lithium, 300mg po tid, Hydroxyzine\r\npamoate 25mg q daily and Fluoxetine 20mg 2 daily.  He states that he has\r\nmedications and will not require refills at this time.  Patient also uses\r\nan Albuterol oral inhaler 2 puffs qid.  He was maintained on this\r\nmedication while on the Unit.  Again, he states that he has medication and\r\nwill not require a prescription at this time.  \r\n \r\nDISPOSITION:  Patient is being discharged OPT/NSC to return to preprogram\r\ngroup on 10/4 and 10/11 at 1:00 PM.  If he is in compliance with the\r\ntreatment plan, he will be admitted to ADRU on 10/17.  While on the Ward,\r\nhe tolerated a regular diet and may resume the same upon discharge.  He is\r\nunemployed.  He may resume prehospital activities upon discharge.  Patient\r\nis not service connected.  He cannot be considered competent to handle\r\nfunds if he is drinking or using drugs.  \r\n \r\nje\r\n",
+                                "dateTime": "19951003074537",
+                                "status": "completed",
+                                "uid": "urn:va:document:9ABC:33183:185648"
+                            }
+                        ],
+                        "uid": "urn:va:document:9ABC:33183:185648",
+                        "nationalTitleSubject": {},
+                        "nationalTitleService": {},
+                        "nationalTitleRole": {},
+                        "nationalTitleSetting": {},
+                        "urgency": "routine",
+                        "attendingName": "MEYER,ANDREW P",
+                        "attendingUid": "urn:va:user:9ABC:2849"
+                    },
+                    {
+                        "documentClass": "DISCHARGE SUMMARY",
+                        "documentTypeCode": "DS",
+                        "documentTypeName": "Discharge Summary",
+                        "encounterName": "6A_PSYCH Jul 06, 1995",
+                        "encounterUid": "urn:va:visit:9ABC:33183:1034853",
+                        "entered": "19950815",
+                        "facilityCode": "613",
+                        "facilityName": "MARTINSBURG VAMC",
+                        "localId": "184900",
+                        "localTitle": "Discharge Summary",
+                        "nationalTitle": {
+                            "title": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4693715"
+                        },
+                        "nationalTitleType": {
+                            "type": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4696112"
+                        },
+                        "referenceDateTime": "19950721134841",
+                        "statusName": "completed",
+                        "text": [
+                            {
+                                "clinicians": [
+                                    {
+                                        "name": "BYRD,HARMON G JR",
+                                        "role": "A",
+                                        "uid": "urn:va:user:9ABC:639"
+                                    },
+                                    {
+                                        "name": "SOMPALLI,BALASUBRAMANYA P",
+                                        "role": "S",
+                                        "uid": "urn:va:user:9ABC:3176",
+                                        "signature": "BALASUBRAMANYA P SOMPALLI M.D.",
+                                        "signedDateTime": "19950815"
+                                    },
+                                    {
+                                        "name": "SOMPALLI,BALASUBRAMANYA P",
+                                        "role": "C",
+                                        "uid": "urn:va:user:9ABC:3176",
+                                        "signature": "BALASUBRAMANYA P SOMPALLI M.D.",
+                                        "signedDateTime": "19950815"
+                                    },
+                                    {
+                                        "name": "SOMPALLI,BALASUBRAMANYA P",
+                                        "role": "X",
+                                        "uid": "urn:va:user:9ABC:3176"
+                                    }
+                                ],
+                                "content": "DIAGNOSIS:\r\nAXIS I:     Bipolar II disorder with depressed features \r\n            History of alcohol abuse \r\nAXIS II:    Borderline personality disorder \r\nAXIS III:   None \r\nAXIS IV:    Loss of primary support group \r\nAXIS V:     Global assessment of function - past 60, present 55 \r\n \r\n \r\n \r\nOPERATIONS/PROCEDURES: \r\n \r\n \r\nSUMMARY \r\nSUBJECTIVE:  Patient is a 41-year-old white male veteran with history\r\nof bipolar disorder and substance abuse and borderline personality\r\ndisorder who was admitted to 6A on 7/6/95 because patient mentioned\r\nsuicidal ideations prior to arriving to the VA Medical Center.  After\r\na patient he was last seen by Dr. Hill a week ago in the Mental\r\nHygiene Clinic, rejected by the Homeless Program, got upset, went to\r\nAtlantic City and lived in a motel, ran out of money, followed a\r\nrobbery, went to rescue mission, turned down by rescue mission, got\r\nupset, took an overdose of ten tablets of Ativan, immediately called\r\nChaplain, ended up in the hospital where he had stomach wash, and was\r\ndischarged the next day.  Patient describes it as a gesture trying to\r\nget attention from other people.  Patient mentioned he felt slightly\r\ndepressed at times, sleeping difficulty, stopped using Taxols since a\r\nmonth, and Lithium since two days prior to suicidal gesture.  Patient\r\nusually gets emotional upset and anxious.  Patient's main concern at\r\nthis time was homeless situation since his camping trailer got\r\ndestroyed following the rains.  Patient has no suicidal or homicidal\r\nideations at this time.  Patient got divorced in 1986.  Mentioned\r\nthat he has financial difficulties, presently surviving on SSI\r\n$516.00, and applied for a VA pension.  Patient has history of\r\npolysubstance abuse; denies abusing significant amounts.  Patient\r\nsaid he used two six-packs of beer at Atlantic City.  Patient's\r\nlongest period of sobriety was from 1989-1993.  Patient is a smoker\r\nwho uses one pack per day.  Patient's sleeping his average six hours\r\nper night since he was on Ativan.  Patient mentions difficulty with\r\nconcentration and short-term memory.  Patient mentions he lost over\r\n40 pounds over four months.  Patient's appetite is good.  Feels\r\nhelpless because of homeless situation.  Patient made contract with\r\nstaff.   \r\n \r\nOBJECTIVE:  Mental status examination - patient's alert.  He's\r\noriented times three.  His speech is normal.  His mood is mildly\r\ndepressed.  His affect is appropriate.  His motor activity is normal.\r\nThought flow is normal.  Thought content is mildly depressed.  No\r\nsuicidal or homicidal ideations.  No delusions or hallucinations. \r\nMemory is decreased for recent events; remote is intact.  Impulse\r\ncontrol is fair.  His judgment is fair presently.  His insight is\r\naware of problems and will cooperate with treatment.  He is able to\r\nrecall two of three after five minutes.   \r\n \r\nIMPRESSION:  Has bipolar II disorder with mild depressive features, \r\nalcohol abuse, and also borderline personality disorder. \r\n \r\nHOSPITAL COURSE:  Mr. Striplin was admitted to the Psychiatric\r\nService where he was incorporated into the therapeutic community and\r\ncontinued on his previous medications of Benadryl 50 mg qhs, Lithium\r\ncarbonate 300 mg tid, and Albuterol inhaler 2 puffs qid.  Following\r\nevaluation his Benadryl was discontinued and he was placed on Ambien\r\n10 mg qhs and Prozac 20 mg daily.  He remained in the hospital for\r\nseveral weeks while he began to show improvement in his depressed\r\nmood.  He was able to sleep with the use of Ambien and began looking\r\nfor a place to stay.  Once Mr. Striplin was able to make discharge\r\nplans, he was discharged to be followed in the Mental Hygiene Clinic.\r\n \r\nPLAN:  Mr. Striplin was discharged OPT-NSC with a follow-up\r\nappointment in the Mental Hygiene Clinic on 8/25/95 at 11:00 a.m.\r\nwith Dr. Sepsi.  At the time of discharge he was on a regular diet. \r\nHis medications included Albuterol 2 puffs qid, Prozac 20 mg daily,\r\nLithium 300 mg tid, and Ambien 10 mg qhs.  He was given a 15-day\r\nsupply of medication.  His condition is considered stable.  He is\r\nconsidered competent.  \r\n \r\n \r\n \r\nbrj\r\n",
+                                "dateTime": "19950721134841",
+                                "status": "completed",
+                                "uid": "urn:va:document:9ABC:33183:184900"
+                            }
+                        ],
+                        "uid": "urn:va:document:9ABC:33183:184900",
+                        "nationalTitleSubject": {},
+                        "nationalTitleService": {},
+                        "nationalTitleRole": {},
+                        "nationalTitleSetting": {},
+                        "urgency": "routine",
+                        "attendingName": "SOMPALLI,BALASUBRAMANYA P",
+                        "attendingUid": "urn:va:user:9ABC:3176"
+                    },
+                    {
+                        "documentClass": "DISCHARGE SUMMARY",
+                        "documentTypeCode": "DS",
+                        "documentTypeName": "Discharge Summary",
+                        "encounterName": "6A_PSYCH Mar 15, 1994",
+                        "encounterUid": "urn:va:visit:9ABC:33183:1029404",
+                        "entered": "19940508",
+                        "facilityCode": "613",
+                        "facilityName": "MARTINSBURG VAMC",
+                        "localId": "179666",
+                        "localTitle": "Discharge Summary",
+                        "nationalTitle": {
+                            "title": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4693715"
+                        },
+                        "nationalTitleType": {
+                            "type": "DISCHARGE SUMMARY",
+                            "vuid": "urn:va:vuid:4696112"
+                        },
+                        "referenceDateTime": "19940401154413",
+                        "statusName": "completed",
+                        "text": [
+                            {
+                                "clinicians": [
+                                    {
+                                        "name": "BYRD,HARMON G JR",
+                                        "role": "A",
+                                        "uid": "urn:va:user:9ABC:639"
+                                    },
+                                    {
+                                        "name": "HILL,JAMES H",
+                                        "role": "S",
+                                        "uid": "urn:va:user:9ABC:3004",
+                                        "signature": "JAMES H HILL staff psychiatrist",
+                                        "signedDateTime": "19940524"
+                                    },
+                                    {
+                                        "name": "HILL,JAMES H",
+                                        "role": "C",
+                                        "uid": "urn:va:user:9ABC:3004",
+                                        "signature": "JAMES H HILL staff psychiatrist",
+                                        "signedDateTime": "19940524"
+                                    },
+                                    {
+                                        "name": "HILL,JAMES H",
+                                        "role": "X",
+                                        "uid": "urn:va:user:9ABC:3004"
+                                    }
+                                ],
+                                "dateTime": "19940401154413",
+                                "status": "completed",
+                                "uid": "urn:va:document:9ABC:33183:179666"
+                            }
+                        ],
+                        "uid": "urn:va:document:9ABC:33183:179666",
+                       "nationalTitleSubject": {},
+                        "nationalTitleService": {},
+                        "nationalTitleRole": {},
+                        "nationalTitleSetting": {},
+                        "urgency": "routine",
+                        "attendingName": "HILL,JAMES H",
+                        "attendingUid": "urn:va:user:9ABC:3004"
+                    }
+                ]
+            },
+            "errorSection": {
+                "errors": [],
+                "fatalErrors": [],
+                "warnings": []
+            }
+        }
+    ]
+}

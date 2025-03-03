@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Columbia_Suicide_Severity_Rating_Sca__c</fullName>
+    <description>Link to eGain search for C-SSRS</description>
+    <externalId>false</externalId>
+    <formula>&quot;https://www.egain.com&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText
+    >Does not need duplicating if completed by CCC RN. If CCC MP needs to perform the C-SSRS with patient, please save results and store in patient EHR in Vista/CPRS or
+        Cerner.</inlineHelpText>
+    <label>Columbia Suicide Severity Rating Scale</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

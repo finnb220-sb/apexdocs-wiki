@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Other_medication_reconciliation__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked when an &quot;Other&quot; medication reconciliation was performed. &quot;Other reconciliation&quot; text box must be populated.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if an &quot;Other&quot; medication reconciliation was performed. &quot;Other reconciliation&quot; text box must be populated.</inlineHelpText>
+    <label>Other medication reconciliation</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

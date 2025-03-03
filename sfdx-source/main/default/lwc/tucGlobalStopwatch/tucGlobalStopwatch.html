@@ -1,0 +1,33 @@
+<template>
+    <div class="slds-card slds-p-around_medium">
+        <div class="slds-text-heading_large slds-align_absolute-center">{formattedTime}</div>
+
+        <div class="slds-p-around_medium">
+            <lightning-button-group class="slds-align_absolute-center">
+                <lightning-button
+                    variant="success"
+                    icon-name="utility:play"
+                    label="Start"
+                    onclick={startTimer}
+                    disabled={startDisabled}></lightning-button>
+                <lightning-button
+                    variant="destructive"
+                    icon-name="utility:pause"
+                    label="Pause"
+                    onclick={pauseTimer}
+                    disabled={pauseDisabled}></lightning-button>
+                <lightning-button
+                    variant="success"
+                    icon-name="utility:play"
+                    label="Resume"
+                    onclick={resumeTimer}
+                    disabled={resumeDisabled}></lightning-button>
+                <lightning-button
+                    variant="brand"
+                    icon-name="utility:refresh"
+                    label="Reset"
+                    onclick={resetTimer}></lightning-button>
+            </lightning-button-group>
+        </div>
+    </div>
+</template>

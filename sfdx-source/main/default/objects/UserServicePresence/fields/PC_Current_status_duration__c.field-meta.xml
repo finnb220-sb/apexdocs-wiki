@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PC_Current_status_duration__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ISNULL(StatusEndDate),(NOW() - StatusStartDate) * (24*3600),(StatusEndDate - StatusStartDate) * (24*3600) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Current Status Duration in Seconds</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

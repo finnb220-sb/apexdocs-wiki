@@ -1,0 +1,27 @@
+<template>
+    <lightning-layout multiple-rows>
+        <!-- max width for a row = 12 -->
+        <lightning-layout-item size="6" class="slds-p-right_x-small">
+            <lightning-combobox
+                name="Filter1"
+                placeholder="Filter by"
+                value={value1}
+                options={firstFilterOptions}
+                onchange={handleFirstChange}
+                onfocus={handleFocus}
+            ></lightning-combobox>
+        </lightning-layout-item>
+        <lightning-layout-item size="6" class="slds-p-left_x-small">
+            <!-- <template if:false={buttonState}> -->
+            <lightning-combobox
+                name="Filter2"
+                value={value2}
+                placeholder="Select Value"
+                options={secondFilterOptions}
+                disabled={buttonState}
+                onchange={handleSecondChange}
+            ></lightning-combobox>
+            <!-- </template> -->
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

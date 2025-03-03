@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="mviDuplicatesJSON" label="mviDuplicatesJSON" type="String" role="inputOnly" />
+            <property name="providerLoginSiteCode" label="providerLoginSiteCode" type="String" role="inputOnly" />
+            <property name="recordId" label="Record Id" type="String" role="inputOnly" />
+            <property name="providerName" label="providerName" type="String" role="inputOnly" />
+            <property name="providerUserId" label="providerUserId" type="String" role="inputOnly" />
+            <property name="patientLocalSiteId" label="patientLocalSiteId" type="String" role="inputOnly" />
+            <property name="newPatientLocalIdVariable" label="newPatientLocalId" type="Integer" role="outputOnly" />
+            <property name="isMocked" label="deprecated feature" type="Boolean" role="inputOnly" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

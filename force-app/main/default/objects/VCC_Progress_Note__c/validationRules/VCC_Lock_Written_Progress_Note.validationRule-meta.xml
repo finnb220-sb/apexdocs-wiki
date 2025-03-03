@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Lock_Written_Progress_Note</fullName>
+    <active>true</active>
+    <description>Lock a progress note that is written to VistA. The rule will not run on a progress note that has been transferred.</description>
+    <errorConditionFormula
+    >BEGINS( RecordType.DeveloperName, &quot;VCC_&quot;) &amp;&amp; !$Permission.DisableTriggersFlag &amp;&amp; !VCC_Transferred_Note__c &amp;&amp; /* notes that have been
+        transferred by the flow will be excluded from this rule */ !ISNEW() &amp;&amp; !ISBLANK(PRIORVALUE( VCC_itemId__c )) &amp;&amp; !( ISCHANGED( VCC_Signed__c ) &amp;&amp;
+        PRIORVALUE( VCC_Signed__c ) == false &amp;&amp; ISCHANGED( VCC_Signature_Code__c ) &amp;&amp; ISBLANK(PRIORVALUE( VCC_Signature_Code__c )) &amp;&amp; ISCHANGED(
+        VCC_Electronic_Signature__c ) &amp;&amp; ISBLANK(PRIORVALUE( VCC_Electronic_Signature__c )) &amp;&amp; !ISCHANGED( VCC_itemId__c ) ) &amp;&amp; NOT
+        $Permission.VCC_Disable_Progress_Note_Assignment_Rules &amp;&amp; (PRIORVALUE(TED_Escalated_to_Tele_EC__c) = TRUE||TED_Escalated_to_Tele_EC__c = FALSE) &amp;&amp;
+        NOT(ISCHANGED( VCC_CRM_System_Modified_Output_To_VistA__c ))</errorConditionFormula>
+    <errorMessage>ERROR: The Progress Note has been written to VistA and may not be edited.</errorMessage>
+</ValidationRule>

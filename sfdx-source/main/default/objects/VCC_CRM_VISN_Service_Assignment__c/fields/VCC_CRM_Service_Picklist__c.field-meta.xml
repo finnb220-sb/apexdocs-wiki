@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_CRM_Service_Picklist__c</fullName>
+    <description>Picklist with the Service options for the SOT app</description>
+    <externalId>false</externalId>
+    <label>CRM Service</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Admin</fullName>
+                <default>false</default>
+                <label>Admin</label>
+            </value>
+            <value>
+                <fullName>Clinical Triage</fullName>
+                <default>false</default>
+                <label>Clinical Triage</label>
+            </value>
+            <value>
+                <fullName>Pharmacy</fullName>
+                <default>false</default>
+                <label>Pharmacy</label>
+            </value>
+            <value>
+                <fullName>Provider Connect</fullName>
+                <default>false</default>
+                <label>Provider Connect</label>
+            </value>
+            <value>
+                <fullName>Scheduling</fullName>
+                <default>false</default>
+                <label>Scheduling</label>
+            </value>
+            <value>
+                <fullName>Tele-Emergency Care</fullName>
+                <default>false</default>
+                <label>Tele-Emergency Care</label>
+            </value>
+            <value>
+                <fullName>Virtual Clinic Visit</fullName>
+                <default>false</default>
+                <label>Virtual Clinic Visit</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

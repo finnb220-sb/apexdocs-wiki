@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Caregiver_who_rec_education_Tier_II__c</fullName>
+    <description>The name of the family member and/or caregiver who received patient education</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter the name of the family member and/or caregiver who received patient education</inlineHelpText>
+    <label>Caregiver who received education-Tier II</label>
+    <length>100</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

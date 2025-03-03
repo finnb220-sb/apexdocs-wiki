@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>New Vista User Search</label>
+    <protected>false</protected>
+    <values>
+        <field>VCC_Description__c</field>
+        <value xsi:type="xsd:string">In flow &quot;VCC_Sign_Note_with_Callouts_2&quot;, enables the searching of signers from custom object &quot;VCC_Vista_User__c&quot;</value>
+    </values>
+    <values>
+        <field>VCC_State__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+</CustomMetadata>

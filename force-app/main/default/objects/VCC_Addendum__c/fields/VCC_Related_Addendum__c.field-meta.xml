@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Related_Addendum__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Used for Correcting an Addendum</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Used for Correcting an Addendum</inlineHelpText>
+    <label>Related Addendum</label>
+    <referenceTo>VCC_Addendum__c</referenceTo>
+    <relationshipLabel>Related Addendums</relationshipLabel>
+    <relationshipName>Addendums</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

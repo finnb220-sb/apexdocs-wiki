@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_TransferredToAssignedPACT_NonTriage__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked when the patient is non-triage and is transferred ti PACT/Provider</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if the patient is non-triage and is transferred ti PACT/Provider</inlineHelpText>
+    <label>Transferred to PACT/Provider-NonTriage</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="responseJSON" type="String" />
+            <property name="columnsTemplate" type="String" />
+            <property name="enableAddSigners" type="Boolean" role="inputOnly" />
+            <property name="siteCode" label="Site Code" type="String" role="inputOnly" />
+            <property name="noVaPactMsg" label="No VA PACT Message" type="String" role="inputOnly" />
+            <property name="truncateColumns" type="Boolean" role="inputOnly" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

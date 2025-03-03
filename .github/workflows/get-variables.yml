@@ -1,0 +1,36 @@
+name: Get Variables
+
+on:
+  workflow_call:
+    inputs:
+      variable_names:
+        description: 'Comma-separated list of variable names to retrieve'
+        required: true
+        type: string
+    outputs:
+      variables:
+        description: 'JSON object containing the retrieved variables'
+        value: ${{ steps.get-variables.outputs.variables }}
+
+jobs:
+  get-variables:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get GitHub Action variables
+        id: get-variables
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        run: |
+          variables=$(gh api \
+            -H "Accept: application/vnd.github+json" \
+            /orgs/${{ github.repository_owner }}/actions/variables)
+          
+          keys=$(echo '${{ inputs.variable_names }}' | tr ',' '\n')
+          output='{}'
+          
+          for key in $keys; do
+            value=$(echo "$variables" | jq -r ".[] | select(.name == \"$key\") | .value")
+            output=$(echo "$output" | jq --arg key "$key" --arg value "$value" '. + {($key): $value}')
+          done
+          
+          echo "variables=$output" >> $GITHUB_OUTPUT

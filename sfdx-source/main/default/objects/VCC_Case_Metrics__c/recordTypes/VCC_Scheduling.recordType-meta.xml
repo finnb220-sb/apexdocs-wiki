@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Scheduling</fullName>
+    <active>true</active>
+    <description>Record Type that will be used to track the scheduling actions (cancel, schedule) that happen within the VAHC OmniStudio scheduling solution, and the clinics and clinic stop codes associated with each action.</description>
+    <label>Scheduling</label>
+</RecordType>

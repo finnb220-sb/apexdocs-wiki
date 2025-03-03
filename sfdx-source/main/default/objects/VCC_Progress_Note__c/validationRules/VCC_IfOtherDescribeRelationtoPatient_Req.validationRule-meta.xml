@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_IfOtherDescribeRelationtoPatient_Req</fullName>
+    <active>true</active>
+    <description
+    >&apos;If Other Describe Relation to Patient&apos; required on edit if &apos;Caller/Recipient Relation to Patient&apos; is &quot;Other&quot;. The rule will not run on a
+        progress note that has been transferred.</description>
+    <errorConditionFormula
+    >BEGINS( RecordType.DeveloperName, &quot;VCC_&quot;) &amp;&amp; !$Permission.DisableTriggersFlag &amp;&amp; !VCC_Transferred_Note__c &amp;&amp; /* notes that have been
+        transferred by the flow will be excluded from this rule */ AND( NOT( ISNEW() ), ISPICKVAL( VCC_Relative_Type__c , &apos;Other&apos;), ISBLANK(
+        VCC_If_Other_Describe_Relation_Patient__c ) )</errorConditionFormula>
+    <errorDisplayField>VCC_If_Other_Describe_Relation_Patient__c</errorDisplayField>
+    <errorMessage>ERROR: If Other Describe Relation to Patient is required.</errorMessage>
+</ValidationRule>

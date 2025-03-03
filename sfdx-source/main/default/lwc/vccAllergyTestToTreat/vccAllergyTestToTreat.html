@@ -1,0 +1,152 @@
+<template>
+    <lightning-record-edit-form title={recordId} object-api-name={objectApiName} record-id={recordId}>
+        <template if:true={Allergy}>
+            <lightning-input-field field-name={allergies} variant="label-stacked" data-name="VCC_Allergies__c" onchange={handleChange}></lightning-input-field>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_11-of-12"></div>
+            </div>
+        </template>
+        <template if:true={allergyPrev}>
+            <lightning-input-field
+                field-name={allergies}
+                variant="label-stacked"
+                data-name="VCC_Allergies__c"
+                onchange={handleChange}
+                value={outputTextValue}
+            ></lightning-input-field>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_11-of-12"></div>
+            </div>
+        </template>
+        <template if:true={Prescriptions}>
+            <lightning-input-field field-name={prescriptions} variant="label-stacked" data-name="VCC_Medications__c" onchange={handleChange}></lightning-input-field>
+        </template>
+        <template if:true={prescriptionPrev}>
+            <lightning-input-field
+                field-name={prescriptions}
+                variant="label-stacked"
+                data-name="VCC_Medications__c"
+                onchange={handleChange}
+                value={outputTextValue}
+            ></lightning-input-field>
+        </template>
+        <template if:true={Review}>
+            <!--Area for whatever the last screen of the flow is-->
+            <template if:true={isShowSpinner}>
+                <c-base-spinner alt-text="Loading Labs"></c-base-spinner>
+            </template>
+            <template if:false={isShowSpinner}>
+                <template if:true={noConnection}>
+                    <c-base-empty-state type="noConnection" variant="error" msg="No Connection"></c-base-empty-state>
+                </template>
+                <template if:true={noResults}>
+                    <c-base-empty-state type="noResults" variant="error" msg="No results found for this search"></c-base-empty-state>
+                </template>
+                <template if:true={isEmpty}>
+                    <c-base-empty-state type="isEmpty" variant="error" msg="No Labs available for this patient"></c-base-empty-state>
+                </template>
+                <template if:false={isEmpty}>
+                    <template if:false={noResults}>
+                        <template if:false={noConnection}>
+                            <lightning-datatable
+                                class="datatable"
+                                data={labList}
+                                columns={columns}
+                                key-field="key"
+                                onsort={handleSort}
+                                sorted-by={sortedField}
+                                sorted-direction={sortDirection}
+                                onrowselection={handleRowSelected}
+                                hide-checkbox-column="true"
+                            >
+                            </lightning-datatable>
+                            <div class="slds-button_brand">
+                                <template if:false={isFirstPage}>
+                                    <lightning-button variant="brand" label="< Previous" onclick={handlePrevPage}>Previous</lightning-button>
+                                </template>
+                                <template if:false={isLastPage}>
+                                    <lightning-button variant="brand" label="   Next   >" onclick={handleNextPage}>Next</lightning-button>
+                                </template>
+                            </div>
+                            <div class="page-info">Total Records: {totalRecords} Page ({currentPage} of {totalPageSize})</div>
+                        </template>
+                    </template>
+                </template>
+                <!--
+                <c-base-modal size='medium'>
+                    <c-vcc-lab-details if:true={selectedLab} selected-lab={selectedLab}></c-vcc-lab-details>
+                </c-base-modal>
+                <c-vcc-progress-note-lab-modal record-id={recordId}></c-vcc-progress-note-lab-modal>
+                -->
+            </template>
+        </template>
+        <template if:true={Preview}>
+            <div class="slds-page-header">
+                <div class="slds-page-header__row">
+                    <div class="slds-page-header__col-title">
+                        <div class="slds-media">
+                            <div class="slds-media__figure">
+                                <span class="slds-icon_container slds-icon-standard-account">
+                                    <span class="slds-assistive-text">COVID T2T Preview</span>
+                                </span>
+                            </div>
+                            <div class="slds-media__body">
+                                <div class="slds-page-header__name">
+                                    <div class="slds-page-header__name-title">
+                                        <h1>
+                                            <span class="slds-page-header__title slds-truncate" title="Final Report">COVID T2T Preview - Uneditable</span>
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--
+            <lightning-accordion class="example-accordion"
+                                 allow-multiple-sections-open="true"
+                                 active-section-name="B">
+                <lightning-accordion-section name="Patient" label="Patient Data">
+                    <lightning-button-menu slot="actions"
+                                           alternative-text="Show menu"
+                                           icon-size="x-small"
+                                           menu-alignment="right">
+                        <lightning-menu-item value="New" label="Restart"></lightning-menu-item>
+                        <lightning-menu-item value="Edit" label="Pause"></lightning-menu-item>
+                    </lightning-button-menu>
+                    <br/>
+                    <c-vcc-progress-note-output pn-json={progressNoteJson} ></c-vcc-progress-note-output>
+                    <br/>
+                </lightning-accordion-section>
+                <lightning-accordion-section name="Medical" label="Medical Review">
+                    <ul class="slds-m-around_medium">
+                        <template for:each={medArray} for:item="data">
+                            <li key={data.id} class="slds-text-align_center slds-m-bottom_small">
+                                <strong><lightning-formatted-rich-text value={data.label}></lightning-formatted-rich-text></strong>&nbsp; : {data.response}
+                            </li>
+                        </template>
+                    </ul>
+                </lightning-accordion-section>
+                <lightning-accordion-section name="Disposition" label="Patient Disposition">
+                    <ul class="slds-m-around_medium">
+                        <template for:each={disArray} for:item="data">
+                            <li key={data.id} class="slds-text-align_center slds-m-bottom_small">
+                                <strong><lightning-formatted-rich-text value={data.label}></lightning-formatted-rich-text></strong>&nbsp; : {data.response}
+                            </li>
+                        </template>
+                    </ul>
+                </lightning-accordion-section>
+            </lightning-accordion>
+            -->
+            <!--
+            <template for:each={allArray} for:item="data">
+                <div key={data.id} class="slds-text-align_center slds-m-bottom_small">
+                    <strong><lightning-formatted-rich-text value={data.label}></lightning-formatted-rich-text></strong>&nbsp; : {data.response}
+                </div>
+            </template>
+        --->
+            <lightning-progress-bar value={progress}></lightning-progress-bar>
+        </template>
+    </lightning-record-edit-form>
+</template>

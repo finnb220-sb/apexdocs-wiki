@@ -1,0 +1,182 @@
+<template>
+    <div class="wrapper slds-is-relative">
+        <div class="container">
+            <div class="section">
+                <!-- If adding items to row, you must change the grid template rows in CSS file -->
+                <div class="row">
+                    <p><strong>Date Created</strong></p>
+                    <p><strong>Facility</strong></p>
+                    <p><strong>Type</strong></p>
+                    <p><strong>Code</strong></p>
+                    <p>{display.dateCreatedFormatted}</p>
+                    <p>{display.facilityName}</p>
+                    <p>{display.typeName}</p>
+                    <p>{display.facilityCode}</p>
+                </div>
+                <div class="row">
+                    <p><strong>Encounter Name</strong></p>
+                    <p><strong>Date Signed</strong></p>
+                    <p><strong>Local Title</strong></p>
+                    <p><strong>UID</strong></p>
+                    <p>{display.encounterName}</p>
+                    <p>{display.dateSignedFormatted}</p>
+                    <p>{display.localTitle}</p>
+                    <p>{display.id}</p>
+                </div>
+            </div>
+        </div>
+        <div class="spinner-container" if:true={loading}>
+            <lightning-spinner size="xxsmall" alternative-text="loading signer info" variant="brand">
+            </lightning-spinner>
+        </div>
+        <lightning-accordion active-section-name={activeSections} allow-multiple-sections-open if:false={loading}>
+            <lightning-accordion-section name="Signers" label="Signers">
+                <div class="section">
+                    <strong>
+                        <div tabindex="0"><h1>Signers</h1></div>
+                    </strong>
+                    <div class="row">
+                        <div tabindex="0"><strong>Name</strong></div>
+                        <div tabindex="0"><strong>Role</strong></div>
+                        <div tabindex="0"><strong>UID</strong></div>
+                        <div tabindex="0"><strong>Date Signed</strong></div>
+                        <template for:each={clinicians} for:item="clinician" for:index="i">
+                            <div key={clinician.name} tabindex="0">{clinician.name}</div>
+                            <div key={clinician.role} tabindex="0">{clinician.role}</div>
+                            <div key={clinician.id} tabindex="0">{clinician.id}</div>
+                            <div key={clinician.signedDateTimeFormatted} tabindex="0">
+                                {clinician.signedDateTimeFormatted}
+                            </div>
+                        </template>
+                    </div>
+                </div>
+
+                <div class="section" if:true={hasAdditionalSigners}>
+                    <strong>
+                        <div tabindex="0"><h1>Additional Signers</h1></div>
+                    </strong>
+                    <div class="row">
+                        <div tabindex="0"><strong>Name</strong></div>
+                        <div tabindex="0"><strong>Title</strong></div>
+                        <div><strong></strong></div>
+                        <div tabindex="0"><strong>Date Signed</strong></div>
+                        <template for:each={additionalAndSurrogateSigners} for:item="formattedSigner" for:index="i">
+                            <div key={formattedSigner.name} tabindex="0" class="preserveNewLine">
+                                {formattedSigner.name}
+                            </div>
+                            <div key={formattedSigner.title} tabindex="0">{formattedSigner.title}</div>
+                            <div key={formattedSigner.code}></div>
+                            <div key={formattedSigner.date} tabindex="0">{formattedSigner.date}</div>
+                        </template>
+                    </div>
+                </div>
+
+                <div if:true={additionalSignersAvailable}>
+                    <strong if:false={exceptionMessage}>
+                        <div><h1>No Additional Signers</h1></div>
+                    </strong>
+                    <div class="center">
+                        <div>
+                            <p><lightning-formatted-text value={exceptionMessage}></lightning-formatted-text></p>
+                        </div>
+                        <br />
+                        <div>
+                            <p><lightning-formatted-text value={displayMessage}></lightning-formatted-text></p>
+                        </div>
+                    </div>
+                </div>
+            </lightning-accordion-section>
+            <lightning-accordion-section name="Content" label="Content">
+                <div class="section">
+                    <strong>
+                        <h1>Content</h1>
+                    </strong>
+                    <pre>{content}</pre>
+                </div>
+            </lightning-accordion-section>
+            <!-- begin addendums -->
+            <lightning-accordion-section name="Addendums" label="Addendums" if:true={hasAddendums}>
+                <div class="addendums-container">
+                    <strong>
+                        <h1 style="font-size: 1.25em">Addendums</h1>
+                    </strong>
+                    <template if:true={hasAddendums} for:each={addendums} for:item="addendum">
+                        <div key={addendum.uid} class="single-addendum">
+                            <div class="section" key={addendum.uid}>
+                                <!-- If adding items to row, you must change the grid template rows in CSS file -->
+
+                                <strong>
+                                    <h1>{addendum.date}</h1>
+                                </strong>
+                                <div class="row">
+                                    <p><strong>Date Created</strong></p>
+                                    <p><strong>Status</strong></p>
+                                    <p><strong>Document</strong></p>
+                                    <p></p>
+                                    <p>{addendum.date}</p>
+                                    <p>{addendum.status}</p>
+                                    <p>{addendum.document}</p>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="section" key={addendum.uid}>
+                                <div class="row">
+                                    <div tabindex="0"><strong>Name</strong></div>
+                                    <div tabindex="0"><strong>Role</strong></div>
+                                    <div tabindex="0"><strong>Date Time Signed</strong></div>
+                                    <div tabindex="0"><strong>Signature</strong></div>
+                                    <template for:each={addendum.clinicians} for:item="clinician" for:index="i">
+                                        <div key={clinician.name} tabindex="0">{clinician.name}</div>
+                                        <div key={clinician.role} tabindex="0">{clinician.role}</div>
+                                        <div key={fomattedDate} tabindex="0">{clinician.signedDateTimeFormatted}</div>
+                                        <div class="slds-truncate" key={clinician.signature} tabindex="0">
+                                            {clinician.signature}
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                            <div class="section" if:true={addendum.additionalSigners}>
+                                <div class="addition-signer-label">
+                                    <strong>
+                                        <p><u>Additional Signers</u></p>
+                                    </strong>
+                                </div>
+
+                                <div class="row">
+                                    <div tabindex="0"><strong>Name</strong></div>
+                                    <div tabindex="0"><strong>Title</strong></div>
+                                    <div></div>
+                                    <div tabindex="0"><strong>Date Signed</strong></div>
+                                    <template
+                                        for:each={additionalAndSurrogateSigners}
+                                        for:item="formattedSigner"
+                                        for:index="i">
+                                        <div key={formattedSigner.name} tabindex="0" class="preserveNewLine">
+                                            {formattedSigner.name}
+                                        </div>
+                                        <div key={formattedSigner.title} tabindex="0">{formattedSigner.title}</div>
+                                        <div key={formattedSigner.code}></div>
+                                        <div key={formattedSigner.date} tabindex="0">{formattedSigner.date}</div>
+                                    </template>
+                                </div>
+                            </div>
+
+                            <div class="section" if:false={addendum.additionalSigners}>
+                                <div class="addition-signer-label">
+                                    <strong>
+                                        <p>No Additional Signers</p>
+                                    </strong>
+                                </div>
+                            </div>
+
+                            <div class="section" key={addendum.uid}>
+                                <p><strong>Content</strong></p>
+                                <pre>{addendum.content}</pre>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </lightning-accordion-section>
+        </lightning-accordion>
+    </div>
+</template>

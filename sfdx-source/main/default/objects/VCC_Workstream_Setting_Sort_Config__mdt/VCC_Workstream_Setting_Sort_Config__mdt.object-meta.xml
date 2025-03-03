@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Each record in this table configures on-load sorting behavior for an HDR datatable LWC, for a given persona.
+The HDR datatable is indicated by the HDR Data Type field.
+The persona is indicated by the lookup field to the VCC Workstream Setting object.</description>
+    <label>VCC Workstream Setting Sort Config</label>
+    <pluralLabel>VCC Workstream Setting Sort Configs</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

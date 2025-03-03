@@ -1,0 +1,1530 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <assignments>
+        <name>Add_Assigned_Site_Record_to_Collection</name>
+        <label>Add Assigned Site Record to Collection</label>
+        <locationX>1614</locationX>
+        <locationY>1403</locationY>
+        <assignmentItems>
+            <assignToReference>AssignedSiteRecordCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Assigned_Site_Record</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assigned_Site_Loop</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_Assigned_Site_Record_to_Collection_2</name>
+        <label>Add Assigned Site Record to Collection</label>
+        <locationX>1262</locationX>
+        <locationY>1187</locationY>
+        <assignmentItems>
+            <assignToReference>AssignedSiteRecordCollection</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Assigned_Site_Record</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Through_Readiness_Activities_for_SOT_User</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Create_Assigned_Site_Record</name>
+        <label>Create Assigned Site Record</label>
+        <locationX>1262</locationX>
+        <locationY>1079</locationY>
+        <assignmentItems>
+            <assignToReference>Assigned_Site_Record.VCC_SOT_User__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Assigned_Site_Record.VCC_Site__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.VCC_Home_Site__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Assigned_Site_Record.VCC_Readiness_Activity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_Through_Readiness_Activities_for_SOT_User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Assigned_Site_Record_to_Collection_2</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>VCC_Create_Assigned_Site_Record</name>
+        <label>Create Assigned Site Record</label>
+        <locationX>1614</locationX>
+        <locationY>1295</locationY>
+        <assignmentItems>
+            <assignToReference>Assigned_Site_Record.VCC_Site__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.VCC_Home_Site__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Assigned_Site_Record.VCC_SOT_User__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Assigned_Site_Record.VCC_Readiness_Activity__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>VCC_Loop_Through_Readiness_Activities_for_SOT_User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Assigned_Site_Record_to_Collection</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Are_There_Assigned_Sites_to_be_Created</name>
+        <label>Are There Assigned Sites to be Created?</label>
+        <locationX>1238</locationX>
+        <locationY>1931</locationY>
+        <defaultConnector>
+            <targetReference>VCC_Which_Time_Zone_to_be_Assigned</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_AssignedSites</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AssignedSiteRecordCollection</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Assigned_Sites</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Does_the_Home_Site_Field_on_the_SOT_User_Have_a_Value</name>
+        <label>Does the Home Site Field on the SOT User Have a Value?</label>
+        <locationX>1964</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_ValueInHomeSiteField</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Site_for_Home_Site</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>VCC_Does_An_Assigned_Site_for_this_Home_Site_Already_Exist</name>
+        <label>Does An Assigned Site for this Home Site Already Exist?</label>
+        <locationX>1526</locationX>
+        <locationY>1187</locationY>
+        <defaultConnector>
+            <targetReference>VCC_Create_Assigned_Site_Record</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Assigned_Site_Loop.VCC_Readiness_Activity__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>VCC_Loop_Through_Readiness_Activities_for_SOT_User.Id</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assigned_Site_Loop</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>VCC_Which_Time_Zone_to_be_Assigned</name>
+        <label>Which Time Zone to be Assigned?</label>
+        <locationX>1238</locationX>
+        <locationY>2231</locationY>
+        <defaultConnectorLabel>Default</defaultConnectorLabel>
+        <rules>
+            <name>VCC_Alaskan_Daylight_Time</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(463) Alaska VAHSRO (Anchorage AK)</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_TimeZoneSidKey_to_Alaskan_Daylight</targetReference>
+            </connector>
+            <label>Alaskan Daylight Time</label>
+        </rules>
+        <rules>
+            <name>VCC_Central_Daylight_Time</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(521) Birmingham, AL</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(619) Central Alabama HCS (Montgomery AL)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(679) Tuscaloosa, AL</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(614) Memphis, TN</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(626) Tennessee Valley HCS (Nashville TN)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(537) Chicago (Westside), IL</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(550) Illiana HCS (Danville IL)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(578) Hines, IL</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(585) Iron Mountain, MI</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(607) Madison, WI</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(695) Milwaukee, WI</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(556) North Chicago, IL</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(676) Tomah, WI</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(589) VA Heartland West (Kansas City MO)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(657) VA Heartland East (Saint Louis MO)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(502) Alexandria, LA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(520) Biloxi, MS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(564) Fayetteville, AR</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(580) Houston, TX</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(586) Jackson, MS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(598) Central Arkansas HCS (Little Rock AR)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(629) New Orleans, LA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(667) Shreveport, LA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(504) Amarillo HCS (Amarillo TX)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(519) West Texas HCS (Big Spring TX)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(674) Central Texas HCS (Temple TX)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(549) North Texas HCS (Dallas TX)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(671) South Texas HCS (San Antonio TX)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(740) Texas Valley Coastal Bend HCS (Harlingen TX)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(623) Muskogee, OK</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(635) Oklahoma City, OK</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(437) Fargo, ND (CACHE 5.0)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(618) Minneapolis, MN (CACHE 5.0)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(636) Central Plains HCS (Omaha NE)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(656) St. Cloud, MN (CACHE 5.0)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(438) Sioux Falls SD (CACHE 5.0)</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>VCC_Set_TimeZoneSidKey_to_Central_Daylight_Time</targetReference>
+            </connector>
+            <label>Central Daylight Time</label>
+        </rules>
+        <rules>
+            <name>VCC_Hawaiian_Aleutian_Daylight_Time</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(459) VA Pacific Islands HCS (Honolulu HI)</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>VCC_Set_TimeZoneSidKey_to_Hawaiian_Daylight_Time</targetReference>
+            </connector>
+            <label>Hawaiian-Aleutian Daylight Time</label>
+        </rules>
+        <rules>
+            <name>VCC_Mountain_Daylight_Time</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(756) El Paso, TX</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(442) Cheyenne WY</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(554) Eastern Colorado HCS (Denver CO)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(436) Montana HCS (Fort Harrison MT)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(575) Grand Junction, CO</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(666) Sheridan, WY</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(501) New Mexico HCS (Albuquerque NM)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(568) Black Hills HCS (Fort Meade SD) (CACHE 5.0)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(660) Salt Lake City HCS (Salt Lake City UT)</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>VCC_Set_TimeZoneSidKey_to_Mountain_Daylight</targetReference>
+            </connector>
+            <label>Mountain Daylight Time</label>
+        </rules>
+        <rules>
+            <name>VCC_Mountain_Daylight_Boise</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(531) Boise,ID</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>VCC_Set_TimeZoneSidKey_to_Mountain_Daylight_Boise</targetReference>
+            </connector>
+            <label>Mountain Daylight (Boise)</label>
+        </rules>
+        <rules>
+            <name>VCC_MountainStandard_Time</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(644) Phoenix, AZ</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(649) Northern Arizona HCS (Prescott AZ)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(678) Southern Arizona HCS (Tucson AZ)</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>VCC_Set_TimeZoneSidKey_to_Mountain_Standard</targetReference>
+            </connector>
+            <label>Mountain Standard Time</label>
+        </rules>
+        <rules>
+            <name>VCC_Pacific_Daylight_Time</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(648) Portland, OR (CACHE 5.0)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(663) Puget Sound HCS (Seattle WA) (CACHE 5.0)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(653) Roseburg HCS (Roseburg OR)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(668) Spokane, WA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(692) White City, OR (CACHE 5.0)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(687) Walla Walla, WA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(570) Central California HCS (Fresno CA)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(593) Southern Nevada HCS (Las Vegas NV)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(612) Northern California HCS (Martinez CA)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(640) Palo Alto HCS (Palo Alto CA)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(654) Sierra Nevada HCS (Reno NV)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(662) San Francisco, CA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(691) Greater Los Angeles HCS (Los Angeles CA)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(605) Loma Linda, CA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(600) Long Beach HCS (Long Beach CA)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(664) San Diego HCS (San Diego CA)</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>VCC_Set_TimeZoneSidKey_to_Pacific_Daylight_Time</targetReference>
+            </connector>
+            <label>Pacific Daylight Time</label>
+        </rules>
+        <rules>
+            <name>VCC_Eastern_Daylight_Time</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(518) Bedford,MA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(523) Boston HCS (Boston)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(689) Connecticut HCS (Westhaven)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(608) Manchester, NH</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(631) Northampton, MA (Leeds)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(650) Providence, RI</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(402) Togus ME</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(528A-8) Albany VAMC (Samuel Stratton)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(526) Bronx, NY</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(528A-5, 6) Canandaigua, Bath, Rochester (Fingerlakes)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(620) Hudson Valley HCS (Castle Point, Montrose)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(561) New Jersey HCS (East Orange)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(405) White River Junction VT</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(632) Northport, NY</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(630) New York HHS (Brooklyn)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(528A-7) Syracuse VAMC</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(503) Altoona, PA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(529) Butler, PA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(542) Coatesville, PA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(562) Erie, PA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(595) Lebanon, PA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(642) Philadelphia, PA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(646) Pittsburgh HCS (Pittsburgh PA)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(693) Wilkes-Barre, PA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(460) Wilmington DE</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(512) Maryland HCS (Baltimore MD)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(517) Beckley, WV</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(540) Clarksburg, WV</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(581) Huntington, WV</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(613) Martinsburg, WV</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(688) Washington DC</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(637) Asheville, NC</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(558) Durham, NC</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(565) Fayetteville, NC</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(590) Hampton, VA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(652) Richmond, VA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(658) Salem, VA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(659) Salisbury, NC</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(508) Atlanta, GA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(509) Augusta, GA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(534) Charleston, SC</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(544) Columbia, SC</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(557) Dublin, GA</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(516) Bay Pines,FL</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(546) Miami, FL</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(573) N. Florida/S. Georgia HCS (Gainesville FL)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(675) Orlando, FL</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(672) San Juan, PR</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(673) Tampa, FL</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(548) West Palm Beach, FL</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(596) Lexington, KY</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(603) Louisville, KY</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(621) Mountain Home, TN</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(506) Ann Arbor, MI</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(515) Battle Creek, MI</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(539) Cincinnati, OH</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(541) Cleveland, OH</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(538) Chillicothe, OH</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(757) Columbus, OH</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(552) Dayton, OH</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(553) Detroit, MI</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(583) Indianapolis, IN</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(610) Northern Indiana HCS (Marion, IN)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(655) Saginaw, MI</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(528, 528A-4) Western New York (Batavia and Buffalo)</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>VCC_Set_TimeZoneSidKey_to_Eastern_Daylight_Time</targetReference>
+            </connector>
+            <label>Eastern Daylight Time</label>
+        </rules>
+        <rules>
+            <name>Taipei_Standard_Time</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.VCC_Home_Site__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>(358) Manila, Philippines</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_TimeZoneSidKey_to_Blank</targetReference>
+            </connector>
+            <label>Taipei Standard Time</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Were_Any_Assigned_Site_Records_Found</name>
+        <label>Were Any Assigned Site Records Found?</label>
+        <locationX>1086</locationX>
+        <locationY>863</locationY>
+        <defaultConnector>
+            <targetReference>Loop_Through_Readiness_Activities_for_SOT_User</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_AssignedSiteRecordsFound</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Assigned_Sites_for_SOT_User</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>VCC_Loop_Through_Readiness_Activities_for_SOT_User</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Were_Any_Readiness_Activities_Found</name>
+        <label>Were Any Readiness Activities Found?</label>
+        <locationX>1238</locationX>
+        <locationY>755</locationY>
+        <defaultConnector>
+            <targetReference>Are_There_Assigned_Sites_to_be_Created</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_ReadinessActivitiesFound</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>VCC_Get_Readiness_Activities_for_SOT_User</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Were_Any_Assigned_Site_Records_Found</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>When a SOT User is created or updated, this flow will assign the TimeZoneSidKey based on the Home Site and will create an Assigned Site for the Home Site if one
+        doesn&apos;t already exist.</description>
+    <environments>Default</environments>
+    <interviewLabel>VCC SOT Assign TimeZoneSidKey and Assigned Site {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>VCC SOT Assign TimeZoneSidKey and Assigned Site</label>
+    <loops>
+        <name>Assigned_Site_Loop</name>
+        <label>Assigned Site Loop</label>
+        <locationX>1350</locationX>
+        <locationY>1079</locationY>
+        <collectionReference>Get_Assigned_Sites_for_SOT_User</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>VCC_Does_An_Assigned_Site_for_this_Home_Site_Already_Exist</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>VCC_Loop_Through_Readiness_Activities_for_SOT_User</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Loop_Through_Readiness_Activities_for_SOT_User</name>
+        <label>Loop Through Readiness Activities for SOT User</label>
+        <locationX>1174</locationX>
+        <locationY>971</locationY>
+        <collectionReference>VCC_Get_Readiness_Activities_for_SOT_User</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Create_Assigned_Site_Record</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Are_There_Assigned_Sites_to_be_Created</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>VCC_Loop_Through_Readiness_Activities_for_SOT_User</name>
+        <label>Loop Through Readiness Activities for SOT User</label>
+        <locationX>998</locationX>
+        <locationY>971</locationY>
+        <collectionReference>VCC_Get_Readiness_Activities_for_SOT_User</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assigned_Site_Loop</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Are_There_Assigned_Sites_to_be_Created</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Assigned_Sites</name>
+        <label>Create Assigned Sites</label>
+        <locationX>1106</locationX>
+        <locationY>2039</locationY>
+        <connector>
+            <targetReference>VCC_Which_Time_Zone_to_be_Assigned</targetReference>
+        </connector>
+        <inputReference>AssignedSiteRecordCollection</inputReference>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Assigned_Sites_for_SOT_User</name>
+        <label>Get Assigned Sites for SOT User</label>
+        <locationX>1238</locationX>
+        <locationY>647</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Were_Any_Readiness_Activities_Found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>VCC_SOT_User__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>VCC_Site__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.VCC_Home_Site__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>VCC_Assigned_Site__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Site_for_Home_Site</name>
+        <label>Get Site for Home Site</label>
+        <locationX>1238</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>VCC_Get_Readiness_Activities_for_SOT_User</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.VCC_Home_Site__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>VCC_Site__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>VCC_Get_Readiness_Activities_for_SOT_User</name>
+        <label>Get Readiness Activities for SOT User</label>
+        <locationX>1238</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Assigned_Sites_for_SOT_User</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>VCC_SOT_User__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>VCC_VISN__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Site_for_Home_Site.VCC_VISN__r.Name</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>VCC_Readiness_Activity__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Set_TimeZoneSidKey_to_Alaskan_Daylight</name>
+        <label>Set TimeZoneSidKey to Alaskan Daylight</label>
+        <locationX>50</locationX>
+        <locationY>2339</locationY>
+        <inputAssignments>
+            <field>VCC_TIMEZONESIDKEY1__c</field>
+            <value>
+                <stringValue>America/Anchorage</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Set_TimeZoneSidKey_to_Blank</name>
+        <label>Set TimeZoneSidKey to Blank</label>
+        <locationX>2162</locationX>
+        <locationY>2339</locationY>
+        <inputAssignments>
+            <field>VCC_TIMEZONESIDKEY1__c</field>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>VCC_Set_TimeZoneSidKey_to_Central_Daylight_Time</name>
+        <label>Set TimeZoneSidKey to Central Daylight Time</label>
+        <locationX>314</locationX>
+        <locationY>2339</locationY>
+        <inputAssignments>
+            <field>VCC_TIMEZONESIDKEY1__c</field>
+            <value>
+                <stringValue>America/Chicago</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>VCC_Set_TimeZoneSidKey_to_Eastern_Daylight_Time</name>
+        <label>Set TimeZoneSidKey to Eastern Daylight Time</label>
+        <locationX>1898</locationX>
+        <locationY>2339</locationY>
+        <inputAssignments>
+            <field>VCC_TIMEZONESIDKEY1__c</field>
+            <value>
+                <stringValue>America/New York</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>VCC_Set_TimeZoneSidKey_to_Hawaiian_Daylight_Time</name>
+        <label>Set TimeZoneSidKey to Hawaiian Daylight Time</label>
+        <locationX>578</locationX>
+        <locationY>2339</locationY>
+        <inputAssignments>
+            <field>VCC_TIMEZONESIDKEY1__c</field>
+            <value>
+                <stringValue>America/Adak</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>VCC_Set_TimeZoneSidKey_to_Mountain_Daylight</name>
+        <label>Set TimeZoneSidKey to Mountain Daylight</label>
+        <locationX>842</locationX>
+        <locationY>2339</locationY>
+        <inputAssignments>
+            <field>VCC_TIMEZONESIDKEY1__c</field>
+            <value>
+                <stringValue>America/Denver</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>VCC_Set_TimeZoneSidKey_to_Mountain_Daylight_Boise</name>
+        <label>Set TimeZoneSidKey to Mountain Daylight (Boise)</label>
+        <locationX>1106</locationX>
+        <locationY>2339</locationY>
+        <inputAssignments>
+            <field>VCC_TIMEZONESIDKEY1__c</field>
+            <value>
+                <stringValue>America/Boise</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>VCC_Set_TimeZoneSidKey_to_Mountain_Standard</name>
+        <label>Set TimeZoneSidKey to Mountain Standard</label>
+        <locationX>1370</locationX>
+        <locationY>2339</locationY>
+        <inputAssignments>
+            <field>VCC_TIMEZONESIDKEY1__c</field>
+            <value>
+                <stringValue>America/Phoenix</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>VCC_Set_TimeZoneSidKey_to_Pacific_Daylight_Time</name>
+        <label>Set TimeZoneSidKey to Pacific Daylight Time</label>
+        <locationX>1634</locationX>
+        <locationY>2339</locationY>
+        <inputAssignments>
+            <field>VCC_TIMEZONESIDKEY1__c</field>
+            <value>
+                <stringValue>America/Los Angeles</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>1838</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Does_the_Home_Site_Field_on_the_SOT_User_Have_a_Value</targetReference>
+        </connector>
+        <filterFormula>TEXT({!$Record__Prior.VCC_Home_Site__c})&lt;&gt;TEXT({!$Record.VCC_Home_Site__c})</filterFormula>
+        <object>VCC_SOT_User__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>Assigned_Site_Record</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>VCC_Assigned_Site__c</objectType>
+    </variables>
+    <variables>
+        <name>AssignedSiteRecordCollection</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>VCC_Assigned_Site__c</objectType>
+    </variables>
+    <variables>
+        <name>VISN</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

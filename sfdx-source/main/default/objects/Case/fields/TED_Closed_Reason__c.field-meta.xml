@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TED_Closed_Reason__c</fullName>
+    <description>When a TED Case is closed the user selects a reason from the available options</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Provide details for the case outcome</inlineHelpText>
+    <label>Case Outcome Detail</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>VCC_Case_Outcome__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>VA Emergency Department</fullName>
+                <default>false</default>
+                <label>VA Emergency Department</label>
+            </value>
+            <value>
+                <fullName>Community Emergency Department</fullName>
+                <default>false</default>
+                <label>Community Emergency Department</label>
+            </value>
+            <value>
+                <fullName>VA Urgent Care</fullName>
+                <default>false</default>
+                <label>VA Urgent Care</label>
+            </value>
+            <value>
+                <fullName>Community Urgent Care</fullName>
+                <default>false</default>
+                <label>Community Urgent Care</label>
+            </value>
+            <value>
+                <fullName>Declined By Veteran</fullName>
+                <default>false</default>
+                <label>Declined By Veteran</label>
+            </value>
+            <value>
+                <fullName>Connection Failure</fullName>
+                <default>false</default>
+                <label>Connection Failure</label>
+            </value>
+            <value>
+                <fullName>Referred to Primary Care/Pact</fullName>
+                <default>false</default>
+                <label>Referred to Primary Care/Pact</label>
+            </value>
+            <value>
+                <fullName>Referred to Specialty Care</fullName>
+                <default>false</default>
+                <label>Referred to Specialty Care</label>
+            </value>
+            <value>
+                <fullName>Abandoned - Over Capacity</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Abandoned - Over Capacity</label>
+            </value>
+            <value>
+                <fullName>Abandoned - by Veteran</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Abandoned - by Veteran</label>
+            </value>
+            <value>
+                <fullName>Declined Evaluation</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Declined Evaluation</label>
+            </value>
+            <value>
+                <fullName>Issue Resolved</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Issue Resolved</label>
+            </value>
+            <value>
+                <fullName>Referred to ED</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Referred to ED</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Emergency Department</controllingFieldValue>
+            <controllingFieldValue>Emergency Dept</controllingFieldValue>
+            <valueName>VA Emergency Department</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Emergency Department</controllingFieldValue>
+            <controllingFieldValue>Emergency Dept</controllingFieldValue>
+            <valueName>Community Emergency Department</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acute Issue Resolved</controllingFieldValue>
+            <valueName>Referred to Primary Care/Pact</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Acute Issue Resolved</controllingFieldValue>
+            <valueName>Referred to Specialty Care</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Care Incomplete</controllingFieldValue>
+            <valueName>Declined By Veteran</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Care Incomplete</controllingFieldValue>
+            <valueName>Connection Failure</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Urgent Care</controllingFieldValue>
+            <valueName>VA Urgent Care</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Urgent Care</controllingFieldValue>
+            <valueName>Community Urgent Care</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

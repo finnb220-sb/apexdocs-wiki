@@ -1,0 +1,175 @@
+<template>
+    <c-logger></c-logger>
+    <div class="slds-media slds-media_center slds-has-flexi-truncate">
+        <!-- icon and title of the component -->
+        <div class="slds-media__figure">
+            <lightning-icon
+                size="small"
+                icon-name={settings.icon}
+                alternative-text={settings.title}
+                title={settings.title}></lightning-icon>
+        </div>
+        <div class="slds-media__body">
+            <h2 class="slds-card__header-title">
+                <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title={settings.title}>
+                    <span class="card-title">{settings.title}</span>
+                </a>
+            </h2>
+        </div>
+        <!-- display each of the topButtons -->
+        <lightning-button-group slot="actions">
+            <template for:each={_options.topButtons} for:item="button">
+                <lightning-button
+                    key={button.label}
+                    variant={button.variant}
+                    label={button.label}
+                    onclick={handleAddSelected}
+                    disabled={noRowsSelected}></lightning-button>
+            </template>
+        </lightning-button-group>
+    </div>
+    <lightning-card>
+        <div class="container">
+            <template if:false={noIncomingData}>
+                <section class="filter-list">
+                    <c-base-search-bar
+                        onfilterlistbysearch={handleSearch}
+                        list={list}
+                        class="search-bar"></c-base-search-bar>
+                    <template if:true={displayMedsFilter}>
+                        <lightning-combobox
+                            name={_options.medsFilterField.label}
+                            label={_options.medsFilterField.label}
+                            value={value}
+                            options={medsFilterOptions}
+                            onchange={handleMedsFilter}
+                            class="medsFilter">
+                        </lightning-combobox>
+                    </template>
+                    <lightning-button label="Clear Filters" onclick={reset}></lightning-button>
+                </section>
+
+                <!-- datatable and empty state -->
+                <div class="datatable-wrapper">
+                    <template if:false={emptyState}>
+                        <c-base-table-details
+                            sorted-by={tableDetails.sortedBy}
+                            total={tableDetails.total}></c-base-table-details>
+                        <div class="slds-box autoOverflow heightLimit">
+                            <div class="slds-grid fitWidthSticky">
+                                <div class="slds-col fixedPosition slds-border_right">
+                                    <c-fixed-column-datatable
+                                        if:false={searchLoading}
+                                        key-field="frameId"
+                                        columns={frozenColumns}
+                                        data={tableData}
+                                        selected-rows={selectedRows}
+                                        default-sort-direction={defaultSortDirection}
+                                        sorted-direction={sortDirection}
+                                        onrowselection={handleRowSelection}
+                                        sorted-by={sortedBy}
+                                        onsort={handleSort}
+                                        min-column-width="200">
+                                    </c-fixed-column-datatable>
+                                </div>
+                                <div class="slds-col">
+                                    <lightning-datatable
+                                        if:false={searchLoading}
+                                        key-field="frameId"
+                                        columns={dynamicColumns}
+                                        data={tableData}
+                                        hide-checkbox-column
+                                        default-sort-direction={defaultSortDirection}
+                                        sorted-direction={sortDirection}
+                                        sorted-by={sortedBy}
+                                        onsort={handleSort}
+                                        min-column-width="100">
+                                    </lightning-datatable>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+
+                    <section class={paginationState}>
+                        <c-base-pagination
+                            entries-per-page={pageSize}
+                            onpagechange={handlePageChange}
+                            list={displayList}></c-base-pagination>
+                    </section>
+
+                    <template if:true={emptyState}>
+                        <c-base-empty-state
+                            type="noResults"
+                            msg={labels.noResultsMessage}
+                            sub-msg={labels.noResultsSubMessage}></c-base-empty-state>
+                    </template>
+
+                    <template if:true={addingSelectedError}>
+                        <c-base-error-message message={labels.entryTooLong} variant="error"></c-base-error-message>
+                    </template>
+                    <template if:true={notFutureDateError}>
+                        <c-base-error-message message={labels.notFutureDate} variant="error"></c-base-error-message>
+                    </template>
+                </div>
+
+                <!-- record input fields -->
+                <div class="records__wrapper">
+                    <lightning-spinner if:true={formLoading} alternative-text="Loading record..."></lightning-spinner>
+
+                    <lightning-record-view-form
+                        object-api-name="Case"
+                        onsuccess={handleSuccess}
+                        onerror={handleError}
+                        onload={handleLoad}
+                        record-id={incomingRecordId}>
+                        <!-- patient information: Name & DOB -->
+                        <div class="nameAndBirthday">
+                            <lightning-layout class="name">
+                                <lightning-layout-item>
+                                    <span class="bold-text">Patient Name</span>
+                                </lightning-layout-item>
+                                <lightning-layout-item> {fullName} </lightning-layout-item>
+                            </lightning-layout>
+                            <lightning-layout class="dob">
+                                <lightning-layout-item class="slds-p-left_medium">
+                                    <span class="bold-text">Date of Birth</span>
+                                </lightning-layout-item>
+                                <lightning-layout-item class="slds-p-left_medium"> {birthDate} </lightning-layout-item>
+                            </lightning-layout>
+                        </div>
+                        <div class="renewal button-wrapper">
+                            <lightning-input
+                                lwc:ref="requestDateInput"
+                                class="futureDate"
+                                type="date"
+                                min={todayPlusOne}
+                                name="input1"
+                                label="Future Renewal Date"
+                                onchange={handleOnChange}
+                                onfocus={handleOnFocus}></lightning-input>
+                            <lightning-layout-item>
+                                <lightning-button
+                                    class="right-aligned-button"
+                                    variant="brand-outline"
+                                    label="Clear Medications"
+                                    onclick={handleClearText}></lightning-button>
+                            </lightning-layout-item>
+                        </div>
+                        <div class="medTextArea">
+                            <lightning-textarea
+                                lwc:ref="requestTextArea"
+                                class="textAreaBody"
+                                name="requestedMedication"
+                                disabled
+                                value=""
+                                label="Requested Medication - Renewal"></lightning-textarea>
+                        </div>
+                    </lightning-record-view-form>
+                </div>
+            </template>
+            <template if:true={noIncomingData}>
+                <c-base-empty-state type="noResults" msg="No Data to Add to Note"> </c-base-empty-state>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enforce_PCP_Cannot_Change_Owner</fullName>
+    <active>false</active>
+    <description>Prevents users without Specialist permission set from changing the Owner field.</description>
+    <errorConditionFormula>!$Permission.DisableTriggersFlag &amp;&amp; $Permission.PC_Specialist = FALSE &amp;&amp; ISCHANGED( Assigned_Specialist__c )</errorConditionFormula>
+    <errorMessage>Only specialists may edit this field.</errorMessage>
+</ValidationRule>

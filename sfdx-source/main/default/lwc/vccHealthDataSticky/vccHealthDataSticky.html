@@ -1,0 +1,54 @@
+<template>
+    <c-logger></c-logger>
+    <div lwc:if={anyAccess} class="outer">
+        <div lwc:if={isSticky} class="spacer"></div>
+        <div class="sticky">
+            <div class="border">
+                <div class="slds-card slds-var-p-vertical_small slds-var-p-horizontal_medium">
+                    <div class="slds-grid slds-gutters_xx-small slds-wrap">
+                        <template for:each={hdrList} for:item="hdr">
+                            <div key={hdr.key} lwc:if={hdr.access} class="slds-col rounded" data-id={hdr.key} onclick={handleClick}>
+                                <lightning-icon size="small" icon-name={hdr.icon}> </lightning-icon>
+                                <lightning-button
+                                    aria-haspopup="dialog"
+                                    aria-controls="conditionalDivId"
+                                    aria-expanded={healthData}
+                                    variant={hdr.variant}
+                                    label={hdr.label}
+                                    onclick={handleClick}
+                                    data-id={hdr.key}
+                                    class={hdr.btnClass}
+                                >
+                                </lightning-button>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+            <div lwc:if={healthData} class="slds-card conditional slds-var-p-horizontal_medium" id="conditionalDivId" role="dialog">
+                <c-vcc-lab
+                    lwc:if={showLabs}
+                    object-api-name={objectApiName}
+                    record-id={recordId}
+                    add-to-note-options={objAddToNoteOptions.labs}
+                    columns-for-add-to-note={objColumnsForAddToNote.labs}
+                >
+                </c-vcc-lab>
+                <c-vcc-allergy-list lwc:if={showAllergies} object-api-name={objectApiName} record-id={recordId}> </c-vcc-allergy-list>
+                <c-vcc-consult lwc:if={showConsults} object-api-name={objectApiName} record-id={recordId}> </c-vcc-consult>
+                <c-vcc-medication-list
+                    lwc:if={showMeds}
+                    object-api-name={objectApiName}
+                    record-id={recordId}
+                    add-to-note-options={objAddToNoteOptions.meds}
+                    columns-for-add-to-note={objColumnsForAddToNote.meds}
+                >
+                </c-vcc-medication-list>
+                <c-vcc-vitals lwc:if={showVitals} object-api-name={objectApiName} record-id={recordId}> </c-vcc-vitals>
+                <c-vcc-immunization-list lwc:if={showImmunizations} object-api-name={objectApiName} record-id={recordId}> </c-vcc-immunization-list>
+                <c-vcc-problem-list lwc:if={showProblems} object-api-name={objectApiName} record-id={recordId}> </c-vcc-problem-list>
+                <c-vcc-appointment lwc:if={showAppointments} object-api-name={objectApiName} record-id={recordId}> </c-vcc-appointment>
+            </div>
+        </div>
+    </div>
+</template>

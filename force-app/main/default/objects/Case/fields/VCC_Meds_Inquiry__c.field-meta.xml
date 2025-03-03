@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Meds_Inquiry__c</fullName>
+    <description>Field to Track Incorrect Medication Received</description>
+    <externalId>false</externalId>
+    <label>Meds Inquiry</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Wrong Medication</fullName>
+                <default>false</default>
+                <label>Wrong Medication</label>
+            </value>
+            <value>
+                <fullName>Delayed Medication</fullName>
+                <default>false</default>
+                <label>Delayed Medication</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

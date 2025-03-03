@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Other_Disposition__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked if there is another disposition type</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if there is another disposition type</inlineHelpText>
+    <label>Other Disposition</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

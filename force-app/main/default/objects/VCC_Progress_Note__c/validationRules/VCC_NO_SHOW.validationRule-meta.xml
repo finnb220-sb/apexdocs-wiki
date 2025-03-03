@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_NO_SHOW</fullName>
+    <active>true</active>
+    <description>Patient No Show checkboxes should be mutually exclusive</description>
+    <errorConditionFormula
+    >BEGINS( RecordType.DeveloperName, &quot;VCC_&quot;) &amp;&amp; !$Permission.DisableTriggersFlag &amp;&amp; VCC_Patient_No_Show_no_welfare_check__c == TRUE &amp;&amp;
+        VCC_Patient_was_a_No_Show__c == TRUE</errorConditionFormula>
+    <errorMessage>ERROR: Only one &apos;Patient No Show&apos; option should be selected.</errorMessage>
+</ValidationRule>

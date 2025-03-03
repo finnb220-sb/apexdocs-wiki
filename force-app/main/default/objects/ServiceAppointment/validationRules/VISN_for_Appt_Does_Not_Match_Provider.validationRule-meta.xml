@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VISN_for_Appt_Does_Not_Match_Provider</fullName>
+    <active>true</active>
+    <errorConditionFormula
+    >IF(TEXT(VCC_VISN_for_Appointment__c) = &apos;VISN 7&apos; &amp;&amp; ServiceTerritory.Name =&apos;VISN 8&apos;, false, TEXT(VCC_VISN_for_Appointment__c) &lt;&gt;
+        ServiceTerritory.Name)</errorConditionFormula>
+    <errorDisplayField>VCC_VISN_for_Appointment__c</errorDisplayField>
+    <errorMessage>ERROR: The VISN chosen does not match the VISN of medical provider</errorMessage>
+</ValidationRule>

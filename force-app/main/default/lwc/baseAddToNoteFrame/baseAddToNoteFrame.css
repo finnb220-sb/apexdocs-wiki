@@ -1,0 +1,62 @@
+.inputs {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.filter-list {
+    display: grid;
+    grid-template-columns: auto 160px auto auto;
+    align-items: end;
+    width: 100%;
+    gap: 1rem;
+    flex-wrap: nowrap;
+}
+
+.filter-list .search-bar {
+    min-width: 40%;
+}
+
+.filter-list .date-range,
+.filter-list .base-filter {
+    display: flex;
+    align-self: flex-end;
+}
+
+.hide {
+    display: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0;
+}
+
+.slds-card__header {
+    padding: 0 !important;
+}
+
+lightning-input-field {
+    --sds-c-textarea-sizing-min-height: 170px;
+}
+
+.datatable-wrapper {
+    min-height: 275px;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.error-message {
+    padding-left: 0.25rem;
+    color: #ea001e;
+}
+.zero-margin {
+    margin-bottom: 0px;
+}
+.note {
+    padding-top: 20px;
+}

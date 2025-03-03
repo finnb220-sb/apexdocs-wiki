@@ -1,0 +1,118 @@
+<template>
+    <lightning-modal-header label="Connect with a Consultant"></lightning-modal-header>
+    <lightning-modal-body>
+        <div if:true={currentClosedCase.Id} class="slds-var-m-bottom_small slds-card case-closed">
+            <div>
+                This case has been {currentClosedCase.Status__c} by {currentClosedCase.CreatedBy.Name}.
+                <a data-id={currentClosedCase.ParentId} onclick={navigateToCase}>View Case</a>
+            </div>
+        </div>
+        <div class="card">
+            <template if:true={isTeams}>
+                <div style="text-align: center">
+                    <p style="font-size: large">
+                        Redirecting to Teams video call in <b>{countdownInt}</b>&nbsp;seconds.
+                    </p>
+                    <a class="launch-now" onclick={handleLaunchNow}>Launch Now</a>
+                </div>
+            </template>
+            <template if:true={isPhone}>
+                <div
+                    class="slds-text-body_regular"
+                    style="
+                        text-align: center;
+                        background-color: #faffbd;
+                        display: inline-block;
+                        padding: 2px 2px 2px 2px;
+                    ">
+                    <span
+                        >The consultant has received your case and will give you a call back at
+                        <b>{callback}&nbsp; <template if:true={callbackExt}>Ext. {callbackExt}</template></b
+                        >.</span
+                    >
+                </div>
+            </template>
+        </div>
+        <table>
+            <tr>
+                <td style="width: 250px">
+                    <div style="margin-bottom: 100px">
+                        <div style="font-size: 12pt; text-align: center; margin-bottom: 15px">
+                            <h2>Assigned Consultant</h2>
+                        </div>
+                        <div style="text-align: center">
+                            <img src={agent.MediumPhotoUrl} alt="Avatar" style="height: 12vh; border-radius: 50%" />
+                            <div><b>{agent.Name}</b></div>
+                        </div>
+                        <div style="text-align: center">
+                            <div>{agent.Title}</div>
+                            <div>{agent.Department}</div>
+                            <div if:true={agent.City}>{agent.City}, {agent.State}</div>
+                            <div if:false={agent.City}>{agent.State}</div>
+                        </div>
+                        <div style="text-align: center; font-size: 12pt; margin-top: 20px">
+                            <h2>Case Details</h2>
+                        </div>
+                        <div class="container-left" style="text-align: left">
+                            <div style="margin-top: 5px; margin-left: 15px" if:true={caseObj.Specialty__c}>
+                                <b>Speciality:</b> {caseObj.Specialty__c}
+                            </div>
+                            <div style="margin-top: 5px; margin-left: 15px" if:true={caseObj.Channel__c}>
+                                <b>Channel:</b> {caseObj.Channel__c}
+                            </div>
+                            <div style="margin-top: 5px; margin-left: 15px" if:true={caseObj.Case_Details__c}>
+                                <b>Case Details:</b> {caseObj.Case_Details__c}
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="slds-col right-col" style="min-width: 400px">
+                        <c-pc-chat session-id={chatId} initiation-msg={initiationMsg}></c-pc-chat>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </lightning-modal-body>
+    <lightning-modal-footer>
+        <div if:false={currentClosedCase.Id} style="text-align: left">
+            <div>
+                <lightning-button
+                    label="Edit PrC Case"
+                    data-id={caseObj.Id}
+                    onclick={navigateToCase}></lightning-button>
+                <lightning-button
+                    label="Close"
+                    class="slds-float_right"
+                    variant="brand"
+                    onclick={handleCloseModal}></lightning-button>
+            </div>
+        </div>
+    </lightning-modal-footer>
+
+    <template if:true={showConfirmModal}>
+        <section
+            role="dialog"
+            tabindex="-1"
+            aria-labelledby="modal-heading-01"
+            aria-modal="true"
+            aria-describedby="modal-content-id-1"
+            class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h1 id="modal-heading-03" class="slds-modal__title slds-hyphenate">Are you sure?</h1>
+                </header>
+                <div class="slds-modal__content slds-var-p-around_medium" id="modal-content-id-3">
+                    <p>Are you sure you would like to cancel this case?</p>
+                </div>
+                <footer class="slds-modal__footer">
+                    <button onclick={closeConfirmCancel} class="slds-button slds-button_brand">Return to Case</button>
+                    <button onclick={handleCancelCaseModal} class="slds-button slds-button_destructive">
+                        Cancel Case
+                    </button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

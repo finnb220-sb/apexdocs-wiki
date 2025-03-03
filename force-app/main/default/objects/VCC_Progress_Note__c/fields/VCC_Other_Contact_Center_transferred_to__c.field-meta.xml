@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Other_Contact_Center_transferred_to__c</fullName>
+    <description
+    >The name of the other contact center that the patient was referred to. Must be populated if &quot;Transferred to other Contact Center&quot; is checked.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter the name of the other contact center that the patient was referred to. Must be populated if &quot;Transferred to other Contact Center&quot; is
+        checked.</inlineHelpText>
+    <label>Other Contact Center</label>
+    <length>100</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This button triggers the PrC Progress Note Creation.</description>
+    <flowDefinition>PC_Progress_Note_Creation</flowDefinition>
+    <label>New Progress Note</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

@@ -1,0 +1,16 @@
+<template>
+    <div class="slds-p-left_x-small slds-p-top_x-small">
+        <p aria-label="Date/Time" class="font-bold">Date/Time</p>
+        <template lwc:if={time}>
+            <lightning-formatted-date-time
+                value={time}
+                time-zone={sfTimeZone}
+                year="numeric"
+                month="numeric"
+                day="numeric"
+                hour="2-digit"
+                minute="2-digit"
+                time-zone-name="short"></lightning-formatted-date-time>
+        </template>
+    </div>
+</template>

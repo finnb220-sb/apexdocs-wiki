@@ -1,0 +1,20 @@
+<!--
+/**
+ * Modified From Salesforce Labs - Open Source Project - https://github.com/SalesforceLabs/Home-Child-Kanban/
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+ * @description       : Design class for Kanban Board 
+ * @author            : Edwin Schaeffer
+ * @group             : Booz Allen
+ * @last modified on  : 03-29-2023
+ * @last modified by  : Edwin Schaeffer
+ * Modifications Log
+ * Ver   Date         Author                               Modification
+ * 1.0   03-29-2023   Edwin Schaeffer                      Initial Version
+ **/
+-->
+<design:component label="TUC_Home/Child Kanban">
+    <design:attribute label="Select Kanban Config" name="kanbanConfigId" datasource="apex://TUC_KanbanConfigList"/>
+    <design:attribute label="Header Title" name="HeaderTitle"/>
+    <design:attribute label="Height(in px)" name="kanbanHeight" default="250"/>
+</design:component>

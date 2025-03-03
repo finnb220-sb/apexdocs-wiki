@@ -1,0 +1,11 @@
+.red-header {
+    --slds-c-modal-header-color-background: #d04d37;
+    --slds-c-modal-header-text-color: white;
+}
+
+.sensitive-patient-message {
+    width: 30rem;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 auto;
+}

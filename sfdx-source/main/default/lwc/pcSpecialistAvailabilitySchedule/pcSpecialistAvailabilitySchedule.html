@@ -1,0 +1,8 @@
+<template>
+    <div if:true={showTable}>
+        <div style="font-weight: bold">Last Updated: {availabilityLastModified}</div>
+        <div style="height: 300px">
+            <lightning-datatable key-field="Id" hide-checkbox-column="true" data={data} columns={columns}> </lightning-datatable>
+        </div>
+    </div>
+</template>

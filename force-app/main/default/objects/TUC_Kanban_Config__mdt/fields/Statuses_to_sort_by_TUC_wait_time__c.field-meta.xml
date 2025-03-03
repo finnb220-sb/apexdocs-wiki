@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Statuses_to_sort_by_TUC_wait_time__c</fullName>
+    <description>These statuses must be present in the Values_To_Include_for_Group_By__c field. The statuses listed here will be sorted by the TUC_Wait_Time__c</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Statuses to sort by TUC wait time</label>
+    <required>true</required>
+    <type>TextArea</type>
+</CustomField>

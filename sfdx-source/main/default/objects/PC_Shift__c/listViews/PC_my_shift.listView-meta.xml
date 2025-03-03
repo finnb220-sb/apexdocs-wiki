@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PC_my_shift</fullName>
+    <columns>NAME</columns>
+    <columns>PC_Start_Time__c</columns>
+    <columns>PC_End_Time__c</columns>
+    <columns>PC_Date__c</columns>
+    <columns>PC_Service__c</columns>
+    <columns>PC_Shift_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>My Shifts</label>
+</ListView>

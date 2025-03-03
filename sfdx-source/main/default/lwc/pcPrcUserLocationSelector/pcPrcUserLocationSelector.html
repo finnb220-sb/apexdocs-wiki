@@ -1,0 +1,31 @@
+<template>
+    <template if:true={showSpinner}>
+        <lightning-spinner variant="brand" size="medium" alternative-text={progressLabel}> </lightning-spinner>
+    </template>
+    <lightning-layout vertical-align="end" multiple-rows>
+        <lightning-layout-item size="12" small-device-size="10" flexibility="auto">
+            <lightning-record-picker
+                lwc:ref="locationRecordPicker"
+                label={recordPickerLabel}
+                object-api-name="Location"
+                display-info={locDisplayInfo}
+                matching-info={locMatchingInfo}
+                filter={locFilter}
+                placeholder={recordPickerPlaceholder}
+                value={selectedUserLocationId}
+                onchange={handleOnChangeCurrentLocation}
+                onblur={handleOnBlurCurrentLocation}
+                field-level-help={recordPickerHelpText}>
+            </lightning-record-picker>
+        </lightning-layout-item>
+        <lightning-layout-item size="12" small-device-size="2" flexibility="auto, no-grow" padding="horizontal-small">
+            <template if:true={userLocationHasChanged}>
+                <lightning-button
+                    variant="brand"
+                    label="Save"
+                    title="Save Current Location"
+                    onclick={handleSaveCurrentLocation}></lightning-button>
+            </template>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

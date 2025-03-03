@@ -1,0 +1,68 @@
+{ 
+    "success": true,
+    "message": "prescription ACTIVITY log found.",
+    "log": [
+        {
+            "activityLogDate": "2009-05-02T20:50:39",
+            "initiatorOfActivity": "POSTMASTER",
+            "reason": "ECME",
+            "rxReference": "ORIGINAL"
+        },
+        {
+            "activityLogDate": "2009-11-01T12:36:29",
+            "comment": "RX Placed on Suspense for CMOP until 11-12-09",
+            "initiatorOfActivity": "RINGOLD,ESTHER",
+            "reason": "IERX",
+            "rxReference": "ORIGINAL"
+        },
+        {
+            "activityLogDate": "2009-11-02T18:02:32",
+            "comment": "Submitted to ECME:CMOP TRANSMISSION(NDC:24658-0213-10)",
+            "initiatorOfActivity": "MORGAN,WAYNE",
+            "reason": "ECME",
+            "rxReference": "ORIGINAL"
+        },
+        {
+            "activityLogDate": "2009-11-02T18:13:05",
+            "comment": "Transmitted to CMOP NATIONAL CMOP",
+            "initiatorOfActivity": "MORGAN,WAYNE",
+            "reason": "PROCESSED",
+            "rxReference": "ORIGINAL"
+        },
+        {
+            "activityLogDate": "2009-11-02T20:50:39",
+            "comment": "Change Fill Date 11/12/09 to 11/02/09",
+            "initiatorOfActivity": "POSTMASTER",
+            "reason": "INTERFACE",
+            "rxReference": "ORIGINAL"
+        },
+        {
+            "activityLogDate": "2009-11-02T20:50:39",
+            "comment": "<null>",
+            "initiatorOfActivity": "RINGOLD,ESTHER",
+            "reason": "IERX",
+            "rxReference": "ORIGINAL"
+        },
+        {
+            "activityLogDate": "2009-11-04T09:06:18",
+            "comment": "Renewed from CPRS",
+            "initiatorOfActivity": "WALTON,MARTHA",
+            "reason": "RENEWED",
+            "rxReference": "ORIGINAL"
+        },
+        {
+            "activityLogDate": "2009-11-05T18:45:45",
+            "comment": "Change Fill Date 11/12/09 to 11/02/09",
+            "initiatorOfActivity": "POSTMASTER",
+            "reason": "IERX",
+            "rxReference": "ORIGINAL"
+        },
+        {
+            "activityLogDate": "2009-11-05T20:50:39",
+            "comment": "Change Fill Date 11/12/09 to 11/02/09",
+            "initiatorOfActivity": "POSTMASTER",
+            "reason": "SUSPENDED",
+            "rxReference": "ORIGINAL"
+        }
+    ]
+}

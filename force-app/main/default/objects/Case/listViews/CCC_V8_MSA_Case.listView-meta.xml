@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CCC_V8_MSA_Case</fullName>
+    <filterScope>Queue</filterScope>
+    <label>CCC_V8_MSA</label>
+    <queue>CCC_V8_MSA</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

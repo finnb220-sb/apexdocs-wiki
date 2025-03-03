@@ -1,0 +1,81 @@
+<template>
+    <c-vcc-l-m-s-publisher></c-vcc-l-m-s-publisher>
+
+    <!-- Nebula Logger -->
+    <c-logger></c-logger>
+
+    <!-- blur the entire background -->
+    <c-vcc-global-blur lwc:ref="blur"></c-vcc-global-blur>
+
+    <lightning-card hide-header="true" label="Veteran Information">
+        <lightning-layout horizontal-align="center">
+            <lightning-layout-item style="min-width: 95%; max-width: 95%">
+                <!-- 
+                    Order of Pop-Ups:
+                    Own Record -> Sensitive Patient   ->  Verify Patient  ->  Deceased -> Facilities -> Inpatient ->  Flags 
+                -->
+
+                <!-- Own Patient Record Modal -->
+                <c-vcc-own-patient-record
+                    record-id={recordId}
+                    title={vccOwnAccountWarningTitle}
+                    body={vccOwnAccountWarningBody}>
+                </c-vcc-own-patient-record>
+
+                <!-- Inpatient -->
+                <c-vcc-in-patient record-id={recordId}></c-vcc-in-patient>
+
+                <!-- Flags -->
+                <c-vcc-flags-modal-launcher record-id={recordId}></c-vcc-flags-modal-launcher>
+
+                <!-- Spinner if isLoading == true -->
+                <div lwc:if={isLoading} style="min-height: 50px">
+                    <!-- Using this spinner because it has a reduced z-index and wont make a white box appear under vccGlobalBlur -->
+                    <c-base-spinner alt-text="Loading veteran info"></c-base-spinner>
+                </div>
+                <template lwc:else>
+                    <lightning-card hide-header="true" lwc:if={noConnection}>
+                        <!-- noConnection == true -->
+
+                        <!-- Empty State Message -->
+                        <c-base-empty-state
+                            type="balloon"
+                            msg={labels.noConnectionMessage}
+                            sub-msg={labels.noConnectionSubMessage}
+                            variant="error">
+                        </c-base-empty-state>
+                    </lightning-card>
+                    <template lwc:else>
+                        <!-- noConnection == false -->
+
+                        <!-- Verify Caller -->
+                        <c-vcc-verify-caller
+                            record-id={recordId}
+                            latest-service-date={latestServiceDate}
+                            spouse-name={spouseName}>
+                        </c-vcc-verify-caller>
+
+                        <!-- Deceased Patient -->
+                        <c-vcc-deceased-patient record-id={recordId}></c-vcc-deceased-patient>
+
+                        <!-- Facility Access Modal -->
+                        <c-vcc-facility-acces-modal
+                            record-id={recordId}
+                            mpi-data={mpiData}
+                            onafterfacilityload={handleAfterFacilityLoad}>
+                        </c-vcc-facility-acces-modal>
+
+                        <!-- MPI Tabset -->
+                        <c-vcc-m-p-i-tabset
+                            pending-meds={pendingMeds}
+                            vcc-record-id={recordId}
+                            mpi-data={mpiData}
+                            onpost={handlePost}
+                            onopenvistaaddressmanagement={handleAddressModal}>
+                        </c-vcc-m-p-i-tabset>
+                    </template>
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Adds a log entry containing the fault message</description>
+        <name>Add_Log_Entry</name>
+        <label>Add Log Entry</label>
+        <locationX>3218</locationX>
+        <locationY>384</locationY>
+        <actionName>FlowLogEntry</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Save_Log</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>faultMessage</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>flowName</name>
+            <value>
+                <stringValue>PC_Automatic_public_group_assignment</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>message</name>
+            <value>
+                <stringValue>A fault occurred in the PC Service Resource Updates flow</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>FlowLogEntry</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <description>Saves all the nebula logger log entries to the database</description>
+        <name>Save_Log</name>
+        <label>Save Log</label>
+        <locationX>3218</locationX>
+        <locationY>492</locationY>
+        <actionName>Logger</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <nameSegment>Logger</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>54.0</apiVersion>
+    <decisions>
+        <description>Checks if the service resource&apos;s specialty was changed, the service resource was activated, or the service resource is new</description>
+        <name>Assigned_specialty_or_IsActive_changed</name>
+        <label>Assigned specialty or IsActive changed?</label>
+        <locationX>270</locationX>
+        <locationY>384</locationY>
+        <defaultConnectorLabel>No specialty update</defaultConnectorLabel>
+        <rules>
+            <name>Specialty_was_changed_or_new_record</name>
+            <conditionLogic>(1 AND 2) OR (2 AND 3) OR (2 AND 4 AND 5)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.PC_Assigned_Specialty__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.PC_Assigned_Specialty__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CheckIsNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.IsActive</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_All_Service_Resource_s_Skills</targetReference>
+            </connector>
+            <label>Specialty was changed or new record</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Checks if there were any existing skills to be deleted</description>
+        <name>Existing_skills_found</name>
+        <label>Existing skills found?</label>
+        <locationX>446</locationX>
+        <locationY>876</locationY>
+        <defaultConnector>
+            <targetReference>Get_Chat_Channel_Skill</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Skills not found</defaultConnectorLabel>
+        <rules>
+            <name>Skills_found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_All_Service_Resource_s_Skills</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_existing_skills</targetReference>
+            </connector>
+            <label>Skills found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Check if the presence configuration for the user existed in the database</description>
+        <name>Existing_user_presence_config</name>
+        <label>Existing user presence config?</label>
+        <locationX>2030</locationX>
+        <locationY>600</locationY>
+        <defaultConnector>
+            <targetReference>Add_user_to_presence_config</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No existing config</defaultConnectorLabel>
+        <rules>
+            <name>Existing_config</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_user_presence_config.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Existing config</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>checks if the Specialist presence configuration record was found</description>
+        <name>Presence_config_found</name>
+        <label>Presence config found?</label>
+        <locationX>2492</locationX>
+        <locationY>384</locationY>
+        <defaultConnectorLabel>Config not found</defaultConnectorLabel>
+        <rules>
+            <name>Config_found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_presence_config.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_user_presence_config</targetReference>
+            </connector>
+            <label>Config found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Checks if the specialty was changed so we know if we need to create a new service resource skill junction for the new specialty</description>
+        <name>Specialty_change</name>
+        <label>Specialty change?</label>
+        <locationX>446</locationX>
+        <locationY>1440</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Specialty_change_decision_visited</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Assigned_specialty_or_IsActive_changed</leftValueReference>
+                <operator>WasVisited</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_skill_for_specialty</targetReference>
+            </connector>
+            <label>Specialty change decision visited?</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Checks the activity of the triggering service resource record</description>
+        <name>User_made_inactive</name>
+        <label>User made inactive?</label>
+        <locationX>446</locationX>
+        <locationY>276</locationY>
+        <defaultConnector>
+            <targetReference>Get_All_Service_Resource_s_Skills</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>User inactive</defaultConnectorLabel>
+        <rules>
+            <name>User_now_inactive</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.IsActive</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assigned_specialty_or_IsActive_changed</targetReference>
+            </connector>
+            <label>User active</label>
+        </rules>
+    </decisions>
+    <description>Adds Service Resource Skill to Service Resource based on the value of the &quot;Assigned Skill&quot; field. Removes all skills from Service Resource record when Active field is set to false.
+After 1 minute of record creation, adds user associated to the PC Specialist Presence Configuration.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>CheckIsNew</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <name>GenerateSkillName</name>
+        <dataType>String</dataType>
+        <expression>SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(&quot;PC_&quot;&amp;{!SpecialtyName},&quot; &quot;,&quot;_&quot;),&quot;,&quot;,&quot;_&quot;),&quot;-&quot;,&quot;_&quot;),&quot;&apos;&quot;,&quot;_&quot;),&quot;(&quot;,&quot;_&quot;),&quot;)&quot;,&quot;_&quot;),&quot;/&quot;,&quot;_&quot;),&quot;__&quot;,&quot;_&quot;)</expression>
+    </formulas>
+    <interviewLabel>PC Automatic public group assignment {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>PC Service Resource Updates</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>Adds the service resource&apos;s user to the Specialist presence configuration via a presence configuration user junction</description>
+        <name>Add_user_to_presence_config</name>
+        <label>Add user to presence config</label>
+        <locationX>2162</locationX>
+        <locationY>708</locationY>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Add_Log_Entry</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>PresenceUserConfigId</field>
+            <value>
+                <elementReference>Get_presence_config.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>UserId</field>
+            <value>
+                <elementReference>$Record.RelatedRecord.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>PresenceUserConfigUser</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <description>Creates the chat channel service resource skill by default for new or updated Service Resource records</description>
+        <name>Create_Chat_Channel_Service_Resource_Skill</name>
+        <label>Create Chat Channel Service Resource Skill</label>
+        <locationX>446</locationX>
+        <locationY>1332</locationY>
+        <connector>
+            <targetReference>Specialty_change</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Add_Log_Entry</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>EffectiveStartDate</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ServiceResourceId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SkillId</field>
+            <value>
+                <elementReference>Get_Chat_Channel_Skill.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SkillLevel</field>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </inputAssignments>
+        <object>ServiceResourceSkill</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <description>Creates the service resource skill for the new specialty</description>
+        <name>Create_service_resource_skill</name>
+        <label>Create service resource skill</label>
+        <locationX>50</locationX>
+        <locationY>1656</locationY>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Add_Log_Entry</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>EffectiveStartDate</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ServiceResourceId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SkillId</field>
+            <value>
+                <elementReference>Get_skill_for_specialty.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SkillLevel</field>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </inputAssignments>
+        <object>ServiceResourceSkill</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordDeletes>
+        <description>Deletes the existing skills junctions</description>
+        <name>Delete_existing_skills</name>
+        <label>Delete existing skills</label>
+        <locationX>182</locationX>
+        <locationY>984</locationY>
+        <connector>
+            <targetReference>Get_Chat_Channel_Skill</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Add_Log_Entry</targetReference>
+        </faultConnector>
+        <inputReference>Get_All_Service_Resource_s_Skills</inputReference>
+    </recordDeletes>
+    <recordLookups>
+        <description>Get a list of all Service Resource Skill junctions related to the triggering Service Resource in order to delete them. Service Resource Skills for the Chat channel skill are ignored.</description>
+        <name>Get_All_Service_Resource_s_Skills</name>
+        <label>Get All Service Resource&apos;s Skills</label>
+        <locationX>446</locationX>
+        <locationY>768</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Existing_skills_found</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Add_Log_Entry</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ServiceResourceId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>RecordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>ServiceResourceSkill</object>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Get the Skill record for the Chat channel so that we have its Id to exclude it from the skills to delete. All service resources should keep their Chat skill when changing specialties (if they had it previously).</description>
+        <name>Get_Chat_Channel_Skill</name>
+        <label>Get Chat Channel Skill</label>
+        <locationX>446</locationX>
+        <locationY>1224</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_Chat_Channel_Service_Resource_Skill</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Add_Log_Entry</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>PC_Chat</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Skill</object>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Get the presence config for the Specialist user persona</description>
+        <name>Get_presence_config</name>
+        <label>Get presence config</label>
+        <locationX>2492</locationX>
+        <locationY>276</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Presence_config_found</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Add_Log_Entry</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>PC_Specialists</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>PresenceUserConfig</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Gets the skill record for the newly selected Assigned Specialty</description>
+        <name>Get_skill_for_specialty</name>
+        <label>Get skill for specialty</label>
+        <locationX>50</locationX>
+        <locationY>1548</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_service_resource_skill</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Add_Log_Entry</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>MasterLabel</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.PC_Assigned_Specialty__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Skill</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Get the Presence configuration junction for the user</description>
+        <name>Get_user_presence_config</name>
+        <label>Get user presence config</label>
+        <locationX>2030</locationX>
+        <locationY>492</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Existing_user_presence_config</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Add_Log_Entry</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>PresenceUserConfigId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_presence_config.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>UserId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.RelatedRecordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>PresenceUserConfigUser</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>1343</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>User_made_inactive</targetReference>
+        </connector>
+        <filterFormula>{!$Record.RecordType.DeveloperName} = &quot;PC_Resource&quot; &amp;&amp;
+{!$Permission.DisableTriggersFlag} = FALSE &amp;&amp;
+ISNULL(TEXT({!$Record.PC_Assigned_Specialty__c})) = FALSE &amp;&amp;
+(
+ISNEW() 
+||
+ISCHANGED({!$Record.IsActive})
+||
+ISCHANGED({!$Record.PC_Assigned_Specialty__c})
+)</filterFormula>
+        <object>ServiceResource</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <name>Assign_user_to_presence_config</name>
+            <connector>
+                <targetReference>Get_presence_config</targetReference>
+            </connector>
+            <label>Assign user to presence config</label>
+            <offsetNumber>1</offsetNumber>
+            <offsetUnit>Minutes</offsetUnit>
+            <recordField>CreatedDate</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Record id of the triggering service resource</description>
+        <name>RecordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <elementReference>$Record.Id</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <name>SpecialtyName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <elementReference>$Record.PC_Assigned_Specialty__c</elementReference>
+        </value>
+    </variables>
+</Flow>

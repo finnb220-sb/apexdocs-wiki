@@ -1,0 +1,32 @@
+<template>
+    <template if:true={announcementList}>
+        <div class="container">
+            <lightning-card>
+                <div slot="title" class="slds-media">
+                    <lightning-icon
+                        icon-name="standard:announcement"
+                        alternative-text="Announcements"
+                        class="slds-icon slds-icon_medium slds-m-right_small"></lightning-icon>
+                    <h1 class="slds-page-header__title">Announcements</h1>
+                </div>
+                <div class="slds-grid slds-wrap content-container slds-m-around_medium">
+                    <template for:each={announcementList} for:item="announcementObj">
+                        <div
+                            tabindex="0"
+                            class="slds-col slds-size_12-of-12 slds-p-bottom_x-small"
+                            key={announcementObj.Id}>
+                            <div class="slds-card slds-card_boundary slds-p-around_x-small">
+                                <lightning-formatted-rich-text
+                                    linkify
+                                    value={announcementObj.Message__c}></lightning-formatted-rich-text>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </lightning-card>
+        </div>
+    </template>
+    <template if:false={announcementList}>
+        <div style="margin-top: calc(-1 * var(--lwc-cardSpacingMargin, 0.75rem))"></div>
+    </template>
+</template>

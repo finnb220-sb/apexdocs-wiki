@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Modality__c</fullName>
+    <description>This field represents how the requested appointment will be conducted. For example, if the patient will be seen in the office face to face with the provider the modality will be &quot;Face to Face&quot;. If the appointment is a VVC appointment where the patient and provider will use video then the modality is &quot;Video&quot;. If the appointment is a telephone appointment with no video then the modality will be &quot;Telephone&quot;.</description>
+    <externalId>false</externalId>
+    <label>Modality</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Face to Face</fullName>
+                <default>false</default>
+                <label>Face to Face</label>
+            </value>
+            <value>
+                <fullName>Telephone</fullName>
+                <default>false</default>
+                <label>Telephone</label>
+            </value>
+            <value>
+                <fullName>Video</fullName>
+                <default>false</default>
+                <label>Video</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

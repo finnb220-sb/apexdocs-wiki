@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Invokes the PC_ChatSessionTriggerHelper&apos;s clearChatSessionCacheInvocable method to clear chat session data from cache and send pushtopic event. Chains into an async process to delete all pushtopics and event notifications for any closed chat sessions.</description>
+        <name>Invoke_Clear_Chat_Session_Cache</name>
+        <label>Invoke Clear Chat Session Cache</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <actionName>PC_ChatSessionTriggerHelper</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Get_Open_PrC_Case</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Assign_Log_Variables_for_Invoke_Clear_Chat_Session_Fault</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>chatSessionIds</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>PC_ChatSessionTriggerHelper</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <description>Logs a fault from the provided Log variables&apos; input</description>
+        <name>Log_Fault</name>
+        <label>Log Fault</label>
+        <locationX>1408</locationX>
+        <locationY>539</locationY>
+        <actionName>FlowLogEntry</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Save_Log</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>faultMessage</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>flowName</name>
+            <value>
+                <stringValue>PrC_Chat_Session_After_Close</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>message</name>
+            <value>
+                <elementReference>LogMessage</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>LogRecordId</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>FlowLogEntry</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <description>Saves log entries generated in this flow into the database.</description>
+        <name>Save_Log</name>
+        <label>Save Log</label>
+        <locationX>1408</locationX>
+        <locationY>647</locationY>
+        <actionName>Logger</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Display_Fault_Message</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <nameSegment>Logger</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>62.0</apiVersion>
+    <assignments>
+        <description>Assigns the log variables to be used by the Log Entry action with information from the Get Open PrC Case element fault.</description>
+        <name>Assign_Log_Variables_for_Get_Open_PrC_Case_Fault</name>
+        <label>Assign Log Variables for Get Open PrC Case Fault</label>
+        <locationX>1144</locationX>
+        <locationY>539</locationY>
+        <assignmentItems>
+            <assignToReference>LogMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>The Get Open PrC Case get records element failed</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>LogRecordId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Log_Fault</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assigns the log variables to be used by the Log Entry action with information from the Invoke Clear Chat Session action fault.</description>
+        <name>Assign_Log_Variables_for_Invoke_Clear_Chat_Session_Fault</name>
+        <label>Assign Log Variables for Invoke Clear Chat Session Fault</label>
+        <locationX>1408</locationX>
+        <locationY>431</locationY>
+        <assignmentItems>
+            <assignToReference>LogMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>The Invoke Clear Chat Session Cache action failed</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>LogRecordId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Log_Fault</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assigns the log variables to be used by the Log Entry action with information from the Update PrC Case Status to Closed Resolved element fault.</description>
+        <name>Assign_Log_Variables_for_Update_PrC_Case_Status_to_Closed_Resolved_Fault</name>
+        <label>Assign Log Variables for Update PrC Case Status to Closed Resolved Fault</label>
+        <locationX>880</locationX>
+        <locationY>1145</locationY>
+        <assignmentItems>
+            <assignToReference>LogMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>The Update PrC Case Status to Closed Resolved update records element failed</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>LogRecordId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Open_PrC_Case.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Log_Fault</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assigns the log variables to be used by the Log Entry action with information from the Update PrC Case Status to Pending Note element fault.</description>
+        <name>Assign_Log_Variables_for_Update_PrC_Case_Status_to_Pending_Note_Fault</name>
+        <label>Assign Log Variables for Update PrC Case Status to Pending Note Fault</label>
+        <locationX>352</locationX>
+        <locationY>755</locationY>
+        <assignmentItems>
+            <assignToReference>LogMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>The Update PrC Case Status to Pending Note update records element failed</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>LogRecordId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Open_PrC_Case.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Log_Fault</targetReference>
+        </connector>
+    </assignments>
+    <customErrors>
+        <description>Displays the fault message to the user if they triggered it in the context of a record page.</description>
+        <name>Display_Fault_Message</name>
+        <label>Display Fault Message</label>
+        <locationX>1408</locationX>
+        <locationY>755</locationY>
+        <customErrorMessages>
+            <errorMessage>{!$Flow.FaultMessage}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <description>Determines if the PrC Case is a General Case or a Patient Specific Case (with or without a selected Patient)</description>
+        <name>What_type_of_PrC_Case</name>
+        <label>What type of PrC Case?</label>
+        <locationX>176</locationX>
+        <locationY>539</locationY>
+        <defaultConnectorLabel>None</defaultConnectorLabel>
+        <rules>
+            <name>General</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Open_PrC_Case.PC_General_Question__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_PrC_Case_Status_to_Closed_Resolved</targetReference>
+            </connector>
+            <label>General</label>
+        </rules>
+        <rules>
+            <name>Patient_Specific_No_Patient</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Open_PrC_Case.PC_General_Question__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Open_PrC_Case.PC_Has_Patient_Account__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_PrC_Case_Status_to_Closed_Resolved</targetReference>
+            </connector>
+            <label>Patient Specific (No Patient)</label>
+        </rules>
+        <rules>
+            <name>Patient_Specific_With_Patient</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Open_PrC_Case.PC_General_Question__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Open_PrC_Case.PC_Has_Patient_Account__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_PrC_Case_Status_to_Pending_Note</targetReference>
+            </connector>
+            <label>Patient Specific (With Patient)</label>
+        </rules>
+    </decisions>
+    <description>After closure of a Chat Session, this trigger flow calls invokable apex to clear chat session data from cache and send pushtopic event. It also starts an async process to delete all pushtopics and event notifications for any closed chat sessions. Updates from 1.20.0 included</description>
+    <environments>Default</environments>
+    <interviewLabel>PrC Chat Session After Close {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>PrC Chat Session After Close</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Gets the open PrC Case associated with the Chat Session in order to close it</description>
+        <name>Get_Open_PrC_Case</name>
+        <label>Get Open PrC Case</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>What_type_of_PrC_Case</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Assign_Log_Variables_for_Get_Open_PrC_Case_Fault</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Provider_Connect_Case__r.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Open</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>PC_Case__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Sets the related PrC Case&apos;s status to Closed since no other actions are needed by the Specialist.</description>
+        <name>Update_PrC_Case_Status_to_Closed_Resolved</name>
+        <label>Update PrC Case Status to Closed Resolved</label>
+        <locationX>176</locationX>
+        <locationY>1037</locationY>
+        <faultConnector>
+            <targetReference>Assign_Log_Variables_for_Update_PrC_Case_Status_to_Closed_Resolved_Fault</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Open_PrC_Case.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Closed Resolved</stringValue>
+            </value>
+        </inputAssignments>
+        <object>PC_Case__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Sets the related PrC Case&apos;s status to Pending Note since a Progress Note is required for Patient Specific cases.</description>
+        <name>Update_PrC_Case_Status_to_Pending_Note</name>
+        <label>Update PrC Case Status to Pending Note</label>
+        <locationX>88</locationX>
+        <locationY>647</locationY>
+        <faultConnector>
+            <targetReference>Assign_Log_Variables_for_Update_PrC_Case_Status_to_Pending_Note_Fault</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Open_PrC_Case.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Pending Note</stringValue>
+            </value>
+        </inputAssignments>
+        <object>PC_Case__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Invoke_Clear_Chat_Session_Cache</targetReference>
+        </connector>
+        <filterFormula>{!$Record.PC_Is_Closed__c} = TRUE &amp;&amp; {!$Record.Provider_Connect_Case__r.Closed__c} = FALSE &amp;&amp; NOT({!$Permission.DisableTriggersFlag})</filterFormula>
+        <object>PC_Chat_Session__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Message for the Log Entry</description>
+        <name>LogMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>The action failed.</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Record Id for Log entry</description>
+        <name>LogRecordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Record.Id</elementReference>
+        </value>
+    </variables>
+</Flow>

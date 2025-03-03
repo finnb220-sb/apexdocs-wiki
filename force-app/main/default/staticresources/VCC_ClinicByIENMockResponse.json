@@ -1,0 +1,119 @@
+{
+    "id": "2281",
+    "name": "PROSTHETIC EVALUATION/ISSUE ",
+    "abbreviation": "EVAL",
+    "patientFriendlyName": "",
+    "allowDirectScheduling": false,
+    "displayAppointments": false,
+    "serviceCode": "REHAB MEDICINE",
+    "nonCount": false,
+    "primaryStopCode": "417",
+    "primaryStopName": "PROSTHETICS/ORTHOTICS",
+    "numberNoShowsAllowed": 1,
+    "maxFutureBookingDays": 366,
+    "maxOverBooksPerDay": 0,
+    "lengthOfAppointment": 15,
+    "displayIncrementsPerHour": 15,
+    "meetsAtFacility": true,
+    "division": "1",
+    "divisionName": "DAYTSHR",
+    "defaultAppointmentType": "REGULAR",
+    "administerInpatientMeds": false,
+    "telephoneNumber": "3988",
+    "telephoneExtension": "",
+    "xrayRequired": false,
+    "actionProfileRequired": true,
+    "noShowLetter": "PROSTHETIC",
+    "preAppointmentLetter": "PROSTH-W/C EVAL",
+    "clinicCancellationLetter": "PROSTHETIC",
+    "appointmentCancellationLetter": "PROSTHETICS",
+    "askForCheckinCheckoutTime": true,
+    "providerList": ["AKUTHOTA,PANI", "HO,CHARLES C"],
+    "fullProviderList": [
+        {
+            "ien": "2026",
+            "name": "AKUTHOTA,PANI",
+            "defaultProvider": false
+        },
+        {
+            "ien": "1799",
+            "name": "HO,CHARLES C",
+            "defaultProvider": false
+        }
+    ],
+    "defaultProvider": "",
+    "defaultToPCPractitioner": false,
+    "diagnosisList": [],
+    "defaultDiagnosis": "",
+    "workloadValidationRequired": true,
+    "scheduleOnHolidays": false,
+    "secondaryStopCodeName": "",
+    "prohibitAccess": false,
+    "privilegedUsers": [
+        "TURNER,MARJORIE",
+        "BELL,ROBIN L",
+        "WORTHAM,BEVERLY",
+        "THOMPSON,KATHRYN G",
+        "NICHOLS,EDDIE W JR",
+        "FIELDS,PATRICIA M",
+        "BLOSSER,TERESA A",
+        "WASHINGTON,CARRIE J"
+    ],
+    "fullPrivilegedUsers": [
+        {
+            "ien": "115",
+            "name": "TURNER,MARJORIE"
+        },
+        {
+            "ien": "130",
+            "name": "BELL,ROBIN L"
+        },
+        {
+            "ien": "155",
+            "name": "WORTHAM,BEVERLY"
+        },
+        {
+            "ien": "2901",
+            "name": "THOMPSON,KATHRYN G"
+        },
+        {
+            "ien": "3084",
+            "name": "NICHOLS,EDDIE W JR"
+        },
+        {
+            "ien": "5645",
+            "name": "FIELDS,PATRICIA M"
+        },
+        {
+            "ien": "10758",
+            "name": "BLOSSER,TERESA A"
+        },
+        {
+            "ien": "11458",
+            "name": "WASHINGTON,CARRIE J"
+        }
+    ],
+    "physicalLocation": "B330, RM BB-101",
+    "principalClinic": "REHABILITATION MEDICINE (LOC)",
+    "specialInstructionList": [],
+    "fullSpecialInstructionList": [
+        {
+            "ien": "1",
+            "specialInstruction": "SCHEDULING ONLY BY PROSTHETICS"
+        }
+    ],
+    "eCheckInAllowed": false,
+    "preCheckInAllowed": false,
+    "variableLengthAppointment": false,
+    "hourClinicDisplayBegins": 9,
+    "timezone": "EASTERN",
+    "timeZoneException": "0",
+    "hash": "D55972BF4D1E6EEAC800EECC0B53850CD24E4FD8",
+    "inactivateDate": "1996-04-04",
+    "reactivateDate": "1996-05-02",
+    "active": true,
+    "stationNumber": "984",
+    "char4": "",
+    "pbspId": "",
+    "resourceIen": "1071"
+}

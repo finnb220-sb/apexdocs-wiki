@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Calling HDR and getting the SUD Panel for patient.</description>
+        <name>Get_Sud_Panels</name>
+        <label>Get Sud Panels</label>
+        <locationX>50</locationX>
+        <locationY>492</locationY>
+        <actionName>VCC_GetSudPanelsInvocable</actionName>
+        <actionType>apex</actionType>
+        <faultConnector>
+            <targetReference>Log_SUD_Panel_creation_error</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <description>Log SUD Panel creation error</description>
+        <name>Log_SUD_Panel_creation_error</name>
+        <label>Log SUD Panel creation error</label>
+        <locationX>314</locationX>
+        <locationY>600</locationY>
+        <actionName>FlowLogEntry</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>flowName</name>
+            <value>
+                <stringValue>VCC_Progress_Notes_Async_Flow</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>message</name>
+            <value>
+                <stringValue>Flow Error: Unable to create Sud Panel</stringValue>
+            </value>
+        </inputParameters>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>56.0</apiVersion>
+    <decisions>
+        <description>This decision node determines whether or not the PN record type is Pharmacy</description>
+        <name>Is_Pharmacy_PN</name>
+        <label>Is Pharmacy PN</label>
+        <locationX>578</locationX>
+        <locationY>276</locationY>
+        <defaultConnectorLabel>Non Pharmacy</defaultConnectorLabel>
+        <rules>
+            <name>Pharmacy</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>VCC_Tier</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Renewal_and_Controlled_Checked</targetReference>
+            </connector>
+            <label>Pharmacy</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Are either the Medication Renewal or Controlled Substance flags set to true?</description>
+        <name>Renewal_and_Controlled_Checked</name>
+        <label>Renewal and Controlled Checked?</label>
+        <locationX>314</locationX>
+        <locationY>384</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Renewal_AND_Control_Med_Checked</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.VCC_Medication_Fill_Renewal__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Controlled_medication__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Controlled_Non_VA_Medication__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Sud_Panels</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>Asynchronous actions to run after a Progress Note record is saved/inserted.</description>
+    <environments>Default</environments>
+    <interviewLabel>VCC_Progress_Notes_Async_Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>VCC Progress Notes Async Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>(1 OR 2) AND 3</filterLogic>
+        <filters>
+            <field>VCC_Controlled_medication__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>VCC_Controlled_Non_VA_Medication__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>VCC_Medication_Fill_Renewal__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>VCC_Progress_Note__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <connector>
+                <targetReference>Is_Pharmacy_PN</targetReference>
+            </connector>
+            <pathType>AsyncAfterCommit</pathType>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>The SUD lab results of this patient.</description>
+        <name>VCC_SUD_Labs</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <stringValue />
+        </value>
+    </variables>
+</Flow>

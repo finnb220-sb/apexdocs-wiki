@@ -1,0 +1,43 @@
+<template>
+    <!-- No Results -->
+    <template if:true={noResults}>
+        <c-base-empty-state type="gonefishing" msg="No Results Found"></c-base-empty-state>
+    </template>
+
+    <!-- Results -->
+    <template if:false={noResults}>
+        <c-base-compact-card
+            variant="visual_picker"
+            oncardclick={handleCardClick}
+            settings={settings}
+            list={searchResults}></c-base-compact-card>
+    </template>
+
+    <lightning-layout class="slds-grid_align-spread">
+        <lightning-layout-item class="slds-var-p-around_large">
+            <!-- Back -->
+            <lightning-button
+                variant="neutral"
+                label="Back to Search"
+                title="Back to Search"
+                onclick={handleBackToSearchClick}></lightning-button>
+        </lightning-layout-item>
+        <lightning-layout-item class="slds-var-p-around_large">
+            <!-- Back To CRM Records -->
+            <lightning-button
+                variant="neutral"
+                label="CRM Records"
+                title="CRM Records"
+                onclick={handleBackToCrmClick}></lightning-button>
+        </lightning-layout-item>
+        <lightning-layout-item class="slds-var-p-around_large">
+            <!-- Add New Veteran -->
+            <lightning-button
+                disabled={isAddVetDisabled}
+                variant="brand"
+                label="Add New Veteran"
+                icon-name="utility:adduser"
+                onclick={handleAddVeteran}></lightning-button>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

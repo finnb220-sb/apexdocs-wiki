@@ -1,0 +1,65 @@
+[
+    {
+        "Id": "00T000000000001",
+        "Subject": "Call",
+        "Status": "Completed",
+        "ActivityDate": "2024-01-01",
+        "DueDate": "01/01/2024",
+        "CreatedDate": "2024-01-01T00:00:00.000Z",
+        "CreatedById": "005000000000001",
+        "CreatedBy": {
+            "Id": "005000000000001",
+            "Name": "John Doe"
+        },
+        "WhatId": "500000000000001",
+        "Owner": {
+            "Name": "Jane Doe"
+        },
+        "OwnerId": "005000000000001",
+        "What": {
+            "CaseNumber": "00001234"
+        }
+    },
+    {
+        "Id": "00T000000000002",
+        "Subject": "Email",
+        "Status": "In Progress",
+        "ActivityDate": "2024-01-02",
+        "DueDate": "02/01/2024",
+        "CreatedDate": "2024-01-02T00:00:00.000Z",
+        "CreatedById": "005000000000002",
+        "CreatedBy": {
+            "Id": "005000000000002",
+            "Name": "Jane Doe"
+        },
+        "WhatId": "500000000000002",
+        "Owner": {
+            "Name": "John Doe"
+        },
+        "OwnerId": "005000000000002",
+        "What": {
+            "CaseNumber": "00001235"
+        }
+    },
+    {
+        "Id": "00T000000000003",
+        "Subject": "Meeting",
+        "Status": "Not Started",
+        "ActivityDate": "2024-01-03",
+        "DueDate": "03/01/2024",
+        "CreatedDate": "2024-01-03T00:00:00.000Z",
+        "CreatedById": "005000000000003",
+        "CreatedBy": {
+            "Id": "005000000000003",
+            "Name": "John Doe"
+        },
+        "WhatId": "500000000000003",
+        "Owner": {
+            "Name": "Jane Doe"
+        },
+        "OwnerId": "005000000000003",
+        "What": {
+            "CaseNumber": "00001236"
+        }
+    }
+]

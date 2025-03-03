@@ -1,0 +1,14 @@
+<template>
+    <c-logger></c-logger>
+    <div class="slds-card">
+        <c-vcc-pact-v2
+            if:false={isAddMany}
+            onmessage={handleMessage}
+            enable-add-signers="true"
+            response-j-s-o-n={responseJSON}
+            onpactconnected={handlePactConnected}
+            site-code={siteCode}
+        ></c-vcc-pact-v2>
+        <lightning-spinner alternative-text="loading" if:true={isLoading}></lightning-spinner>
+    </div>
+</template>

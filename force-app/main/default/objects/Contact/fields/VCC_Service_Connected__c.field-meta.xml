@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Service_Connected__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Service-connected disabilities are defined as injuries or illnesses that are incurred in or aggravated by active military service.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Service-connected disabilities are defined as injuries or illnesses that are incurred in or aggravated by active military service.</inlineHelpText>
+    <label>Service Connected</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

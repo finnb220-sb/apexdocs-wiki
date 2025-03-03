@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Reviewed_endocrinological_symptoms__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>True if provider reviewed endocrinological symptoms with patient during virtual visit</description>
+    <externalId>false</externalId>
+    <inlineHelpText>True if provider reviewed endocrinological symptoms with patient during virtual visit</inlineHelpText>
+    <label>Reviewed endocrine symptoms</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

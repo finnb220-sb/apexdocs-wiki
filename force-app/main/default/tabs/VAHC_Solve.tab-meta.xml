@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <frameHeight>2000</frameHeight>
+    <hasSidebar>false</hasSidebar>
+    <label>eGain</label>
+    <motif>Custom55: Books</motif>
+    <url>https://vaww.vrm.km.va.gov/kb/vhaconnect/home</url>
+    <urlEncodingKey>UTF-8</urlEncodingKey>
+</CustomTab>

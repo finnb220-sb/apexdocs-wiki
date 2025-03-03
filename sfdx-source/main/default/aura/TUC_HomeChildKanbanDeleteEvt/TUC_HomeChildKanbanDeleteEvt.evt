@@ -1,0 +1,18 @@
+<!--
+/**
+ * Modified From Salesforce Labs - Open Source Project - https://github.com/SalesforceLabs/Home-Child-Kanban/
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+ * @description       : Delete Event used for the main Kanban Board 
+ * @author            : Edwin Schaeffer
+ * @group             : Booz Allen
+ * @last modified on  : 03-29-2023
+ * @last modified by  : Edwin Schaeffer
+ * Modifications Log
+ * Ver   Date         Author                               Modification
+ * 1.0   03-29-2023   Edwin Schaeffer                      Initial Version
+ **/
+-->
+<aura:event type="Component" description="Event template">
+    <aura:attribute name="KanbanChildDelete" type="object"/>
+</aura:event>

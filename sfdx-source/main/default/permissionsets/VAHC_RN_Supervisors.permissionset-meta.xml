@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>VAHC_RN_Supervisors</name>
+    </customPermissions>
+    <description>This permission set is used in conjunction with the VAHC RN Supervisors custom permission to identify which users are RN Supervisors.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>VAHC RN Supervisors</label>
+</PermissionSet>

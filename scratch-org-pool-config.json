@@ -1,0 +1,12 @@
+{
+    "tag": "VAHC-DEV-POOL",
+    "maxAllocation": 20,
+    "expiry": 14,
+    "batchSize": 10,
+    "configFilePath": "orgs/dev.json",
+    "relaxAllIPRanges": true,
+    "installAll": true,
+    "enableSourceTracking": true,
+    "retryOnFailure": true,
+    "succeedOnDeploymentErrors": true
+}

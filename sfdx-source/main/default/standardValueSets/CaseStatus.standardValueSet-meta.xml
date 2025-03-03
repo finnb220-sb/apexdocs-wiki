@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>On Hold</fullName>
+        <default>false</default>
+        <label>On Hold</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>New</fullName>
+        <default>true</default>
+        <label>New</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed - Resolved</fullName>
+        <default>false</default>
+        <label>Closed - Resolved</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed - Transferred</fullName>
+        <default>false</default>
+        <label>Closed - Transferred</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Pending Future Renewal Request</fullName>
+        <default>false</default>
+        <label>Pending Future Renewal Request</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Opened in Error</fullName>
+        <default>false</default>
+        <label>Opened in Error</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Open</fullName>
+        <default>false</default>
+        <label>Open</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Cancelled</fullName>
+        <default>false</default>
+        <label>Cancelled</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed Resolved</fullName>
+        <default>false</default>
+        <label>Closed Resolved</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed Unresolved</fullName>
+        <default>false</default>
+        <label>Closed Unresolved</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed - Unresolved</fullName>
+        <default>false</default>
+        <label>Closed - Unresolved</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Patient Call Back</fullName>
+        <default>false</default>
+        <label>Patient Call Back</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>TED Nurse Encounter</fullName>
+        <default>false</default>
+        <label>Nurse Encounter</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Ready for MP</fullName>
+        <default>false</default>
+        <label>Ready for MP</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>TED MP Encounter</fullName>
+        <default>false</default>
+        <label>MP Encounter</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed</fullName>
+        <default>false</default>
+        <label>Closed</label>
+        <closed>true</closed>
+    </standardValue>
+</StandardValueSet>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Current_Address_not_Primary_Address__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked if patient current address is not the same as the primary address</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if patient current address is not the same as the primary address</inlineHelpText>
+    <label>Current Address not Primary Address</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Call_was_dropped_unable_to_reconnect__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked when the patient is non-triage, the call was dropped and the agent was unable to reconnect</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if the patient is non-triage, the call was dropped and the agent was unable to reconnect</inlineHelpText>
+    <label>Call was dropped; unable to reconnect</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

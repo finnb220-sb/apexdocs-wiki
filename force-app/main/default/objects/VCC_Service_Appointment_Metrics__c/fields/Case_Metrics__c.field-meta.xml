@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Metrics__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Looking up to the Case Metrics record for the VCV Case associated with the Service Appointment. Used for reporting purposes.</description>
+    <externalId>false</externalId>
+    <label>Case Metrics</label>
+    <referenceTo>VCC_Case_Metrics__c</referenceTo>
+    <relationshipLabel>Service Appointment Metrics</relationshipLabel>
+    <relationshipName>Service_Appointment_Metrics</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

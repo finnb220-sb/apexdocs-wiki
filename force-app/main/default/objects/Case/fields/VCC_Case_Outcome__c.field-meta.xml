@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Case_Outcome__c</fullName>
+    <description>Specify the Outcome of the Case</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Specify the Outcome of the Case</inlineHelpText>
+    <label>Case Outcome</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>911</fullName>
+                <default>false</default>
+                <label>911</label>
+            </value>
+            <value>
+                <fullName>Call Dropped/Not Resolved</fullName>
+                <default>false</default>
+                <label>Call Dropped/Not Resolved</label>
+            </value>
+            <value>
+                <fullName>Call Dropped - Could not Reconnect</fullName>
+                <default>false</default>
+                <label>Call Dropped - Could not Reconnect</label>
+            </value>
+            <value>
+                <fullName>CCC VCV No Follow-Up Needed</fullName>
+                <default>false</default>
+                <label>CCC VCV No Follow-Up Needed</label>
+            </value>
+            <value>
+                <fullName>CCC Virtual Clinic Visit</fullName>
+                <default>false</default>
+                <label>CCC Virtual Clinic Visit</label>
+            </value>
+            <value>
+                <fullName>Consult to CCC Pharmacist</fullName>
+                <default>false</default>
+                <label>Consult to CCC Pharmacist</label>
+            </value>
+            <value>
+                <fullName>Consult to Local Pharmacy</fullName>
+                <default>false</default>
+                <label>Consult to Local Pharmacy</label>
+            </value>
+            <value>
+                <fullName>Diagnostics Ordered</fullName>
+                <default>false</default>
+                <label>Diagnostics Ordered</label>
+            </value>
+            <value>
+                <fullName>Emergency Dept</fullName>
+                <default>false</default>
+                <label>Emergency Dept</label>
+            </value>
+            <value>
+                <fullName>Follow Up PACT/VAMC</fullName>
+                <default>false</default>
+                <label>Follow Up PACT/VAMC</label>
+            </value>
+            <value>
+                <fullName>Lead Pharmacy Technician Resolved</fullName>
+                <default>false</default>
+                <label>Lead Pharmacy Technician Resolved</label>
+            </value>
+            <value>
+                <fullName>Mental Health</fullName>
+                <default>false</default>
+                <label>Mental Health</label>
+            </value>
+            <value>
+                <fullName>Message Sent/ Progress Note</fullName>
+                <default>false</default>
+                <label>Message Sent/ Progress Note</label>
+            </value>
+            <value>
+                <fullName>MSA/Scheduling</fullName>
+                <default>false</default>
+                <label>MSA/Scheduling</label>
+            </value>
+            <value>
+                <fullName>No Answer Message Left</fullName>
+                <default>false</default>
+                <label>No Answer Message Left</label>
+            </value>
+            <value>
+                <fullName>PACT Team</fullName>
+                <default>false</default>
+                <label>PACT Team</label>
+            </value>
+            <value>
+                <fullName>Patient Stayed Home</fullName>
+                <default>false</default>
+                <label>Patient Stayed Home</label>
+            </value>
+            <value>
+                <fullName>Patient was No Show (No Welfare check)</fullName>
+                <default>false</default>
+                <label>Patient was No Show (No Welfare check)</label>
+            </value>
+            <value>
+                <fullName>Patient was No Show (Welfare check requested)</fullName>
+                <default>false</default>
+                <label>Patient was No Show (Welfare check requested)</label>
+            </value>
+            <value>
+                <fullName>Pharmacist Resolved</fullName>
+                <default>false</default>
+                <label>Pharmacist Resolved</label>
+            </value>
+            <value>
+                <fullName>Pharmacy</fullName>
+                <default>false</default>
+                <label>Pharmacy</label>
+            </value>
+            <value>
+                <fullName>Pharmacy Technician Resolved</fullName>
+                <default>false</default>
+                <label>Pharmacy Technician Resolved</label>
+            </value>
+            <value>
+                <fullName>PN to Clinician</fullName>
+                <default>false</default>
+                <label>PN to Clinician</label>
+            </value>
+            <value>
+                <fullName>PN to Team</fullName>
+                <default>false</default>
+                <label>PN to Team</label>
+            </value>
+            <value>
+                <fullName>Prescription Ordered</fullName>
+                <default>false</default>
+                <label>Prescription Ordered</label>
+            </value>
+            <value>
+                <fullName>Primary Care</fullName>
+                <default>false</default>
+                <label>Primary Care</label>
+            </value>
+            <value>
+                <fullName>Primary Care/PACT</fullName>
+                <default>false</default>
+                <label>Primary Care/PACT</label>
+            </value>
+            <value>
+                <fullName>Referral</fullName>
+                <default>false</default>
+                <label>Referral</label>
+            </value>
+            <value>
+                <fullName>Refilled Medication</fullName>
+                <default>false</default>
+                <label>Refilled Medication</label>
+            </value>
+            <value>
+                <fullName>Renewed Medication</fullName>
+                <default>false</default>
+                <label>Renewed Medication</label>
+            </value>
+            <value>
+                <fullName>Requested Medication Renewal</fullName>
+                <default>false</default>
+                <label>Requested Medication Renewal</label>
+            </value>
+            <value>
+                <fullName>Resolved Issues</fullName>
+                <default>false</default>
+                <label>Resolved Issues</label>
+            </value>
+            <value>
+                <fullName>Scheduled Appt</fullName>
+                <default>false</default>
+                <label>Scheduled Appt</label>
+            </value>
+            <value>
+                <fullName>Specialty Care</fullName>
+                <default>false</default>
+                <label>Specialty Care</label>
+            </value>
+            <value>
+                <fullName>Status Provided</fullName>
+                <default>false</default>
+                <label>Status Provided</label>
+            </value>
+            <value>
+                <fullName>Tele EC</fullName>
+                <default>false</default>
+                <label>Tele EC</label>
+            </value>
+            <value>
+                <fullName>Test to Treat Referral</fullName>
+                <default>false</default>
+                <label>Test to Treat Referral</label>
+            </value>
+            <value>
+                <fullName>Transfer to Ancillary Services</fullName>
+                <default>false</default>
+                <label>Transfer to Ancillary Services</label>
+            </value>
+            <value>
+                <fullName>Transfer to CCC Nurse</fullName>
+                <default>false</default>
+                <label>Transfer to CCC Nurse</label>
+            </value>
+            <value>
+                <fullName>Transfer to CCC Scheduling</fullName>
+                <default>false</default>
+                <label>Transfer to CCC Scheduling</label>
+            </value>
+            <value>
+                <fullName>Transfer to Facility</fullName>
+                <default>false</default>
+                <label>Transfer to Facility</label>
+            </value>
+            <value>
+                <fullName>Transfer to Member Services</fullName>
+                <default>false</default>
+                <label>Transfer to Member Services</label>
+            </value>
+            <value>
+                <fullName>Transfer to Nurse</fullName>
+                <default>false</default>
+                <label>Transfer to Nurse</label>
+            </value>
+            <value>
+                <fullName>Transfer to Pharm</fullName>
+                <default>false</default>
+                <label>Transfer to Pharmacist</label>
+            </value>
+            <value>
+                <fullName>Transfer to Pharmacy</fullName>
+                <default>false</default>
+                <label>Transfer to Pharmacy</label>
+            </value>
+            <value>
+                <fullName>Transfer to Triage</fullName>
+                <default>false</default>
+                <label>Transfer to Triage</label>
+            </value>
+            <value>
+                <fullName>Urgent Care</fullName>
+                <default>false</default>
+                <label>Urgent Care</label>
+            </value>
+            <value>
+                <fullName>VCV Appointment Canceled</fullName>
+                <default>false</default>
+                <label>VCV Appointment Canceled</label>
+            </value>
+            <value>
+                <fullName>Welfare Check</fullName>
+                <default>false</default>
+                <label>Welfare Check</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Declined by Veteran</fullName>
+                <default>false</default>
+                <label>Declined by Veteran</label>
+            </value>
+            <value>
+                <fullName>Emergency Department</fullName>
+                <default>false</default>
+                <label>Emergency Department</label>
+            </value>
+            <value>
+                <fullName>Acute Issue Resolved</fullName>
+                <default>false</default>
+                <label>Acute Issue Resolved</label>
+            </value>
+            <value>
+                <fullName>Care Incomplete</fullName>
+                <default>false</default>
+                <label>Care Incomplete</label>
+            </value>
+            <value>
+                <fullName>Transferred to Tele-EC Medical Provider</fullName>
+                <default>false</default>
+                <label>Transferred to Tele-EC Medical Provider</label>
+            </value>
+            <value>
+                <fullName>Closed - Case Created in Error</fullName>
+                <default>false</default>
+                <label>Closed - Case Created in Error</label>
+            </value>
+            <value>
+                <fullName>Abandoned - Connection Failure</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Abandoned - Connection Failure</label>
+            </value>
+            <value>
+                <fullName>Abandoned - Over Capacity</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Abandoned - Over Capacity</label>
+            </value>
+            <value>
+                <fullName>Abandoned - by Veteran</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Abandoned - by Veteran</label>
+            </value>
+            <value>
+                <fullName>Assisting Suicide Calls</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Assisting Suicide Calls</label>
+            </value>
+            <value>
+                <fullName>COVID-19 Screening Neg</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>COVID-19 Screening Neg</label>
+            </value>
+            <value>
+                <fullName>COVID-19 Screening Pos</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>COVID-19 Screening Pos</label>
+            </value>
+            <value>
+                <fullName>COVID-19 Screening Refused</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>COVID-19 Screening Refused</label>
+            </value>
+            <value>
+                <fullName>Call Dropped - Need callback</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Call Dropped - Need callback</label>
+            </value>
+            <value>
+                <fullName>Care Incomplete - Connection Failure</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Care Incomplete - Connection Failure</label>
+            </value>
+            <value>
+                <fullName>Consult to Pharmacist</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Consult to Pharmacist</label>
+            </value>
+            <value>
+                <fullName>Follow Up By PACT</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Follow Up By PACT</label>
+            </value>
+            <value>
+                <fullName>Follow Up Crisis Line</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Follow Up Crisis Line</label>
+            </value>
+            <value>
+                <fullName>Follow Up ER</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Follow Up ER</label>
+            </value>
+            <value>
+                <fullName>Follow Up Emergency Services</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Follow Up Emergency Services</label>
+            </value>
+            <value>
+                <fullName>Follow Up PACT</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Follow Up PACT</label>
+            </value>
+            <value>
+                <fullName>Follow Up PCP</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Follow Up PCP</label>
+            </value>
+            <value>
+                <fullName>Follow Up Registration</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Follow Up Registration</label>
+            </value>
+            <value>
+                <fullName>Follow Up Specialty Provider</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Follow Up Specialty Provider</label>
+            </value>
+            <value>
+                <fullName>Follow Up Urgent Care</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Follow Up Urgent Care</label>
+            </value>
+            <value>
+                <fullName>Follow Up VAMC</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Follow Up VAMC</label>
+            </value>
+            <value>
+                <fullName>Has Been Seen Somewhere</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Has Been Seen Somewhere</label>
+            </value>
+            <value>
+                <fullName>Needs PACT Assignment</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Needs PACT Assignment</label>
+            </value>
+            <value>
+                <fullName>No Answer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>No Answer</label>
+            </value>
+            <value>
+                <fullName>No Phone Number</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>No Phone Number</label>
+            </value>
+            <value>
+                <fullName>No Show</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>No Show</label>
+            </value>
+            <value>
+                <fullName>Nurse Practitioner</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Nurse Practitioner</label>
+            </value>
+            <value>
+                <fullName>Speciality Provider</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Speciality Provider</label>
+            </value>
+            <value>
+                <fullName>Specialty Provider</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Specialty Provider</label>
+            </value>
+            <value>
+                <fullName>Transferred to Tele Emergency Care Provider</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Transferred to Tele Emergency Care Provider</label>
+            </value>
+            <value>
+                <fullName>Triage Declined</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Triage Declined</label>
+            </value>
+            <value>
+                <fullName>Crisis Line</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Veterans Crisis Line</label>
+            </value>
+            <value>
+                <fullName>Wellfare Check</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Wellfare Check</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

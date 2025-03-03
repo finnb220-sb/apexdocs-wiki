@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Relative_Type_Picklist__c</fullName>
+    <description>The specific type of relative that the caller is to the patient they are calling about</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The type of relative that the caller is to the patient they are calling about</inlineHelpText>
+    <label>Caller Relation to Veteran</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+                <label>Not Applicable</label>
+            </value>
+            <value>
+                <fullName>Self</fullName>
+                <default>false</default>
+                <label>Self</label>
+            </value>
+            <value>
+                <fullName>Caregiver</fullName>
+                <default>false</default>
+                <label>Caregiver</label>
+            </value>
+            <value>
+                <fullName>Power of Attorney</fullName>
+                <default>false</default>
+                <label>Power of Attorney</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Anonymous</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Anonymous</label>
+            </value>
+            <value>
+                <fullName>Aunt</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Aunt</label>
+            </value>
+            <value>
+                <fullName>Daughter</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Daughter</label>
+            </value>
+            <value>
+                <fullName>Father</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Father</label>
+            </value>
+            <value>
+                <fullName>Home Health</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Home Health</label>
+            </value>
+            <value>
+                <fullName>Internal Review Only</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Internal Review Only</label>
+            </value>
+            <value>
+                <fullName>Mother</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Mother</label>
+            </value>
+            <value>
+                <fullName>Neighbor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Neighbor</label>
+            </value>
+            <value>
+                <fullName>Not Applicable2</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Not Applicable2</label>
+            </value>
+            <value>
+                <fullName>Psychiatrist</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Psychiatrist</label>
+            </value>
+            <value>
+                <fullName>Sibling</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sibling</label>
+            </value>
+            <value>
+                <fullName>Son</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Son</label>
+            </value>
+            <value>
+                <fullName>Spouse</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Spouse</label>
+            </value>
+            <value>
+                <fullName>Uncle</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Uncle</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

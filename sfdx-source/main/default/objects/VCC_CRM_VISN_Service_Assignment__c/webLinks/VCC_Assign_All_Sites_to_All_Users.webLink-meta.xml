@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Assign_All_Sites_to_All_Users</fullName>
+    <availability>online</availability>
+    <description>When this button is clicked, all Sites aligned with the VISN of the current CRM Service VISN Assignment record (via the lookup relationship from Site to VISN) will be
+        assigned to all SOT Users assigned to this CRM Service VISN Assignment (via a Service User Assignment).</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Assign All Sites to All Users</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/flow/VCC_SOT_Create_Assigned_Sites?CRMServiceVISNId={!VCC_CRM_VISN_Service_Assignment__c.Id}</url>
+</WebLink>

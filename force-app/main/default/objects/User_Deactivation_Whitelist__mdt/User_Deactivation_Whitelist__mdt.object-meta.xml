@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Configuration that controls which permission sets should not have users deactivated</description>
+    <label>User Deactivation Whitelist</label>
+    <pluralLabel>User Deactivation Whitelists</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

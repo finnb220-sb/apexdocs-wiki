@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>Upserts external records into the VCC_Appointment__c object.</description>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;appointments&quot; : [ {
+    &quot;apptIen&quot; : &quot;7906&quot;,
+    &quot;apptRequest&quot; : {
+      &quot;file&quot; : &quot;appt request&quot;,
+      &quot;id&quot; : &quot;R9848222&quot;,
+      &quot;ien&quot; : &quot;8222&quot;,
+      &quot;mrtc&quot; : {
+        &quot;mrtc&quot; : false
+      }
+    },
+    &quot;apptType&quot; : &quot;REGULAR&quot;,
+    &quot;checkInOutDetails&quot; : {
+      &quot;checkInDate&quot; : &quot;2024-06-17T17:32:30Z&quot;,
+      &quot;checkInDateEntered&quot; : &quot;2024-06-17T17:32:31Z&quot;,
+      &quot;checkedInByUser&quot; : {
+        &quot;name&quot; : &quot;HOARE,RAJEEV&quot;
+      },
+      &quot;steps&quot; : [ ]
+    },
+    &quot;clinic&quot; : {
+      &quot;creditStopCode&quot; : {
+        &quot;amis&quot; : &quot;null&quot;,
+        &quot;name&quot; : &quot;&quot;
+      },
+      &quot;displayToPatients&quot; : false,
+      &quot;ien&quot; : &quot;1908&quot;,
+      &quot;name&quot; : &quot;PCT_R&quot;,
+      &quot;prohibitAccessToClinic&quot; : false,
+      &quot;stopCode&quot; : {
+        &quot;amis&quot; : &quot;323&quot;,
+        &quot;name&quot; : &quot;PRIMARY CARE/MEDICINE&quot;
+      }
+    },
+    &quot;collateralVisit&quot; : &quot;&quot;,
+    &quot;created&quot; : &quot;2024-06-17T17:32:30Z&quot;,
+    &quot;createdByUser&quot; : &quot;HOARE,RAJEEV&quot;,
+    &quot;currentEligibilityCode&quot; : &quot;SERVICE CONNECTED 50% to 100%&quot;,
+    &quot;duration&quot; : 60,
+    &quot;eligibilityOfVisit&quot; : &quot;SERVICE CONNECTED 50% to 100%&quot;,
+    &quot;end&quot; : &quot;2024-06-17T13:54:15Z&quot;,
+    &quot;followUpVisit&quot; : &quot;NO&quot;,
+    &quot;id&quot; : &quot;A9847906&quot;,
+    &quot;nextAvailableApptIndicator&quot; : &quot;NOT INDICATED TO BE A &apos;NEXT AVA.&apos; APPT.&quot;,
+    &quot;note&quot; : &quot;vahc-6/17/2024-12:52pm-Raj-Again&quot;,
+    &quot;overLaidAppointmentData&quot; : &quot;NO&quot;,
+    &quot;overbookFlag&quot; : &quot;&quot;,
+    &quot;patient&quot; : {
+      &quot;dateOfBirth&quot; : &quot;1978-01-01&quot;,
+      &quot;identifiers&quot; : {
+        &quot;dfn&quot; : &quot;552163856&quot;,
+        &quot;icn&quot; : &quot;1013698358V691983&quot;
+      },
+      &quot;inpatientFlag&quot; : true,
+      &quot;l4ssn&quot; : &quot;0468&quot;,
+      &quot;name&quot; : &quot;AAEP-MPIACK,TST-OTHER&quot;
+    },
+    &quot;preferredDate&quot; : &quot;2024-06-17T00:00:00Z&quot;,
+    &quot;purposeOfVisit&quot; : &quot;UNSCHED. VISIT&quot;,
+    &quot;schedulingRequestType&quot; : &quot;WALKIN APPT.&quot;,
+    &quot;start&quot; : &quot;2024-06-17T12:54:15Z&quot;,
+    &quot;status&quot; : &quot;checked-in&quot;,
+    &quot;vistaStatuses&quot; : {
+      &quot;currentStatus&quot; : &quot;ACT REQ/CHECKED IN&quot;,
+      &quot;status&quot; : &quot;ACT REQ/CHECKED IN&quot;
+    },
+    &quot;vistaTimezone&quot; : &quot;EASTERN&quot;,
+    &quot;waitTime0&quot; : 0,
+    &quot;waitTime1&quot; : 0,
+    &quot;walkIn&quot; : true
+  }, {
+    &quot;apptIen&quot; : &quot;7904&quot;,
+    &quot;apptRequest&quot; : {
+      &quot;file&quot; : &quot;appt request&quot;,
+      &quot;id&quot; : &quot;R9848214&quot;,
+      &quot;ien&quot; : &quot;8214&quot;,
+      &quot;mrtc&quot; : {
+        &quot;mrtc&quot; : false
+      }
+    },
+    &quot;apptType&quot; : &quot;REGULAR&quot;,
+    &quot;checkInOutDetails&quot; : {
+      &quot;checkInDate&quot; : &quot;2024-06-17T16:57:09Z&quot;,
+      &quot;checkInDateEntered&quot; : &quot;2024-06-17T16:57:09Z&quot;,
+      &quot;checkedInByUser&quot; : {
+        &quot;name&quot; : &quot;RUDISILL,STEVEN L&quot;
+      },
+      &quot;steps&quot; : [ ]
+    },
+    &quot;clinic&quot; : {
+      &quot;creditStopCode&quot; : {
+        &quot;amis&quot; : &quot;null&quot;,
+        &quot;name&quot; : &quot;&quot;
+      },
+      &quot;displayToPatients&quot; : false,
+      &quot;ien&quot; : &quot;1908&quot;,
+      &quot;name&quot; : &quot;PCT_R&quot;,
+      &quot;prohibitAccessToClinic&quot; : false,
+      &quot;stopCode&quot; : {
+        &quot;amis&quot; : &quot;323&quot;,
+        &quot;name&quot; : &quot;PRIMARY CARE/MEDICINE&quot;
+      }
+    },
+    &quot;collateralVisit&quot; : &quot;&quot;,
+    &quot;created&quot; : &quot;2024-06-17T16:57:09Z&quot;,
+    &quot;createdByUser&quot; : &quot;RUDISILL,STEVEN L&quot;,
+    &quot;currentEligibilityCode&quot; : &quot;SERVICE CONNECTED 50% to 100%&quot;,
+    &quot;duration&quot; : 60,
+    &quot;eligibilityOfVisit&quot; : &quot;SERVICE CONNECTED 50% to 100%&quot;,
+    &quot;end&quot; : &quot;2024-06-17T16:54:15Z&quot;,
+    &quot;followUpVisit&quot; : &quot;NO&quot;,
+    &quot;id&quot; : &quot;A9847904&quot;,
+    &quot;nextAvailableApptIndicator&quot; : &quot;NOT INDICATED TO BE A &apos;NEXT AVA.&apos; APPT.&quot;,
+    &quot;note&quot; : &quot;vahc-6/17/2024-12:52pm-rajeev&quot;,
+    &quot;overLaidAppointmentData&quot; : &quot;NO&quot;,
+    &quot;overbookFlag&quot; : &quot;&quot;,
+    &quot;patient&quot; : {
+      &quot;dateOfBirth&quot; : &quot;1978-01-01&quot;,
+      &quot;identifiers&quot; : {
+        &quot;dfn&quot; : &quot;552163856&quot;,
+        &quot;icn&quot; : &quot;1013698358V691983&quot;
+      },
+      &quot;inpatientFlag&quot; : true,
+      &quot;l4ssn&quot; : &quot;0468&quot;,
+      &quot;name&quot; : &quot;AAEP-MPIACK,TST-OTHER&quot;
+    },
+    &quot;preferredDate&quot; : &quot;2024-06-17T00:00:00Z&quot;,
+    &quot;purposeOfVisit&quot; : &quot;UNSCHED. VISIT&quot;,
+    &quot;schedulingRequestType&quot; : &quot;WALKIN APPT.&quot;,
+    &quot;start&quot; : &quot;2024-06-17T15:54:15Z&quot;,
+    &quot;status&quot; : &quot;checked-in&quot;,
+    &quot;vistaStatuses&quot; : {
+      &quot;currentStatus&quot; : &quot;ACT REQ/CHECKED IN&quot;,
+      &quot;status&quot; : &quot;ACT REQ/CHECKED IN&quot;
+    },
+    &quot;vistaTimezone&quot; : &quot;EASTERN&quot;,
+    &quot;waitTime0&quot; : 0,
+    &quot;waitTime1&quot; : 0,
+    &quot;walkIn&quot; : true
+  }, {
+    &quot;apptIen&quot; : &quot;7905&quot;,
+    &quot;apptRequest&quot; : {
+      &quot;file&quot; : &quot;appt request&quot;,
+      &quot;id&quot; : &quot;R9848221&quot;,
+      &quot;ien&quot; : &quot;8221&quot;,
+      &quot;mrtc&quot; : {
+        &quot;mrtc&quot; : false
+      }
+    },
+    &quot;apptType&quot; : &quot;REGULAR&quot;,
+    &quot;checkInOutDetails&quot; : {
+      &quot;checkInDate&quot; : &quot;2024-06-17T17:30:44Z&quot;,
+      &quot;checkInDateEntered&quot; : &quot;2024-06-17T17:30:44Z&quot;,
+      &quot;checkedInByUser&quot; : {
+        &quot;name&quot; : &quot;HOARE,RAJEEV&quot;
+      },
+      &quot;steps&quot; : [ ]
+    },
+    &quot;clinic&quot; : {
+      &quot;creditStopCode&quot; : {
+        &quot;amis&quot; : &quot;null&quot;,
+        &quot;name&quot; : &quot;&quot;
+      },
+      &quot;displayToPatients&quot; : false,
+      &quot;ien&quot; : &quot;1908&quot;,
+      &quot;name&quot; : &quot;PCT_R&quot;,
+      &quot;prohibitAccessToClinic&quot; : false,
+      &quot;stopCode&quot; : {
+        &quot;amis&quot; : &quot;323&quot;,
+        &quot;name&quot; : &quot;PRIMARY CARE/MEDICINE&quot;
+      }
+    },
+    &quot;collateralVisit&quot; : &quot;&quot;,
+    &quot;created&quot; : &quot;2024-06-17T17:30:44Z&quot;,
+    &quot;createdByUser&quot; : &quot;HOARE,RAJEEV&quot;,
+    &quot;currentEligibilityCode&quot; : &quot;SERVICE CONNECTED 50% to 100%&quot;,
+    &quot;duration&quot; : 60,
+    &quot;eligibilityOfVisit&quot; : &quot;SERVICE CONNECTED 50% to 100%&quot;,
+    &quot;end&quot; : &quot;2024-06-17T17:54:15Z&quot;,
+    &quot;followUpVisit&quot; : &quot;NO&quot;,
+    &quot;id&quot; : &quot;A9847905&quot;,
+    &quot;nextAvailableApptIndicator&quot; : &quot;NOT INDICATED TO BE A &apos;NEXT AVA.&apos; APPT.&quot;,
+    &quot;note&quot; : &quot;vahc-6/17/2024-12:52pm-Raj&quot;,
+    &quot;overLaidAppointmentData&quot; : &quot;NO&quot;,
+    &quot;overbookFlag&quot; : &quot;&quot;,
+    &quot;patient&quot; : {
+      &quot;dateOfBirth&quot; : &quot;1978-01-01&quot;,
+      &quot;identifiers&quot; : {
+        &quot;dfn&quot; : &quot;552163856&quot;,
+        &quot;icn&quot; : &quot;1013698358V691983&quot;
+      },
+      &quot;inpatientFlag&quot; : true,
+      &quot;l4ssn&quot; : &quot;0468&quot;,
+      &quot;name&quot; : &quot;AAEP-MPIACK,TST-OTHER&quot;
+    },
+    &quot;preferredDate&quot; : &quot;2024-06-17T00:00:00Z&quot;,
+    &quot;purposeOfVisit&quot; : &quot;UNSCHED. VISIT&quot;,
+    &quot;schedulingRequestType&quot; : &quot;WALKIN APPT.&quot;,
+    &quot;start&quot; : &quot;2024-06-17T16:54:15Z&quot;,
+    &quot;status&quot; : &quot;checked-in&quot;,
+    &quot;vistaStatuses&quot; : {
+      &quot;currentStatus&quot; : &quot;ACT REQ/CHECKED IN&quot;,
+      &quot;status&quot; : &quot;ACT REQ/CHECKED IN&quot;
+    },
+    &quot;vistaTimezone&quot; : &quot;EASTERN&quot;,
+    &quot;waitTime0&quot; : 0,
+    &quot;waitTime1&quot; : 0,
+    &quot;walkIn&quot; : true
+  } ]
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>VCCDRUpsertExternalAppointments</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRUpsertExternalAppointmentsCustom4381</globalKey>
+        <inputFieldName>Appointments:clinic:name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRUpsertExternalAppointments</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Clinic_Name__c</outputFieldName>
+        <outputObjectName>VCC_Appointment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRUpsertExternalAppointmentsCustom808</globalKey>
+        <inputFieldName>Appointments:clinic:ien</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRUpsertExternalAppointments</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Clinic_IEN__c</outputFieldName>
+        <outputObjectName>VCC_Appointment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRUpsertExternalAppointmentsCustom9797</globalKey>
+        <inputFieldName>Appointments:clinic:stopCode:name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRUpsertExternalAppointments</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Clinic_Stop_Code_Name__c</outputFieldName>
+        <outputObjectName>VCC_Appointment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRUpsertExternalAppointmentsCustom2679</globalKey>
+        <inputFieldName>AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRUpsertExternalAppointments</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Patient__c</outputFieldName>
+        <outputObjectName>VCC_Appointment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRUpsertExternalAppointmentsCustom5652</globalKey>
+        <inputFieldName>Appointments:cancelationDetails:cancelationDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRUpsertExternalAppointments</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Cancel_Date_Time__c</outputFieldName>
+        <outputObjectName>VCC_Appointment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRUpsertExternalAppointmentsCustom4471</globalKey>
+        <inputFieldName>Appointments:provider:name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRUpsertExternalAppointments</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Provider_Name__c</outputFieldName>
+        <outputObjectName>VCC_Appointment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRUpsertExternalAppointmentsCustom4310</globalKey>
+        <inputFieldName>Appointments:provider:identifiers:duz</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRUpsertExternalAppointments</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Provider_IEN__c</outputFieldName>
+        <outputObjectName>VCC_Appointment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRUpsertExternalAppointmentsCustom4180</globalKey>
+        <inputFieldName>Appointments:status</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRUpsertExternalAppointments</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Status__c</outputFieldName>
+        <outputObjectName>VCC_Appointment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRUpsertExternalAppointmentsCustom4589</globalKey>
+        <inputFieldName>Appointments:vistaTimezone</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRUpsertExternalAppointments</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Time_Zone__c</outputFieldName>
+        <outputObjectName>VCC_Appointment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRUpsertExternalAppointmentsCustom3436</globalKey>
+        <inputFieldName>Appointments:apptRequest:id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRUpsertExternalAppointments</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Appointment_Request_Id__c</outputFieldName>
+        <outputObjectName>VCC_Appointment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRUpsertExternalAppointmentsCustom6925</globalKey>
+        <inputFieldName>Appointments:clinic:stopCode:amis</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRUpsertExternalAppointments</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Clinic_Stop_Code_Number__c</outputFieldName>
+        <outputObjectName>VCC_Appointment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>VCCDRUpsertExternalAppointmentsCustom321</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>VCCDRUpsertExternalAppointments</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>VCC_Appointment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRUpsertExternalAppointmentsCustom6550</globalKey>
+        <inputFieldName>Appointments:apptIen</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRUpsertExternalAppointments</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Appointment_IEN__c</outputFieldName>
+        <outputObjectName>VCC_Appointment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRUpsertExternalAppointmentsCustom447</globalKey>
+        <inputFieldName>Appointments:cancelationDetails:reason</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRUpsertExternalAppointments</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Cancellation_Reason__c</outputFieldName>
+        <outputObjectName>VCC_Appointment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRUpsertExternalAppointmentsCustom286</globalKey>
+        <inputFieldName>Appointments:end</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRUpsertExternalAppointments</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Appointment_End__c</outputFieldName>
+        <outputObjectName>VCC_Appointment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRUpsertExternalAppointmentsCustom3856</globalKey>
+        <inputFieldName>Appointments:facilitySiteId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRUpsertExternalAppointments</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Facility_Station_Id__c</outputFieldName>
+        <outputObjectName>VCC_Appointment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRUpsertExternalAppointmentsCustom3965</globalKey>
+        <inputFieldName>Appointments:id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRUpsertExternalAppointments</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Appointment_Id__c</outputFieldName>
+        <outputObjectName>VCC_Appointment__c</outputObjectName>
+        <requiredForUpsert>true</requiredForUpsert>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRUpsertExternalAppointmentsCustom4155</globalKey>
+        <inputFieldName>Appointments:facilityName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRUpsertExternalAppointments</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Facility_Name__c</outputFieldName>
+        <outputObjectName>VCC_Appointment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRUpsertExternalAppointmentsCustom997</globalKey>
+        <inputFieldName>Appointments:duration</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRUpsertExternalAppointments</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Duration__c</outputFieldName>
+        <outputObjectName>VCC_Appointment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRUpsertExternalAppointmentsCustom450</globalKey>
+        <inputFieldName>Appointments:cancelationDetails:cancelledBy</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRUpsertExternalAppointments</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Appointment_Cancelled__c</outputFieldName>
+        <outputObjectName>VCC_Appointment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:FacilityIdToNameMap | var:Appointments:facilitySiteId SERIALIZE VALUELOOKUP</formulaConverted>
+        <formulaExpression>VALUELOOKUP(FacilityIdToNameMap, SERIALIZE(Appointments:facilitySiteId))</formulaExpression>
+        <formulaResultPath>Appointments:facilityName</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>VCCDRUpsertExternalAppointmentsCustom3372</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRUpsertExternalAppointments</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRUpsertExternalAppointmentsCustom9802</globalKey>
+        <inputFieldName>Appointments:start</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRUpsertExternalAppointments</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Appointment_Start__c</outputFieldName>
+        <outputObjectName>VCC_Appointment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRUpsertExternalAppointmentsCustom8865</globalKey>
+        <inputFieldName>Appointments:note</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRUpsertExternalAppointments</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Note__c</outputFieldName>
+        <outputObjectName>VCC_Appointment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;FacilityIdToNameMap&quot; : {
+    &quot;984&quot; : &quot;DAYSHR&quot;
+  },
+  &quot;Appointments&quot; : [ {
+    &quot;status&quot; : &quot;checked-in&quot;,
+    &quot;purposeOfVisit&quot; : &quot;SCHEDULED VISIT&quot;,
+    &quot;preferredDate&quot; : &quot;2023-09-21T00:00:00Z&quot;,
+    &quot;clinic&quot; : {
+      &quot;creditStopCode&quot; : {
+        &quot;amis&quot; : &quot;693&quot;,
+        &quot;name&quot; : &quot;RT CLIN VD TH PRV SITE(DIFSTA)&quot;
+      },
+      &quot;name&quot; : &quot;984-BOTH TH STOP CODES&quot;,
+      &quot;prohibitAccessToClinic&quot; : false,
+      &quot;displayToPatients&quot; : true,
+      &quot;ien&quot; : &quot;4325&quot;,
+      &quot;stopCode&quot; : {
+        &quot;amis&quot; : &quot;502&quot;,
+        &quot;name&quot; : &quot;MENTAL HEALTH CLINIC - IND&quot;
+      }
+    },
+    &quot;apptType&quot; : &quot;SERVICE CONNECTED&quot;,
+    &quot;followUpVisit&quot; : &quot;NO&quot;,
+    &quot;collateralVisit&quot; : &quot;&quot;,
+    &quot;overLaidAppointmentData&quot; : &quot;NO&quot;,
+    &quot;vistaTimezone&quot; : &quot;EASTERN&quot;,
+    &quot;vistaStatuses&quot; : {
+      &quot;status&quot; : &quot;ACT REQ/CHECKED IN&quot;,
+      &quot;currentStatus&quot; : &quot;ACT REQ/CHECKED IN&quot;
+    },
+    &quot;schedulingRequestType&quot; : &quot;OTHER THAN &apos;NEXT AVA.&apos; APPT.&quot;,
+    &quot;start&quot; : &quot;2023-09-21T12:00:00Z&quot;,
+    &quot;created&quot; : &quot;2023-09-21T00:00:00Z&quot;,
+    &quot;currentEligibilityCode&quot; : &quot;SERVICE CONNECTED 50% to 100%&quot;,
+    &quot;apptIen&quot; : &quot;5861&quot;,
+    &quot;waitTime0&quot; : 0,
+    &quot;waitTime1&quot; : 0,
+    &quot;id&quot; : &quot;A9845861&quot;,
+    &quot;end&quot; : &quot;2023-09-21T12:30:00Z&quot;,
+    &quot;patient&quot; : {
+      &quot;inpatientFlag&quot; : false,
+      &quot;l4ssn&quot; : &quot;0468&quot;,
+      &quot;dateOfBirth&quot; : &quot;1978-01-01&quot;,
+      &quot;name&quot; : &quot;AAEP-MPIACK,TST-OTHER&quot;,
+      &quot;identifiers&quot; : {
+        &quot;dfn&quot; : &quot;552163856&quot;,
+        &quot;icn&quot; : &quot;1013698358V691983&quot;
+      }
+    },
+    &quot;nextAvailableApptIndicator&quot; : &quot;&apos;NEXT AVA.&apos; APPT. INDICATED BY CALCULATION&quot;,
+    &quot;apptRequest&quot; : {
+      &quot;id&quot; : &quot;R9845528&quot;,
+      &quot;mrtc&quot; : {
+        &quot;mrtc&quot; : false
+      },
+      &quot;ien&quot; : &quot;5528&quot;,
+      &quot;file&quot; : &quot;appt request&quot;
+    },
+    &quot;walkIn&quot; : false,
+    &quot;overbookFlag&quot; : &quot;&quot;,
+    &quot;duration&quot; : 30,
+    &quot;facilitySiteId&quot; : &quot;984&quot;,
+    &quot;checkInOutDetails&quot; : {
+      &quot;steps&quot; : [ ],
+      &quot;checkInDate&quot; : &quot;2023-09-21T12:00:00Z&quot;,
+      &quot;checkedInByUser&quot; : {
+        &quot;name&quot; : &quot;LUCIANO LOPEZ,RUBEN A&quot;
+      },
+      &quot;checkInDateEntered&quot; : &quot;2023-09-21T20:23:30Z&quot;
+    },
+    &quot;createdByUser&quot; : &quot;LUCIANO LOPEZ,RUBEN A&quot;,
+    &quot;eligibilityOfVisit&quot; : &quot;SERVICE CONNECTED 50% to 100%&quot;
+  }, {
+    &quot;status&quot; : &quot;booked&quot;,
+    &quot;purposeOfVisit&quot; : &quot;SCHEDULED VISIT&quot;,
+    &quot;preferredDate&quot; : &quot;2023-09-21T00:00:00Z&quot;,
+    &quot;clinic&quot; : {
+      &quot;creditStopCode&quot; : {
+        &quot;amis&quot; : &quot;693&quot;,
+        &quot;name&quot; : &quot;RT CLIN VD TH PRV SITE(DIFSTA)&quot;
+      },
+      &quot;name&quot; : &quot;984-BOTH TH STOP CODES&quot;,
+      &quot;prohibitAccessToClinic&quot; : false,
+      &quot;displayToPatients&quot; : true,
+      &quot;ien&quot; : &quot;4325&quot;,
+      &quot;stopCode&quot; : {
+        &quot;amis&quot; : &quot;502&quot;,
+        &quot;name&quot; : &quot;MENTAL HEALTH CLINIC - IND&quot;
+      }
+    },
+    &quot;apptType&quot; : &quot;SERVICE CONNECTED&quot;,
+    &quot;followUpVisit&quot; : &quot;NO&quot;,
+    &quot;collateralVisit&quot; : &quot;&quot;,
+    &quot;overLaidAppointmentData&quot; : &quot;NO&quot;,
+    &quot;vistaTimezone&quot; : &quot;EASTERN&quot;,
+    &quot;vistaStatuses&quot; : {
+      &quot;status&quot; : &quot;NO ACTION TAKEN&quot;,
+      &quot;currentStatus&quot; : &quot;NO ACTION TAKEN&quot;
+    },
+    &quot;schedulingRequestType&quot; : &quot;OTHER THAN &apos;NEXT AVA.&apos; APPT.&quot;,
+    &quot;start&quot; : &quot;2024-01-02T13:00:00Z&quot;,
+    &quot;created&quot; : &quot;2023-09-21T00:00:00Z&quot;,
+    &quot;currentEligibilityCode&quot; : &quot;SERVICE CONNECTED 50% to 100%&quot;,
+    &quot;apptIen&quot; : &quot;5862&quot;,
+    &quot;waitTime0&quot; : 103,
+    &quot;waitTime1&quot; : 103,
+    &quot;id&quot; : &quot;A9845862&quot;,
+    &quot;end&quot; : &quot;2024-01-02T13:30:00Z&quot;,
+    &quot;patient&quot; : {
+      &quot;inpatientFlag&quot; : false,
+      &quot;l4ssn&quot; : &quot;0468&quot;,
+      &quot;dateOfBirth&quot; : &quot;1978-01-01&quot;,
+      &quot;name&quot; : &quot;AAEP-MPIACK,TST-OTHER&quot;,
+      &quot;identifiers&quot; : {
+        &quot;dfn&quot; : &quot;552163856&quot;,
+        &quot;icn&quot; : &quot;1013698358V691983&quot;
+      }
+    },
+    &quot;nextAvailableApptIndicator&quot; : &quot;NOT INDICATED TO BE A &apos;NEXT AVA.&apos; APPT.&quot;,
+    &quot;apptRequest&quot; : {
+      &quot;id&quot; : &quot;R9845529&quot;,
+      &quot;mrtc&quot; : {
+        &quot;mrtc&quot; : false
+      },
+      &quot;ien&quot; : &quot;5529&quot;,
+      &quot;file&quot; : &quot;appt request&quot;
+    },
+    &quot;walkIn&quot; : false,
+    &quot;overbookFlag&quot; : &quot;&quot;,
+    &quot;duration&quot; : 30,
+    &quot;facilitySiteId&quot; : &quot;984&quot;,
+    &quot;createdByUser&quot; : &quot;LUCIANO LOPEZ,RUBEN A&quot;,
+    &quot;eligibilityOfVisit&quot; : &quot;&quot;
+  }, {
+    &quot;status&quot; : &quot;booked&quot;,
+    &quot;purposeOfVisit&quot; : &quot;SCHEDULED VISIT&quot;,
+    &quot;preferredDate&quot; : &quot;2023-09-21T00:00:00Z&quot;,
+    &quot;clinic&quot; : {
+      &quot;creditStopCode&quot; : {
+        &quot;amis&quot; : &quot;693&quot;,
+        &quot;name&quot; : &quot;RT CLIN VD TH PRV SITE(DIFSTA)&quot;
+      },
+      &quot;name&quot; : &quot;984-BOTH TH STOP CODES&quot;,
+      &quot;prohibitAccessToClinic&quot; : false,
+      &quot;displayToPatients&quot; : true,
+      &quot;ien&quot; : &quot;4325&quot;,
+      &quot;stopCode&quot; : {
+        &quot;amis&quot; : &quot;502&quot;,
+        &quot;name&quot; : &quot;MENTAL HEALTH CLINIC - IND&quot;
+      }
+    },
+    &quot;apptType&quot; : &quot;SERVICE CONNECTED&quot;,
+    &quot;followUpVisit&quot; : &quot;NO&quot;,
+    &quot;collateralVisit&quot; : &quot;&quot;,
+    &quot;overLaidAppointmentData&quot; : &quot;NO&quot;,
+    &quot;vistaTimezone&quot; : &quot;EASTERN&quot;,
+    &quot;vistaStatuses&quot; : {
+      &quot;status&quot; : &quot;NO ACTION TAKEN&quot;,
+      &quot;currentStatus&quot; : &quot;NO ACTION TAKEN&quot;
+    },
+    &quot;schedulingRequestType&quot; : &quot;OTHER THAN &apos;NEXT AVA.&apos; APPT.&quot;,
+    &quot;start&quot; : &quot;2024-01-03T13:00:00Z&quot;,
+    &quot;created&quot; : &quot;2023-09-21T00:00:00Z&quot;,
+    &quot;currentEligibilityCode&quot; : &quot;SERVICE CONNECTED 50% to 100%&quot;,
+    &quot;apptIen&quot; : &quot;5863&quot;,
+    &quot;waitTime0&quot; : 104,
+    &quot;waitTime1&quot; : 104,
+    &quot;id&quot; : &quot;A9845863&quot;,
+    &quot;end&quot; : &quot;2024-01-03T13:30:00Z&quot;,
+    &quot;patient&quot; : {
+      &quot;inpatientFlag&quot; : false,
+      &quot;l4ssn&quot; : &quot;0468&quot;,
+      &quot;dateOfBirth&quot; : &quot;1978-01-01&quot;,
+      &quot;name&quot; : &quot;AAEP-MPIACK,TST-OTHER&quot;,
+      &quot;identifiers&quot; : {
+        &quot;dfn&quot; : &quot;552163856&quot;,
+        &quot;icn&quot; : &quot;1013698358V691983&quot;
+      }
+    },
+    &quot;nextAvailableApptIndicator&quot; : &quot;NOT INDICATED TO BE A &apos;NEXT AVA.&apos; APPT.&quot;,
+    &quot;apptRequest&quot; : {
+      &quot;id&quot; : &quot;R9845530&quot;,
+      &quot;mrtc&quot; : {
+        &quot;mrtc&quot; : false
+      },
+      &quot;ien&quot; : &quot;5530&quot;,
+      &quot;file&quot; : &quot;appt request&quot;
+    },
+    &quot;walkIn&quot; : false,
+    &quot;overbookFlag&quot; : &quot;&quot;,
+    &quot;duration&quot; : 30,
+    &quot;facilitySiteId&quot; : &quot;984&quot;,
+    &quot;createdByUser&quot; : &quot;LUCIANO LOPEZ,RUBEN A&quot;,
+    &quot;eligibilityOfVisit&quot; : &quot;&quot;
+  } ]
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>VCCDRUpsertExternalAppointments_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

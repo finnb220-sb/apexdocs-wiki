@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TED_Is_Tele_Case__c</fullName>
+    <description>Identifies case as a Tele-EC Case for metric calculations</description>
+    <externalId>false</externalId>
+    <formula>OR(RecordType.DeveloperName = &apos;Tele_Urgent_Care_0_2_Hours&apos;, RecordType.DeveloperName = &apos;Tele_Urgent_Care_2_8_Hours_Case&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Tele Case</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

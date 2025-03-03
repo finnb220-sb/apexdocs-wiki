@@ -1,0 +1,138 @@
+<template>
+    <div lwc:if={selectedRecord}>
+        <div slot="header" class="card-title">
+            <div class="slds-media__figure">
+                <lightning-icon
+                    size="small"
+                    icon-name="standard:metrics"
+                    alternative-text="Lab Report Details"
+                    title="Lab Report Details"></lightning-icon>
+            </div>
+            <div class="slds-media__body">
+                <h2 class="slds-card__header-title">Labs - {selectedRecord.testName} - {formattedDate}</h2>
+            </div>
+        </div>
+        <section class="container">
+            <div class="grid" tabindex="0">
+                <div tabindex="0" class="vertical detail-cell">
+                    <div class="title">
+                        <p>Name of Test</p>
+                    </div>
+                    <div class="horizontal info">
+                        <p>{selectedRecord.testName}</p>
+                    </div>
+                </div>
+                <div tabindex="0" class="vertical detail-cell">
+                    <div class="title">
+                        <p>Lab Order ID</p>
+                    </div>
+                    <div class="horizontal info">
+                        <p>{selectedRecord.labOrderId}</p>
+                    </div>
+                </div>
+                <div tabindex="0" class="vertical detail-cell">
+                    <div class="title">
+                        <p>Date of Test</p>
+                    </div>
+                    <div class="horizontal info">
+                        <p>{formattedDate}</p>
+                    </div>
+                </div>
+                <div tabindex="0" class="vertical detail-cell">
+                    <div class="title">
+                        <p>Status</p>
+                    </div>
+                    <div class="horizontal info">
+                        <p>{selectedRecord.status}</p>
+                    </div>
+                </div>
+                <div tabindex="0" class="vertical detail-cell">
+                    <div class="title">
+                        <p>Type</p>
+                    </div>
+                    <div class="horizontal info">
+                        <p>{selectedRecord.labType}</p>
+                    </div>
+                </div>
+                <div tabindex="0" class="vertical detail-cell">
+                    <div class="title">
+                        <p>Interpretation</p>
+                    </div>
+                    <div class="horizontal info">
+                        <p>{selectedRecord.interpretation}</p>
+                    </div>
+                </div>
+                <div tabindex="0" class="vertical detail-cell">
+                    <div class="title">
+                        <p>Result</p>
+                    </div>
+                    <div class="horizontal info">
+                        <p>{selectedRecord.result}</p>
+                    </div>
+                </div>
+                <div tabindex="0" class="vertical detail-cell">
+                    <div class="title">
+                        <p>Low Range Value</p>
+                    </div>
+                    <div class="horizontal info">
+                        <p>{selectedRecord.low}</p>
+                    </div>
+                </div>
+                <div tabindex="0" class="vertical detail-cell">
+                    <div class="title">
+                        <p>High Range Value</p>
+                    </div>
+                    <div class="horizontal info">
+                        <p>{selectedRecord.high}</p>
+                    </div>
+                </div>
+                <div tabindex="0" class="vertical detail-cell">
+                    <div class="title">
+                        <p>Provider</p>
+                    </div>
+                    <div class="horizontal info">
+                        <p>{selectedRecord.providerName}</p>
+                    </div>
+                </div>
+                <div tabindex="0" class="vertical detail-cell">
+                    <div class="title">
+                        <p>Sample</p>
+                    </div>
+                    <div class="horizontal info">
+                        <p>{selectedRecord.sample}</p>
+                    </div>
+                </div>
+                <div tabindex="0" class="vertical detail-cell">
+                    <div class="title">
+                        <p>Facility</p>
+                    </div>
+                    <div class="horizontal info">
+                        <p>{selectedRecord.facilityName}</p>
+                    </div>
+                </div>
+                <div tabindex="0" class="vertical detail-cell">
+                    <div class="title">
+                        <p>Performing Lab</p>
+                    </div>
+                    <div class="horizontal info">
+                        <p>{selectedRecord.performingLab}</p>
+                    </div>
+                </div>
+                <div tabindex="0" class="vertical">&nbsp;</div>
+
+                <lightning-accordion allow-multiple-sections-open>
+                    <lightning-accordion-section
+                        class="slds-p-around_none"
+                        if:true={selectedRecord}
+                        name="content"
+                        label="Lab Content"
+                        key={selectedRecord.key}>
+                        <div class="slds-card__body">
+                            <pre>{selectedRecord.comment}</pre>
+                        </div>
+                    </lightning-accordion-section>
+                </lightning-accordion>
+            </div>
+        </section>
+    </div>
+</template>

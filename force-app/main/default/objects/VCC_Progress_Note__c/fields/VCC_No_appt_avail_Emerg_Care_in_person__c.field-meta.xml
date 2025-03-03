@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_No_appt_avail_Emerg_Care_in_person__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked when the patient is referred for in-person appointment(s), there is no appointment available, and the agent advised the patient to seek Emergency
+        Care.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if there is no appointment available, and you advised the patient to seek Emergency Care</inlineHelpText>
+    <label>No appt avail Advised Emergency Care</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

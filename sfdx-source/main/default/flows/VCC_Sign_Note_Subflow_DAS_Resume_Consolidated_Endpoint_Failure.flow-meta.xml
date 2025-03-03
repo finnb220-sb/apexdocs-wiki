@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Invoking the DAS Get Additional Signers Apex Action.</description>
+        <name>Invoke_Get_Additional_Signers_Apex_Action</name>
+        <label>Invoke Get Additional Signers Apex Action</label>
+        <locationX>50</locationX>
+        <locationY>1208</locationY>
+        <actionName>VCC_DASFlowGetAdditionalSigners</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Invoke_Sign_Note_Apex_Action</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Assign_faultFlag_to_Display_Flow_Error</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>itemId</name>
+            <value>
+                <elementReference>noteAndEncounterParams.itemId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>providerLoginSiteCode</name>
+            <value>
+                <elementReference>patientAndProviderParams.providerLoginSiteCode</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>providerName</name>
+            <value>
+                <elementReference>patientAndProviderParams.providerName</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>providerUserId</name>
+            <value>
+                <elementReference>patientAndProviderParams.providerUserId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>VCC_DASFlowGetAdditionalSigners</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <description>Invokes the VCC_DAS_FlowIsValidEsignature invocable method. Determines if a provider&apos;s eSignature is valid or not.</description>
+        <name>Invoke_Is_Valid_e_Signature_Apex_Action</name>
+        <label>Invoke Is Valid e-Signature Apex Action</label>
+        <locationX>842</locationX>
+        <locationY>242</locationY>
+        <actionName>VCC_DASFlowIsValidEsig</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>What_was_the_result_of_isValidEsig</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Assign_faultFlag_for_IsValidEsig</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>criteria</name>
+            <value>
+                <elementReference>patientAndProviderParams.eSig</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>providerLoginSiteCode</name>
+            <value>
+                <elementReference>patientAndProviderParams.providerLoginSiteCode</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>providerName</name>
+            <value>
+                <elementReference>patientAndProviderParams.providerName</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>providerUserId</name>
+            <value>
+                <elementReference>patientAndProviderParams.providerUserId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>VCC_DASFlowIsValidEsig</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <description>Invoking the DAS Sign Note Apex Action</description>
+        <name>Invoke_Sign_Note_Apex_Action</name>
+        <label>Invoke Sign Note Apex Action</label>
+        <locationX>50</locationX>
+        <locationY>1316</locationY>
+        <actionName>VCC_DASFlowSignNote</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Set_Signature_Successful_to_True</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Assign_faultFlag_to_Display_Flow_Error</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>esig</name>
+            <value>
+                <elementReference>patientAndProviderParams.eSig</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>noteIEN</name>
+            <value>
+                <elementReference>noteAndEncounterParams.itemId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>providerLoginSiteCode</name>
+            <value>
+                <elementReference>patientAndProviderParams.providerLoginSiteCode</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>providerName</name>
+            <value>
+                <elementReference>patientAndProviderParams.providerName</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>providerUserId</name>
+            <value>
+                <elementReference>patientAndProviderParams.providerUserId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>VCC_DASFlowSignNote</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <description>Invoking the DAS Sign Note Apex Action.</description>
+        <name>Invoke_Sign_Note_Apex_Action_2</name>
+        <label>Invoke Sign Note Apex Action</label>
+        <locationX>842</locationX>
+        <locationY>1208</locationY>
+        <actionName>VCC_DASFlowSignNote</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Set_Signature_Successful_to_True</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Assign_faultFlag_to_Display_Flow_Error</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>esig</name>
+            <value>
+                <elementReference>patientAndProviderParams.eSig</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>noteIEN</name>
+            <value>
+                <elementReference>noteAndEncounterParams.itemId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>providerLoginSiteCode</name>
+            <value>
+                <elementReference>patientAndProviderParams.providerLoginSiteCode</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>providerName</name>
+            <value>
+                <elementReference>patientAndProviderParams.providerName</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>providerUserId</name>
+            <value>
+                <elementReference>patientAndProviderParams.providerUserId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>VCC_DASFlowSignNote</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>60.0</apiVersion>
+    <assignments>
+        <description>Assigning the fault information to variables to be used within VCC DAS Sign &amp; Integrate Progress Note flow.</description>
+        <name>Assign_Fault_Info_to_Variable</name>
+        <label>Assign Fault Info to Variable</label>
+        <locationX>314</locationX>
+        <locationY>1532</locationY>
+        <assignmentItems>
+            <assignToReference>faultMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>faultOccurred</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Assigns the boolean faultFlag_DisplayFlowError to true after a fault.</description>
+        <name>Assign_faultFlag_for_IsValidEsig</name>
+        <label>Assign faultFlag for IsValidEsig</label>
+        <locationX>1194</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>faultFlag_DisplayFlowError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Assign_Fault_Info_to_Variable</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assigns faultFlag_RetryValidateEsig to true, since the invocable apex did not return true.</description>
+        <name>Assign_faultFlag_for_Revalidate_Esig</name>
+        <label>Assign faultFlag for Revalidate Esig</label>
+        <locationX>930</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>faultFlag_RevalidateEsig</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Assign_Fault_Info_to_Variable</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Sets the boolean faultFlag_DisplayFlowError to true after a fault occurs.</description>
+        <name>Assign_faultFlag_to_Display_Flow_Error</name>
+        <label>Assign faultFlag to Display Flow Error</label>
+        <locationX>314</locationX>
+        <locationY>1424</locationY>
+        <assignmentItems>
+            <assignToReference>faultFlag_DisplayFlowError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Fault_Info_to_Variable</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Setting the signatureSuccessful boolean to true to be used back in the main sign note flow.</description>
+        <name>Set_Signature_Successful_to_True</name>
+        <label>Set Signature Successful to True</label>
+        <locationX>50</locationX>
+        <locationY>1424</locationY>
+        <assignmentItems>
+            <assignToReference>signatureSuccessful</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Setting the errorCode variable from the DAS Last Error Code field.</description>
+        <name>Setting_errorCode_Variable</name>
+        <label>Setting errorCode Variable</label>
+        <locationX>578</locationX>
+        <locationY>908</locationY>
+        <assignmentItems>
+            <assignToReference>varProgressNoteRecord.VCC_DasLastErrorCode__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>errorCode</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_Additional_Signers_or_Sign_Note_Error</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Setting the errorCode variable from the DAS Last Error Code field.</description>
+        <name>Setting_errorCode_Variable_for_Addendum</name>
+        <label>Setting errorCode Variable for Addendum</label>
+        <locationX>842</locationX>
+        <locationY>908</locationY>
+        <assignmentItems>
+            <assignToReference>varAddendumRecord.VCC_DasLastErrorCode__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>errorCode</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_Additional_Signers_or_Sign_Note_Error</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Decision determines if user&apos;s e-Signature needs to be validated.</description>
+        <name>Does_eSignature_need_to_be_revalidated</name>
+        <label>Does eSignature need to be revalidated?</label>
+        <locationX>710</locationX>
+        <locationY>134</locationY>
+        <defaultConnector>
+            <targetReference>Invoke_Is_Valid_e_Signature_Apex_Action</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes, eSig Was Invalid</defaultConnectorLabel>
+        <rules>
+            <name>eSig_Was_Validated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>isValidEsig</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_Progress_Note_or_Addendum</targetReference>
+            </connector>
+            <label>No, eSig Was Validated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Checking the error code returned from the main Sign Note flow to determine if it&apos;s an Additional Signers or Sign Note error.</description>
+        <name>Is_Additional_Signers_or_Sign_Note_Error</name>
+        <label>Is Additional Signers or Sign Note Error?</label>
+        <locationX>710</locationX>
+        <locationY>1100</locationY>
+        <defaultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Assign_faultFlag_to_Display_Flow_Error</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>A Different Error?</defaultConnectorLabel>
+        <rules>
+            <name>Is_Additional_Signers_Error</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>errorCode</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>1500</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Invoke_Get_Additional_Signers_Apex_Action</targetReference>
+            </connector>
+            <label>Is Additional Signers Error</label>
+        </rules>
+        <rules>
+            <name>Is_Sign_Note_Error</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>errorCode</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>1600</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>errorCode</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>1800</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Invoke_Sign_Note_Apex_Action_2</targetReference>
+            </connector>
+            <label>Is Sign Note Error</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determines if the record is a Progress Note or an Addendum.</description>
+        <name>Is_Progress_Note_or_Addendum</name>
+        <label>Is Progress Note or Addendum?</label>
+        <locationX>710</locationX>
+        <locationY>800</locationY>
+        <defaultConnector>
+            <targetReference>Setting_errorCode_Variable_for_Addendum</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Is Addendum</defaultConnectorLabel>
+        <rules>
+            <name>Is_Progress_Note</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formulaIsAddendum</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Setting_errorCode_Variable</targetReference>
+            </connector>
+            <label>Is Progress Note</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Checking the output from IsValidEsignature apex action to determine if the signature is valid.</description>
+        <name>What_was_the_result_of_isValidEsig</name>
+        <label>What was the result of isValidEsig?</label>
+        <locationX>842</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Assign_faultFlag_for_Revalidate_Esig</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>eSignature is Invalid</defaultConnectorLabel>
+        <rules>
+            <name>eSignature_Is_Valid</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Invoke_Is_Valid_e_Signature_Apex_Action.isValid</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_Progress_Note_or_Addendum</targetReference>
+            </connector>
+            <label>eSignature Is Valid</label>
+        </rules>
+    </decisions>
+    <description>testing - removed invoke get addiontal signers from the &apos;A Different Error&apos; decision and instead this will just show the error to the user.
+
+Release 1.14.0 - Subflow of the main DAS Sign note flow that will retry failed actions (CCCM-28698)
+Release 1.17.1 - Removed retry logic, removed &apos;Invoke Get Additional Signers&apos; from the &apos;A Different Error&apos; decision and instead we will just show the error to the user.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Is true if the record is an Addendum.</description>
+        <name>formulaIsAddendum</name>
+        <dataType>Boolean</dataType>
+        <expression>NOT (ISBLANK( {!varAddendumRecord.Id} ))</expression>
+    </formulas>
+    <interviewLabel>VCC Sign Note Subflow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>VCC Sign Note Subflow: DAS Resume Consolidated Endpoint Failure</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>584</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Does_eSignature_need_to_be_revalidated</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Storing the errorCode from the response</description>
+        <name>errorCode</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>faultFlag_DisplayFlowError boolean is true if the fault error should be displayed.</description>
+        <name>faultFlag_DisplayFlowError</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Variable that tells main flow to retry the esig.</description>
+        <name>faultFlag_RevalidateEsig</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Storing the flow fault message</description>
+        <name>faultMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Boolean that switches to True when there is a fault in the flow.</description>
+        <name>faultOccurred</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Boolean to check if a user&apos;s e-signature valid</description>
+        <name>isValidEsig</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Input parameters for GetAdditionalSigners and SignNote apex actions</description>
+        <name>noteAndEncounterParams</name>
+        <apexClass>VCC_Vdif_NoteAndEncounterParams</apexClass>
+        <dataType>Apex</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Input parameters for IsValidEsig, GetAdditionalSigners and SignNote apex actions</description>
+        <name>patientAndProviderParams</name>
+        <apexClass>VCC_Vdif_PatientAndProviderParams</apexClass>
+        <dataType>Apex</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>The recordId from the progress note.</description>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>This boolean is set to true when the flow is successful.</description>
+        <name>signatureSuccessful</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>Stores the Addendum record.</description>
+        <name>varAddendumRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>VCC_Addendum__c</objectType>
+    </variables>
+    <variables>
+        <description>Stores the Progress Note record.</description>
+        <name>varProgressNoteRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>VCC_Progress_Note__c</objectType>
+    </variables>
+</Flow>

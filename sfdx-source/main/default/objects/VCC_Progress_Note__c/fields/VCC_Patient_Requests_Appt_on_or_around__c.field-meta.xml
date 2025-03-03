@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Patient_Requests_Appt_on_or_around__c</fullName>
+    <description>Date/Time for Patient Appt Request.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>Specify patient preference for appt (date/time)</inlineHelpText>
+    <label>Patient Requests Appt on or around</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

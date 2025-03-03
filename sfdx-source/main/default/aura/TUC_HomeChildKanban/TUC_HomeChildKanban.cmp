@@ -1,0 +1,208 @@
+<!--
+/**
+ * @description       : Parent Component for HomeChildKanban
+ * @author            : Booz Allen Hamilton
+ **/
+-->
+<aura:component controller="TUC_HomeChildKanbanController" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:appHostable" access="global" >
+    <c:logger aura:id="logger" />
+    <lightning:workspaceAPI aura:id="workspace" />
+    <aura:attribute name="HeaderTitle" type="string" access='global'/>
+    <aura:attribute name="objName" type="string"/>
+    <aura:attribute name="objRelField" type="string"/>
+    <aura:attribute name="objFields" type="string" default="Name"/>
+    <aura:attribute name="kanbanPicklistField" type="string"/>
+    <aura:attribute name="kanbanSummaryField" type="string"/>
+    <aura:attribute name="kanbanHeight" type="integer" default="250" access='global'/>
+    <aura:attribute name="ExcVal" type="string" default=""/>
+    <aura:attribute name="delInfo" type="object"/>
+    <aura:attribute name="VISNValue" type="string" default=""/>
+    <aura:attribute name="timer" type="object"/>
+    <aura:attribute name="kanbanConfigId" type="string" access='global'/>
+    <aura:attribute name="kwrap" type="TUC_HomeChildKanbanDTO"/>
+    <aura:attribute name="isSuccess" type="boolean" default="true"/>
+    <aura:attribute name="isLoading" type="boolean" default="false"/>
+    <aura:attribute name="errorMessage" type="String"/>
+    <aura:attribute name="dataTo" type="String"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="kanbanChildChanged" event="c:TUC_HomeChildKanbanEvt" action="{!c.childChanged}"/>
+    <aura:handler name="kanbanChildDelReq" event="c:TUC_HomeChildKanbanDeleteEvt" action="{!c.childDelete}"/>
+    <lightning:empApi aura:id="empApi" />
+    
+ 	<!--{!v.kanbanConfigId.value}
+    {!v.record.Name}-->
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="simpleRecord" type="Object"/>
+    <aura:attribute name="recordError" type="String"/>
+
+    <aura:attribute name="reasonSelected" type="String"/>
+    <aura:attribute name="outcomeSelected" type="String"/>
+    <aura:attribute name="detailSelected" type="String"/>
+    <aura:attribute name="closeButtonDisable" type="boolean" default="true"/>
+    <aura:attribute name="hasDetail" type="boolean" default="false"/>
+    <aura:attribute name="doctorPermCheck" type="boolean" default="false"/>
+
+    <aura:attribute name="modalTitle" type="String" default="modalTitle"/>
+    <aura:attribute name="modalMessage" type="String" default="do_the_thing_to_this_record?"/>
+    <aura:attribute name="modalButtonLabel" type="String" default="Confirm"/>
+    <aura:attribute name="modalButtonDisable" type="boolean" default="false"/>
+
+    <aura:attribute name="statusNew" type="String" default="New"/>
+    <aura:attribute name="statusCallback" type="String" default="Patient Call Back"/>
+    <aura:attribute name="statusNurseEncounter" type="String" default="TED Nurse Encounter"/>
+    <aura:attribute name="statusReadyForMP" type="String" default="Ready for MP"/>
+    <aura:attribute name="statusMPEncounter" type="String" default="TED MP Encounter"/>
+    <aura:attribute name="statusClose" type="String" default="Closed"/>
+    <aura:attribute name="statusDelete" type="String" default="New"/>
+    <aura:attribute name="recIdPrevFocus" type="String"/>
+
+    <aura:attribute name="targetClose" type="boolean" default="false"/>
+    <aura:attribute name="closeCaseFlowMP" type="boolean" default="false"/>
+    <aura:attribute name="closeCaseFlowRN" type="boolean" default="false"/>
+    <aura:attribute name="targetDelete" type="boolean" default="false"/>
+
+    <aura:attribute name="readyForMpNurse" type="boolean" default="false"/>
+    <aura:attribute name="reassignToQueue" type="boolean" default="false"/>
+
+    <!--going to replace these custom record type combobox options lists with a flow screen in a future update-->
+    <aura:attribute name="reasonOptions" type="List" default="[
+    {'label': 'Cardiovascular', 'value': 'Cardiovascular'},
+    {'label': 'Ear/Nose/Throat/Respiratory', 'value': 'Ear/Nose/Throat/Respiratory'},
+    {'label': 'Endocrine', 'value': 'Endocrine'},
+    {'label': 'Eye', 'value': 'Eye'},
+    {'label': 'Gastrointestinal', 'value': 'Gastrointestinal'},
+    {'label': 'Genitourinary', 'value': 'Genitourinary'},
+    {'label': 'Mental Health', 'value': 'Mental Health'},
+    {'label': 'Musculoskeletal', 'value': 'Musculoskeletal'},
+    {'label': 'Neurologic', 'value': 'Neurologic'},
+    {'label': 'Skin', 'value': 'Skin'},
+    {'label': 'Other', 'value': 'Other'},
+    ]"/>
+    <aura:attribute name="outcomeOptions" type="List" default="[
+    {'label': '911', 'value': '911'},
+    {'label': 'Emergency Dept', 'value': 'Emergency Dept'},
+    {'label': 'Primary Care/PACT', 'value': 'Primary Care/PACT'},
+    {'label': 'Resolved Issues', 'value': 'Resolved Issues'},
+    {'label': 'Urgent Care', 'value': 'Urgent Care'},
+    {'label': 'Declined by Veteran', 'value': 'Declined by Veteran'},
+    {'label': 'Care Incomplete - Connection Failure', 'value': 'Care Incomplete - Connection Failure'},
+    {'label': 'Closed - Case Created in Error', 'value': 'Closed - Case Created in Error'},
+    ]"/>
+    <aura:attribute name="detailOptions" type="List" default="[]"/>
+
+    <force:recordData aura:id="recordLoader"
+                      recordId="{!v.kanbanConfigId}"
+                      layoutType="FULL"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.simpleRecord}"
+                      targetError="{!v.recordError}"
+                      recordUpdated="{!c.handleRecordUpdated}"
+                      />
+    
+    
+    <aura:if isTrue="{!not(empty(v.recordError))}">
+        <div class="recordError">
+            <ui:message title="Kanban Error" severity="error" closable="true">
+                {!v.recordError}
+            </ui:message>
+        </div>
+        <aura:set attribute="else">
+    
+            <aura:if isTrue="{!v.isSuccess}">
+                <lightning:card iconName="utility:kanban">
+                    <aura:set attribute="title">
+                        <!--class="{!not(empty(v.recordId)) ? 'boardHeaderTitle cPointer slds-truncate' : 'slds-truncate'}"-->
+                        <span class="slds-truncate">
+                        <aura:if isTrue="{!not(empty(v.HeaderTitle))}">
+                            {!v.HeaderTitle}
+                            <aura:set attribute="else">
+                                {!'Case Kanban'} 
+                            </aura:set>
+                        </aura:if>
+                        </span>
+                        <p class="slds-truncate">
+                            <span class="slds-text-title_caps">{!'grouped by Status'}</span>
+                        </p>
+                    </aura:set>
+
+                                
+                    <aura:set attribute="actions">
+                    <!--   <lightning:buttonGroup> -->
+                            <table>
+                                <tr>
+                                    <td><lightning:input aura:id="iptVISN" label="VISN" type="text" name="iptVISN" class="iptVISNAdjust" value="{!v.VISNValue}" placeholder="Enter a VISN Number..." readonly="{!true}"/></td>                            
+                                <!-- ES - No New button per requirements <td>
+                                        <aura:if isTrue="{!v.kwrap.isCreatable}">
+                                        <lightning:button label="New" variant="neutral" onclick="{!c.initiateNewRecordCreation}"/> 
+                                        </aura:if>
+                                    </td> -->
+                                    <td><lightning:buttonIcon iconName="utility:refresh" variant="neutral" onclick="{!c.handleRecordUpdated}" alternativeText="Refresh Data" aura:id="refreshButton" class="actionAdjust" /></td>
+                                </tr>
+                            </table>
+                            
+                            
+                    <!--   </lightning:buttonGroup> --> 
+                        </aura:set>
+                    <div class="cardClass" style="position:relative;">
+                        <div class="kanbanContainerDiv">
+                            <aura:iteration items="{!v.kwrap.pickVals}" var="pv">
+                                <c:TUC_HomeChildKanbanCol fldList="{!v.record.fields.Fields_To_Display_on_Card__c.value}" kanbanHeight="{!v.kanbanHeight}" kanbanField="{!v.record.fields.Kanban_Group_By__c.value}" kwrap="{!v.kwrap}" pickvalue="{!pv}" pickvalueLength="{!v.kwrap.pickVals.length}" recsMap="{!v.kwrap.records}" summaryMap="{!v.kwrap.rollupData}" rsFld="{!v.kwrap.sFldType}" fieldEditable="{!v.kwrap.isEditable}" objDeletable="{!v.kwrap.isDeletable}" fieldTypeMap="{!v.kwrap.fieldTypeMap}" objName="{!'Case'}" />
+                            </aura:iteration>
+                        </div>
+                        <aura:if isTrue="{!v.isLoading}">
+                            <lightning:spinner variant="base" size="medium" aura:id="spinner" />
+                        </aura:if> 
+                    </div>
+                </lightning:card>
+                <aura:set attribute="else">
+                    <ui:message title="Kanban Component Error" severity="error">
+                        {!v.errorMessage}
+                    </ui:message>
+                </aura:set>
+                
+            </aura:if>
+            
+            <lightning:overlayLibrary aura:id="overlayLib"/>
+            <section aura:id="genModal" role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-describedby="modal-content-id-1" class="slds-modal">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" iconName="utility:close" variant="bare" alternativeText="Close" onclick="{!c.closeModal}"/>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate" tabindex="0">{!v.modalTitle}</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <p class="slds-text-align_center" tabindex="0">{!v.modalMessage}</p>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="neutral" label="Cancel" onclick="{!c.closeModal}"/>
+                        <lightning:button variant="brand" label="{!v.modalButtonLabel}" onclick="{!c.confirmModal}" disabled="{! v.modalButtonDisable }"/>
+                    </footer>
+                </div>
+            </section>
+
+            <section aura:id="flowModal" role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-describedby="modal-content-id-1" class="slds-modal">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" iconName="utility:close" variant="bare" alternativeText="Close" onclick="{!c.closeModal}"/>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <aura:if isTrue="{!v.readyForMpNurse}">
+                            <lightning:flow aura:id="readyForMpFlow" onstatuschange="{!c.flowChange}"/>
+                        </aura:if>
+                        <aura:if isTrue="{!v.reassignToQueue}">
+                            <lightning:flow aura:id="reassignToQueueFlow" onstatuschange="{!c.flowChange}"/>
+                        </aura:if>
+                        <aura:if isTrue="{!v.closeCaseFlowMP}">
+                            <lightning:flow aura:id="closeCaseFlowAsMP" onstatuschange="{!c.flowChange}"/>
+                        </aura:if>
+                        <aura:if isTrue="{!v.closeCaseFlowRN}">
+                            <lightning:flow aura:id="closeCaseFlowAsRN" onstatuschange="{!c.flowChange}"/>
+                        </aura:if>
+                    </div>
+                </div>
+            </section>
+            <div aura:id="modalBkdrp" class="slds-backdrop"></div>
+        </aura:set>
+    </aura:if>
+    
+</aura:component>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VISN_4_Escalation_Status_Board</fullName>
+    <columns>NAME</columns>
+    <columns>TUC_Pause_Duration__c</columns>
+    <columns>TUC_Status_Datetime__c</columns>
+    <columns>TUC_Is_Current_Status__c</columns>
+    <columns>TUC_Status_Type__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>TUC_VISN__c</field>
+        <operation>equals</operation>
+        <value>4</value>
+    </filters>
+    <label>VISN 4 Escalation Status Board</label>
+    <sharedTo>
+        <group>TUC_4_Healthcare_VSIN_4</group>
+    </sharedTo>
+</ListView>

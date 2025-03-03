@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Pharmacy_Address_of_Rx_order__c</fullName>
+    <description>The pharmacy address of the pharmacy where the prescription order was placed</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter the pharmacy address of the pharmacy where the prescription order was placed</inlineHelpText>
+    <label>Pharmacy Address of prescription order</label>
+    <length>100</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

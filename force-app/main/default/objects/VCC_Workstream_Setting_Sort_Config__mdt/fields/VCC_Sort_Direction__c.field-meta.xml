@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Sort_Direction__c</fullName>
+    <defaultValue>&quot;asc&quot;</defaultValue>
+    <description>The direction in which to sort the data by the specified &apos;Sort By&apos; field.</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>The direction in which to sort the data by the specified &apos;Sort By&apos; field.</inlineHelpText>
+    <label>Sort Direction</label>
+    <required>true</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>asc</fullName>
+                <default>true</default>
+                <label>Ascending</label>
+            </value>
+            <value>
+                <fullName>desc</fullName>
+                <default>false</default>
+                <label>Descending</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

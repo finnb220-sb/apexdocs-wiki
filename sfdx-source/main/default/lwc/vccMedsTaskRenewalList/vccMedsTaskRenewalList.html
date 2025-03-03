@@ -1,0 +1,32 @@
+<template>
+    <c-logger></c-logger>
+    <c-vcc-l-m-s-publisher></c-vcc-l-m-s-publisher>
+    <div if:true={displaySpinner}>
+        <div class="spinner-container">
+            <lightning-spinner alternative-text="Loading" class="slds_is_absolute" variant="brand" size="medium">
+            </lightning-spinner>
+        </div>
+    </div>
+    <template if:true={noRecords}>
+        <c-base-empty-state type="treasure" msg={labels.noResultsMessage}></c-base-empty-state>
+    </template>
+    <template if:false={noRecords}>
+        <lightning-datatable
+            key-field={keyField}
+            data={data}
+            columns={columns}
+            selected-rows={simplifiedSelectedRows}
+            onrowselection={handleRowSelection}>
+        </lightning-datatable>
+        <div class="button-wrapper">
+            <lightning-button
+                variant="brand"
+                label="Create Progress Note"
+                title="Create Progress Note"
+                onclick={handleClick}
+                disabled={deactivateButton}
+                class="slds-m-around_medium">
+            </lightning-button>
+        </div>
+    </template>
+</template>

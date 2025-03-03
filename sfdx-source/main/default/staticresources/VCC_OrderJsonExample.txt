@@ -1,0 +1,1731 @@
+{
+    "sites": [
+        {
+            "results": {
+                "timeZone": "-0400",
+                "orders": {
+                    "total": "23",
+                    "order": [
+                        {
+                            "resultID": {
+                                "value": "852505"
+                            },
+                            "start": {
+                                "value": "3180716.1132"
+                            },
+                            "signed": {
+                                "value": "3180716.1132"
+                            },
+                            "entered": {
+                                "value": "3180716.1132"
+                            },
+                            "type": {
+                                "value": "Consults"
+                            },
+                            "content": {
+                                "content": "PULMONARY CLINIC Cons Consultant's Choice"
+                            },
+                            "signatureStatus": {
+                                "value": "ELECTRONIC"
+                            },
+                            "provider": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59996",
+                                "service": "IRM Field Office",
+                                "name": "MANDAVIA,ADITYA X",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians"
+                            },
+                            "service": {
+                                "value": "GMRC"
+                            },
+                            "name": {
+                                "code": "7512",
+                                "name": "PULMONARY CLINIC"
+                            },
+                            "location": {
+                                "code": "3901",
+                                "name": "TCP-RENO"
+                            },
+                            "codingSystem": {},
+                            "id": {
+                                "value": "17420725;1"
+                            },
+                            "facility": {
+                                "code": "991",
+                                "name": "SLC4 TEST LAB"
+                            },
+                            "released": {
+                                "value": "3180716.1132"
+                            },
+                            "group": {
+                                "value": "CSLT"
+                            },
+                            "signer": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59996",
+                                "service": "IRM Field Office",
+                                "name": "MANDAVIA,ADITYA X",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians"
+                            },
+                            "status": {
+                                "code": "actv",
+                                "name": "ACTIVE"
+                            },
+                            "discontinued": {},
+                            "stop": {},
+                            "vuid": {},
+                            "acknowledgements": {
+                                "acknowledgement": []
+                            }
+                        },
+                        {
+                            "resultID": {
+                                "value": "852504"
+                            },
+                            "start": {
+                                "value": "3180716.1058"
+                            },
+                            "signed": {
+                                "value": "3180716.1058"
+                            },
+                            "entered": {
+                                "value": "3180716.1055"
+                            },
+                            "type": {
+                                "value": "Consults"
+                            },
+                            "content": {
+                                "content": "NEUROLOGY Cons Consultant's Choice"
+                            },
+                            "signatureStatus": {
+                                "value": "ELECTRONIC"
+                            },
+                            "provider": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59996",
+                                "service": "IRM Field Office",
+                                "name": "MANDAVIA,ADITYA X",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians"
+                            },
+                            "service": {
+                                "value": "GMRC"
+                            },
+                            "name": {
+                                "code": "7151",
+                                "name": "NEUROLOGY"
+                            },
+                            "location": {
+                                "code": "3901",
+                                "name": "TCP-RENO"
+                            },
+                            "codingSystem": {},
+                            "id": {
+                                "value": "17420724;1"
+                            },
+                            "facility": {
+                                "code": "991",
+                                "name": "SLC4 TEST LAB"
+                            },
+                            "released": {
+                                "value": "3180716.1058"
+                            },
+                            "group": {
+                                "value": "CSLT"
+                            },
+                            "signer": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59996",
+                                "service": "IRM Field Office",
+                                "name": "MANDAVIA,ADITYA X",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians"
+                            },
+                            "status": {
+                                "code": "pend",
+                                "name": "PENDING"
+                            },
+                            "discontinued": {},
+                            "stop": {},
+                            "vuid": {},
+                            "acknowledgements": {
+                                "acknowledgement": []
+                            }
+                        },
+                        {
+                            "resultID": {
+                                "value": "852496"
+                            },
+                            "start": {
+                                "value": "3180530.1351"
+                            },
+                            "signed": {
+                                "value": "3180530.1351"
+                            },
+                            "entered": {
+                                "value": "3180530.1348"
+                            },
+                            "type": {
+                                "value": "Consults"
+                            },
+                            "content": {
+                                "content": "DERMATOLOGY(OLD) Cons Consultant's Choice"
+                            },
+                            "signatureStatus": {
+                                "value": "ON CHART w/written orders"
+                            },
+                            "provider": {
+                                "code": "59953",
+                                "service": "IRM Field Office",
+                                "name": "EDWARDS,DARIAN A",
+                                "officePhone": "703 473 4465"
+                            },
+                            "service": {
+                                "value": "GMRC"
+                            },
+                            "name": {
+                                "code": "6778",
+                                "name": "DERMATOLOGY(OLD)"
+                            },
+                            "location": {
+                                "code": "3901",
+                                "name": "TCP-RENO"
+                            },
+                            "codingSystem": {},
+                            "id": {
+                                "value": "17420713;1"
+                            },
+                            "facility": {
+                                "code": "991",
+                                "name": "SLC4 TEST LAB"
+                            },
+                            "released": {
+                                "value": "3180530.1351"
+                            },
+                            "group": {
+                                "value": "CSLT"
+                            },
+                            "signer": {},
+                            "status": {
+                                "code": "pend",
+                                "name": "PENDING"
+                            },
+                            "discontinued": {},
+                            "stop": {},
+                            "vuid": {},
+                            "acknowledgements": {
+                                "acknowledgement": []
+                            }
+                        },
+                        {
+                            "resultID": {
+                                "value": "852495"
+                            },
+                            "start": {
+                                "value": "3180530.1321"
+                            },
+                            "signed": {
+                                "value": "3180530.1321"
+                            },
+                            "entered": {
+                                "value": "3180530.1321"
+                            },
+                            "type": {
+                                "value": "Consults"
+                            },
+                            "content": {
+                                "content": "PULMONARY CLINIC Cons Consultant's Choice"
+                            },
+                            "signatureStatus": {
+                                "value": "ELECTRONIC"
+                            },
+                            "provider": {
+                                "code": "59953",
+                                "service": "IRM Field Office",
+                                "name": "EDWARDS,DARIAN A",
+                                "officePhone": "703 473 4465"
+                            },
+                            "service": {
+                                "value": "GMRC"
+                            },
+                            "name": {
+                                "code": "7512",
+                                "name": "PULMONARY CLINIC"
+                            },
+                            "location": {
+                                "code": "3901",
+                                "name": "TCP-RENO"
+                            },
+                            "codingSystem": {},
+                            "id": {
+                                "value": "17420712;1"
+                            },
+                            "facility": {
+                                "code": "991",
+                                "name": "SLC4 TEST LAB"
+                            },
+                            "released": {
+                                "value": "3180530.1321"
+                            },
+                            "group": {
+                                "value": "CSLT"
+                            },
+                            "signer": {
+                                "code": "59953",
+                                "service": "IRM Field Office",
+                                "name": "EDWARDS,DARIAN A",
+                                "officePhone": "703 473 4465"
+                            },
+                            "status": {
+                                "code": "comp",
+                                "name": "COMPLETE"
+                            },
+                            "discontinued": {},
+                            "stop": {
+                                "value": "3180716.1129"
+                            },
+                            "vuid": {},
+                            "acknowledgements": {
+                                "acknowledgement": []
+                            }
+                        },
+                        {
+                            "resultID": {
+                                "value": "852494"
+                            },
+                            "start": {
+                                "value": "3180530.1255"
+                            },
+                            "signed": {
+                                "value": "3180530.1255"
+                            },
+                            "entered": {
+                                "value": "3180530.1255"
+                            },
+                            "type": {
+                                "value": "Consults"
+                            },
+                            "content": {
+                                "content": "PHYSICAL THERAPY, CARDIAC REHAB (INPT) Cons Consultant's Choice"
+                            },
+                            "signatureStatus": {
+                                "value": "ELECTRONIC"
+                            },
+                            "provider": {
+                                "code": "59953",
+                                "service": "IRM Field Office",
+                                "name": "EDWARDS,DARIAN A",
+                                "officePhone": "703 473 4465"
+                            },
+                            "service": {
+                                "value": "GMRC"
+                            },
+                            "name": {
+                                "code": "7855",
+                                "name": "PHYSICAL THERAPY, CARDIAC REHAB (INPT)"
+                            },
+                            "location": {
+                                "code": "3901",
+                                "name": "TCP-RENO"
+                            },
+                            "codingSystem": {},
+                            "id": {
+                                "value": "17420711;1"
+                            },
+                            "facility": {
+                                "code": "991",
+                                "name": "SLC4 TEST LAB"
+                            },
+                            "released": {
+                                "value": "3180530.1255"
+                            },
+                            "group": {
+                                "value": "CSLT"
+                            },
+                            "signer": {
+                                "code": "59953",
+                                "service": "IRM Field Office",
+                                "name": "EDWARDS,DARIAN A",
+                                "officePhone": "703 473 4465"
+                            },
+                            "status": {
+                                "code": "pend",
+                                "name": "PENDING"
+                            },
+                            "discontinued": {},
+                            "stop": {},
+                            "vuid": {},
+                            "acknowledgements": {
+                                "acknowledgement": []
+                            }
+                        },
+                        {
+                            "resultID": {
+                                "value": "17420637"
+                            },
+                            "start": {},
+                            "signed": {
+                                "value": "3180223.1751"
+                            },
+                            "entered": {
+                                "value": "3180124.1647"
+                            },
+                            "type": {
+                                "value": "Out. Meds"
+                            },
+                            "content": {
+                                "content": "TRAZODONE HCL 50MG TAB  50MGTAKE ONE-HALF TABLET BY MOUTH AT BEDTIMEQuantity: 15 Refills: 0"
+                            },
+                            "signatureStatus": {
+                                "value": "ELECTRONIC"
+                            },
+                            "provider": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59920",
+                                "service": "GENERAL MED/MEDICAL",
+                                "name": "VCCMPHYSICIANONE,FIRST",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "officePhone": "8889991111",
+                                "analogPager": "8889991112"
+                            },
+                            "service": {
+                                "value": "PSO"
+                            },
+                            "name": {
+                                "code": "4467",
+                                "name": "TRAZODONE HCL 50MG TAB "
+                            },
+                            "location": {
+                                "code": "3069",
+                                "name": "PRIMARY CARE MISC"
+                            },
+                            "codingSystem": {},
+                            "id": {
+                                "value": "17420637;1"
+                            },
+                            "facility": {
+                                "code": "660",
+                                "name": "SALT LAKE CITY HCS"
+                            },
+                            "released": {
+                                "value": "3180223.1751"
+                            },
+                            "group": {
+                                "value": "O RX"
+                            },
+                            "signer": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59920",
+                                "service": "GENERAL MED/MEDICAL",
+                                "name": "VCCMPHYSICIANONE,FIRST",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "officePhone": "8889991111",
+                                "analogPager": "8889991112"
+                            },
+                            "status": {
+                                "code": "pend",
+                                "name": "PENDING"
+                            },
+                            "discontinued": {},
+                            "stop": {},
+                            "vuid": {
+                                "value": "4006653"
+                            },
+                            "acknowledgements": {
+                                "acknowledgement": []
+                            }
+                        },
+                        {
+                            "resultID": {
+                                "value": "773317"
+                            },
+                            "start": {
+                                "value": "3180205"
+                            },
+                            "signed": {
+                                "value": "3180205.1135"
+                            },
+                            "entered": {
+                                "value": "3180205.1135"
+                            },
+                            "type": {
+                                "value": "Ultrasound"
+                            },
+                            "content": {
+                                "content": "US ABDOMEN ASAP"
+                            },
+                            "signatureStatus": {
+                                "value": "ELECTRONIC"
+                            },
+                            "provider": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59921",
+                                "service": "CARDIOLOGY/MEDICAL",
+                                "name": "VCCMPHYSICIANTWO,SECOND",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "officePhone": "(888)555-3434",
+                                "analogPager": "8885550987"
+                            },
+                            "service": {
+                                "value": "RA"
+                            },
+                            "name": {
+                                "code": "6089",
+                                "name": "US ABDOMEN"
+                            },
+                            "location": {
+                                "code": "3069",
+                                "name": "PRIMARY CARE MISC"
+                            },
+                            "codingSystem": {
+                                "code": "76700",
+                                "name": "CPT4"
+                            },
+                            "id": {
+                                "value": "17420685;1"
+                            },
+                            "facility": {
+                                "code": "660",
+                                "name": "SALT LAKE CITY HCS"
+                            },
+                            "released": {
+                                "value": "3180205.1135"
+                            },
+                            "group": {
+                                "value": "US"
+                            },
+                            "signer": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59921",
+                                "service": "CARDIOLOGY/MEDICAL",
+                                "name": "VCCMPHYSICIANTWO,SECOND",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "officePhone": "(888)555-3434",
+                                "analogPager": "8885550987"
+                            },
+                            "status": {
+                                "code": "schd",
+                                "name": "SCHEDULED"
+                            },
+                            "discontinued": {},
+                            "stop": {},
+                            "vuid": {},
+                            "acknowledgements": {
+                                "acknowledgement": []
+                            }
+                        },
+                        {
+                            "resultID": {
+                                "value": "17420684"
+                            },
+                            "start": {
+                                "value": "3180201.14"
+                            },
+                            "signed": {
+                                "value": "3180201.14"
+                            },
+                            "entered": {
+                                "value": "3180201.14"
+                            },
+                            "type": {
+                                "value": "Nursing"
+                            },
+                            "content": {
+                                "content": "Please schedule an appointment for Mr. Alberts today or tomorrow at the  very latest."
+                            },
+                            "signatureStatus": {
+                                "value": "ELECTRONIC"
+                            },
+                            "provider": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59921",
+                                "service": "CARDIOLOGY/MEDICAL",
+                                "name": "VCCMPHYSICIANTWO,SECOND",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "officePhone": "(888)555-3434",
+                                "analogPager": "8885550987"
+                            },
+                            "service": {
+                                "value": "OR"
+                            },
+                            "name": {},
+                            "location": {
+                                "code": "1195",
+                                "name": "A/O CHART CHECK"
+                            },
+                            "codingSystem": {},
+                            "id": {
+                                "value": "17420684;1"
+                            },
+                            "facility": {
+                                "code": "660",
+                                "name": "SALT LAKE CITY HCS"
+                            },
+                            "released": {
+                                "value": "3180201.14"
+                            },
+                            "group": {
+                                "value": "NURS"
+                            },
+                            "signer": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59921",
+                                "service": "CARDIOLOGY/MEDICAL",
+                                "name": "VCCMPHYSICIANTWO,SECOND",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "officePhone": "(888)555-3434",
+                                "analogPager": "8885550987"
+                            },
+                            "status": {
+                                "code": "actv",
+                                "name": "ACTIVE"
+                            },
+                            "discontinued": {},
+                            "stop": {
+                                "value": "3180202"
+                            },
+                            "vuid": {},
+                            "acknowledgements": {
+                                "acknowledgement": []
+                            }
+                        },
+                        {
+                            "resultID": {
+                                "value": "773316"
+                            },
+                            "start": {
+                                "value": "3180201"
+                            },
+                            "signed": {
+                                "value": "3180201.1356"
+                            },
+                            "entered": {
+                                "value": "3180201.1355"
+                            },
+                            "type": {
+                                "value": "Radiology"
+                            },
+                            "content": {
+                                "content": "ABDOMEN 1 VIEW (KUB) ASAP"
+                            },
+                            "signatureStatus": {
+                                "value": "ELECTRONIC"
+                            },
+                            "provider": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59921",
+                                "service": "CARDIOLOGY/MEDICAL",
+                                "name": "VCCMPHYSICIANTWO,SECOND",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "officePhone": "(888)555-3434",
+                                "analogPager": "8885550987"
+                            },
+                            "service": {
+                                "value": "RA"
+                            },
+                            "name": {
+                                "code": "5946",
+                                "name": "ABDOMEN 1 VIEW (KUB)"
+                            },
+                            "location": {
+                                "code": "1195",
+                                "name": "A/O CHART CHECK"
+                            },
+                            "codingSystem": {
+                                "code": "74000",
+                                "name": "CPT4"
+                            },
+                            "id": {
+                                "value": "17420682;1"
+                            },
+                            "facility": {
+                                "code": "660",
+                                "name": "SALT LAKE CITY HCS"
+                            },
+                            "released": {
+                                "value": "3180201.1356"
+                            },
+                            "group": {
+                                "value": "RAD"
+                            },
+                            "signer": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59921",
+                                "service": "CARDIOLOGY/MEDICAL",
+                                "name": "VCCMPHYSICIANTWO,SECOND",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "officePhone": "(888)555-3434",
+                                "analogPager": "8885550987"
+                            },
+                            "status": {
+                                "code": "schd",
+                                "name": "SCHEDULED"
+                            },
+                            "discontinued": {},
+                            "stop": {},
+                            "vuid": {},
+                            "acknowledgements": {
+                                "acknowledgement": []
+                            }
+                        },
+                        {
+                            "resultID": {
+                                "value": "5134;3180201;5"
+                            },
+                            "start": {
+                                "value": "3180202.115819"
+                            },
+                            "signed": {
+                                "value": "3180201.1356"
+                            },
+                            "entered": {
+                                "value": "3180201.1356"
+                            },
+                            "type": {
+                                "value": "Chemistry"
+                            },
+                            "content": {
+                                "content": "CBC & MORPHOLOGY (WITH AUTO DIFF) BLOOD TODAY SP"
+                            },
+                            "signatureStatus": {
+                                "value": "ELECTRONIC"
+                            },
+                            "provider": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59921",
+                                "service": "CARDIOLOGY/MEDICAL",
+                                "name": "VCCMPHYSICIANTWO,SECOND",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "officePhone": "(888)555-3434",
+                                "analogPager": "8885550987"
+                            },
+                            "service": {
+                                "value": "LR"
+                            },
+                            "name": {
+                                "code": "458",
+                                "name": "CBC & MORPHOLOGY (WITH AUTO DIFF)"
+                            },
+                            "location": {
+                                "code": "1195",
+                                "name": "A/O CHART CHECK"
+                            },
+                            "codingSystem": {
+                                "code": "85149",
+                                "name": "NLT"
+                            },
+                            "id": {
+                                "value": "17420683;1"
+                            },
+                            "facility": {
+                                "code": "660",
+                                "name": "SALT LAKE CITY HCS"
+                            },
+                            "released": {
+                                "value": "3180201.1356"
+                            },
+                            "group": {
+                                "value": "CH"
+                            },
+                            "signer": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59921",
+                                "service": "CARDIOLOGY/MEDICAL",
+                                "name": "VCCMPHYSICIANTWO,SECOND",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "officePhone": "(888)555-3434",
+                                "analogPager": "8885550987"
+                            },
+                            "status": {
+                                "code": "actv",
+                                "name": "ACTIVE"
+                            },
+                            "discontinued": {},
+                            "stop": {},
+                            "vuid": {},
+                            "acknowledgements": {
+                                "acknowledgement": []
+                            }
+                        },
+                        {
+                            "resultID": {
+                                "value": "17420645"
+                            },
+                            "start": {
+                                "value": "3180124"
+                            },
+                            "signed": {},
+                            "entered": {
+                                "value": "3180124.2307"
+                            },
+                            "type": {
+                                "value": "Out. Meds"
+                            },
+                            "content": {
+                                "content": "DOXYCYCLINE HYCLATE 100MG CAPTAKE 100MG BY MOUTH EVERY TWELVE (12) HOURS FOR 14 DAYS AVOID DAIRY PRODUCTS. FINISH ALL MEDICATIONQuantity: 14 Refills: 11"
+                            },
+                            "signatureStatus": {
+                                "value": "ON CHART w/written orders"
+                            },
+                            "provider": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59920",
+                                "service": "GENERAL MED/MEDICAL",
+                                "name": "VCCMPHYSICIANONE,FIRST",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "officePhone": "8889991111",
+                                "analogPager": "8889991112"
+                            },
+                            "service": {
+                                "value": "PSO"
+                            },
+                            "name": {
+                                "code": "3236",
+                                "name": "DOXYCYCLINE HYCLATE 100MG CAP,ORAL "
+                            },
+                            "location": {
+                                "code": "3069",
+                                "name": "PRIMARY CARE MISC"
+                            },
+                            "codingSystem": {},
+                            "id": {
+                                "value": "17420645;1"
+                            },
+                            "facility": {
+                                "code": "660",
+                                "name": "SALT LAKE CITY HCS"
+                            },
+                            "released": {
+                                "value": "3180124.2307"
+                            },
+                            "group": {
+                                "value": "O RX"
+                            },
+                            "signer": {},
+                            "status": {
+                                "code": "actv",
+                                "name": "ACTIVE"
+                            },
+                            "discontinued": {},
+                            "stop": {
+                                "value": "3190125"
+                            },
+                            "vuid": {},
+                            "acknowledgements": {
+                                "acknowledgement": []
+                            }
+                        },
+                        {
+                            "resultID": {
+                                "value": "17420644"
+                            },
+                            "start": {
+                                "value": "3180124"
+                            },
+                            "signed": {},
+                            "entered": {
+                                "value": "3180124.2306"
+                            },
+                            "type": {
+                                "value": "Out. Meds"
+                            },
+                            "content": {
+                                "content": "DOXYCYCLINE HYCLATE 100MG CAPTAKE 100MG BY MOUTH EVERY TWELVE (12) HOURS FOR 14 DAYS AVOID DAIRY PRODUCTS. FINISH ALL MEDICATIONQuantity: 14 Refills: 0"
+                            },
+                            "signatureStatus": {
+                                "value": "ON CHART w/written orders"
+                            },
+                            "provider": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59920",
+                                "service": "GENERAL MED/MEDICAL",
+                                "name": "VCCMPHYSICIANONE,FIRST",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "officePhone": "8889991111",
+                                "analogPager": "8889991112"
+                            },
+                            "service": {
+                                "value": "PSO"
+                            },
+                            "name": {
+                                "code": "3236",
+                                "name": "DOXYCYCLINE HYCLATE 100MG CAP,ORAL "
+                            },
+                            "location": {
+                                "code": "3069",
+                                "name": "PRIMARY CARE MISC"
+                            },
+                            "codingSystem": {},
+                            "id": {
+                                "value": "17420644;1"
+                            },
+                            "facility": {
+                                "code": "660",
+                                "name": "SALT LAKE CITY HCS"
+                            },
+                            "released": {
+                                "value": "3180124.2306"
+                            },
+                            "group": {
+                                "value": "O RX"
+                            },
+                            "signer": {},
+                            "status": {
+                                "code": "dc",
+                                "name": "DISCONTINUED"
+                            },
+                            "discontinued": {
+                                "date": "3180124.2307",
+                                "reason": "Renewed by Pharmacy",
+                                "by": "59953",
+                                "byName": "EDWARDS,DARIAN A"
+                            },
+                            "stop": {
+                                "value": "3180124"
+                            },
+                            "vuid": {},
+                            "acknowledgements": {
+                                "acknowledgement": []
+                            }
+                        },
+                        {
+                            "resultID": {
+                                "value": "17420643"
+                            },
+                            "start": {
+                                "value": "3180124"
+                            },
+                            "signed": {},
+                            "entered": {
+                                "value": "3180124.2251"
+                            },
+                            "type": {
+                                "value": "Out. Meds"
+                            },
+                            "content": {
+                                "content": "TRAZODONE HCL 50MG TAB  50MGTAKE ONE-HALF TABLET BY MOUTH AT BEDTIME TAKE AS NEEDED BEFORE BED DAEQuantity: 15 Refills: 11"
+                            },
+                            "signatureStatus": {
+                                "value": "ON CHART w/written orders"
+                            },
+                            "provider": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59920",
+                                "service": "GENERAL MED/MEDICAL",
+                                "name": "VCCMPHYSICIANONE,FIRST",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "officePhone": "8889991111",
+                                "analogPager": "8889991112"
+                            },
+                            "service": {
+                                "value": "PSO"
+                            },
+                            "name": {
+                                "code": "4467",
+                                "name": "TRAZODONE HCL 50MG TAB "
+                            },
+                            "location": {
+                                "code": "3069",
+                                "name": "PRIMARY CARE MISC"
+                            },
+                            "codingSystem": {},
+                            "id": {
+                                "value": "17420643;1"
+                            },
+                            "facility": {
+                                "code": "660",
+                                "name": "SALT LAKE CITY HCS"
+                            },
+                            "released": {
+                                "value": "3180124.2251"
+                            },
+                            "group": {
+                                "value": "O RX"
+                            },
+                            "signer": {},
+                            "status": {
+                                "code": "actv",
+                                "name": "ACTIVE"
+                            },
+                            "discontinued": {},
+                            "stop": {
+                                "value": "3190125"
+                            },
+                            "vuid": {
+                                "value": "4006653"
+                            },
+                            "acknowledgements": {
+                                "acknowledgement": []
+                            }
+                        },
+                        {
+                            "resultID": {
+                                "value": "17420642"
+                            },
+                            "start": {
+                                "value": "3180124"
+                            },
+                            "signed": {},
+                            "entered": {
+                                "value": "3180124.2249"
+                            },
+                            "type": {
+                                "value": "Out. Meds"
+                            },
+                            "content": {
+                                "content": "ESCITALOPRAM OXALATE 10MG TAB,ORAL  10MGTAKE TWO TABLETS BY MOUTH EVERY DAY TAKE ORALLY BY MOUTH...Quantity: 180 Refills: 3"
+                            },
+                            "signatureStatus": {
+                                "value": "ON CHART w/written orders"
+                            },
+                            "provider": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59920",
+                                "service": "GENERAL MED/MEDICAL",
+                                "name": "VCCMPHYSICIANONE,FIRST",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "officePhone": "8889991111",
+                                "analogPager": "8889991112"
+                            },
+                            "service": {
+                                "value": "PSO"
+                            },
+                            "name": {
+                                "code": "8671",
+                                "name": "ESCITALOPRAM OXALATE 10MG TAB,ORAL "
+                            },
+                            "location": {
+                                "code": "3069",
+                                "name": "PRIMARY CARE MISC"
+                            },
+                            "codingSystem": {},
+                            "id": {
+                                "value": "17420642;1"
+                            },
+                            "facility": {
+                                "code": "660",
+                                "name": "SALT LAKE CITY HCS"
+                            },
+                            "released": {
+                                "value": "3180124.2249"
+                            },
+                            "group": {
+                                "value": "O RX"
+                            },
+                            "signer": {},
+                            "status": {
+                                "code": "actv",
+                                "name": "ACTIVE"
+                            },
+                            "discontinued": {},
+                            "stop": {
+                                "value": "3190125"
+                            },
+                            "vuid": {
+                                "value": "4016307"
+                            },
+                            "acknowledgements": {
+                                "acknowledgement": []
+                            }
+                        },
+                        {
+                            "resultID": {
+                                "value": "17420641"
+                            },
+                            "start": {
+                                "value": "3180124"
+                            },
+                            "signed": {},
+                            "entered": {
+                                "value": "3180124.2243"
+                            },
+                            "type": {
+                                "value": "Out. Meds"
+                            },
+                            "content": {
+                                "content": "ESCITALOPRAM OXALATE 10MG TAB,ORAL  10MGTAKE TWO TABLETS BY MOUTH EVERY DAY TAKE ORALLY BY MOUTH...Quantity: 180 Refills: 0"
+                            },
+                            "signatureStatus": {
+                                "value": "ON CHART w/written orders"
+                            },
+                            "provider": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59920",
+                                "service": "GENERAL MED/MEDICAL",
+                                "name": "VCCMPHYSICIANONE,FIRST",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "officePhone": "8889991111",
+                                "analogPager": "8889991112"
+                            },
+                            "service": {
+                                "value": "PSO"
+                            },
+                            "name": {
+                                "code": "8671",
+                                "name": "ESCITALOPRAM OXALATE 10MG TAB,ORAL "
+                            },
+                            "location": {
+                                "code": "3069",
+                                "name": "PRIMARY CARE MISC"
+                            },
+                            "codingSystem": {},
+                            "id": {
+                                "value": "17420641;1"
+                            },
+                            "facility": {
+                                "code": "660",
+                                "name": "SALT LAKE CITY HCS"
+                            },
+                            "released": {
+                                "value": "3180124.2243"
+                            },
+                            "group": {
+                                "value": "O RX"
+                            },
+                            "signer": {},
+                            "status": {
+                                "code": "dc",
+                                "name": "DISCONTINUED"
+                            },
+                            "discontinued": {
+                                "date": "3180124.2249",
+                                "reason": "Renewed by Pharmacy",
+                                "by": "59953",
+                                "byName": "EDWARDS,DARIAN A"
+                            },
+                            "stop": {
+                                "value": "3180124"
+                            },
+                            "vuid": {
+                                "value": "4016307"
+                            },
+                            "acknowledgements": {
+                                "acknowledgement": []
+                            }
+                        },
+                        {
+                            "resultID": {
+                                "value": "17420638"
+                            },
+                            "start": {
+                                "value": "3180124"
+                            },
+                            "signed": {},
+                            "entered": {
+                                "value": "3180124.1656"
+                            },
+                            "type": {
+                                "value": "Out. Meds"
+                            },
+                            "content": {
+                                "content": "TRAZODONE HCL 50MG TAB  50MGTAKE ONE-HALF TABLET BY MOUTH AT BEDTIME TAKE AS NEEDED BEFORE BED DAEQuantity: 15 Refills: 0"
+                            },
+                            "signatureStatus": {
+                                "value": "ON CHART w/written orders"
+                            },
+                            "provider": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59920",
+                                "service": "GENERAL MED/MEDICAL",
+                                "name": "VCCMPHYSICIANONE,FIRST",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "officePhone": "8889991111",
+                                "analogPager": "8889991112"
+                            },
+                            "service": {
+                                "value": "PSO"
+                            },
+                            "name": {
+                                "code": "4467",
+                                "name": "TRAZODONE HCL 50MG TAB "
+                            },
+                            "location": {
+                                "code": "3069",
+                                "name": "PRIMARY CARE MISC"
+                            },
+                            "codingSystem": {},
+                            "id": {
+                                "value": "17420638;1"
+                            },
+                            "facility": {
+                                "code": "660",
+                                "name": "SALT LAKE CITY HCS"
+                            },
+                            "released": {
+                                "value": "3180124.1656"
+                            },
+                            "group": {
+                                "value": "O RX"
+                            },
+                            "signer": {},
+                            "status": {
+                                "code": "dc",
+                                "name": "DISCONTINUED"
+                            },
+                            "discontinued": {
+                                "date": "3180124.2251",
+                                "reason": "Renewed by Pharmacy",
+                                "by": "59953",
+                                "byName": "EDWARDS,DARIAN A"
+                            },
+                            "stop": {
+                                "value": "3180124"
+                            },
+                            "vuid": {
+                                "value": "4006653"
+                            },
+                            "acknowledgements": {
+                                "acknowledgement": []
+                            }
+                        },
+                        {
+                            "resultID": {
+                                "value": "852456"
+                            },
+                            "start": {
+                                "value": "3170814.1125"
+                            },
+                            "signed": {
+                                "value": "3170814.1125"
+                            },
+                            "entered": {
+                                "value": "3170814.1125"
+                            },
+                            "type": {
+                                "value": "Consults"
+                            },
+                            "content": {
+                                "content": "DEPRESSION NEW Cons Consultant's Choice"
+                            },
+                            "signatureStatus": {
+                                "value": "ELECTRONIC"
+                            },
+                            "provider": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59919",
+                                "service": "IRM Field Office",
+                                "name": "DAVIS,NANCY E",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "officePhone": "727-656-0086"
+                            },
+                            "service": {
+                                "value": "GMRC"
+                            },
+                            "name": {
+                                "code": "9692",
+                                "name": "DEPRESSION NEW"
+                            },
+                            "location": {
+                                "code": "3069",
+                                "name": "PRIMARY CARE MISC"
+                            },
+                            "codingSystem": {},
+                            "id": {
+                                "value": "17420557;1"
+                            },
+                            "facility": {
+                                "code": "660",
+                                "name": "SALT LAKE CITY HCS"
+                            },
+                            "released": {
+                                "value": "3170814.1125"
+                            },
+                            "group": {
+                                "value": "CSLT"
+                            },
+                            "signer": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59919",
+                                "service": "IRM Field Office",
+                                "name": "DAVIS,NANCY E",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "officePhone": "727-656-0086"
+                            },
+                            "status": {
+                                "code": "comp",
+                                "name": "COMPLETE"
+                            },
+                            "discontinued": {},
+                            "stop": {
+                                "value": "3170814.1207"
+                            },
+                            "vuid": {},
+                            "acknowledgements": {
+                                "acknowledgement": []
+                            }
+                        },
+                        {
+                            "resultID": {
+                                "value": "8323;3170817;1"
+                            },
+                            "start": {
+                                "value": "3170817"
+                            },
+                            "signed": {
+                                "value": "3170814.1115"
+                            },
+                            "entered": {
+                                "value": "3170517.1059"
+                            },
+                            "type": {
+                                "value": "Chemistry"
+                            },
+                            "content": {
+                                "content": "CHEM 8 BLOOD PLASMA SP"
+                            },
+                            "signatureStatus": {
+                                "value": "ELECTRONIC"
+                            },
+                            "provider": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59919",
+                                "service": "IRM Field Office",
+                                "name": "DAVIS,NANCY E",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "officePhone": "727-656-0086"
+                            },
+                            "service": {
+                                "value": "LR"
+                            },
+                            "name": {
+                                "code": "7519",
+                                "name": "CHEM 8"
+                            },
+                            "location": {
+                                "code": "3069",
+                                "name": "PRIMARY CARE MISC"
+                            },
+                            "codingSystem": {
+                                "code": "81115",
+                                "name": "NLT"
+                            },
+                            "id": {
+                                "value": "17420408;1"
+                            },
+                            "facility": {
+                                "code": "660",
+                                "name": "SALT LAKE CITY HCS"
+                            },
+                            "released": {
+                                "value": "3170814.1115"
+                            },
+                            "group": {
+                                "value": "CH"
+                            },
+                            "signer": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59919",
+                                "service": "IRM Field Office",
+                                "name": "DAVIS,NANCY E",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "officePhone": "727-656-0086"
+                            },
+                            "status": {
+                                "code": "pend",
+                                "name": "PENDING"
+                            },
+                            "discontinued": {},
+                            "stop": {},
+                            "vuid": {},
+                            "acknowledgements": {
+                                "acknowledgement": []
+                            }
+                        },
+                        {
+                            "resultID": {
+                                "value": "17420407"
+                            },
+                            "start": {},
+                            "signed": {},
+                            "entered": {
+                                "value": "3170517.1059"
+                            },
+                            "type": {
+                                "value": "Non-VA Meds"
+                            },
+                            "content": {
+                                "content": "Non-VA ACETAMINOPHEN 325MG TAB  325MGTAKE ONE TABLET BY MOUTH FIVE (5) TIMES PER DAY  Patient wants to buy from Non-VA pharmacy."
+                            },
+                            "signatureStatus": {
+                                "value": "NOT REQUIRED"
+                            },
+                            "provider": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59920",
+                                "service": "GENERAL MED/MEDICAL",
+                                "name": "VCCMPHYSICIANONE,FIRST",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "officePhone": "8889991111",
+                                "analogPager": "8889991112"
+                            },
+                            "service": {
+                                "value": "PSH"
+                            },
+                            "name": {
+                                "code": "2642",
+                                "name": "ACETAMINOPHEN 325MG TAB "
+                            },
+                            "location": {
+                                "code": "3069",
+                                "name": "PRIMARY CARE MISC"
+                            },
+                            "codingSystem": {},
+                            "id": {
+                                "value": "17420407;1"
+                            },
+                            "facility": {
+                                "code": "660",
+                                "name": "SALT LAKE CITY HCS"
+                            },
+                            "released": {
+                                "value": "3170517.11"
+                            },
+                            "group": {
+                                "value": "NV RX"
+                            },
+                            "signer": {},
+                            "status": {
+                                "code": "actv",
+                                "name": "ACTIVE"
+                            },
+                            "discontinued": {},
+                            "stop": {},
+                            "vuid": {
+                                "value": "4007158"
+                            },
+                            "acknowledgements": {
+                                "acknowledgement": []
+                            }
+                        },
+                        {
+                            "resultID": {
+                                "value": "17420383"
+                            },
+                            "start": {
+                                "value": "3170511"
+                            },
+                            "signed": {},
+                            "entered": {
+                                "value": "3170511.1504"
+                            },
+                            "type": {
+                                "value": "Out. Meds"
+                            },
+                            "content": {
+                                "content": "SUMATRIPTAN SUCCINATE 50MG TAB  50MGTAKE ONE-HALF TABLET BY MOUTH ONCE FOR 30 DAYS IF NEEDEDQuantity: 50 Refills: 0"
+                            },
+                            "signatureStatus": {
+                                "value": "ON CHART w/written orders"
+                            },
+                            "provider": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59920",
+                                "service": "GENERAL MED/MEDICAL",
+                                "name": "VCCMPHYSICIANONE,FIRST",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "officePhone": "8889991111",
+                                "analogPager": "8889991112"
+                            },
+                            "service": {
+                                "value": "PSO"
+                            },
+                            "name": {
+                                "code": "7495",
+                                "name": "SUMATRIPTAN SUCCINATE 50MG TAB "
+                            },
+                            "location": {
+                                "code": "3069",
+                                "name": "PRIMARY CARE MISC"
+                            },
+                            "codingSystem": {},
+                            "id": {
+                                "value": "17420383;1"
+                            },
+                            "facility": {
+                                "code": "660",
+                                "name": "SALT LAKE CITY HCS"
+                            },
+                            "released": {
+                                "value": "3170511.1504"
+                            },
+                            "group": {
+                                "value": "O RX"
+                            },
+                            "signer": {},
+                            "status": {
+                                "code": "actv",
+                                "name": "ACTIVE"
+                            },
+                            "discontinued": {},
+                            "stop": {
+                                "value": "3170809"
+                            },
+                            "vuid": {
+                                "value": "4010261"
+                            },
+                            "acknowledgements": {
+                                "acknowledgement": []
+                            }
+                        },
+                        {
+                            "resultID": {
+                                "value": "17420382"
+                            },
+                            "start": {
+                                "value": "3170511"
+                            },
+                            "signed": {},
+                            "entered": {
+                                "value": "3170511.15"
+                            },
+                            "type": {
+                                "value": "Out. Meds"
+                            },
+                            "content": {
+                                "content": "CHLORTHALIDONE 50MG TAB  50MGTAKE ONE TABLET BY MOUTH EVERY MORNING FOR 90 DAYS TAKE WITH FOOD IN THE MORNING.Quantity: 90 Refills: 0"
+                            },
+                            "signatureStatus": {
+                                "value": "ON CHART w/written orders"
+                            },
+                            "provider": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59920",
+                                "service": "GENERAL MED/MEDICAL",
+                                "name": "VCCMPHYSICIANONE,FIRST",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "officePhone": "8889991111",
+                                "analogPager": "8889991112"
+                            },
+                            "service": {
+                                "value": "PSO"
+                            },
+                            "name": {
+                                "code": "2996",
+                                "name": "CHLORTHALIDONE 50MG TAB "
+                            },
+                            "location": {
+                                "code": "3069",
+                                "name": "PRIMARY CARE MISC"
+                            },
+                            "codingSystem": {},
+                            "id": {
+                                "value": "17420382;1"
+                            },
+                            "facility": {
+                                "code": "660",
+                                "name": "SALT LAKE CITY HCS"
+                            },
+                            "released": {
+                                "value": "3170511.15"
+                            },
+                            "group": {
+                                "value": "O RX"
+                            },
+                            "signer": {},
+                            "status": {
+                                "code": "actv",
+                                "name": "ACTIVE"
+                            },
+                            "discontinued": {},
+                            "stop": {
+                                "value": "3170809"
+                            },
+                            "vuid": {
+                                "value": "4002657"
+                            },
+                            "acknowledgements": {
+                                "acknowledgement": []
+                            }
+                        },
+                        {
+                            "resultID": {
+                                "value": "17420381"
+                            },
+                            "start": {
+                                "value": "3170511"
+                            },
+                            "signed": {},
+                            "entered": {
+                                "value": "3170511.1454"
+                            },
+                            "type": {
+                                "value": "Out. Meds"
+                            },
+                            "content": {
+                                "content": "ALLOPURINOL 100MG TAB  100MGTAKE ONE TABLET BY MOUTH EVERY DAY FOR 30 DAYS TAKE WITH FOODQuantity: 30 Refills: 0"
+                            },
+                            "signatureStatus": {
+                                "value": "ON CHART w/written orders"
+                            },
+                            "provider": {
+                                "taxonomyCode": "204C00000X",
+                                "code": "59920",
+                                "service": "GENERAL MED/MEDICAL",
+                                "name": "VCCMPHYSICIANONE,FIRST",
+                                "classification": "Neuromusculoskeletal Medicine, Sports Medicine",
+                                "providerType": "Allopathic and Osteopathic Physicians",
+                                "officePhone": "8889991111",
+                                "analogPager": "8889991112"
+                            },
+                            "service": {
+                                "value": "PSO"
+                            },
+                            "name": {
+                                "code": "2691",
+                                "name": "ALLOPURINOL 100MG TAB "
+                            },
+                            "location": {
+                                "code": "3069",
+                                "name": "PRIMARY CARE MISC"
+                            },
+                            "codingSystem": {},
+                            "id": {
+                                "value": "17420381;1"
+                            },
+                            "facility": {
+                                "code": "660",
+                                "name": "SALT LAKE CITY HCS"
+                            },
+                            "released": {
+                                "value": "3170511.1454"
+                            },
+                            "group": {
+                                "value": "O RX"
+                            },
+                            "signer": {},
+                            "status": {
+                                "code": "dc",
+                                "name": "DISCONTINUED"
+                            },
+                            "discontinued": {
+                                "date": "3170707.1037",
+                                "reason": "Test request from VCCM team to discontinue medication 7/7/2017 NES.",
+                                "by": "59919",
+                                "byName": "DAVIS,NANCY E"
+                            },
+                            "stop": {
+                                "value": "3170707"
+                            },
+                            "vuid": {
+                                "value": "4002701"
+                            },
+                            "acknowledgements": {
+                                "acknowledgement": []
+                            }
+                        },
+                        {
+                            "resultID": {
+                                "value": "17420369"
+                            },
+                            "start": {},
+                            "signed": {},
+                            "entered": {
+                                "value": "3170504.123"
+                            },
+                            "type": {
+                                "value": "Non-VA Meds"
+                            },
+                            "content": {
+                                "content": "Non-VA ACETAMINOPHEN 325MG TAB  325MGTAKE ONE TABLET BY MOUTH FIVE (5) TIMES PER DAY  Patient wants to buy from Non-VA pharmacy."
+                            },
+                            "signatureStatus": {
+                                "value": "NOT REQUIRED"
+                            },
+                            "provider": {},
+                            "service": {
+                                "value": "PSH"
+                            },
+                            "name": {
+                                "code": "2642",
+                                "name": "ACETAMINOPHEN 325MG TAB "
+                            },
+                            "location": {
+                                "code": "3069",
+                                "name": "PRIMARY CARE MISC"
+                            },
+                            "codingSystem": {},
+                            "id": {
+                                "value": "17420369;1"
+                            },
+                            "facility": {
+                                "code": "660",
+                                "name": "SALT LAKE CITY HCS"
+                            },
+                            "released": {
+                                "value": "3170504.123"
+                            },
+                            "group": {
+                                "value": "NV RX"
+                            },
+                            "signer": {},
+                            "status": {
+                                "code": "dc",
+                                "name": "DISCONTINUED"
+                            },
+                            "discontinued": {
+                                "date": "3170517.11",
+                                "by": "59919",
+                                "byName": "DAVIS,NANCY E"
+                            },
+                            "stop": {
+                                "value": "3170517.11"
+                            },
+                            "vuid": {
+                                "value": "4007158"
+                            },
+                            "acknowledgements": {
+                                "acknowledgement": []
+                            }
+                        }
+                    ]
+                },
+                "version": "1.13"
+            },
+            "errorSection": {
+                "errors": [],
+                "fatalErrors": [],
+                "warnings": []
+            }
+        },
+        {
+            "results": {
+                "timeZone": "-0400",
+                "orders": {
+                    "total": "0",
+                    "order": []
+                },
+                "version": "1.13"
+            },
+            "errorSection": {
+                "errors": [],
+                "fatalErrors": [],
+                "warnings": []
+            }
+        }
+    ]
+}

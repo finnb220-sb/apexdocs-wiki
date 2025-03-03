@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Create a Nurse Progress Note for Tele-EC Triage Nurses</description>
+    <flowDefinition>TED_Nurse_Progress_Note</flowDefinition>
+    <label>Nurse Progress Note</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

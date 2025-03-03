@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Other_Pharmacy__c</fullName>
+    <description>The name and address of the pharmacy where the prescription was ordered if other than the pharmacy above</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter the name and address of the pharmacy where the prescription was ordered if other than the pharmacy above</inlineHelpText>
+    <label>Other Pharmacy</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

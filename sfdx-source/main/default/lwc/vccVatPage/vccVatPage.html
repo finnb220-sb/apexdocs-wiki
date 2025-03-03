@@ -1,0 +1,21 @@
+<template>
+    <div class="slds-card">
+        <lightning-layout class="slds-grid_vertical-align-center">
+            <lightning-layout-item size="12">
+                <c-vcc-vat-page-header ontestmodechange={handleTestModeChange} ontestall={handleTestAll}></c-vcc-vat-page-header>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-spinner alternative-text="running tests" if:true={isLoading}></lightning-spinner>
+    </div>
+    <div class="slds-card">
+        <lightning-layout class="slds-grid_align-space slds-wrap">
+            <lightning-layout-item size="2" style="min-width: 152px">
+                <c-vcc-vat-page-services></c-vcc-vat-page-services>
+            </lightning-layout-item>
+            <lightning-layout-item size="8" style="min-width: 400px">
+                <c-vcc-vat-page-vista-list ontestsite={handleTestSite}></c-vcc-vat-page-vista-list>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-spinner alternative-text="running tests" if:true={isLoading}></lightning-spinner>
+    </div>
+</template>

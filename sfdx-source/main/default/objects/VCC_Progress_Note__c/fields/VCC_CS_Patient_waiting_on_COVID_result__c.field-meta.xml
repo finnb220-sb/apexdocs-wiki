@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_CS_Patient_waiting_on_COVID_result__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>To be checked if patient is currently waiting on results from a recent COVID test</description>
+    <externalId>false</externalId>
+    <label>Patient is waiting on COVID test results</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

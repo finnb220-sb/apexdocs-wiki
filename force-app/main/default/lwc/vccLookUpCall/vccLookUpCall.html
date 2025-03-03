@@ -1,0 +1,12 @@
+<template>
+    <div class="slds-p-left_small slds-border_left">
+        <c-vcc-custom-lookup
+            lookup-label="Clinic/Location"
+            object-api-name="HealthcareFacility"
+            user-persona={recordType}
+            onrecordselection={onClinicSelection}
+            selected-record-id={clinicId}
+            selected-value={clinicName}
+        ></c-vcc-custom-lookup>
+    </div>
+</template>

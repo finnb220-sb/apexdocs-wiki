@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <description>Adds 1 to the varCounter if a Progress Note is Unsigned.</description>
+        <name>Add_one_to_varCounter</name>
+        <label>Add one to varCounter</label>
+        <locationX>446</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>varCounter</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Through_Progress_Notes</targetReference>
+        </connector>
+    </assignments>
+    <customErrors>
+        <description>Error prevents the user from close the PrC Case and displays a message.</description>
+        <name>Cannot_Close_PrC_Case</name>
+        <label>Cannot Close PrC Case</label>
+        <locationX>50</locationX>
+        <locationY>995</locationY>
+        <customErrorMessages>
+            <errorMessage>Error!
+A Progress Note must be completed and signed to close a PrC Case involving a patient.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <description>Stores the Value of the Flow Fault</description>
+        <name>Fault_Error</name>
+        <label>Fault Error</label>
+        <locationX>578</locationX>
+        <locationY>395</locationY>
+        <customErrorMessages>
+            <errorMessage>{!$Flow.FaultMessage}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <description>Determines if there are Unsigned Progress Notes based on if the var Counter is Greater than 1 or not.</description>
+        <name>Are_there_Unsigned_Progress_Notes</name>
+        <label>Are there Unsigned Progress Notes?</label>
+        <locationX>182</locationX>
+        <locationY>887</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varCounter</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Cannot_Close_PrC_Case</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determines if the Progress Note is Signed or not.</description>
+        <name>Is_Progress_Note_Signed</name>
+        <label>Is Progress Note Signed?</label>
+        <locationX>358</locationX>
+        <locationY>503</locationY>
+        <defaultConnector>
+            <targetReference>Add_one_to_varCounter</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Unsigned</defaultConnectorLabel>
+        <rules>
+            <name>Signed</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop_Through_Progress_Notes.VCC_Signed__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Loop_Through_Progress_Notes.PC_Completed_via_EHR__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loop_Through_Progress_Notes</targetReference>
+            </connector>
+            <label>Signed or Completed via EHR</label>
+        </rules>
+    </decisions>
+    <description>1.16-PTEMSPC-1296: Prevents the User from closing the PrC Case until all related Progress Notes have been signed. 
+1.20-PTEMSPC-2449: Adds in functionality to bypass the error if a Progress Note is being completed via EHR.</description>
+    <environments>Default</environments>
+    <interviewLabel>PC Cannot Close PrC Case {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>PC Cannot Close PrC Case</label>
+    <loops>
+        <description>Loops through all the retrieved Progress Notes to determine if any are unsigned.</description>
+        <name>Loop_Through_Progress_Notes</name>
+        <label>Loop Through Progress Notes</label>
+        <locationX>182</locationX>
+        <locationY>395</locationY>
+        <collectionReference>Get_Progress_Notes</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Is_Progress_Note_Signed</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Are_there_Unsigned_Progress_Notes</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Retrieves all Progress Notes related to the PrC Case</description>
+        <name>Get_Progress_Notes</name>
+        <label>Get Progress Notes</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Through_Progress_Notes</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Fault_Error</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>PC_Case__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>VCC_Progress_Note__c</object>
+        <sortField>Id</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Progress_Notes</targetReference>
+        </connector>
+        <filterFormula>AND(
+NOT({!$Permission.DisableTriggersFlag}),
+ISCHANGED({!$Record.Status__c}),
+{!$Record.RecordType.DeveloperName} = &quot;Provider_Connect_Case&quot;,
+ISPICKVAL({!$Record.Status__c}, &quot;Closed Resolved&quot;))</filterFormula>
+        <object>PC_Case__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Stores a count to determine if there are unsigned Progress Notes related to the PrC Case or not. Anything Greater than 1 means there ARE Unsigned Progress Notes.</description>
+        <name>varCounter</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+</Flow>

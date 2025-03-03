@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Transfer_Patient_to_Other_CCService</fullName>
+    <active>true</active>
+    <description>If &quot;Transferred patient to other CC services&quot; is checked, then an option on the right must be selected.</description>
+    <errorConditionFormula>BEGINS( RecordType.DeveloperName, &quot;VCC_&quot;) &amp;&amp; !$Permission.DisableTriggersFlag &amp;&amp; AND( RecordType.DeveloperName =
+        &quot;VCC_Tier_II_Progress_Note&quot;, VCC_Transferred_to_other_CC_services__c = TRUE, VCC_Provided_patient_lab_order__c = FALSE, VCC_Referred_patient_for_follow_up_appt__c
+        = FALSE, VCC_Transferred_patient_Sched_Admin_VCV__c = FALSE, VCC_Transferred_to_Clinical_Triage_svc__c = FALSE, NOT $Permission.VCC_Disable_Progress_Note_Assignment_Rules
+        )</errorConditionFormula>
+    <errorDisplayField>VCC_Transferred_to_other_CC_services__c</errorDisplayField>
+    <errorMessage>If &quot;Transferred patient to other CC services&quot; is checked, then an option on the right must be selected.</errorMessage>
+</ValidationRule>

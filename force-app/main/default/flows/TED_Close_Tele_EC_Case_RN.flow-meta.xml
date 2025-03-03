@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <assignments>
+        <description>assign the value from the case outcome detail field that appears when choosing Care incomplete</description>
+        <name>Assign_Ci_COD</name>
+        <label>Assign Ci COD</label>
+        <locationX>578</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>CaseOutcomeDetailToUpdate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Case_Outcome_Detail_Ci</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Tele_EC_Case_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>assign the value from the case outcome detail field that appears when choosing Emergency Department</description>
+        <name>Assign_ED_COD</name>
+        <label>Assign ED COD</label>
+        <locationX>50</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>CaseOutcomeDetailToUpdate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Case_Outcome_Detail_ED</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Tele_EC_Case_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>assign the value from the case outcome detail field that appears when choosing Urgent Care</description>
+        <name>Assign_UC_COD</name>
+        <label>Assign UC COD</label>
+        <locationX>314</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>CaseOutcomeDetailToUpdate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Case_Outcome_Detail_UC</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Tele_EC_Case_Record</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <description>Tele-EC Case Outcome choice</description>
+        <name>c911</name>
+        <choiceText>911</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>911</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Tele-EC Case Outcome choice</description>
+        <name>CareIncomplete</name>
+        <choiceText>&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Care Incomplete&lt;/span&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Care Incomplete</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Closed</name>
+        <choiceText>Closed</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Closed</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Tele-EC Case Outcome choice when a Case is created in error.</description>
+        <name>ClosedCaseCreatedinError</name>
+        <choiceText>Closed - Case Created in Error</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Closed - Case Created in Error</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Picklist choice representing Community Emergency Department on the Case Outcome Detail Picklist</description>
+        <name>CommunityEmergencyDepartment</name>
+        <choiceText>Community Emergency Department</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Community Emergency Department</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Picklist choice representing Community Urgent Care on the Case Outcome Detail Picklist</description>
+        <name>CommunityUrgentCare</name>
+        <choiceText>Community Urgent Care</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Community Urgent Care</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Picklist choice representing Connection Failure on the Case Outcome Detail picklist</description>
+        <name>ConnectionFailure</name>
+        <choiceText>Connection Failure</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Connection Failure</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Tele-EC Case Outcome choice</description>
+        <name>DeclinedByVeteran</name>
+        <choiceText>&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Declined by Veteran&lt;/span&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Declined by Veteran</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Choice representing Emergency Department on the Case Outcome Picklist.</description>
+        <name>EmergencyDepartment</name>
+        <choiceText>Emergency Department</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Emergency Department</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Tele-EC Case Outcome choice</description>
+        <name>TransferredtoTeleEmergencyCareProvider</name>
+        <choiceText>&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Transferred to Tele Emergency Care Provider&lt;/span&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Transferred to Tele Emergency Care Provider</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Choice representing Urgent Care on the Case Outcome Picklist</description>
+        <name>UrgentCare</name>
+        <choiceText>Urgent Care</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Urgent Care</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Picklist choice representing VA Emergency Department on the Case Outcome Detail Picklist</description>
+        <name>VAEmergencyDepartment</name>
+        <choiceText>VA Emergency Department</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>VA Emergency Department</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Picklist choice representing VA Urgent Care on the Case Outcome Detail Picklist</description>
+        <name>VAUrgentCare</name>
+        <choiceText>VA Urgent Care</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>VA Urgent Care</stringValue>
+        </value>
+    </choices>
+    <decisions>
+        <description>Depending on which Case Outcome was chosen in the previous screen, A different Case Outcome Detail Picklist was used. It needs to be determined which field value needs to be stored based on the options chosen, so that the record can be updated accordingly.</description>
+        <name>Case_Outcome_Detail_Assignment_Signpost</name>
+        <label>Case Outcome Detail Assignment Signpost</label>
+        <locationX>446</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>Update_Tele_EC_Case_Record</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>e911 or C-CE Chosen</defaultConnectorLabel>
+        <rules>
+            <name>Emergency_Dept_Chosen</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case_Outcome</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>EmergencyDepartment</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_ED_COD</targetReference>
+            </connector>
+            <label>Emergency Dept Chosen</label>
+        </rules>
+        <rules>
+            <name>Urgent_Care_Chosen</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case_Outcome</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>UrgentCare</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_UC_COD</targetReference>
+            </connector>
+            <label>Urgent Care Chosen</label>
+        </rules>
+        <rules>
+            <name>Care_Incomplete_Chosen</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case_Outcome</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>CareIncomplete</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Ci_COD</targetReference>
+            </connector>
+            <label>Care Incomplete Chosen</label>
+        </rules>
+    </decisions>
+    <description>Screen flow for Registered Nurse to close a Tele-EC Case by selecting specific Case Outcome values.
+Release 1.13.0 Add Closed-Case Created in Error Outcome Choice
+Release 1.14.0 Remove PC_Veteran_Member_ID field to be deprecated from Update Records element
+Release 1.14.0 Updated Close Tele EC Case screens Outcomes and added Outcome detail dependent picklists, Update records changed to match, Outcome Detail Required when Outcome is Care Incomplete.
+Replace Subject field with Chief Complaint
+1.20.1 PTEMSTUC 3237 TECH: Update the Error Message Index Part 1</description>
+    <environments>Default</environments>
+    <interviewLabel>TED Close Tele-EC Case RN {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>TED Close Tele-EC Case RN</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordUpdates>
+        <description>Update a Tele-EC Case record for the selected Outcome and closed status.</description>
+        <name>Update_Tele_EC_Case_Record</name>
+        <label>Update Tele-EC Case Record</label>
+        <locationX>446</locationX>
+        <locationY>542</locationY>
+        <connector>
+            <targetReference>CaseIsClosed</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Action_Get_Records_Update_Records_Element_Error_Screen</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Closed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TED_Chief_Complaint__c</field>
+            <value>
+                <elementReference>Chief_Complaint</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TED_Closed_Reason__c</field>
+            <value>
+                <elementReference>CaseOutcomeDetailToUpdate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Case_Outcome__c</field>
+            <value>
+                <elementReference>Case_Outcome</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+    </recordUpdates>
+    <screens>
+        <description>Default Error Message</description>
+        <name>Action_Get_Records_Update_Records_Element_Error_Screen</name>
+        <label>Action/Get Records/Update Records Element Error Screen</label>
+        <locationX>1018</locationX>
+        <locationY>650</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Action_Get_Records_Update_Records_Element_Error_ScreenText</name>
+            <fieldText>&lt;p&gt;&lt;strong&gt;The requested action cannot be completed. Details on what went wrong are listed below.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Error details:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>Show user the Case has been Closed</description>
+        <name>CaseIsClosed</name>
+        <label>CaseIsClosed</label>
+        <locationX>446</locationX>
+        <locationY>650</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>CaseClosed</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;The Case has been closed.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>Close a Tele EC Case</description>
+        <name>Close_Tele_EC_Case</name>
+        <label>Close Tele-EC Case</label>
+        <locationX>446</locationX>
+        <locationY>134</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Case_Outcome_Detail_Assignment_Signpost</targetReference>
+        </connector>
+        <fields>
+            <name>Case_Status</name>
+            <choiceReferences>Closed</choiceReferences>
+            <dataType>String</dataType>
+            <defaultSelectedChoiceReference>Closed</defaultSelectedChoiceReference>
+            <fieldText>Case Status</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isDisabled>
+                <booleanValue>true</booleanValue>
+            </isDisabled>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Chief_Complaint</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>recordId.TED_Chief_Complaint__c</elementReference>
+            </defaultValue>
+            <fieldText>Chief Complaint</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Case_Outcome</name>
+            <choiceReferences>c911</choiceReferences>
+            <choiceReferences>EmergencyDepartment</choiceReferences>
+            <choiceReferences>UrgentCare</choiceReferences>
+            <choiceReferences>CareIncomplete</choiceReferences>
+            <choiceReferences>ClosedCaseCreatedinError</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Case Outcome</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Case_Outcome_Detail_ED</name>
+            <choiceReferences>CommunityEmergencyDepartment</choiceReferences>
+            <choiceReferences>VAEmergencyDepartment</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Case Outcome Detail</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Case_Outcome</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>EmergencyDepartment</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Case_Outcome_Detail_UC</name>
+            <choiceReferences>CommunityUrgentCare</choiceReferences>
+            <choiceReferences>VAUrgentCare</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Case Outcome Detail</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Case_Outcome</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>UrgentCare</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Case_Outcome_Detail_Ci</name>
+            <choiceReferences>DeclinedByVeteran</choiceReferences>
+            <choiceReferences>ConnectionFailure</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Case Outcome Detail</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Case_Outcome</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>CareIncomplete</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <nextOrFinishButtonLabel>Confirm</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>320</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Close_Tele_EC_Case</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Holds the chosen case outcome detail that the flow will update on the triggering record</description>
+        <name>CaseOutcomeDetailToUpdate</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Add Case record fields.</description>
+        <name>recordId</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+</Flow>

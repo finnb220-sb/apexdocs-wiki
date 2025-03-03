@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Veteran_Demographic_Alert__c</fullName>
+    <description>Alerts CCC employee every 90 days to verify the veteran&apos;s insurance &amp; primary phone &amp; address.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+OR(
+(TODAY()- VCC_Date_Patient_Verified__c &gt;= 90), 
+ISNULL(VCC_Date_Patient_Verified__c))
+&amp;&amp;
+VCC_Veteran_Phone_Address_Verified__c = FALSE, 
+&quot;Verify Veteran Insurance, Primary Phone &amp; Address are correct&quot;, NULL)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Alerts CCC employee every 90 days to verify the veteran&apos;s insurance &amp; primary phone &amp; address.</inlineHelpText>
+    <label>Veteran Demographic Alert:</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

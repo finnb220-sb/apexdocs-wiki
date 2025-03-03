@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TED_Time_Spent_in_Nurse_Encounter__c</fullName>
+    <description>Used to calculate the time spent in Nurse Encounters. Used in TUC Case Stage Total Time Set flow</description>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(Status,&quot;TED Nurse Encounter&quot;), ROUND(((NOW() - TUC_Status_Change_Time_Holder__c) *1440),0), TED_Total_Time_in_Nurse_Encounter__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Time Spent in Nurse Encounter</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

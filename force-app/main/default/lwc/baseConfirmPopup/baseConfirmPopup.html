@@ -1,0 +1,26 @@
+<template>
+    <div role="alert" tabindex="0">
+        <lightning-modal-header lwc:if={title} label={title}></lightning-modal-header>
+
+        <lightning-modal-body>
+            <c-base-error-message message={content} variant={variant} styling={styling}></c-base-error-message>
+        </lightning-modal-body>
+
+        <lightning-modal-footer>
+            <div class="slds-grid slds-gutters slds-grid_align-end">
+                <lightning-button
+                    lwc:if={cancel}
+                    class="slds-col"
+                    variant={cancelVariant}
+                    label={cancel}
+                    onclick={handleCancel}></lightning-button>
+                <lightning-button
+                    lwc:if={next}
+                    class={directionalBump}
+                    variant={nextVariant}
+                    label={next}
+                    onclick={handleNext}></lightning-button>
+            </div>
+        </lightning-modal-footer>
+    </div>
+</template>

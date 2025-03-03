@@ -1,0 +1,24 @@
+<template>
+    <lightning-modal-header lwc:if={headerComponentToRender}>
+        <lwc:component
+            data-id={headerComponentToRender.name}
+            lwc:is={headerComponentToRender.cmp}
+            lwc:spread={headerComponentToRender.props}></lwc:component>
+    </lightning-modal-header>
+    <lightning-modal-body>
+        <div class="container" lwc:if={bodyComponentToRender}>
+            <lwc:component
+                data-id={bodyComponentToRender.name}
+                lwc:is={bodyComponentToRender.cmp}
+                lwc:spread={bodyComponentToRender.props}></lwc:component>
+        </div>
+    </lightning-modal-body>
+    <lightning-modal-footer>
+        <div class="lwc-container" lwc:if={footerComponentToRender}>
+            <lwc:component
+                data-id={footerComponentToRender.name}
+                lwc:is={footerComponentToRender.cmp}
+                lwc:spread={footerComponentToRender.props}></lwc:component>
+        </div>
+    </lightning-modal-footer>
+</template>

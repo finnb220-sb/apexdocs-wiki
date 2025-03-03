@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Verify_Caller_Compact</fullName>
+    <fields>Subject</fields>
+    <fields>WhatId</fields>
+    <fields>VCC_Relative_Type_Picklist__c</fields>
+    <fields>VCC_Patient_Information_Verified__c</fields>
+    <label>VAHC Verify Caller Compact</label>
+</CompactLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reviewee__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (RecordType.Name = &apos;Triage Nurse Peer Review&apos;, NTSP_Case__r.CreatedBy.FirstName + &quot; &quot; + NTSP_Case__r.CreatedBy.LastName,
+        NTSP_Case__r.Telestroke_Consultant__r.FirstName + &quot; &quot; + NTSP_Case__r.Telestroke_Consultant__r.LastName)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>This field is auto populated upon save.</inlineHelpText>
+    <label>Reviewee</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

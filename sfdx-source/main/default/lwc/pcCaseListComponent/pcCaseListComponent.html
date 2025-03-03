@@ -1,0 +1,41 @@
+<template>
+    <article class="slds-card" style="background-color: #f3f3f3">
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <lightning-icon icon-name="standard:case_transcript" size="medium"></lightning-icon>
+                <h1 class="slds-tile__title slds-text-title_bold slds-m-left_small" title="My Open Case(s)">
+                    My Open Case(s)
+                </h1>
+            </header>
+        </div>
+    </article>
+    <lightning-card>
+        <article class="slds-card slds-grid">
+            <div class="slds-grid slds-grid_vertical-align-center">
+                <template lwc:if={openCase}>
+                    <div class="slds-col slds-m-left_small">
+                        <div class="slds-m-bottom_xxx-small slds-text-title_bold">Case:</div>
+                        <div class="slds-m-bottom_xxx-small">Specialty:</div>
+                        <template lwc:if={hasPatientAccountField}>
+                            <div class="slds-m-bottom_xxx-small">Patient Name:</div>
+                        </template>
+                        <div class="slds-m-bottom_xxx-small">FLP:</div>
+                        <div class="slds-m-bottom_xxx-small">Reason for Consultation:</div>
+                    </div>
+                    <div class="slds-col slds-m-left_small">
+                        <div class="slds-m-bottom_xxx-small slds-text-title_bold">{openCase.Name}</div>
+                        <div class="slds-m-bottom_xxx-small">{openCase.Specialty__c}</div>
+                        <template lwc:if={hasPatientAccountField}>
+                            <div class="slds-m-bottom_xxx-small">{openCase.Patient_Account__r.Name}</div>
+                        </template>
+                        <div class="slds-m-bottom_xxx-small">{openCase.PCP__c}</div>
+                        <div class="slds-m-bottom_xxx-small">{openCase.Case_Details__c}</div>
+                    </div>
+                </template>
+                <template lwc:else>
+                    <div class="slds-m-left_xx-large slds-text-title_bold">You currently have no assigned cases.</div>
+                </template>
+            </div>
+        </article>
+    </lightning-card>
+</template>

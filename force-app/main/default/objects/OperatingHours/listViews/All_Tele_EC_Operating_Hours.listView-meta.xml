@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Tele_EC_Operating_Hours</fullName>
+    <columns>Name</columns>
+    <columns>TimeZone</columns>
+    <columns>VCC_VISN__c</columns>
+    <columns>LastModifiedDate</columns>
+    <columns>LastModifiedBy</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>VCC_Operating_Hours_Type__c</field>
+        <operation>equals</operation>
+        <value>Tele-Ec</value>
+    </filters>
+    <label>All Tele-EC Operating Hours</label>
+</ListView>

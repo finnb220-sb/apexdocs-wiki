@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Passing_Tests_Percentage__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The total passing unit test percentage for the test run</description>
+    <externalId>false</externalId>
+    <formula>Total_Passing_Tests__c / Total_Tests__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>The total passing unit test percentage for the test run</inlineHelpText>
+    <label>Passing Tests Percentage</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_No_purulent_nasal_drainage_sore_thro__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>True if these HEENT (Head, Eyes, Ears, Nose, Throat symptoms do not exist in patient during virtual visit</description>
+    <externalId>false</externalId>
+    <inlineHelpText>True if these HEENT (Head, Eyes, Ears, Nose, Throat symptoms do not exist in patient during virtual visit</inlineHelpText>
+    <label>No purulent nasal drainage</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

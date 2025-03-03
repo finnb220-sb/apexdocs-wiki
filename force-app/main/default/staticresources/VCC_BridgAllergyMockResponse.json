@@ -1,0 +1,2924 @@
+{
+  "clinicalData": {
+    "templateId": "AllergiesRead40010",
+    "requestId": "7fbd616f-94dc-4e6a-a15c-635822499533",
+    "patient": [
+      {
+        "requestedNationalId": "1012591986V514649",
+        "requestedResolvedIdentifiers": [],
+        "requestedExcludedIdentifiers": [],
+        "resultantIdentifiers": [
+          {
+            "identity": "7206668",
+            "assigningFacility": "992",
+            "assigningAuthority": "USVHA"
+          },
+          {
+            "identity": "666120018",
+            "assigningFacility": "200BRLS",
+            "assigningAuthority": "USVBA"
+          },
+          {
+            "identity": "201503",
+            "assigningFacility": "613",
+            "assigningAuthority": "USVHA"
+          },
+          {
+            "identity": "8000806",
+            "assigningFacility": "657",
+            "assigningAuthority": "USVHA"
+          },
+          {
+            "identity": "1012591986V514649",
+            "assigningFacility": "200M",
+            "assigningAuthority": "USVHA"
+          },
+          {
+            "identity": "600027668",
+            "assigningFacility": "200CORP",
+            "assigningAuthority": "USVBA"
+          }
+        ],
+        "intoleranceConditions": [
+          {
+            "recordIdentifier": {
+              "identity": "42589",
+              "namespaceId": "992_120.8"
+            },
+            "patient": {
+              "identifier": {
+                "identity": "7206668",
+                "assigningFacility": "992",
+                "assigningAuthority": "USVHA"
+              },
+              "name": { "given": "ONE", "family": "HDRENVGK" }
+            },
+            "observationTime": { "literal": "20110126115300-0700" },
+            "agent": { "code": "BEEF PRODUCTS" },
+            "allergyType": {
+              "code": "F",
+              "displayText": "FOOD",
+              "codingSystem": "L"
+            },
+            "gmrAllergyAgent": {
+              "code": "4691078",
+              "displayText": "BEEF PRODUCTS",
+              "codingSystem": "99VA120.82"
+            },
+            "informationSourceCategory": {
+              "code": "4500978",
+              "displayText": "OBSERVED",
+              "codingSystem": "99VA8985.1"
+            },
+            "mechanism": {
+              "code": "4501004",
+              "displayText": "ALLERGY",
+              "codingSystem": "99VA8985.1"
+            },
+            "status": "E",
+            "verified": "YES",
+            "reaction": [
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4691091",
+                  "displayText": "NAUSEA AND VOMITING",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "520651274",
+                      "assigningFacility": "992",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "GAURAV",
+                      "family": "KHANNA",
+                      "title": "BAY PINES TEST LAB"
+                    }
+                  }
+                }
+              },
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4637156",
+                  "displayText": "URTICARIA",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "520651274",
+                      "assigningFacility": "992",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "GAURAV",
+                      "family": "KHANNA",
+                      "title": "BAY PINES TEST LAB"
+                    }
+                  }
+                }
+              },
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4637011",
+                  "displayText": "DIARRHEA",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "520651274",
+                      "assigningFacility": "992",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "GAURAV",
+                      "family": "KHANNA",
+                      "title": "BAY PINES TEST LAB"
+                    }
+                  }
+                }
+              }
+            ],
+            "verifier": {
+              "time_renamed": { "literal": "20110126115438-0700" },
+              "practitioner": { "identifier": {}, "name": {} }
+            },
+            "author": {
+              "comment": " æ£Æç and ASÇîï CHÄÆACTÉR  <>?:\"{}&#124;&(_)&#124; ",
+              "time_renamed": { "literal": "20110126115300-0700" },
+              "practitioner": {
+                "identifier": {
+                  "identity": "520651274",
+                  "assigningFacility": "992",
+                  "assigningAuthority": "USVHA"
+                },
+                "name": {
+                  "given": "GAURAV",
+                  "family": "KHANNA",
+                  "title": "BAY PINES TEST LAB"
+                }
+              }
+            },
+            "errorEnterer": {
+              "comment": " TEST <>&&<>\"\" æ£Æç and ASÇîï CHÄÆACTÉR ",
+              "time_renamed": { "literal": "20110920110511-0600" },
+              "practitioner": {
+                "identifier": {
+                  "identity": "520651274",
+                  "assigningFacility": "992",
+                  "assigningAuthority": "USVHA"
+                },
+                "name": {
+                  "given": "GAURAV",
+                  "family": "KHANNA",
+                  "title": "BAY PINES TEST LAB"
+                }
+              }
+            },
+            "idBandMarker": [],
+            "chartMarker": [
+              {
+                "time_renamed": { "literal": "20110126115436-0700" },
+                "practitioner": {
+                  "identifier": {
+                    "identity": "520651274",
+                    "assigningFacility": "992",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "GAURAV",
+                    "family": "KHANNA",
+                    "title": "BAY PINES TEST LAB"
+                  }
+                }
+              }
+            ],
+            "commentEvents": [
+              {
+                "date_renamed": { "literal": "20110126115437-0700" },
+                "author": {
+                  "identifier": {
+                    "identity": "520651274",
+                    "assigningFacility": "992",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "GAURAV",
+                    "family": "KHANNA",
+                    "title": "BAY PINES TEST LAB"
+                  }
+                },
+                "commentType": {
+                  "code": "4500978",
+                  "displayText": "OBSERVED",
+                  "codingSystem": "99VA8985.1"
+                },
+                "comments": [
+                  "æ£Æç and ASÇîï CHÄÆACTÉR \n<>?:\"{}&#124;&(_)&#124;\n"
+                ]
+              },
+              {
+                "date_renamed": { "literal": "20110920110513-0600" },
+                "author": {
+                  "identifier": {
+                    "identity": "520651274",
+                    "assigningFacility": "992",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "GAURAV",
+                    "family": "KHANNA",
+                    "title": "BAY PINES TEST LAB"
+                  }
+                },
+                "commentType": {
+                  "code": "4500974",
+                  "displayText": "ERRORED",
+                  "codingSystem": "99VA8985.1"
+                },
+                "comments": ["TEST <>&&<>\"\" æ£Æç and ASÇîï CHÄÆACTÉR "]
+              }
+            ],
+            "drugClass": [],
+            "drugIngredient": [],
+            "facilityIdentifier": {
+              "identity": "992",
+              "name": "CHEYENNE, WY",
+              "assigningAuthority": "L"
+            },
+            "recordSource": {
+              "universalId": "TEST.CHEYENNE.MED.VA.GOV",
+              "universalIdType": "DNS"
+            },
+            "recordUpdateTime": {}
+          },
+          {
+            "recordIdentifier": {
+              "identity": "42970",
+              "namespaceId": "992_120.8"
+            },
+            "patient": {
+              "identifier": {
+                "identity": "7206668",
+                "assigningFacility": "992",
+                "assigningAuthority": "USVHA"
+              },
+              "name": { "given": "ONE", "family": "HDRENVGK" }
+            },
+            "observationTime": { "literal": "20110927172000-0600" },
+            "agent": { "code": "PORK PRODUCTS" },
+            "allergyType": {
+              "code": "F",
+              "displayText": "FOOD",
+              "codingSystem": "L"
+            },
+            "gmrAllergyAgent": {
+              "code": "4691025",
+              "displayText": "PORK PRODUCTS",
+              "codingSystem": "99VA120.82"
+            },
+            "informationSourceCategory": {
+              "code": "4500978",
+              "displayText": "OBSERVED",
+              "codingSystem": "99VA8985.1"
+            },
+            "mechanism": {
+              "code": "4501004",
+              "displayText": "ALLERGY",
+              "codingSystem": "99VA8985.1"
+            },
+            "status": "F",
+            "verified": "YES",
+            "reaction": [
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4637157",
+                  "displayText": "ITCHING OF EYE",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "520651274",
+                      "assigningFacility": "992",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "GAURAV",
+                      "family": "KHANNA",
+                      "title": "BAY PINES TEST LAB"
+                    }
+                  }
+                }
+              },
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4691091",
+                  "displayText": "NAUSEA AND VOMITING",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "520651274",
+                      "assigningFacility": "992",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "GAURAV",
+                      "family": "KHANNA",
+                      "title": "BAY PINES TEST LAB"
+                    }
+                  }
+                }
+              }
+            ],
+            "verifier": {
+              "time_renamed": { "literal": "20110927172014-0600" },
+              "practitioner": { "identifier": {}, "name": {} }
+            },
+            "author": {
+              "comment": " test ",
+              "time_renamed": { "literal": "20110927172000-0600" },
+              "practitioner": {
+                "identifier": {
+                  "identity": "520651274",
+                  "assigningFacility": "992",
+                  "assigningAuthority": "USVHA"
+                },
+                "name": {
+                  "given": "GAURAV",
+                  "family": "KHANNA",
+                  "title": "BAY PINES TEST LAB"
+                }
+              }
+            },
+            "errorEnterer": {
+              "time_renamed": {},
+              "practitioner": { "identifier": {}, "name": {} }
+            },
+            "idBandMarker": [],
+            "chartMarker": [
+              {
+                "time_renamed": { "literal": "20110927172012-0600" },
+                "practitioner": {
+                  "identifier": {
+                    "identity": "520651274",
+                    "assigningFacility": "992",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "GAURAV",
+                    "family": "KHANNA",
+                    "title": "BAY PINES TEST LAB"
+                  }
+                }
+              }
+            ],
+            "commentEvents": [
+              {
+                "date_renamed": { "literal": "20110927172013-0600" },
+                "author": {
+                  "identifier": {
+                    "identity": "520651274",
+                    "assigningFacility": "992",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "GAURAV",
+                    "family": "KHANNA",
+                    "title": "BAY PINES TEST LAB"
+                  }
+                },
+                "commentType": {
+                  "code": "4500978",
+                  "displayText": "OBSERVED",
+                  "codingSystem": "99VA8985.1"
+                },
+                "comments": ["test "]
+              }
+            ],
+            "drugClass": [],
+            "drugIngredient": [],
+            "facilityIdentifier": {
+              "identity": "992",
+              "name": "CHEYENNE, WY",
+              "assigningAuthority": "L"
+            },
+            "recordSource": {
+              "universalId": "TEST.CHEYENNE.MED.VA.GOV",
+              "universalIdType": "DNS"
+            },
+            "recordUpdateTime": {}
+          },
+          {
+            "recordIdentifier": {
+              "identity": "43251",
+              "namespaceId": "992_120.8"
+            },
+            "patient": {
+              "identifier": {
+                "identity": "7206668",
+                "assigningFacility": "992",
+                "assigningAuthority": "USVHA"
+              },
+              "name": { "given": "ONE", "family": "HDRENVGK" }
+            },
+            "observationTime": { "literal": "20120829114800-0600" },
+            "agent": { "code": "BEEF" },
+            "allergyType": {
+              "code": "F",
+              "displayText": "FOOD",
+              "codingSystem": "L"
+            },
+            "gmrAllergyAgent": {
+              "code": "4637406",
+              "displayText": "BEEF",
+              "codingSystem": "99VA120.82"
+            },
+            "informationSourceCategory": {
+              "code": "4500975",
+              "displayText": "HISTORICAL",
+              "codingSystem": "99VA8985.1"
+            },
+            "mechanism": {
+              "code": "4501004",
+              "displayText": "ALLERGY",
+              "codingSystem": "99VA8985.1"
+            },
+            "status": "F",
+            "verified": "YES",
+            "reaction": [
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4637050",
+                  "displayText": "ANXIETY",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "520651274",
+                      "assigningFacility": "992",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "GAURAV",
+                      "family": "KHANNA",
+                      "title": "BAY PINES TEST LAB"
+                    }
+                  }
+                }
+              },
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4637472",
+                  "displayText": "DROWSY",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "520651274",
+                      "assigningFacility": "992",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "GAURAV",
+                      "family": "KHANNA",
+                      "title": "BAY PINES TEST LAB"
+                    }
+                  }
+                }
+              }
+            ],
+            "verifier": {
+              "time_renamed": { "literal": "20120829114815-0600" },
+              "practitioner": { "identifier": {}, "name": {} }
+            },
+            "author": {
+              "comment": " sdsfd ",
+              "time_renamed": { "literal": "20120829114800-0600" },
+              "practitioner": {
+                "identifier": {
+                  "identity": "520651274",
+                  "assigningFacility": "992",
+                  "assigningAuthority": "USVHA"
+                },
+                "name": {
+                  "given": "GAURAV",
+                  "family": "KHANNA",
+                  "title": "BAY PINES TEST LAB"
+                }
+              }
+            },
+            "errorEnterer": {
+              "time_renamed": {},
+              "practitioner": { "identifier": {}, "name": {} }
+            },
+            "idBandMarker": [],
+            "chartMarker": [
+              {
+                "time_renamed": { "literal": "20120829114814-0600" },
+                "practitioner": {
+                  "identifier": {
+                    "identity": "520651274",
+                    "assigningFacility": "992",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "GAURAV",
+                    "family": "KHANNA",
+                    "title": "BAY PINES TEST LAB"
+                  }
+                }
+              }
+            ],
+            "commentEvents": [
+              {
+                "date_renamed": { "literal": "20120829114815-0600" },
+                "author": {
+                  "identifier": {
+                    "identity": "520651274",
+                    "assigningFacility": "992",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "GAURAV",
+                    "family": "KHANNA",
+                    "title": "BAY PINES TEST LAB"
+                  }
+                },
+                "commentType": {
+                  "code": "4500978",
+                  "displayText": "OBSERVED",
+                  "codingSystem": "99VA8985.1"
+                },
+                "comments": ["sdsfd "]
+              }
+            ],
+            "drugClass": [],
+            "drugIngredient": [],
+            "facilityIdentifier": {
+              "identity": "992",
+              "name": "CHEYENNE, WY",
+              "assigningAuthority": "L"
+            },
+            "recordSource": {
+              "universalId": "TEST.CHEYENNE.MED.VA.GOV",
+              "universalIdType": "DNS"
+            },
+            "recordUpdateTime": {}
+          },
+          {
+            "recordIdentifier": {
+              "identity": "43414",
+              "namespaceId": "992_120.8"
+            },
+            "patient": {
+              "identifier": {
+                "identity": "7206668",
+                "assigningFacility": "992",
+                "assigningAuthority": "USVHA"
+              },
+              "name": { "given": "ONE", "family": "HDRENVGK" }
+            },
+            "observationTime": { "literal": "20130312171400-0600" },
+            "agent": { "code": "CORN" },
+            "allergyType": {
+              "code": "DF",
+              "displayText": "DRUG, FOOD",
+              "codingSystem": "L"
+            },
+            "gmrAllergyAgent": {
+              "code": "4636670",
+              "displayText": "CORN",
+              "codingSystem": "99VA120.82"
+            },
+            "informationSourceCategory": {
+              "code": "4500978",
+              "displayText": "OBSERVED",
+              "codingSystem": "99VA8985.1"
+            },
+            "mechanism": {
+              "code": "4501004",
+              "displayText": "ALLERGY",
+              "codingSystem": "99VA8985.1"
+            },
+            "status": "F",
+            "verified": "YES",
+            "reaction": [
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4691091",
+                  "displayText": "NAUSEA AND VOMITING",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "520651274",
+                      "assigningFacility": "992",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "GAURAV",
+                      "family": "KHANNA",
+                      "title": "BAY PINES TEST LAB"
+                    }
+                  }
+                }
+              },
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4637156",
+                  "displayText": "URTICARIA",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "520651274",
+                      "assigningFacility": "992",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "GAURAV",
+                      "family": "KHANNA",
+                      "title": "BAY PINES TEST LAB"
+                    }
+                  }
+                }
+              },
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4637149",
+                  "displayText": "WHEEZING",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "520651274",
+                      "assigningFacility": "992",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "GAURAV",
+                      "family": "KHANNA",
+                      "title": "BAY PINES TEST LAB"
+                    }
+                  }
+                }
+              }
+            ],
+            "verifier": {
+              "time_renamed": { "literal": "20130312171523-0600" },
+              "practitioner": { "identifier": {}, "name": {} }
+            },
+            "author": {
+              "comment": " Testing the MHV allergy data ",
+              "time_renamed": { "literal": "20130312171400-0600" },
+              "practitioner": {
+                "identifier": {
+                  "identity": "520651274",
+                  "assigningFacility": "992",
+                  "assigningAuthority": "USVHA"
+                },
+                "name": {
+                  "given": "GAURAV",
+                  "family": "KHANNA",
+                  "title": "BAY PINES TEST LAB"
+                }
+              }
+            },
+            "errorEnterer": {
+              "time_renamed": {},
+              "practitioner": { "identifier": {}, "name": {} }
+            },
+            "idBandMarker": [],
+            "chartMarker": [
+              {
+                "time_renamed": { "literal": "20130312171521-0600" },
+                "practitioner": {
+                  "identifier": {
+                    "identity": "520651274",
+                    "assigningFacility": "992",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "GAURAV",
+                    "family": "KHANNA",
+                    "title": "BAY PINES TEST LAB"
+                  }
+                }
+              }
+            ],
+            "commentEvents": [
+              {
+                "date_renamed": { "literal": "20130312171522-0600" },
+                "author": {
+                  "identifier": {
+                    "identity": "520651274",
+                    "assigningFacility": "992",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "GAURAV",
+                    "family": "KHANNA",
+                    "title": "BAY PINES TEST LAB"
+                  }
+                },
+                "commentType": {
+                  "code": "4500978",
+                  "displayText": "OBSERVED",
+                  "codingSystem": "99VA8985.1"
+                },
+                "comments": ["Testing the MHV allergy data "]
+              }
+            ],
+            "drugClass": [],
+            "drugIngredient": [
+              {
+                "code": {
+                  "code": "4020099",
+                  "displayText": "CORN OIL",
+                  "codingSystem": "99VA50.416"
+                }
+              },
+              {
+                "code": {
+                  "code": "4024440",
+                  "displayText": "CORN STARCH",
+                  "codingSystem": "99VA50.416"
+                }
+              },
+              {
+                "code": {
+                  "code": "4025465",
+                  "displayText": "CORNSILK",
+                  "codingSystem": "99VA50.416"
+                }
+              }
+            ],
+            "facilityIdentifier": {
+              "identity": "992",
+              "name": "CHEYENNE, WY",
+              "assigningAuthority": "L"
+            },
+            "recordSource": {
+              "universalId": "TEST.CHEYENNE.MED.VA.GOV",
+              "universalIdType": "DNS"
+            },
+            "recordUpdateTime": {}
+          },
+          {
+            "recordIdentifier": {
+              "identity": "61035",
+              "namespaceId": "613_120.8"
+            },
+            "patient": {
+              "identifier": {
+                "identity": "201503",
+                "assigningFacility": "613",
+                "assigningAuthority": "USVHA"
+              },
+              "name": { "given": "ONE", "family": "HDRENVGK" }
+            },
+            "observationTime": { "literal": "20110126120500-0500" },
+            "agent": { "code": "PORK" },
+            "allergyType": {
+              "code": "F",
+              "displayText": "FOOD",
+              "codingSystem": "L"
+            },
+            "gmrAllergyAgent": {
+              "code": "4637336",
+              "displayText": "PORK",
+              "codingSystem": "99VA120.82"
+            },
+            "informationSourceCategory": {
+              "code": "4500975",
+              "displayText": "HISTORICAL",
+              "codingSystem": "99VA8985.1"
+            },
+            "mechanism": {
+              "code": "4501004",
+              "displayText": "ALLERGY",
+              "codingSystem": "99VA8985.1"
+            },
+            "status": "F",
+            "verified": "NO",
+            "reaction": [
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4691091",
+                  "displayText": "NAUSEA AND VOMITING",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "65542",
+                      "assigningFacility": "613",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "MARUF",
+                      "family": "AHMED",
+                      "title": "BAY PINES TEST LAB"
+                    }
+                  }
+                }
+              },
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4637011",
+                  "displayText": "DIARRHEA",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "65542",
+                      "assigningFacility": "613",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "MARUF",
+                      "family": "AHMED",
+                      "title": "BAY PINES TEST LAB"
+                    }
+                  }
+                }
+              },
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4637050",
+                  "displayText": "ANXIETY",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "65542",
+                      "assigningFacility": "613",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "MARUF",
+                      "family": "AHMED",
+                      "title": "BAY PINES TEST LAB"
+                    }
+                  }
+                }
+              }
+            ],
+            "verifier": {
+              "time_renamed": {},
+              "practitioner": { "identifier": {}, "name": {} }
+            },
+            "author": {
+              "comment": " æ£Æç and ASÇîï CHÄÆACTÉR  <>?:\"{}&#124;&(_)*^&#124; THIS IS SECOND LINE THIS IS THIRD LINE THIS IS FOURTH LINE THIS IS FIFTH LINE THIS IS SIXTH LINE THIS IS SEVENTH LINE THIS IS EIGHT LINE THIS IS LAST LINE OF THIS COMMENT",
+              "time_renamed": { "literal": "20110126120500-0500" },
+              "practitioner": {
+                "identifier": {
+                  "identity": "65542",
+                  "assigningFacility": "613",
+                  "assigningAuthority": "USVHA"
+                },
+                "name": {
+                  "given": "MARUF",
+                  "family": "AHMED",
+                  "title": "BAY PINES TEST LAB"
+                }
+              }
+            },
+            "errorEnterer": {
+              "time_renamed": {},
+              "practitioner": { "identifier": {}, "name": {} }
+            },
+            "idBandMarker": [],
+            "chartMarker": [
+              {
+                "time_renamed": { "literal": "20110126120557-0500" },
+                "practitioner": {
+                  "identifier": {
+                    "identity": "65542",
+                    "assigningFacility": "613",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "MARUF",
+                    "family": "AHMED",
+                    "title": "BAY PINES TEST LAB"
+                  }
+                }
+              }
+            ],
+            "commentEvents": [
+              {
+                "date_renamed": { "literal": "20110126120558-0500" },
+                "author": {
+                  "identifier": {
+                    "identity": "65542",
+                    "assigningFacility": "613",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "MARUF",
+                    "family": "AHMED",
+                    "title": "BAY PINES TEST LAB"
+                  }
+                },
+                "commentType": {
+                  "code": "4500978",
+                  "displayText": "OBSERVED",
+                  "codingSystem": "99VA8985.1"
+                },
+                "comments": [
+                  "æ£Æç and ASÇîï CHÄÆACTÉR \n<>?:\"{}&#124;&(_)*^&#124;\nTHIS IS SECOND LINE\nTHIS IS THIRD LINE\nTHIS IS FOURTH LINE\nTHIS IS FIFTH LINE\nTHIS IS SIXTH LINE\nTHIS IS SEVENTH LINE\nTHIS IS EIGHT LINE\nTHIS IS LAST LINE OF THIS COMMENT"
+                ]
+              }
+            ],
+            "drugClass": [],
+            "drugIngredient": [],
+            "facilityIdentifier": {
+              "identity": "613",
+              "name": "MARTINSBURG VAMC",
+              "assigningAuthority": "L"
+            },
+            "recordSource": {
+              "universalId": "TEST.MARTINSBURG.MED.VA.GOV",
+              "universalIdType": "DNS"
+            },
+            "recordUpdateTime": {}
+          },
+          {
+            "recordIdentifier": {
+              "identity": "61054",
+              "namespaceId": "613_120.8"
+            },
+            "patient": {
+              "identifier": {
+                "identity": "201503",
+                "assigningFacility": "613",
+                "assigningAuthority": "USVHA"
+              },
+              "name": { "given": "ONE", "family": "HDRENVGK" }
+            },
+            "observationTime": { "literal": "20110203172000-0500" },
+            "agent": { "code": "CORNED BEEF" },
+            "allergyType": {
+              "code": "F",
+              "displayText": "FOOD",
+              "codingSystem": "L"
+            },
+            "gmrAllergyAgent": {
+              "code": "4636656",
+              "displayText": "CORNED BEEF",
+              "codingSystem": "99VA120.82"
+            },
+            "informationSourceCategory": {
+              "code": "4500978",
+              "displayText": "OBSERVED",
+              "codingSystem": "99VA8985.1"
+            },
+            "mechanism": {
+              "code": "4501004",
+              "displayText": "ALLERGY",
+              "codingSystem": "99VA8985.1"
+            },
+            "status": "F",
+            "verified": "NO",
+            "reaction": [
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4691091",
+                  "displayText": "NAUSEA AND VOMITING",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "65542",
+                      "assigningFacility": "613",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "MARUF",
+                      "family": "AHMED",
+                      "title": "BAY PINES TEST LAB"
+                    }
+                  }
+                }
+              },
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4637011",
+                  "displayText": "DIARRHEA",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "65542",
+                      "assigningFacility": "613",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "MARUF",
+                      "family": "AHMED",
+                      "title": "BAY PINES TEST LAB"
+                    }
+                  }
+                }
+              }
+            ],
+            "verifier": {
+              "time_renamed": {},
+              "practitioner": { "identifier": {}, "name": {} }
+            },
+            "author": {
+              "comment": " <>?:\"{}&#124;&(_)&#124; ",
+              "time_renamed": { "literal": "20110203172000-0500" },
+              "practitioner": {
+                "identifier": {
+                  "identity": "65542",
+                  "assigningFacility": "613",
+                  "assigningAuthority": "USVHA"
+                },
+                "name": {
+                  "given": "MARUF",
+                  "family": "AHMED",
+                  "title": "BAY PINES TEST LAB"
+                }
+              }
+            },
+            "errorEnterer": {
+              "time_renamed": {},
+              "practitioner": { "identifier": {}, "name": {} }
+            },
+            "idBandMarker": [],
+            "chartMarker": [
+              {
+                "time_renamed": { "literal": "20110203172117-0500" },
+                "practitioner": {
+                  "identifier": {
+                    "identity": "65542",
+                    "assigningFacility": "613",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "MARUF",
+                    "family": "AHMED",
+                    "title": "BAY PINES TEST LAB"
+                  }
+                }
+              }
+            ],
+            "commentEvents": [
+              {
+                "date_renamed": { "literal": "20110203172118-0500" },
+                "author": {
+                  "identifier": {
+                    "identity": "65542",
+                    "assigningFacility": "613",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "MARUF",
+                    "family": "AHMED",
+                    "title": "BAY PINES TEST LAB"
+                  }
+                },
+                "commentType": {
+                  "code": "4500978",
+                  "displayText": "OBSERVED",
+                  "codingSystem": "99VA8985.1"
+                },
+                "comments": ["<>?:\"{}&#124;&(_)&#124; "]
+              }
+            ],
+            "drugClass": [],
+            "drugIngredient": [],
+            "facilityIdentifier": {
+              "identity": "613",
+              "name": "MARTINSBURG VAMC",
+              "assigningAuthority": "L"
+            },
+            "recordSource": {
+              "universalId": "TEST.MARTINSBURG.MED.VA.GOV",
+              "universalIdType": "DNS"
+            },
+            "recordUpdateTime": {}
+          },
+          {
+            "recordIdentifier": {
+              "identity": "61177",
+              "namespaceId": "613_120.8"
+            },
+            "patient": {
+              "identifier": {
+                "identity": "201503",
+                "assigningFacility": "613",
+                "assigningAuthority": "USVHA"
+              },
+              "name": { "given": "ONE", "family": "HDRENVGK" }
+            },
+            "observationTime": { "literal": "20120225134200-0500" },
+            "agent": { "code": "PENICILLIN/PROBENECID" },
+            "allergyType": {
+              "code": "D",
+              "displayText": "DRUG",
+              "codingSystem": "L"
+            },
+            "gmrAllergyAgent": {
+              "code": "4022183",
+              "displayText": "PENICILLIN/PROBENECID",
+              "codingSystem": "99VA50.6"
+            },
+            "informationSourceCategory": {
+              "code": "4500978",
+              "displayText": "OBSERVED",
+              "codingSystem": "99VA8985.1"
+            },
+            "mechanism": {
+              "code": "4501004",
+              "displayText": "ALLERGY",
+              "codingSystem": "99VA8985.1"
+            },
+            "status": "E",
+            "verified": "NO",
+            "reaction": [
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4637191",
+                  "displayText": "PRURITUS",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "65542",
+                      "assigningFacility": "613",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "MARUF",
+                      "family": "AHMED",
+                      "title": "BAY PINES TEST LAB"
+                    }
+                  }
+                }
+              },
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4637011",
+                  "displayText": "DIARRHEA",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "65542",
+                      "assigningFacility": "613",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "MARUF",
+                      "family": "AHMED",
+                      "title": "BAY PINES TEST LAB"
+                    }
+                  }
+                }
+              }
+            ],
+            "verifier": {
+              "time_renamed": {},
+              "practitioner": { "identifier": {}, "name": {} }
+            },
+            "author": {
+              "comment": " TESTING SMOK TEST ",
+              "time_renamed": { "literal": "20120225134200-0500" },
+              "practitioner": {
+                "identifier": {
+                  "identity": "65542",
+                  "assigningFacility": "613",
+                  "assigningAuthority": "USVHA"
+                },
+                "name": {
+                  "given": "MARUF",
+                  "family": "AHMED",
+                  "title": "BAY PINES TEST LAB"
+                }
+              }
+            },
+            "errorEnterer": {
+              "comment": " this is test comment ",
+              "time_renamed": { "literal": "20120228225634-0500" },
+              "practitioner": {
+                "identifier": {
+                  "identity": "65542",
+                  "assigningFacility": "613",
+                  "assigningAuthority": "USVHA"
+                },
+                "name": {
+                  "given": "MARUF",
+                  "family": "AHMED",
+                  "title": "BAY PINES TEST LAB"
+                }
+              }
+            },
+            "idBandMarker": [],
+            "chartMarker": [
+              {
+                "time_renamed": { "literal": "20120225134223-0500" },
+                "practitioner": {
+                  "identifier": {
+                    "identity": "65542",
+                    "assigningFacility": "613",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "MARUF",
+                    "family": "AHMED",
+                    "title": "BAY PINES TEST LAB"
+                  }
+                }
+              }
+            ],
+            "commentEvents": [
+              {
+                "date_renamed": { "literal": "20120225134224-0500" },
+                "author": {
+                  "identifier": {
+                    "identity": "65542",
+                    "assigningFacility": "613",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "MARUF",
+                    "family": "AHMED",
+                    "title": "BAY PINES TEST LAB"
+                  }
+                },
+                "commentType": {
+                  "code": "4500978",
+                  "displayText": "OBSERVED",
+                  "codingSystem": "99VA8985.1"
+                },
+                "comments": ["TESTING SMOK TEST "]
+              },
+              {
+                "date_renamed": { "literal": "20120228225636-0500" },
+                "author": {
+                  "identifier": {
+                    "identity": "65542",
+                    "assigningFacility": "613",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "MARUF",
+                    "family": "AHMED",
+                    "title": "BAY PINES TEST LAB"
+                  }
+                },
+                "commentType": {
+                  "code": "4500974",
+                  "displayText": "ERRORED",
+                  "codingSystem": "99VA8985.1"
+                },
+                "comments": ["this is test comment "]
+              }
+            ],
+            "drugClass": [
+              {
+                "code": {
+                  "code": "4021739",
+                  "displayText": "PENICILLIN-G RELATED PENICILLINS",
+                  "codingSystem": "99VA50.605",
+                  "alternateCode": "AM110",
+                  "alternateDisplayText": "PENICILLIN-G RELATED PENICILLINS",
+                  "alternateCodingSystem": "613_50.605"
+                }
+              }
+            ],
+            "drugIngredient": [
+              {
+                "code": {
+                  "code": "4017872",
+                  "displayText": "PROBENECID",
+                  "codingSystem": "99VA50.416"
+                }
+              },
+              {
+                "code": {
+                  "code": "4019880",
+                  "displayText": "PENICILLIN",
+                  "codingSystem": "99VA50.416"
+                }
+              }
+            ],
+            "facilityIdentifier": {
+              "identity": "613",
+              "name": "MARTINSBURG VAMC",
+              "assigningAuthority": "L"
+            },
+            "recordSource": {
+              "universalId": "TEST.MARTINSBURG.MED.VA.GOV",
+              "universalIdType": "DNS"
+            },
+            "recordUpdateTime": {}
+          },
+          {
+            "recordIdentifier": {
+              "identity": "61182",
+              "namespaceId": "613_120.8"
+            },
+            "patient": {
+              "identifier": {
+                "identity": "201503",
+                "assigningFacility": "613",
+                "assigningAuthority": "USVHA"
+              },
+              "name": { "given": "ONE", "family": "HDRENVGK" }
+            },
+            "observationTime": { "literal": "20120228225800-0500" },
+            "agent": { "code": "PENTOBARBITAL" },
+            "allergyType": {
+              "code": "D",
+              "displayText": "DRUG",
+              "codingSystem": "L"
+            },
+            "gmrAllergyAgent": {
+              "code": "4018516",
+              "displayText": "PENTOBARBITAL",
+              "codingSystem": "99VA50.6"
+            },
+            "informationSourceCategory": {
+              "code": "4500978",
+              "displayText": "OBSERVED",
+              "codingSystem": "99VA8985.1"
+            },
+            "mechanism": {
+              "code": "4501004",
+              "displayText": "ALLERGY",
+              "codingSystem": "99VA8985.1"
+            },
+            "status": "E",
+            "verified": "NO",
+            "reaction": [
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4637011",
+                  "displayText": "DIARRHEA",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "65542",
+                      "assigningFacility": "613",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "MARUF",
+                      "family": "AHMED",
+                      "title": "BAY PINES TEST LAB"
+                    }
+                  }
+                }
+              },
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4637215",
+                  "displayText": "MUSCLE PAIN",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "65542",
+                      "assigningFacility": "613",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "MARUF",
+                      "family": "AHMED",
+                      "title": "BAY PINES TEST LAB"
+                    }
+                  }
+                }
+              }
+            ],
+            "verifier": {
+              "time_renamed": {},
+              "practitioner": { "identifier": {}, "name": {} }
+            },
+            "author": {
+              "comment": " test ",
+              "time_renamed": { "literal": "20120228225800-0500" },
+              "practitioner": {
+                "identifier": {
+                  "identity": "65542",
+                  "assigningFacility": "613",
+                  "assigningAuthority": "USVHA"
+                },
+                "name": {
+                  "given": "MARUF",
+                  "family": "AHMED",
+                  "title": "BAY PINES TEST LAB"
+                }
+              }
+            },
+            "errorEnterer": {
+              "comment": " not a valid record ",
+              "time_renamed": { "literal": "20120604155456-0400" },
+              "practitioner": {
+                "identifier": {
+                  "identity": "65542",
+                  "assigningFacility": "613",
+                  "assigningAuthority": "USVHA"
+                },
+                "name": {
+                  "given": "MARUF",
+                  "family": "AHMED",
+                  "title": "BAY PINES TEST LAB"
+                }
+              }
+            },
+            "idBandMarker": [],
+            "chartMarker": [
+              {
+                "time_renamed": { "literal": "20120228225842-0500" },
+                "practitioner": {
+                  "identifier": {
+                    "identity": "65542",
+                    "assigningFacility": "613",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "MARUF",
+                    "family": "AHMED",
+                    "title": "BAY PINES TEST LAB"
+                  }
+                }
+              }
+            ],
+            "commentEvents": [
+              {
+                "date_renamed": { "literal": "20120228225842-0500" },
+                "author": {
+                  "identifier": {
+                    "identity": "65542",
+                    "assigningFacility": "613",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "MARUF",
+                    "family": "AHMED",
+                    "title": "BAY PINES TEST LAB"
+                  }
+                },
+                "commentType": {
+                  "code": "4500978",
+                  "displayText": "OBSERVED",
+                  "codingSystem": "99VA8985.1"
+                },
+                "comments": ["test "]
+              },
+              {
+                "date_renamed": { "literal": "20120604155458-0400" },
+                "author": {
+                  "identifier": {
+                    "identity": "65542",
+                    "assigningFacility": "613",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "MARUF",
+                    "family": "AHMED",
+                    "title": "BAY PINES TEST LAB"
+                  }
+                },
+                "commentType": {
+                  "code": "4500974",
+                  "displayText": "ERRORED",
+                  "codingSystem": "99VA8985.1"
+                },
+                "comments": ["not a valid record "]
+              }
+            ],
+            "drugClass": [
+              {
+                "code": {
+                  "code": "4021587",
+                  "displayText": "BARBITURIC ACID DERIVATIVE SEDATIVES/HYPNOTICS",
+                  "codingSystem": "99VA50.605",
+                  "alternateCode": "CN301",
+                  "alternateDisplayText": "BARBITURIC ACID DERIVATIVE SEDATIVES/HYPNOTICS",
+                  "alternateCodingSystem": "613_50.605"
+                }
+              },
+              {
+                "code": {
+                  "code": "4021683",
+                  "displayText": "PHARMACEUTICAL AIDS/REAGENTS",
+                  "codingSystem": "99VA50.605",
+                  "alternateCode": "PH000",
+                  "alternateDisplayText": "PHARMACEUTICAL AIDS/REAGENTS",
+                  "alternateCodingSystem": "613_50.605"
+                }
+              }
+            ],
+            "drugIngredient": [
+              {
+                "code": {
+                  "code": "4018516",
+                  "displayText": "PENTOBARBITAL",
+                  "codingSystem": "99VA50.416"
+                }
+              }
+            ],
+            "facilityIdentifier": {
+              "identity": "613",
+              "name": "MARTINSBURG VAMC",
+              "assigningAuthority": "L"
+            },
+            "recordSource": {
+              "universalId": "TEST.MARTINSBURG.MED.VA.GOV",
+              "universalIdType": "DNS"
+            },
+            "recordUpdateTime": {}
+          },
+          {
+            "recordIdentifier": {
+              "identity": "62089",
+              "namespaceId": "613_120.8"
+            },
+            "patient": {
+              "identifier": {
+                "identity": "201503",
+                "assigningFacility": "613",
+                "assigningAuthority": "USVHA"
+              },
+              "name": { "given": "ONE", "family": "HDRENVGK" }
+            },
+            "observationTime": { "literal": "20200724085600-0400" },
+            "agent": { "code": "PEANUTS" },
+            "allergyType": {
+              "code": "DF",
+              "displayText": "DRUG, FOOD",
+              "codingSystem": "L"
+            },
+            "gmrAllergyAgent": {
+              "code": "4636971",
+              "displayText": "PEANUTS",
+              "codingSystem": "99VA120.82"
+            },
+            "informationSourceCategory": {
+              "code": "4500978",
+              "displayText": "OBSERVED",
+              "codingSystem": "99VA8985.1"
+            },
+            "mechanism": {
+              "code": "4501004",
+              "displayText": "ALLERGY",
+              "codingSystem": "99VA8985.1"
+            },
+            "status": "F",
+            "verified": "NO",
+            "reaction": [
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4637472",
+                  "displayText": "DROWSY",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "65618",
+                      "assigningFacility": "613",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "SRINIVASA",
+                      "family": "KANUMETTA",
+                      "title": "BAY PINES TEST LAB"
+                    }
+                  }
+                }
+              },
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4538635",
+                  "displayText": "RASH",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "65618",
+                      "assigningFacility": "613",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "SRINIVASA",
+                      "family": "KANUMETTA",
+                      "title": "BAY PINES TEST LAB"
+                    }
+                  }
+                }
+              },
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4637187",
+                  "displayText": "RECTAL HEMORRHAGE",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "65618",
+                      "assigningFacility": "613",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "SRINIVASA",
+                      "family": "KANUMETTA",
+                      "title": "BAY PINES TEST LAB"
+                    }
+                  }
+                }
+              },
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4637076",
+                  "displayText": "RESPIRATORY CRACKLES",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "65618",
+                      "assigningFacility": "613",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "SRINIVASA",
+                      "family": "KANUMETTA",
+                      "title": "BAY PINES TEST LAB"
+                    }
+                  }
+                }
+              }
+            ],
+            "verifier": {
+              "time_renamed": {},
+              "practitioner": { "identifier": {}, "name": {} }
+            },
+            "author": {
+              "comment": " Comment Line 1 Comment Line 2 Comment Line 3 Comment Line 4  Comment Line 4 Comment Line 5 Comment Line 6 Comment Line 7  Comment Line 8 Comment Line 9 Comment Line 10 Comment Line 11 Comment Line 12 Comment Line 13 Comment Line 14 Comment Line 15 Comment Line 16 Comment Line 17 Comment Line 18  Comment Line 19 Comment Line 20        ",
+              "time_renamed": { "literal": "20200724085600-0400" },
+              "practitioner": {
+                "identifier": {
+                  "identity": "65618",
+                  "assigningFacility": "613",
+                  "assigningAuthority": "USVHA"
+                },
+                "name": {
+                  "given": "SRINIVASA",
+                  "family": "KANUMETTA",
+                  "title": "BAY PINES TEST LAB"
+                }
+              }
+            },
+            "errorEnterer": {
+              "time_renamed": {},
+              "practitioner": { "identifier": {}, "name": {} }
+            },
+            "idBandMarker": [],
+            "chartMarker": [],
+            "commentEvents": [
+              {
+                "date_renamed": { "literal": "20200724085846-0400" },
+                "author": {
+                  "identifier": {
+                    "identity": "65618",
+                    "assigningFacility": "613",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "SRINIVASA",
+                    "family": "KANUMETTA",
+                    "title": "BAY PINES TEST LAB"
+                  }
+                },
+                "commentType": {
+                  "code": "4500978",
+                  "displayText": "OBSERVED",
+                  "codingSystem": "99VA8985.1"
+                },
+                "comments": [
+                  "Comment Line 1 Comment Line 2 Comment Line 3 Comment Line 4 \nComment Line 4 Comment Line 5 Comment Line 6 Comment Line 7 \nComment Line 8 Comment Line 9 Comment Line 10 Comment Line\n11 Comment Line 12 Comment Line 13 Comment Line 14 Comment\nLine 15 Comment Line 16 Comment Line 17 Comment Line 18 \nComment Line 19 Comment Line 20 \n \n \n \n"
+                ]
+              }
+            ],
+            "drugClass": [],
+            "drugIngredient": [
+              {
+                "code": {
+                  "code": "4021374",
+                  "displayText": "PEANUT",
+                  "codingSystem": "99VA50.416"
+                }
+              }
+            ],
+            "facilityIdentifier": {
+              "identity": "613",
+              "name": "MARTINSBURG VAMC",
+              "assigningAuthority": "L"
+            },
+            "recordSource": {
+              "universalId": "TEST.MARTINSBURG.MED.VA.GOV",
+              "universalIdType": "DNS"
+            },
+            "recordUpdateTime": {}
+          },
+          {
+            "recordIdentifier": {
+              "identity": "250469",
+              "namespaceId": "657_120.8"
+            },
+            "patient": {
+              "identifier": {
+                "identity": "8000806",
+                "assigningFacility": "657",
+                "assigningAuthority": "USVHA"
+              },
+              "name": { "given": "ONE", "family": "HDRENVGK" }
+            },
+            "observationTime": { "literal": "20110127133000-0600" },
+            "agent": { "code": "ASPARTAME" },
+            "allergyType": {
+              "code": "DF",
+              "displayText": "DRUG, FOOD",
+              "codingSystem": "L"
+            },
+            "gmrAllergyAgent": {
+              "code": "4636709",
+              "displayText": "ASPARTAME",
+              "codingSystem": "99VA120.82"
+            },
+            "informationSourceCategory": {
+              "code": "4500975",
+              "displayText": "HISTORICAL",
+              "codingSystem": "99VA8985.1"
+            },
+            "mechanism": {
+              "code": "4500979",
+              "displayText": "PHARMACOLOGICAL",
+              "codingSystem": "99VA8985.1"
+            },
+            "status": "F",
+            "verified": "YES",
+            "reaction": [
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4691091",
+                  "displayText": "NAUSEA AND VOMITING",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "60709",
+                      "assigningFacility": "657",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "MARUF",
+                      "family": "AHMED",
+                      "title": "CHIEF INFORMATION OFFICER"
+                    }
+                  }
+                }
+              },
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4637211",
+                  "displayText": "NASAL MUCOSA DRY",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "60709",
+                      "assigningFacility": "657",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "MARUF",
+                      "family": "AHMED",
+                      "title": "CHIEF INFORMATION OFFICER"
+                    }
+                  }
+                }
+              }
+            ],
+            "verifier": {
+              "time_renamed": { "literal": "20110127133021-0600" },
+              "practitioner": { "identifier": {}, "name": {} }
+            },
+            "author": {
+              "comment": " test downtime ",
+              "time_renamed": { "literal": "20110127133000-0600" },
+              "practitioner": {
+                "identifier": {
+                  "identity": "60709",
+                  "assigningFacility": "657",
+                  "assigningAuthority": "USVHA"
+                },
+                "name": {
+                  "given": "MARUF",
+                  "family": "AHMED",
+                  "title": "CHIEF INFORMATION OFFICER"
+                }
+              }
+            },
+            "errorEnterer": {
+              "time_renamed": {},
+              "practitioner": { "identifier": {}, "name": {} }
+            },
+            "idBandMarker": [],
+            "chartMarker": [
+              {
+                "time_renamed": { "literal": "20110127133021-0600" },
+                "practitioner": {
+                  "identifier": {
+                    "identity": "60709",
+                    "assigningFacility": "657",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "MARUF",
+                    "family": "AHMED",
+                    "title": "CHIEF INFORMATION OFFICER"
+                  }
+                }
+              }
+            ],
+            "commentEvents": [
+              {
+                "date_renamed": { "literal": "20110127133021-0600" },
+                "author": {
+                  "identifier": {
+                    "identity": "60709",
+                    "assigningFacility": "657",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "MARUF",
+                    "family": "AHMED",
+                    "title": "CHIEF INFORMATION OFFICER"
+                  }
+                },
+                "commentType": {
+                  "code": "4500978",
+                  "displayText": "OBSERVED",
+                  "codingSystem": "99VA8985.1"
+                },
+                "comments": ["test downtime "]
+              }
+            ],
+            "drugClass": [],
+            "drugIngredient": [
+              {
+                "code": {
+                  "code": "4019364",
+                  "displayText": "ASPARTAME",
+                  "codingSystem": "99VA50.416"
+                }
+              }
+            ],
+            "facilityIdentifier": {
+              "identity": "657",
+              "name": "VA HEARTLAND-EAST, VISN 15 HCS JOHN COCHRAN MEMORIAL HOSPITAL",
+              "assigningAuthority": "L"
+            },
+            "recordSource": {
+              "universalId": "TEST.ST-LOUIS.MED.VA.GOV",
+              "universalIdType": "DNS"
+            },
+            "recordUpdateTime": {}
+          },
+          {
+            "recordIdentifier": {
+              "identity": "250568",
+              "namespaceId": "657_120.8"
+            },
+            "patient": {
+              "identifier": {
+                "identity": "8000806",
+                "assigningFacility": "657",
+                "assigningAuthority": "USVHA"
+              },
+              "name": { "given": "ONE", "family": "HDRENVGK" }
+            },
+            "observationTime": { "literal": "20120309155700-0600" },
+            "agent": { "code": "PORK" },
+            "allergyType": {
+              "code": "F",
+              "displayText": "FOOD",
+              "codingSystem": "L"
+            },
+            "gmrAllergyAgent": {
+              "code": "4637336",
+              "displayText": "PORK",
+              "codingSystem": "99VA120.82"
+            },
+            "informationSourceCategory": {
+              "code": "4500975",
+              "displayText": "HISTORICAL",
+              "codingSystem": "99VA8985.1"
+            },
+            "mechanism": {
+              "code": "4501004",
+              "displayText": "ALLERGY",
+              "codingSystem": "99VA8985.1"
+            },
+            "status": "F",
+            "verified": "YES",
+            "reaction": [
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4637472",
+                  "displayText": "DROWSY",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "60709",
+                      "assigningFacility": "657",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "MARUF",
+                      "family": "AHMED",
+                      "title": "CHIEF INFORMATION OFFICER"
+                    }
+                  }
+                }
+              },
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4637015",
+                  "displayText": "DELIRIUM",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "60709",
+                      "assigningFacility": "657",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "MARUF",
+                      "family": "AHMED",
+                      "title": "CHIEF INFORMATION OFFICER"
+                    }
+                  }
+                }
+              }
+            ],
+            "verifier": {
+              "time_renamed": { "literal": "20120309155737-0600" },
+              "practitioner": { "identifier": {}, "name": {} }
+            },
+            "author": {
+              "time_renamed": { "literal": "20120309155700-0600" },
+              "practitioner": {
+                "identifier": {
+                  "identity": "60709",
+                  "assigningFacility": "657",
+                  "assigningAuthority": "USVHA"
+                },
+                "name": {
+                  "given": "MARUF",
+                  "family": "AHMED",
+                  "title": "CHIEF INFORMATION OFFICER"
+                }
+              }
+            },
+            "errorEnterer": {
+              "time_renamed": {},
+              "practitioner": { "identifier": {}, "name": {} }
+            },
+            "idBandMarker": [],
+            "chartMarker": [
+              {
+                "time_renamed": { "literal": "20120309155735-0600" },
+                "practitioner": {
+                  "identifier": {
+                    "identity": "60709",
+                    "assigningFacility": "657",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "MARUF",
+                    "family": "AHMED",
+                    "title": "CHIEF INFORMATION OFFICER"
+                  }
+                }
+              }
+            ],
+            "commentEvents": [],
+            "drugClass": [],
+            "drugIngredient": [],
+            "facilityIdentifier": {
+              "identity": "657",
+              "name": "VA HEARTLAND-EAST, VISN 15 HCS JOHN COCHRAN MEMORIAL HOSPITAL",
+              "assigningAuthority": "L"
+            },
+            "recordSource": {
+              "universalId": "TEST.ST-LOUIS.MED.VA.GOV",
+              "universalIdType": "DNS"
+            },
+            "recordUpdateTime": {}
+          },
+          {
+            "recordIdentifier": {
+              "identity": "250582",
+              "namespaceId": "657_120.8"
+            },
+            "patient": {
+              "identifier": {
+                "identity": "8000806",
+                "assigningFacility": "657",
+                "assigningAuthority": "USVHA"
+              },
+              "name": { "given": "ONE", "family": "HDRENVGK" }
+            },
+            "observationTime": { "literal": "20121227134800-0600" },
+            "agent": { "code": "BEEF" },
+            "allergyType": {
+              "code": "F",
+              "displayText": "FOOD",
+              "codingSystem": "L"
+            },
+            "gmrAllergyAgent": {
+              "code": "4637406",
+              "displayText": "BEEF",
+              "codingSystem": "99VA120.82"
+            },
+            "informationSourceCategory": {
+              "code": "4500978",
+              "displayText": "OBSERVED",
+              "codingSystem": "99VA8985.1"
+            },
+            "mechanism": {
+              "code": "4501004",
+              "displayText": "ALLERGY",
+              "codingSystem": "99VA8985.1"
+            },
+            "status": "F",
+            "verified": "YES",
+            "reaction": [
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4637472",
+                  "displayText": "DROWSY",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "60709",
+                      "assigningFacility": "657",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "MARUF",
+                      "family": "AHMED",
+                      "title": "CHIEF INFORMATION OFFICER"
+                    }
+                  }
+                }
+              },
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4691091",
+                  "displayText": "NAUSEA AND VOMITING",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "60709",
+                      "assigningFacility": "657",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "MARUF",
+                      "family": "AHMED",
+                      "title": "CHIEF INFORMATION OFFICER"
+                    }
+                  }
+                }
+              },
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4637156",
+                  "displayText": "URTICARIA",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "60709",
+                      "assigningFacility": "657",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "MARUF",
+                      "family": "AHMED",
+                      "title": "CHIEF INFORMATION OFFICER"
+                    }
+                  }
+                }
+              }
+            ],
+            "verifier": {
+              "time_renamed": { "literal": "20121227134944-0600" },
+              "practitioner": { "identifier": {}, "name": {} }
+            },
+            "author": {
+              "comment": " testing ",
+              "time_renamed": { "literal": "20121227134800-0600" },
+              "practitioner": {
+                "identifier": {
+                  "identity": "60709",
+                  "assigningFacility": "657",
+                  "assigningAuthority": "USVHA"
+                },
+                "name": {
+                  "given": "MARUF",
+                  "family": "AHMED",
+                  "title": "CHIEF INFORMATION OFFICER"
+                }
+              }
+            },
+            "errorEnterer": {
+              "time_renamed": {},
+              "practitioner": { "identifier": {}, "name": {} }
+            },
+            "idBandMarker": [],
+            "chartMarker": [
+              {
+                "time_renamed": { "literal": "20121227134943-0600" },
+                "practitioner": {
+                  "identifier": {
+                    "identity": "60709",
+                    "assigningFacility": "657",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "MARUF",
+                    "family": "AHMED",
+                    "title": "CHIEF INFORMATION OFFICER"
+                  }
+                }
+              }
+            ],
+            "commentEvents": [
+              {
+                "date_renamed": { "literal": "20121227134944-0600" },
+                "author": {
+                  "identifier": {
+                    "identity": "60709",
+                    "assigningFacility": "657",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "MARUF",
+                    "family": "AHMED",
+                    "title": "CHIEF INFORMATION OFFICER"
+                  }
+                },
+                "commentType": {
+                  "code": "4500978",
+                  "displayText": "OBSERVED",
+                  "codingSystem": "99VA8985.1"
+                },
+                "comments": ["testing "]
+              }
+            ],
+            "drugClass": [],
+            "drugIngredient": [],
+            "facilityIdentifier": {
+              "identity": "657",
+              "name": "VA HEARTLAND-EAST, VISN 15 HCS JOHN COCHRAN MEMORIAL HOSPITAL",
+              "assigningAuthority": "L"
+            },
+            "recordSource": {
+              "universalId": "TEST.ST-LOUIS.MED.VA.GOV",
+              "universalIdType": "DNS"
+            },
+            "recordUpdateTime": {}
+          },
+          {
+            "recordIdentifier": {
+              "identity": "250591",
+              "namespaceId": "657_120.8"
+            },
+            "patient": {
+              "identifier": {
+                "identity": "8000806",
+                "assigningFacility": "657",
+                "assigningAuthority": "USVHA"
+              },
+              "name": { "given": "ONE", "family": "HDRENVGK" }
+            },
+            "observationTime": { "literal": "20130222103600-0600" },
+            "agent": { "code": "WALNUTS" },
+            "allergyType": {
+              "code": "DF",
+              "displayText": "DRUG, FOOD",
+              "codingSystem": "L"
+            },
+            "gmrAllergyAgent": {
+              "code": "4636943",
+              "displayText": "WALNUTS",
+              "codingSystem": "99VA120.82"
+            },
+            "informationSourceCategory": {
+              "code": "4500978",
+              "displayText": "OBSERVED",
+              "codingSystem": "99VA8985.1"
+            },
+            "mechanism": {
+              "code": "4500980",
+              "displayText": "UNKNOWN",
+              "codingSystem": "99VA8985.1"
+            },
+            "status": "F",
+            "verified": "YES",
+            "reaction": [
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4637156",
+                  "displayText": "URTICARIA",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "60981",
+                      "assigningFacility": "657",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "DIANE",
+                      "family": "YAMADA",
+                      "title": "PHYSICIAN (STAFF)"
+                    }
+                  }
+                }
+              },
+              {
+                "observationTime": {},
+                "reaction": {
+                  "code": "4691091",
+                  "displayText": "NAUSEA AND VOMITING",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "60981",
+                      "assigningFacility": "657",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "DIANE",
+                      "family": "YAMADA",
+                      "title": "PHYSICIAN (STAFF)"
+                    }
+                  }
+                }
+              }
+            ],
+            "verifier": {
+              "time_renamed": { "literal": "20130222103912-0600" },
+              "practitioner": { "identifier": {}, "name": {} }
+            },
+            "author": {
+              "comment": " Testing for mild severity.  ",
+              "time_renamed": { "literal": "20130222103600-0600" },
+              "practitioner": {
+                "identifier": {
+                  "identity": "60981",
+                  "assigningFacility": "657",
+                  "assigningAuthority": "USVHA"
+                },
+                "name": {
+                  "given": "DIANE",
+                  "family": "YAMADA",
+                  "title": "PHYSICIAN (STAFF)"
+                }
+              }
+            },
+            "errorEnterer": {
+              "time_renamed": {},
+              "practitioner": { "identifier": {}, "name": {} }
+            },
+            "idBandMarker": [],
+            "chartMarker": [
+              {
+                "time_renamed": { "literal": "20130222103911-0600" },
+                "practitioner": {
+                  "identifier": {
+                    "identity": "60981",
+                    "assigningFacility": "657",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "DIANE",
+                    "family": "YAMADA",
+                    "title": "PHYSICIAN (STAFF)"
+                  }
+                }
+              }
+            ],
+            "commentEvents": [
+              {
+                "date_renamed": { "literal": "20130222103912-0600" },
+                "author": {
+                  "identifier": {
+                    "identity": "60981",
+                    "assigningFacility": "657",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "DIANE",
+                    "family": "YAMADA",
+                    "title": "PHYSICIAN (STAFF)"
+                  }
+                },
+                "commentType": {
+                  "code": "4500978",
+                  "displayText": "OBSERVED",
+                  "codingSystem": "99VA8985.1"
+                },
+                "comments": ["Testing for mild severity.  "]
+              }
+            ],
+            "drugClass": [],
+            "drugIngredient": [
+              {
+                "code": {
+                  "code": "4020805",
+                  "displayText": "WALNUTS,GRANULATED",
+                  "codingSystem": "99VA50.416"
+                }
+              }
+            ],
+            "facilityIdentifier": {
+              "identity": "657",
+              "name": "VA HEARTLAND-EAST, VISN 15 HCS JOHN COCHRAN MEMORIAL HOSPITAL",
+              "assigningAuthority": "L"
+            },
+            "recordSource": {
+              "universalId": "TEST.ST-LOUIS.MED.VA.GOV",
+              "universalIdType": "DNS"
+            },
+            "recordUpdateTime": {}
+          },
+          {
+            "recordIdentifier": {
+              "identity": "250594",
+              "namespaceId": "657_120.8"
+            },
+            "patient": {
+              "identifier": {
+                "identity": "8000806",
+                "assigningFacility": "657",
+                "assigningAuthority": "USVHA"
+              },
+              "name": { "given": "ONE", "family": "HDRENVGK" }
+            },
+            "observationTime": { "literal": "20130226144000-0600" },
+            "agent": { "code": "EGGS" },
+            "allergyType": {
+              "code": "DF",
+              "displayText": "DRUG, FOOD",
+              "codingSystem": "L"
+            },
+            "gmrAllergyAgent": {
+              "code": "4637287",
+              "displayText": "EGGS",
+              "codingSystem": "99VA120.82"
+            },
+            "informationSourceCategory": {
+              "code": "4500978",
+              "displayText": "OBSERVED",
+              "codingSystem": "99VA8985.1"
+            },
+            "mechanism": {
+              "code": "4500980",
+              "displayText": "UNKNOWN",
+              "codingSystem": "99VA8985.1"
+            },
+            "status": "F",
+            "verified": "YES",
+            "reaction": [
+              {
+                "observationTime": { "literal": "20130226-0600" },
+                "reaction": {
+                  "code": "4637156",
+                  "displayText": "URTICARIA",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "60981",
+                      "assigningFacility": "657",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "DIANE",
+                      "family": "YAMADA",
+                      "title": "PHYSICIAN (STAFF)"
+                    }
+                  }
+                }
+              },
+              {
+                "observationTime": { "literal": "20130226-0600" },
+                "reaction": {
+                  "code": "4637157",
+                  "displayText": "ITCHING OF EYE",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "60981",
+                      "assigningFacility": "657",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "DIANE",
+                      "family": "YAMADA",
+                      "title": "PHYSICIAN (STAFF)"
+                    }
+                  }
+                }
+              },
+              {
+                "observationTime": { "literal": "20130226-0600" },
+                "reaction": {
+                  "code": "4691091",
+                  "displayText": "NAUSEA AND VOMITING",
+                  "codingSystem": "99VA120.83"
+                },
+                "author": {
+                  "time_renamed": {},
+                  "practitioner": {
+                    "identifier": {
+                      "identity": "60981",
+                      "assigningFacility": "657",
+                      "assigningAuthority": "USVHA"
+                    },
+                    "name": {
+                      "given": "DIANE",
+                      "family": "YAMADA",
+                      "title": "PHYSICIAN (STAFF)"
+                    }
+                  }
+                }
+              }
+            ],
+            "verifier": {
+              "time_renamed": { "literal": "20130226150110-0600" },
+              "practitioner": { "identifier": {}, "name": {} }
+            },
+            "author": {
+              "comment": " Testing multiple comments, this is the first comment for testing purposes. Here is a second row for this first comment. This is the second comment entered for testing purposes, it is a big  longer in length. Here is an additional row to verify how it all displays.",
+              "time_renamed": { "literal": "20130226144000-0600" },
+              "practitioner": {
+                "identifier": {
+                  "identity": "60981",
+                  "assigningFacility": "657",
+                  "assigningAuthority": "USVHA"
+                },
+                "name": {
+                  "given": "DIANE",
+                  "family": "YAMADA",
+                  "title": "PHYSICIAN (STAFF)"
+                }
+              }
+            },
+            "errorEnterer": {
+              "time_renamed": {},
+              "practitioner": { "identifier": {}, "name": {} }
+            },
+            "idBandMarker": [],
+            "chartMarker": [
+              {
+                "time_renamed": { "literal": "20130226150118-0600" },
+                "practitioner": {
+                  "identifier": {
+                    "identity": "60981",
+                    "assigningFacility": "657",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "DIANE",
+                    "family": "YAMADA",
+                    "title": "PHYSICIAN (STAFF)"
+                  }
+                }
+              }
+            ],
+            "commentEvents": [
+              {
+                "date_renamed": { "literal": "20130226145637-0600" },
+                "author": {
+                  "identifier": {
+                    "identity": "60981",
+                    "assigningFacility": "657",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "DIANE",
+                    "family": "YAMADA",
+                    "title": "PHYSICIAN (STAFF)"
+                  }
+                },
+                "commentType": {
+                  "code": "4500978",
+                  "displayText": "OBSERVED",
+                  "codingSystem": "99VA8985.1"
+                },
+                "comments": [
+                  "Testing multiple comments, this is the first comment for testing purposes.\nHere is a second row for this first comment."
+                ]
+              },
+              {
+                "date_renamed": { "literal": "20130226145853-0600" },
+                "author": {
+                  "identifier": {
+                    "identity": "60981",
+                    "assigningFacility": "657",
+                    "assigningAuthority": "USVHA"
+                  },
+                  "name": {
+                    "given": "DIANE",
+                    "family": "YAMADA",
+                    "title": "PHYSICIAN (STAFF)"
+                  }
+                },
+                "commentType": {
+                  "code": "4500978",
+                  "displayText": "OBSERVED",
+                  "codingSystem": "99VA8985.1"
+                },
+                "comments": [
+                  "This is the second comment entered for testing purposes, it is a big \nlonger in length.\nHere is an additional row to verify how it all displays."
+                ]
+              }
+            ],
+            "drugClass": [
+              {
+                "code": {
+                  "code": "4021642",
+                  "displayText": "VACCINES",
+                  "codingSystem": "99VA50.605",
+                  "alternateCode": "IM100",
+                  "alternateDisplayText": "VACCINES",
+                  "alternateCodingSystem": "657_50.605"
+                }
+              },
+              {
+                "code": {
+                  "code": "4021643",
+                  "displayText": "TOXOIDS",
+                  "codingSystem": "99VA50.605",
+                  "alternateCode": "IM105",
+                  "alternateDisplayText": "TOXOIDS",
+                  "alternateCodingSystem": "657_50.605"
+                }
+              },
+              {
+                "code": {
+                  "code": "4022083",
+                  "displayText": "VACCINES/TOXOIDS, OTHER",
+                  "codingSystem": "99VA50.605",
+                  "alternateCode": "IM109",
+                  "alternateDisplayText": "VACCINES/TOXOIDS, OTHER",
+                  "alternateCodingSystem": "657_50.605"
+                }
+              }
+            ],
+            "drugIngredient": [
+              {
+                "code": {
+                  "code": "4017755",
+                  "displayText": "YELLOW FEVER VACCINE",
+                  "codingSystem": "99VA50.416"
+                }
+              },
+              {
+                "code": {
+                  "code": "4017757",
+                  "displayText": "INFLUENZA VIRUS VACCINE,TRIVALENT TYPE A & B ('90-'91)",
+                  "codingSystem": "99VA50.416"
+                }
+              },
+              {
+                "code": {
+                  "code": "4017972",
+                  "displayText": "MUMPS VIRUS VACCINE,LIVE",
+                  "codingSystem": "99VA50.416"
+                }
+              },
+              {
+                "code": {
+                  "code": "4017973",
+                  "displayText": "MEASLES VIRUS VACCINE,LIVE ATTENUATED",
+                  "codingSystem": "99VA50.416"
+                }
+              },
+              {
+                "code": {
+                  "code": "4017975",
+                  "displayText": "MUMPS/RUBELLA VIRUS VACCINE,LIVE",
+                  "codingSystem": "99VA50.416"
+                }
+              },
+              {
+                "code": {
+                  "code": "4017977",
+                  "displayText": "MEASLES/RUBELLA VIRUS VACCINE,LIVE",
+                  "codingSystem": "99VA50.416"
+                }
+              },
+              {
+                "code": {
+                  "code": "4017978",
+                  "displayText": "MEASLES/MUMPS/RUBELLA VIRUS VACCINE,LIVE",
+                  "codingSystem": "99VA50.416"
+                }
+              },
+              {
+                "code": {
+                  "code": "4019742",
+                  "displayText": "EGG",
+                  "codingSystem": "99VA50.416"
+                }
+              },
+              {
+                "code": {
+                  "code": "4020906",
+                  "displayText": "INFLUENZA VIRUS (SPLIT) VACCINE",
+                  "codingSystem": "99VA50.416"
+                }
+              },
+              {
+                "code": {
+                  "code": "4020918",
+                  "displayText": "INFLUENZA VIRUS,TRIVALENT SPLIT VACCINE",
+                  "codingSystem": "99VA50.416"
+                }
+              },
+              {
+                "code": {
+                  "code": "4020974",
+                  "displayText": "INFLUENZA VIRUS,TRIVALENT WHOLE VACCINE",
+                  "codingSystem": "99VA50.416"
+                }
+              },
+              {
+                "code": {
+                  "code": "4021408",
+                  "displayText": "INFLUENZA VIRUS,LIVE",
+                  "codingSystem": "99VA50.416"
+                }
+              }
+            ],
+            "facilityIdentifier": {
+              "identity": "657",
+              "name": "VA HEARTLAND-EAST, VISN 15 HCS JOHN COCHRAN MEMORIAL HOSPITAL",
+              "assigningAuthority": "L"
+            },
+            "recordSource": {
+              "universalId": "TEST.ST-LOUIS.MED.VA.GOV",
+              "universalIdType": "DNS"
+            },
+            "recordUpdateTime": {}
+          }
+        ],
+        "allergyAssessments": [
+          {
+            "recordIdentifier": {
+              "identity": "7206668",
+              "namespaceId": "992_120.86"
+            },
+            "patient": {
+              "identifier": {
+                "identity": "7206668",
+                "assigningFacility": "992",
+                "assigningAuthority": "USVHA"
+              },
+              "name": { "given": "ONE", "family": "HDRENVGK" }
+            },
+            "observationTime": { "literal": "20110927172000-0600" },
+            "assessmentValue": {
+              "code": "4500633",
+              "displayText": "YES",
+              "codingSystem": "99VA8985.1"
+            },
+            "status": "F",
+            "author": {
+              "time_renamed": {},
+              "practitioner": {
+                "identifier": {
+                  "identity": "520651274",
+                  "assigningFacility": "992",
+                  "assigningAuthority": "USVHA"
+                },
+                "name": {
+                  "given": "GAURAV",
+                  "family": "KHANNA",
+                  "title": "BAY PINES TEST LAB"
+                }
+              }
+            },
+            "recordSource": {
+              "universalId": "TEST.CHEYENNE.MED.VA.GOV",
+              "universalIdType": "DNS"
+            },
+            "recordUpdateTime": {}
+          },
+          {
+            "recordIdentifier": {
+              "identity": "201503",
+              "namespaceId": "613_120.86"
+            },
+            "patient": {
+              "identifier": {
+                "identity": "201503",
+                "assigningFacility": "613",
+                "assigningAuthority": "USVHA"
+              },
+              "name": { "given": "ONE", "family": "HDRENVGK" }
+            },
+            "observationTime": { "literal": "20110126120500-0500" },
+            "assessmentValue": {
+              "code": "4500633",
+              "displayText": "YES",
+              "codingSystem": "99VA8985.1"
+            },
+            "status": "F",
+            "author": {
+              "time_renamed": {},
+              "practitioner": {
+                "identifier": {
+                  "identity": "65542",
+                  "assigningFacility": "613",
+                  "assigningAuthority": "USVHA"
+                },
+                "name": {
+                  "given": "MARUF",
+                  "family": "AHMED",
+                  "title": "BAY PINES TEST LAB"
+                }
+              }
+            },
+            "recordSource": {
+              "universalId": "TEST.MARTINSBURG.MED.VA.GOV",
+              "universalIdType": "DNS"
+            },
+            "recordUpdateTime": {}
+          },
+          {
+            "recordIdentifier": {
+              "identity": "8000806",
+              "namespaceId": "657_120.86"
+            },
+            "patient": {
+              "identifier": {
+                "identity": "8000806",
+                "assigningFacility": "657",
+                "assigningAuthority": "USVHA"
+              },
+              "name": { "given": "ONE", "family": "HDRENVGK" }
+            },
+            "observationTime": { "literal": "20110127133000-0600" },
+            "assessmentValue": {
+              "code": "4500633",
+              "displayText": "YES",
+              "codingSystem": "99VA8985.1"
+            },
+            "status": "F",
+            "author": {
+              "time_renamed": {},
+              "practitioner": {
+                "identifier": {
+                  "identity": "60709",
+                  "assigningFacility": "657",
+                  "assigningAuthority": "USVHA"
+                },
+                "name": {
+                  "given": "MARUF",
+                  "family": "AHMED",
+                  "title": "CHIEF INFORMATION OFFICER"
+                }
+              }
+            },
+            "recordSource": {
+              "universalId": "TEST.ST-LOUIS.MED.VA.GOV",
+              "universalIdType": "DNS"
+            },
+            "recordUpdateTime": {}
+          }
+        ]
+      }
+    ],
+    "errorSection": { "errors": [], "fatalErrors": [], "warnings": [] }
+  }
+}

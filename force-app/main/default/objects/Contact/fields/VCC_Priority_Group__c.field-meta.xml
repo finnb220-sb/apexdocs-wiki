@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Priority_Group__c</fullName>
+    <description
+    >Assigned when veterans apply for VA health care. This system helps to make sure that Veterans who need care right away can get signed up quickly. We assign Veterans with
+        service-connected disabilities the highest priority. We assign the lowest priority to Veterans who earn a higher income and who don’t have any service-connected
+        disabilities qualifying them for disability compensation (monthly payments).</description>
+    <externalId>false</externalId>
+    <inlineHelpText
+    >Assigned when veterans apply for VA health care. This system helps to make sure that Veterans who need care right away can get signed up quickly.</inlineHelpText>
+    <label>Priority Group</label>
+    <precision>2</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Functional_Queue_Member_Default</fullName>
+    <active>true</active>
+    <description>Default record type for Functional Queue Member</description>
+    <label>Functional Queue Member Default</label>
+    <picklistValues>
+        <picklist>Role__c</picklist>
+        <values>
+            <fullName>PSIP BI Submitter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PSIP COR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PSIP PERSEC Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PSIP PSS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PSIP Read Only</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

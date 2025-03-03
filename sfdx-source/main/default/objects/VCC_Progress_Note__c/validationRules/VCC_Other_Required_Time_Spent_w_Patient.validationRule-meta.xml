@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Other_Required_Time_Spent_w_Patient</fullName>
+    <active>true</active>
+    <description>If Other is selected from Picklist value, than Time Spent with Patient Other Comments must be filled in.</description>
+    <errorConditionFormula>BEGINS( RecordType.DeveloperName, &quot;VCC_&quot;) &amp;&amp; !$Permission.DisableTriggersFlag &amp;&amp; AND(ISPICKVAL( VCC_Time_Spent_With_Patient__c,
+        &quot;Other&quot;), ISBLANK ( VCC_Time_Spent_with_Patient_Other_Commen__c ), NOT $Permission.VCC_Disable_Progress_Note_Assignment_Rules)</errorConditionFormula>
+    <errorDisplayField>VCC_Time_Spent_with_Patient_Other_Commen__c</errorDisplayField>
+    <errorMessage>ERROR: Enter Actual Time Spent with Patient.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,60 @@
+<template>
+    <c-logger></c-logger>
+    <div style={showModal} class="slds-transition-show" transition="slow">
+        <section
+            role="dialog"
+            tabindex="-1"
+            aria-labelledby="modal-heading-01"
+            aria-modal="true"
+            style="top: 20%; z-index: 1000"
+            aria-describedby="modal-content-id-1"
+            class={cssClass}
+        >
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning-button-icon
+                        data-id="close"
+                        class="slds-modal__close modal-hidden"
+                        title="Close"
+                        icon-name="utility:close"
+                        icon-class="slds-button_icon-inverse"
+                        onclick={handleDialogClose}
+                    >
+                    </lightning-button-icon>
+
+                    <template if:true={hasHeaderString}>
+                        <h2 class="slds-text-heading_medium slds-hyphenate header-string">{header}</h2>
+                    </template>
+                    <template if:false={hasHeaderString}>
+                        <h2 class="slds-text-heading_medium slds-hyphenate header-slot">
+                            <slot name="header"></slot>
+                        </h2>
+                    </template>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_12-of-12 slds-p-right_x-small slds-p-left_x-small">
+                            You do not have access to this callers VistA instance; proceeding to create a progress note will not allow you to sign it. Please follow VISN level
+                            policy for callers outside of your access.
+                        </div>
+                    </div>
+                    <div class="slds-grid slds-wrap slds-p-top_medium">
+                        <div class="slds-col slds-size_2-of-12"></div>
+                        <div class="slds-col slds-size_8-of-12">
+                            <c-vcc-preferred-facilities mpi-data={mpiData} hidecheckboxcolumn="true" onafterload={handleAfterFacilityLoad}></c-vcc-preferred-facilities>
+                        </div>
+                        <div class="slds-col slds-size_2-of-12"></div>
+                    </div>
+                </div>
+                <footer class="slds-modal__footer">
+                    <template if:false={ishideHomeButton}>
+                        <lightning-button label={buttonOneLabel} type="submit" variant="neutral" onclick={navigateToHome}></lightning-button>
+                    </template>
+
+                    <lightning-button label={primaryButtonLabel} type="submit" variant="brand" onclick={handleDialogClose}> </lightning-button>
+                </footer>
+            </div>
+        </section>
+    </div>
+    <div style={showModal} class="slds-backdrop slds-backdrop_open"></div>
+</template>

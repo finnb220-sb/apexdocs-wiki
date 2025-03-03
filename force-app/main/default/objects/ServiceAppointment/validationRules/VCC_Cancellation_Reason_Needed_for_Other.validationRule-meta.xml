@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Cancellation_Reason_Needed_for_Other</fullName>
+    <active>true</active>
+    <description>If &apos;Reason for Cancellation&quot; is &quot;Other&quot;, the &apos;Cancellation Reason&apos; cannot be blank.</description>
+    <errorConditionFormula
+        >AND ( RecordType.DeveloperName = &apos;VCC_Virtual_Clinic_Visit&apos;, ISPICKVAL(Reason_for_Cancellation__c, &quot;Other&quot;), ISBLANK(CancellationReason) ) &amp;&amp;
+        !$Permission.DisableTriggersFlag &amp;&amp; $Permission.VCC_Appointment_Viewer</errorConditionFormula
+    >
+    <errorDisplayField>CancellationReason</errorDisplayField>
+    <errorMessage>Cancellation Reason required if Other is chosen</errorMessage>
+</ValidationRule>

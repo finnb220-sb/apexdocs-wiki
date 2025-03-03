@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_WarmHandOffToHigherLevelCare</fullName>
+    <active>true</active>
+    <description>When an RN selects the Warm Hand Off to Higher Level Care checkbox, they must provide details in the Warm Hand Off Details text field</description>
+    <errorConditionFormula>BEGINS( RecordType.DeveloperName, &quot;VCC_&quot;) &amp;&amp; !$Permission.DisableTriggersFlag &amp;&amp; AND( OR(VCC_Patient_is_suicidal__c = TRUE,
+        VCC_Patient_is_in_crisis__c = TRUE), VCC_Contacted_Emergency_Service_suicidal__c = TRUE, RecordType.DeveloperName = &quot;VCC_Clinical_Triage_Note_Progress_Note&quot;,
+        ISBLANK(VCC_Warm_Hand_Off_Details__c), NOT($Permission.VCC_Disable_Progress_Note_Assignment_Rules) )</errorConditionFormula>
+    <errorDisplayField>VCC_Warm_Hand_Off_Details__c</errorDisplayField>
+    <errorMessage>Warm Hand Off to Higher Level Care has been checked, please provide information in the &quot;Warm Hand Off Details field.</errorMessage>
+</ValidationRule>

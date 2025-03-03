@@ -1,0 +1,50 @@
+<template>
+    <c-logger lwc:ref="logger"></c-logger>
+    <c-vcc-l-m-s-publisher lwc:ref="publisher"></c-vcc-l-m-s-publisher>
+    <div lwc:if={showPositiveScore}>
+        <lightning-card>
+            <div class="slds-text-title_bold" slot="title" role="alert" tabindex="0">
+                <h3>CSSRS Screen Scoring: Positive</h3>
+            </div>
+            <lightning-layout>
+                <lightning-layout-item>
+                    <lightning-icon
+                        class="my-icons slds-var-m-right_x-small"
+                        icon-name="utility:warning"
+                        size="x-small"
+                        alternative-text="Important: Positive Result"></lightning-icon>
+                </lightning-layout-item>
+                <div role="alert" tabindex="0">
+                    <lightning-layout-item class="slds-text-title_bold slds-text-color_error">
+                        This is a POSITIVE screen.
+                    </lightning-layout-item>
+                </div>
+            </lightning-layout>
+            <lightning-layout
+                horizontal-align="center"
+                class="slds-var-m-top_large slds-var-m-bottom_large"
+                vertical-align="center">
+                <lightning-layout-item>
+                    <lightning-icon
+                        class="slds-var-p-horizontal_x-large my-icons"
+                        icon-name="utility:warning"
+                        size="large"
+                        alternative-text="Warning: Attention Needed"></lightning-icon>
+                </lightning-layout-item>
+
+                <lightning-layout-item class="slds-text-title_bold">
+                    <div tabindex="0">
+                        <p class="slds-text-heading_large slds-text-color_error" role="alert">Attention Needed!</p>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-card>
+    </div>
+    <div lwc:if={showNegativeScore}>
+        <lightning-card>
+            <div class="slds-text-title_bold" slot="title" role="alert" tabindex="0">
+                <h3>CSSRS Screen Scoring: Negative</h3>
+            </div>
+        </lightning-card>
+    </div>
+</template>

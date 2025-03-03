@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Pharm_FRR_Prevent_Using_Button</fullName>
+    <active>true</active>
+    <description>Can&apos;t change Task Status for Pharmacy Future Medication Renewal with Mark Complete Button</description>
+    <errorConditionFormula>BEGINS( RecordType.DeveloperName, &quot;VCC_Pharmacy_FRR&quot;) &amp;&amp; !$Permission.DisableTriggersFlag &amp;&amp; ISCHANGED(Status) &amp;&amp; OR(
+        AND(LEFT(WhatId,3)==&apos;500&apos;, ISPICKVAL(Status, &apos;Completed&apos;)), AND(LEFT(WhatId,3) ==&apos;a1a&apos;, OR (ISPICKVAL(Status, &apos;Open&apos;),
+        ISPICKVAL(Status, &apos;No Longer Needed&apos;), AND(LEFT(WhatId,3) ==&apos;500&apos;, ISPICKVAL(Status, &apos;No Longer Needed&apos;), (ISBLANK(VCC_Case__c))
+        ))))</errorConditionFormula>
+    <errorMessage>You can not change the status of this task to Complete or No Longer Needed from this button.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <description>Creates a Platform Event when Tele Ec type Cases have their Status updated.
+
+1.19.0 PTEMSTUC-2907 Added Permission.DisableTriggersFlag entry Criteria</description>
+    <environments>Default</environments>
+    <interviewLabel>TED Create Event on Case Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>TED Create Event on Case Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Platform_Event</name>
+        <label>Create Platform Event</label>
+        <locationX>1252</locationX>
+        <locationY>476</locationY>
+        <inputAssignments>
+            <field>caseId__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>TED_CaseStatusChanged__e</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <start>
+        <locationX>970</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Create_Platform_Event</targetReference>
+        </connector>
+        <filterFormula>AND(NOT({!$Permission.DisableTriggersFlag}),CONTAINS({!$Record.RecordType.DeveloperName}, &quot;Tele_Urgent&quot;),ISCHANGED({!$Record.Status}))</filterFormula>
+        <object>Case</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

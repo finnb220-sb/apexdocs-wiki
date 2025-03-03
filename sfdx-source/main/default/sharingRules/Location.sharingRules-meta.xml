@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>PC_Read_Access_to_Location_for_FLPs</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Allows FLPs (previously PCPs) to read Location records.</description>
+        <label>PC Read Access to Location for FLPs</label>
+        <sharedTo>
+            <group>PC_Provider_Connect_PCPs</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>PC_NDTH_Admin_User</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>PC_Read_Access_to_Location_for_Provider_Connect_NDTH_Admin_Users</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Allows Provider Connect NDTH Admin Users to read Location records.</description>
+        <label>PC Read Access to Location for Provider Connect NDTH Admin Users</label>
+        <sharedTo>
+            <group>PC_NDTH_Admin_User</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>PC_NDTH_Admin_User</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>PC_Read_Access_to_Location_for_Specialists</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Allows Specialist to read Location records</description>
+        <label>PC Read Access to Location for Specialists</label>
+        <sharedTo>
+            <group>PC_Provider_Connect_Specialists</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>PC_NDTH_Admin_User</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

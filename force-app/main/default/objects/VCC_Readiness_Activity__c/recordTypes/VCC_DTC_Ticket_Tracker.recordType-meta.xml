@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_DTC_Ticket_Tracker</fullName>
+    <active>false</active>
+    <label>DTC Ticket Tracker</label>
+</RecordType>

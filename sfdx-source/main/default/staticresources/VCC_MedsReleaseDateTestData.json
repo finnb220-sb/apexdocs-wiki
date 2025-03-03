@@ -1,0 +1,223 @@
+{
+    "sites": [
+        {
+            "results": {
+                "meds": {
+                    "total": "1",
+                    "med": [
+                        {
+                            "expires": {
+                                "value": "3220929"
+                            },
+                            "doses": {
+                                "dose": [
+                                    {
+                                        "schedule": "QD",
+                                        "dose": "100",
+                                        "doseStop": "3220929",
+                                        "noun": "TABLET",
+                                        "unitsPerDose": "1",
+                                        "units": "MG",
+                                        "doseStart": "3210928"
+                                    }
+                                ]
+                            },
+                            "vaStatus": {
+                                "value": "ACTIVE"
+                            },
+                            "fillsAllowed": {
+                                "value": "5"
+                            },
+                            "medID": {
+                                "value": "9546707;O"
+                            },
+                            "pharmacist": {
+                                "code": "520824712",
+                                "name": "GEDGE,LYDSE I"
+                            },
+                            "lastFilled": {
+                                "value": "3231227"
+                            },
+                            "type": {
+                                "value": "Prescription"
+                            },
+                            "products": {
+                                "product": [
+                                    {
+                                        "vaGeneric": {
+                                            "code": "700",
+                                            "name": "METOPROLOL",
+                                            "vuid": "4019836"
+                                        },
+                                        "code": "8498",
+                                        "role": "D",
+                                        "vaProduct": {
+                                            "code": "4059",
+                                            "name": "METOPROLOL SUCCINATE 100MG TAB,SA",
+                                            "vuid": "4004612"
+                                        },
+                                        "name": "METOPROLOL (TOPROL-XL) 100MG SA TAB",
+                                        "concentration": "100 MG",
+                                        "class": {
+                                            "code": "CV100",
+                                            "name": "BETA BLOCKERS/RELATED",
+                                            "vuid": "4021565"
+                                        },
+                                        "ordItem": {}
+                                    }
+                                ]
+                            },
+                            "sig": {
+                                "content": "TAKE ONE TABLET EVERY DAY"
+                            },
+                            "routing": {
+                                "value": "W"
+                            },
+                            "fillsRemaining": {
+                                "value": "5"
+                            },
+                            "id": {
+                                "value": "28025363"
+                            },
+                            "fills": {
+                                "fill": [
+                                    {
+                                        "releaseDateMonth": "December",
+                                        "releaseDate": "3231205",
+                                        "partial": null,
+                                        "formattedReleaseDate": "2023-12-05",
+                                        "formattedFillDate": "2023-12-01",
+                                        "fillRouting": "W",
+                                        "fillQuantity": "30",
+                                        "fillDaysSupply": "30",
+                                        "fillDate": "3230601"
+                                    }, {
+                                        "releaseDateMonth": "January",
+                                        "releaseDate": "3240101",
+                                        "partial": null,
+                                        "formattedReleaseDate": "2024-01-01",
+                                        "formattedFillDate": "2023-12-27",
+                                        "fillRouting": "M",
+                                        "fillQuantity": "30",
+                                        "fillDaysSupply": "30",
+                                        "fillDate": "3231227"
+                                    }, {
+                                        "releaseDateMonth": "August",
+                                        "releaseDate": "3230812",
+                                        "partial": null,
+                                        "formattedReleaseDate": "2023-08-12",
+                                        "formattedFillDate": "2020-08-18",
+                                        "fillRouting": "M",
+                                        "fillQuantity": "30",
+                                        "fillDaysSupply": "30",
+                                        "fillDate": "3230818"
+                                    },{
+                                        "releaseDateMonth": "October",
+                                        "releaseDate": "3221005",
+                                        "partial": null,
+                                        "formattedReleaseDate": "2022-10-05",
+                                        "formattedFillDate": "2022-10-01",
+                                        "fillRouting": "W",
+                                        "fillQuantity": "30",
+                                        "fillDaysSupply": "30",
+                                        "fillDate": "3221001"
+                                    }, {
+                                        "releaseDateMonth": "February",
+                                        "releaseDate": "3200201",
+                                        "partial": null,
+                                        "formattedReleaseDate": "2020-02-01",
+                                        "formattedFillDate": "2020-01-27",
+                                        "fillRouting": "M",
+                                        "fillQuantity": "30",
+                                        "fillDaysSupply": "30",
+                                        "fillDate": "3200127"
+                                    }, {
+                                        "releaseDateMonth": "July",
+                                        "releaseDate": "3210701",
+                                        "partial": null,
+                                        "formattedReleaseDate": "2023-07-01",
+                                        "formattedFillDate": "2020-07-01",
+                                        "fillRouting": "M",
+                                        "fillQuantity": "30",
+                                        "fillDaysSupply": "30",
+                                        "fillDate": "3200701"
+                                    }
+                                ]
+                            },
+                            "vaType": {
+                                "value": "O"
+                            },
+                            "ordered": {
+                                "value": "3210928.140313"
+                            },
+                            "orderingProvider": {
+                                "code": "520824671",
+                                "service": "BAY PINES TEST LAB",
+                                "name": "CPRSPROVIDER,EIGHTY",
+                                "taxonomyCode": "203BX0901N",
+                                "providerType": "Physicians (M.D. and D.O.)",
+                                "classification": "Physician/Osteopath",
+                                "specialization": "Otology & Neurotology"
+                            },
+                            "quantity": {
+                                "value": "30"
+                            },
+                            "orderID": {
+                                "value": "28025363"
+                            },
+                            "daysSupply": {
+                                "value": "30"
+                            },
+                            "start": {
+                                "value": "3210928"
+                            },
+                            "fillCost": {
+                                "value": "18.96"
+                            },
+                            "form": {
+                                "value": "TAB,SA"
+                            },
+                            "stop": {
+                                "value": "3220929"
+                            },
+                            "prescription": {
+                                "value": "10951204"
+                            },
+                            "name": {
+                                "value": "METOPROLOL (TOPROL XL) TAB,SA"
+                            },
+                            "location": {},
+                            "facility": {
+                                "code": "982",
+                                "name": "CLE13 TEST LAB"
+                            },
+                            "currentProvider": {
+                                "code": "520824671",
+                                "service": "BAY PINES TEST LAB",
+                                "name": "CPRSPROVIDER,EIGHTY",
+                                "taxonomyCode": "203BX0901N",
+                                "providerType": "Physicians (M.D. and D.O.)",
+                                "classification": "Physician/Osteopath",
+                                "specialization": "Otology & Neurotology"
+                            },
+                            "status": {
+                                "value": "active"
+                            },
+                            "ptInstructions": {},
+                            "IMO": {},
+                            "parent": {},
+                            "ivLimit": {}
+                        }
+                    ]
+                },
+                "timeZone": "-0400",
+                "version": "1.13"
+            },
+            "errorSection": {
+                "errors": [],
+                "fatalErrors": [],
+                "warnings": []
+            }
+        }
+    ]
+}

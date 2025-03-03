@@ -1,0 +1,76 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <!-- Global Spinner -->
+    <template if:true={isGlobalLoading}>
+        <lightning-spinner class="global-spinner" variant="brand" size="large"> </lightning-spinner>
+    </template>
+
+    <!-- modal window -->
+    <template if:false={isGlobalLoading}>
+        <section
+            role="dialog"
+            tabindex="0"
+            aria-label="modal-heading"
+            aria-modal="true"
+            aria-describedby="modal-content-id-1">
+            <div tabindex="0">
+                <!-- modal header -->
+                <div>
+                    <lightning-button-icon
+                        icon-name="utility:close"
+                        size="medium"
+                        alternative-text="Indicates close"
+                        onclick={handleClose}
+                        title="Close"
+                        class="slds-var-m-around_xx-small slds-float_right"
+                        label="Close"
+                        variant="bare-inverse">
+                    </lightning-button-icon>
+                </div>
+                <header
+                    class="slds-modal__header"
+                    style="text-align: center; color: white; font-size: 14px; background-color: darkred"
+                    tabindex="0">
+                    <h2
+                        id="modal-heading-01"
+                        class="slds-text-heading_medium slds-hyphenate slds-text-color_inverse"
+                        tabindex="0">
+                        e911
+                    </h2>
+                </header>
+                <!-- modal body -->
+                <div class="slds-modal__content slds-var-p-around_medium" id="modal-content-id-1">
+                    <lightning-icon
+                        icon-name="standard:call_coaching"
+                        alternative-text="Call"
+                        title="Callback Number"></lightning-icon>
+                    <lightning-formatted-text
+                        value="&emsp;Clinician Call-back Number"
+                        style="font-weight: bold; font-size: 16px; vertical-align: middle"></lightning-formatted-text>
+                </div>
+                <div
+                    class="slds-modal__content slds-var-p-right_medium slds-var-p-left_medium slds-var-p-bottom_medium"
+                    id="modal-content-id-2"
+                    lwc:ref="phoneDiv">
+                    <lightning-input
+                        data-id="phoneInput"
+                        tabindex="0"
+                        required="true"
+                        type="tel"
+                        label="Number that 911 can call you back at "
+                        name="phone"
+                        value={phone}
+                        data-name="callBackNum"
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                        message-when-pattern-mismatch="Phone Number must be in ###-###-#### format"
+                        message-when-value-missing="Phone Number must be in ###-###-#### format"></lightning-input>
+                </div>
+                <!-- modal footer -->
+                <footer class="slds-modal__footer">
+                    <button tabindex="0" class="slds-button slds-button_neutral" onclick={handleClose}>Cancel</button>
+                    <button tabindex="0" class="slds-button slds-button_brand" onclick={handleNext}>Next</button>
+                </footer>
+            </div>
+        </section>
+    </template>
+</template>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Patient_Understands_Reason_Call_Back__c</fullName>
+    <complianceGroup>HIPAA</complianceGroup>
+    <description>Contains the information about whether the patient understands the reason to call back on the Clinical Triage 2.0 Progress Note for SOAPIE template</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <label>Patient Understands Reason to Call Back</label>
+    <required>false</required>
+    <securityClassification>Restricted</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PC_Cases</fullName>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <columns>OWNER_NAME</columns>
+    <columns>PC_Specialty__c</columns>
+    <columns>PC_Channel__c</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <columns>CASES.CLOSED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CASES.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Case.PC_Case</value>
+    </filters>
+    <label>Provider Connect Cases</label>
+    <sharedTo>
+        <group>PC_Provider_Connect_Users</group>
+    </sharedTo>
+</ListView>

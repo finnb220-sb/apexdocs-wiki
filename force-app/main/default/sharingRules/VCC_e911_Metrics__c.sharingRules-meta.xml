@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>VCC_e911_Metrics_Sharing_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Sharing Rule for e911 Metrics object.
+The sharing rule is granting read/write permissions to all users in the VAHC E911 Users group if the owner is in the VAHC E911 Users group</description>
+        <label>e911 Metrics Sharing Rule</label>
+        <sharedTo>
+            <group>VCC_VAHC_E911_Users</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>VCC_VAHC_E911_Users</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

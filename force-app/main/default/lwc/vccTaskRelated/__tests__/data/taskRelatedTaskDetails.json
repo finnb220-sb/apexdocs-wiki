@@ -1,0 +1,44 @@
+[
+    {
+        "Id": "00T000000000001",
+        "Subject": "Call",
+        "Status": "Completed",
+        "ActivityDate": "2024-01-01",
+        "DueDate": "01/01/2024",
+        "CreatedDate": "2024-01-01T00:00:00.000Z",
+        "CreatedById": "005000000000001",
+        "CreatedBy": {
+            "Id": "005000000000001",
+            "Name": "John Doe"
+        },
+        "WhatId": "a1a000000000001",
+        "Owner": {
+            "Name": "Jane Doe"
+        },
+        "OwnerId": "005000000000001",
+        "What": {
+            "Name": "Renewal Request 1"
+        }
+    },
+    {
+        "Id": "00T000000000002",
+        "Subject": "Email",
+        "Status": "In Progress",
+        "ActivityDate": "2024-01-02",
+        "DueDate": "02/01/2024",
+        "CreatedDate": "2024-01-02T00:00:00.000Z",
+        "CreatedById": "005000000000002",
+        "CreatedBy": {
+            "Id": "005000000000002",
+            "Name": "Jane Doe"
+        },
+        "WhatId": "500000000000001",
+        "Owner": {
+            "Name": "John Doe"
+        },
+        "OwnerId": "005000000000002",
+        "What": {
+            "CaseNumber": "00001001"
+        }
+    }
+]

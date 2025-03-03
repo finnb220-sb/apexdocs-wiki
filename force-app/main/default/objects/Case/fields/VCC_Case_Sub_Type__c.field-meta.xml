@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Case_Sub_Type__c</fullName>
+    <description>Categorize the Case for reporting purposes.</description>
+    <inlineHelpText>Categorize the Case for reporting purposes.</inlineHelpText>
+    <label>Case Sub-Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>VCC_Case_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Administrative</fullName>
+                <default>false</default>
+                <label>Administrative</label>
+            </value>
+            <value>
+                <fullName>Community Care</fullName>
+                <default>false</default>
+                <label>Community Care</label>
+            </value>
+            <value>
+                <fullName>Education</fullName>
+                <default>false</default>
+                <label>Education</label>
+            </value>
+            <value>
+                <fullName>Emergent</fullName>
+                <default>false</default>
+                <label>Emergent</label>
+            </value>
+            <value>
+                <fullName>Medication Status</fullName>
+                <default>false</default>
+                <label>Medication Status</label>
+            </value>
+            <value>
+                <fullName>Non-Emergent</fullName>
+                <default>false</default>
+                <label>Non-Emergent</label>
+            </value>
+            <value>
+                <fullName>Telephone Virtual Visit</fullName>
+                <default>false</default>
+                <label>Phone</label>
+            </value>
+            <value>
+                <fullName>Refill Medication</fullName>
+                <default>false</default>
+                <label>Refill Medication</label>
+            </value>
+            <value>
+                <fullName>Renew Medication</fullName>
+                <default>false</default>
+                <label>Renew Medication</label>
+            </value>
+            <value>
+                <fullName>Scheduling</fullName>
+                <default>false</default>
+                <label>Scheduling</label>
+            </value>
+            <value>
+                <fullName>Triage</fullName>
+                <default>false</default>
+                <label>Triage</label>
+            </value>
+            <value>
+                <fullName>Urgent</fullName>
+                <default>false</default>
+                <label>Urgent</label>
+            </value>
+            <value>
+                <fullName>Urgent First Fill</fullName>
+                <default>false</default>
+                <label>Urgent First Fill</label>
+            </value>
+            <value>
+                <fullName>Video Virtual Visit</fullName>
+                <default>false</default>
+                <label>Video</label>
+            </value>
+            <value>
+                <fullName>PHR VCV</fullName>
+                <default>false</default>
+                <label>PHR VCV</label>
+            </value>
+            <value>
+                <fullName>Administrative and Scheduling</fullName>
+                <default>false</default>
+                <label>Scheduling and Administrative</label>
+            </value>
+            <value>
+                <fullName>Pharmacy</fullName>
+                <default>false</default>
+                <label>Pharmacy</label>
+            </value>
+            <value>
+                <fullName>Pharmacy Quality Assurance Issue</fullName>
+                <default>false</default>
+                <label>Pharmacy Quality Assurance Issue</label>
+            </value>
+            <value>
+                <fullName>Medication Error</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Medication Error</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <controllingFieldValue>Symptom</controllingFieldValue>
+            <valueName>Administrative</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Scheduling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Administrative and Scheduling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <controllingFieldValue>Pharmacy</controllingFieldValue>
+            <controllingFieldValue>Symptom</controllingFieldValue>
+            <valueName>Pharmacy Quality Assurance Issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharmacy</controllingFieldValue>
+            <valueName>Pharmacy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Symptom</controllingFieldValue>
+            <valueName>Education</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Symptom</controllingFieldValue>
+            <valueName>Emergent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Symptom</controllingFieldValue>
+            <valueName>Non-Emergent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Symptom</controllingFieldValue>
+            <valueName>Triage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Symptom</controllingFieldValue>
+            <valueName>Urgent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VCV</controllingFieldValue>
+            <valueName>Telephone Virtual Visit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VCV</controllingFieldValue>
+            <valueName>Video Virtual Visit</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

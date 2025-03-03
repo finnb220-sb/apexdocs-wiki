@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Other_course_of_action__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked when &quot;Other course(s) of action&quot; is selected and an &quot;Other&quot; course of action was taken</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if &quot;Other course(s) of action&quot; is selected and an &quot;Alternative&quot; course of action was taken</inlineHelpText>
+    <label>Alternative course of action</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

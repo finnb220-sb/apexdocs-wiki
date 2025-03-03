@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_itemId__c</fullName>
+    <description>Holds the VistA generated Progress Note IEN(ID) for the note that was created by the WriteNote VDIF call.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>Item ID represents the VistA’s unique Progress Note/Addendum ID record for that VistA site</inlineHelpText>
+    <label>Item ID</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

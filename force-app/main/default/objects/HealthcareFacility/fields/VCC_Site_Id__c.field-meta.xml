@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Site_Id__c</fullName>
+    <description>The site ID number that is associated with the healthcare facility. The Site ID can be seen on the person account page under the station column in the facilities
+        component.</description>
+    <externalId>false</externalId>
+    <label>Site Id</label>
+    <precision>10</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

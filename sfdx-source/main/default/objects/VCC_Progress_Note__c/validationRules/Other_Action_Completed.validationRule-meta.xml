@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Action_Completed</fullName>
+    <active>true</active>
+    <description>When Other Action Completed is selected, action must be specified</description>
+    <errorConditionFormula>BEGINS( RecordType.DeveloperName, &quot;VCC_&quot;) &amp;&amp; !$Permission.DisableTriggersFlag &amp;&amp; AND(VCC_Other_Action_Completed__c = TRUE, VCC_Other_Action__c =
+        &apos;&apos;, NOT $Permission.VCC_Disable_Progress_Note_Assignment_Rules)</errorConditionFormula>
+    <errorDisplayField>VCC_Other_Action_Completed__c</errorDisplayField>
+    <errorMessage>When Other Action Completed is selected, action must be specified</errorMessage>
+</ValidationRule>

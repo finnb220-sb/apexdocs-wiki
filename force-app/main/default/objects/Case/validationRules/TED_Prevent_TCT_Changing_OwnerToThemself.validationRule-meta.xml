@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TED_Prevent_TCT_Changing_OwnerToThemself</fullName>
+    <active>true</active>
+    <description>Prevents TCT from Assigning Ownership to themselves</description>
+    <errorConditionFormula>AND(
+RecordType.DeveloperName = &quot;Tele_Urgent_Care_0_2_Hours&quot; || RecordType.DeveloperName = &quot;Tele_Urgent_Care_2_8_Hours_Case&quot;,
+$Permission.Tele_EC_TCT_User,
+!$Permission.DisableTriggersFlag,
+ISCHANGED(OwnerId),
+OwnerId =  $User.Id
+)</errorConditionFormula>
+    <errorMessage>A TCT User can&apos;t update case ownership to themselves</errorMessage>
+</ValidationRule>

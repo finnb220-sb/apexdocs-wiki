@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CIP_Traige_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>First_Name__c</fields>
+    <fields>Last_Name__c</fields>
+    <fields>SSN__c</fields>
+    <fields>Date_of_Birth__c</fields>
+    <fields>Age__c</fields>
+    <fields>Triage_Status__c</fields>
+    <label>CIP Traige Compact Layout</label>
+</CompactLayout>

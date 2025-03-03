@@ -1,0 +1,12 @@
+An Integration Error has occurred in VAHC CRM. See details below:
+
+Exception Type: {!LogEntry__c.ExceptionType__c}
+
+Apex Class: {!LogEntry__c.ApexClassName__c}
+Apex Method: {!LogEntry__c.ApexMethodName__c}
+
+Exception Stack Trace: {!LogEntry__c.ExceptionStackTrace__c}
+
+Triggered by User: {!LogEntry__c.CreatedBy}
+
+Note: These emails are sent when a Status Code other than 200 is returned from the listed service. Some Status Codes may not indicate a full service outage. Please investigate to confirm a full service outage.

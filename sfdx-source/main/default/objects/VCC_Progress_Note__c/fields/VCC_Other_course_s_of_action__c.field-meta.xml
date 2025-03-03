@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Other_course_s_of_action__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked if the Agent performed other courses of action</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if you performed other courses of action</inlineHelpText>
+    <label>Other course(s) of action</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

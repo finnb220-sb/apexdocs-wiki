@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enforce_no_edit_closed_case</fullName>
+    <active>true</active>
+    <description>Prevents closed cases from being edited, except in the case of populating the survey created field.</description>
+    <errorConditionFormula>AND(
+					!$Permission.DisableTriggersFlag, !$Permission.Bypass_Enforce_no_edit_closed_case_Validation_Rule ,
+					Closed__c = TRUE,
+					NOW() &gt;= Closed_Date__c + 3*(1/24/60/60),
+				 ISCHANGED( Closed_Date__c ) = FALSE,
+     PRIORVALUE(Closed__c)= TRUE
+   )</errorConditionFormula>
+    <errorMessage>Closed cases may not be edited.</errorMessage>
+</ValidationRule>

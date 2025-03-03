@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Appt_Due_Date__c</fullName>
+    <description>Calculates the due date for an appointment to be scheduled by adding the hours from the follow up appointment recommendation to the date the case was created. This is for reporting purposes.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+ VCC_Case__r.Case_Record_Type_Name__c = &quot;VCC_Administrative&quot;,
+ VCC_Case__r.CreatedDate  +  (VCC_Parent_Case_Follow_Up_Appt_Needed_Hr__c  / 24),
+ IF(
+ VCC_Case__r.Case_Record_Type_Name__c = &quot;VCC_Vitrual_Clinic_Visit&quot;,
+ VCC_Case__r.Parent.CreatedDate + (VCC_Parent_Case_Follow_Up_Appt_Needed_Hr__c  / 24),
+ NULL
+ )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Appt Due Date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_is_required_RFL_WHERE_Disposition</fullName>
+    <active>true</active>
+    <description>If &quot;Other&quot; is selected for &quot;RFL WHERE Disposition&quot;, then &quot;Other - RFL Where Disposition&quot; must be populated.</description>
+    <errorConditionFormula>BEGINS( RecordType.DeveloperName, &quot;VCC_&quot;) &amp;&amp; !$Permission.DisableTriggersFlag &amp;&amp; AND(ISPICKVAL( VCC_RFL_WHERE_Disposition__c ,
+        &quot;Other&quot;), ISBLANK ( VCC_Other_RFL_Where_Disposition__c ), NOT $Permission.VCC_Disable_Progress_Note_Assignment_Rules)</errorConditionFormula>
+    <errorDisplayField>VCC_Other_RFL_Where_Disposition__c</errorDisplayField>
+    <errorMessage>ERROR: Other - Patient Where Disposition must be populated when &quot;Other&quot; is selected for Patient.</errorMessage>
+</ValidationRule>

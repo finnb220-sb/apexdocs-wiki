@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Time_Spent_With_Patient__c</fullName>
+    <description>Used to indicate time spent with patient for Virtual Clinic Visit.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Time spent with patient for Virtual Clinic Visit.</inlineHelpText>
+    <label>Time Spent With Patient</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Phone 5-10 min</fullName>
+                <default>false</default>
+                <label>Phone 5-10 min</label>
+            </value>
+            <value>
+                <fullName>Phone 11-20 min</fullName>
+                <default>false</default>
+                <label>Phone 11-20 min</label>
+            </value>
+            <value>
+                <fullName>Phone 21-30 min</fullName>
+                <default>false</default>
+                <label>Phone 21-30 min</label>
+            </value>
+            <value>
+                <fullName>Video 10-19 min</fullName>
+                <default>false</default>
+                <label>Video 10-19 min</label>
+            </value>
+            <value>
+                <fullName>Video 20-29 min</fullName>
+                <default>false</default>
+                <label>Video 20-29 min</label>
+            </value>
+            <value>
+                <fullName>Video 30-39 min</fullName>
+                <default>false</default>
+                <label>Video 30-39 min</label>
+            </value>
+            <value>
+                <fullName>Video 40-45 min</fullName>
+                <default>false</default>
+                <label>Video 40-45 min</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>11-20 minutes</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>11-20 minutes</label>
+            </value>
+            <value>
+                <fullName>15 minutes</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>15 minutes</label>
+            </value>
+            <value>
+                <fullName>21-30 minutes</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>21-30 minutes</label>
+            </value>
+            <value>
+                <fullName>30 minutes</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>30 minutes</label>
+            </value>
+            <value>
+                <fullName>45 minutes</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>45 minutes</label>
+            </value>
+            <value>
+                <fullName>5-10 Minutes</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>5-10 Minutes</label>
+            </value>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>None</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

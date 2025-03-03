@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_only_VISN_AO_can_add_absences</fullName>
+    <active>true</active>
+    <description>Only the VAHC Calendar Administrator can add or update absenses.</description>
+    <errorConditionFormula
+    >(ISNEW() || ISCHANGED(Description) || ISCHANGED(Address) || ISCHANGED(Street) || ISCHANGED(Street) || ISCHANGED(City) || ISCHANGED(Country) || ISCHANGED(End) ||
+        ISCHANGED(Start) || ISCHANGED(State) || ISCHANGED(Type) || ISCHANGED(PostalCode)) &amp;&amp; !$Permission.VCC_Edit_Operating_Hours &amp;&amp;
+        !$Permission.DisableTriggersFlag &amp;&amp; $Permission.VCC_Appointment_Viewer</errorConditionFormula>
+    <errorMessage>Only VISN Calendar Administrators can add or edit absences</errorMessage>
+</ValidationRule>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Triggers the process of allowing the user to manually complete the progress notes in appropriate systems, and close related records.</description>
+    <flowDefinition>PC_Complete_Progress_Note_via_EHR</flowDefinition>
+    <label>Complete via EHR</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

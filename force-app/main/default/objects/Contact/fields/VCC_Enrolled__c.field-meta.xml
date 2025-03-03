@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Enrolled__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Veteran&apos;s must be enrolled at the VHA by the enrollment team before clinical care can be provided</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Veteran&apos;s must be enrolled at the VHA by the enrollment team before clinical care can be provided</inlineHelpText>
+    <label>Enrolled</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

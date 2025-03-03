@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_MSA_Only_Use_Opened_Error_Pharm_Case</fullName>
+    <active>true</active>
+    <description>Prevent an MSA from closing a Pharm case with a status other than Opened In Error</description>
+    <errorConditionFormula
+    >AND( $Permission.VCC_MSA, !$Permission.VCC_Pharmacy_Tier_I, !$Permission.VCC_Pharmacy_Tier_II, !$Permission.VCC_Pharmacy_Tier_III, ISCHANGED(Status), NOT(ISPICKVAL(Status,
+        &apos;Closed - Error&apos;)), NOT(ISPICKVAL(Status, &apos;Open&apos;)), BEGINS( RecordType.DeveloperName, &quot;VCC_Pharmacy&quot;)) &amp;&amp;
+        !$Permission.DisableTriggersFlag &amp;&amp; !$Permission.VCC_Disable_Case_Validation_Rules</errorConditionFormula>
+    <errorMessage>Pharmacy Cases closed by an MSA can only have the status of &apos;Opened in Error&apos;.</errorMessage>
+</ValidationRule>

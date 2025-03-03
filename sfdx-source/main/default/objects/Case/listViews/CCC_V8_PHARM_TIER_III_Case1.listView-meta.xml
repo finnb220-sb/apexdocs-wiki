@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CCC_V8_PHARM_TIER_III_Case1</fullName>
+    <filterScope>Queue</filterScope>
+    <label>CCC-V8-PHARM-TIER III</label>
+    <queue>CCC_V8_PHARM_TIER_III</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

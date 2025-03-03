@@ -1,0 +1,77 @@
+<template>
+    <c-logger></c-logger>
+    <div class="container">
+        <lightning-card>
+            <div slot="title">
+                <lightning-layout vertical-align="center">
+                    <lightning-layout-item>
+                        <lightning-icon
+                            icon-name="utility:priority"
+                            class="flag-icon slds-var-p-around_xxx-small"
+                            size="x-small"></lightning-icon>
+                    </lightning-layout-item>
+                    <lightning-layout-item class="slds-var-m-left_small">
+                        <h2>Flags</h2>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+
+            <div slot="actions" lwc:if={enabledTestFlagsAlertModal}>
+                <lightning-button label="Test Flags Alert Modal" onclick={testFlagsAlertModal}></lightning-button>
+            </div>
+
+            <lightning-layout multiple-rows class="slds-var-m-around_large">
+                <lightning-layout-item size="6">
+                    <div class="total-problem-title">{totalRecords} items &#183; Sorted by {sortedByLabel}</div>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="12" style="max-height: 20rem">
+                    <c-vcc-datatable-custom-types
+                        key-field="key"
+                        data={flagList}
+                        columns={columns}
+                        selected-rows={selectedRows}
+                        default-sort-direction="desc"
+                        sorted-direction={sortDirection}
+                        sorted-by={sortedBy}
+                        onsort={handleSort}
+                        onrowaction={handleRowAction}
+                        hide-checkbox-column>
+                    </c-vcc-datatable-custom-types>
+
+                    <template if:true={totalRecords}>
+                        <c-vcc-pagination
+                            pagesize={pageSize}
+                            totalrecords={totalRecords}
+                            onpagechange={handlePageChange}></c-vcc-pagination>
+                    </template>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-card>
+    </div>
+
+    <c-base-modal
+        size="medium"
+        onnextvaluechange={nextValueChange}
+        nextdisable={nxtBtn}
+        prevdisable={prevBtn}
+        showbtns={ShowBtns}
+        recordcount={totalRecordsDetails}>
+        <template if:true={flagSelected}>
+            <div slot="header">
+                <lightning-layout vertical-align="center">
+                    <lightning-layout-item>
+                        <lightning-icon
+                            icon-name="utility:priority"
+                            class="flag-icon slds-var-p-around_xxx-small"
+                            size="small"></lightning-icon>
+                    </lightning-layout-item>
+                    <lightning-layout-item class="slds-var-m-left_small">
+                        <h2 tabindex="0" class="slds-card__header-title slds-hyphenate">{flagSelected.flagName}</h2>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+            <c-vcc-flag-detail selected-record={flagSelected}></c-vcc-flag-detail>
+        </template>
+    </c-base-modal>
+</template>

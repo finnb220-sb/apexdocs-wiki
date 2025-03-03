@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Vdif_Test_Patient_TitleIEN</fullName>
+    <active>true</active>
+    <description
+    >For Vdif test patient data, VCC_Note_Title_IEN__c and VCC_Note_Title_IEN_For_Encounter__c indicate which types of test scenario to run. This validation rule ensures that
+        both are not populated.</description>
+    <errorConditionFormula
+    >RecordType.DeveloperName == &apos;VCC_Vdif_Test_Patient&apos; &amp;&amp; ( ( !ISBLANK( VCC_Note_Title_IEN_For_Encounter__c ) &amp;&amp; !ISBLANK( VCC_Note_Title_IEN__c ) )
+        || ( ISBLANK( VCC_Note_Title_IEN_For_Encounter__c ) &amp;&amp; ISBLANK( VCC_Note_Title_IEN__c ) ) )</errorConditionFormula>
+    <errorMessage>One of either VCC_Note_Title_IEN__c or VCC_Note_Title_IEN_For_Encounter__c must be populated, not both.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nurse_s_Recommendation_When_from_PN__c</fullName>
+    <description>Used in New Tele Emergency Case Case flow. Updated with Nurse Recommendation When field on Progress Note</description>
+    <externalId>false</externalId>
+    <label>Nurse&apos;s Recommendation/When from PN</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>911</fullName>
+                <default>false</default>
+                <label>911</label>
+            </value>
+            <value>
+                <fullName>Now</fullName>
+                <default>false</default>
+                <label>Now</label>
+            </value>
+            <value>
+                <fullName>Within 8 Hours</fullName>
+                <default>false</default>
+                <label>Within 8 Hours</label>
+            </value>
+            <value>
+                <fullName>Within 24 Hours</fullName>
+                <default>false</default>
+                <label>Within 24 Hours</label>
+            </value>
+            <value>
+                <fullName>Within 3 Days</fullName>
+                <default>false</default>
+                <label>Within 3 Days</label>
+            </value>
+            <value>
+                <fullName>Within 2 Weeks</fullName>
+                <default>false</default>
+                <label>Within 2 Weeks</label>
+            </value>
+            <value>
+                <fullName>Selfcare</fullName>
+                <default>false</default>
+                <label>Selfcare</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

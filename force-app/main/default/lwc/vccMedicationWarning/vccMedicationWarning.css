@@ -1,0 +1,36 @@
+:host {
+    --slds-c-accordion-summary-color-background: rgb(254, 147, 57);
+    --slds-c-icon-color-foreground: rgb(62, 62, 60);
+    --sds-c-accordion-heading-text-color-hover: black;
+}
+
+.grey {
+    --slds-c-icon-color-foreground-default: rgb(62, 62, 60);
+}
+
+.warning {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: solid 1px lightgrey;
+}
+
+.warning:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+/* 
+.error-message {
+    padding: 1.25rem 0;
+    color: #ea001e;
+    text-align: center;
+    font-weight: 600;
+} */
+
+/* .orange {
+    --slds-c-icon-color-foreground-default: rgb(254, 147, 57);
+} */
+/* 
+.lightning-icon {
+    --slds-c-icon-color-foreground: rgb(62, 62, 60);
+} */

@@ -1,0 +1,87 @@
+<template>
+    <!-- Header -->
+    <lightning-modal-header label="Inpatient Warning" class="inpatient-header"></lightning-modal-header>
+
+    <!-- Body -->
+    <lightning-modal-body>
+        <!-- Warning Icon & Warning Message -->
+        <div class="slds-grid slds-grid_align-center slds-grid_vertical-align-center">
+            <lightning-icon class="slds-var-p-horizontal_x-large" icon-name="utility:warning" variant="warning" size="small"></lightning-icon>
+            <div style="white-space: break-spaces; font-weight: bold">{warningMessage}</div>
+        </div>
+
+        <!-- Facility Info Table -->
+        <!-- 
+            This was canabalized from vccInpatient as a part of CCCM-18433 
+            only changes are ones made to adapt it to this html file
+        -->
+        <div class="slds-grid slds-grid_align-center slds-grid_vertical-align-center">
+            <template for:each={patientList} for:item="movement">
+                <div key={movement} class="slds-col slds-size_6-of-12" style="padding: 1px">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_12-of-12" style="font-size: 14px; font-weight: bold; padding: 1px">Vista Site: {movement.facilityName}</div>
+                    </div>
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_12-of-12">
+                            <table>
+                                <tr>
+                                    <td style="padding: 5px; border-radius: 5px; font-weight: bold; border: 1px solid lightgray; border-collapse: collapse">Date/Time</td>
+                                    <td style="padding: 5px; border-radius: 5px; border: 1px solid lightgray; border-collapse: collapse">{movement.dateTimeLocaleString}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 5px; border-radius: 5px; font-weight: bold; border: 1px solid lightgray; border-collapse: collapse">Transaction Type</td>
+                                    <td style="padding: 5px; border-radius: 5px; border: 1px solid lightgray; border-collapse: collapse">{movement.transactionType}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 5px; border-radius: 5px; font-weight: bold; border: 1px solid lightgray; border-collapse: collapse">
+                                        Transaction Type Name
+                                    </td>
+                                    <td style="padding: 5px; border-radius: 5px; border: 1px solid lightgray; border-collapse: collapse">{movement.transactionTypeName}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 5px; border-radius: 5px; font-weight: bold; border: 1px solid lightgray; border-collapse: collapse">Movement Type</td>
+                                    <td style="padding: 5px; border-radius: 5px; border: 1px solid lightgray; border-collapse: collapse">{movement.movementType}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 5px; border-radius: 5px; font-weight: bold; border: 1px solid lightgray; border-collapse: collapse">Movement Type Name</td>
+                                    <td style="padding: 5px; border-radius: 5px; border: 1px solid lightgray; border-collapse: collapse">{movement.movementTypeName}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 5px; border-radius: 5px; font-weight: bold; border: 1px solid lightgray; border-collapse: collapse">MAS Movement Type</td>
+                                    <td style="padding: 5px; border-radius: 5px; border: 1px solid lightgray; border-collapse: collapse">{movement.masMovementType}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 5px; border-radius: 5px; font-weight: bold; border: 1px solid lightgray; border-collapse: collapse">
+                                        MAS Movement Type Name
+                                    </td>
+                                    <td style="padding: 5px; border-radius: 5px; border: 1px solid lightgray; border-collapse: collapse">{movement.masMovementTypeName}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 5px; border-radius: 5px; font-weight: bold; border: 1px solid lightgray; border-collapse: collapse">Room Bed</td>
+                                    <td style="padding: 5px; border-radius: 5px; border: 1px solid lightgray; border-collapse: collapse">{movement.roomBed}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 5px; border-radius: 5px; font-weight: bold; border: 1px solid lightgray; border-collapse: collapse">Room Bed Name</td>
+                                    <td style="padding: 5px; border-radius: 5px; border: 1px solid lightgray; border-collapse: collapse">{movement.roomBedName}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </lightning-modal-body>
+
+    <!-- Footer -->
+    <lightning-modal-footer>
+        <!-- 'Go back to home' and 'Acknowledge and Continue' Buttons -->
+        <lightning-button class="slds-var-p-horizontal_x-small" label="Go back to home" onclick={handleGoHome} data-id="home"></lightning-button>
+        <lightning-button
+            class="slds-var-p-horizontal_x-small"
+            variant="brand"
+            label="Acknowledge and Continue"
+            onclick={handleAcknowledge}
+            data-id="acknowledge"
+        ></lightning-button>
+    </lightning-modal-footer>
+</template>

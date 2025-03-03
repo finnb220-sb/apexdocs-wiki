@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Provider_Connect_Case__c</fullName>
+    <description>Provider Connect Case to which this feedback answer relates</description>
+    <externalId>false</externalId>
+    <label>Provider Connect Case</label>
+    <referenceTo>PC_Case__c</referenceTo>
+    <relationshipLabel>PC Case Feedback Answers</relationshipLabel>
+    <relationshipName>PC_Case_Feedback_Answers</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

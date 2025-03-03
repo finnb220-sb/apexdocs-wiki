@@ -1,0 +1,42 @@
+<template>
+    <div class="slds-card">
+        <!-- Loading -->
+        <template if:true={isLoading}>
+            <lightning-spinner></lightning-spinner>
+        </template>
+
+        <!-- Done Loading -->
+        <template if:false={isLoading}>
+            <!-- No Error-->
+            <lightning-tabset if:false={hasError}>
+                <lightning-tab label="Contact Info" title="Contact Info">
+                    <c-vcc-v-a-profile
+                        pending-meds={pendingMeds}
+                        vcc-record-id={vccRecordId}
+                        va-profile-data={vaProfileContactInfo}
+                        va-profile-associated-persons={vaProfileAssociatedPersons}
+                        esr-data={esr}
+                    ></c-vcc-v-a-profile>
+                </lightning-tab>
+
+                <lightning-tab label="Facilities" title="Facilities">
+                    <c-vcc-preferred-facilities mpi-data={mpiData} hidecheckboxcolumn="true"></c-vcc-preferred-facilities>
+                </lightning-tab>
+
+                <lightning-tab label="Insurance and Eligibility" title="Insurance and Eligibility">
+                    <c-vcc-insurance-and-eligibility esr-data={esr} mvi-data={mvi}></c-vcc-insurance-and-eligibility>
+                </lightning-tab>
+
+                <lightning-tab label="Indicators" title="Indicators">
+                    <c-vcc-va-profile-indicators va-profile-data={vaProfile}></c-vcc-va-profile-indicators>
+                </lightning-tab>
+            </lightning-tabset>
+
+            <!-- Error -->
+            <div class="slds-notify slds-notify_alert" if:true={hasError}>
+                <lightning-icon icon-name="utility:error" alternative-text="Error" title="Error" variant="inverse" size="small" class="slds-m-right_small"> </lightning-icon>
+                <h2>{error}</h2>
+            </div>
+        </template>
+    </div>
+</template>

@@ -1,0 +1,30 @@
+.slds-backdrop_open {
+    background: white;
+    opacity: 0.2;
+}
+
+.THIS.global-spinner {
+    background-color: rgba(182, 182, 182, 0.3);
+    height: 100%;
+    z-index: 0;
+    position: fixed;
+    backdrop-filter: blur(5px);
+}
+
+.deceased-header {
+    --slds-c-modal-header-color-background: #d04d37;
+    --slds-c-modal-header-text-color: white;
+}
+
+.red-text {
+    color: #ea001e;
+    font-size: 1.125rem;
+    text-align: center;
+}
+
+.blue-text {
+    color: #062c8b;
+    font-size: 0.875rem;
+    text-align: center;
+    margin-top: 1rem;
+}

@@ -1,0 +1,101 @@
+name: pr-format-code-and-metadata
+run-name: PR Format Code and Metadata
+
+on:
+  workflow_call:
+
+jobs:
+  format-with-prettier:
+    runs-on: ubuntu-latest
+    container: # We're using the official Salesforce provided docker image with the pre-installed Salesforce CLI
+      image: salesforce/cli:latest-full # There is minimal, but non-zero risk here, as SF can (has) broken the CLI in the past
+    steps:
+      # Checkout the source code. This is required to check out the code inside a docker container.
+      - name: 'add safe directory'
+        run: |
+          git config --global --add safe.directory /__w/va-teams/va-teams
+      # Checkout the source. Note we're also setting the safe directory here.
+      - name: 'Checkout source code'
+        uses: actions/checkout@v4
+        with:
+          set-safe-directory: '/__w/va-teams/va-teams'
+          fetch-depth: ${{ github.event_name == 'pull_request' && 2 || 0 }} # either 2 or 0
+      # We use this to calculate what files have been modified in this PR. We don't want to boil the ocean, so our formatting and checks will only apply to these files.
+      # Note: this is a reusable snippet, and handles both PR and non PR contexts.
+      - name: Get changed files
+        id: changed-files
+        run: |
+          if ${{ github.event_name == 'pull_request' }}; then
+              echo "changed_files=$(git diff --name-only -r HEAD^1 HEAD --diff-filter d | grep -E '\.js$|html$|cls$|json$|yml$|yaml$|md$|trigger$|page$|cmp$|css$' | xargs )" >> $GITHUB_OUTPUT
+          else
+              echo "changed_files=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} --diff-filter d | grep -E '\.js$|html$|cls$|json$|yml$|yaml$|md$|trigger$|page$|cmp$|css$' | xargs)" >> $GITHUB_OUTPUT
+          fi
+      # purely a debugging step to see what files have been changed
+      - name: List changed files
+        shell: bash
+        run: |
+          for file in ${{ steps.changed-files.outputs.changed_files }}; do
+              echo "$file was changed"
+          done
+      # Install Volta to enforce proper node and package manager versions
+      # Volta is a JS/TS tooling manager that ensures the correct versions of node and npm are used
+      - name: 'Install Volta'
+        uses: volta-cli/action@v4
+        with:
+          node-version: "18.18.1"
+      # Cache node_modules to speed up the process
+      - name: 'Restore node_modules cache'
+        id: cache-npm
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            npm-${{ env.cache-name }}-
+            npm-
+      # Install npm dependencies for Prettier. Note, we could switch to bun, but the speed improvement is minimal after accounting for installation cost.
+      # When / if we move to a custom image built on top of the Salesforce image, we can pre-install these dependencies.
+      - name: 'Install npm dependencies'
+        if: steps.cache-npm.outputs.cache-hit != 'true'
+        run: HUSKY=0 npm ci
+      # Start local Apex parser server for Prettier
+      # This isn't strictly necessary, but by starting up this server, we stop apex-prettier from launching a new java process for every file it formats.
+      # This is a significant time saving measure.
+      - name: 'Start local Apex parser server for Prettier'
+        run: |
+          echo 'Starting Apex language server'
+          nohup npm run apex:local:start >/dev/null 2>&1 &
+          echo 'Waiting on Apex language server'
+          npx wait-on -t 30000 http://127.0.0.1:2117/api/ast/
+      # Prettier formatting
+      # Note: this only runs prettier on the files that have been changed in this PR.
+      - name: 'Code formatting verification with Prettier'
+        shell: bash
+        id: prettier
+        run: |
+          echo 'Running Prettier code formatting verification'
+          npm run prettier:verify:apex:local:pr -- ${{ steps.changed-files.outputs.changed_files }} | xargs
+      # Prettier doesn't have a built-in diff command to show users what's *not* properly formatted. This step attempts to generate a standard diff file.
+      # So users can see what's not formatted correctly.
+      - name: Show diff 📝
+        if: ${{ failure() }}
+        run: |
+          npx prettier --plugin=@prettier/plugin-xml --plugin=prettier-plugin-apex --apex-standalone-parser built-in --write --config .prettierrc --ignore-path .prettierignore ${{ steps.changed-files.outputs.changed_files }} | xargs
+          git diff -- . ':(exclude)package-lock.json' ':(exclude)package.json' > diff.txt
+          volta install diff2html-cli
+          diff2html -i file -s side -F diff.html -- diff.txt
+          ls -lax diff.html
+      # If the Prettier step fails, we upload the diff file as an artifact.
+      - name: Upload html diff
+        if: ${{ failure() && steps.prettier.conclusion == 'failure' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: HTML Diff
+          path: |
+            diff.html
+            diff.txt
+          retention-days: 3
+      # Stop local Apex parser server for Prettier. Not stopping it can cause ... weirdness with the job completing leaving the runner in a hung state.
+      - name: 'Stop local Apex parser server for Prettier'
+        if: always()
+        run: npm run apex:local:stop

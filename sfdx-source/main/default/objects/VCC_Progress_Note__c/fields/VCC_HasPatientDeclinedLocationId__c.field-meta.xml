@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_HasPatientDeclinedLocationId__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description
+    >For Synchronous Video Telehealth visits into the Home, ATLAS location, or non-VA location, if the patient does not provide their location or emergency contact information,
+        the healthcare professional must document that conversation in the medical record (e.g., The patient refused to provide their location and emergency contact information and
+        was informed about the increased risk of not receiving timely support should an emergency occur. The telehealth health care professional and patient agreed to continue with
+        the visit).</description>
+    <externalId>false</externalId>
+    <inlineHelpText
+    >For Synchronous Video Telehealth visits into the Home, ATLAS location, or non-VA location, if the patient does not provide their location or emergency contact information,
+        you must document that conversation in the medical record. Once the risk of delayed emergency support is stated, you and your patient agreed to continue with the
+        visit.</inlineHelpText>
+    <label>Patient Declined Location ID</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

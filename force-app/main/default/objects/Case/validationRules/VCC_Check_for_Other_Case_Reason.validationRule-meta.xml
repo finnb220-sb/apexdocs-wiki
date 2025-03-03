@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Check_for_Other_Case_Reason</fullName>
+    <active>true</active>
+    <description>CCCM-20314 Validation Rule for ADM/SCD Case: If Other Selected for Case Reason</description>
+    <errorConditionFormula>AND( !$Permission.DisableTriggersFlag, !$Permission.VCC_Disable_Case_Validation_Rules, RecordType.DeveloperName = &apos;VCC_Administrative&apos; ,
+        !INCLUDES(VCC_Case_Reason_Multi__c, &apos;Other&apos;), !ISBLANK(VCC_Other_Case_Reason__c) )</errorConditionFormula>
+    <errorDisplayField>VCC_Other_Case_Reason__c</errorDisplayField>
+    <errorMessage>ERROR: &quot;Other&quot; must be selected for the Case Reason to provide a description in Other Case Reason.</errorMessage>
+</ValidationRule>

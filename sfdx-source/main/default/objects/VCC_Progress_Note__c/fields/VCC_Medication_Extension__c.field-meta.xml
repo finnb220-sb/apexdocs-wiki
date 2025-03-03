@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Medication_Extension__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates that a patient is calling about a medication extension</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if patient is calling about a medication extension</inlineHelpText>
+    <label>Medication Extension</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

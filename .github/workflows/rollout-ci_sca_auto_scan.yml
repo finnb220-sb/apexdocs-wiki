@@ -1,0 +1,565 @@
+# This is a main workflow to trigger on push and pull requests
+
+name: Static Code Analysis (auto)
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches: [sit, release_*, release*, int_update*, master]
+
+env:
+  blocking_severity: 2
+  csv_properties: --property package=false --property problem=false --property ruleSet=false
+  hidden_comment_suffix: <!--dtc-scanner-->
+  analysis_engine: ${{vars.SCA_ENGINE}}
+  PMD_SARIF_NAME: pmd-cli-scan.sarif
+  CODESCAN_SARIF_NAME: codescan.sarif
+  SONAR_SCANNER_VERSION: 5.0.1.3006
+
+jobs:
+  set-variables:
+    name: Set Variables
+    runs-on: ubuntu-latest
+    outputs:
+      file_name: ${{ steps.set_filename.outputs.file_name }}
+    steps:
+      - name: Set Filename
+        id: set_filename
+        run: |
+          echo "file_name=${{ github.event.repository.name }}_$(date --utc +%Y%m%d_%H%M%SZ)" >> $GITHUB_OUTPUT
+          echo "$file_name"
+
+  scan-pmd:
+    name: PMD to SARIF
+    needs: set-variables
+    if: ${{ vars.SCA_ENGINE == 'PMD' }}
+    permissions:
+      contents: read # for actions/checkout to fetch code
+      security-events: write # for github/codeql-action/upload-sarif to upload SARIF results
+      actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
+
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check out the source code
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      # Install PMD
+      - name: Install PMD
+        id: pmd
+        run: |
+          # PMD_VERSION=$(curl -s https://api.github.com/repos/pmd/pmd/releases/latest | grep '.tag_name' | sed 's:.*/::' | sed 's:",::')
+          PMD_VERSION=7.6.0
+          echo $PMD_VERSION
+          if [ ! -f "./pmd-dist-$PMD_VERSION-bin.zip" ]; then 
+            wget -q https://github.com/pmd/pmd/releases/download/pmd_releases%2F$PMD_VERSION/pmd-dist-$PMD_VERSION-bin.zip
+            unzip -q pmd-dist-$PMD_VERSION-bin.zip -d ~
+            mv ~/pmd-bin-$PMD_VERSION ~/pmd
+            ~/pmd/bin/pmd --version
+          fi
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v45
+        with:
+          output_renamed_files_as_deleted_and_added: true
+          separator: ','
+          old_new_separator: '\n'
+          old_new_files_separator: '\n'
+
+      - name: Add changed files to changed.txt
+        shell: bash
+        env:
+          ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
+        run: |
+          touch changed.txt
+          IFS=$',' read -a ALL_CHANGED_FILES <<< "${{ steps.changed-files.outputs.all_changed_files }}"
+           for file in "${ALL_CHANGED_FILES[@]}"; do
+             echo $file >> changed.txt
+           done
+          echo "Changed Files:"
+          cat changed.txt
+
+      ########## Run PMD SARIF (check if DX or Metadata)
+      - name: PMD Scan to SARIF
+        id: pmd_sarif
+        run: |
+          if [ ${{ vars.PACKAGE_ARCHITECTURE_TYPE }} == 'copado' ]; then
+            echo "Copado/metadata format repository. Starting first PMD scan."
+            rm -f .pmdCache
+            ~/pmd/bin/pmd check --file-list changed.txt --rulesets config/dtc_pmd_ruleset.xml --format sarif --report-file ${{ env.PMD_SARIF_NAME }} --cache .pmdCache --no-progress --no-fail-on-violation --no-fail-on-error 
+            echo "first PMD scan done. starting second"
+            ~/pmd/bin/pmd check --file-list changed.txt --rulesets config/dtc_pmd_ruleset.xml --format sarif --report-file ${{ env.PMD_SARIF_NAME }} --cache .pmdCache --no-progress --no-fail-on-violation --no-fail-on-error --force-language xml
+            echo "second PMD scan done"
+          else
+            echo "DX format repository. Starting single PMD scan"
+            ~/pmd/bin/pmd check --file-list changed.txt --rulesets config/dtc_pmd_ruleset.xml --format sarif --report-file ${{ env.PMD_SARIF_NAME }} --no-cache --no-progress --no-fail-on-violation --no-fail-on-error
+            echo "Single PMD scan done"
+          fi
+
+      - name: Upload sarif
+        uses: actions/upload-artifact@v4
+        with:
+          path: ${{ env.PMD_SARIF_NAME }}
+          name: pmd_scan_sarif
+          compression-level: 0
+
+      - name: Upload violations file in SARIF format
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: ${{ env.PMD_SARIF_NAME }}
+          category: PMD
+
+  scan-codescan:
+    name: CodeScan to SARIF
+    needs: set-variables
+    if: ${{ vars.SCA_ENGINE != 'PMD' }}
+    permissions:
+      contents: read # for actions/checkout to fetch code
+      security-events: write # for github/codeql-action/upload-sarif to upload SARIF results
+      actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
+    runs-on: ubuntu-latest
+    env:
+      JAVA_TOOL_OPTIONS: '-Xmx8g'
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Cache files
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.sonar
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v45
+        with:
+          output_renamed_files_as_deleted_and_added: true
+          separator: ','
+
+      - name: Run Codescan On Push
+        if: github.event_name == 'push'
+        uses: codescan-io/codescan-scanner-action@1.6
+        with:
+          organization: ${{ vars.AUTORABIT_CODESCAN_ORGANIZATION }}
+          projectKey: ${{ vars.AUTORABIT_CODESCAN_PROJECT_KEY }}
+          login: ${{ secrets.AUTORABIT_CODESCAN_TOKEN }}
+          codeScanUrl: ${{ vars.AUTORABIT_CODESCAN_URI }}
+          failOnRedQualityGate: false
+          scanChangedFilesOnly: false
+          generateSarifFile: true
+          generateReportFile: true
+          args: |
+            sonar.verbose=true
+            sonar.token=${{ secrets.AUTORABIT_CODESCAN_TOKEN }}
+            sonar.scm.provider=git
+            sonar.scm.disabled=false
+            sonar.projectName=${{ github.event.repository.name }}
+            sonar.java.binaries=target
+            sonar.exclusions=${{ vars.CODESCAN_SONAR_EXCLUSIONS }}
+            sonar.analysisCache.enabled=false
+            sf.sfmeta.suffixes=${{ vars.CODESCAN_SF_SFMETA_SUFFIXES }}
+            codescan.suppressUnitTestViolations=false
+            codescan.comparison.branches=${{ vars.CODESCAN_COMPARISON_BRANCHES }}
+            codescan.cloud.packageTypes=${{ vars.CODESCAN_CLOUD_PACKAGETYPES }}
+            sonar.branch.name=${{ github.ref_name }}
+
+
+      - name: Run Codescan On Pull Request
+        if: github.event_name == 'pull_request'
+        uses: codescan-io/codescan-scanner-action@1.6
+        with:
+          organization: ${{ vars.AUTORABIT_CODESCAN_ORGANIZATION }}
+          projectKey: ${{ vars.AUTORABIT_CODESCAN_PROJECT_KEY }}
+          login: ${{ secrets.AUTORABIT_CODESCAN_TOKEN }}
+          codeScanUrl: ${{ vars.AUTORABIT_CODESCAN_URI }}
+          failOnRedQualityGate: false
+          scanChangedFilesOnly: false
+          generateSarifFile: true
+          generateReportFile: true
+          args: |
+            sonar.verbose=true
+            sonar.token=${{ secrets.AUTORABIT_CODESCAN_TOKEN }}
+            sonar.scm.provider=git
+            sonar.scm.disabled=false
+            sonar.pullrequest.key=${{github.event.number}} 
+            sonar.pullrequest.branch=${{github.head_ref}} 
+            sonar.pullrequest.base=${{github.base_ref}} 
+            sonar.projectName=${{ github.event.repository.name }}
+            sonar.java.binaries=target
+            sonar.inclusions=${{ steps.changed-files.outputs.all_changed_files }}
+            sonar.exclusions=${{ vars.CODESCAN_SONAR_EXCLUSIONS }}
+            sonar.analysisCache.enabled=false
+            sf.sfmeta.suffixes=${{ vars.CODESCAN_SF_SFMETA_SUFFIXES }}
+            codescan.suppressUnitTestViolations=false
+            codescan.pullRequest.filterIssuesByChangedLines=${{ vars.CODESCAN_PR_CHANGEDLINES }}
+            codescan.comparison.branches=${{ vars.CODESCAN_COMPARISON_BRANCHES }}
+            codescan.cloud.packageTypes=${{ vars.CODESCAN_CLOUD_PACKAGETYPES}}
+
+      - name: Upload sarif
+        uses: actions/upload-artifact@v4
+        with:
+          path: codescan.sarif
+          name: scan_sarif
+          compression-level: 0
+
+      - name: Upload violations file in SARIF format
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: codescan.sarif
+          category: CodeScan
+
+  consume_sarif:
+    name: Parse All Violations
+    needs: ['scan-pmd', 'scan-codescan', 'set-variables']
+    runs-on: ubuntu-latest
+    if: always() && contains(needs.*.result, 'success') && !contains(needs.*.result, 'failure')
+
+    outputs:
+      violation_count: ${{ steps.evaluate_violations_all.outputs.violation_count}}
+
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          merge-multiple: true
+
+      - name: parse sarif
+        env:
+          CODESCAN_SARIF_NAME: ${{env.CODESCAN_SARIF_NAME}}
+          PMD_SARIF_NAME: ${{env.PMD_SARIF_NAME}}
+        shell: pwsh
+        run: |
+          $repo = "${{ github.event.repository.name }}"
+          $output_file = "${{ needs.set-variables.outputs.file_name}}.csv"
+
+          # test for both known sarif filenames
+          $codescan_sarif=$(Test-Path ./$env:CODESCAN_SARIF_NAME)
+          $non_codescan_sarif=$(Test-Path ./$env:PMD_SARIF_NAME)
+
+          if ($non_codescan_sarif){
+              $sarif_file = $env:PMD_SARIF_NAME
+          } elseif ($codescan_sarif) {
+              $sarif_file = $env:CODESCAN_SARIF_NAME
+          }
+
+          $sarif_contents = Get-Content $sarif_file
+          $sarif_stuff = $sarif_contents | ConvertFrom-Json
+
+          #grab rules and results seperately
+          $raw_rules = $sarif_stuff.runs.tool.driver.rules
+          $raw_results = $sarif_stuff.runs.results
+
+          if ($non_codescan_sarif){
+            #massage rules into expected format
+            class Rules__c {
+            [string]$id
+            [int]$index
+            [int]$priority
+            [string]$shortdescription;
+            }
+
+          #build array of rules for comparison later
+            $rules_array = @()
+            foreach ($rule in $raw_rules){
+                $rules_array += [Rules__c]@{
+                    id=$rule.Id;
+                    index=[array]::IndexOf($raw_rules, $rule);
+                    shortdescription=$rule.shortdescription.text;
+                    priority=$rule.properties.priority
+                }
+            }
+
+          #massage results into expected format
+            class Results__c {
+                [string]$ruleid
+                [int]$rule_index
+                [int]$linenumber
+                [string]$location;
+            }
+            
+          #build array of results for comparison later
+            $runner_repo_string = $($repo + '/' + $repo + '/')
+            $results_array = @()
+            foreach ($result in $raw_results){
+                $results_array += [Results__c]@{
+                    ruleid=$result.ruleId;
+                    rule_index=$result.ruleIndex;
+                    linenumber=$result.locations.physicalLocation.region.startline;
+                    location=$($result.locations.physicalLocation.artifactlocation.uri.Split($runner_repo_string)[1])
+                }
+            }
+
+          #construct output format
+            class Output__c {
+                [string]$file
+                [int]$severity
+                [int]$line
+                [string]$description
+                [string]$rule
+            }
+
+          #smash together the results with the matching rule
+            $output = @()
+            foreach ($output_result in $results_array){
+                $matching_rule = $rules_array | Where-Object { $_.index -eq $output_result.rule_index} 
+                
+                $output += [Output__c]@{
+                    file=$output_result.location;
+                    severity=$matching_rule.priority;
+                    line=$output_result.linenumber;
+                    description=$matching_rule.shortdescription;
+                    rule=$output_result.ruleid
+                }
+            }
+
+          } elseif ($codescan_sarif) {
+            
+              #map names to numbers
+              function determine_integer_severity {
+                  param(
+                      [Parameter(Mandatory=$true)]
+                      [string]$severity_name
+                  )
+                  $int = $null
+                  Switch ($severity_name)
+                  {
+                      {$_ -match 'Blocker'} {$int = 1}
+                      {$_ -match 'Critical'} {$int = 2}
+                      {$_ -match 'Major'} {$int = 3}
+                      {$_ -match 'Minor'} {$int = 4}
+                      {$_ -match 'Info'} {$int = 5}
+                      Default {$int = 0} #none of the above, don't assume anything
+                  }
+                  $int
+              }
+
+            #massage results into expected format
+            class CS_Results__c {
+                [string]$ruleid
+                [int]$linenumber
+                [string]$location
+                [int]$priority
+                [string]$shortdescription;
+            }
+            #build array of results for comparison later
+            $results_array = @()
+            foreach ($result in $raw_results){
+                $results_array += [CS_Results__c]@{
+                    ruleid=$result.ruleId;
+                    linenumber=$result.locations.physicalLocation.region.startline;
+                    location=$($result.locations.physicalLocation.artifactlocation.uri);
+                    priority=$(determine_integer_severity -severity_name $result.message.text.split('Severity: ')[1].trim(']'));
+                    shortdescription=$($result.message.text.Split('[Type: ')[0])
+                }
+            }
+
+            #construct output format
+            class CS_Output__c {
+                [string]$file
+                [int]$severity
+                [int]$line
+                [string]$description
+                [string]$rule
+            }
+
+            #smash together the results with the matching rule
+            $output = @()
+            foreach ($output_result in $results_array){
+                
+                $output += [CS_Output__c]@{
+                    file=$output_result.location;
+                    severity=$output_result.priority;
+                    line=$output_result.linenumber;
+                    description=$output_result.shortdescription;
+                    rule=$output_result.ruleid
+                }
+            }
+
+          }
+
+          #sort by file path
+          $sorted_output = $output | Sort-Object -Property file,line
+
+          #extrude csv file
+          $sorted_output | Export-Csv -Path $output_file -NoTypeInformation
+
+      - name: Evaluate all violations
+        id: evaluate_violations_all
+        run: |
+          csv_line_count=$(wc -l ${{ needs.set-variables.outputs.file_name }}.csv|awk '{print $1}')
+          echo $csv_line_count
+          violation_count=$((csv_line_count - 1))
+          echo "violation_count=$violation_count" >> $GITHUB_OUTPUT
+          echo "VIOLATIONS FOUND:" $violation_count  # Print to console
+           if [[ $violation_count > 0 ]]; then
+             VIOLATION_STRING="$violation_count Scanning Violations Detected (all severities) in changed files - download CSV to check"
+             echo "::error::$VIOLATION_STRING"
+           else
+             echo "::notice::No Scanning Violations Detected"
+             exit 0
+           fi
+
+      - name: Upload all violations file in CSV format
+        if: ${{ steps.evaluate_violations_all.outputs.violation_count > 0 }}
+        uses: actions/upload-artifact@v4
+        with:
+          path: ${{ needs.set-variables.outputs.file_name }}.csv
+          name: ${{ needs.set-variables.outputs.file_name }}_PMD
+          compression-level: 0
+
+  check_blockers:
+    name: Check Blockers
+    needs: ['consume_sarif', 'set-variables']
+
+    if: always() && contains(needs.consume_sarif.result, 'success') && !contains(needs.consume_sarif.result, 'failure') && (needs.consume_sarif.outputs.violation_count > 0)
+
+    outputs:
+      blockers_text: ${{ steps.csv_blockers.outputs.content }}
+      blockers_count: ${{ steps.evaluate_violations_blockers.outputs.blockers_count }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download all violations CSV
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ needs.set-variables.outputs.file_name }}_PMD
+
+      ##################### BLOCKERS CHECK
+
+      - name: Show only Blockers from CSV
+        run: |
+          echo "blocking_severity " $blocking_severity
+          block_sev=$(($blocking_severity))
+          echo "block_sev " $block_sev
+          head -n 1 ${{ needs.set-variables.outputs.file_name }}.csv > pmd-blockers.csv
+          awk -v var="$blocking_severity" -F '","'  'BEGIN {OFS=","} { if (($2 <= var))  print }' ${{ needs.set-variables.outputs.file_name }}.csv >> pmd-blockers.csv
+          cat pmd-blockers.csv
+
+      - name: Read CSV - Blockers
+        id: csv_blockers
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./pmd-blockers.csv
+
+      - name: Create MD - Blockers
+        uses: petems/csv-to-md-table-action@master
+        id: csv-table-blockers
+        with:
+          csvinput: ${{ steps.csv_blockers.outputs.content }}
+
+      # Check blocker count from CSV
+      # If has blockers, exit 1 (below)
+
+      - name: Evaluate Blocker Violations
+        id: evaluate_violations_blockers
+        run: |
+          csv_blocker_count=$(wc -l pmd-blockers.csv|awk '{print $1}')
+          blockers_count=$((csv_blocker_count - 1))
+          echo "blockers_count=$blockers_count" >> $GITHUB_OUTPUT
+          echo "BLOCKERS FOUND:" $blockers_count  # Print to console
+          if [[ $blockers_count > 0 ]]; then
+            echo "## Blockers in Changed Files (Severity 1 & 2 / Blocker & Critical)" >> $GITHUB_STEP_SUMMARY
+            echo "${{steps.csv-table-blockers.outputs.markdown-table}}" >> $GITHUB_STEP_SUMMARY
+            BLOCKER_STRING="$blockers_count Blocking Violations Detected"
+            echo "::error::$BLOCKER_STRING"
+          else
+            echo "::notice::No Blocking Violations Detected"
+          fi
+
+      - name: Find Comment
+        if: github.event_name == 'pull_request'
+        uses: peter-evans/find-comment@v3
+        id: find_comment
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body-includes: ${{ env.hidden_comment_suffix }}
+
+      - name: Set Comment Timestamp
+        id: set_comment_timestamp
+        run: |
+          echo "time_stamp=$(date --utc +'%Y-%m-%d %H:%M')" >> $GITHUB_OUTPUT
+          echo "$time_stamp"
+
+      - name: Create comment
+        if: ${{steps.find_comment.outputs.comment-id == '' && steps.evaluate_violations_blockers.outputs.blockers_count > 0 && github.event_name == 'pull_request'}}
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            ## Blockers in Most Recent Commit (Created ${{steps.set_comment_timestamp.outputs.time_stamp}} UTC)
+            [View details](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
+            ${{steps.csv-table-blockers.outputs.markdown-table}}
+            ${{ env.hidden_comment_suffix }}
+
+      - name: Update comment
+        if: ${{ steps.find_comment.outputs.comment-id != '' }}
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          comment-id: ${{ steps.find_comment.outputs.comment-id }}
+          edit-mode: 'replace'
+          body: |
+            ## Blockers in Most Recent Commit (Updated ${{steps.set_comment_timestamp.outputs.time_stamp}} UTC)
+            [View details](https://github.com/${{github.repository}}/actions/runs/${{github.run_id}})
+            ${{steps.csv-table-blockers.outputs.markdown-table}}
+            ${{ env.hidden_comment_suffix }}
+
+  create-minor-table:
+    name: Create Non-Blocking Violations Table
+    needs: ['set-variables', 'check_blockers']
+    runs-on: ubuntu-latest
+    if: always() && contains(needs.check_blockers.result, 'success') && !contains(needs.check_blockers.result, 'failure')
+
+    steps:
+      - name: Download all violations CSV
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ needs.set-variables.outputs.file_name }}_PMD
+
+      ############# OTHER VIOLATIONS CHECK
+
+      - name: Show non-Blockers from CSV
+        run: |
+          echo "blocking_severity " $blocking_severity
+          block_sev=$(($blocking_severity))
+          echo "block_sev " $block_sev
+          awk -v var="$blocking_severity" -F '","'  'BEGIN {OFS=","} { if (($2 > var))  print }' ${{ needs.set-variables.outputs.file_name }}.csv >> pmd-other.csv
+          cat pmd-other.csv
+
+      - name: Read CSV - other
+        id: csv_other
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./pmd-other.csv
+
+      - name: Create MD - other
+        uses: petems/csv-to-md-table-action@master
+        id: csv-table-other
+        with:
+          csvinput: ${{ steps.csv_other.outputs.content }}
+
+      - name: Evaluate Other Violations
+        id: evaluate_violations_other
+        run: |
+          csv_other_count=$(wc -l pmd-other.csv|awk '{print $1}')
+          other_count=$((csv_other_count - 1))
+          echo "other_count=$other_count" >> $GITHUB_OUTPUT
+          echo "NON-BLOCKER FOUND:" $other_count  # Print to console
+          if [[ $other_count > 0 ]]; then
+            echo "## Non-Blocking Violations in Changed Files (Severity 3-5 / Major, Minor, Info)" >> $GITHUB_STEP_SUMMARY
+            echo "${{steps.csv-table-other.outputs.markdown-table}}" >> $GITHUB_STEP_SUMMARY
+          fi
+
+  fail-for-scan-blockers:
+    name: Fail-for-Scan-Blockers
+    runs-on: ubuntu-latest
+    needs: check_blockers
+    if: always()
+    steps:
+      - name: Check Blocker Count for Exit Code
+        if: ${{ needs.check_blockers.outputs.blockers_count > 0 }}
+        run: exit 1

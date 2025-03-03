@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Informational__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used in the PSCT/Signer Guidance section of VVPN. MP selects this action if comments are informational and no action is recommended by the MP.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Select this option if comments are informational and/or no action is recommended.</inlineHelpText>
+    <label>No Action Recommended</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

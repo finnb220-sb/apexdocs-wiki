@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Patient_able_to_speak_full_sentences__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Patient is able to speak full sentences</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Patient is able to speak full sentences</inlineHelpText>
+    <label>Able to complete full sentences easily</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

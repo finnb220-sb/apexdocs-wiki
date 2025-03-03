@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enforce_NTSP_Cons_Call_Length_Format</fullName>
+    <active>true</active>
+    <description>Enforces MM:SS format on Call length with NTSP Consultant field.</description>
+    <errorConditionFormula>RecordType.DeveloperName = &apos;Triage_Nurse_Peer_Review&apos; &amp;&amp; ( NOT(ISNUMBER(Call_length_with_NTSP_Consultant__c )) ||
+        NOT(VALUE(RIGHT(Call_length_with_NTSP_Consultant__c ,2)) &lt; 60) || LEN(Call_length_with_NTSP_Consultant__c) != 4 )</errorConditionFormula>
+    <errorDisplayField>Call_length_with_NTSP_Consultant__c</errorDisplayField>
+    <errorMessage>Call length with NTSP Consultant must be entered in MMSS format. Ensure seconds are less than 60.</errorMessage>
+</ValidationRule>

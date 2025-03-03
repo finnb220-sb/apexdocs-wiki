@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <choices>
+        <name>Closed_Resolved</name>
+        <choiceText>Closed - Resolved</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Closed - Resolved</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Closed_Transferred</name>
+        <choiceText>Closed - Transferred</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Closed - Transferred</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>ClosedError</name>
+        <choiceText>Closed - Error</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Closed - Error</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Open</name>
+        <choiceText>Open</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Open</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Opened_in_Error</name>
+        <choiceText>Opened in Error</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Opened in Error</stringValue>
+        </value>
+    </choices>
+    <description>VCV Close Case screen flow launched from custom button. Case Status picklist values must be manually kept in sync with VCC Support Process.</description>
+    <environments>Default</environments>
+    <interviewLabel>VCC Close Case VCV {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>VCC Close Case VCV</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <name>CloseVCVCase</name>
+        <label>CloseVCVCase</label>
+        <locationX>744</locationX>
+        <locationY>191</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>baseUpdate</name>
+            <extensionName>c:baseErrorMessage</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>variant</name>
+                <value>
+                    <stringValue>important</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>message</name>
+                <value>
+                    <stringValue>You are about to close your case. Did you complete all steps of your workflow?</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>VirtualClinicCloseCase</name>
+            <extensionName>c:vccCloseCaseV2</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>recordId.Id</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <outputParameters>
+                <assignToReference>recordId.Id</assignToReference>
+                <name>recordId</name>
+            </outputParameters>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>617</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>CloseVCVCase</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>recordId</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+</Flow>

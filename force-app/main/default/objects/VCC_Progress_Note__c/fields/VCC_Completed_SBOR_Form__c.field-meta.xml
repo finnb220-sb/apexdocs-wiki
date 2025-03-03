@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Completed_SBOR_Form__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked when the patient is suicidal and an SBOR Form was completed</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if the patient is suicidal and an SBOR Form was completed</inlineHelpText>
+    <label>Completed SBOR Form</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

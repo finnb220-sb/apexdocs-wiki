@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Account_And_Contact_Must_Match</fullName>
+    <active>true</active>
+    <description>Account and Contact must match to create a case.</description>
+    <errorConditionFormula>BEGINS( RecordType.DeveloperName, &quot;VCC_&quot;) &amp;&amp; !$Permission.DisableTriggersFlag &amp;&amp; AND(NOT(ISBLANK(ContactId)),NOT(ISBLANK(AccountId))) &amp;&amp;
+        AccountId != Contact.AccountId &amp;&amp; BEGINS(RecordType.DeveloperName , &apos;VCC&apos;) &amp;&amp;
+        !$Permission.VCC_Disable_Case_Validation_Rules</errorConditionFormula>
+    <errorMessage>ERROR: Please refresh your browser and try again, or create a YourIT Helpdesk ticket for assistance. The related account and related contact are different.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Contacted_EMS_stayed_w_patient__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description
+    >Checked when the patient is referred to emergency services and the agent contacted Emergency Services and stayed on the phone until a responder arrived.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if you contacted Emergency Services and stayed on the phone with the patient until a responder arrived.</inlineHelpText>
+    <label>Contacted EMS stayed on phone w/ patient</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <applicationVisibilities>
+        <application>VA_Health_Connect_TUC_Console</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <description>Provides access to VA Health Connect Tele-EC Console App</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Tele-EC Console App Access</label>
+    <tabSettings>
+        <tab>Available_Cases</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+</PermissionSet>

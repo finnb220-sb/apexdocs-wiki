@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Primarily a read-only role; leverages muting to scale back permissions.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>VAHC Super User</label>
+    <mutingPermissionSets>VAHC_Super_User_Muted</mutingPermissionSets>
+    <permissionSets>Accounts_Tab_Salesforce</permissionSets>
+    <permissionSets>LoggerLogCreator</permissionSets>
+    <permissionSets>Tasks_Tab_Salesforce</permissionSets>
+    <permissionSets>VAF_Base_User</permissionSets>
+    <permissionSets>VAHC_RN_User</permissionSets>
+    <permissionSets>VAHC_Read_Progress_Notes</permissionSets>
+    <permissionSets>VAHC_Standard_VCC_User</permissionSets>
+    <permissionSets>VAHC_View_PACT_Details</permissionSets>
+    <permissionSets>VAHC_eGain_Permission_Set</permissionSets>
+    <permissionSets>VCC_Enable_Exception_Messages_For_Sign_Note_Flow</permissionSets>
+    <permissionSets>VCC_Super_User</permissionSets>
+    <permissionSets>VCC_VistA_User</permissionSets>
+    <permissionSets>cnx__Connects_Agent</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

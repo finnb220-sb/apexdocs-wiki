@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Comments_Patient_Education__c</fullName>
+    <description>Comments about patient education (expected compliance, barriers to information exchange, etc.)</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter comments about patient education (expected compliance, barriers to information exchange, etc.)</inlineHelpText>
+    <label>Comments - Patient Education</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

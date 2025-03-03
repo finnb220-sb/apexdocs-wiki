@@ -1,0 +1,32 @@
+name: Generate ApexDoc and Promote to Wiki
+run-name: Generate ApexDoc and Promote to Wiki
+on:
+  push:
+    branches:
+      - feature/apexdoc-wiki
+      - release/*
+      - "!release/DAS"      # exclude this branch
+jobs:
+  generate-apexdoc-and-write-to-wiki:
+    name: Generate ApexDoc
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          node-version: 20
+      - name: Generate ApexDoc 
+        shell: bash
+        run: |
+          npm install 
+          pwd
+          npm run apexdocs
+      # github action to upload documentation to wiki:  https://github.com/marketplace/actions/publish-to-github-wiki
+      - name: Upload Documentation to Wiki
+        uses: SwiftDocOrg/github-wiki-publish-action@v1
+        # Additional steps to generate documentation in configured directory
+        # TODO: Pull target directory from package.json
+        # TODO: Create a branch in wiki to match branch in main repo
+        with:
+            path: "documentation/ApexDoc"
+        env:
+            GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.ADMIN_TOKEN }}

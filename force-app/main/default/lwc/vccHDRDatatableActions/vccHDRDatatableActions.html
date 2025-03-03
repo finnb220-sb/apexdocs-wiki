@@ -1,0 +1,42 @@
+<template>
+    <main class="container">
+        <div class="spinner-container">
+            <lightning-spinner variant="brand" size="x-small" lwc:ref="spinner" if:true={isLoading}></lightning-spinner>
+        </div>
+        <lightning-combobox
+            lwc:ref="loadMoreCombobox"
+            lwc:if={canUseLoadMore}
+            name="Load More"
+            variant="label-hidden"
+            value={selectedValue}
+            placeholder={placeholderString}
+            options={options}
+            onchange={handleDispatchLoadMore}>
+        </lightning-combobox>
+        <!-- Removed temporarily for release 1.14.0 -->
+        <!-- <lightning-button
+            onclick={handleReload}
+            icon-name="utility:refresh"
+            label="Reload"
+            if:false={isOnProgressNote}></lightning-button> -->
+        <template if:true={isOnProgressNote}>
+            <!-- Removed temporarily for release 1.14.0 -->
+            <!-- <lightning-button-icon
+                onclick={handleReload}
+                icon-name="utility:refresh"
+                alternative-text="Reload"
+                tooltip="Reload"
+                title="Reload"
+                aria-label="Reload"></lightning-button-icon> -->
+            <lightning-button-icon
+                onclick={handleAddToNote}
+                icon-name="utility:record_create"
+                alternative-text="Add to Note"
+                tooltip="Add to Note"
+                title="Add to Note"
+                variant="brand"
+                lwc:if={showAddToNote}
+                aria-label="Add to Note"></lightning-button-icon>
+        </template>
+    </main>
+</template>

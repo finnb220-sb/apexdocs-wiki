@@ -1,0 +1,47 @@
+<template>
+    <div slot="header" class="card-title">
+        <div class="slds-media__figure">
+            <lightning-icon
+                size="small"
+                icon-name="standard:feed"
+                alternative-text={chartTitle}
+                title={chartTitle}></lightning-icon>
+        </div>
+        <div class="slds-media__body">
+            <h2 class="slds-card__header-title">{chartTitle}</h2>
+        </div>
+    </div>
+    <section class="container">
+        <div class="grid" tabindex="0">
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Facility</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{selectedRecord.facilityName}</p>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Facility Code</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{selectedRecord.facilityCode}</p>
+                </div>
+            </div>
+            <!-- spacer -->
+            <div></div>
+        </div>
+        <lightning-datatable
+            key-field="id"
+            data={vitalList}
+            columns={columns}
+            hide-checkbox-column="true"
+            default-sort-direction={defaultSortDirection}
+            sorted-direction={sortDirection}
+            sorted-by={sortedBy}
+            onsort={onHandleSort}
+            >></lightning-datatable
+        >
+    </section>
+</template>

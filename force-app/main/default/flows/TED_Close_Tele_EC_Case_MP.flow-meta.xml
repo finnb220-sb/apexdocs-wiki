@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <description>assign the value from the case outcome detail field that appears when choosing Acute Issue Resolved</description>
+        <name>Assign_AiC_COD</name>
+        <label>Assign AiC COD</label>
+        <locationX>842</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>CaseOutcomeDetailToUpdate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Case_Outcome_Detail_AiR</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Tele_EC_Case_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>assign the value from the case outcome detail field that appears when choosing Care incomplete</description>
+        <name>Assign_Ci_COD</name>
+        <label>Assign Ci COD</label>
+        <locationX>578</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>CaseOutcomeDetailToUpdate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Case_Outcome_Detail_Ci</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Tele_EC_Case_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>assign the value from the case outcome detail field that appears when choosing Emergency Department</description>
+        <name>Assign_ED_COD</name>
+        <label>Assign ED COD</label>
+        <locationX>50</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>CaseOutcomeDetailToUpdate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Case_Outcome_Detail_ED</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Tele_EC_Case_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>assign the value from the case outcome detail field that appears when choosing Urgent Care</description>
+        <name>Assign_UC_COD</name>
+        <label>Assign UC COD</label>
+        <locationX>314</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>CaseOutcomeDetailToUpdate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Case_Outcome_Detail_UC</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Tele_EC_Case_Record</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <description>Case Outcome picklist value</description>
+        <name>Acute_Issue_Resolved</name>
+        <choiceText>Acute Issue Resolved</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Acute Issue Resolved</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Case Reason picklist value</description>
+        <name>Cardiovascular</name>
+        <choiceText>Cardiovascular</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Cardiovascular</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Case Outcome picklist value</description>
+        <name>Care_Incomplete</name>
+        <choiceText>Care Incomplete</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Care Incomplete</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Visual representation in the status picklist that the case is being closed</description>
+        <name>Closed</name>
+        <choiceText>Closed</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Closed</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Case Outcome picklist value</description>
+        <name>Closed_Case_Created_in_Error</name>
+        <choiceText>Closed - Case Created in Error</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Closed - Case Created in Error</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Case Outcome Detail picklist value</description>
+        <name>Community_Emergency_Department</name>
+        <choiceText>Community Emergency Department</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Community Emergency Department</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Case Outcome Detail picklist value</description>
+        <name>Community_Urgent_Care</name>
+        <choiceText>Community Urgent Care</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Community Urgent Care</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Case Outcome Detail picklist value</description>
+        <name>Connection_Failure</name>
+        <choiceText>Connection Failure</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Connection Failure</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Case Outcome Detail picklist value</description>
+        <name>Declined_By_Veteran</name>
+        <choiceText>Declined By Veteran</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Declined By Veteran</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Case Reason picklist value</description>
+        <name>Ear_Nose_Throat_Respiratory</name>
+        <choiceText>Ear/Nose/Throat/Respiratory</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Ear/Nose/Throat/Respiratory	</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Case Outcome picklist value</description>
+        <name>Emergency_Department</name>
+        <choiceText>Emergency Department</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Emergency Department</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Case Reason picklist value</description>
+        <name>Endocrine</name>
+        <choiceText>Endocrine</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Endocrine</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Case Reason picklist value</description>
+        <name>Eye</name>
+        <choiceText>Eye</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Eye</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Case Reason picklist value</description>
+        <name>Gastrointestinal</name>
+        <choiceText>Gastrointestinal</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Gastrointestinal</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Case Reason picklist value</description>
+        <name>Genitourinary</name>
+        <choiceText>Genitourinary</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Genitourinary</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Case Reason picklist value</description>
+        <name>Mental_Health</name>
+        <choiceText>Mental Health</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Mental Health	</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Case Reason picklist value</description>
+        <name>Musculoskeletal</name>
+        <choiceText>Musculoskeletal</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Musculoskeletal</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Case Reason picklist value</description>
+        <name>Neurologic</name>
+        <choiceText>Neurologic</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Neurologic</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Case Reason picklist value</description>
+        <name>Other</name>
+        <choiceText>Other</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Other</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Case Outcome Detail picklist value</description>
+        <name>Referred_to_Primary_Care_Pact</name>
+        <choiceText>Referred to Primary Care/Pact</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Referred to Primary Care/Pact</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Case Outcome Detail picklist value</description>
+        <name>Referred_to_Specialty_Care</name>
+        <choiceText>Referred to Specialty Care</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Referred to Specialty Care</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Case Reason picklist value</description>
+        <name>Skin</name>
+        <choiceText>Skin</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Skin</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Case Outcome picklist value</description>
+        <name>Urgent_Care</name>
+        <choiceText>Urgent Care</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Urgent Care</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Case Outcome Detail picklist value</description>
+        <name>VA_Emergency_Department</name>
+        <choiceText>VA Emergency Department</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>VA Emergency Department</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Case Outcome Detail picklist value</description>
+        <name>VA_Urgent_Care</name>
+        <choiceText>VA Urgent Care</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>VA Urgent Care</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Case Outcome picklist value</description>
+        <name>X911</name>
+        <choiceText>911</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>911</stringValue>
+        </value>
+    </choices>
+    <decisions>
+        <description>Depending on which Case Outcome was chosen in the previous screen, A different Case Outcome Detail Picklist was used. It needs to be determined which field value needs to be stored based on the options chosen, so that the record can be updated accordingly.</description>
+        <name>Case_Outcome_Detail_Assignment_Signpost</name>
+        <label>Case Outcome Detail Assignment Signpost</label>
+        <locationX>578</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>Update_Tele_EC_Case_Record</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>911 or CCCiE Chosen</defaultConnectorLabel>
+        <rules>
+            <name>Emergency_Dept_Chosen</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case_Outcome</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Emergency_Department</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_ED_COD</targetReference>
+            </connector>
+            <label>Emergency Dept Chosen</label>
+        </rules>
+        <rules>
+            <name>Urgent_Care_Chosen</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case_Outcome</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Urgent_Care</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_UC_COD</targetReference>
+            </connector>
+            <label>Urgent Care Chosen</label>
+        </rules>
+        <rules>
+            <name>Care_Incomplete_Chosen</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case_Outcome</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Care_Incomplete</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Ci_COD</targetReference>
+            </connector>
+            <label>Care Incomplete Chosen</label>
+        </rules>
+        <rules>
+            <name>Acute_Issue_Resolved_Chosen</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Case_Outcome</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Acute_Issue_Resolved</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_AiC_COD</targetReference>
+            </connector>
+            <label>Acute Issue Resolved Chosen</label>
+        </rules>
+    </decisions>
+    <description>Release 1.14.0 Replace Subject field with Chief Complaint
+1.20.1 PTEMSTUC 3237 TECH: Update the Error Message Index Part 1</description>
+    <environments>Default</environments>
+    <interviewLabel>TED Close Tele-EC Case MP {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>TED Close Tele-EC Case MP</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordUpdates>
+        <description>Update a Tele-EC Case record for the selected Outcome, Outcome Detail and Reason.</description>
+        <name>Update_Tele_EC_Case_Record</name>
+        <label>Update Tele-EC Case Record</label>
+        <locationX>578</locationX>
+        <locationY>542</locationY>
+        <connector>
+            <targetReference>CaseIsClosed</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Action_Get_Records_Update_Records_Element_Error_Screen</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Reason</field>
+            <value>
+                <elementReference>Case_Reason</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Closed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TED_Chief_Complaint__c</field>
+            <value>
+                <elementReference>Chief_Complaint</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TED_Closed_Reason__c</field>
+            <value>
+                <elementReference>CaseOutcomeDetailToUpdate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Case_Outcome__c</field>
+            <value>
+                <elementReference>Case_Outcome</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Other_Case_Reason__c</field>
+            <value>
+                <elementReference>Other_Case_Reason</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+    </recordUpdates>
+    <screens>
+        <description>Default Error Message</description>
+        <name>Action_Get_Records_Update_Records_Element_Error_Screen</name>
+        <label>Action/Get Records/Update Records Element Error Screen</label>
+        <locationX>1282</locationX>
+        <locationY>650</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Action_Get_Records_Update_Records_Element_Error_ScreenText</name>
+            <fieldText>&lt;p&gt;&lt;strong&gt;The requested action cannot be completed. Details on what went wrong are listed below.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Error details:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>Show user the Case has been Closed</description>
+        <name>CaseIsClosed</name>
+        <label>CaseIsClosed</label>
+        <locationX>578</locationX>
+        <locationY>650</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>CaseClosed</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;The Case has been closed.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>This screen contains fields that will be updated after the Case is closed</description>
+        <name>Close_Tele_EC_Case</name>
+        <label>Close Tele-EC Case</label>
+        <locationX>578</locationX>
+        <locationY>134</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <backButtonLabel>Cancel</backButtonLabel>
+        <connector>
+            <targetReference>Case_Outcome_Detail_Assignment_Signpost</targetReference>
+        </connector>
+        <fields>
+            <name>Close_Tele_EC_Case_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Close_Tele_EC_Case_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Status</name>
+                    <choiceReferences>Closed</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultSelectedChoiceReference>Closed</defaultSelectedChoiceReference>
+                    <fieldText>Status</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isDisabled>
+                        <booleanValue>true</booleanValue>
+                    </isDisabled>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>Case_Outcome</name>
+                    <choiceReferences>X911</choiceReferences>
+                    <choiceReferences>Emergency_Department</choiceReferences>
+                    <choiceReferences>Urgent_Care</choiceReferences>
+                    <choiceReferences>Acute_Issue_Resolved</choiceReferences>
+                    <choiceReferences>Care_Incomplete</choiceReferences>
+                    <choiceReferences>Closed_Case_Created_in_Error</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Case Outcome</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>Case_Outcome_Detail_ED</name>
+                    <choiceReferences>Community_Emergency_Department</choiceReferences>
+                    <choiceReferences>VA_Emergency_Department</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Case Outcome Detail</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>Case_Outcome</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <elementReference>Emergency_Department</elementReference>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>Case_Outcome_Detail_UC</name>
+                    <choiceReferences>Community_Urgent_Care</choiceReferences>
+                    <choiceReferences>VA_Urgent_Care</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Case Outcome Detail</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>Case_Outcome</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <elementReference>Urgent_Care</elementReference>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>Case_Outcome_Detail_AiR</name>
+                    <choiceReferences>Referred_to_Primary_Care_Pact</choiceReferences>
+                    <choiceReferences>Referred_to_Specialty_Care</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Case Outcome Detail</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>Case_Outcome</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <elementReference>Acute_Issue_Resolved</elementReference>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>Case_Outcome_Detail_Ci</name>
+                    <choiceReferences>Declined_By_Veteran</choiceReferences>
+                    <choiceReferences>Connection_Failure</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Case Outcome Detail</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>Case_Outcome</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <elementReference>Care_Incomplete</elementReference>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Close_Tele_EC_Case_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>recordId.ContactId</objectFieldReference>
+                </fields>
+                <fields>
+                    <name>Chief_Complaint</name>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>recordId.TED_Chief_Complaint__c</elementReference>
+                    </defaultValue>
+                    <fieldText>Chief Complaint</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <fields>
+                    <name>Case_Reason</name>
+                    <choiceReferences>Cardiovascular</choiceReferences>
+                    <choiceReferences>Ear_Nose_Throat_Respiratory</choiceReferences>
+                    <choiceReferences>Endocrine</choiceReferences>
+                    <choiceReferences>Eye</choiceReferences>
+                    <choiceReferences>Gastrointestinal</choiceReferences>
+                    <choiceReferences>Genitourinary</choiceReferences>
+                    <choiceReferences>Mental_Health</choiceReferences>
+                    <choiceReferences>Musculoskeletal</choiceReferences>
+                    <choiceReferences>Neurologic</choiceReferences>
+                    <choiceReferences>Skin</choiceReferences>
+                    <choiceReferences>Other</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>recordId.Reason</elementReference>
+                    </defaultValue>
+                    <fieldText>Case Reason</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Close_Tele_EC_Case_Section2</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Close_Tele_EC_Case_Section2_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Other_Case_Reason</name>
+                    <fieldText>Other Case Reason</fieldText>
+                    <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <nextOrFinishButtonLabel>Save</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>452</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Close_Tele_EC_Case</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>CaseOutcomeDetailToUpdate</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>The record ID of the record that this flow is acting on.</description>
+        <name>recordId</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+</Flow>

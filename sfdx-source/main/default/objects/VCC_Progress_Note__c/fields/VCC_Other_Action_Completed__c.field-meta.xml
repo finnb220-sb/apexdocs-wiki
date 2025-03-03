@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Other_Action_Completed__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Other action besides generating a message to facility MSA or PACT was completed for progress note</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Other action besides generating a message to facility MSA or PACT was completed for progress note</inlineHelpText>
+    <label>Other Action Completed</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

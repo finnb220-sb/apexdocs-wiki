@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>VCC_Appointment_Sharing_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Sharing Rule for VCC_Appointment__c to allow sharing within VAHC Base Users</description>
+        <label>Appointment Sharing Rule</label>
+        <sharedTo>
+            <group>VAHC_Base_Users</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>VAHC_Base_Users</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

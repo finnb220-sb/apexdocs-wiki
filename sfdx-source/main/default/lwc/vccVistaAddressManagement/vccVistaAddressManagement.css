@@ -1,0 +1,15 @@
+.address {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+    align-items: flex-start;
+}
+.spinner-container {
+    position: relative;
+    min-height: 20rem;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    z-index: 0;
+}

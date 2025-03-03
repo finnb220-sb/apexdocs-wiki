@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Generated_message_to_PACT_Provider__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked if the Agent checked &apos;Other course(s) of action&apos; and generated a message to the patient&apos;s assigned PACT/Provider</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if you generated a message to the patient&apos;s assigned PACT/Provider</inlineHelpText>
+    <label>Generated msg to PACT/Provider</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

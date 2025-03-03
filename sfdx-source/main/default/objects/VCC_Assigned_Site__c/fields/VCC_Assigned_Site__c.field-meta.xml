@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Assigned_Site__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>The flow &apos;VCC SOT Assigned Site Naming&apos; completes this field with the Site, SOT User, and Service from the associated Readiness Activity.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <label>Assigned Site</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

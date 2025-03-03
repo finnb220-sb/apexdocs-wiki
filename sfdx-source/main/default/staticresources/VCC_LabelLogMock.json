@@ -1,0 +1,62 @@
+{
+	"data": {
+		"items": [
+			{
+				"device": null,
+				"fdaMedGuide": "Archeops.pdf",
+				"labelComment": "From RX number 5264562E",
+				"labelDate/Time": "FEB 04, 1997@09:37:45",
+				"printedBy": "MCNEILL,MARTIN",
+				"rxReference": "ORIGINAL",
+				"warningLabelType": null
+			},
+			{
+				"device": null,
+				"fdaMedGuide": "Sableye.pdf",
+				"labelComment": "From RX number 5264562E",
+				"labelDate/Time": "MAR 04, 1998@08:40:04",
+				"printedBy": "NELSON,SHELLY L",
+				"rxReference": "REFILL #1",
+				"warningLabelType": null
+			},
+			{
+				"device": null,
+				"fdaMedGuide": "Comfey.pdf",
+				"labelComment": "From RX number 5264562E",
+				"labelDate/Time": "APR 29, 1996@11:03:17",
+				"printedBy": "BURNETTE,DONNA M",
+				"rxReference": "REFILL #2",
+				"warningLabelType": null
+			},
+			{
+				"device": null,
+				"fdaMedGuide": "Cramorant.pdf",
+				"labelComment": "From RX number 5264562E",
+				"labelDate/Time": "JUN 24, 1997@13:49:35",
+				"printedBy": "NELSON,SHELLY L",
+				"rxReference": "REFILL #3",
+				"warningLabelType": null
+			},
+			{
+				"device": null,
+				"fdaMedGuide": "Lugia.pdf",
+				"labelComment": "From RX number 5264562E",
+				"labelDate/Time": "AUG 08, 1996@14:21:54",
+				"printedBy": "WALTER,CAROL A",
+				"rxReference": "REFILL #4",
+				"warningLabelType": null
+			},
+			{
+				"device": null,
+				"fdaMedGuide": null,
+				"labelComment": "From RX number 5264562E",
+				"labelDate/Time": "AUG 25, 1999@16:42:19",
+				"printedBy": "MAZAK,MARTHA S",
+				"rxReference": "REFILL #5",
+				"warningLabelType": null
+			}
+		],
+		"total items": 6,
+		"updated": "20221109155016-0400"
+	}
+}

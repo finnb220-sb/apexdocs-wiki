@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Immunizations__c</fullName>
+    <description>Used by CCC medical providers to comment on immunizations discussed with patient during a virtual care visit.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>Comment on immunizations discussed with patient during a virtual care visit.</inlineHelpText>
+    <label>Immunizations</label>
+    <length>5000</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

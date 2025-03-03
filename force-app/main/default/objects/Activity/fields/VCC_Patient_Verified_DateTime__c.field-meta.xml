@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Patient_Verified_DateTime__c</fullName>
+    <description>Populated via flow when user Verifies the caller.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>Automatically populated when the caller/patient is verified.</inlineHelpText>
+    <label>Patient Verified DateTime</label>
+    <required>false</required>
+    <type>DateTime</type>
+</CustomField>

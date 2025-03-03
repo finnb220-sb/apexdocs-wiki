@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_PCP_Appointment_Recommended__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Medical Provider recommends a follow up appointment at the discretion of their primary care team</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Medical Provider recommends a follow up appointment at the discretion of their primary care team.</inlineHelpText>
+    <label>PCP Appointment Recommended</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Veteran_Care_Connect_EHR__c</fullName>
+    <description
+    >This field is used to toggle visibility of Lightning Web Components in the Veteran Care Connect App. If this value is set to &quot;Cerner&quot; then only components
+        relevant to Cerner will be displayed. The converse is true for VistA.</description>
+    <externalId>false</externalId>
+    <inlineHelpText
+    >This field is used to toggle visibility of Lightning Web Components in the Veteran Care Connect App. If this value is set to &quot;Cerner&quot; then only components
+        relevant to Cerner will be displayed. The converse is true for VistA.</inlineHelpText>
+    <label>Veteran Care Connect EHR</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>VistA</fullName>
+                <default>true</default>
+                <label>VistA</label>
+            </value>
+            <value>
+                <fullName>Cerner</fullName>
+                <default>false</default>
+                <label>Cerner</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

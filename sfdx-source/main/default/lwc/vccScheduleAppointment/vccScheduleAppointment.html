@@ -1,0 +1,273 @@
+<template>
+    <c-logger></c-logger>
+    <c-vcc-l-m-s-publisher></c-vcc-l-m-s-publisher>
+    <template lwc:if={loading}>
+        <div class="container-height">
+            <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+        </div>
+    </template>
+    <template lwc:else>
+        <template lwc:if={showSuccessScreen}>
+            <div data-id="success" role="alert" aria-label="Navigated to Success Screen"></div>
+            <lightning-layout multiple-rows>
+                <lightning-layout-item class="slds-p-around_large" size="12">
+                    <p class="font-color font-size slds-float_left" tabindex="0">
+                        <lightning-icon
+                            icon-name="utility:success"
+                            alternative-text="Success Symbol"
+                            variant="success"
+                            title="Success"></lightning-icon
+                        >&nbsp; The appointment was scheduled successfully.
+                    </p>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-around_x-small" size="3">
+                    <lightning-layout multiple-rows="true">
+                        <lightning-layout-item size="12">
+                            <p class="font-bold" tabindex="0">Clinic/Location</p>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12">
+                            <lightning-formatted-text value={clinicName} tabindex="0"></lightning-formatted-text>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-around_x-small" size="3">
+                    <lightning-layout multiple-rows="true">
+                        <lightning-layout-item size="12">
+                            <p class="font-bold" tabindex="0">Clinic Time Zone</p>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12">
+                            <lightning-formatted-text value={clinicTimeZone} tabindex="0"></lightning-formatted-text>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-around_x-small" size="3">
+                    <lightning-layout multiple-rows="true">
+                        <lightning-layout-item size="12">
+                            <p class="font-bold" tabindex="0">Start Time</p>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12">
+                            <lightning-formatted-date-time
+                                tabindex="0"
+                                value={startTime}
+                                time-zone={clinicIANATimeZone}
+                                time-zone-name="short"
+                                year="numeric"
+                                month="numeric"
+                                day="numeric"
+                                hour="2-digit"
+                                minute="2-digit"></lightning-formatted-date-time>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-around_x-small" size="3">
+                    <lightning-layout multiple-rows="true">
+                        <lightning-layout-item size="12">
+                            <p class="font-bold" tabindex="0">End Time</p>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12">
+                            <lightning-formatted-date-time
+                                tabindex="0"
+                                value={endTime}
+                                time-zone={clinicIANATimeZone}
+                                time-zone-name="short"
+                                year="numeric"
+                                month="numeric"
+                                day="numeric"
+                                hour="2-digit"
+                                minute="2-digit"></lightning-formatted-date-time>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-layout-item>
+                <lightning-layout-item size="12">
+                    <div class="slds-float_right">
+                        <lightning-button
+                            label="Close"
+                            variant="brand"
+                            alternative-text="Close"
+                            title="Close"
+                            onclick={handleCloseModal}></lightning-button>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </template>
+        <template lwc:else>
+            <template lwc:if={mpiData}>
+                <div data-id="confirm" role="alert" aria-label="Navigated to Confirmation Screen"></div>
+                <lightning-layout multiple-rows class="container-height slds-p-top_large">
+                    <lightning-layout-item class="slds-p-around_x-small" size="3">
+                        <lightning-layout multiple-rows="true">
+                            <lightning-layout-item size="12">
+                                <p class="font-bold" tabindex="0">Clinic/Location</p>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="12">
+                                <lightning-formatted-text value={clinicName} tabindex="0"></lightning-formatted-text>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </lightning-layout-item>
+                    <lightning-layout-item class="slds-p-around_x-small" size="3">
+                        <lightning-layout multiple-rows="true">
+                            <lightning-layout-item size="12">
+                                <p class="font-bold" tabindex="0">Clinic Time Zone</p>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="12">
+                                <lightning-formatted-text
+                                    value={clinicTimeZone}
+                                    tabindex="0"></lightning-formatted-text>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </lightning-layout-item>
+                    <lightning-layout-item class="slds-p-around_x-small" size="6"
+                        ><c-vcc-enrollment-and-primary-eligibility
+                            schedule-appt-view={scheduleApptView}></c-vcc-enrollment-and-primary-eligibility>
+                    </lightning-layout-item>
+                    <lightning-layout-item class="slds-p-around_x-small" size="6">
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item size="12">
+                                <label class="slds-form-element__label" for="form-element-05">
+                                    <abbr class="slds-required" title="required">* </abbr>Benefit/Eligibility</label
+                                >
+                            </lightning-layout-item>
+                            <lightning-layout-item size="12">
+                                <lightning-combobox
+                                    tabindex="0"
+                                    data-id="eligibility"
+                                    name="Benefit/Eligibility"
+                                    label="Benefit/Eligibility"
+                                    value={benefitEligibility}
+                                    variant="label-hidden"
+                                    placeholder="Select Benefit/Eligibility"
+                                    options={benefitEligibilityOptions}
+                                    onchange={handleBenefitEligibilityChange}></lightning-combobox>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <div
+                            class="slds-form-element slds-has-error slds-hidden"
+                            data-id="eligibilityError"
+                            tabindex="0">
+                            <div class="slds-form-element__help" aria-live="assertive" role="alert">
+                                Select a benefit/eligibility before continuing.
+                            </div>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item class="slds-p-around_x-small" size="6">
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item size="12">
+                                <label class="slds-form-element__label" for="form-element-06">
+                                    <abbr class="slds-required" title="required">* </abbr>{appointmentTypeLabel}</label
+                                >
+                            </lightning-layout-item>
+                            <lightning-layout-item size="12">
+                                <lightning-combobox
+                                    tabindex="0"
+                                    data-id="appointmentType"
+                                    name={appointmentTypeLabel}
+                                    label={appointmentTypeLabel}
+                                    value={selectedAppointmentType}
+                                    variant="label-hidden"
+                                    options={appointmentTypes}
+                                    onchange={handleAppointmentTypeChange}></lightning-combobox>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <div
+                            class="slds-form-element slds-has-error slds-hidden"
+                            data-id="appointmentTypeError"
+                            tabindex="0">
+                            <div class="slds-form-element__help" aria-live="assertive" role="alert">
+                                {appointmentTypeErrorMessage}
+                            </div>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item class="slds-p-around_x-small" size="4">
+                        <lightning-layout multiple-rows="true">
+                            <lightning-layout-item size="12">
+                                <p class="font-bold" tabindex="0">Start Time</p>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="12">
+                                <lightning-formatted-date-time
+                                    tabindex="0"
+                                    value={startTime}
+                                    time-zone={clinicIANATimeZone}
+                                    time-zone-name="short"
+                                    year="numeric"
+                                    month="numeric"
+                                    day="numeric"
+                                    hour="2-digit"
+                                    minute="2-digit"></lightning-formatted-date-time>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </lightning-layout-item>
+                    <lightning-layout-item class="slds-p-around_x-small" size="4">
+                        <lightning-layout multiple-rows="true">
+                            <lightning-layout-item size="12">
+                                <p class="font-bold" tabindex="0">End Time</p>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="12">
+                                <lightning-formatted-date-time
+                                    tabindex="0"
+                                    value={endTime}
+                                    time-zone={clinicIANATimeZone}
+                                    time-zone-name="short"
+                                    year="numeric"
+                                    month="numeric"
+                                    day="numeric"
+                                    hour="2-digit"
+                                    minute="2-digit"></lightning-formatted-date-time>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </lightning-layout-item>
+                    <lightning-layout-item class="slds-p-around_x-small" size="4">
+                        <lightning-layout multiple-rows="true">
+                            <lightning-layout-item size="12">
+                                <p class="font-bold" tabindex="0">Duration</p>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="12">
+                                <lightning-formatted-text
+                                    tabindex="0"
+                                    value={durationMinutes}></lightning-formatted-text>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12">
+                        <lightning-textarea
+                            class="slds-p-around_x-small"
+                            data-id="comments"
+                            name="Comments"
+                            label="Comments"
+                            value={appointmentComments}
+                            max-length="80"
+                            tabindex="0"
+                            onchange={handleAppointmentCommentsChange}></lightning-textarea>
+                        <div
+                            class="slds-form-element slds-has-error slds-hidden slds-p-bottom_x-small slds-p-left_x-small"
+                            data-id="commentsError"
+                            tabindex="0">
+                            <div class="slds-form-element__help" aria-live="assertive" role="alert">
+                                Maximum character limit reached.
+                            </div>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6">
+                        <div class="slds-float_left">
+                            <lightning-button
+                                label="Previous"
+                                variant="brand"
+                                alternative-text="Previous"
+                                title="Previous"
+                                onclick={handleBackToCalendar}></lightning-button>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6">
+                        <div class="slds-float_right">
+                            <lightning-button
+                                label="Schedule Appointment"
+                                variant="brand"
+                                alternative-text="Schedule Appointment"
+                                title="Schedule Appointment"
+                                onclick={handleScheduleAppointment}></lightning-button>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </template>
+        </template>
+    </template>
+</template>

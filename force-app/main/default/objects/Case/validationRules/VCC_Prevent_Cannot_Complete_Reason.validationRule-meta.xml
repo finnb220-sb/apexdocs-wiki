@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Prevent_Cannot_Complete_Reason</fullName>
+    <active>true</active>
+    <description>Do not allow values to be selected on Scheduling Action Reason when Cannot Complete Action was not selected</description>
+    <errorConditionFormula>!$Permission.DisableTriggersFlag
+
+&amp;&amp;
+
+RecordType.DeveloperName = &quot;VCC_Administrative&quot;
+
+&amp;&amp;
+
+NOT(INCLUDES(VCC_Case_Outcome_Multi__c, &apos;Cannot Complete Scheduling Action&apos;))
+
+&amp;&amp;
+
+(NOT(ISBLANK(VCC_Cannot_Comp_Scheduling_Action_Reason__c)))
+
+&amp;&amp;
+
+!$Permission.VCC_Disable_Case_Validation_Rules</errorConditionFormula>
+    <errorDisplayField>VCC_Cannot_Comp_Scheduling_Action_Reason__c</errorDisplayField>
+    <errorMessage>&quot;Cannot Complete Scheduling Action&quot; must be selected for the Case Outcome to select a value in &quot;Cannot Complete Scheduling Action Reason&quot;</errorMessage>
+</ValidationRule>

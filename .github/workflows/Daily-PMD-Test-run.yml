@@ -1,0 +1,60 @@
+name: Scheduled Health Check
+
+# Trigger every day at midnight Eastern Time
+on:
+  schedule:
+    - cron: "0 4 * * *"  # Midnight EST is 4 AM UTC
+  workflow_dispatch:
+
+jobs:
+  list-release-branches:
+    runs-on: ubuntu-latest
+    outputs:
+      branches: ${{ steps.list_branches.outputs.branch_list }}
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
+      - name: List all release branches
+        id: list_branches
+        run: |
+          branches=$(git branch -r | grep 'origin/release/' | sed 's/origin\///')
+          echo "branch_list=$(echo "${branches}" | tr '\n' ',')" >> $GITHUB_OUTPUT
+
+  get-latest-commits:
+    needs: list-release-branches
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        branch: ${{ fromJson(needs.list-release-branches.outputs.branches) }}
+
+    outputs:
+      commit_hash: ${{ steps.get_commit.outputs.commit }}
+      branch: ${{ matrix.branch }}
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ matrix.branch }}
+
+      - name: Get the latest commit hash
+        id: get_commit
+        run: |
+          latest_commit=$(git rev-parse HEAD)
+          echo "commit=${latest_commit}" >> $GITHUB_OUTPUT
+
+  delegate-healthcheck:
+    needs: get-latest-commits
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        branch: ${{ needs.get-latest-commits.outputs.branch }}
+        commit_hash: ${{ needs.get-latest-commits.outputs.commit_hash }}
+
+    steps:
+      - name: Trigger health check workflow
+        uses: ./.github/workflows/healthcheck-deployTestAndCheck.yml
+        with:
+          commit_hash: ${{ matrix.commit_hash }}

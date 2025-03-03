@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_CS_Shortness_of_breath__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Ability to select Shortness of breath as a symptom through the Covid Screening</description>
+    <externalId>false</externalId>
+    <label>Shortness of breath</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

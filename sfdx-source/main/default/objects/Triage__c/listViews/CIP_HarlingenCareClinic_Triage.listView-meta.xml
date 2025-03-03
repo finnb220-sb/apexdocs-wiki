@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CIP_HarlingenCareClinic_Triage</fullName>
+    <filterScope>Queue</filterScope>
+    <label>CIP_HarlingenCareClinic</label>
+    <queue>CIP_HarlingenCareClinic</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

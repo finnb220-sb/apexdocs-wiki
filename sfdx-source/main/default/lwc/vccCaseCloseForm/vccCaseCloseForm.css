@@ -1,0 +1,12 @@
+div.close-grid {
+    display: grid;
+    column-gap: 24px;
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    grid-template-rows: repeat(var(--grid-rows), auto);
+    grid-auto-flow: column;
+}
+
+.position {
+    z-index: 0;
+    position: relative;
+}

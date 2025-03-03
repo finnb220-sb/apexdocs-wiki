@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tele_EC_Tasks_Compact_Layout</fullName>
+    <fields>WhoId</fields>
+    <fields>Subject</fields>
+    <fields>TED_Task_Order_Date__c</fields>
+    <fields>OwnerId</fields>
+    <fields>Status</fields>
+    <fields>TED_Task_Resolution_Date__c</fields>
+    <label>Tele EC Tasks Compact Layout</label>
+</CompactLayout>

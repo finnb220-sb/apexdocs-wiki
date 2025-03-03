@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>High Acuity %280-2 hours RFI%29</fullName>
+    <description>High Acuity Tele Emergency Care Case Support Process</description>
+    <isActive>true</isActive>
+    <values>
+        <fullName>Closed</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>MP Encounter</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>New</fullName>
+        <default>true</default>
+    </values>
+    <values>
+        <fullName>Nurse Encounter</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Ready for MP</fullName>
+        <default>false</default>
+    </values>
+</BusinessProcess>

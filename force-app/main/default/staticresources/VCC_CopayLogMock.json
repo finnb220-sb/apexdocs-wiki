@@ -1,0 +1,71 @@
+{
+	"data": {
+		"items": [
+			{
+				"comment": "Service Connected",
+				"copayActivityLog": "JUL 21, 2004@15:29:34",
+				"initiatorofCopayActivity": "WILLETT,DONALD C",
+				"reason": "RESET COPAY STATUS",
+				"rxReference": null
+			},
+			{
+				"comment": "ENTERED IN ERROR ",
+				"copayActivityLog": "AUG 3, 2004@02:23:41",
+				"initiatorofCopayActivity": "WILLETT,DONALD C",
+				"reason": "REMOVE COPAY CHARGE",
+				"rxReference": 0
+			},
+			{
+				"comment": "ENTERED IN ERROR ",
+				"copayActivityLog": "SEP 11, 2015@11:39:41",
+				"initiatorofCopayActivity": "WILLETT,DONALD C",
+				"reason": "REMOVE COPAY CHARGE",
+				"rxReference": 1
+			},
+			{
+				"comment": "ENTERED IN ERROR ",
+				"copayActivityLog": "JUN 03, 2014@15:29:41",
+				"initiatorofCopayActivity": "WILLETT,DONALD C",
+				"reason": "REMOVE COPAY CHARGE",
+				"rxReference": 2
+			},
+			{
+				"comment": "ENTERED IN ERROR ",
+				"copayActivityLog": "MAY 25, 2021@06:12:41",
+				"initiatorofCopayActivity": "WILLETT,DONALD C",
+				"reason": "REMOVE COPAY CHARGE",
+				"rxReference": 3
+			},
+			{
+				"comment": "ENTERED IN ERROR ",
+				"copayActivityLog": "FEB 21, 2018@16:09:41",
+				"initiatorofCopayActivity": "WILLETT,DONALD C",
+				"reason": "REMOVE COPAY CHARGE",
+				"rxReference": 4
+			},
+			{
+				"comment": "ENTERED IN ERROR ",
+				"copayActivityLog": "OCT 15, 2014@15:29:41",
+				"initiatorofCopayActivity": "WILLETT,DONALD C",
+				"reason": "REMOVE COPAY CHARGE",
+				"rxReference": 5
+			},
+			{
+				"comment": "ENTERED IN ERROR ",
+				"copayActivityLog": "APR 24, 2004@10:11:41",
+				"initiatorofCopayActivity": "WILLETT,DONALD C",
+				"reason": "REMOVE COPAY CHARGE",
+				"rxReference": 6
+			},
+			{
+				"comment": "ENTERED IN ERROR ",
+				"copayActivityLog": "MAY 21, 2019@02:15:41",
+				"initiatorofCopayActivity": "WILLETT,DONALD C",
+				"reason": "REMOVE COPAY CHARGE",
+				"rxReference": 7
+			}
+		],
+		"total items": 9,
+		"updated": "20221109154644-0400"
+	}
+}

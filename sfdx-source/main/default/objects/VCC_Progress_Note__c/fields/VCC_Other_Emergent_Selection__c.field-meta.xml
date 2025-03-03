@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Other_Emergent_Selection__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked when an &quot;Other&apos; Emergent 1st-fill prescription action was performed</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if an &quot;Other&apos; Emergent 1st-fill prescription action was performed</inlineHelpText>
+    <label>Other - Completed Emergent 1st-fill Rx</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

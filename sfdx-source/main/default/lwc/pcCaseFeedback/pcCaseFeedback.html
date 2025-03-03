@@ -1,0 +1,47 @@
+<template>
+    <lightning-card title={cardTitle} icon-name="standard:survey">
+        <template if:true={showQuestions}>
+            <lightning-layout multiple-rows class="slds-p-around_small">
+                <lightning-layout-item size="12" padding="horizontal-small" style="text-align: right"> * = Required Information </lightning-layout-item>
+                <template for:each={feedbackList} for:item="feedback" for:index="index">
+                    <lightning-layout-item key={feedback.PC_Question__c} size="12" medium-device-size="8" padding="around-small">
+                        <lightning-formatted-text value={feedback.PC_Question__r.PC_Question__c}></lightning-formatted-text>*
+                    </lightning-layout-item>
+                    <lightning-layout-item key={feedback.PC_Question__c} size="12" medium-device-size="4" padding="around-small">
+                        <lightning-combobox
+                            label={feedback.PC_Question__r.PC_Question__c}
+                            data-index={index}
+                            name="answer"
+                            variant="label-hidden"
+                            placeholder="--Select--"
+                            value={feedback.PC_Answer__c}
+                            options={answerFieldOptions}
+                            onchange={handleAnswerChange}
+                            required
+                        >
+                        </lightning-combobox>
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
+            <div slot="footer">
+                <lightning-button
+                    variant="brand"
+                    label="Submit Feedback"
+                    title="Submit Feedback"
+                    onclick={handleSubmitFeedback}
+                    class="slds-align_absolute-center"
+                ></lightning-button>
+            </div>
+        </template>
+        <template if:true={showSubmittedMsg}>
+            <div class="slds-p-bottom_small">
+                <c-base-empty-state msg={_submittedMessage} variant="success" type="axe"></c-base-empty-state>
+            </div>
+        </template>
+        <template if:true={showNoQuestionsMsg}>
+            <div class="slds-p-bottom_small">
+                <c-base-empty-state msg={_noQuestionsMessage} type="desert"></c-base-empty-state>
+            </div>
+        </template>
+    </lightning-card>
+</template>

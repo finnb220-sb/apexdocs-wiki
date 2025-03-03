@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Only_VISN_members_can_edit</fullName>
+    <active>true</active>
+    <description>Time Slots can only be changed by Calendar Administrators for their VISN</description>
+    <errorConditionFormula
+    >AND ( OR( ISCHANGED(Type), ISCHANGED(DayOfWeek), ISCHANGED(EndTime), ISCHANGED(MaxAppointments), ISCHANGED(StartTime), ISCHANGED(OperatingHoursId) ), OR( AND( ISPICKVAL(
+        VCC_VISN__c, &apos;VISN 1&apos;), $User.Division &lt;&gt; &apos;VISN 1&apos;, $User.Division &lt;&gt; &apos;VISN 2&apos;), AND( ISPICKVAL( VCC_VISN__c, &apos;VISN 7&apos;),
+        $User.Division &lt;&gt; &apos;VISN 7&apos;, $User.Division &lt;&gt; &apos;VISN 8&apos;), AND( NOT(ISPICKVAL( VCC_VISN__c, &apos;VISN 1&apos;)), NOT(ISPICKVAL( VCC_VISN__c,
+        &apos;VISN 7&apos;)), TEXT(VCC_VISN__c) &lt;&gt; $User.Division ))) &amp;&amp; $Permission.VCC_Edit_Operating_Hours &amp;&amp;
+        !$Permission.DisableTriggersFlag</errorConditionFormula>
+    <errorMessage>Time Slots can only be changed by Calendar Administrators for their VISN</errorMessage>
+</ValidationRule>

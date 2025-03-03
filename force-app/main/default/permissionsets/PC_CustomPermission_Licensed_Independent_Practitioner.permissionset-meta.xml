@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>PC_Licensed_Independent_Practitioner</name>
+    </customPermissions>
+    <description>Identifies if a Specialist working on Provider Connect App is a Licensed Independent Practitioner (LIP).</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>PrC-CustomPermission-Licensed Independent Practitioner</label>
+</PermissionSet>

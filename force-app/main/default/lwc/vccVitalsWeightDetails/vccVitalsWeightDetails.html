@@ -1,0 +1,24 @@
+<!-- Vcc Vitals Weight Details -->
+<template>
+    <div tabindex="0" class="blood-pressure-container">
+        <template lwc:if={measurementsToDisplay} for:each={measurementsToDisplay} for:item="measurement">
+            <div tabindex="0" class="measurement-container" key={measurement.id}>
+                <div tabindex="0" class="timestamp">{measurement.takenFormatted}</div>
+                <div tabindex="0" class="blood-pressure">
+                    <div tabindex="0" class="measurement">
+                        <div tabindex="0" class="label">Lbs</div>
+                        <div tabindex="0" class="value">{measurement.value}</div>
+                    </div>
+                    <div tabindex="0" class="measurement">
+                        <div tabindex="0" class="label">Kgs</div>
+                        <div tabindex="0" class="value">{measurement.metricValue}</div>
+                    </div>
+                    <div tabindex="0" class="measurement">
+                        <div tabindex="0" class="label">BMI</div>
+                        <div tabindex="0" class="value">{measurement.bmi}</div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

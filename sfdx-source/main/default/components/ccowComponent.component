@@ -1,0 +1,174 @@
+<apex:component>
+    <apex:includeScript value="{!$Resource.IContextor}" />
+    <apex:attribute name="icn" description="ICN to be sent as context." type="String" required="true" />
+    <apex:attribute name="env" description="Test or prod environment" type="String" required="false" />
+
+    <script>
+        function displayText(msg) {
+            let p = document.createElement('p');
+            let t = document.createTextNode(msg);
+            p.appendChild(t);
+            document.body.appendChild(p);
+        }
+
+        function clearText() {
+            const ps = document.querySelectorAll('p');
+            for (let i = 0; i < ps.length; ++i) {
+                ps[i].remove();
+            }
+        }
+
+        function initialize() {
+            Caradigm.IAM.IContextParticipant.OnContextChangePending = (coupon) => {
+                return null;
+            };
+
+            Caradigm.IAM.IContextParticipant.OnContextChangeAccepted = (coupon) => {};
+
+            Caradigm.IAM.IContextParticipant.OnContextChangeCanceled = () => {};
+
+            Caradigm.IAM.IContextParticipant.OnContextChangeTerminated = () => {};
+        }
+
+        window.addEventListener('load', (event) => {
+            let data = '{!JSENCODE(URLENCODE(icn))}';
+            let environ = '{!JSENCODE(URLENCODE(env))}';
+            initialize();
+        });
+
+        const joinName = 'orders#';
+
+        const data = {
+            joinToken: ''
+        };
+
+        function join() {
+            return new Promise(function (resolve, reject) {
+                Caradigm.IAM.IContextor.JoinAsync(joinName, true, (token, status) => {
+                    if (status === Caradigm.IAM.Success || status === Caradigm.IAM.AlreadyJoinedException) {
+                        const msg = 'Success. Join token: ' + token + ' status: ' + status.message;
+
+                        //displayText("Successfully joined context");
+                        resolve(token);
+                    } else {
+                        const msg = 'Error joining: ' + status.message;
+
+                        reject(msg);
+                    }
+                });
+            });
+        }
+
+        function leave() {
+            try {
+                const leaveToken = Caradigm.IAM.IContextor.LeaveAsync((token, status) => {
+                    if (status === Caradigm.IAM.Success) {
+                        const msg = 'Successfully left context. Leave token: ' + token;
+                    } else {
+                        const msg = 'Leave status: ' + status.message;
+                    }
+                });
+
+                const msg = 'returned leave token: ' + leaveToken;
+            } catch (e) {}
+        }
+
+        // not being used
+        function getContext() {
+            try {
+                const getToken = Caradigm.IAM.IContextor.GetContextAsync(true, (token, status, items) => {
+                    if (status === Caradigm.IAM.Success) {
+                        displayText('Context retrieved: ');
+                        for (key in items) {
+                            const str = key + ': ' + items[key];
+
+                            displayText(str);
+                        }
+                    } else {
+                    }
+                });
+            } catch (e) {
+                displayText('CAUGHT GET CONTEXT ERROR: ' + e);
+            }
+        }
+
+        function setContext() {
+            // use attribute values
+            const items = [];
+            const icn = '{!JSENCODE(URLENCODE(icn))}'; //NOPMD
+            const environ = '{!JSENCODE(URLENCODE(env))}'; //NOPMD
+
+            // if in test env
+            if (environ === 'test') items['patient.id.mrn.nationalidnumber_test'] = icn.slice(0, 10);
+            else items['patient.id.mrn.nationalidnumber'] = icn.slice(0, 10);
+
+            return new Promise(function (resolve, reject) {
+                // force change = false is better, then have user confirm the change if it's rejected and change to true
+                Caradigm.IAM.IContextor.SetContextAsync(items, true, (token, status, noContinue, responseList) => {
+                    if (status === Caradigm.IAM.Success) {
+                        if (noContinue) {
+                            // don't bother setting force change True
+                            reject('Context change cannot be completed.');
+                        } else {
+                            for (key in responseList) {
+                            }
+                            sforce.one.showToast({ message: 'The CPRS record has been connected.', mode: 'sticky' });
+                            resolve(token);
+                        }
+                    } else {
+                        reject(status.message);
+                    }
+                });
+            });
+        }
+
+        function joinSetLeave() {
+            const button = document.getElementById('cprsButton');
+            button.disabled = true;
+
+            join()
+                .then(() => {
+                    return setContext();
+                })
+                .then(() => {
+                    leave();
+                })
+                .catch((err) => {
+                    sforce.one.showToast({
+                        title: 'ERROR',
+                        message: err,
+                        mode: 'sticky'
+                    });
+                });
+        }
+    </script>
+
+    <apex:slds />
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <div className="slds-scope">
+            <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                    <div class="slds-media__figure">
+                        <span class="slds-icon_container slds-icon-standard-merge">
+                            <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                                <use
+                                    xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/standard-sprite/svg/symbols.svg#merge')}"></use>
+                            </svg>
+                            <span class="slds-assistive-text">join CPRS</span>
+                        </span>
+                    </div>
+                    <div class="slds-media__body">
+                        <h2 class="slds-card__header-title">
+                            <span>Join CPRS</span>
+                        </h2>
+                    </div>
+                    <div class="slds-no-flex">
+                        <button id="cprsButton" class="slds-button slds-button_neutral" onclick="joinSetLeave()">
+                            Connect to Patient's CPRS Record
+                        </button>
+                    </div>
+                </header>
+            </div>
+        </div>
+    </html>
+</apex:component>

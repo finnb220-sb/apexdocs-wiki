@@ -1,0 +1,368 @@
+<template>
+  <!-- only render if esrData exists -->
+  <template if:false={noResults}>
+    <template if:false={loading}>
+      <template if:false={noConnection}>
+        <div class="slds-card container">
+          <header>
+            <lightning-icon tabindex="0" class="header-icon" icon-name="standard:care_request_reviewer" size="small"
+              alternative-text="ESR Header Icon"></lightning-icon>
+            <h1 tabindex="0">Patient Insurance and Eligibility Information</h1>
+            <div class="right-heading">
+              
+
+            </div>
+          </header>
+          <div class="section-body slds-card__body slds-card__body_inner">
+            <div class='member-id'>
+              <div class='item'>
+                <p tabindex="0" class='vcc-label'>Member ID</p>
+                <div style='display:flex;flex-direction:row; gap:.5rem'>
+                  <h2 tabindex="0">{mviData.edipi}</h2>
+                  </div>
+              </div>
+            </div>
+            <div class='enrollment-info'>
+              <div class='item'>
+                <p tabindex="0" class='vcc-label'>Enrollment Status</p>
+                <div style='display:flex;flex-direction:row; gap:.5rem'>
+                  <h2 tabindex="0" style='font-weight:bold'>{display.main.enrollmentStatus}</h2>
+                  <template tabindex="0" if:true={nav.isEnrolled}>
+                    <lightning-icon tabindex="0" class='status-icon' style='background-color:green' size="x-small"
+                      icon-name="action:approval"></lightning-icon>
+                  </template>
+                  <template tabindex="0" if:false={nav.isEnrolled}>
+                    <lightning-icon tabindex="0" class='status-icon' size="x-small" style='background-color:orange'
+                      icon-name="action:defer"></lightning-icon>
+                  </template>
+                </div>
+                
+              </div>
+
+
+            </div>
+            <div  class="row">
+              <div  class='item'>
+                <p tabindex="0" >Primary Eligibility</p>
+                <p tabindex="0" if:true={display.main.primaryEligibility.type}>{display.main.primaryEligibility.type}</p>
+                <p tabindex="0" if:false={display.main.primaryEligibility.type}>—</p>
+              </div>
+              <div class='item'>
+                <p tabindex="0" >Eligibility Report Date</p>
+                <p tabindex="0" if:true={display.main.primaryEligibility.eligibilityReportDate}>{display.main.primaryEligibility.eligibilityReportDate}</p>
+                <p tabindex="0" if:false={display.main.primaryEligibility.eligibilityReportDate}>—</p>
+              </div>
+              <div  class='item'>
+                <p tabindex="0" >Eligibility Indicator</p>
+                <p tabindex="0" if:true={display.main.primaryEligibility.indicator}>{display.main.primaryEligibility.indicator}</p>
+                <p tabindex="0" if:false={display.main.primaryEligibility.indicator}>—</p>
+              </div>
+            </div>
+            <div class="row" >
+              <div class='item' >
+                <p tabindex="0" >Secondary Eligibilities</p>
+                <template tabindex="0" if:true={display.main.secondaryEligibilities.length} for:each={display.main.secondaryEligibilities}
+                  for:item='eligibility'>
+                  <p tabindex="0" if:true={eligibility.type} key={eligibility.type}>
+                    <template if:true={eligibility.type.length}>{eligibility.type}</template>
+                    <template if:false={eligibility.type.length}>—</template>
+                  </p>
+                  <p tabindex="0" if:false={eligibility.type} key={eligibility.type}>—</p>
+                </template>
+
+              </div>
+              <div  class='item'>
+
+                <p tabindex="0">Eligibility Report Date</p>
+                <template if:true={display.main.secondaryEligibilities.length} for:each={display.main.secondaryEligibilities}
+                  for:item='eligibility'>
+                  <p tabindex="0" if:true={eligibility.eligibilityReportDate} key={eligibility.type}>
+                    <template if:true={eligibility.eligibilityReportDate.length}>{eligibility.eligibilityReportDate}</template>
+                    <template if:false={eligibility.eligibilityReportDate.length}>—</template>
+                  </p>
+                  <p tabindex="0" if:false={eligibility.eligibilityReportDate} key={eligibility.type}>—</p>
+                </template>
+              </div>
+              <div class='item'>
+                <p tabindex="0">Eligibility Indicator</p>
+                <template if:true={display.main.secondaryEligibilities.length} for:each={display.main.secondaryEligibilities}
+                  for:item='eligibility'>
+                  <p tabindex="0" if:true={eligibility.indicator} key={eligibility.type}>
+                    <template if:true={eligibility.indicator.length}>{eligibility.indicator}</template>
+                    <template if:false={eligibility.indicator.length}>—</template>
+                  </p>
+                  <p tabindex="0" if:false={eligibility.indicator} key={eligibility.type}>—</p>
+                </template>
+              </div>
+            </div>
+            <div class="row">
+              <div class='item'>
+                <p tabindex="0" >Other Eligibilities</p>
+                <template if:true={display.main.otherEligibilities.length} for:each={display.main.otherEligibilities}
+                  for:item='eligibility'>
+                  <p tabindex="0" if:true={eligibility.type} key={eligibility.type}>
+                    <template if:true={eligibility.type.length}>{eligibility.type}</template>
+                    <template if:false={eligibility.type.length}>—</template>
+                  </p>
+                  <p tabindex="0" if:false={eligibility.type} key={eligibility.type}>—</p>
+
+                </template>
+
+              </div>
+              <div class='item'>
+
+                <p tabindex="0">Eligibility Report Date</p>
+                <template if:true={display.main.otherEligibilities.length} for:each={display.main.otherEligibilities}
+                  for:item='eligibility'>
+                  <p  tabindex="0" if:true={eligibility.eligibilityReportDate} key={eligibility.type}>
+                    <template if:true={eligibility.eligibilityReportDate.length}>{eligibility.eligibilityReportDate}</template>
+                    <template if:false={eligibility.eligibilityReportDate.length}>—</template>
+                  </p>
+                  <p  tabindex="0" if:false={eligibility.eligibilityReportDate} key={eligibility.type}>—</p>
+                </template>
+              </div>
+              <div class='item'>
+                <p tabindex="0" >Eligibility Indicator</p>
+                <template if:true={display.main.otherEligibilities.length} for:each={display.main.otherEligibilities}
+                  for:item='eligibility'>
+                  <p tabindex="0" if:true={eligibility.indicator} key={eligibility.type}>
+                    <template if:true={eligibility.indicator.length}>{eligibility.indicator}</template>
+                    <template if:false={eligibility.indicator.length}>—</template>
+                  </p>
+                  <p tabindex="0" if:false={eligibility.indicator} key={eligibility.type}>—</p>
+                </template>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class=item>
+                <p tabindex="0" >Priority Group</p>
+                <p tabindex="0">{display.main.priorityGroup}</p>
+              </div>
+              <div class='item'>
+                <p tabindex="0" >Eligible for Medicaid</p>
+                <p tabindex="0">{display.main.eligibleForMedicaid}</p>
+              </div>
+              <div class='item'>
+                <p tabindex="0" >Service Connected</p>
+                <p tabindex="0" >{display.main.serviceConnectedPercentage}</span></p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class='service-branches tabindex="0"'>
+                <p tabindex="0" class='vcc-label'>Disability (%)</p>
+                <template if:true={display.main.ratedDisabilities} for:each={display.main.ratedDisabilities} for:item='disability'>
+                  <p tabindex="0" key={disability.disability} class='vcc-data'>{disability.disability} ({disability.percentage}%)</p>
+                </template>
+                <p tabindex="0" if:false={display.main.ratedDisabilities}>&#8212;</p>
+              </div>
+            </div>
+
+            <div class=row>
+              <div class='service-branches'>
+                <p tabindex="0" class='vcc-label'>Service Branches</p>
+                <template if:true={display.main.serviceBranches} for:each={display.main.serviceBranches}
+                  for:item='branch'>
+                  <p tabindex="0" class='vcc-data' key={branch.serviceBranch}>{branch.serviceBranch} - {branch.location}</p>
+                </template>
+                <template if:false={display.main.serviceBranches}>
+                  <p tabindex="0" class='vcc-data'>&#8212;</p>
+                </template>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-body insurance">
+            <div class="toggle-head" onclick={handleToggleInsurance} onkeypress={handleKeyDownInsurance}>
+
+              <template if:true={nav.showInsurance}>
+                <lightning-icon tabindex="0" class="chevron" size="xx-small" icon-name="utility:chevrondown"></lightning-icon>
+              </template>
+
+              <template if:false={nav.showInsurance}>
+                <lightning-icon tabindex="0" class="chevron" size="xx-small" icon-name="utility:chevronup"></lightning-icon>
+              </template>
+              <h1 tabindex="0">Insurance</h1>
+            </div>
+            <template if:true={nav.showInsurance}>
+
+              <!-- <template if:true={display.insurance}> -->
+              <template if:true={display.insurance} for:each={display.insurance} for:item="insurance">
+                <div key={insurance.policyNumber} class="insurance-card">
+                  <h1 tabindex="0" key={insurance.policyNumber} class="insurance-head">
+                    {insurance.companyName} - {insurance.groupName}
+                  </h1>
+                  <div key={insurance.policyNumber} class='row'>
+                    <div>
+                      <p tabindex="0">Insurance Company</p>
+                      <p tabindex="0">{insurance.companyName}</p>
+                    </div>
+                    <div class='name'>
+                      <p tabindex="0">Primary insured</p>
+                      <p tabindex="0">{insurance.policyHolderName}</p>
+                    </div>
+                    <div>
+
+                    </div>
+                  </div>
+                  <div key={insurance.policyNumber} class="row">
+
+                    <div class>
+                      <p tabindex="0">Group Name</p>
+                      <p tabindex="0">{insurance.groupName}</p>
+                    </div>
+                    <div>
+                      <p tabindex="0">Group ID</p>
+                      <p tabindex="0">{insurance.groupNumber}</p>
+                    </div>
+                    <div>
+                      <p tabindex="0">Plan Type</p>
+                      <p tabindex="0">{insurance.planType}</p>
+                    </div>
+                  </div>
+                  <div key={insurance.policyNumber} class="row">
+
+                    <div>
+                      <p tabindex="0">Policy Number</p>
+                      <p tabindex="0">{insurance.policyNumber}</p>
+                    </div>
+                    <div>
+                      <p tabindex="0">Policy Start Date</p>
+                      <p tabindex="0">{insurance.policyEffectiveDate}</p>
+                    </div>
+                    <div>
+                      <p tabindex="0">Policy End Date</p>
+                      <p tabindex="0">{insurance.policyExpirationDate}</p>
+                    </div>
+                  </div>
+                  <div key={insurance.policyNumber} class="row">
+                    <div>
+                      <p tabindex="0">Address</p>
+                      <div if:true={insurance.address} class='insurance-address'>
+                        <p tabindex="0">{insurance.address.line1} {insurance.address.line2}</p>
+                        <p tabindex="0">{insurance.address.city}</p>
+                        <p tabindex="0">{insurance.address.state}</p>
+                        <p tabindex="0">{insurance.address.zipCode}</p>
+                      </div>
+                      <p tabindex="0" if:false={insurance.address}>&#8212;</p>
+                    </div>
+                    <div>
+                      <p tabindex="0">Phone Number</p>
+                      <p tabindex="0">{insurance.phoneNumber}</p>
+                    </div>
+                    <div>
+                      <p tabindex="0">Subscriber</p>
+                      <p tabindex="0">{insurance.subscriber}</p>
+                    </div>
+                  </div>
+                </div>
+              </template>
+              <!-- </template> -->
+            </template>
+          </div>
+          <!-- Begin Health Benefit Plans -->
+          <div class="section-body insurance">
+            <div  class="toggle-head" onclick={handleHealthPlans} onkeypress={handleKeyDownHealthPlans}>
+              <template if:true={nav.showHealthPlans}>
+                <lightning-icon  tabindex="0" class="chevron" size="xx-small" icon-name="utility:chevrondown"></lightning-icon>
+              </template>
+
+              <template if:false={nav.showHealthPlans}>
+                <lightning-icon  tabindex="0" class="chevron" size="xx-small" icon-name="utility:chevronup"></lightning-icon>
+              </template>
+
+              <h1 tabindex="0">Health Benefits Plans</h1>
+            </div>
+            <template if:true={nav.showHealthPlans}>
+              <template if:true={display.healthBenefitPlans}>
+                <div class="row">
+                  <div>
+                    <h1  tabindex="0" class="vcc-label">Priority Group:</h1>
+                    <h1  tabindex="0" class="vcc-data">{display.main.priorityGroup}</h1>
+                  </div>
+                </div>
+                <template for:each={display.healthBenefitPlans} for:item="healthPlan">
+                  <div key={healthPlan.planName} class="insurance-card">
+                    <h1  tabindex="0" key={healthPlan.planName} class="insurance-head">
+                      {healthPlan.planName}
+                    </h1>
+                    <div key={healthPlan.planName} class="row">
+                      <div class='plan-name'>
+                        <p tabindex="0">Plan Name</p>
+                        <p tabindex="0">{healthPlan.planName}</p>
+                      </div>
+                      <div>
+                        <p tabindex="0">Effective Date</p>
+                        <p tabindex="0">{healthPlan.effectiveDate}</p>
+                      </div>
+                    </div>
+                    <div key={healthPlan.planName} class="row">
+                      <div>
+                        <p tabindex="0">Plan Code</p>
+                        <p tabindex="0">{healthPlan.planCode}</p>
+                      </div>
+                      <div></div>
+                      <div>
+                        <p tabindex="0">Coverage Code</p>
+                        <p tabindex="0">{healthPlan.coverageCode}</p>
+                      </div>
+                    </div>
+                    <div key={healthPlan.planName} class="row">
+                      <div class="description">
+                        <p tabindex="0">Description</p>
+                        <p tabindex="0">{healthPlan.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                </template>
+              </template>
+            </template>
+          </div>
+          <div class="section-body insurance">
+            <div class="toggle-head" onclick={handleBenefits} onkeypress={handleKeyDownBenefits}>
+              <template if:true={nav.showBenefits}>
+                <lightning-icon tabindex="0" class="chevron" size="xx-small" icon-name="utility:chevrondown"></lightning-icon>
+              </template>
+
+              <template if:false={nav.showBenefits}>
+                <lightning-icon tabindex="0" class="chevron" size="xx-small" icon-name="utility:chevronup"></lightning-icon>
+              </template>
+
+              <h1 tabindex="0" >Benefits</h1>
+            </div>
+            <template if:true={nav.showBenefits}>
+              <template if:true={display.benefits}>
+
+                <template for:each={display.benefits} for:item="benefit">
+                  <!-- <key key={benefit.monetaryBenefitType}> -->
+                    <div key={benefit.monetaryBenefitType} class="row">
+                      <div>
+                        <p  tabindex="0">Benefit</p>
+                        <p  tabindex="0">{benefit.monetaryBenefitType}</p>
+                      </div>
+                      <div>
+                        <p  tabindex="0">Benefit Report Date</p>
+                        <p  tabindex="0">{benefit.monetaryBenefitReportDate}</p>
+                      </div>
+                    </div>
+                  <!-- </key> -->
+                </template>
+              </template>
+            </template>
+          </div>
+        </div>
+      </template>
+      <template if:true={noConnection}>
+        <c-base-empty-state type="balloon" msg={labels.noConnectionMessage} sub-msg={labels.noConnectionSubMessage} variant="error"></c-base-empty-state>
+      </template>
+    </template>
+
+  </template>
+  <!-- render "empty state" -->
+  <template if:true={noResults}>
+    <!-- <div class="slds-card"> -->
+      <c-base-empty-state type="treasure" msg={labels.noResultsMessage} sub-msg={labels.noResultsSubMessage}></c-base-empty-state>
+    <!-- </div> -->
+  </template>
+</template>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Include_Layout_Spaces__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Allows blank spaces to be included during the write note process</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Include Layout Spaces</label>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nurse_When_Sort__c</fullName>
+    <description>Sort the values for Nurse When</description>
+    <externalId>false</externalId>
+    <formula>Case ( VCC_Logistical_Recommendation_WHEN__c,
+&quot;Now, 911&quot;, &quot;1.Now 911&quot;,
+&quot;911&quot;, &quot;1.911&quot;,
+&quot;Now&quot;, &quot;2.Now&quot;,
+&quot;Within 8 Hours&quot;, &quot;3.Within 8 Hours&quot;,
+&quot;Within 24 Hours&quot;, &quot;4.Within 24 Hours&quot;,
+&quot;Within 3 Days&quot;, &quot;5.Within 3 Days&quot;,
+&quot;Within 2 Weeks&quot;, &quot;6.Within 2 Weeks&quot;,
+&quot;Selfcare&quot;, &quot;7.Selfcare&quot;,
+&quot;8.&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Nurse When Sort</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

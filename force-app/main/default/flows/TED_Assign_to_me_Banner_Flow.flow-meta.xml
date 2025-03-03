@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Refresh the Page</description>
+        <name>Refresh_Page</name>
+        <label>Refresh Page</label>
+        <locationX>578</locationX>
+        <locationY>1022</locationY>
+        <actionName>c:tucRedirectViaWorkspace</actionName>
+        <actionType>component</actionType>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Action_Get_Records_Update_Records_Element_Error_Screen</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>Get_Current_Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordObject</name>
+            <value>
+                <stringValue>Case</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>c:tucRedirectViaWorkspace</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>58.0</apiVersion>
+    <assignments>
+        <description>If current user is RN then Set Owner Id Variable to running user and Status to TED Nurse Encounter</description>
+        <name>Assign_current_RN_User_as_Owner</name>
+        <label>Assign current RN User as Owner</label>
+        <locationX>50</locationX>
+        <locationY>674</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Current_Record.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Current_Record.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>TED Nurse Encounter</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Current_Record_MP</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>If current user is MP then Set Owner Id Variable to running user and Status to TED MP Encounter</description>
+        <name>Assign_current_User_as_Owner</name>
+        <label>Assign current MP User as Owner</label>
+        <locationX>578</locationX>
+        <locationY>674</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Current_Record.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Current_Record.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>TED MP Encounter</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Current_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assign Current Owner Variable to Owner of Case</description>
+        <name>Current_Owner_Name</name>
+        <label>Current Owner Name</label>
+        <locationX>578</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>Current_Owner</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Current_Record.Owner:User.FirstName</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Current_Owner</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue> </stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Current_Owner</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Get_Current_Record.Owner:User.LastName</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>bannerScreen</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Compare the current users VISN with the VISN on the case, if it matches, the user is a colleague.</description>
+        <name>Check_if_owned_by_Colleague</name>
+        <label>Check if owned by Colleague</label>
+        <locationX>1106</locationX>
+        <locationY>242</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>is_Colleague</name>
+            <conditionLogic>(1 OR 2) AND 3 AND 4</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Current_Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Tele_Urgent_Care_0_2_Hours</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Current_Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Tele_Urgent_Care_2_8_Hours_Case</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Current_Record.Owner:Group.Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>High Acuity (0-2 hours RFI)</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Current_Record.Owner:Group.Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Intermediate Acuity (2-8 hours RFI)</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Current_Owner_Name</targetReference>
+            </connector>
+            <label>is Colleague</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>This decision determines which custom permission the running user has and sets the status accordingly</description>
+        <name>Nurse_or_MP</name>
+        <label>Nurse or MP?</label>
+        <locationX>578</locationX>
+        <locationY>566</locationY>
+        <defaultConnector>
+            <targetReference>Error_Provisioning</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>RN</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Permission.TED_RN</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_current_RN_User_as_Owner</targetReference>
+            </connector>
+            <label>RN</label>
+        </rules>
+        <rules>
+            <name>MP</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Permission.TED_Medical_Provider</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_current_User_as_Owner</targetReference>
+            </connector>
+            <label>MP</label>
+        </rules>
+    </decisions>
+    <description>This flow is for a Lightning component on the case page that can only be seen by the colleague of a record owner. It allows them to assign a colleague&apos;s case to themself.
+1.20.1 PTEMSTUC-3237: TECH: Update the Error Message Index Part 1</description>
+    <environments>Default</environments>
+    <interviewLabel>Assign to me Banner Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>TED Assign to me Banner Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <description>Get Current Case that this flow is running on</description>
+        <name>Get_Current_Record</name>
+        <label>Get Current Record</label>
+        <locationX>1106</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_if_owned_by_Colleague</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Action_Get_Records_Update_Records_Element_Error_Screen</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Update the Current Records Owner to the running User and set status to TED MP Encounter</description>
+        <name>Update_Current_Record</name>
+        <label>Update Current Record</label>
+        <locationX>578</locationX>
+        <locationY>782</locationY>
+        <connector>
+            <targetReference>Refresh_Page</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Action_Get_Records_Update_Records_Element_Error_Screen</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Current_Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>TED MP Encounter</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Update the Current Records Owner to the running User and set status to TED Nurse Encounter</description>
+        <name>Update_Current_Record_MP</name>
+        <label>Update Current Record</label>
+        <locationX>50</locationX>
+        <locationY>782</locationY>
+        <connector>
+            <targetReference>Refresh_Page</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Action_Get_Records_Update_Records_Element_Error_Screen</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Current_Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>TED Nurse Encounter</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+    </recordUpdates>
+    <screens>
+        <name>Action_Get_Records_Update_Records_Element_Error_Screen</name>
+        <label>Action/Get Records/Update Records Element Error Screen</label>
+        <locationX>1898</locationX>
+        <locationY>242</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Action_Get_Records_Update_Records_Element_Error_ScreenText</name>
+            <fieldText>&lt;p&gt;&lt;strong&gt;The requested action cannot be completed. Details on what went wrong are listed below.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Error details:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>Banner Screen users see if they are not the owner of the case</description>
+        <name>bannerScreen</name>
+        <label>bannerScreen</label>
+        <locationX>578</locationX>
+        <locationY>458</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Nurse_or_MP</targetReference>
+        </connector>
+        <fields>
+            <name>CurrentOwnerText</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, Oxygen, Ubuntu, &amp;quot;Fira Sans&amp;quot;, &amp;quot;Droid Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; color: rgb(3, 45, 96);&quot;&gt;NOTE:&amp;nbsp;You are not the owner of this case. If you need to take the Case from&amp;nbsp;{!Current_Owner}, please click the &quot;Assign to Me&quot; button.﻿&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Assign To Me</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <description>If there is a non MP/RN user attempting to use this flow.</description>
+        <name>Error_Provisioning</name>
+        <label>Error_Provisioning</label>
+        <locationX>1106</locationX>
+        <locationY>674</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>false</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Refresh_Page</targetReference>
+        </connector>
+        <fields>
+            <name>Error_Display_Text</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;User is not Properly Provisioned. Action will Not be Completed.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>980</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Current_Record</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>current owner of the record before it is changed</description>
+        <name>Current_Owner</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

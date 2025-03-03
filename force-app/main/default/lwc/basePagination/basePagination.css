@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* gap: 2rem; */
+}
+
+.pagination-buttons {
+    display: flex;
+    flex-direction: row;
+    /* gap: .5rem; */
+}
+
+.record_count_wrapper {
+    text-align: center;
+    min-width: 12ch;
+}

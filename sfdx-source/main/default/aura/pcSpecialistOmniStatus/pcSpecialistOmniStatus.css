@@ -1,0 +1,9 @@
+.THIS .Offline {
+    background-color: rgb(158, 0, 0) !important;
+    color: white;
+}
+
+.THIS .Online {
+    background-color: green !important;
+    color: white;
+}

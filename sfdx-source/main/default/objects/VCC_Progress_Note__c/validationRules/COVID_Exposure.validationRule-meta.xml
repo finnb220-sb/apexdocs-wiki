@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>COVID_Exposure</fullName>
+    <active>true</active>
+    <description>When COVID Exposure is yes, select respiratory illness or COVID</description>
+    <errorConditionFormula>AND( CONTAINS(RecordType.Name , &apos;Clinical Triage&apos;), ISPICKVAL( VCC_CS_Confirms_exposure_in_the_last_14__c, &apos;Yes&apos;),
+        VCC_CS_Someone_with_febrilerespiratory__c = FALSE, VCC_CS_Someone_with_knownsuspected_COVID__c = FALSE) &amp;&amp; NOT
+        $Permission.VCC_Disable_Progress_Note_Assignment_Rules &amp;&amp; !$Permission.DisableTriggersFlag</errorConditionFormula>
+    <errorDisplayField>VCC_CS_Confirms_exposure_in_the_last_14__c</errorDisplayField>
+    <errorMessage>ERROR: Select &quot;Someone with febrile/respiratory illness&quot; or &quot;Someone with known or suspected COVID&quot; if COVID Exposure is &quot;Yes&quot;.</errorMessage>
+</ValidationRule>

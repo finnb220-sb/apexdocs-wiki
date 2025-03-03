@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Virtual_Visit_Comments__c</fullName>
+    <description>Notes from the veteran regarding the Virtual Care Visit Type</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>Notes from the veteran regarding the Virtual Care Visit Type</inlineHelpText>
+    <label>Virtual Visit Comments</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

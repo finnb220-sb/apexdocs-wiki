@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TED_Clinical_Triage_Case__c</fullName>
+    <description>Formula to identify a Clinical triage case is eligible for Tele-EC. Used in metrics.</description>
+    <externalId>false</externalId>
+    <formula>AND (RecordType.DeveloperName = &apos;VCC_Clinical_Triage&apos;,ISPICKVAL (VCC_Case_Outcome__c, &apos;Urgent Care&apos;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Eligible Clinical Triage Case</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

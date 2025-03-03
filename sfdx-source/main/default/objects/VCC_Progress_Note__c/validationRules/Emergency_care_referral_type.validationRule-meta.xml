@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Emergency_care_referral_type</fullName>
+    <active>true</active>
+    <description>Emergency Care referral is true, the type of referral is required</description>
+    <errorConditionFormula>BEGINS( RecordType.DeveloperName, &quot;VCC_&quot;) &amp;&amp; !$Permission.DisableTriggersFlag &amp;&amp; AND(VCC_Emergency_care_referral__c = TRUE,
+        VCC_Instructed_to_go_to_Emergency_Depart__c = FALSE, VCC_Instructed_to_go_to_Urgent_Care__c = FALSE, VCC_WarmTransferVeteransCrisisLineCrisis__c = FALSE,
+        VCC_Provided_info_Veterans_Crisis_Line__c = FALSE, VCC_Contacted_emergency_services_911_EMS__c = FALSE, VCC_Stayed_on_phone_responders_arrived__c = FALSE, NOT
+        ($Permission.VCC_Disable_Progress_Note_Assignment_Rules))</errorConditionFormula>
+    <errorDisplayField>VCC_Emergency_care_referral__c</errorDisplayField>
+    <errorMessage>Emergency Care referral is true, one type of referral is required</errorMessage>
+</ValidationRule>

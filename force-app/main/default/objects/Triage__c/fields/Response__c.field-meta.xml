@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Response__c</fullName>
+    <externalId>false</externalId>
+    <label>Logistical Response</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>911/Provider notified</fullName>
+                <default>false</default>
+                <label>911/Provider notified</label>
+            </value>
+            <value>
+                <fullName>Urgent/Tx Room/Provider notified</fullName>
+                <default>false</default>
+                <label>Urgent/Tx Room/Provider notified</label>
+            </value>
+            <value>
+                <fullName>Urgent NON-VA</fullName>
+                <default>false</default>
+                <label>Urgent NON-VA</label>
+            </value>
+            <value>
+                <fullName>ER-VAMC</fullName>
+                <default>false</default>
+                <label>ER-VAMC</label>
+            </value>
+            <value>
+                <fullName>ER-other</fullName>
+                <default>false</default>
+                <label>ER-other</label>
+            </value>
+            <value>
+                <fullName>Callback</fullName>
+                <default>false</default>
+                <label>Callback</label>
+            </value>
+            <value>
+                <fullName>Imaging Ordered - Call with Results</fullName>
+                <default>false</default>
+                <label>Imaging Ordered - Call with Results</label>
+            </value>
+            <value>
+                <fullName>See Provider Today</fullName>
+                <default>false</default>
+                <label>See Provider Today</label>
+            </value>
+            <value>
+                <fullName>Appt same day</fullName>
+                <default>false</default>
+                <label>Appt same day</label>
+            </value>
+            <value>
+                <fullName>Appt next day</fullName>
+                <default>false</default>
+                <label>Appt next day</label>
+            </value>
+            <value>
+                <fullName>Appt within 72 hrs</fullName>
+                <default>false</default>
+                <label>Appt within 72 hrs</label>
+            </value>
+            <value>
+                <fullName>Appt 1-2 weeks</fullName>
+                <default>false</default>
+                <label>Appt 1-2 weeks</label>
+            </value>
+            <value>
+                <fullName>Virtual Visit</fullName>
+                <default>false</default>
+                <label>Virtual Visit</label>
+            </value>
+            <value>
+                <fullName>Home care</fullName>
+                <default>false</default>
+                <label>Home care</label>
+            </value>
+            <value>
+                <fullName>Home care with Medication</fullName>
+                <default>false</default>
+                <label>Home care with Medication</label>
+            </value>
+            <value>
+                <fullName>Wave Clinic</fullName>
+                <default>false</default>
+                <label>Wave Clinic</label>
+            </value>
+            <value>
+                <fullName>Veteran left AMA</fullName>
+                <default>false</default>
+                <label>Veteran left AMA</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

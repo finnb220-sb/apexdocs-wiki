@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Patient_Alert_Oriented__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Patient seems to be alert and oriented</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Patient seems to be alert and oriented</inlineHelpText>
+    <label>Patient Alert &amp; Oriented</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

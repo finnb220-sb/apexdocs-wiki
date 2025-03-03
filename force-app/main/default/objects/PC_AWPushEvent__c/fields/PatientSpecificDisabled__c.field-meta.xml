@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PatientSpecificDisabled__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checkbox that denotes if the Patient Specific PrC Case button should be active. Utilized in Push Events to set button disabled or enabled</description>
+    <label>PatientSpecificDisabled</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

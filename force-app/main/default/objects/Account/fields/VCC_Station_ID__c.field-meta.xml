@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Station_ID__c</fullName>
+    <description>This is the station number or mail ID for the facility.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>true</externalId>
+    <inlineHelpText
+    >This is the three-digit code (with alpha-numeric suffixes as applicable) that provides VA facilities’ unique site identification (see VA Accounting Classification
+        Structure (ACS) Volume II – Chapter 1).</inlineHelpText>
+    <label>Station Number</label>
+    <length>15</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

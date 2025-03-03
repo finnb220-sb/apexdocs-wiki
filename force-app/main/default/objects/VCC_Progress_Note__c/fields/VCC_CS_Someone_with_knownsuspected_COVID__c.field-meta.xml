@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_CS_Someone_with_knownsuspected_COVID__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Ability to select Someone with known or suspected COVID as a result of exposure to covid in the last 14 days</description>
+    <externalId>false</externalId>
+    <label>Someone with known or suspected COVID</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

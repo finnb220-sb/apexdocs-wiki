@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Cancellation_Remarks__c</fullName>
+    <description>We need to display the entire reason for Cancellation.  If &quot;Other&quot; is selected in the picklist for Reason for Cancellation, then users must type in the Cancellation Reason.</description>
+    <externalId>false</externalId>
+    <formula>IF(TEXT(Service_Appointment__r.Reason_for_Cancellation__c) = &quot;Other&quot;, &quot;Other: &quot; &amp; Service_Appointment__r.CancellationReason, TEXT(Service_Appointment__r.Reason_for_Cancellation__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Cancellation Remarks</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

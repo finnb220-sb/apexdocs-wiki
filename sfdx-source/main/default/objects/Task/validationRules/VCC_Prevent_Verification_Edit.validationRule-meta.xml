@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Prevent_Verification_Edit</fullName>
+    <active>true</active>
+    <description>this validation rule prevents a user from editing a verify caller task</description>
+    <errorConditionFormula>RecordType.DeveloperName = &apos;VCC_Verify_Caller&apos;
+&amp;&amp;
+!$Permission.DisableTriggersFlag
+&amp;&amp;
+NOT(ISNEW())
+&amp;&amp;
+NOT(ISCHANGED(WhatId))</errorConditionFormula>
+    <errorMessage>You are not allowed to modify the Verify Caller task.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,48 @@
+{
+    "candidateAddresses": [
+        {
+            "messages": [
+                {
+                    "code": "ADDR305",
+                    "key": "deliveryPointNotConfirmed",
+                    "text": "VA Profile Validation Failed: Delivery Point is Not Confirmed for Domestic Correspondence Addresses",
+                    "severity": "WARN"
+                }
+            ],
+            "address": {
+                "addressLine1": "1111 Walnut St",
+                "city": "Philadelphia",
+                "zipCode5": "19107",
+                "zipCode4": "4943",
+                "county": {
+                    "name": "Philadelphia County",
+                    "countyFipsCode": "42101"
+                },
+                "stateProvince": {
+                    "name": "Pennsylvania",
+                    "code": "PA"
+                },
+                "country": {
+                    "name": "United States",
+                    "code": "USA",
+                    "fipsCode": "US",
+                    "iso2Code": "US",
+                    "iso3Code": "USA"
+                }
+            },
+            "geocode": {
+                "calcDate": "2025-01-17T22:02:40Z",
+                "locationPrecision": 32,
+                "latitude": 39.949112,
+                "longitude": -75.159566
+            },
+            "addressMetaData": {
+                "confidenceScore": 92,
+                "addressType": "Domestic",
+                "deliveryPointValidation": "STREET_NUMBER_VALIDATED_BUT_MISSING_UNIT_NUMBER",
+                "residentialDeliveryIndicator": "RESIDENTIAL",
+                "validationKey": 1590643277
+            }
+        }
+    ]
+}

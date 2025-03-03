@@ -1,0 +1,11 @@
+.nav-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination-string {
+    padding: 0 1rem 0 1rem;
+}

@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <assignments>
+        <name>Assign_Case_Values_to_PN</name>
+        <label>Assign Case Values to PN</label>
+        <locationX>182</locationX>
+        <locationY>575</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Progress_Notes.VCC_Cannot_Complete_SCD_Action_Reason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.VCC_Cannot_Comp_Scheduling_Action_Reason__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Progress_Notes.VCC_Requested_Service__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.VCC_Requested_Services_Multi__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Progress_Notes.VCC_Specialty_Community_Care_Requested__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.VCC_Specialty_Community_Care_Requested__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Get_Progress_Notes.VCC_Scheduling_Note_Reason2__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue />
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_Self_Referred_Populated</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>CannotCompleteAppointmentRequest</name>
+        <label>Cannot Complete Appointment Request</label>
+        <locationX>50</locationX>
+        <locationY>1487</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Progress_Notes.VCC_Scheduling_Note_Reason2__c</assignToReference>
+            <operator>AddItem</operator>
+            <value>
+                <stringValue>Cannot Complete Appointment Request</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_Date_Time_Set_For_Patient_Requests_Appt</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Clear_Patient_Requests_Appt</name>
+        <label>Clear Patient Requests Appt</label>
+        <locationX>50</locationX>
+        <locationY>1823</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Progress_Notes.VCC_Patient_Requests_Appt_on_or_around__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Clear_Date_Time</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_SCD_Note_Reason_PNs_Collection</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Veteran_is_Requesting_Follow_Up</name>
+        <label>Veteran is Requesting Follow Up</label>
+        <locationX>50</locationX>
+        <locationY>815</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Progress_Notes.VCC_Scheduling_Note_Reason2__c</assignToReference>
+            <operator>AddItem</operator>
+            <value>
+                <stringValue>Patient is Requesting Follow Up Appointment</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Is_Consult_Referall_Does_Not_Exist_Populated</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>VeteranisRequestingConsultReferral</name>
+        <label>Veteran is Requesting Consult/ Referral</label>
+        <locationX>50</locationX>
+        <locationY>1151</locationY>
+        <assignmentItems>
+            <assignToReference>Get_Progress_Notes.VCC_Scheduling_Note_Reason2__c</assignToReference>
+            <operator>AddItem</operator>
+            <value>
+                <stringValue>Veteran is Requesting Consult/ Referral</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Are_Other_Values_Populated</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Are_Other_Values_Populated</name>
+        <label>Are Other Values Populated?</label>
+        <locationX>182</locationX>
+        <locationY>1367</locationY>
+        <defaultConnector>
+            <targetReference>Is_Date_Time_Set_For_Patient_Requests_Appt</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_others</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Progress_Notes.VCC_Cannot_Complete_SCD_Action_Reason__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Consult Review Required</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Progress_Notes.VCC_Cannot_Complete_SCD_Action_Reason__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Restricted / Unavailable Clinic</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Progress_Notes.VCC_Cannot_Complete_SCD_Action_Reason__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Consult Review Required</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Progress_Notes.VCC_Cannot_Complete_SCD_Action_Reason__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Not Authorized in Service Line Agreement</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CannotCompleteAppointmentRequest</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Consult_Referall_Does_Not_Exist_Populated</name>
+        <label>Is Consult/Referall Does Not Exist Populated?</label>
+        <locationX>182</locationX>
+        <locationY>1031</locationY>
+        <defaultConnector>
+            <targetReference>Are_Other_Values_Populated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Consult</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Progress_Notes.VCC_Cannot_Complete_SCD_Action_Reason__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Consult/Referral Does Not Exist</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>VeteranisRequestingConsultReferral</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Date_Time_Set_For_Patient_Requests_Appt</name>
+        <label>Is Date Time Set For Patient Requests Appt?</label>
+        <locationX>182</locationX>
+        <locationY>1703</locationY>
+        <defaultConnector>
+            <targetReference>Update_SCD_Note_Reason_PNs_Collection</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Date</name>
+            <conditionLogic>(1 AND 2 AND 3) OR ((1 OR 2) AND 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Progress_Notes.VCC_Cannot_Complete_SCD_Action_Reason__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Consult Review Required</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Progress_Notes.VCC_Cannot_Complete_SCD_Action_Reason__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Not Authorized in Service Line Agreement</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Progress_Notes.VCC_Patient_Requests_Appt_on_or_around__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Clear_Patient_Requests_Appt</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Self_Referred_Populated</name>
+        <label>Is Self-Referred Populated?</label>
+        <locationX>182</locationX>
+        <locationY>695</locationY>
+        <defaultConnector>
+            <targetReference>Is_Consult_Referall_Does_Not_Exist_Populated</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_self</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Progress_Notes.VCC_Cannot_Complete_SCD_Action_Reason__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Self-Referred/ Out-of-Cycle Request</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Veteran_is_Requesting_Follow_Up</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Was_PN_Record_Found</name>
+        <label>Was PN Record Found?</label>
+        <locationX>336</locationX>
+        <locationY>455</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_PN_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Progress_Notes</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Case_Values_to_PN</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>Update SCD Progress Note Based on Changes to the SCD ADM Case</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>Clear_Date_Time</name>
+        <dataType>DateTime</dataType>
+        <expression>DATETIMEVALUE(&quot;&quot;)</expression>
+    </formulas>
+    <interviewLabel>Update SCD/ADM Progress Notes From Case {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update SCD/ADM Progress Notes From Case</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Progress_Notes</name>
+        <label>Get Progress Notes</label>
+        <locationX>336</locationX>
+        <locationY>335</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Was_PN_Record_Found</targetReference>
+        </connector>
+        <filterLogic>(1 AND 2 ) AND (3 OR 4 OR 5) AND (6 OR 7)</filterLogic>
+        <filters>
+            <field>VCC_Case__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>VCC_Signed__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>VCC_Cannot_Complete_SCD_Action_Reason__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record__Prior.VCC_Cannot_Comp_Scheduling_Action_Reason__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>VCC_Requested_Service__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record__Prior.VCC_Requested_Services_Multi__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>VCC_Specialty_Community_Care_Requested__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record__Prior.VCC_Specialty_Community_Care_Requested__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>VCC_Caller_Name_Text__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>VCC_Relative_Type__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>VCC_Progress_Note__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_SCD_Note_Reason_PNs_Collection</name>
+        <label>Update SCD Note Reason PNs Collection</label>
+        <locationX>182</locationX>
+        <locationY>2039</locationY>
+        <inputReference>Get_Progress_Notes</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>210</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Progress_Notes</targetReference>
+        </connector>
+        <filterFormula
+        >!{!$Permission.DisableTriggersFlag} &amp;&amp; {!$Record.RecordType.Name} = &quot;Administrative and Scheduling Case&quot; &amp;&amp; {!$Record.IsClosed} = FALSE
+            &amp;&amp; {!$Record.VCC_Progress_Note__c} = TRUE &amp;&amp; (!ISBLANK({!$Record__Prior.VCC_Cannot_Comp_Scheduling_Action_Reason__c}) ||
+            !ISBLANK({!$Record__Prior.VCC_Requested_Services_Multi__c}) || !ISBLANK({!$Record__Prior.VCC_Specialty_Community_Care_Requested__c}) ) &amp;&amp;
+            (ISCHANGED({!$Record.VCC_Cannot_Comp_Scheduling_Action_Reason__c}) || ISCHANGED({!$Record.VCC_Requested_Services_Multi__c}) ||
+            ISCHANGED({!$Record.VCC_Specialty_Community_Care_Requested__c}) ) &amp;&amp; ( !ISBLANK(TEXT({!$Record.VCC_Caller_Relation__c})) ||
+            !ISBLANK({!$Record.VCC_Caller_Name__c}) )</filterFormula>
+        <object>Case</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

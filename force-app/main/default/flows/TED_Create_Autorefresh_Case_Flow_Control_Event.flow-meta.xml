@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <description>1,19.0 Added Permission.DisableTriggersFlag entry Criteria</description>
+    <environments>Default</environments>
+    <interviewLabel>TED Create Autorefresh Case Flow Control Event {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>TED Create Autorefresh Case Flow Control Event</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>Creates the TED Autorefresh Case Flow Control Event and collects the VISN field to be used when subscribed to</description>
+        <name>Create_Platform_Event</name>
+        <label>Create Platform Event</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <inputAssignments>
+            <field>VISN__c</field>
+            <value>
+                <elementReference>$Record.TUC_VISN__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>TED_Autorefresh_Case_Flow_Control__e</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Create_Platform_Event</targetReference>
+        </connector>
+        <filterFormula>NOT({!$Permission.DisableTriggersFlag})</filterFormula>
+        <object>Tele_EC_Escalation_Status__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

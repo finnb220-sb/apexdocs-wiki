@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CIP_Triage_PulseOximetry</fullName>
+    <active>false</active>
+    <description>CIP Triage Pulse Oximetry: Value should be between 0 and 100</description>
+    <errorConditionFormula>Pulse_Oximetry__c &lt; 0 || Pulse_Oximetry__c &gt; 100</errorConditionFormula>
+    <errorDisplayField>Pulse_Oximetry__c</errorDisplayField>
+    <errorMessage>Please enter a value between 0 and 100</errorMessage>
+</ValidationRule>

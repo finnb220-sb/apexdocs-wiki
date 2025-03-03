@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Omni_Electronic_Signature_Template_Sharing_Rule</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Omni Electronic Signature Template Sharing Rule</label>
+        <sharedTo>
+            <group>VAHC_Base_Users</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>VAHC_Base_Users</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

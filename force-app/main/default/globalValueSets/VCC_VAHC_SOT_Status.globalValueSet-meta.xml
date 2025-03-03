@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Not Started</fullName>
+        <default>false</default>
+        <label>Not Started</label>
+    </customValue>
+    <customValue>
+        <fullName>In Progress</fullName>
+        <default>false</default>
+        <label>In Progress</label>
+    </customValue>
+    <customValue>
+        <fullName>Complete</fullName>
+        <default>false</default>
+        <label>Complete</label>
+    </customValue>
+    <customValue>
+        <fullName>Waiting for VA</fullName>
+        <default>false</default>
+        <label>Waiting for VA</label>
+    </customValue>
+    <customValue>
+        <fullName>Needs Attention</fullName>
+        <default>false</default>
+        <label>Needs Attention</label>
+    </customValue>
+    <customValue>
+        <fullName>Escalate to OIT</fullName>
+        <default>false</default>
+        <label>Escalate to OIT</label>
+    </customValue>
+    <customValue>
+        <fullName>Escalate to IAM</fullName>
+        <default>false</default>
+        <label>Escalate to IAM</label>
+    </customValue>
+    <customValue>
+        <fullName>Error</fullName>
+        <default>false</default>
+        <label>Error</label>
+    </customValue>
+    <masterLabel>VAHC SOT Status</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

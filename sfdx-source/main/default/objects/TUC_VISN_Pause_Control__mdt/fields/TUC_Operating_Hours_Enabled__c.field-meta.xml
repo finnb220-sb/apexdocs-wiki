@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TUC_Operating_Hours_Enabled__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If this field is checked, then the corresponding VISN is enabled and opted-in to automatic escalation status creations based on that VISN&apos;s Operating Hours</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <label>Operating Hours Enabled</label>
+    <type>Checkbox</type>
+</CustomField>

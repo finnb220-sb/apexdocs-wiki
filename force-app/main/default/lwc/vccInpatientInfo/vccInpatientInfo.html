@@ -1,0 +1,21 @@
+<template>
+    <template if:true={isLoading}>
+        <template if:true={init}>
+            <lightning-spinner class="global-spinner" variant="brand" size="large"> </lightning-spinner>
+        </template>
+        <template if:false={init}>
+            <div class="spinner-container">
+                <lightning-spinner class="slds_is_absolute" variant="brand" size="medium"> </lightning-spinner>
+            </div>
+        </template>
+    </template>
+    <template if:true={inpatientRecord}>
+        <template if:false={isLoading}>
+            <template if:false={noConnection}>
+                <template if:true={isOpenPopup}>
+                    <c-vcc-in-patient facility-name={facilityName} record-id={recordId} patient-list={patientList} onafteripacknowledge={handleIPAcknowledge}></c-vcc-in-patient>
+                </template>
+            </template>
+        </template>
+    </template>
+</template>

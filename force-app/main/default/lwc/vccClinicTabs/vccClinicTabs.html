@@ -1,0 +1,22 @@
+<template>
+    <template lwc:if={clinics}>
+        <lightning-tabset variant="scoped">
+            <template for:each={clinics} for:item="clinic" for:index="index">
+                <template lwc:if={clinic.ien}>
+                    <lightning-tab
+                        aria-label={clinic.name}
+                        key={clinic.ien}
+                        tabindex="0"
+                        label={clinic.name}
+                        value={clinic.ien}
+                        onactive={handleTimeSlotRetrieval}>
+                        <c-vcc-clinic-details
+                            site-id={siteId}
+                            clinic-i-e-n={clinic.ien}
+                            onclinicdetails={handlePassClinicDetails}></c-vcc-clinic-details>
+                    </lightning-tab>
+                </template>
+            </template>
+        </lightning-tabset>
+    </template>
+</template>

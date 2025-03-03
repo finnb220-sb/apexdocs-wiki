@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <actionCalls>
+        <description>Add error log if there are issues getting the Custom Metadata</description>
+        <name>Add_Error_Log</name>
+        <label>Add Error Log</label>
+        <locationX>490</locationX>
+        <locationY>242</locationY>
+        <actionName>FlowLogEntry</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Save_Error_Log_Custom_Metadata</targetReference>
+        </connector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>flowName</name>
+            <value>
+                <stringValue>VCC_Review_New_Appointment_Subflow</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>loggingLevelName</name>
+            <value>
+                <stringValue>ERROR</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>message</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>FlowLogEntry</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <description>Save Nebula Log</description>
+        <name>Save_Error_Log_Custom_Metadata</name>
+        <label>Save Error Log</label>
+        <locationX>490</locationX>
+        <locationY>350</locationY>
+        <actionName>Logger</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>ReviewScreen</targetReference>
+        </connector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <nameSegment>Logger</nameSegment>
+        <offset>0</offset>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>60.0</apiVersion>
+    <assignments>
+        <description>assign appointment comments before the next element &quot;Set Final Values&quot; because otherwise it wont appear in the formula Appointment_Fields</description>
+        <name>Set_Appointment_Comments</name>
+        <label>Set Appointment Comments</label>
+        <locationX>182</locationX>
+        <locationY>650</locationY>
+        <assignmentItems>
+            <assignToReference>ServiceAppointment.AppointmentComments__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Appointment_Comments</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Set_Final_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Final_Values</name>
+        <label>Set Final Values</label>
+        <locationX>182</locationX>
+        <locationY>758</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>confirmationStage</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>serviceAppointmentFields</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Appointment_Fields</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <choices>
+        <name>Video</name>
+        <choiceText>Video</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Video</stringValue>
+        </value>
+    </choices>
+    <decisions>
+        <name>Get_VVS_Link_Decision</name>
+        <label>Get VVS Link?</label>
+        <locationX>182</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Set_Appointment_Comments</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Get_Link</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Generate_Video_Link</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_VVS_Link_Subflow</targetReference>
+            </connector>
+            <label>Yes - Get Link</label>
+        </rules>
+    </decisions>
+    <description>Subflow for VCC New Appointment By Flows
+***Added as part of release 1.10.0 as part of refactoring the &quot;VCC New Appointment by&quot; flows
+*** 07/16/2024 CCCM-30614 update Appointment Comments field to shorten the allowed length to make room for &quot;#NLT# &quot;
+*** 1.15.0 Fix CCCM-38287 - Unterminated Sting error in the Appointment_Fields formula
+*** 1.18.0 Feature CCCM-38380 - Generate VVS Link for Video Appointment with feature flag</description>
+    <dynamicChoiceSets>
+        <description>Input variable from parent flow, gives picklist values</description>
+        <name>Appointment_Type_Values</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>AppointmentType</picklistField>
+        <picklistObject>ServiceAppointment</picklistObject>
+    </dynamicChoiceSets>
+    <environments>Default</environments>
+    <formulas>
+        <name>Appointment_Fields</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;SchedStartTime&quot;:&quot;&apos; &amp;substitute(substitute(text({!StartTime}),&apos; &apos;,&apos;T&apos;),&apos;Z&apos;,&apos;.000Z&apos;)&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;SchedEndTime&quot;:&quot;&apos; &amp; substitute(substitute(text({!EndTime}),&apos; &apos;,&apos;T&apos;),&apos;Z&apos;,&apos;.000Z&apos;)&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;RecordTypeId&quot;:&quot;&apos; &amp;{!appointmentRecordType.Id}&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;Description&quot;:&quot;&apos; &amp;JSINHTMLENCODE({!ServiceAppointment.Description})&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;AppointmentType&quot;:&quot;&apos; &amp;{!Appointment_Type}&amp; 
+&apos;&quot;,&apos;&amp; &apos;&quot;AdditionalInformation&quot;:&quot;&apos; &amp; {!ServiceAppointment.AdditionalInformation}&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;Comments&quot;:&quot;&apos; &amp; {!ServiceAppointment.Comments}&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;ParentRecordId&quot;:&quot;&apos; &amp; {!ServiceAppointment.ParentRecordId}&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;Street&quot;:&quot;&apos; &amp; {!ServiceAppointment.Street}&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;City&quot;:&quot;&apos; &amp; {!ServiceAppointment.City}&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;State&quot;:&quot;&apos; &amp; {!ServiceAppointment.State}&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;PostalCode&quot;:&quot;&apos; &amp; {!ServiceAppointment.PostalCode}&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;Country&quot;:&quot;&apos; &amp; {!ServiceAppointment.Country}&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;WorkTypeGroupId&quot;:&quot;&apos; &amp; {!appointmentTopic.Id}&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;ServiceTerritoryId&quot;:&quot;&apos; &amp; {!Get_User_VISN.Id}&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;ServiceResourceId&quot;:&quot;&apos; &amp; {!Get_MP.Id}&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;Phone&quot;:&quot;&apos; &amp; {!VCV_Phone.value}&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;Email&quot;:&quot;&apos; &amp; if( ISBLANK({!VCV_EmaIl.value}), {!Get_Account.PersonEmail} ,{!VCV_EmaIl.value})&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;VCC_VerifyEmailAndPhone__c&quot;:&quot;&apos;&amp; if({!Verified_patient_phone_number_and_email},&quot;True&quot;,&quot;False&quot;)&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;VCC_VISN_for_Appointment__c&quot;:&quot;&apos; &amp; {!VISN_Facility_Dependencies.topValue}&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;VCC_Facility_for_Appointment__c&quot;:&quot;&apos; &amp; {!VISN_Facility_Dependencies.middleValue}&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;VCC_Link__c&quot;:&quot;&apos; &amp; {!formulaVVSFieldValue} &amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;isSlotChanged&quot;:&quot;&apos; &amp; &quot;False&quot;&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;IsAnonymousBooking&quot;:&quot;&apos; &amp; if({!ServiceAppointment.IsAnonymousBooking},&quot;True&quot;,&quot;False&quot;)&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;Subject&quot;:&quot;&apos; &amp; {!ServiceAppointment.Subject}&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;AppointmentComments__c&quot;:&quot;&apos; &amp; JSINHTMLENCODE({!ServiceAppointment.AppointmentComments__c})&amp;
+&apos;&quot;,}&apos;</expression>
+    </formulas>
+    <formulas>
+        <description>The current length of the Appointment_Comments long text field</description>
+        <name>formulaAppointmentCommentsCurrentLength</name>
+        <dataType>Number</dataType>
+        <expression>LEN({!Appointment_Comments})</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <description>256 is the max length of the field AppointmentComments__c on SObject ServiceAppointment. This value must match the actual field length.
+&quot;#NLT# &quot; is the string that may or may not be appended to the beginning of the appointment comment.</description>
+        <name>formulaAppointmentCommentsMaxLength</name>
+        <dataType>Number</dataType>
+        <expression>256 - LEN({!$Label.VCC_ApptCommentNLT}+&quot; &quot;)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <description>Format start time in UTC for the VVS link callout</description>
+        <name>formulaStartTimeUTC</name>
+        <dataType>String</dataType>
+        <expression>substitute(substitute(text({!StartTime}),&apos; &apos;,&apos;T&apos;),&apos;Z&apos;,&apos;.000Z&apos;)</expression>
+    </formulas>
+    <formulas>
+        <description>When VVS feature flag is true and user checks Generate Video Link checkbox on screen, it will be the URL returned from the callout
+When VVS feature flag is false or user does not check video link checkbox, it will be the field value from user input.
+Generate Video Link checkbox is only displayed when feature flag is True.</description>
+        <name>formulaVVSFieldValue</name>
+        <dataType>String</dataType>
+        <expression>IF({!Generate_Video_Link}, {!varVVSLinkURL}, {!VVC_Link.value})</expression>
+    </formulas>
+    <interviewLabel>VCC Review New Appointment Subflow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>VCC Review New Appointment Subflow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <description>Custom Metadata for dark functionality</description>
+        <name>Get_Feature_Flag_Config</name>
+        <label>Get Feature Flag Config</label>
+        <locationX>182</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>ReviewScreen</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Add_Error_Log</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Scheduling_Features_Config</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>VCC_SCD_Automation_Configuration__mdt</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <screens>
+        <name>ReviewScreen</name>
+        <label>Review Screen</label>
+        <locationX>182</locationX>
+        <locationY>242</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Get_VVS_Link_Decision</targetReference>
+        </connector>
+        <fields>
+            <name>Patient_Information</name>
+            <fieldText>Patient Information</fieldText>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Patient_Information_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>PatientName</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Patient:&lt;/strong&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt; {!Get_Account.Name}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>VCV_Phone</name>
+                    <extensionName>flowruntime:phone</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>required</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>value</name>
+                        <value>
+                            <elementReference>Get_Account.Phone</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                </fields>
+                <fields>
+                    <name>Verified_patient_phone_number_and_email</name>
+                    <dataType>Boolean</dataType>
+                    <fieldText>Verified patient contact information</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <validationRule>
+                        <errorMessage>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 0, 0); font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; font-size: 10pt;&quot;&gt;You must verify the &lt;/span&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;patient&apos;s contact information for this VCV appointment&lt;/span&gt;&lt;/p&gt;</errorMessage>
+                        <formulaExpression>IF({!Verified_patient_phone_number_and_email}=TRUE,TRUE,FALSE)</formulaExpression>
+                    </validationRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Patient_Information_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>BlankSpace</name>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Medical_Provider</name>
+            <fieldText>Medical Provider</fieldText>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Medical_Provider_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>MP_Name</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Medical Provider:&lt;/strong&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt; {!Get_MP.Name}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Medical_Provider_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>VISN_Name2</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Service Territory:&lt;/strong&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt; {!Get_User_VISN.Name}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Appointment_Details</name>
+            <fieldText>Appointment Details</fieldText>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Appointment_Details_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>StartDisplay</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Scheduled Start:&lt;/strong&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt; {!StartTime}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>Appointment_Type</name>
+                    <choiceReferences>Appointment_Type_Values</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Appointment Type</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>VCV_EmaIl</name>
+                    <extensionName>flowruntime:email</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>required</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>value</name>
+                        <value>
+                            <elementReference>Get_Account.PersonEmail</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>Appointment_Type</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <elementReference>Video</elementReference>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <name>Generate_Video_Link</name>
+                    <dataType>Boolean</dataType>
+                    <fieldText>Generate Video Link</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>Appointment_Type</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <elementReference>Video</elementReference>
+                            </rightValue>
+                        </conditions>
+                        <conditions>
+                            <leftValueReference>Get_Feature_Flag_Config.Generate_VVS_Link__c</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <booleanValue>true</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>ServiceAppointment.Subject</objectFieldReference>
+                </fields>
+                <fields>
+                    <name>Appointment_Comments</name>
+                    <fieldText>Appointment Comments</fieldText>
+                    <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <validationRule>
+                        <errorMessage>&lt;p&gt;&lt;span style=&quot;color: rgb(234, 0, 30);&quot;&gt;ERROR: The max character length for the Appointment Comments has been reached. Please review entry and remove character(s) to save. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(234, 0, 30);&quot;&gt;Max length: {!formulaAppointmentCommentsMaxLength}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(234, 0, 30);&quot;&gt;Current length: {!formulaAppointmentCommentsCurrentLength}&lt;/span&gt;&lt;/p&gt;</errorMessage>
+                        <formulaExpression>{!formulaAppointmentCommentsCurrentLength} &lt;= {!formulaAppointmentCommentsMaxLength}</formulaExpression>
+                    </validationRule>
+                </fields>
+                <fields>
+                    <name>schedulingCaseDisplayTxt</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Parent Scheduling Case: &lt;/strong&gt;{!relatedSchedulingCase.CaseNumber}&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Appointment_Details_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>EndDisplay</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Scheduled End:&lt;/strong&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt; {!EndTime}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>VVC_Link</name>
+                    <extensionName>flowruntime:url</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>VVC Link</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                </fields>
+                <fields>
+                    <fieldType>ObjectProvided</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <objectFieldReference>ServiceAppointment.Description</objectFieldReference>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>VISN</name>
+            <fieldText>Service Territory</fieldText>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>VISN_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>VISN_Facility_Dependencies</name>
+                    <extensionName>flowruntime:dependentPicklists</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>dependencyWrapperApiName</name>
+                        <value>
+                            <stringValue>ServiceAppointment</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>topPicklistApiName</name>
+                        <value>
+                            <stringValue>VCC_VISN_for_Appointment__c</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>middlePicklistApiName</name>
+                        <value>
+                            <stringValue>VCC_Facility_for_Appointment__c</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>topLabel</name>
+                        <value>
+                            <stringValue>VISN for Appointment</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>topRequired</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>middleLabel</name>
+                        <value>
+                            <stringValue>Facility</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>middleRequired</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>topValue</name>
+                        <value>
+                            <elementReference>VISNforDropdown</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                </fields>
+                <fields>
+                    <name>apptFaultMessage</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 0, 0);&quot;&gt;{!$Flow.FaultMessage}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>duplicateProviderBookingError</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <booleanValue>false</booleanValue>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithHeader</regionContainerType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <stages>
+        <name>confirmationStage</name>
+        <isActive>true</isActive>
+        <label>confirmationStage</label>
+        <stageOrder>70</stageOrder>
+    </stages>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Feature_Flag_Config</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <description>Do callout to get VVS URL, error logging and fault path is included in subflow</description>
+        <name>Get_VVS_Link_Subflow</name>
+        <label>Get VVS Link Subflow</label>
+        <locationX>50</locationX>
+        <locationY>458</locationY>
+        <connector>
+            <targetReference>Set_Appointment_Comments</targetReference>
+        </connector>
+        <flowName>VCC_Appointment_Subflow_GetVVSLink</flowName>
+        <inputAssignments>
+            <name>var_PatientLastName</name>
+            <value>
+                <elementReference>Get_Account.LastName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>var_SchedStartTime</name>
+            <value>
+                <elementReference>formulaStartTimeUTC</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>varPatientEmail</name>
+            <value>
+                <elementReference>VCV_EmaIl.value</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>varPatientFirstName</name>
+            <value>
+                <elementReference>Get_Account.FirstName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>varPatientICN</name>
+            <value>
+                <elementReference>Get_Account.MVI_External_Id__pc</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>varPatientPhone</name>
+            <value>
+                <elementReference>VCV_Phone.value</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>varProviderEmail</name>
+            <value>
+                <elementReference>Get_MP.RelatedRecord.Email</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>varProviderUserId</name>
+            <value>
+                <elementReference>Get_MP.RelatedRecordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>varSelectedFacility</name>
+            <value>
+                <elementReference>VISN_Facility_Dependencies.middleValue</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>varSelectedTimeZone</name>
+            <value>
+                <elementReference>varTimeZone</elementReference>
+            </value>
+        </inputAssignments>
+        <outputAssignments>
+            <assignToReference>varVVSLinkURL</assignToReference>
+            <name>varVVSLinkURL</name>
+        </outputAssignments>
+    </subflows>
+    <variables>
+        <name>appointmentRecordType</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>RecordType</objectType>
+    </variables>
+    <variables>
+        <name>appointmentTopic</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>WorkTypeGroup</objectType>
+    </variables>
+    <variables>
+        <description>Input Value from Parent Flow</description>
+        <name>duplicateProviderBookingError</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>EndTime</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Input variable from the parent flow, object type is Account</description>
+        <name>Get_Account</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <description>This is the input variable from the parent flows to pass in the Service Resource data</description>
+        <name>Get_MP</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>ServiceResource</objectType>
+    </variables>
+    <variables>
+        <description>Input variable from Parent Flow</description>
+        <name>Get_User_VISN</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>ServiceTerritory</objectType>
+    </variables>
+    <variables>
+        <description>Name of the parent flow that called this subflow</description>
+        <name>parentFlowName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Input variable from parent flow</description>
+        <name>relatedOpenSchedulingCases</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <description>Input Variable from Parent Flow</description>
+        <name>relatedSchedulingCase</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <description>Input Variable from parent flow</description>
+        <name>ServiceAppointment</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>ServiceAppointment</objectType>
+    </variables>
+    <variables>
+        <description>Output variable to send out to parent flows</description>
+        <name>serviceAppointmentFields</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>StartTime</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Time Zone that the time slots are displayed in, listed as a drop down on the time slots screen</description>
+        <name>varTimeZone</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Returned URL from VVS callout</description>
+        <name>varVVSLinkURL</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Input Variable from Parent Flow</description>
+        <name>VISNforDropdown</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

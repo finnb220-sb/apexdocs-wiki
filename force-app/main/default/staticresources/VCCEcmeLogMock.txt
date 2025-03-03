@@ -1,0 +1,19 @@
+{ 
+    "success": true,
+    "message": "prescription ECME log found.",
+    "log": [
+        {
+            "ecmeLogDateTime": "2009-05-02T20:50:39",
+            "initiatorOfActivity": "POSTMASTER",
+            "reason": "ECME",
+            "rxReference": "ORIGINAL"
+        },
+        {
+            "ecmeLogDateTime": "2009-11-02T18:02:32",
+            "comment": "Submitted to ECME:CMOP TRANSMISSION(NDC:24658-0213-10)",
+            "initiatorOfActivity": "MORGAN,WAYNE",
+            "reason": "ECME",
+            "rxReference": "ORIGINAL"
+        }
+    ]
+}

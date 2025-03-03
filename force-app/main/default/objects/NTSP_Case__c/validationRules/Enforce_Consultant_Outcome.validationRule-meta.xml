@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enforce_Consultant_Outcome</fullName>
+    <active>true</active>
+    <description>Restricts consultants form selecting Triaged.</description>
+    <errorConditionFormula
+    >AND( ($Permission.NTSP_Consultant = TRUE || $Permission.NTSP_Consultant_Manager = TRUE || $Permission.NTSP_Consultant_Peer_Reviewer = TRUE), ISPICKVAL(Outcome__c ,
+        &apos;Triaged&apos;), (ISNEW() || ISCHANGED( Outcome__c )))</errorConditionFormula>
+    <errorDisplayField>Outcome__c</errorDisplayField>
+    <errorMessage>This picklist option is not available for consultants.</errorMessage>
+</ValidationRule>

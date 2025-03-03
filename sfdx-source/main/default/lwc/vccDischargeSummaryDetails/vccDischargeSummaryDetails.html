@@ -1,0 +1,118 @@
+<template>
+    <div slot="header" class="card-title">
+        <div class="slds-media__figure">
+            <lightning-icon
+                size="small"
+                icon-name="standard:outcome"
+                alternative-text="Discharge Summary"
+                title="Discharge Summary"></lightning-icon>
+        </div>
+        <div class="slds-media__body">
+            <h2 class="slds-card__header-title">Discharge Details</h2>
+        </div>
+    </div>
+    <section class="container">
+        <div class="grid" tabindex="0">
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Discharge Date</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{dischargeSummarySelected.dateCreatedWithSlashes}</p>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Encounter Name</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{dischargeSummarySelected.encounterName}</p>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Status</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{dischargeSummarySelected.status}</p>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Facility</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{dischargeSummarySelected.facilityName}</p>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Clinicians</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{dischargeSummarySelected.clinicians}</p>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Location</p>
+                </div>
+                <div class="horizontal info">
+                    <c-vcc-discharge-location
+                        if:true={visitUid.length}
+                        record-id={recordId}
+                        vtc-args={argsWithEncounterId}></c-vcc-discharge-location>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Role</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{dischargeSummarySelected.role}</p>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Urgency</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{dischargeSummarySelected.urgency}</p>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Facility Code</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{dischargeSummarySelected.facilityCode}</p>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Attending Name</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{dischargeSummarySelected.attendingName}</p>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Encounter ID</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{dischargeSummarySelected.encounterId}</p>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell"></div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Content</p>
+                </div>
+                <div class="horizontal details-content">
+                    <pre>{dischargeSummarySelected.content}</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>

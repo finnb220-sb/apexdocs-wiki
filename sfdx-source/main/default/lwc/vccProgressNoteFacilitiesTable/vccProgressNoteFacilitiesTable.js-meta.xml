@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="progressNoteAccountId" label="Account Id" type="String" role="inputOnly" />
+            <property name="selectedFacilityPatientId" label="selectedFacilityPatientId" type="Integer" />
+            <property name="selectedFacilitySiteId" label="selectedFacilitySiteId" type="Integer" />
+            <property name="selectedFacilitySiteName" label="selectedFacilityName" type="String" />
+            <property name="hasDuplicates" label="hasDuplicates" type="Boolean" />
+            <property name="mviDuplicates" label="mviDuplicates" type="String" />
+            <property name="duplicateIsMocked" label="duplicateMocked" type="Boolean" role="inputOnly" />
+            <property name="skipInternalValidation" label="Skip LWC internal flow validation?" type="Boolean" role="inputOnly" />
+        </targetConfig>
+        <targetConfig targets="lightning__RecordPage">
+            <property name="hidecheckboxcolumn" label="Hide Checkbox Column" type="Boolean" default="true" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

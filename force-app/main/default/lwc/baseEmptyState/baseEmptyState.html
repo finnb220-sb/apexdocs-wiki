@@ -1,0 +1,21 @@
+<template>
+    <div class="slds-p-top_x-large slds-illustration slds-illustration_small" style="max-width: 400px; margin: 0 auto">
+        <c-base-empty-state-illustration type={type}></c-base-empty-state-illustration>
+        <div class="slds-text-longform">
+            <h3 class="slds-text-heading_small">
+                <div if:true={isError} class="slds-icon_container slds-icon-utility-error slds-m-right_small slds-no-flex slds-align-top">
+                    <svg class="slds-icon slds-icon_x-small slds-text-color--error" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+                            <path
+                                fill="#ea001e"
+                                d="M26,2C12.8,2,2,12.8,2,26s10.8,24,24,24s24-10.8,24-24S39.2,2,26,2z M8,26c0-9.9,8.1-18,18-18  c3.9,0,7.5,1.2,10.4,3.3L11.3,36.4C9.2,33.5,8,29.9,8,26z M26,44c-3.9,0-7.5-1.2-10.4-3.3c5.1-5.1,19.3-19.3,25.1-25.1  C42.8,18.5,44,22.1,44,26C44,35.9,35.9,44,26,44z"
+                            ></path>
+                        </svg>
+                    </svg>
+                </div>
+                {msg}
+            </h3>
+            <p class="slds-text-body_regular">{subMsg}</p>
+        </div>
+    </div>
+</template>

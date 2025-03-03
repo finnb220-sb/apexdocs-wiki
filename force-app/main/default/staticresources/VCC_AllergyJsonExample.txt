@@ -1,0 +1,469 @@
+{"clinicalData": {
+
+        "templateId": "AllergiesRead40010",
+
+        "requestId": "ff7656d9-fae3-4283-8004-3e826d9ec4a1",
+
+        "patient": [
+
+            {
+
+                "requestedNationalId": "1012991510V125649",
+
+                "requestedResolvedIdentifiers": [],
+
+                "requestedExcludedIdentifiers": [],
+
+                "resultantIdentifiers": [
+
+                    {
+
+                        "identity": "0000001012991510V125649000000",
+
+                        "assigningFacility": "200ESR",
+
+                        "assigningAuthority": "USVHA"
+
+                    },
+
+                    {
+
+                        "identity": "2107269986",
+
+                        "assigningFacility": "200DOD",
+
+                        "assigningAuthority": "USDOD"
+
+                    },
+
+                    {
+
+                        "identity": "1012991510V125649",
+
+                        "assigningFacility": "200M",
+
+                        "assigningAuthority": "USVHA"
+
+                    },
+
+                    {
+
+                        "identity": "943615",
+
+                        "assigningFacility": "991",
+
+                        "assigningAuthority": "USVHA"
+
+                    },
+
+                    {
+
+                        "identity": "7207719",
+
+                        "assigningFacility": "992",
+
+                        "assigningAuthority": "USVHA"
+
+                    }
+
+                ],
+
+                "intoleranceConditions": [
+
+                    {
+
+                        "recordIdentifier": {
+
+                            "identity": "69070",
+
+                            "namespaceId": "991_120.8"
+
+                        },
+
+                        "patient": {
+
+                            "identifier": {
+
+                                "identity": "943615",
+
+                                "assigningFacility": "991",
+
+                                "assigningAuthority": "USVHA"
+
+                            },
+
+                            "name": {
+
+                                "given": "GEORGE",
+
+                                "family": "VCCMALBERTS"
+
+                            }
+
+                        },
+
+                        "observationTime": {
+
+                            "literal": "20170504120000-0400"
+
+                        },
+
+                        "agent": {
+
+                            "code": "LISINOPRIL"
+
+                        },
+
+                        "allergyType": {
+
+                            "code": "D",
+
+                            "displayText": "DRUG",
+
+                            "codingSystem": "L"
+
+                        },
+
+                        "gmrAllergyAgent": {
+
+                            "code": "4019380",
+
+                            "displayText": "LISINOPRIL",
+
+                            "codingSystem": "99VA50.6"
+
+                        },
+
+                        "informationSourceCategory": {
+
+                            "code": "4500975",
+
+                            "displayText": "HISTORICAL",
+
+                            "codingSystem": "99VA8985.1"
+
+                        },
+
+                        "mechanism": {
+
+                            "code": "4501004",
+
+                            "displayText": "ALLERGY",
+
+                            "codingSystem": "99VA8985.1"
+
+                        },
+
+                        "status": "E",
+
+                        "verified": "NO",
+
+                        "reaction": [
+
+                            {
+
+                                "observationTime": {},
+
+                                "reaction": {
+
+                                    "code": "4691091",
+
+                                    "displayText": "NAUSEA AND VOMITING",
+
+                                    "codingSystem": "99VA120.83"
+
+                                },
+
+                                "author": {
+
+                                    "time": {},
+
+                                    "practitioner": {
+
+                                        "identifier": {
+
+                                            "identity": "59919",
+
+                                            "assigningFacility": "991",
+
+                                            "assigningAuthority": "USVHA"
+
+                                        },
+
+                                        "name": {
+
+                                            "given": "NANCY",
+
+                                            "middle": "E",
+
+                                            "family": "DAVIS",
+
+                                            "title": "BAY PINES TEST CENTER"
+
+                                        }
+
+                                    }
+
+                                }
+
+                            },
+
+                            {
+
+                                "observationTime": {},
+
+                                "reaction": {
+
+                                    "code": "4637184",
+
+                                    "displayText": "RENAL IMPAIRMENT",
+
+                                    "codingSystem": "99VA120.83"
+
+                                },
+
+                                "author": {
+
+                                    "time": {},
+
+                                    "practitioner": {
+
+                                        "identifier": {
+
+                                            "identity": "59919",
+
+                                            "assigningFacility": "991",
+
+                                            "assigningAuthority": "USVHA"
+
+                                        },
+
+                                        "name": {
+
+                                            "given": "NANCY",
+
+                                            "middle": "E",
+
+                                            "family": "DAVIS",
+
+                                            "title": "BAY PINES TEST CENTER"
+
+                                        }
+
+                                    }
+
+                                }
+
+                            }
+
+                        ],
+
+                        "verifier": {
+
+                            "time": {},
+
+                            "practitioner": {
+
+                                "identifier": {},
+
+                                "name": {}
+
+                            }
+
+                        },
+
+                        "author": {
+
+                            "time": {
+
+                                "literal": "20170504120000-0400"
+
+                            },
+
+                            "practitioner": {
+
+                                "identifier": {
+
+                                    "identity": "59919",
+
+                                    "assigningFacility": "991",
+
+                                    "assigningAuthority": "USVHA"
+
+                                },
+
+                                "name": {
+
+                                    "given": "NANCY",
+
+                                    "middle": "E",
+
+                                    "family": "DAVIS",
+
+                                    "title": "BAY PINES TEST CENTER"
+
+                                }
+
+                            }
+
+                        },
+
+                        "errorEnterer": {
+
+                            "time": {
+
+                                "literal": "20180227120000-0400"
+
+                            },
+
+                            "practitioner": {
+
+                                "identifier": {
+
+                                    "identity": "59931",
+
+                                    "assigningFacility": "991",
+
+                                    "assigningAuthority": "USVHA"
+
+                                },
+
+                                "name": {
+
+                                    "given": "MEDHA",
+
+                                    "family": "KULKARNI",
+
+                                    "title": "BAY PINES TEST CENTER"
+
+                                }
+
+                            }
+
+                        },
+
+                        "idBandMarker": [],
+
+                        "chartMarker": [
+
+                            {
+
+                                "time": {
+
+                                    "literal": "20170504120000-0400"
+
+                                },
+
+                                "practitioner": {
+
+                                    "identifier": {
+
+                                        "identity": "59919",
+
+                                        "assigningFacility": "991",
+
+                                        "assigningAuthority": "USVHA"
+
+                                    },
+
+                                    "name": {
+
+                                        "given": "NANCY",
+
+                                        "middle": "E",
+
+                                        "family": "DAVIS",
+
+                                        "title": "BAY PINES TEST CENTER"
+
+                                    }
+
+                                }
+
+                            }
+
+                        ],
+
+                        "commentEvents": [],
+
+                        "drugClass": [
+
+                            {
+
+                                "code": {
+
+                                    "code": "4021577",
+
+                                    "displayText": "ACE INHIBITORS",
+
+                                    "codingSystem": "99VA50.605",
+
+                                    "alternateCode": "CV800",
+
+                                    "alternateDisplayText": "ACE INHIBITORS",
+
+                                    "alternateCodingSystem": "991_50.605"
+
+                                }
+
+                            }
+
+                        ],
+
+                        "drugIngredient": [
+
+                            {
+
+                                "code": {
+
+                                    "code": "4019380",
+
+                                    "displayText": "LISINOPRIL",
+
+                                    "codingSystem": "99VA50.416"
+
+                                }
+
+                            }
+
+                        ],
+
+                        "facilityIdentifier": {
+
+                            "identity": "991",
+
+                            "assigningAuthority": "L"
+
+                        },
+
+                        "recordSource": {
+
+                            "universalId": "SLC4.FO-BAYPINES.MED.VA.GOV",
+
+                            "universalIdType": "DNS"
+
+                        },
+
+                        "recordUpdateTime": {}
+
+                    }
+
+                ]
+
+            }
+
+        ],
+
+        "errorSection": {
+
+            "errors": [],
+
+            "fatalErrors": [],
+
+            "warnings": []
+
+        }
+
+    }
+
+}

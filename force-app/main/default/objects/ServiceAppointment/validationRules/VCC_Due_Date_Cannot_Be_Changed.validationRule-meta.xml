@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Due_Date_Cannot_Be_Changed</fullName>
+    <active>true</active>
+    <description>Due Date comes from the flow, user should not be able to change the status</description>
+    <errorConditionFormula
+    >AND ( RecordType.DeveloperName = &apos;VCC_Virtual_Clinic_Visit&apos;, ISCHANGED( DueDate ), !ISNEW()) &amp;&amp; !$Permission.DisableTriggersFlag &amp;&amp;
+        $Permission.VCC_Appointment_Viewer</errorConditionFormula>
+    <errorMessage>Due Date cannot be changed</errorMessage>
+</ValidationRule>

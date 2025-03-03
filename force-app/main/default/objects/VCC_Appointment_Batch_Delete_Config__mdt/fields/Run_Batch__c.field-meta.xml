@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Run_Batch__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Switch that can be used to run or not run batch class from Schedulable.
+Job can remain scheduled, but this field can be set to false if you don&apos;t want it to run temporarily.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <label>Run Batch</label>
+    <type>Checkbox</type>
+</CustomField>

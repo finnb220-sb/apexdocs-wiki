@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_localSiteId__c</fullName>
+    <description>This field captures the unique site id of the VistA instance where the progress note was written to and is used in various Flows and report types.</description>
+    <externalId>false</externalId>
+    <label>localSiteId</label>
+    <precision>3</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

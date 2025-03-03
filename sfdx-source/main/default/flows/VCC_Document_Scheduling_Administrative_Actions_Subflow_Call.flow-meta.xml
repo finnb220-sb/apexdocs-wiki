@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <assignments>
+        <name>Add_Dropped_Call_Progress_Note_To_List</name>
+        <label>Add Dropped Call Progress Note To List</label>
+        <locationX>138</locationX>
+        <locationY>782</locationY>
+        <assignmentItems>
+            <assignToReference>newProgressNoteList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>droppedCallProgressNote</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Was_Returned_Call_Selected_at_Input</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_Returned_Call_Progress_Note_To_List</name>
+        <label>Add Returned Call Progress Note To List</label>
+        <locationX>116</locationX>
+        <locationY>1790</locationY>
+        <assignmentItems>
+            <assignToReference>newProgressNoteList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>returnedCallProgressNote</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assign_Dropped_Call_to_Existing_Case</name>
+        <label>Assign Dropped Call to Existing Case</label>
+        <locationX>270</locationX>
+        <locationY>350</locationY>
+        <assignmentItems>
+            <assignToReference>existingcaserecordVar.VCC_Case_Reason_Multi__c</assignToReference>
+            <operator>AddItem</operator>
+            <value>
+                <stringValue>Dropped Call</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_to_Create_PN_for_Dropped_Call</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Open_Status_to_Existing_Case</name>
+        <label>Assign Open Status to Existing Case</label>
+        <locationX>138</locationX>
+        <locationY>566</locationY>
+        <assignmentItems>
+            <assignToReference>existingcaserecordVar.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Open</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Dropped_Call_Progress_Note</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Open_Status_to_Existing_Case_ReturnCall</name>
+        <label>Assign Open Status to Existing Case</label>
+        <locationX>116</locationX>
+        <locationY>1574</locationY>
+        <assignmentItems>
+            <assignToReference>existingcaserecordVar.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Open</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Returned_Call_Progress_Note</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Returned_Call_to_Existing_Case</name>
+        <label>Assign Returned Call to Existing Case</label>
+        <locationX>248</locationX>
+        <locationY>1358</locationY>
+        <assignmentItems>
+            <assignToReference>existingcaserecordVar.VCC_Case_Reason_Multi__c</assignToReference>
+            <operator>AddItem</operator>
+            <value>
+                <stringValue>Returned Call</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_to_Create_PN_for_Return_Call</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Create_Dropped_Call_Progress_Note</name>
+        <label>Create Dropped Call Progress Note</label>
+        <locationX>138</locationX>
+        <locationY>674</locationY>
+        <assignmentItems>
+            <assignToReference>droppedCallProgressNote.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>PNRecordId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>droppedCallProgressNote.VCC_Administrative_Note_Reason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Dropped Call</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>droppedCallProgressNote.VCC_Case__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>existingcaserecordVar.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Dropped_Call_Progress_Note_To_List</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Create_Returned_Call_Progress_Note</name>
+        <label>Create Returned Call Progress Note</label>
+        <locationX>116</locationX>
+        <locationY>1682</locationY>
+        <assignmentItems>
+            <assignToReference>returnedCallProgressNote.RecordTypeId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>PNRecordId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>returnedCallProgressNote.VCC_Administrative_Note_Reason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Returned Call</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>returnedCallProgressNote.VCC_Case__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>existingcaserecordVar.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Add_Returned_Call_Progress_Note_To_List</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_to_Create_PN_for_Dropped_Call</name>
+        <label>Check to Create PN for Dropped Call</label>
+        <locationX>270</locationX>
+        <locationY>458</locationY>
+        <defaultConnector>
+            <targetReference>Was_Returned_Call_Selected_at_Input</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Create_PN_for_Dropped_Call</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>DroppedCallPNisSelected</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Open_Status_to_Existing_Case</targetReference>
+            </connector>
+            <label>Yes Create PN for Dropped Call</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_to_Create_PN_for_Return_Call</name>
+        <label>Check to Create PN for Return Call</label>
+        <locationX>248</locationX>
+        <locationY>1466</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Create_PN_for_Return_Call</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ReturnedCallPNisSelected</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Open_Status_to_Existing_Case_ReturnCall</targetReference>
+            </connector>
+            <label>Yes, Create PN for Return Call</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Dropped_Call_Already_Populated</name>
+        <label>Is Dropped Call Already Populated</label>
+        <locationX>116</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Dropped_Call_to_Existing_Case</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Dropped Call is Not Populated</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Dropped_Call_is_Populated</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>existingcaserecordVar.VCC_Case_Reason_Multi__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Dropped Call</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Was_Returned_Call_Selected_at_Input</targetReference>
+            </connector>
+            <label>Yes Dropped Call is Populated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_Returned_Call_Already_Populated</name>
+        <label>Is Returned Call Already Populated</label>
+        <locationX>50</locationX>
+        <locationY>1250</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Returned_Call_to_Existing_Case</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Returned Call is Not Populated</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Returned_Call_is_Populated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>existingcaserecordVar.VCC_Case_Reason_Multi__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Returned Call</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Yes Returned Call is Populated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Was_Dropped_Call_Selected_at_Input</name>
+        <label>Was Dropped Call Selected at Input</label>
+        <locationX>347</locationX>
+        <locationY>134</locationY>
+        <defaultConnector>
+            <targetReference>Was_Returned_Call_Selected_at_Input</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Dropped Call was Not Selected</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Dropped_Call_was_Selected</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>DroppedCallChoice</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Dropped Call</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_Dropped_Call_Already_Populated</targetReference>
+            </connector>
+            <label>Yes Dropped Call was Selected</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Was_Returned_Call_Selected_at_Input</name>
+        <label>Was Returned Call Selected at Input?</label>
+        <locationX>347</locationX>
+        <locationY>1142</locationY>
+        <defaultConnectorLabel>No Returned Call was Not Selected</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Returned_Call_was_Selected</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ReturnedCallChoice</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Returned Call</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_Returned_Call_Already_Populated</targetReference>
+            </connector>
+            <label>Yes Returned Call was Selected</label>
+        </rules>
+    </decisions>
+    <description
+    >This Subflow checks the existing Case record for dropped or returned call values, updates the existing case accordingly, and optionally creates a progress note. KK: CCCM
+        22405 --- Added Progress Notes to a list for output to main flow</description>
+    <environments>Default</environments>
+    <interviewLabel>Document Scheduling &amp; Administrative Actions Subflow - Call {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Document Scheduling &amp; Administrative Actions Subflow - Call</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>221</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Was_Dropped_Call_Selected_at_Input</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>DroppedCallChoice</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>DroppedCallPNisSelected</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>droppedCallProgressNote</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>VCC_Progress_Note__c</objectType>
+    </variables>
+    <variables>
+        <name>existingcaserecordVar</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <name>newProgressNoteList</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>VCC_Progress_Note__c</objectType>
+    </variables>
+    <variables>
+        <name>PNRecordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ReturnedCallChoice</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ReturnedCallPNisSelected</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>returnedCallProgressNote</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>VCC_Progress_Note__c</objectType>
+    </variables>
+</Flow>

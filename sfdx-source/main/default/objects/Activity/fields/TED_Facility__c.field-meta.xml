@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TED_Facility__c</fullName>
+    <description>Veteran&apos;s registered Facility.</description>
+    <externalId>false</externalId>
+    <formula>VCC_Case__r.TUC_Assigned_Facility__r.Common_Name__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>When a Task is created this field will auto populate from the related Case record the Facility where the patient is located.</inlineHelpText>
+    <label>Facility</label>
+    <required>false</required>
+    <securityClassification>Public</securityClassification>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

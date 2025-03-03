@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Primary_Patient_Address__c</fullName>
+    <description>Address of Patient, same as &apos;Primary Address&apos; on related Account</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>Address of Patient, same as &apos;Primary Address&apos; on related Account</inlineHelpText>
+    <label>Patient Primary Address</label>
+    <length>5000</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

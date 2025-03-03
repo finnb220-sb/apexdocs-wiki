@@ -1,0 +1,16 @@
+.margin-right-small {
+    margin-right: 10px;
+}
+
+.blueContrast {
+    background-color: #d8e6fe;
+}
+
+.systemMessageColor {
+    color: #032d60;
+    background-color: white;
+}
+
+.slds-chat-list {
+    padding: 0 var(--lwc-spacingSmall, 0.75rem) !important;
+}

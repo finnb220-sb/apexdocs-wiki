@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Transferred_to_Pharmacy_other_ccc__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked if &quot;Transferred patient to other contact center services&quot; is checked and the Agent transferred the patient to the CCC Pharmacy</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if &quot;Transferred patient to other contact center services&quot; is checked and the Agent transferred the patient to the CCC Pharmacy</inlineHelpText>
+    <label>Transferred to CCC Pharmacy</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

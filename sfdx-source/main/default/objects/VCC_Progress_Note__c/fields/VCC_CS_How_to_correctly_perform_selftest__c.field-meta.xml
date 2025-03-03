@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_CS_How_to_correctly_perform_selftest__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checkbox to indicate that the user has provided information on how to correctly perform a self-test.</description>
+    <externalId>false</externalId>
+    <label>How to correctly perform a self-test</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

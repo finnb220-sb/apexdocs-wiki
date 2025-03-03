@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Caller_s_Comments__c</fullName>
+    <complianceGroup>HIPAA</complianceGroup>
+    <description>Contains the Caller&apos;s Comments on the Clinical Triage 2.0 Progress Note for SOAPIE template</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <label>Caller&apos;s Comments</label>
+    <length>32000</length>
+    <securityClassification>Restricted</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

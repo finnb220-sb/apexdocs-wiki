@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Workstream_Setting__c</fullName>
+    <description>Identifies the VCC Workstream Setting (i.e. a persona) for which this Sort Config is applied.</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Identifies the VCC Workstream Setting (i.e. a persona) for which this Sort Config is applied.</inlineHelpText>
+    <label>VCC Workstream Setting</label>
+    <referenceTo>VCC_Workstream_Settings__mdt</referenceTo>
+    <relationshipLabel>VCC Workstream Setting Sort Configs</relationshipLabel>
+    <relationshipName>VCC_Workstream_Setting_Sort_Configs</relationshipName>
+    <required>true</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>

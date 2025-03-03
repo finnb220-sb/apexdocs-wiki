@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>VCC_VAHC_Access_to_Covid_Test_to_Treat_Output_Text</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>This sharing gives access the Covid Test to Treat Output Text records to Medical Providers</description>
+        <label>VAHC Access to Covid Test to Treat Output Text</label>
+        <sharedTo>
+            <group>VAHC_Medical_Providers</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>VAHC_Medical_Providers</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

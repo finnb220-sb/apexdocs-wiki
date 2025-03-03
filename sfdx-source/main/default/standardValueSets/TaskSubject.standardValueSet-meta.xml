@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Call</fullName>
+        <default>false</default>
+        <label>Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Send Letter</fullName>
+        <default>false</default>
+        <label>Send Letter</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Send Quote</fullName>
+        <default>false</default>
+        <label>Send Quote</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Columbia +</fullName>
+        <default>false</default>
+        <label>Columbia +</label>
+    </standardValue>
+    <standardValue>
+        <fullName>COV test only</fullName>
+        <default>false</default>
+        <label>COV test only</label>
+    </standardValue>
+    <standardValue>
+        <fullName>COVID Rx/T2T</fullName>
+        <default>false</default>
+        <label>COVID Rx/T2T</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Culture</fullName>
+        <default>false</default>
+        <label>Culture</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Lab</fullName>
+        <default>false</default>
+        <label>Lab</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Pharmacy</fullName>
+        <default>false</default>
+        <label>Pharmacy</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Radiology</fullName>
+        <default>false</default>
+        <label>Radiology</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Travel</fullName>
+        <default>false</default>
+        <label>Travel</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Follow Up Appointment or Consult Confirmed</fullName>
+        <default>false</default>
+        <label>Follow Up Appointment or Consult Confirmed</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </standardValue>
+    <standardValue>
+        <fullName>e911</fullName>
+        <default>false</default>
+        <label>e911</label>
+    </standardValue>
+</StandardValueSet>

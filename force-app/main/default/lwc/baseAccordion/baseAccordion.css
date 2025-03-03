@@ -1,0 +1,8 @@
+:host {
+    --slds-c-accordion-summary-color-background: var(--background-color, initial);
+    --slds-c-accordion-heading-text-color: var(--font-color, initial);
+    --sds-c-accordion-heading-text-color-hover: var(--font-color, initial);
+    --slds-c-button-text-color: var(--font-color, initial);
+    --slds-c-icon-color-foreground: var(--icon-color, initial);
+    --slds-c-icon-color-foreground-default: var(--icon-color, initial);
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Tele-EC Custom Case Path</masterLabel>
+    <description>A Custom replacement for the Path functionality for Tele-EC Cases.</description>
+    <apiVersion>60.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+		<targetConfig targets="lightning__RecordPage">
+            <property
+                name="statusAPIList"
+                label="Status API List"
+                type="String"
+                default="New,Patient Call Back,TED Nurse Encounter,Ready for MP,TED MP Encounter,Closed" />
+        </targetConfig>
+	</targetConfigs>
+</LightningComponentBundle>

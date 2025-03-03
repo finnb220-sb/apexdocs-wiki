@@ -1,0 +1,171 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <!-- Nebula Logger -->
+    <c-logger></c-logger>
+
+    <!-- Global Spinner -->
+    <template if:true={isGlobalLoading}>
+        <div class="slds-is-relative">
+            <lightning-spinner class="global-spinner" variant="brand" size="large"> </lightning-spinner>
+        </div>
+    </template>
+
+    <!-- modal window -->
+    <template if:false={isGlobalLoading}>
+        <section
+            role="dialog"
+            tabindex="-1"
+            aria-label="modal-heading"
+            aria-modal="true"
+            aria-describedby="modal-content-id-1">
+            <!-- modal header -->
+            <header class="slds-modal__header">
+                <h2
+                    id="modal-heading-01"
+                    class="slds-text-heading_medium slds-hyphenate slds-text-color_inverse"
+                    tabindex="0">
+                    Confirm Current Location
+                </h2>
+            </header>
+            <!-- modal body -->
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <fieldset class="slds-form-element">
+                    <!-- icon and title -->
+                    <div id="variants" class="slds-p-vertical_x-small slds-grid">
+                        <div class="slds-size_1-of-12 slds-col">
+                            <lightning-icon
+                                icon-name="standard:address"
+                                variant="address"
+                                title="address variant medium"
+                                size="medium">
+                            </lightning-icon>
+                        </div>
+                        <lightning-formatted-text
+                            tabindex="0"
+                            aria-label="Patient Current Location"
+                            class="slds-form-element__label slds-col slds-text-heading_small"
+                            value="Patient Current Location"></lightning-formatted-text>
+                    </div>
+                    <!-- residential address display section -->
+                    <div class="slds-form-element__control">
+                        <span class="slds-radio slds-border_bottom slds-p-bottom_medium slds-p-top_small">
+                            <input
+                                type="radio"
+                                id="radio-1"
+                                value="residential"
+                                name="locationOptions"
+                                onclick={chooseLocOption}
+                                disabled={residentialDisabled} />
+                            <label class="slds-radio__label" for="radio-1">
+                                <span
+                                    id="residential"
+                                    class="slds-radio_faux"
+                                    aria-label="Residential radio button"
+                                    tabindex="0"></span>
+                                <span class="slds-form-element__label">Residential</span>
+                                <lightning-formatted-address
+                                    street={residentialAddress.street}
+                                    city={residentialAddress.city}
+                                    province={residentialAddress.state}
+                                    postal-code={residentialAddress.zipCode}
+                                    disabled></lightning-formatted-address>
+                            </label>
+                        </span>
+                        <!-- mailing address display section -->
+                        <span class="slds-radio slds-border_bottom slds-p-top_medium slds-p-bottom_medium">
+                            <input
+                                type="radio"
+                                id="radio-2"
+                                value="mailing"
+                                name="locationOptions"
+                                onclick={chooseLocOption}
+                                disabled={mailingDisabled} />
+                            <label class="slds-radio__label" for="radio-2">
+                                <span
+                                    id="mailing"
+                                    class="slds-radio_faux"
+                                    aria-label="Mailing radio button"
+                                    tabindex="0"></span>
+                                <span class="slds-form-element__label">Mailing</span>
+                            </label>
+                            <lightning-formatted-address
+                                street={mailingAddress.street}
+                                city={mailingAddress.city}
+                                province={mailingAddress.state}
+                                postal-code={mailingAddress.zipCode}
+                                disabled></lightning-formatted-address>
+                        </span>
+                        <span class="slds-radio slds-border_bottom slds-p-top_medium slds-p-bottom_medium">
+                            <input
+                                type="radio"
+                                id="radio-3"
+                                value="othercurloc"
+                                name="locationOptions"
+                                onclick={chooseLocOption} />
+                            <label class="slds-radio__label" for="radio-3">
+                                <span
+                                    id="othercurloc"
+                                    class="slds-radio_faux"
+                                    aria-label="Other Current Location"
+                                    tabindex="0"></span>
+                                <span class="slds-form-element__label">Other Current Location</span>
+                            </label>
+                            <span tabindex="0" if:true={otherCurLocRequired} style="color: #ba0517"
+                                ><br />Please fill out the missing/blank fields</span
+                            >
+                            <lightning-input-address
+                                address-label=""
+                                id="inputAddr"
+                                street-label="Street"
+                                city-label="City"
+                                country-label="Country"
+                                province-label="State"
+                                postal-code-label="Zip"
+                                country={otherCurLoc.country}
+                                country-options={getCountryOptions}
+                                province-options={getProvinceOptions}
+                                onchange={handleAddrInput}></lightning-input-address>
+                        </span>
+                        <span class="slds-radio slds-p-top_medium">
+                            <input
+                                type="radio"
+                                id="radio-4"
+                                value="nonaddress"
+                                name="locationOptions"
+                                onclick={chooseLocOption} />
+                            <label class="slds-radio__label" for="radio-4">
+                                <span
+                                    id="nonaddress"
+                                    class="slds-radio_faux"
+                                    aria-label="Non-address"
+                                    tabindex="0"></span>
+                                <span class="slds-form-element__label">Non-Address</span>
+                            </label>
+                            <span tabindex="0" if:true={nonAddrRequired} style="color: #ba0517"
+                                ><br />Please fill out the description/explanation box</span
+                            >
+                            <div
+                                class="slds-text-body_regular slds-p-top_x-small slds-p-left_xx-small slds-p-bottom_xx-small">
+                                Not at a known location / no address / patient doesn't know their location / can't talk
+                            </div>
+                            <lightning-textarea
+                                class="slds-p-left_xx-small"
+                                name="nonAddrInput"
+                                id="inputText"
+                                label="Description/Explanation"
+                                value={nonAddrText}
+                                onchange={handleNonAddrInput}
+                                maxlength="255"></lightning-textarea>
+                        </span>
+                    </div>
+                </fieldset>
+            </div>
+
+            <!-- modal footer -->
+            <footer class="slds-modal__footer">
+                <button class="slds-button slds-button_neutral" onclick={handleCancel}>Cancel</button>
+                <button class="slds-button slds-button_brand" onclick={handleNext}>Next</button>
+            </footer>
+        </section>
+    </template>
+</template>

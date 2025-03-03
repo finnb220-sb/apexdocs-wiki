@@ -1,0 +1,28 @@
+.container {
+    /* height: 500px;   */
+}
+
+table {
+    height: 200px;
+}
+
+.spinner-container {
+    height: 25rem;
+    position: relative;
+    z-index: 0;
+}
+
+lightning-button {
+    /* --sds-c-button-brand-color-background: white;
+    --sds-c-button-brand-text-color:#6B6B6B;
+    --sds-c-button-brand-text-color-hover:#6B6B6B;
+    --sds-c-button-brand-color-background-hover: white;
+    --sds-c-button-brand-text-color-active:#6B6B6B;
+    --sds-c-button-brand-color-background-active: white;
+    --sds-c-button-brand-color-border: #6B6B6B;
+    --sds-c-button-brand-color-border-hover: #6B6B6B; */
+}
+
+.center {
+    text-align: center;
+}

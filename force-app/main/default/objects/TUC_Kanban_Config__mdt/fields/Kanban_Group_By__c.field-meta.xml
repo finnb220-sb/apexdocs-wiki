@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Kanban_Group_By__c</fullName>
+    <description
+    >Enter the Kanban Field group by field API Name. For example, if the only Object is Case, and you would like to see the cases on the kanban column sorted by Status, you
+        would enter Status in this field. Remember to enter the __c if this is a custom field.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText
+    >Enter the Kanban Field group by field API Name. For example, if the only Object is Case, and you would like to see the cases on the kanban column sorted by Status, you
+        would enter Status in this field. Remember to enter the __c if this is a custom field.</inlineHelpText>
+    <label>Kanban Group By</label>
+    <length>200</length>
+    <required>true</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

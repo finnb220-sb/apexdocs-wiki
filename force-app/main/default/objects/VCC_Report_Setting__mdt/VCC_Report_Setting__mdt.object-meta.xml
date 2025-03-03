@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This stores lists that are being used for reporting such as keeping a list of fake names (test data), and SLA for each case type.</description>
+    <label>VCC Report Setting</label>
+    <pluralLabel>VCC Report Settings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

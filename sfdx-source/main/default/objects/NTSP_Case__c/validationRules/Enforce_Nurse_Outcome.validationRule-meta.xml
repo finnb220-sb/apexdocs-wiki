@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enforce_Nurse_Outcome</fullName>
+    <active>true</active>
+    <description>Restricts Nurse from selecting any outcome except Triaged and Cancelled</description>
+    <errorConditionFormula
+    >AND(( $Permission.NTSP_Triage_Nurse = TRUE || $Permission.NTSP_Triage_Nurse_Manager = TRUE || $Permission.NTSP_Triage_Nurse_Peer_Reviewer = TRUE), NOT(ISPICKVAL(Outcome__c
+        , &apos;Triaged&apos;)) , NOT(ISPICKVAL(Outcome__c , &apos;Cancelled&apos;)), (ISCHANGED(Outcome__c ) || ISNEW() = TRUE ))</errorConditionFormula>
+    <errorDisplayField>Outcome__c</errorDisplayField>
+    <errorMessage>This picklist item is not available for triage nurses.</errorMessage>
+</ValidationRule>

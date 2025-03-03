@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AppointmentComments__c</fullName>
+    <description>**IMPORTANT** If you change the length of this field you must also update the flow &quot;VCC Review New Appointment Subflow&quot;. There is a formula named &quot;formulaAppointmentCommentsMaxLength&quot; which performs a function based on the length of this field. (JIRA CCCM-30614)
+
+This field is a text field for any comments that need to be left on the appointment. It will be used in &apos;VCC New Appointment by Time&quot; flow and &apos;VCC New Appointment by Provider&apos; flow. Added as part of release 1.10.0.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <label>Appointment Comments</label>
+    <length>256</length>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>10</visibleLines>
+</CustomField>

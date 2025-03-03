@@ -1,0 +1,36 @@
+{
+    "agent": "ALLERGENIC EXT,HOUSE DUST",
+    "chartAddedDate": "2011-12-07T16:39:46.000Z",
+    "comments": [
+        {
+            "body": "occurs often ",
+            "enteredBy": "TEST USER",
+            "enteredByTitle": "BAY PINES TEST LAB",
+            "enteredDate": "2025-01-16",
+            "enteredDateTime": "2011-12-07T16:39:47.000Z",
+            "type": "OBSERVED"
+        }
+    ],
+    "dateOfAppearance": "2011-12-07T16:39:00.000Z",
+    "drugClass": "IMMUNOLOGICAL AGENTS,OTHER",
+    "id": "17202",
+    "isVerified": false,
+    "natureOfReaction": "ALLERGY",
+    "observedAllergy": "HISTORICAL",
+    "reactions": [
+        {
+            "code": "4637157",
+            "description": "ITCHING OF EYE",
+            "family": "Test",
+            "given": "USER",
+            "title": "BAY PINES TEST LAB"
+        }
+    ],
+    "severity": "",
+    "signsAndSymptoms": "ITCHING OF EYE",
+    "status": "E",
+    "type": "DRUG",
+    "typeCode": "D",
+    "vtcId": "983_120.8,17202",
+    "dateOfAppearanceString": "12/7/2011,  4:39 PM"
+}

@@ -1,0 +1,6 @@
+<template>
+    <lightning-card title="Services">
+        <lightning-radio-group options={picklistVals} value={defaultPicklistVal}></lightning-radio-group>
+        <lightning-spinner if:true={isLoading} alternative-text="loading services"></lightning-spinner>
+    </lightning-card>
+</template>

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <decisions>
+        <description>Determines if the PrC Case is a General Case or a Patient Specific Case.</description>
+        <name>What_type_of_PC_Case</name>
+        <label>What type of PC Case?</label>
+        <locationX>578</locationX>
+        <locationY>134</locationY>
+        <defaultConnector>
+            <targetReference>Update_Status_to_Pending_Note</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Patient Specific Case</defaultConnectorLabel>
+        <rules>
+            <name>General_Case</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordId.PC_General_Question__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Status_to_Closed_Resolved</targetReference>
+            </connector>
+            <label>General Case</label>
+        </rules>
+        <rules>
+            <name>Non_Patient_Non_General</name>
+            <conditionLogic>(1 AND (2 OR 3))</conditionLogic>
+            <conditions>
+                <leftValueReference>recordId.PC_General_Question__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>recordId.Patient_Account__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue />
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>recordId.Patient_Account__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Non_General_Non_Patient_Status_to_Closed_Resolved</targetReference>
+            </connector>
+            <label>Non-Patient &amp; Non-General</label>
+        </rules>
+    </decisions>
+    <description>Allows the Provider to move a PC Case Status to Pending Note or Closed Resolved when they select the Close Case button on the PC Case.</description>
+    <environments>Default</environments>
+    <interviewLabel>PC Close Case {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>PC Close Case</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordUpdates>
+        <description>Update the PrC Case Status to Closed Resolved after selecting the Close Case Quick Action button for a Non-General &amp; Non-Patient Case.</description>
+        <name>Update_Non_General_Non_Patient_Status_to_Closed_Resolved</name>
+        <label>Update Non-General Non-Patient Status to Closed Resolved</label>
+        <locationX>578</locationX>
+        <locationY>242</locationY>
+        <connector>
+            <targetReference>Success_Message_Closed_Resolved</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Fault_Screen</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Closed Resolved</stringValue>
+            </value>
+        </inputAssignments>
+        <object>PC_Case__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Update the PrC Case Status to Closed Resolved after selecting the Close Case Quick Action button for a General Case.</description>
+        <name>Update_Status_to_Closed_Resolved</name>
+        <label>Update Status to Closed Resolved</label>
+        <locationX>50</locationX>
+        <locationY>242</locationY>
+        <connector>
+            <targetReference>Success_Message_Closed_Resolved</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Fault_Screen</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Closed Resolved</stringValue>
+            </value>
+        </inputAssignments>
+        <object>PC_Case__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Update the PrC Case Status to Pending Note after selecting the Close Case Quick Action button for a Patient Specific Case.</description>
+        <name>Update_Status_to_Pending_Note</name>
+        <label>Update Status to Pending Note</label>
+        <locationX>1106</locationX>
+        <locationY>242</locationY>
+        <connector>
+            <targetReference>Success_Message_Pending_Note</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Fault_Screen</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <stringValue>Pending Note</stringValue>
+            </value>
+        </inputAssignments>
+        <object>PC_Case__c</object>
+    </recordUpdates>
+    <screens>
+        <name>Fault_Screen</name>
+        <label>Fault_Screen</label>
+        <locationX>1370</locationX>
+        <locationY>350</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Fault_Message</name>
+            <fieldText>&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Success_Message_Closed_Resolved</name>
+        <label>Success Message Closed Resolved</label>
+        <locationX>578</locationX>
+        <locationY>674</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Case_Closed</name>
+            <fieldText>&lt;p&gt;The case has successfully been closed.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Success_Message_Pending_Note</name>
+        <label>Success Message Pending Note</label>
+        <locationX>1106</locationX>
+        <locationY>350</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Pending_Notes_Success_Message</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; font-family: -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, Roboto, Oxygen, Ubuntu, &amp;quot;Fira Sans&amp;quot;, &amp;quot;Droid Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; color: rgb(222, 53, 11);&quot;&gt;The case is now in ‘Pending note’ status and will be closed when the consultant has signed their note.&amp;nbsp;A copy of the note will then be attached to this case.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>452</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>What_type_of_PC_Case</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>recordId</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>PC_Case__c</objectType>
+    </variables>
+    <variables>
+        <name>recordId_old</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

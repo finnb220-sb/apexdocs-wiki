@@ -1,0 +1,13 @@
+<template>
+    <lightning-datatable
+        columns={columns}
+        data={logs}
+        key-field="uuid"
+        hide-checkbox-column="true"
+        onsort={handleSort}
+        onrowaction={handleRowSelected}
+        sorted-direction={sortDirection}
+        sorted-by={sortedBy}
+    >
+    </lightning-datatable>
+</template>

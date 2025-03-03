@@ -1,0 +1,7 @@
+<template>
+    <c-logger></c-logger>
+    <div class="slds-card">
+        <c-vcc-signers-list record-id={recordId} onsignerremoved={handleSignerRemoved}> </c-vcc-signers-list>
+        <lightning-spinner if:true={isLoading} alternative-text="processing..."></lightning-spinner>
+    </div>
+</template>

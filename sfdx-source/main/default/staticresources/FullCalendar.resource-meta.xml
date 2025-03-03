@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <cacheControl>Private</cacheControl>
+    <contentType>application/x-zip-compressed</contentType>
+    <description>Version 5.11.0 of the FullCalendar.io component. Link to documentation: https://fullcalendar.io/docs/v5#toc</description>
+</StaticResource>

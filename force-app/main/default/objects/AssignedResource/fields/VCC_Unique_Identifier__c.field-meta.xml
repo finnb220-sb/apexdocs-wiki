@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Unique_Identifier__c</fullName>
+    <caseSensitive>true</caseSensitive>
+    <description>CCCM-22501 - This field is used in the Appointment Scheduler functionality to prevent double booking. It&apos;s value is set during the
+        VCC_Assigned_Resource_Before_Insert_Update flow.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <label>Unique Identifier</label>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

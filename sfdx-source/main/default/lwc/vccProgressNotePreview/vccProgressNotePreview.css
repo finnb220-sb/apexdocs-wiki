@@ -1,0 +1,68 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+table tr[colspan='2'] td:first-child {
+    font-weight: bold;
+}
+
+table td:first-child {
+    width: 40%;
+}
+
+.not-available {
+    font-style: italic;
+}
+
+.expand-button-wrapper {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.full-payload-wrapper {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+.small-font-title {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.custom-padding-icon {
+    padding-left: 10px;
+    padding-right: 50px;
+}
+
+.card-container {
+    max-height: 60em;
+    overflow: hidden;
+}
+.custom-padding-expand {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.custom-padding-page-component {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.pre-progressNoteJson {
+    overflow-x: hidden;
+    white-space: pre-wrap;
+}
+
+.view-all-button {
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.truncate-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 49em;
+}

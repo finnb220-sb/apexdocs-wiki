@@ -1,0 +1,89 @@
+[
+    { 
+        "patientTO": {
+            "birthPlace": "DAYTON, OHIO",
+            "religion": "CHRISTIAN (NON-SPECIFIC)",
+            "name": "CCCPATIENT,ONE",
+            "ssn": "666780987",
+            "gender": "M",
+            "dob": "1950-08-24 00:00:00",
+            "age": 71,
+            "maritalStatus": "Married",
+            "demographics": {
+                "tag": "983",
+                "addresses": {
+                    "addressTO": [
+                        {
+                            "streetAddress1": "123 MAIN ST",
+                            "city": "ROYAL OAK",
+                            "state": "MI",
+                            "zipcode": "48067"
+                        }
+                    ]
+                },
+                "phones": {
+                    "phoneNumTO": [
+                        {
+                            "type": "Home",
+                            "areaCode": "995",
+                            "number": "9995551234",
+                            "description": "Home Phone"
+                        },
+                        {
+                            "type": "Cell",
+                            "areaCode": "404",
+                            "number": "(404)979-0565",
+                            "description": "Cell Phone"
+                        },
+                        {
+                            "type": "Work",
+                            "description": "Work Phone"
+                        }
+                    ]
+                }
+            },
+            "occupation": "taylor",
+            "patientName": "CCCPATIENT,ONE",
+            "mpiPid": "1013593330V352024",
+            "localPid": "552163951",
+            "sitePids": {
+                "results": {
+                    "taggedText": [
+                        {
+                            "tag": "SSA",
+                            "text": "666780987"
+                        },
+                        {
+                            "tag": "983",
+                            "text": "7223755"
+                        },
+                        {
+                            "tag": "984",
+                            "text": "552163951"
+                        }
+                    ]
+                }
+            },
+            "location": {
+                "specialty": {},
+                "type": "CLINIC"
+            },
+            "restricted": false,
+            "scPercent": "40",
+            "confidentiality": {
+                "tag": "0"
+            },
+            "preferredFacility": {},
+            "isVeteran": true,
+            "visitrelatedTos": {
+                "serviceConnected": true,
+                "combatVeteran": false,
+                "agentorangeExposure": false,
+                "ionizingradiationExposure": false,
+                "shipboardhazardandDefence": false,
+                "headandneckCancer": false,
+                "persiangulfExposure": false
+            }
+        }
+    }
+]

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Verified_Patient_Identifiers__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checkbox for progress note to verify atleast 2 of 3 patient identifiers have been verified</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Patient must be verified with their full name and at least two of the following: SSN, military service number, branch of service, service dates, date of birth, place of birth, home address, spouse’s name, mother&apos;s maiden name, or next of kin</inlineHelpText>
+    <label>Two Patient Identifiers Verified</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Used to Log the flow error</description>
+        <name>Log_Flow_Error</name>
+        <label>Log Flow Error</label>
+        <locationX>842</locationX>
+        <locationY>539</locationY>
+        <actionName>FlowLogEntry</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>flowName</name>
+            <value>
+                <stringValue>VCC_Update_Case_Sub_Type_from_Progress_Note</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>message</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>saveLog</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>FlowLogEntry</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>55.0</apiVersion>
+    <decisions>
+        <description>Checks the Progress Note Virtual Visit type against the Case Subtype</description>
+        <name>VCV_Type</name>
+        <label>VCV Type</label>
+        <locationX>578</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Phone</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.VCC_Case__r.VCC_Case_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>VCV</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Virtual_Visit_Type2__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Telephone Virtual Visit</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Case__r.VCC_Case_Sub_Type__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Telephone Virtual Visit</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Case_Sub_Type_to_Phone</targetReference>
+            </connector>
+            <label>Phone</label>
+        </rules>
+        <rules>
+            <name>Video</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.VCC_Case__r.VCC_Case_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>VCV</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Virtual_Visit_Type2__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Video Virtual Visit</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.VCC_Case__r.VCC_Case_Sub_Type__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Video Virtual Visit</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Case_Sub_Type_to_Video</targetReference>
+            </connector>
+            <label>Video</label>
+        </rules>
+    </decisions>
+    <description>Flow is used to update the Case Subtype when VCV Progress Note Visit Type is changed. 
+
+1.14.0 - Reactivated the flow and added fault path with Error Log 
+
+Update API Version to v55 for 1.1.0</description>
+    <environments>Default</environments>
+    <interviewLabel>VCC Update Case Sub Type from Progress Note {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>VCC Update Case Sub Type from Progress Note</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Updates the Case subtype to Phone</description>
+        <name>Update_Case_Sub_Type_to_Phone</name>
+        <label>Update Case Sub- Type to Phone</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Log_Flow_Error</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.VCC_Case__r.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>VCC_Case_Sub_Type__c</field>
+            <value>
+                <stringValue>Telephone Virtual Visit</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Updates the Case Subtype to Video</description>
+        <name>Update_Case_Sub_Type_to_Video</name>
+        <label>Update Case Sub- Type to Video</label>
+        <locationX>578</locationX>
+        <locationY>431</locationY>
+        <faultConnector>
+            <targetReference>Log_Flow_Error</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.VCC_Case__r.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>VCC_Case_Sub_Type__c</field>
+            <value>
+                <stringValue>Video Virtual Visit</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+    </recordUpdates>
+    <start>
+        <locationX>452</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>VCV_Type</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>VCC_Virtual_Visit_Type2__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>VCC_Progress_Note__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

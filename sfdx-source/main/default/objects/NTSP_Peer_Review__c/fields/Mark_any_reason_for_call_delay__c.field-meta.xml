@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mark_any_reason_for_call_delay__c</fullName>
+    <externalId>false</externalId>
+    <label>Mark any reason for call delay:</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Site Nurse places Triage on HOLD</fullName>
+                <default>false</default>
+                <label>Site Nurse places Triage on HOLD</label>
+            </value>
+            <value>
+                <fullName>Site Provider places Triage on HOLD</fullName>
+                <default>false</default>
+                <label>Site Provider places Triage on HOLD</label>
+            </value>
+            <value>
+                <fullName>Site MSA places Triage on HOLD</fullName>
+                <default>false</default>
+                <label>Site MSA places Triage on HOLD</label>
+            </value>
+            <value>
+                <fullName>Site places Triage on HOLD X2</fullName>
+                <default>false</default>
+                <label>Site places Triage on HOLD X2</label>
+            </value>
+            <value>
+                <fullName>Site places Triage on HOLD X3</fullName>
+                <default>false</default>
+                <label>Site places Triage on HOLD X3</label>
+            </value>
+            <value>
+                <fullName>Provider unclear on information, must confirm with others</fullName>
+                <default>false</default>
+                <label>Provider unclear on information, must confirm with others</label>
+            </value>
+            <value>
+                <fullName>Site unable to answer other than PT identification info</fullName>
+                <default>false</default>
+                <label>Site unable to answer other than PT identification info</label>
+            </value>
+            <value>
+                <fullName>Criteria not met - site claims its policy is to consult TS</fullName>
+                <default>false</default>
+                <label>Criteria not met - site claims its policy is to consult TS</label>
+            </value>
+            <value>
+                <fullName>Site does not have all information needed to make solid decision</fullName>
+                <default>false</default>
+                <label>Site does not have all information needed to make solid decision</label>
+            </value>
+            <value>
+                <fullName>Call is confusing when gathering info for stroke symptoms</fullName>
+                <default>false</default>
+                <label>Call is confusing when gathering info for stroke symptoms</label>
+            </value>
+            <value>
+                <fullName>LKW unclear, takes &gt;1 min to obtain final LKW</fullName>
+                <default>false</default>
+                <label>LKW unclear, takes &gt;1 min to obtain final LKW</label>
+            </value>
+            <value>
+                <fullName>LKW is unknown</fullName>
+                <default>false</default>
+                <label>LKW is unknown</label>
+            </value>
+            <value>
+                <fullName>Can&apos;t hear caller or caller can&apos;t hear TS RN</fullName>
+                <default>false</default>
+                <label>Can&apos;t hear caller or caller can&apos;t hear TS RN</label>
+            </value>
+            <value>
+                <fullName>Lost connection of call</fullName>
+                <default>false</default>
+                <label>Lost connection of call</label>
+            </value>
+            <value>
+                <fullName>TS provider not ready for report</fullName>
+                <default>false</default>
+                <label>TS provider not ready for report</label>
+            </value>
+            <value>
+                <fullName>TS provider gets report - reassigns to alternate TS provider</fullName>
+                <default>false</default>
+                <label>TS provider gets report - reassigns to alternate TS provider</label>
+            </value>
+            <value>
+                <fullName>TS provider did not immediately answer triage call</fullName>
+                <default>false</default>
+                <label>TS provider did not immediately answer triage call</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

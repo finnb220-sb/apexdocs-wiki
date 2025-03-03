@@ -1,0 +1,56 @@
+{
+    "sites": [
+        {
+            "results": {
+                "flags": {
+                    "total": "1",
+                    "flag": [
+                        {
+                            "origSite": {
+                                "code": "613",
+                                "name": "MARTINSBURG VAMC  (MARTINSBURG VAMC)"
+                            },
+                            "ownSite": {
+                                "code": "613",
+                                "name": "MARTINSBURG VAMC  (MARTINSBURG VAMC)"
+                            },
+                            "approvedBy": {
+                                "code": "65722",
+                                "name": "NGO,DINH"
+                            },
+                            "name": {
+                                "value": "HIGH RISK FOR SUICIDE"
+                            },
+                            "assigned": {
+                                "value": "3160811.084815"
+                            },
+                            "id": {
+                                "value": "202243~2;DGPF(26.15,"
+                            },
+                            "category": {
+                                "value": "I (NATIONAL)"
+                            },
+                            "type": {
+                                "value": "CLINICAL"
+                            },
+                            "content": {
+                                "content": "for testing only"
+                            },
+                            "reviewDue": {
+                                "value": "3161109"
+                            },
+                            "document": {}
+                        }
+                    ]
+                },
+                "timeZone": "-0400",
+                "version": "1.13"
+            },
+            "errorSection": {
+                "errors": [],
+                "fatalErrors": [],
+                "warnings": []
+            }
+        }
+    ]
+}

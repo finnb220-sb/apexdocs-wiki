@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_PCP_signer__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>True if Primary Care Provider or RN Care Manager added as additional signers to note during virtual visit.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>True if Primary Care Provider or RN Care Manager added as additional signers to note during virtual visit</inlineHelpText>
+    <label>PCP/RN Care Mgr added as signer</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

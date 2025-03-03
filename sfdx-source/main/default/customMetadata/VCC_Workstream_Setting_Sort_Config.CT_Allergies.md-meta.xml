@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomMetadata
+    xmlns="http://soap.sforce.com/2006/04/metadata"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>CT Allergies</label>
+    <protected>false</protected>
+    <values>
+        <field>VCC_HDR_Data_Type__c</field>
+        <value xsi:type="xsd:string">Allergies</value>
+    </values>
+    <values>
+        <field>VCC_Sort_By__c</field>
+        <value xsi:type="xsd:string">agent</value>
+    </values>
+    <values>
+        <field>VCC_Sort_Direction__c</field>
+        <value xsi:type="xsd:string">asc</value>
+    </values>
+    <values>
+        <field>VCC_Workstream_Setting__c</field>
+        <value xsi:type="xsd:string">RN</value>
+    </values>
+</CustomMetadata>

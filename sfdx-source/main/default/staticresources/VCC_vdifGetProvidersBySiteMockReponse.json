@@ -1,0 +1,19 @@
+{ 
+    "taggedProviderArray": {
+        "count": 2,
+        "tag": "983",
+        "providers": {
+            "providerTO": [
+                {
+                    "duz": "520648375",
+                    "providername": "DIMOV,IVAYLO P",
+                    "providertitle": "BAY PINES TEST LAB"
+                },
+                {
+                    "duz": "520643682",
+                    "providername": "DINCER,HUSEYIN E"
+                }
+            ]
+        }
+    }
+}

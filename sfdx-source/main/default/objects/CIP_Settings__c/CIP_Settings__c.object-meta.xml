@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>This setting would identify the environment/sandbox configurations for Clinical Intake prioritization module</description>
+    <enableFeeds>false</enableFeeds>
+    <label>CIP Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

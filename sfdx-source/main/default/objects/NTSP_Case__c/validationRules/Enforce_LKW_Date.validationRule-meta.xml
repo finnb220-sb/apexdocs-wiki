@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enforce_LKW_Date</fullName>
+    <active>true</active>
+    <errorConditionFormula
+    >Consult_Date__c &lt; LKW_Date__c || IF(Consult_Date__c = LKW_Date__c , LKW_Time_24_hr__c &gt; Consult_Time_Local_Time_24_hrs__c , false)</errorConditionFormula>
+    <errorMessage>Last known well cannot be later than consult date.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,70 @@
+.dummy {
+    color: black;
+}
+.datatable {
+    height: 28rem;
+    display: block;
+}
+* {
+    --slds-c-card-header-spacing-inline-start: 0rem;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.MEDIUM {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.SMALL {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: row;
+    width: 100%;
+}
+
+.MEDIUM .date-range {
+    display: flex;
+    align-self: flex-end;
+    margin-left: auto;
+    width: 30%;
+}
+
+.SMALL .date-range {
+    width: 100%;
+}
+
+.MEDIUM .search-bar {
+    width: 40%;
+}
+
+.SMALL .search-bar {
+    width: 100%;
+}
+
+.medium {
+    flex-wrap: nowrap;
+}
+
+.small {
+    flex-wrap: wrap;
+}
+
+.hide {
+    display: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.hdr-banner-message {
+    padding: 1rem 0 1rem 0;
+}

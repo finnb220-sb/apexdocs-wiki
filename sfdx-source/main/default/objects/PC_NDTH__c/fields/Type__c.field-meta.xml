@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <description
+    >Field is required so that user can select whether a Nationally Designated Telehealth Hub (NDTH) is related to a Terms of Service Agreement (TOS) or Telehealth Service
+        Agreement (TSA).</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Field is required to select whether agreement is TOS or TSA.</inlineHelpText>
+    <label>Type</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>TOS</fullName>
+                <default>false</default>
+                <label>TOS</label>
+            </value>
+            <value>
+                <fullName>TSA</fullName>
+                <default>false</default>
+                <label>TSA</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

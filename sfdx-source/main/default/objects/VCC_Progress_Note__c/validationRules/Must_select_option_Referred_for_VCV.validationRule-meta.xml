@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Must_select_option_Referred_for_VCV</fullName>
+    <active>true</active>
+    <description>If &quot;Referred Patient for CCC VCV&quot; is checked, an option must be selected</description>
+    <errorConditionFormula>BEGINS( RecordType.DeveloperName, &quot;VCC_&quot;) &amp;&amp; !$Permission.DisableTriggersFlag &amp;&amp; AND( VCC_Referred_patient_for_CCC_VCV__c = True,
+        VCC_Transferred_patient_Sched_Admin_VCV__c = False, VCC_warm_transfer_to_VCV_provider__c = False, VCC_No_appoint_avail_Emerg_Care_VCV__c = False,
+        VCC_No_appointment_Urgent_Care_VCV__c = False, VCC_Other_VCV_Referral__c = False ) &amp;&amp; NOT
+        $Permission.VCC_Disable_Progress_Note_Assignment_Rules</errorConditionFormula>
+    <errorDisplayField>VCC_Referred_patient_for_CCC_VCV__c</errorDisplayField>
+    <errorMessage>ERROR: Select an option when the &quot;Referred Patient for CCC VCV&quot; is selected.</errorMessage>
+</ValidationRule>

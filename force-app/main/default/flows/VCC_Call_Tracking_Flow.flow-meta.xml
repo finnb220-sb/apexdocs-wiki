@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Logs the flow&apos;s fault message.</description>
+        <name>Log_Flow_Fault</name>
+        <label>Log Flow Fault</label>
+        <locationX>842</locationX>
+        <locationY>431</locationY>
+        <actionName>FlowLogEntry</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>flowName</name>
+            <value>
+                <stringValue>VCC_Call_Tracking_Flow</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>message</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>saveLog</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>FlowLogEntry</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>55.0</apiVersion>
+    <assignments>
+        <description>Concatenate call tracking call date/time with the call tracking created date.</description>
+        <name>Call_Attempts_Concatenate</name>
+        <label>Call Attempts Concatenate</label>
+        <locationX>270</locationX>
+        <locationY>539</locationY>
+        <assignmentItems>
+            <assignToReference>CallAttemptsVar</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Call_Tracking_Records_Loop.VCC_Call_Date_Time__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CallAttemptsVar</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue> (entered at </stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CallAttemptsVar</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Call_Tracking_Records_Loop.CreatedDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CallAttemptsVar</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>)</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CallAttemptsVar</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>stringBreakContainer</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Call_Tracking_Records_Loop</targetReference>
+        </connector>
+    </assignments>
+    <constants>
+        <description>Maximum character limit for the VCC_Call_Attempts__c field</description>
+        <name>MaxCharacterLimit</name>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>255.0</numberValue>
+        </value>
+    </constants>
+    <constants>
+        <description>Used to create line breaks</description>
+        <name>stringBreak</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </constants>
+    <customErrors>
+        <description>Error message if collection of time stamps are greater than 255.</description>
+        <name>Error_Message</name>
+        <label>Error Message</label>
+        <locationX>50</locationX>
+        <locationY>839</locationY>
+        <customErrorMessages>
+            <errorMessage>{!$Label.VCC_Max_Character_For_VCC_Call_Attempts_c}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <description>Checks if the CallAttemptsVar is less than 255 characters.</description>
+        <name>Over_255_Characters</name>
+        <label>Over 255 Characters?</label>
+        <locationX>182</locationX>
+        <locationY>731</locationY>
+        <defaultConnector>
+            <targetReference>Update_Progress_Note_Call_Attempts</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Under 255 Characters</defaultConnectorLabel>
+        <rules>
+            <name>Over_255_Characters_Limit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>LengthofCallAttemptsVar</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>MaxCharacterLimit</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Error_Message</targetReference>
+            </connector>
+            <label>Over 255 Characters</label>
+        </rules>
+    </decisions>
+    <description>Record triggered Call Attempts create/update Flow.
+Updated API Version v55
+
+Release 1.20.1 - CCCM-37138 - Changed break
+Release 1.20.1 - CCCM-42659 - Added 508 compliant error message</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Concatenate the date/time and created date fields</description>
+        <name>ConcatDateTimeandCreatedDate</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!Call_Tracking_Records_Loop.VCC_Call_Date_Time__c} ) + &apos; (entered at &apos; + TEXT({!Call_Tracking_Records_Loop.CreatedDate}) +&apos;)&apos; +  {!stringBreakContainer}</expression>
+    </formulas>
+    <formulas>
+        <description>Calculates the length of CallAttemptsVar.</description>
+        <name>LengthofCallAttemptsVar</name>
+        <dataType>Number</dataType>
+        <expression>LEN({!CallAttemptsVar})</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>VCC Call Tracking Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>VCC Call Tracking Flow</label>
+    <loops>
+        <description>Loops through call tracking records collection.</description>
+        <name>Call_Tracking_Records_Loop</name>
+        <label>Call Tracking Records Loop</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <collectionReference>Call_Tracking_Records</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Call_Attempts_Concatenate</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Over_255_Characters</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Retrieves call tracking records that are related to the current progress note.</description>
+        <name>Call_Tracking_Records</name>
+        <label>Call Tracking Records</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Call_Tracking_Records_Loop</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Log_Flow_Fault</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>VCC_Progress_Note__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.VCC_Progress_Note__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>VCC_Call_Tracking__c</object>
+        <sortField>VCC_Call_Date_Time__c</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Appointment call attempts related to this Progress Note.</description>
+        <name>Update_Progress_Note_Call_Attempts</name>
+        <label>Update Progress Note Call Attempts</label>
+        <locationX>314</locationX>
+        <locationY>839</locationY>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Log_Flow_Fault</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.VCC_Progress_Note__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>VCC_Call_Attempts__c</field>
+            <value>
+                <elementReference>CallAttemptsVar</elementReference>
+            </value>
+        </inputAssignments>
+        <object>VCC_Progress_Note__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Call_Tracking_Records</targetReference>
+        </connector>
+        <object>VCC_Call_Tracking__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <description>Helps to create line breaks</description>
+        <name>stringBreakContainer</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!stringBreak}
+{!stringBreak}</text>
+    </textTemplates>
+    <variables>
+        <name>CallAttemptsVar</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

@@ -1,0 +1,98 @@
+<template>
+    <c-logger></c-logger>
+    <lightning-card style="height: 40px">
+        <template lwc:if={isLoading}>
+            <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+        </template>
+        <template lwc:if={statusListReady}>
+            <div style="height: 40px; clear: both">
+                <lightning-progress-indicator
+                    class="slds-p-left_small"
+                    style="width: calc(100% - 200px); position: absolute; left: 0px"
+                    current-step={currentStatus}
+                    type="path"
+                    variant="base">
+                    <template for:each={pathMap} for:item="pathItem">
+                        <lightning-progress-step
+                            label={pathItem.label}
+                            value={pathItem.value}
+                            key={pathItem.value}
+                            onclick={handlePathClick}></lightning-progress-step>
+                    </template>
+                </lightning-progress-indicator>
+                <lightning-button
+                    class="slds-p-right_small"
+                    style="position: absolute; right: 0px"
+                    variant="brand"
+                    label="Mark Status as Complete"
+                    title="Status Action"
+                    onclick={handleStatusComplete}
+                    disabled={buttonDisable}></lightning-button>
+            </div>
+        </template>
+        <template lwc:if={isShowMsg}>
+            <div style="text-align: center">
+                <span style="font-weight: 600; font-size: 16px; text-align: center"> {msg}</span>
+            </div>
+        </template>
+    </lightning-card>
+    <template lwc:if={genModal}>
+        <section
+            role="dialog"
+            tabindex="-1"
+            aria-labelledby="modal-heading-01"
+            aria-modal="true"
+            aria-describedby="modal-content-id-1"
+            class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning-button-icon
+                        icon-name="utility:close"
+                        disabled
+                        alternative-text="Close Flow"
+                        onclick={handleClose}
+                        title="Close"></lightning-button-icon>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate" tabindex="0">
+                        {modalTitle}
+                    </h2>
+                </header>
+                <div class="slds-modal__content slds-var-p-around_medium">
+                    <p class="slds-text-align_center" tabindex="0">{modalMessage}</p>
+                </div>
+                <div class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={handleClose} title="Close">Cancel</button>
+                    <template lwc:if={modalButtonShow}>
+                        <button
+                            class="slds-button slds-button_brand"
+                            onclick={handleConfirm}
+                            title="Confirm"
+                            disabled={modalButtonDisable}>
+                            {modalButtonLabel}
+                        </button>
+                    </template>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <template lwc:if={flowModal}>
+        <section
+            role="dialog"
+            tabindex="-1"
+            aria-labelledby="modal-heading-01"
+            aria-modal="true"
+            aria-describedby="modal-content-id-1"
+            class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <div class="slds-modal__content slds-var-p-around_medium">
+                    <lightning-flow
+                        flow-api-name={flowName}
+                        flow-input-variables={flowInputVar}
+                        onstatuschange={flowChange}></lightning-flow>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

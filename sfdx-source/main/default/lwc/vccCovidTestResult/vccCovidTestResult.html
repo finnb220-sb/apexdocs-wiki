@@ -1,0 +1,42 @@
+<template>
+    <template if:false={isEmpty}>
+        <div class="container">
+            <template if:true={isShowSpinner}>
+                <div class="backgroundInverse">
+                    <lightning-spinner variant="brand" alternative-text="Loading"></lightning-spinner>
+                </div>
+            </template>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_12-of-12">
+                    <template if:false={isEmpty}>
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-col slds-size_12-of-12">
+                                <a href=" javascript:void(0);" style="text-decoration: none">
+                                    <div class="covid-title">{covidTitle}</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-col slds-size_12-of-12">
+                                <template if:true={problemsResults}>
+                                    <template for:each={problemsResults} for:item="labObj">
+                                        <div class="slds-grid slds-wrap" key={labObj.key}>
+                                            <div class="slds-col slds-size_12-of-12">
+                                                <div class="lab-info">
+                                                    Results Recorded on &nbsp;
+                                                    <lightning-formatted-date-time value={labObj.onsetDate} year="numeric" day="2-digit" month="numeric" time-zone="UTC">
+                                                    </lightning-formatted-date-time>
+                                                    &nbsp;- Positive
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </template>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

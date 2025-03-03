@@ -1,0 +1,72 @@
+[
+    {
+        "facility": {
+            "address": {
+                "city": "PHILADELPHIA",
+                "postalCode": "19107-4943",
+                "stateProvince": "PENNSYLVANIA",
+                "streetLine1": "1111 WALNUT ST"
+            },
+            "facilityId": "984",
+            "id": "984",
+            "meds": [
+                {
+                    "facilityId": "984",
+                    "refillId": "984",
+                    "prescriptionId": "2724324",
+                    "prescriptionName": "VITAMIN A 10000 UNT CAP",
+                    "icn": "1013354165V371709",
+                    "requesterId": "VISN 8 Test MSA"
+                }
+            ],
+            "tempAddress": {
+                "address": {
+                    "city": "BRUSSELS",
+                    "country": "BEL",
+                    "street1": "BELGIUM",
+                    "vtcId": "31288aff-b93f-4578-9511-d07baf53ca10"
+                },
+                "endDate": "2025-05-25",
+                "startDate": "2025-01-01",
+                "vtcId": "cf1918bc-1444-423d-9ef0-77de5cdcf58a"
+            },
+            "isTemp": true,
+            "stringMeds": "VITAMIN A 10000 UNT CAP - 2724324\n"
+        }
+    },
+    {
+        "facility": {
+            "address": {
+                "city": "PHILADELPHIA",
+                "postalCode": "19107-4943",
+                "stateProvince": "PENNSYLVANIA",
+                "streetLine1": "1111 WALNUT ST"
+            },
+            "facilityId": "983",
+            "id": "983",
+            "meds": [
+                {
+                    "facilityId": "983",
+                    "refillId": "983",
+                    "prescriptionId": "2724324",
+                    "prescriptionName": "VITAMIN A 10000 UNT CAP",
+                    "icn": "1013354165V371709",
+                    "requesterId": "VISN 8 Test MSA"
+                }
+            ],
+            "tempAddress": {
+                "address": {
+                    "city": "ATLANTA",
+                    "country": "USA",
+                    "street1": "1 MAIN STREET",
+                    "vtcId": "31288aff-b93f-4578-9511-d07baf53ca10"
+                },
+                "endDate": "2025-05-25",
+                "startDate": "2025-04-25",
+                "vtcId": "cf1918bc-1444-423d-9ef0-77de5cdcf58a"
+            },
+            "isTemp": true,
+            "stringMeds": "VITAMIN A 10000 UNT CAP - 2724324\n"
+        }
+    }
+]

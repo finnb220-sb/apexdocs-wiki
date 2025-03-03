@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Video_Capable__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>When the patient has had a video visit within the last 2 years with a VA Medical Provider, mark true.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicates if the patient has had a successful video visit with a VA Medical Provider within the last 2 years.</inlineHelpText>
+    <label>Video Capable</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

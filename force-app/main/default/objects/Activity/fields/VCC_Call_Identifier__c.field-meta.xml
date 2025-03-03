@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Call_Identifier__c</fullName>
+    <description>An internal debugging field for calls coming through the softphone. Maps to the Bucher + Suter variable &quot;callVariable9&quot;</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>Used to debug calls coming through the softphone.</inlineHelpText>
+    <label>Call Identifier</label>
+    <length>100</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

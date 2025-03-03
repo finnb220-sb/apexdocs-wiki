@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Contacted_emergency_services__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description
+    >Check if you referred the patient to emergency services and contacted emergency services, remained on phone with the patient until responders arrived.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Checked if the Agent referred the patient to emergency services and contacted emergency services, remained on phone with the patient until responders
+        arrived.</inlineHelpText>
+    <label>Contacted EMS/e911</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

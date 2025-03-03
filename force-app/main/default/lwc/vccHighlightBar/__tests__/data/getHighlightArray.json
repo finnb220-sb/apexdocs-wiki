@@ -1,0 +1,62 @@
+{
+    "happyPath": {
+        "DOB": "1981-01-01 00:00:00",
+        "Age": "44",
+        "Emergency Contact": "Some Name",
+        "Emergency Contact Phone": "8045551005",
+        "Gender Identity": "Male",
+        "Gender": "Male",
+        "Call Back Number": "1234567890",
+        "Current Location": "Washington, D.C."
+    },
+    "nullCheck": {
+        "DOB": null,
+        "Age": null,
+        "Emergency Contact": null,
+        "Emergency Contact Phone": null,
+        "Gender Identity": null,
+        "Gender": null,
+        "Call Back Number": null,
+        "Current Location": null
+    },
+    "emptyCheck": {
+        "DOB": "",
+        "Age": "",
+        "Emergency Contact": "",
+        "Emergency Contact Phone": "",
+        "Gender Identity": "",
+        "Gender": "",
+        "Call Back Number": "",
+        "Current Location": ""
+    },
+    "onlyAlphaCheck": {
+        "DOB": "invalidData",
+        "Age": "invalidData",
+        "Emergency Contact": "invalidData",
+        "Emergency Contact Phone": "invalidData",
+        "Gender Identity": "invalidData",
+        "Gender": "invalidData",
+        "Call Back Number": "invalidData",
+        "Current Location": "invalidData"
+    },
+    "lengthTooShort": {
+        "DOB": "1-01-",
+        "Age": "4",
+        "Emergency Contact": "S",
+        "Emergency Contact Phone": "804",
+        "Gender Identity": "Ma",
+        "Gender": "Ma",
+        "Call Back Number": "123",
+        "Current Location": "Wash"
+    },
+    "lengthTooLong": {
+        "DOB": "1981-01-01 00:00:0012",
+        "Age": "4444",
+        "Emergency Contact": "Some Long Long Long Long Long Long Long Name",
+        "Emergency Contact Phone": "80455123456789051005",
+        "Gender Identity": "MaleMaleMaleMale",
+        "Gender": "MaleMaleMaleMale",
+        "Call Back Number": "80455123456789051005",
+        "Current Location": "Some Long Long Long Long Long Long Long Name"
+    }
+}

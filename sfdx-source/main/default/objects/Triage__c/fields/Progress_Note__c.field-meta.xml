@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Progress_Note__c</fullName>
+    <externalId>false</externalId>
+    <label>Progress Note Title</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>11011</fullName>
+                <default>false</default>
+                <label>EK-PACT WALK-IN</label>
+            </value>
+            <value>
+                <fullName>1473</fullName>
+                <default>false</default>
+                <label>UNSCHEDULED &lt;NURSING NON-MEDICAL UNSCHEDULED VISIT-TXCW&gt;</label>
+            </value>
+            <value>
+                <fullName>1647</fullName>
+                <default>false</default>
+                <label>UNSCHEDULED &lt;NURSING UNSCHEDULED VISIT&gt;</label>
+            </value>
+            <value>
+                <fullName>2732</fullName>
+                <default>false</default>
+                <label>UNSCHEDULED &lt;NURSING UNSCHEDULED VISIT-TXCW&gt;</label>
+            </value>
+            <value>
+                <fullName>3754</fullName>
+                <default>false</default>
+                <label>UNSCHEDULED &lt;PRIME CARE UNSCHEDULED NOTE&gt;</label>
+            </value>
+            <value>
+                <fullName>4242</fullName>
+                <default>false</default>
+                <label>UPDATE &lt;HCHV MONTHLY UPDATE NOTE&gt;</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

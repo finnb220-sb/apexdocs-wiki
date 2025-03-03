@@ -1,0 +1,18 @@
+<template>
+    <lightning-modal-header lwc:ref="header" label={label}></lightning-modal-header>
+    <lightning-modal-body>
+        <!-- Card Body  -->
+        <lightning-card hide-header label="Flags Content">
+            <lightning-spinner lwc:if={isLoading} alternative-text="Loading"></lightning-spinner>
+            <pre lwc:else class="pre-style">{textContents}</pre>
+        </lightning-card>
+    </lightning-modal-body>
+    <lightning-modal-footer>
+        <lightning-button
+            title="Acknowledge and Continue"
+            label="Acknowledge and Continue"
+            variant="brand"
+            onclick={handleAcknowledgeClick}>
+        </lightning-button>
+    </lightning-modal-footer>
+</template>

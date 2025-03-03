@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>App contains Provider Connect Cases, Services, Specialist Availabilities, and Shifts objects needed by the Specialist.</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>true</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>Provider Connect - Specialist App</label>
+    <navType>Standard</navType>
+    <tabs>PC_Case__c</tabs>
+    <tabs>PC_Service__c</tabs>
+    <tabs>PC_Specialist_Availability__c</tabs>
+    <tabs>PC_Shift__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Provider_Connect_Specialist_clone_UtilityBar</utilityBar>
+</CustomApplication>

@@ -1,0 +1,178 @@
+<template>
+    <c-logger></c-logger>
+    <template if:true={currentUser}>
+        <c-pc-banners record-id={currentUser.Id}></c-pc-banners>
+    </template>
+    <template for:each={pcCases} for:item="pcCase">
+        <div
+            data-id={pcCase.Id}
+            class="slds-m-bottom_small slds-card case-closed"
+            key={pcCase.Id}
+            if:true={pcCase.show}>
+            <div style="float: right">
+                <button class="slds-button close-button" title="Close" data-id={pcCase.Id} onclick={handleCloseAlert}>
+                    X
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+            </div>
+            <div>
+                Case {pcCase.Parent.Name} has been {pcCase.Status__c} by {pcCase.CreatedBy.Name}.
+                <a data-id={pcCase.ParentId} onclick={navigateToCase}>View Case</a>
+            </div>
+        </div>
+    </template>
+    <lightning-card>
+        <div class="slds-var-p-around_medium">
+            <template if:true={showSpinner}>
+                <lightning-spinner variant="brand" size="medium" alternative-text={progressLabel}> </lightning-spinner>
+                <div class="spinner-text slds-text-heading_small">
+                    <h1>{progressLabel}</h1>
+                </div>
+            </template>
+            <div class="pc-wrapper">
+                <div class="pc-section slds-var-p-horizontal_xx-small">
+                    <h1 class="slds-text-heading_small slds-var-p-bottom_small">
+                        <b>Information for your case</b>
+                    </h1>
+                    <section class="slds-var-p-bottom_xx-small">
+                        <lightning-textarea
+                            lwc:ref="caseDetailsTextArea"
+                            data-id="case-details"
+                            label={pcCaseDetailsFieldLabel}
+                            placeholder="Enter your case details here."
+                            max-length={maxDetailsChars}
+                            autocomplete
+                            class="detailsHeight"
+                            onchange={handleCaseDetails}
+                            required></lightning-textarea>
+                    </section>
+                    <p
+                        class="slds-var-p-bottom_xx-small slds-text-align_right slds-text-color_inverse-weak slds-text-body_small">
+                        <lightning-formatted-number value={detailsCharsRemaining}> </lightning-formatted-number>
+                        <lightning-formatted-text value=" characters remaining"> </lightning-formatted-text>
+                    </p>
+                </div>
+                <div class="pc-section slds-var-p-horizontal_xx-small">
+                    <template lwc:if={currentLocationId}>
+                        <template lwc:if={showSpecialtySearchBar}>
+                            <h1 class="slds-text-heading_small slds-var-p-bottom_x-small">
+                                <b>Select a Specialty and Channel</b> &nbsp;
+                                <lightning-helptext
+                                    content="Number after specialty denotes number of consultants online"></lightning-helptext>
+                            </h1>
+                            <h2 class="slds-var-p-bottom_x-small">
+                                <p>Select a button for Specialty and Channel</p>
+                                <p>If specialty is unavailable, select the Unavailable button to track your need</p>
+                            </h2>
+                            <div class="slds-var-p-vertical_x-small" style="max-width: 70%">
+                                <c-base-search-bar
+                                    class="search-bar"
+                                    settings={searchBarSettings}
+                                    onfilterlistbysearch={handleSearch}
+                                    list={skillsAndButtonsOriginalSort}
+                                    props-to-search={searchProp}></c-base-search-bar>
+                            </div>
+                        </template>
+                        <template lwc:if={showTable}>
+                            <div style="overflow: auto; max-height: 45vh">
+                                <table class="skillTable" width="100%" role="presentation">
+                                    <template for:each={skillsAndButtons} for:item="skill">
+                                        <tr key={skill.skillName}>
+                                            <td
+                                                title={skill.skillName}
+                                                class="slds-var-p-vertical_xxx-small slds-text-align_left slds-truncate">
+                                                <div tabindex="0">
+                                                    <strong>
+                                                        <lightning-formatted-text
+                                                            value={skill.skillName}
+                                                            class={skill.skillNameFormat}>
+                                                        </lightning-formatted-text>
+                                                        <span
+                                                            class={skill.skillNameFormat}
+                                                            style="
+                                                                font-size: 12px;
+                                                                font-weight: 400;
+                                                                margin-bottom: 10px;
+                                                            "
+                                                            >({skill.consultantsOnline})</span
+                                                        >
+                                                    </strong>
+                                                </div>
+                                            </td>
+                                            <td class="slds-var-p-vertical_xxx-small">
+                                                <lightning-button-group>
+                                                    <lightning-button
+                                                        class="channel-button"
+                                                        disabled={skill.general.disabled}
+                                                        label="General"
+                                                        icon-name="utility:groups"
+                                                        variant={skill.general.variant}
+                                                        data-skill={skill.skillName}
+                                                        data-channel="General"
+                                                        data-channel-short="general"
+                                                        data-is-general="true"
+                                                        onclick={handleButtonSelection}>
+                                                    </lightning-button>
+                                                    <lightning-button
+                                                        class="channel-button"
+                                                        disabled={skill.patientSpecific.disabled}
+                                                        label="Patient Specific"
+                                                        icon-name="utility:people"
+                                                        variant={skill.patientSpecific.variant}
+                                                        data-skill={skill.skillName}
+                                                        data-channel="PatientSpecific"
+                                                        data-channel-short="patientSpecific"
+                                                        data-is-general="false"
+                                                        onclick={handleButtonSelection}>
+                                                    </lightning-button>
+                                                    <lightning-button
+                                                        class="channel-button"
+                                                        disabled={skill.unavailable.disabled}
+                                                        label="Unavailable"
+                                                        icon-name="utility:add"
+                                                        icon-position="right"
+                                                        variant={skill.unavailable.variant}
+                                                        data-skill={skill.skillName}
+                                                        data-channel="Unavailable"
+                                                        data-channel-short="unavailable"
+                                                        title="Specialist not available, please send Provider Connect E-Consult."
+                                                        onclick={handleButtonSelection}>
+                                                    </lightning-button>
+                                                </lightning-button-group>
+                                            </td>
+                                        </tr>
+                                    </template>
+                                </table>
+                            </div>
+                            <section class="slds-var-p-vertical_large slds-align_absolute-center">
+                                <lightning-button
+                                    data-id="route-button"
+                                    variant="brand"
+                                    label="Route to Specialist"
+                                    disabled={connectButtonDisable}
+                                    onclick={handleSubmit}></lightning-button>
+                            </section>
+                        </template>
+                    </template>
+                    <template lwc:else>
+                        <div class="slds-illustration slds-illustration_large" aria-hidden="true">
+                            <img src="/img/chatter/OpenRoad.svg" class="slds-illustration__svg" alt="" />
+                            <div class="slds-text-color_weak">
+                                <h2 class="slds-text-heading_medium">Add Current Location</h2>
+                                <h3 class="slds-text-heading_small">
+                                    No routing location detected. Please add your location to see available specialists.
+                                </h3>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+            <section class="slds-var-p-bottom_xx-small">
+                <div class="pc-locator">
+                    <c-pc-prc-user-location-selector
+                        onlocationchanged={onLocationChanged}></c-pc-prc-user-location-selector>
+                </div>
+            </section>
+        </div>
+    </lightning-card>
+</template>

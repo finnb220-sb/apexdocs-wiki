@@ -1,0 +1,37 @@
+<template>
+    <article class="slds-card welcomeBanner">
+        <!-- Welcome Banner -->
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                    <lightning-icon icon-name="standard:service_resource" size="small"></lightning-icon>
+                </div>
+                <div class="slds-media__body">
+                    <h1 class="slds-card__header-title">Welcome Back &nbsp; <a data-id={currentUser.Id} onclick={navigateToUser}>{currentUser.Name}</a></h1>
+                </div>
+                <div class="slds-no-flex">
+                    <h2>{currentUserTime}</h2>
+                </div>
+            </header>
+        </div>
+    </article>
+    <template if:true={isFeedbackPending}>
+        <article class="slds-card feedbackBanner">
+            <!-- Pending Feedback Banner -->
+            <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                    <div class="slds-media__figure">
+                        <lightning-icon icon-name="standard:survey" size="small"></lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                        <h3 class="slds-card__header-title">You have &nbsp; <a onclick={navigateToPendingFeedbackList}>{numberOfPendingFeedbacks} pending Feedbacks</a></h3>
+                    </div>
+                    <div class="slds-no-flex">
+                        <lightning-button-icon icon-name="utility:close" variant="bare" alternative-text="Close" title="Close" slot="actions" onclick={handleFeedbackBannerClose}>
+                        </lightning-button-icon>
+                    </div>
+                </header>
+            </div>
+        </article>
+    </template>
+</template>

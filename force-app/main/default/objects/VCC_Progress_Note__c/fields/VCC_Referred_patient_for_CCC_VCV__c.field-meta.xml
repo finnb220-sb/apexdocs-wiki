@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Referred_patient_for_CCC_VCV__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked if the Agent referred the patient for a CCC Virtual Clinic Visit</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if you referred the patient for a CCC Virtual Clinic Visit</inlineHelpText>
+    <label>Referred for CCC Virtual Clinic Visit</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

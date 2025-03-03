@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Other_In_Person__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked when there are other options for &quot;Referred patient for in-person appt.&quot;</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check when there are other options for &quot;Referred patient for in-person appt.&quot;</inlineHelpText>
+    <label>Other</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

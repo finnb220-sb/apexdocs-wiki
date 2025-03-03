@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;CaseReason&quot; : &quot;Schedule Appointment&quot;,
+  &quot;ClinicName&quot; : &quot;SFD PC TM 1&quot;,
+  &quot;ClinicStopCodeNumber&quot; : &quot;323&quot;,
+  &quot;DRCreateCase&quot; : {
+    &quot;ActualTime&quot; : 1737,
+    &quot;Case_1&quot; : [ {
+      &quot;AccountId&quot; : &quot;001OC0000079mr4YAA&quot;,
+      &quot;ContactId&quot; : &quot;003OC000005VlscYAC&quot;,
+      &quot;Id&quot; : &quot;500BZ00000CmnAJYAZ&quot;,
+      &quot;RecordTypeId&quot; : &quot;0123d0000004LaGAAU&quot;,
+      &quot;Status&quot; : &quot;Closed - Resolved&quot;,
+      &quot;Subject&quot; : &quot;Administrative and Scheduling&quot;,
+      &quot;UpsertSObjectType&quot; : &quot;Case&quot;,
+      &quot;UpsertSuccess&quot; : true,
+      &quot;VCC_Case_Outcome_Multi__c&quot; : &quot;Completed Scheduling Action&quot;,
+      &quot;VCC_Case_Reason_Multi__c&quot; : &quot;Schedule Appointment&quot;,
+      &quot;VCC_Case_Sub_Type__c&quot; : &quot;Administrative and Scheduling&quot;,
+      &quot;VCC_Case_Type__c&quot; : &quot;Administrative&quot;,
+      &quot;VCC_Mental_Health_Appointment__c&quot; : &quot;No&quot;
+    } ],
+    &quot;debugLog&quot; : [ &quot;2024-06-27T15:30:51.715Z: Metadata retrieved from cache.&quot;, &quot;2024-06-27T15:30:51.770Z: Query: SELECT contactid, subject, vcc_case_type__c, recordtypeid, vcc_case_outcome_multi__c, ownerid, vcc_case_reason_multi__c, accountid, case_record_type_name__c, vcc_case_sub_type__c, vcc_current_location__c, id, vcc_mental_health_appointment__c, status FROM Case WHERE AccountId = &apos;001OC0000079mr4YAA&apos; AND Case_Record_Type_Name__c = &apos;VCC_Administrative&apos; AND Status = &apos;Open&apos; ORDER BY CreatedDate DESC LIMIT 50&quot;, &quot;2024-06-27T15:30:51.784Z: Query results found: 50&quot;, &quot;2024-06-27T15:30:51.784Z: Query time: 14&quot; ],
+    &quot;error&quot; : &quot;OK&quot;,
+    &quot;responseType&quot; : &quot;SObject&quot;,
+    &quot;rolledBack&quot; : false
+  },
+  &quot;DRCreateCaseStatus&quot; : true,
+  &quot;DRGetExistingCase&quot; : {
+    &quot;Case&quot; : [ {
+      &quot;AccountId&quot; : &quot;001OC0000079mr4YAA&quot;,
+      &quot;CaseOutcomeMulti&quot; : &quot;Completed Scheduling Action&quot;,
+      &quot;CaseReasonMulti&quot; : &quot;Schedule Appointment&quot;,
+      &quot;CaseRecordTypeName&quot; : &quot;VCC_Administrative&quot;,
+      &quot;CaseSubType&quot; : &quot;Administrative and Scheduling&quot;,
+      &quot;ContactId&quot; : &quot;003OC000005VlscYAC&quot;,
+      &quot;CreatedDate&quot; : &quot;2024-06-27T19:28:21.000Z&quot;,
+      &quot;Id&quot; : &quot;500BZ00000CmmtSYAR&quot;,
+      &quot;MentalHealthAppointment&quot; : &quot;No&quot;,
+      &quot;OwnerId&quot; : &quot;005OC000000xtlGYAQ&quot;,
+      &quot;ProgressNoteSigned&quot; : true,
+      &quot;Status&quot; : &quot;Closed - Resolved&quot;,
+      &quot;VISNToQueueFormula&quot; : false
+    }, {
+      &quot;AccountId&quot; : &quot;001OC0000079mr4YAA&quot;,
+      &quot;CaseOutcomeMulti&quot; : &quot;Completed Scheduling Action&quot;,
+      &quot;CaseReasonMulti&quot; : &quot;Schedule Appointment&quot;,
+      &quot;CaseRecordTypeName&quot; : &quot;VCC_Administrative&quot;,
+      &quot;CaseSubType&quot; : &quot;Administrative and Scheduling&quot;,
+      &quot;ContactId&quot; : &quot;003OC000005VlscYAC&quot;,
+      &quot;CreatedDate&quot; : &quot;2024-06-27T18:21:43.000Z&quot;,
+      &quot;Id&quot; : &quot;500BZ00000CmgXTYAZ&quot;,
+      &quot;MentalHealthAppointment&quot; : &quot;No&quot;,
+      &quot;OwnerId&quot; : &quot;005OC000000xtlGYAQ&quot;,
+      &quot;ProgressNoteSigned&quot; : true,
+      &quot;Status&quot; : &quot;Closed - Resolved&quot;,
+      &quot;VISNToQueueFormula&quot; : false
+    }, {
+      &quot;AccountId&quot; : &quot;001OC0000079mr4YAA&quot;,
+      &quot;CaseOutcomeMulti&quot; : &quot;Completed Scheduling Action&quot;,
+      &quot;CaseReasonMulti&quot; : &quot;Schedule Appointment&quot;,
+      &quot;CaseRecordTypeName&quot; : &quot;VCC_Administrative&quot;,
+      &quot;CaseSubType&quot; : &quot;Administrative and Scheduling&quot;,
+      &quot;ContactId&quot; : &quot;003OC000005VlscYAC&quot;,
+      &quot;CreatedDate&quot; : &quot;2024-06-27T18:20:39.000Z&quot;,
+      &quot;Id&quot; : &quot;500BZ00000Cmg9IYAR&quot;,
+      &quot;MentalHealthAppointment&quot; : &quot;No&quot;,
+      &quot;OwnerId&quot; : &quot;005OC000000xtlGYAQ&quot;,
+      &quot;ProgressNoteSigned&quot; : true,
+      &quot;Status&quot; : &quot;Closed - Resolved&quot;,
+      &quot;VISNToQueueFormula&quot; : false
+    }, {
+      &quot;AccountId&quot; : &quot;001OC0000079mr4YAA&quot;,
+      &quot;CaseOutcomeMulti&quot; : &quot;Completed Scheduling Action&quot;,
+      &quot;CaseReasonMulti&quot; : &quot;Schedule Appointment&quot;,
+      &quot;CaseRecordTypeName&quot; : &quot;VCC_Administrative&quot;,
+      &quot;CaseSubType&quot; : &quot;Administrative and Scheduling&quot;,
+      &quot;ContactId&quot; : &quot;003OC000005VlscYAC&quot;,
+      &quot;CreatedDate&quot; : &quot;2024-06-27T18:18:35.000Z&quot;,
+      &quot;Id&quot; : &quot;500BZ00000Cmg5FYAR&quot;,
+      &quot;MentalHealthAppointment&quot; : &quot;No&quot;,
+      &quot;OwnerId&quot; : &quot;005OC000000xtlGYAQ&quot;,
+      &quot;ProgressNoteSigned&quot; : true,
+      &quot;Status&quot; : &quot;Closed - Resolved&quot;,
+      &quot;VISNToQueueFormula&quot; : false
+    }, {
+      &quot;AccountId&quot; : &quot;001OC0000079mr4YAA&quot;,
+      &quot;CaseRecordTypeName&quot; : &quot;VCC_Administrative&quot;,
+      &quot;CaseSubType&quot; : &quot;Administrative and Scheduling&quot;,
+      &quot;ContactId&quot; : &quot;003OC000005VlscYAC&quot;,
+      &quot;CreatedDate&quot; : &quot;2024-06-27T17:57:15.000Z&quot;,
+      &quot;Id&quot; : &quot;500BZ00000CmfuvYAB&quot;,
+      &quot;OwnerId&quot; : &quot;005OC000000xtecYAA&quot;,
+      &quot;ProgressNoteSigned&quot; : true,
+      &quot;Status&quot; : &quot;Open&quot;,
+      &quot;VISNToQueueFormula&quot; : false
+    } ],
+    &quot;CaseMetricRecordTypeId&quot; : &quot;012OC0000004obsYAA&quot;,
+    &quot;CaseRecordTypeId&quot; : &quot;0123d0000004LaGAAU&quot;
+  },
+  &quot;DRGetExistingCaseStatus&quot; : true,
+  &quot;DRGetLastestUserAndTask&quot; : [ ],
+  &quot;DRGetLastestUserAndTaskStatus&quot; : true,
+  &quot;ListAction1&quot; : [ ],
+  &quot;ListAction1Status&quot; : true,
+  &quot;SetValues1&quot; : {
+    &quot;taskRelatedToId&quot; : &quot;&quot;,
+    &quot;userId&quot; : &quot;&quot;
+  },
+  &quot;SetValues1Status&quot; : true,
+  &quot;SetValues2&quot; : {
+    &quot;CaseOutcomeMulti&quot; : &quot;Completed Scheduling Action&quot;,
+    &quot;CaseReasonMulti&quot; : &quot;Schedule Appointment&quot;,
+    &quot;caseStatus&quot; : &quot;Closed - Resolved&quot;,
+    &quot;listCaseId&quot; : &quot;&quot;,
+    &quot;mentalHealthAppointment&quot; : &quot;No&quot;
+  },
+  &quot;SetValues2Status&quot; : true,
+  &quot;SetValues3&quot; : {
+    &quot;CaseId&quot; : &quot;500BZ00000CmnAJYAZ&quot;
+  },
+  &quot;SetValues3Status&quot; : true,
+  &quot;accountId&quot; : &quot;001OC0000079mr4YAA&quot;,
+  &quot;options&quot; : {
+    &quot;OmniAnalyticsTrackingDebug&quot; : false,
+    &quot;ParentInteractionToken&quot; : null,
+    &quot;chainable&quot; : false,
+    &quot;continuationStepResult&quot; : null,
+    &quot;disableMetadataCache&quot; : false,
+    &quot;forceQueueable&quot; : false,
+    &quot;ignoreCache&quot; : true,
+    &quot;isDebug&quot; : true,
+    &quot;isTestProcedure&quot; : false,
+    &quot;mockHttpResponse&quot; : null,
+    &quot;queueableChainable&quot; : false,
+    &quot;resetCache&quot; : false,
+    &quot;shouldCommit&quot; : false,
+    &quot;useContinuation&quot; : false,
+    &quot;useFuture&quot; : false,
+    &quot;useHttpCalloutMock&quot; : false,
+    &quot;useQueueable&quot; : false,
+    &quot;useQueueableApexRemoting&quot; : false,
+    &quot;vlcApexResponse&quot; : true,
+    &quot;vlcCacheKey&quot; : null,
+    &quot;vlcFilesMap&quot; : null,
+    &quot;vlcIPData&quot; : null,
+    &quot;vlcTestSuiteUniqueKey&quot; : null,
+    &quot;vlcTestUniqueKey&quot; : null
+  },
+  &quot;personContactId&quot; : &quot;003OC000005VlscYAC&quot;
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>VCCDRCreateMetrics</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>&quot;VCC_Administrative&quot;</filterValue>
+        <globalKey>VCCDRCreateMetricsCustom0jIOC0000000F1D2AUItem4</globalKey>
+        <inputFieldName>Case_Record_Type_Name__c</inputFieldName>
+        <inputObjectName>Case</inputObjectName>
+        <inputObjectQuerySequence>1.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRCreateMetrics</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Case</outputFieldName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>ORDER BY</filterOperator>
+        <filterValue>CreatedDate DESC</filterValue>
+        <globalKey>VCCDRCreateMetricsCustom0jIOC0000000F1D2AUItem0</globalKey>
+        <inputObjectName>Case</inputObjectName>
+        <inputObjectQuerySequence>1.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRCreateMetrics</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Case</outputFieldName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>&quot;Open&quot;</filterValue>
+        <globalKey>VCCDRCreateMetricsCustom0jIOC0000000F1D2AUItem1</globalKey>
+        <inputFieldName>Status</inputFieldName>
+        <inputObjectName>Case</inputObjectName>
+        <inputObjectQuerySequence>1.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRCreateMetrics</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Case</outputFieldName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRCreateMetricsCustom6951</globalKey>
+        <inputFieldName>ClinicStopCodeName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRCreateMetrics</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Stop_Code_Name__c</outputFieldName>
+        <outputObjectName>VCC_Case_Metrics__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRCreateMetricsCustom0jIOC0000000F1D2AUItem14</globalKey>
+        <inputFieldName>Case:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRCreateMetrics</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>VCC_Case_Metrics__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>LIMIT</filterOperator>
+        <filterValue>50</filterValue>
+        <globalKey>VCCDRCreateMetricsCustom0jIOC0000000F1D2AUItem3</globalKey>
+        <inputObjectName>Case</inputObjectName>
+        <inputObjectQuerySequence>1.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRCreateMetrics</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Case</outputFieldName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRCreateMetricsCustom461</globalKey>
+        <inputFieldName>FacilityStationId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRCreateMetrics</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_VISN_For_Appointment__c</outputFieldName>
+        <outputObjectName>VCC_Case_Metrics__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>accountId</filterValue>
+        <globalKey>VCCDRCreateMetricsCustom0jIOC0000000F1D2AUItem2</globalKey>
+        <inputFieldName>AccountId</inputFieldName>
+        <inputObjectName>Case</inputObjectName>
+        <inputObjectQuerySequence>1.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRCreateMetrics</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Case</outputFieldName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRCreateMetricsCustom0jIOC0000000F1D2AUItem13</globalKey>
+        <inputFieldName>Case:ContactId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRCreateMetrics</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ContactId</outputFieldName>
+        <outputObjectName>VCC_Case_Metrics__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRCreateMetricsCustom0jIOC0000000F1D2AUItem5</globalKey>
+        <inputFieldName>DRGetExistingCase:CaseMetricRecordTypeId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRCreateMetrics</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecordTypeId</outputFieldName>
+        <outputObjectName>VCC_Case_Metrics__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRCreateMetricsCustom0jIOC0000000F1D2AUItem7</globalKey>
+        <inputFieldName>SetValues3:CaseId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRCreateMetrics</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Case__c</outputFieldName>
+        <outputObjectName>VCC_Case_Metrics__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRCreateMetricsCustom0jIOC0000000F1D2AUItem6</globalKey>
+        <inputFieldName>Case:OwnerId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRCreateMetrics</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>OwnerId</outputFieldName>
+        <outputObjectName>VCC_Case_Metrics__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRCreateMetricsCustom3672</globalKey>
+        <inputFieldName>SetValues3:cancelDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRCreateMetrics</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Canceled_Date__c</outputFieldName>
+        <outputObjectName>VCC_Case_Metrics__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRCreateMetricsCustom8024</globalKey>
+        <inputFieldName>SetValues3:cancelBy</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRCreateMetrics</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Canceled_By__c</outputFieldName>
+        <outputObjectName>VCC_Case_Metrics__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRCreateMetricsCustom9601</globalKey>
+        <inputFieldName>ClinicName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRCreateMetrics</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Location__c</outputFieldName>
+        <outputObjectName>VCC_Case_Metrics__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRCreateMetricsCustom8696</globalKey>
+        <inputFieldName>FacilityName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRCreateMetrics</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Facility_For_Appointment__c</outputFieldName>
+        <outputObjectName>VCC_Case_Metrics__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Canceled Appointment</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRCreateMetricsCustom857</globalKey>
+        <inputFieldName>CaseReason</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRCreateMetrics</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Scheduling_Action__c</outputFieldName>
+        <outputObjectName>VCC_Case_Metrics__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRCreateMetricsCustom7551</globalKey>
+        <inputFieldName>AppointmentDateTime</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRCreateMetrics</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Scheduled_Start__c</outputFieldName>
+        <outputObjectName>VCC_Case_Metrics__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRCreateMetricsCustom9026</globalKey>
+        <inputFieldName>ClinicName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRCreateMetrics</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Clinic__c</outputFieldName>
+        <outputObjectName>VCC_Case_Metrics__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRCreateMetricsCustom9812</globalKey>
+        <inputFieldName>Duration</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRCreateMetrics</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Duration_of_Appointment__c</outputFieldName>
+        <outputObjectName>VCC_Case_Metrics__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRCreateMetricsCustom9848</globalKey>
+        <inputFieldName>ClinicStopCodeNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRCreateMetrics</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Stop_Code__c</outputFieldName>
+        <outputObjectName>VCC_Case_Metrics__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRCreateMetricsCustom7305</globalKey>
+        <inputFieldName>Remarks</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRCreateMetrics</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Appointment_Comments__c</outputFieldName>
+        <outputObjectName>VCC_Case_Metrics__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VCCDRCreateMetricsCustom3797</globalKey>
+        <inputFieldName>SetValues3:createdDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VCCDRCreateMetrics</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VCC_Appointment_Made_Date_Time__c</outputFieldName>
+        <outputObjectName>VCC_Case_Metrics__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;CaseReason&quot; : &quot;Schedule Appointment&quot;,
+  &quot;ClinicName&quot; : &quot;SFD PC TM 1&quot;,
+  &quot;ClinicStopCodeNumber&quot; : &quot;323&quot;,
+  &quot;DRCreateCase&quot; : {
+    &quot;ActualTime&quot; : 1737,
+    &quot;Case_1&quot; : [ {
+      &quot;AccountId&quot; : &quot;001OC0000079mr4YAA&quot;,
+      &quot;ContactId&quot; : &quot;003OC000005VlscYAC&quot;,
+      &quot;Id&quot; : &quot;500BZ00000CmnAJYAZ&quot;,
+      &quot;RecordTypeId&quot; : &quot;0123d0000004LaGAAU&quot;,
+      &quot;Status&quot; : &quot;Closed - Resolved&quot;,
+      &quot;Subject&quot; : &quot;Administrative and Scheduling&quot;,
+      &quot;UpsertSObjectType&quot; : &quot;Case&quot;,
+      &quot;UpsertSuccess&quot; : true,
+      &quot;VCC_Case_Outcome_Multi__c&quot; : &quot;Completed Scheduling Action&quot;,
+      &quot;VCC_Case_Reason_Multi__c&quot; : &quot;Schedule Appointment&quot;,
+      &quot;VCC_Case_Sub_Type__c&quot; : &quot;Administrative and Scheduling&quot;,
+      &quot;VCC_Case_Type__c&quot; : &quot;Administrative&quot;,
+      &quot;VCC_Mental_Health_Appointment__c&quot; : &quot;No&quot;
+    } ],
+    &quot;debugLog&quot; : [ &quot;2024-06-27T15:30:51.715Z: Metadata retrieved from cache.&quot;, &quot;2024-06-27T15:30:51.770Z: Query: SELECT contactid, subject, vcc_case_type__c, recordtypeid, vcc_case_outcome_multi__c, ownerid, vcc_case_reason_multi__c, accountid, case_record_type_name__c, vcc_case_sub_type__c, vcc_current_location__c, id, vcc_mental_health_appointment__c, status FROM Case WHERE AccountId = &apos;001OC0000079mr4YAA&apos; AND Case_Record_Type_Name__c = &apos;VCC_Administrative&apos; AND Status = &apos;Open&apos; ORDER BY CreatedDate DESC LIMIT 50&quot;, &quot;2024-06-27T15:30:51.784Z: Query results found: 50&quot;, &quot;2024-06-27T15:30:51.784Z: Query time: 14&quot; ],
+    &quot;error&quot; : &quot;OK&quot;,
+    &quot;responseType&quot; : &quot;SObject&quot;,
+    &quot;rolledBack&quot; : false
+  },
+  &quot;DRCreateCaseStatus&quot; : true,
+  &quot;DRGetExistingCase&quot; : {
+    &quot;Case&quot; : [ {
+      &quot;AccountId&quot; : &quot;001OC0000079mr4YAA&quot;,
+      &quot;CaseOutcomeMulti&quot; : &quot;Completed Scheduling Action&quot;,
+      &quot;CaseReasonMulti&quot; : &quot;Schedule Appointment&quot;,
+      &quot;CaseRecordTypeName&quot; : &quot;VCC_Administrative&quot;,
+      &quot;CaseSubType&quot; : &quot;Administrative and Scheduling&quot;,
+      &quot;ContactId&quot; : &quot;003OC000005VlscYAC&quot;,
+      &quot;CreatedDate&quot; : &quot;2024-06-27T19:28:21.000Z&quot;,
+      &quot;Id&quot; : &quot;500BZ00000CmmtSYAR&quot;,
+      &quot;MentalHealthAppointment&quot; : &quot;No&quot;,
+      &quot;OwnerId&quot; : &quot;005OC000000xtlGYAQ&quot;,
+      &quot;ProgressNoteSigned&quot; : true,
+      &quot;Status&quot; : &quot;Closed - Resolved&quot;,
+      &quot;VISNToQueueFormula&quot; : false
+    }, {
+      &quot;AccountId&quot; : &quot;001OC0000079mr4YAA&quot;,
+      &quot;CaseOutcomeMulti&quot; : &quot;Completed Scheduling Action&quot;,
+      &quot;CaseReasonMulti&quot; : &quot;Schedule Appointment&quot;,
+      &quot;CaseRecordTypeName&quot; : &quot;VCC_Administrative&quot;,
+      &quot;CaseSubType&quot; : &quot;Administrative and Scheduling&quot;,
+      &quot;ContactId&quot; : &quot;003OC000005VlscYAC&quot;,
+      &quot;CreatedDate&quot; : &quot;2024-06-27T18:21:43.000Z&quot;,
+      &quot;Id&quot; : &quot;500BZ00000CmgXTYAZ&quot;,
+      &quot;MentalHealthAppointment&quot; : &quot;No&quot;,
+      &quot;OwnerId&quot; : &quot;005OC000000xtlGYAQ&quot;,
+      &quot;ProgressNoteSigned&quot; : true,
+      &quot;Status&quot; : &quot;Closed - Resolved&quot;,
+      &quot;VISNToQueueFormula&quot; : false
+    }, {
+      &quot;AccountId&quot; : &quot;001OC0000079mr4YAA&quot;,
+      &quot;CaseOutcomeMulti&quot; : &quot;Completed Scheduling Action&quot;,
+      &quot;CaseReasonMulti&quot; : &quot;Schedule Appointment&quot;,
+      &quot;CaseRecordTypeName&quot; : &quot;VCC_Administrative&quot;,
+      &quot;CaseSubType&quot; : &quot;Administrative and Scheduling&quot;,
+      &quot;ContactId&quot; : &quot;003OC000005VlscYAC&quot;,
+      &quot;CreatedDate&quot; : &quot;2024-06-27T18:20:39.000Z&quot;,
+      &quot;Id&quot; : &quot;500BZ00000Cmg9IYAR&quot;,
+      &quot;MentalHealthAppointment&quot; : &quot;No&quot;,
+      &quot;OwnerId&quot; : &quot;005OC000000xtlGYAQ&quot;,
+      &quot;ProgressNoteSigned&quot; : true,
+      &quot;Status&quot; : &quot;Closed - Resolved&quot;,
+      &quot;VISNToQueueFormula&quot; : false
+    }, {
+      &quot;AccountId&quot; : &quot;001OC0000079mr4YAA&quot;,
+      &quot;CaseOutcomeMulti&quot; : &quot;Completed Scheduling Action&quot;,
+      &quot;CaseReasonMulti&quot; : &quot;Schedule Appointment&quot;,
+      &quot;CaseRecordTypeName&quot; : &quot;VCC_Administrative&quot;,
+      &quot;CaseSubType&quot; : &quot;Administrative and Scheduling&quot;,
+      &quot;ContactId&quot; : &quot;003OC000005VlscYAC&quot;,
+      &quot;CreatedDate&quot; : &quot;2024-06-27T18:18:35.000Z&quot;,
+      &quot;Id&quot; : &quot;500BZ00000Cmg5FYAR&quot;,
+      &quot;MentalHealthAppointment&quot; : &quot;No&quot;,
+      &quot;OwnerId&quot; : &quot;005OC000000xtlGYAQ&quot;,
+      &quot;ProgressNoteSigned&quot; : true,
+      &quot;Status&quot; : &quot;Closed - Resolved&quot;,
+      &quot;VISNToQueueFormula&quot; : false
+    }, {
+      &quot;AccountId&quot; : &quot;001OC0000079mr4YAA&quot;,
+      &quot;CaseRecordTypeName&quot; : &quot;VCC_Administrative&quot;,
+      &quot;CaseSubType&quot; : &quot;Administrative and Scheduling&quot;,
+      &quot;ContactId&quot; : &quot;003OC000005VlscYAC&quot;,
+      &quot;CreatedDate&quot; : &quot;2024-06-27T17:57:15.000Z&quot;,
+      &quot;Id&quot; : &quot;500BZ00000CmfuvYAB&quot;,
+      &quot;OwnerId&quot; : &quot;005OC000000xtecYAA&quot;,
+      &quot;ProgressNoteSigned&quot; : true,
+      &quot;Status&quot; : &quot;Open&quot;,
+      &quot;VISNToQueueFormula&quot; : false
+    } ],
+    &quot;CaseMetricRecordTypeId&quot; : &quot;012OC0000004obsYAA&quot;,
+    &quot;CaseRecordTypeId&quot; : &quot;0123d0000004LaGAAU&quot;
+  },
+  &quot;DRGetExistingCaseStatus&quot; : true,
+  &quot;DRGetLastestUserAndTask&quot; : [ ],
+  &quot;DRGetLastestUserAndTaskStatus&quot; : true,
+  &quot;ListAction1&quot; : [ ],
+  &quot;ListAction1Status&quot; : true,
+  &quot;SetValues1&quot; : {
+    &quot;taskRelatedToId&quot; : &quot;&quot;,
+    &quot;userId&quot; : &quot;&quot;
+  },
+  &quot;SetValues1Status&quot; : true,
+  &quot;SetValues2&quot; : {
+    &quot;CaseOutcomeMulti&quot; : &quot;Completed Scheduling Action&quot;,
+    &quot;CaseReasonMulti&quot; : &quot;Schedule Appointment&quot;,
+    &quot;caseStatus&quot; : &quot;Closed - Resolved&quot;,
+    &quot;listCaseId&quot; : &quot;&quot;,
+    &quot;mentalHealthAppointment&quot; : &quot;No&quot;
+  },
+  &quot;SetValues2Status&quot; : true,
+  &quot;SetValues3&quot; : {
+    &quot;CaseId&quot; : &quot;500BZ00000CmnAJYAZ&quot;
+  },
+  &quot;SetValues3Status&quot; : true,
+  &quot;accountId&quot; : &quot;001OC0000079mr4YAA&quot;,
+  &quot;options&quot; : {
+    &quot;OmniAnalyticsTrackingDebug&quot; : false,
+    &quot;ParentInteractionToken&quot; : null,
+    &quot;chainable&quot; : false,
+    &quot;continuationStepResult&quot; : null,
+    &quot;disableMetadataCache&quot; : false,
+    &quot;forceQueueable&quot; : false,
+    &quot;ignoreCache&quot; : true,
+    &quot;isDebug&quot; : true,
+    &quot;isTestProcedure&quot; : false,
+    &quot;mockHttpResponse&quot; : null,
+    &quot;queueableChainable&quot; : false,
+    &quot;resetCache&quot; : false,
+    &quot;shouldCommit&quot; : false,
+    &quot;useContinuation&quot; : false,
+    &quot;useFuture&quot; : false,
+    &quot;useHttpCalloutMock&quot; : false,
+    &quot;useQueueable&quot; : false,
+    &quot;useQueueableApexRemoting&quot; : false,
+    &quot;vlcApexResponse&quot; : true,
+    &quot;vlcCacheKey&quot; : null,
+    &quot;vlcFilesMap&quot; : null,
+    &quot;vlcIPData&quot; : null,
+    &quot;vlcTestSuiteUniqueKey&quot; : null,
+    &quot;vlcTestUniqueKey&quot; : null
+  },
+  &quot;personContactId&quot; : &quot;003OC000005VlscYAC&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>VCCDRCreateMetrics_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

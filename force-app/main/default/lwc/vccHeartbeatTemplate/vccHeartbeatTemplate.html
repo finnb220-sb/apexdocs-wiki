@@ -1,0 +1,392 @@
+<template>
+    <div class="slds-page-header">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <div class="highlights-icon-container slds-avatar slds-m-right_small icon" style="background-color: #ff7b84">
+                            <img src="/img/icon/t4v35/custom/custom1_120.png" title="Heartbeat Templates" />
+                        </div>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span class="slds-page-header__title slds-truncate" title="New Heartbeat Template">New Heartbeat Template</span>
+                                </h1>
+                            </div>
+                        </div>
+                        <p class="slds-page-header__name-meta">Use this form to create a new Heartbeat Template.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <BR /><BR />
+
+    <div class="slds slds-align_absolute-center vcc-background-white">
+        <BR />
+        <div class="slds-float_left vcc-container">
+            <template if:true={isBusy}>
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </template>
+
+            <lightning-tabset active-tab-value={selectedTab}>
+                <lightning-tab label="Template Information" value="info">
+                    <div class="slds">
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col">
+                                <div>
+                                    <lightning-input
+                                        type="text"
+                                        data-id="templateName"
+                                        data-name="templateName"
+                                        onkeyup={onTextChange}
+                                        label="Template Name"
+                                        required="true"
+                                    ></lightning-input>
+                                </div>
+                                <div>&nbsp;</div>
+                                <div>
+                                    <lightning-input type="text" data-id="templateDesc" data-name="templateDesc" onkeyup={onTextChange} label="Description"></lightning-input>
+                                </div>
+                                <div>&nbsp;</div>
+                                <div>
+                                    <lightning-textarea label="Expected Response" data-name="templateResponse" onkeyup={onTextChange}></lightning-textarea>
+                                </div>
+                            </div>
+                            <div class="slds-col">
+                                <div>
+                                    <c-vcc-lookup
+                                        errors={errors}
+                                        onsearch={handleLookupSearch}
+                                        onselectionchange={handleLookupSelectionChange}
+                                        label="Endpoint"
+                                        placeholder="Search By Name"
+                                        is-multi-entry={isMultiEntry}
+                                        new-record-options={newRecordOptions}
+                                        required
+                                    ></c-vcc-lookup>
+                                </div>
+                                <div>&nbsp;</div>
+                                <div>
+                                    <lightning-combobox
+                                        label="Method"
+                                        data-id="templateMethod"
+                                        data-name="templateMethod"
+                                        value={info.method}
+                                        options={info.methods}
+                                        onchange={onTextChange}
+                                    >
+                                    </lightning-combobox>
+                                </div>
+                                <div>&nbsp;</div>
+                                <div>
+                                    <lightning-combobox
+                                        label="Autorun Schedule"
+                                        data-id="templateSchedule"
+                                        data-name="templateSchedule"
+                                        value={info.schedule}
+                                        options={info.schedules}
+                                        onchange={onTextChange}
+                                    >
+                                    </lightning-combobox>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <BR /><BR /> <BR /><BR />
+                    <div class="slds">
+                        <span class="slds-float_right">
+                            <lightning-button
+                                variant="brand"
+                                data-id="infoNext"
+                                label="Next &#8594;"
+                                title="Next"
+                                onclick={onNextClick}
+                                class="slds-m-left_x-small"
+                            ></lightning-button>
+                        </span>
+                        <span class="slds-float_right">&nbsp;</span>
+                        <span class="slds-float_right">
+                            <lightning-button
+                                variant="destructive"
+                                data-id="infoCancel"
+                                label="Cancel"
+                                title="Cancel"
+                                onclick={onCancel}
+                                class="slds-m-left_x-small"
+                            ></lightning-button>
+                        </span>
+                    </div>
+                    <BR /><BR /> <BR /><BR /> <BR /><BR /> <BR /><BR />
+                </lightning-tab>
+                <lightning-tab label="Parameters" value="params">
+                    <div class="slds">
+                        <span class="slds-float_right">
+                            <lightning-button variant="brand" onclick={addNewParam} label="&plus; Parameter" title="Add Parameter"></lightning-button>
+                        </span>
+                    </div>
+                    <div class="slds">
+                        <template for:each={paramList} for:item="param" for:index="i">
+                            <div key={param.row}>
+                                <table style="width: 100%">
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr class="slds-grid">
+                                        <td class="vcc-param-name">
+                                            <lightning-input
+                                                data-id={param.row}
+                                                type="text"
+                                                onkeyup={onTextChange}
+                                                data-index={i}
+                                                data-name="name"
+                                                label="Parameter Name"
+                                                required="true"
+                                            >
+                                            </lightning-input>
+                                        </td>
+                                        <td class="vcc-data-type">
+                                            <lightning-combobox
+                                                label="Data Type"
+                                                placeholder="Select DataType"
+                                                data-index={i}
+                                                data-name="type"
+                                                value={param.dataType}
+                                                options={info.dataTypes}
+                                                onchange={onTextChange}
+                                            ></lightning-combobox>
+                                        </td>
+                                        <td class="vcc-param-format">
+                                            <lightning-input data-index={i} data-name="format" type="text" onkeyup={onTextChange} label="Format"></lightning-input>
+                                        </td>
+                                    </tr>
+                                    <tr class="slds-grid">
+                                        <td class="vcc-param-desc">
+                                            <lightning-input data-index={i} data-name="desc" type="text" onkeyup={onTextChange} label="Description"></lightning-input>
+                                        </td>
+                                        <td class="vcc-param-value">
+                                            <lightning-input data-index={i} data-name="value" type="text" onkeyup={onTextChange} label="Default Value"> </lightning-input>
+                                        </td>
+                                        <td class="vcc-param-delete">
+                                            <span class="slds-float_left vcc-param-required">
+                                                <lightning-input
+                                                    data-index={i}
+                                                    data-check={param.row}
+                                                    data-name="required"
+                                                    type="checkbox"
+                                                    onclick={onRequiredClick}
+                                                    label="Is Required"
+                                                >
+                                                </lightning-input>
+                                            </span>
+                                            <span class="slds-float_right">
+                                                <lightning-button-icon
+                                                    variant="destructive"
+                                                    data-id={i}
+                                                    data-name="remove"
+                                                    onclick={onRemoveClick}
+                                                    icon-name="utility:delete"
+                                                    alternative-text="Delete"
+                                                    class="slds-float_right slds-m-left_xx-small"
+                                                    title="Delete"
+                                                >
+                                                </lightning-button-icon>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" class="vcc-param-line">&nbsp;</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </template>
+                    </div>
+                    <BR /><BR /> <BR /><BR />
+                    <div class="slds">
+                        <span class="slds-float_right">
+                            <lightning-button
+                                variant="brand"
+                                data-id="paramsNext"
+                                label="Next &rarr;"
+                                title="Next"
+                                onclick={onNextClick}
+                                class="slds-m-left_x-small"
+                            ></lightning-button>
+                        </span>
+                        <span class="slds-float_right">&nbsp;</span>
+                        <span class="slds-float_right">
+                            <lightning-button
+                                variant="neutral"
+                                data-id="paramsPrevious"
+                                label="&#8592; Previous"
+                                title="Previous"
+                                onclick={onPreviousClick}
+                                class="slds-m-left_x-small"
+                            >
+                            </lightning-button>
+                        </span>
+                    </div>
+                    <BR /><BR /> <BR /><BR /> <BR /><BR /> <BR /><BR />
+                </lightning-tab>
+                <template if:true={canTest}>
+                    <lightning-tab label="Test Run" value="test" onclick={loadTestCredentials}>
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col">
+                                <div>
+                                    <lightning-input type="text" label="End Point" disabled="true" value={endpoint}> </lightning-input>
+                                </div>
+                                <template for:each={paramList} for:item="param" for:index="i">
+                                    <div key={param.row} class="vcc-param-padded">
+                                        <template if:true={param.isString}>
+                                            <lightning-input
+                                                data-name={param.name}
+                                                type="text"
+                                                label={param.name}
+                                                required={param.isRequired}
+                                                value={param.value}
+                                            ></lightning-input>
+                                        </template>
+                                        <template if:true={param.isNumber}>
+                                            <lightning-input
+                                                data-name={param.name}
+                                                type="number"
+                                                label={param.name}
+                                                required={param.isRequired}
+                                                value={param.value}
+                                            ></lightning-input>
+                                        </template>
+                                        <template if:true={param.isBoolean}>
+                                            <lightning-input
+                                                data-name={param.name}
+                                                type="checkbox"
+                                                label={param.name}
+                                                required={param.isRequired}
+                                                value={param.value}
+                                            ></lightning-input>
+                                        </template>
+                                        <template if:true={param.isDate}>
+                                            <lightning-input
+                                                data-name={param.name}
+                                                type="date"
+                                                label={param.name}
+                                                required={param.isRequired}
+                                                value={param.value}
+                                            ></lightning-input>
+                                        </template>
+                                        <template if:true={param.isDateTime}>
+                                            <lightning-input
+                                                data-name={param.name}
+                                                type="datetime"
+                                                label={param.name}
+                                                required={param.isRequired}
+                                                value={param.value}
+                                            ></lightning-input>
+                                        </template>
+                                        <template if:true={param.isArray}>
+                                            <lightning-input
+                                                data-name={param.name}
+                                                type="text"
+                                                placeholder="Comma separated values.."
+                                                label={param.name}
+                                                required={param.isRequired}
+                                                value={param.value}
+                                            ></lightning-input>
+                                        </template>
+                                    </div>
+                                </template>
+                                <div>&nbsp;</div>
+                                <div>&nbsp;</div>
+                                <div class="slds">
+                                    <span class="slds-float_left">
+                                        <lightning-button
+                                            variant="neutral"
+                                            label="Test Run &rarr;"
+                                            title="Previous"
+                                            onclick={runSampleTest}
+                                            class="slds-m-left_x-small"
+                                        ></lightning-button>
+                                    </span>
+                                    <template if:true={canSave}>
+                                        <span class="slds-float_right">
+                                            <lightning-button variant="brand" label="Save Template" title="Save Template" onclick={onSave} class="slds-m-left_x-small">
+                                            </lightning-button>
+                                        </span>
+                                    </template>
+                                </div>
+                                <div>&nbsp;</div>
+                                <div>&nbsp;</div>
+                            </div>
+                            <div class="slds-col">
+                                <template if:true={hasResult}>
+                                    <h1>API Response</h1>
+                                    <div class="slds">&nbsp;</div>
+                                    <template if:true={result.success}>
+                                        <div class="slds">
+                                            <article class="slds-card">
+                                                <div class="slds-card__header slds-grid">
+                                                    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                                        <div class="slds-media__figure">
+                                                            <span class="slds-icon_container">
+                                                                <lightning-icon size="small" icon-name="action:approval"> </lightning-icon>
+                                                                <span class="slds-assistive-text">success</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="slds-media__body">
+                                                            <div class="slds-page-header__name">
+                                                                <div class="slds-page-header__name-title">
+                                                                    <h1>
+                                                                        <span class="slds-page-header__title slds-truncate" title="Success">Success</span>
+                                                                    </h1>
+                                                                </div>
+                                                            </div>
+                                                            <p class="slds-page-header__name-meta">The api responded with status code : <b>{result.status}</b>.</p>
+                                                        </div>
+                                                    </header>
+                                                </div>
+                                                <div class="slds-card__body slds-card__body_inner">
+                                                    <lightning-textarea label="Response Body" value={result.message}> </lightning-textarea>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </template>
+                                    <template if:false={result.success}>
+                                        <article class="slds-card">
+                                            <div class="slds-card__header slds-grid">
+                                                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                                    <div class="slds-media__figure">
+                                                        <span class="slds-icon_container">
+                                                            <lightning-icon size="medium" icon-name="standard:incident"> </lightning-icon>
+                                                            <span class="slds-assistive-text">Error</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="slds-media__body">
+                                                        <div class="slds-page-header__name">
+                                                            <div class="slds-page-header__name-title">
+                                                                <h1>
+                                                                    <span class="slds-page-header__title slds-truncate" title="Error">Error</span>
+                                                                </h1>
+                                                            </div>
+                                                        </div>
+                                                        <p class="slds-page-header__name-meta">The api responded with status code : <b>{result.status}</b>.</p>
+                                                    </div>
+                                                </header>
+                                            </div>
+                                            <div class="slds-card__body slds-card__body_inner">
+                                                <lightning-textarea label="Response Body" value={result.message}> </lightning-textarea>
+                                            </div>
+                                        </article>
+                                    </template>
+                                </template>
+                            </div>
+                        </div>
+                    </lightning-tab>
+                </template>
+            </lightning-tabset>
+        </div>
+    </div>
+</template>

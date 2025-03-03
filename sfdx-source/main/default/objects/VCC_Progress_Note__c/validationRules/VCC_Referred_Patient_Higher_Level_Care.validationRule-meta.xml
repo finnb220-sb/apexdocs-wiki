@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Referred_Patient_Higher_Level_Care</fullName>
+    <active>true</active>
+    <description>If &quot;Referred patient to higher level of care&quot; is checked, an additional option must be selected.</description>
+    <errorConditionFormula
+    >BEGINS( RecordType.DeveloperName, &quot;VCC_&quot;) &amp;&amp; !$Permission.DisableTriggersFlag &amp;&amp; AND( VCC_Referred_to_emergency_services__c = TRUE,
+        VCC_Instructed_to_go_to_Urgent_Care__c = FALSE, VCC_Provided_location_of_Urgent_Care__c = FALSE, VCC_Instructed_to_go_to_Emergency_Depart__c = FALSE,
+        VCC_Advised_of_MA_Urgent_Care_Benefits__c = FALSE, VCC_Contacted_emergency_services__c = FALSE, VCC_WarmTransferVeteransCrisisLineCrisis__c = FALSE,
+        VCC_Contacted_EMS_stayed_w_patient__c = FALSE, VCC_Other_Emergency_Services_Referred__c = FALSE, VCC_Advised_of_Financial_Disclaimer__c = FALSE,
+        VCC_Transferred_to_Tele_EC__c = False, NOT $Permission.VCC_Disable_Progress_Note_Assignment_Rules )</errorConditionFormula>
+    <errorDisplayField>VCC_Referred_to_emergency_services__c</errorDisplayField>
+    <errorMessage>If &quot;Referred patient to higher level of care&quot; is checked, you must select an option to the right</errorMessage>
+</ValidationRule>

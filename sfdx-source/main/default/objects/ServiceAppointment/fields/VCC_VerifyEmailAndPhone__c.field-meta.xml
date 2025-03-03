@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_VerifyEmailAndPhone__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates on the service appointment record if the patient information was verified</description>
+    <externalId>false</externalId>
+    <label>Verified patient contact information</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

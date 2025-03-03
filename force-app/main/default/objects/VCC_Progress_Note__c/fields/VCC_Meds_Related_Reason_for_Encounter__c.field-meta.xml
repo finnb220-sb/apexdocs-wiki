@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Meds_Related_Reason_for_Encounter__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked if the reason for the encounter with the patient is medication-related</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if the reason for the encounter with the patient is medication-related</inlineHelpText>
+    <label>Medication-Related Reason for Encounter</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

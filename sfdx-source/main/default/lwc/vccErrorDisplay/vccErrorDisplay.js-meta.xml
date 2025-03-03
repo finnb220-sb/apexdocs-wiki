@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="userFriendly" type="String" label="User Friendly Error" />
+            <property name="system" type="String" label="System Error" />
+            <property name="recordData" type="String" label="record Data" />
+            <property name="recordId" type="String" label="record" />
+            <property name="objectName" type="String" label="Object Name" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vccOrgType__c</fullName>
+    <description>Referenced by &quot;VCCNamedCredentialUtility.cls&quot;</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>acceptable values: &apos;DEV&apos;, &apos;QA&apos;, &apos;STAGING&apos;, &apos;PRODUCTION&apos;</inlineHelpText>
+    <label>Org Type</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

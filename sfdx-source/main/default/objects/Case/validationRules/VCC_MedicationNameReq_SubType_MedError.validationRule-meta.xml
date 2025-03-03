@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_MedicationNameReq_SubType_MedError</fullName>
+    <active>true</active>
+    <description>The Medication Name is required if Case Sub-Type selected is &quot;Medication Error&quot;.</description>
+    <errorConditionFormula
+    >BEGINS( RecordType.DeveloperName, &quot;VCC_&quot;) &amp;&amp; !$Permission.DisableTriggersFlag &amp;&amp; !$Permission.VCC_Disable_Case_Validation_Rules &amp;&amp; AND(
+        ISBLANK(VCC_Medication_Name__c) , ISPICKVAL(VCC_Case_Sub_Type__c,&apos;Medication Error&apos;) )</errorConditionFormula>
+    <errorDisplayField>VCC_Medication_Name__c</errorDisplayField>
+    <errorMessage>Medication Name needs to be entered if Case Sub-Type selected is &quot;Medication Error&quot;</errorMessage>
+</ValidationRule>

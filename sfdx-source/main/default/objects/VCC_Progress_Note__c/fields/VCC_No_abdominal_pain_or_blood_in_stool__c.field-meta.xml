@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_No_abdominal_pain_or_blood_in_stool__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>True if these gastrointestinal symptoms do not exist in patient during virtual visit</description>
+    <externalId>false</externalId>
+    <inlineHelpText>True if these gastrointestinal symptoms do not exist in patient during virtual visit</inlineHelpText>
+    <label>No hematamesis, abdominal pain</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>MPIE_Svc_Appt_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Provides access to records for the MPI-E merge related process</description>
+        <label>MPI-E Svc Appt Sharing</label>
+        <sharedTo>
+            <group>MPIE_Integration_Users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>CreatedById</field>
+            <operation>notEqual</operation>
+            <value />
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>VAHC_Integration_User_Svc_Appt_Sharing</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>This sharing rule shares all Service Appointment records that the VAHC Integration User does *not* own with the VAHC Integration User.</description>
+        <label>VAHC Integration User Svc Appt Sharing</label>
+        <sharedTo>
+            <group>VAHC_Integration_User_PG</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>notEqual</operation>
+            <value />
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>VCC_VAHC_VISN_10_VCV_Appointment_Viewer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>VAHC VISN 10 VCV Appointment Viewer</label>
+        <sharedTo>
+            <group>VCC_VAHC_VISN_10_VCV_Appointment_Viewer</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>VCC_VAHC_VISN_10_VCV_Appointment_Viewer</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>VCC_VAHC_VISN_12_VCV_Appointment_Viewer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>VAHC VISN 12 VCV Appointment Viewer</label>
+        <sharedTo>
+            <group>VCC_VAHC_VISN_12_VCV_Appointment_Viewer</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>VCC_VAHC_VISN_12_VCV_Appointment_Viewer</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>VCC_VAHC_VISN_15_VCV_Appointment_Viewer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>VAHC VISN 15 VCV Appointment Viewer</label>
+        <sharedTo>
+            <group>VCC_VAHC_VISN_15_VCV_Appointment_Viewer</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>VCC_VAHC_VISN_15_VCV_Appointment_Viewer</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>VCC_VAHC_VISN_16_VCV_Appointment_Viewer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>VAHC VISN 16 VCV Appointment Viewer</label>
+        <sharedTo>
+            <group>VCC_VAHC_VISN_16_VCV_Appointment_Viewer</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>VCC_VAHC_VISN_16_VCV_Appointment_Viewer</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>VCC_VAHC_VISN_17_VCV_Appointment_Viewer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>VAHC VISN 17 VCV Appointment Viewer</label>
+        <sharedTo>
+            <group>VCC_VAHC_VISN_17_VCV_Appointment_Viewer</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>VCC_VAHC_VISN_17_VCV_Appointment_Viewer</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>VCC_VAHC_VISN_19_VCV_Appointment_Viewer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>VAHC VISN 19 VCV Appointment Viewer</label>
+        <sharedTo>
+            <group>VCC_VAHC_VISN_19_VCV_Appointment_Viewer</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>VCC_VAHC_VISN_19_VCV_Appointment_Viewer</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>VCC_VAHC_VISN_1_VCV_Appointment_Viewer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>VAHC VISN 1 VCV Appointment Viewer</label>
+        <sharedTo>
+            <group>VCC_VAHC_VISN_1_VCV_Appointment_Viewer</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>VCC_VAHC_VISN_1_VCV_Appointment_Viewer</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>VCC_VAHC_VISN_20_VCV_Appointment_Viewer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>VAHC VISN 20 VCV Appointment Viewer</label>
+        <sharedTo>
+            <group>VCC_VAHC_VISN_20_VCV_Appointment_Viewer</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>VCC_VAHC_VISN_20_VCV_Appointment_Viewer</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>VCC_VAHC_VISN_21_VCV_Appointment_Viewer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>VAHC VISN 21 VCV Appointment Viewer</label>
+        <sharedTo>
+            <group>VCC_VAHC_VISN_21_VCV_Appointment_Viewer</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>VCC_VAHC_VISN_21_VCV_Appointment_Viewer</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>VCC_VAHC_VISN_22_VCV_Appointment_Viewer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>VAHC VISN 22 VCV Appointment Viewer</label>
+        <sharedTo>
+            <group>VCC_VAHC_VISN_22_VCV_Appointment_Viewer</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>VCC_VAHC_VISN_22_VCV_Appointment_Viewer</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>VCC_VAHC_VISN_23_VCV_Appointment_Viewer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>VAHC VISN 23 VCV Appointment Viewer</label>
+        <sharedTo>
+            <group>VCC_VAHC_VISN_23_VCV_Appointment_Viewer</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>VCC_VAHC_VISN_23_VCV_Appointment_Viewer</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>VCC_VAHC_VISN_2_VCV_Appointment_Viewer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>VAHC VISN 2 VCV Appointment Viewer</label>
+        <sharedTo>
+            <group>VCC_VAHC_VISN_2_VCV_Appointment_Viewer</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>VCC_VAHC_VISN_2_VCV_Appointment_Viewer</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>VCC_VAHC_VISN_4_VCV_Appointment_Viewer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>VAHC VISN 4 VCV Appointment Viewer</label>
+        <sharedTo>
+            <group>VCC_VAHC_VISN_4_VCV_Appointment_Viewer</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>VCC_VAHC_VISN_4_VCV_Appointment_Viewer</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>VCC_VAHC_VISN_5_VCV_Appointment_Viewer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>VAHC VISN 5 VCV Appointment Viewer</label>
+        <sharedTo>
+            <group>VCC_VAHC_VISN_5_VCV_Appointment_Viewer</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>VCC_VAHC_VISN_5_VCV_Appointment_Viewer</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>VCC_VAHC_VISN_6_VCV_Appointment_Viewer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>VAHC VISN 6 VCV Appointment Viewer</label>
+        <sharedTo>
+            <group>VCC_VAHC_VISN_6_VCV_Appointment_Viewer</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>VCC_VAHC_VISN_6_VCV_Appointment_Viewer</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>VCC_VAHC_VISN_7_VCV_Appointment_Viewer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>VAHC VISN 7 VCV Appointment Viewer</label>
+        <sharedTo>
+            <group>VCC_VAHC_VISN_7_VCV_Appointment_Viewer</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>VCC_VAHC_VISN_7_VCV_Appointment_Viewer</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>VCC_VAHC_VISN_8_VCV_Appointment_Viewer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>VAHC VISN 8 VCV Appointment Viewer</label>
+        <sharedTo>
+            <group>VCC_VAHC_VISN_8_VCV_Appointment_Viewer</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>VCC_VAHC_VISN_8_VCV_Appointment_Viewer</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>VCC_VAHC_VISN_9_VCV_Appointment_Viewer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>VAHC VISN 9 VCV Appointment Viewer</label>
+        <sharedTo>
+            <group>VCC_VAHC_VISN_9_VCV_Appointment_Viewer</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>VCC_VAHC_VISN_9_VCV_Appointment_Viewer</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

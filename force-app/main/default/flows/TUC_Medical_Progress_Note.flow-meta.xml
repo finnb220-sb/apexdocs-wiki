@@ -1,0 +1,3487 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <actionCalls>
+        <name>openNewSubtab</name>
+        <label>openNewSubtab</label>
+        <locationX>664</locationX>
+        <locationY>3586</locationY>
+        <actionName>c:tucRedirectViaWorkspace</actionName>
+        <actionType>component</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>NewProgressNoteID</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordObject</name>
+            <value>
+                <stringValue>VCC_Progress_Note__c</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>c:tucRedirectViaWorkspace</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>60.0</apiVersion>
+    <assignments>
+        <name>Assign_Chart_Consult_Fields</name>
+        <label>Assign Chart Consult Fields</label>
+        <locationX>804</locationX>
+        <locationY>2998</locationY>
+        <assignmentItems>
+            <assignToReference>TriageTimeInterval_Downgraded_Input</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Triage_Time_Interval_Downgraded</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TriageTimeInterval_Upgraded_Input</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Triage_Time_Interval_Upgraded</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TimeSpent_Input</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Time_Spent_in_Consultation_Chart_Review</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCallerVerified</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Current_Progress_Note_Infos</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Chart_Evaluation</name>
+        <label>Assign Chart Evaluation</label>
+        <locationX>787</locationX>
+        <locationY>1438</locationY>
+        <assignmentItems>
+            <assignToReference>varEvaluationType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Tele-EC MP Chart Review Progress Note</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Evaluation_Type_and_Consult_Origin</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assigns to a variable all CT medications</description>
+        <name>Assign_CT_Pre_Reported_Info</name>
+        <label>Assign CT Pre-Reported Info</label>
+        <locationX>696</locationX>
+        <locationY>626</locationY>
+        <assignmentItems>
+            <assignToReference>Medications_Info</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CT_Medications_Concat</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Allergy_Info</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CT_or_TUC_Progress_Note.VCC_Allergies__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Problem_Info</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CT_or_TUC_Progress_Note.VCC_Problems__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Account</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assigns to a variable all Tele-EC progress note medications, problems, and allergies</description>
+        <name>Assign_TUC_Pre_Reported_Info</name>
+        <label>Assign TUC Pre-Reported Info</label>
+        <locationX>437</locationX>
+        <locationY>506</locationY>
+        <assignmentItems>
+            <assignToReference>Medications_Info</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CT_or_TUC_Progress_Note.TUC_Active_Outpatient_Medications__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Allergy_Info</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CT_or_TUC_Progress_Note.VCC_Allergies__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Problem_Info</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CT_or_TUC_Progress_Note.VCC_Problems__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Account</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Virtual_Evaluation_Type</name>
+        <label>Assign Virtual Evaluation Type</label>
+        <locationX>543</locationX>
+        <locationY>1438</locationY>
+        <assignmentItems>
+            <assignToReference>varEvaluationType</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Virtual Visit Note</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Evaluation_Type_and_Consult_Origin</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Virtual_Visit_Fields</name>
+        <label>Assign Virtual Visit Fields</label>
+        <locationX>507</locationX>
+        <locationY>3042</locationY>
+        <assignmentItems>
+            <assignToReference>CurrentLocation_Input</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TUC_Current_Location</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CallbackNumber_Input</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TUC_CallbackNumber</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CurrentEmail_Input</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Current_Email_Address.value</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ConfirmedCurrentLocationAndPhone_Input</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Confirmed_Veteran_s_Current_Location_and_Phone_Number</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>PatientVerbalizesUnderstanding_Input</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>PatientVerbalizesUnderstanding_of_the_Care_Plan</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>DischargedInstructions_Input</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>DischargedInstructionsWereReviewed</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>TimeSpent_Input</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Time_Spent_in_Virtual_Visit</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>MedicalReconciliationDone_Input</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>MedicalReconciliationDone</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Objective_Input</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Objective</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCallerVerified</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Veteran_s_name_SSN_and_DOB_were_verified</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Current_Progress_Note_Infos</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assign the value chosen from the Outcome detail field Acute Issue Resolved option</description>
+        <name>AssignAcute</name>
+        <label>AssignAcute</label>
+        <locationX>921</locationX>
+        <locationY>2620</locationY>
+        <assignmentItems>
+            <assignToReference>OutcomeDetailResult</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Outcome_Detail_Acute</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Virtual_Visit_Subtype</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assign the value chosen from the Outcome detail field Care Incomplete option</description>
+        <name>AssignCareInc</name>
+        <label>AssignCareInc</label>
+        <locationX>413</locationX>
+        <locationY>2622</locationY>
+        <assignmentItems>
+            <assignToReference>OutcomeDetailResult</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Outcome_Detail_Care_Inc</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Virtual_Visit_Subtype</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assign the value chosen from the Outcome detail field Emergency option</description>
+        <name>AssignEmerg</name>
+        <label>AssignEmerg</label>
+        <locationX>542</locationX>
+        <locationY>2616</locationY>
+        <assignmentItems>
+            <assignToReference>OutcomeDetailResult</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Outcome_Detail_Emergency</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Virtual_Visit_Subtype</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assignment_for_Phone</name>
+        <label>Assignment for Phone</label>
+        <locationX>507</locationX>
+        <locationY>2901</locationY>
+        <assignmentItems>
+            <assignToReference>Phone_Consent</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Phone_Visit_Consent</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Video_Consent</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Virtual_Visit_Fields</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assignment for VVC and new Modality CVT for Clinical Video Telehealth cases</description>
+        <name>Assignment_for_VVC</name>
+        <label>Assignment for VVC &amp; CVT</label>
+        <locationX>664</locationX>
+        <locationY>2953</locationY>
+        <assignmentItems>
+            <assignToReference>Video_Consent</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Video_Visit_Consent</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Phone_Consent</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Virtual_Visit_Fields</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assign the value chosen from the Outcome detail field Urgent option</description>
+        <name>AssignUrg</name>
+        <label>AssignUrg</label>
+        <locationX>795</locationX>
+        <locationY>2614</locationY>
+        <assignmentItems>
+            <assignToReference>OutcomeDetailResult</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Outcome_Detail_Urgent</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Virtual_Visit_Subtype</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>When no Triage Tool is used the Date/Time stamp for Vital Signs will be the Clinical Triage Progress Note Created Date/Time</description>
+        <name>PN_Date_Time</name>
+        <label>PN Date Time</label>
+        <locationX>534</locationX>
+        <locationY>1030</locationY>
+        <assignmentItems>
+            <assignToReference>varTriage_or_PNDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CT_or_TUC_Progress_Note.CreatedDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Tele_EC_Progress_Note</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>When the Triage Tool is used the Date/Time stamp for Vital Signs will be the Clinical Triage Progress Note VCC_Triage_Date__c</description>
+        <name>Triage_DateTime</name>
+        <label>Triage DateTime</label>
+        <locationX>797</locationX>
+        <locationY>1034</locationY>
+        <assignmentItems>
+            <assignToReference>varTriage_or_PNDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CT_or_TUC_Progress_Note.VCC_Triage_Date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Tele_EC_Progress_Note</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>Acute_Issue_Resolved</name>
+        <choiceText>Acute Issue Resolved</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Acute Issue Resolved</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>c911</name>
+        <choiceText>911</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>911</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Care_Incomplete</name>
+        <choiceText>Care Incomplete</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Care Incomplete</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Community_Emergency_Department</name>
+        <choiceText>Community Emergency Department</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Community Emergency Department</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Community_Urgent_Care</name>
+        <choiceText>Community Urgent Care</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Community Urgent Care</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Connection_Failure</name>
+        <choiceText>Connection Failure</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Connection Failure</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Declined_by_Veteran</name>
+        <choiceText>Declined by Veteran</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Declined by Veteran</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Emergency_Department</name>
+        <choiceText>Emergency Department</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Emergency Department</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Primary_CarePACT</name>
+        <choiceText>Primary Care/PACT</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Primary Care/PACT</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Referred_to_Primary_Care_Pact</name>
+        <choiceText>Referred to Primary Care/Pact</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Referred to Primary Care/Pact</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Referred_to_Specialty_Care</name>
+        <choiceText>Referred to Specialty Care</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Referred to Specialty Care</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Urgent_Care</name>
+        <choiceText>Urgent Care</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Urgent Care</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>VA_Emergency_Department</name>
+        <choiceText>VA Emergency Department</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>VA Emergency Department</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>VA_Urgent_Care</name>
+        <choiceText>VA Urgent Care</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>VA Urgent Care</stringValue>
+        </value>
+    </choices>
+    <constants>
+        <description>This constant utilizes the Empty String value to construct a line break for use in formatting of medication, allergy, and problem text screen components</description>
+        <name>lineBreak</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue />
+        </value>
+    </constants>
+    <decisions>
+        <name>Check_Virtual_Visit_Subtype</name>
+        <label>Check Virtual Visit Subtype</label>
+        <locationX>656</locationX>
+        <locationY>2762</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Visit_is_Phone</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>dpProgressNoteType.middleValue</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Phone</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assignment_for_Phone</targetReference>
+            </connector>
+            <label>Visit is Phone</label>
+        </rules>
+        <rules>
+            <name>Visit_is_VVC</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>dpProgressNoteType.middleValue</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>VVC</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assignment_for_VVC</targetReference>
+            </connector>
+            <label>Visit is VVC</label>
+        </rules>
+        <rules>
+            <name>Visit_is_Chart_Consult</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>dpProgressNoteType.middleValue</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Chart Consult</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Chart_Consult_Fields</targetReference>
+            </connector>
+            <label>Visit is Chart Consult</label>
+        </rules>
+        <rules>
+            <name>Visit_is_CVT</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>dpProgressNoteType.middleValue</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CVT</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assignment_for_VVC</targetReference>
+            </connector>
+            <label>Visit is CVT</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Was a Triage Tool used to document Vital Signs?</description>
+        <name>CT_RN_Triage_Completed</name>
+        <label>CT RN Triage Completed</label>
+        <locationX>664</locationX>
+        <locationY>945</locationY>
+        <defaultConnector>
+            <targetReference>Triage_DateTime</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
+        <rules>
+            <name>No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CT_or_TUC_Progress_Note.VCC_Triage_Date__c</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>PN_Date_Time</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If the TUC progress note exists we are going to use it&apos;s values to update the vitals information instead of using the CT progress note</description>
+        <name>Does_TUC_Progress_Note_exist</name>
+        <label>Does TUC Progress Note exist</label>
+        <locationX>530</locationX>
+        <locationY>297</locationY>
+        <defaultConnector>
+            <targetReference>Has_a_Parent_Case</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CT_or_TUC_Progress_Note</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_TUC_Pre_Reported_Info</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>When a Case is created Callback Type is selected: VVC, Phone, Chart. Evaluation Type of Evaluation Type to be performed is related to Callback Type. This data will auto populate in the Progress Note creation first screen.</description>
+        <name>Expected_Evaluation_Type</name>
+        <label>Expected Evaluation Type</label>
+        <locationX>656</locationX>
+        <locationY>1338</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Virtual_Visit</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case_Record.TUC_Callback_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Phone</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Case_Record.TUC_Callback_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>VVC</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Case_Record.TUC_Callback_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CVT</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Virtual_Evaluation_Type</targetReference>
+            </connector>
+            <label>Virtual Visit</label>
+        </rules>
+        <rules>
+            <name>Chart_Consult</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case_Record.TUC_Callback_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Chart Consult</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Chart_Evaluation</targetReference>
+            </connector>
+            <label>Chart Consult</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Has_a_Parent_Case</name>
+        <label>Has a Parent Case</label>
+        <locationX>657</locationX>
+        <locationY>502</locationY>
+        <defaultConnector>
+            <targetReference>Get_Progress_Note</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Has Parent Case</defaultConnectorLabel>
+        <rules>
+            <name>No_Parent_Case</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case_Record.Parent.Id</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue />
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Account</targetReference>
+            </connector>
+            <label>No Parent Case</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>This note checks the choice for Outcome detail and assigns it to a variable for progress note record update purposes</description>
+        <name>Outcome_Detail_Choice</name>
+        <label>Outcome Detail Choice</label>
+        <locationX>656</locationX>
+        <locationY>2482</locationY>
+        <defaultConnector>
+            <targetReference>Check_Virtual_Visit_Subtype</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Other</defaultConnectorLabel>
+        <rules>
+            <name>Emergency</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Outcome</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Emergency_Department</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignEmerg</targetReference>
+            </connector>
+            <label>Emergency</label>
+        </rules>
+        <rules>
+            <name>Urgent</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Outcome</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Urgent_Care</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignUrg</targetReference>
+            </connector>
+            <label>Urgent</label>
+        </rules>
+        <rules>
+            <name>Acute_Issue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Outcome</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Acute_Issue_Resolved</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignAcute</targetReference>
+            </connector>
+            <label>Acute Issue Resolved</label>
+        </rules>
+        <rules>
+            <name>Care_Inc_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Outcome</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Care_Incomplete</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignCareInc</targetReference>
+            </connector>
+            <label>Care Incomplete</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Evaluation Type to determine if creating a Tele-EC MP Virtual Visit Progress Note OR Tele-EC MP Chart Review Progress Note</description>
+        <name>Type_of_Pogress_Note</name>
+        <label>Type of Pogress Note</label>
+        <locationX>656</locationX>
+        <locationY>1734</locationY>
+        <defaultConnector>
+            <targetReference>TUC_Patient_Location_and_Callback_Number_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Tele-EC MP Virtual Visit Progress Note</defaultConnectorLabel>
+        <rules>
+            <name>Tele_EC_MP_Chart_Review_Progress_Note</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>dpProgressNoteType.topValue</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Tele-EC MP Chart Review Progress Note</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>MP_Chart_Review_Record_Type</targetReference>
+            </connector>
+            <label>Tele-EC MP Chart Review Progress Note</label>
+        </rules>
+    </decisions>
+    <description>From a Tele-EC Case Record Page Medical Providers can create a Tele-EC MP Progress Note OR Tele-EC Chart Review Progress Note
+Release 1.12.0 Vital Signs Time Stamps
+Release 1.14.0 Outcomes and Outcome Details
+Release 1.15.0 Patient verification data in alignment with VHA Directive 1907.09
+Release 1.15.0 fix 2393 Chart Consult
+Release 1.16.0 Add Modality &apos;CVT&apos; to Medical Progress Notes
+1.17.0 PTEMSTUC-2446 Added Variables to capture and concatenate historical Medications, Problems, and Allergies to newly entered values. Added Get Records. Updated the Vitals screen Long text fields. Updated the last Update Records node.
+1.19.0 PTEMSTUC-2332 Date/Time will update to current date/time on PN when edited in UI</description>
+    <dynamicChoiceSets>
+        <description>Blood Pressure Reported or Observed</description>
+        <name>BloodPressureMethod</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>VCC_Blood_Pressure_Method__c</picklistField>
+        <picklistObject>VCC_Progress_Note__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Select if Pulse Vital Sign was Observed or Reported</description>
+        <name>cPulseMethod</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>TED_Pulse_Method__c</picklistField>
+        <picklistObject>VCC_Progress_Note__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>Gender</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>VCC_Gender__c</picklistField>
+        <picklistObject>VCC_Progress_Note__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Heart Rate Reported or Observed</description>
+        <name>HeartRateBPMMethod</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>VCC_Heart_Rate_BPM_Method__c</picklistField>
+        <picklistObject>VCC_Progress_Note__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>PainScore</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>VCC_Pain_Score__c</picklistField>
+        <picklistObject>VCC_Progress_Note__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>PatientHeight</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>VCC_Height__c</picklistField>
+        <picklistObject>VCC_Progress_Note__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>ProgressNoteType</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>TUC_Progress_Note_Type__c</picklistField>
+        <picklistObject>VCC_Progress_Note__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Pulse Oximeter Reported or Observed</description>
+        <name>PulseOximeterMethod</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>VCC_Pulse_Oximeter_Method__c</picklistField>
+        <picklistObject>VCC_Progress_Note__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>TED_Reason_for_Referral</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>TED_Reason_for_Referral__c</picklistField>
+        <picklistObject>VCC_Progress_Note__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Temperature Reported or Observed</description>
+        <name>TemperatureMethod</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>VCC_Temperature_F_Method__c</picklistField>
+        <picklistObject>VCC_Progress_Note__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>TUC_EvaluationType</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>TUC_Evaluation_Type__c</picklistField>
+        <picklistObject>VCC_Progress_Note__c</picklistObject>
+        <sortOrder>Desc</sortOrder>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Select Progress Note Type: Tele-EC Chart Review or Tele-EC MP Progress Note</description>
+        <name>TUC_Progress_Note_Type</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>TUC_Progress_Note_Type__c</picklistField>
+        <picklistObject>VCC_Progress_Note__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>TUC Consult outcome after patient assessment.</description>
+        <name>TUC_ProgressNoteOutcome</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>TUC_Outcome__c</picklistField>
+        <picklistObject>VCC_Progress_Note__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>TUC_TriageTimeDowngraded</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>TUC_Triage_Time_is_Downgraded__c</picklistField>
+        <picklistObject>VCC_Progress_Note__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>TUC_TriageTimeUpgraded</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>TUC_Triage_Time_is_Downgraded__c</picklistField>
+        <picklistObject>VCC_Progress_Note__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <name>TypeOfVisit</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>TUC_Type_of_Visit__c</picklistField>
+        <picklistObject>VCC_Progress_Note__c</picklistObject>
+    </dynamicChoiceSets>
+    <dynamicChoiceSets>
+        <description>Weight Method Reported or Observed</description>
+        <name>WeightMethod</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true" />
+        <object xsi:nil="true" />
+        <picklistField>VCC_Weight_Method__c</picklistField>
+        <picklistObject>VCC_Progress_Note__c</picklistObject>
+    </dynamicChoiceSets>
+    <environments>Default</environments>
+    <formulas>
+        <description>This formula takes the allergies that are updated via the lwc in the flow and historic allergies, from the text field that is below the lwc, together.</description>
+        <name>allergiesCombined</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Get_Current_Progress_Note_Infos.VCC_Allergies__c}), 
+{!Reported_Active_Outpatient_Allergies}, 
+    IF(CONTAINS({!Reported_Active_Outpatient_Allergies}, &quot;Causative Agent - Severity - Sign and Symptom - Date of Appearance&quot;), 
+    {!Get_Current_Progress_Note_Infos.VCC_Allergies__c} + 
+    SUBSTITUTE({!Reported_Active_Outpatient_Allergies}, &quot;Causative Agent - Severity - Sign and Symptom - Date of Appearance&quot;, 
+    {!linebreakTemplate}), 
+    {!Get_Current_Progress_Note_Infos.VCC_Allergies__c} + {!linebreakTemplate} + {!linebreakTemplate} +
+    {!Reported_Active_Outpatient_Allergies}
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <description>Concatenates the two medication fields on a CT progress note into one variable, to be viewed on the medications/vitals screen
+
+pseudo: 
+IF both fields are not blank
+Then concatenate them
+Else 
+if the first field is blank, 
+then populate the other field
+else populate the first field</description>
+        <name>CT_Medications_Concat</name>
+        <dataType>String</dataType>
+        <expression>IF(AND(NOT(ISBLANK({!CT_or_TUC_Progress_Note.VCC_NonVA_Medications_Renewal_Request__c})),NOT(ISBLANK({!CT_or_TUC_Progress_Note.VCC_Medications_Refill_Renewal_Request__c}))), {!CT_or_TUC_Progress_Note.VCC_Medications_Refill_Renewal_Request__c}&amp; &apos;, &apos;&amp;{!CT_or_TUC_Progress_Note.VCC_NonVA_Medications_Renewal_Request__c}, IF(ISBLANK({!CT_or_TUC_Progress_Note.VCC_Medications_Refill_Renewal_Request__c}), {!CT_or_TUC_Progress_Note.VCC_NonVA_Medications_Renewal_Request__c}, {!CT_or_TUC_Progress_Note.VCC_Medications_Refill_Renewal_Request__c}))</expression>
+    </formulas>
+    <formulas>
+        <description>When a Clinical Triage Progress Note has data for Vital Signs the Method defaults to Reported. If there are no Clinical Triage Vitals when a Tele-EC User inputs a value Method field should default to Observed if not NULL.</description>
+        <name>forBloodPressureMethod</name>
+        <dataType>String</dataType>
+        <expression>IF(
+NOT(ISBLANK({!CT_or_TUC_Progress_Note.VCC_Systolic_Blood_Pressure__c})), 
+&quot;Reported&quot;,
+IF(
+ISBLANK ({!CT_or_TUC_Progress_Note.VCC_Systolic_Blood_Pressure__c}) &amp;&amp; NOT (ISBLANK ({!Systolic_Blood_Pressure})),
+ &quot;Observed&quot;,
+IF(
+ISBLANK ({!CT_or_TUC_Progress_Note.VCC_Systolic_Blood_Pressure__c}) &amp;&amp; ISBLANK ({!Systolic_Blood_Pressure}),
+ NULL,
+&quot;&quot;
+      )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <description>If Vital Signs Method field is Observed Date/Time field is NOW(). If Method is Reported Date/Time is Triage Date/Time if a Triage Tool was used. If no Triage Tool was used Date/Time is the Clinical Triage Progress Note Created Date/Time. If there are no Vitals Date/Time is NULL</description>
+        <name>forBloodPressureTimeStamp</name>
+        <dataType>DateTime</dataType>
+        <expression>IF({!Blood_Pressure_Method= &apos;Observed&apos;}, {!$Flow.CurrentDateTime}, 
+IF({!Blood_Pressure_Method= &apos;Reported&apos;}, {!varTriage_or_PNDate}, NULL))</expression>
+    </formulas>
+    <formulas>
+        <description>When a Clinical Triage Progress Note has data for Vital Signs the Method defaults to Reported. If there are no Clinical Triage Vitals when a Tele-EC User inputs a value Method field should default to Observed if not NULL.</description>
+        <name>forPulseMethod</name>
+        <dataType>String</dataType>
+        <expression>IF(
+NOT(ISBLANK({!CT_or_TUC_Progress_Note.VCC_Pulse__c})), 
+&quot;Reported&quot;,
+IF(
+ISBLANK ({!CT_or_TUC_Progress_Note.VCC_Pulse__c}) &amp;&amp; NOT (ISBLANK ({!Pulse})),
+ &quot;Observed&quot;,
+IF(
+ISBLANK ({!CT_or_TUC_Progress_Note.VCC_Pulse__c}) &amp;&amp; ISBLANK ({!Pulse}),
+ NULL,
+&quot;&quot;
+      )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <description>When a Clinical Triage Progress Note has data for Vital Signs the Method defaults to Reported. If there are no Clinical Triage Vitals when a Tele-EC User inputs a value Method field should default to Observed if not NULL.</description>
+        <name>forPulseOximetryMethod</name>
+        <dataType>String</dataType>
+        <expression>IF(
+NOT(ISBLANK({!CT_or_TUC_Progress_Note.VCC_Pulse_Oximetry__c})), 
+&quot;Reported&quot;,
+IF(
+ISBLANK ({!CT_or_TUC_Progress_Note.VCC_Pulse_Oximetry__c}) &amp;&amp; NOT (ISBLANK ({!Pulse_Oximetry})),
+ &quot;Observed&quot;,
+IF(
+ISBLANK ({!CT_or_TUC_Progress_Note.VCC_Pulse_Oximetry__c}) &amp;&amp; ISBLANK ({!Pulse_Oximetry}),
+ NULL,
+&quot;&quot;
+      )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <description>If Vital Signs Method field is Observed Date/Time field is NOW(). If Method is Reported Date/Time is Triage Date/Time if a Triage Tool was used. If no Triage Tool was used Date/Time is the Clinical Triage Progress Note Created Date/Time. If there are no Vitals Date/Time is NULL</description>
+        <name>forPulseOximetryTimeStamp</name>
+        <dataType>DateTime</dataType>
+        <expression>IF({!Pulse_Oximetry_Method = &apos;Observed&apos;}, {!$Flow.CurrentDateTime}, 
+IF({!Pulse_Oximetry_Method = &apos;Reported&apos;}, {!varTriage_or_PNDate}, NULL))</expression>
+    </formulas>
+    <formulas>
+        <description>If Vital Signs Method field is Observed Date/Time field is NOW(). If Method is Reported Date/Time is Triage Date/Time if a Triage Tool was used. If no Triage Tool was used Date/Time is the Clinical Triage Progress Note Created Date/Time. If there are no Vitals Date/Time is NULL</description>
+        <name>forPulseTimeStamp</name>
+        <dataType>DateTime</dataType>
+        <expression>IF({!Pulse_Method = &apos;Observed&apos;}, {!$Flow.CurrentDateTime}, 
+IF({!Pulse_Method = &apos;Reported&apos;}, {!varTriage_or_PNDate}, NULL))</expression>
+    </formulas>
+    <formulas>
+        <description>When a Clinical Triage Progress Note has data for Vital Signs the Method defaults to Reported. If there are no Clinical Triage Vitals when a Tele-EC User inputs a value Method field should default to Observed if not NULL.</description>
+        <name>forTemperatureFMethod</name>
+        <dataType>String</dataType>
+        <expression>IF(
+NOT(ISBLANK({!CT_or_TUC_Progress_Note.VCC_Temperature__c})), 
+&quot;Reported&quot;,
+IF(
+ISBLANK ({!CT_or_TUC_Progress_Note.VCC_Temperature__c}) &amp;&amp; NOT (ISBLANK ({!Temperature})),
+ &quot;Observed&quot;,
+IF(
+ISBLANK ({!CT_or_TUC_Progress_Note.VCC_Temperature__c}) &amp;&amp; ISBLANK ({!Temperature}),
+ NULL,
+&quot;&quot;
+      )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <description>If Vital Signs Method field is Observed Date/Time field is NOW(). If Method is Reported Date/Time is Triage Date/Time if a Triage Tool was used. If no Triage Tool was used Date/Time is the Clinical Triage Progress Note Created Date/Time. If there are no Vitals Date/Time is NULL</description>
+        <name>forTemperatureTimeStamp</name>
+        <dataType>DateTime</dataType>
+        <expression>IF({!Temperature_F_Method = &apos;Observed&apos;}, {!$Flow.CurrentDateTime}, 
+IF({!Temperature_F_Method = &apos;Reported&apos;}, {!varTriage_or_PNDate}, NULL))</expression>
+    </formulas>
+    <formulas>
+        <description>When a Clinical Triage Progress Note has data for Vital Signs the Method defaults to Reported. If there are no Clinical Triage Vitals when a Tele-EC User inputs a value Method field should default to Observed if not NULL.</description>
+        <name>forWeightMethod</name>
+        <dataType>String</dataType>
+        <expression>IF(
+NOT(ISBLANK({!CT_or_TUC_Progress_Note.VCC_Weight__c})), 
+&quot;Reported&quot;,
+IF(
+ISBLANK ({!CT_or_TUC_Progress_Note.VCC_Weight__c}) &amp;&amp; NOT (ISBLANK ({!Weight})),
+ &quot;Observed&quot;,
+IF(
+ISBLANK ({!CT_or_TUC_Progress_Note.VCC_Weight__c}) &amp;&amp; ISBLANK ({!Weight}),
+ NULL,
+&quot;&quot;
+      )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <description>If Vital Signs Method field is Observed Date/Time field is NOW(). If Method is Reported Date/Time is Triage Date/Time if a Triage Tool was used. If no Triage Tool was used Date/Time is the Clinical Triage Progress Note Created Date/Time. If there are no Vitals Date/Time is NULL</description>
+        <name>forWeightTimeStamp</name>
+        <dataType>DateTime</dataType>
+        <expression>IF({!Weight_Method = &apos;Observed&apos;}, {!$Flow.CurrentDateTime}, 
+IF({!Weight_Method = &apos;Reported&apos;},{!varTriage_or_PNDate}, NULL))</expression>
+    </formulas>
+    <formulas>
+        <description>This formula combines the historic and new medications together in order to update the progress note (from the lwc and text field on the Vitals screen)</description>
+        <name>medicationsCombined</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Get_Current_Progress_Note_Infos.TUC_Active_Outpatient_Medications__c}), 
+{!Reported_Active_Outpatient_Medications}, 
+    IF(CONTAINS({!Reported_Active_Outpatient_Medications}, &quot;Medication Name - Dosage - Status&quot;), 
+    {!Get_Current_Progress_Note_Infos.TUC_Active_Outpatient_Medications__c} + 
+    SUBSTITUTE({!Reported_Active_Outpatient_Medications}, &quot;Medication Name - Dosage - Status&quot;, {!linebreakTemplate}), 
+    {!Get_Current_Progress_Note_Infos.TUC_Active_Outpatient_Medications__c} + {!linebreakTemplate} + {!linebreakTemplate} + 
+    {!Reported_Active_Outpatient_Medications}
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <description>This formula combines the historic and current problems in order to update the progress note. (from the lwc and text field components on the vitals screen)</description>
+        <name>problemsCombined</name>
+        <dataType>String</dataType>
+        <expression>IF(ISBLANK({!Get_Current_Progress_Note_Infos.TUC_Active_Outpatient_Medications__c}), 
+{!Reported_Active_Outpatient_Problems}, 
+    IF(CONTAINS({!Reported_Active_Outpatient_Problems}, &quot;Name - Description&quot;), 
+    {!Get_Current_Progress_Note_Infos.VCC_Problems__c} + 
+    SUBSTITUTE({!Reported_Active_Outpatient_Problems}, &quot;Name - Description&quot;, {!linebreakTemplate}), 
+    {!Get_Current_Progress_Note_Infos.VCC_Problems__c} + {!linebreakTemplate} + {!linebreakTemplate} +
+    {!Reported_Active_Outpatient_Problems}
+    )
+)</expression>
+    </formulas>
+    <interviewLabel>Medical Progress Note {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Medical Progress Note</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <description>Create Tele-EC MP Virtual Visit Progress Note</description>
+        <name>Create_Tele_EC_Progress_Note</name>
+        <label>Create Tele-EC Progress Note</label>
+        <locationX>667</locationX>
+        <locationY>1196</locationY>
+        <assignRecordIdToReference>NewProgressNoteID</assignRecordIdToReference>
+        <connector>
+            <targetReference>Expected_Evaluation_Type</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Create_Tele_EC_PN_Error</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>GetVirtualVisitRecordType.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TED_Blood_Pressure_Date_Time__c</field>
+            <value>
+                <elementReference>varTriage_or_PNDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TED_Pulse_Date_Time__c</field>
+            <value>
+                <elementReference>varTriage_or_PNDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TED_Pulse_Method__c</field>
+            <value>
+                <elementReference>forPulseMethod</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TED_Pulse_Oximetry_Date_Time__c</field>
+            <value>
+                <elementReference>varTriage_or_PNDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TED_Temperature_F_Date_Time__c</field>
+            <value>
+                <elementReference>varTriage_or_PNDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TED_Weight_Date_Time__c</field>
+            <value>
+                <elementReference>varTriage_or_PNDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Blood_Pressure_Method__c</field>
+            <value>
+                <elementReference>forBloodPressureMethod</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Case__c</field>
+            <value>
+                <elementReference>TUC_CurrentCaseRecordID</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Diastolic_Blood_Pressure__c</field>
+            <value>
+                <elementReference>CT_or_TUC_Progress_Note.VCC_Diastolic_Blood_Pressure__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Height__c</field>
+            <value>
+                <elementReference>CT_or_TUC_Progress_Note.VCC_Height__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Pain_Score__c</field>
+            <value>
+                <elementReference>CT_or_TUC_Progress_Note.VCC_Pain_Score__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Pulse_Oximeter_Method__c</field>
+            <value>
+                <elementReference>forPulseOximetryMethod</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Pulse_Oximetry__c</field>
+            <value>
+                <elementReference>CT_or_TUC_Progress_Note.VCC_Pulse_Oximetry__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Pulse__c</field>
+            <value>
+                <elementReference>CT_or_TUC_Progress_Note.VCC_Pulse__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Respiratory_Rate__c</field>
+            <value>
+                <elementReference>CT_or_TUC_Progress_Note.VCC_Respiratory_Rate__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Serum_Glucose__c</field>
+            <value>
+                <elementReference>CT_or_TUC_Progress_Note.VCC_Serum_Glucose__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Systolic_Blood_Pressure__c</field>
+            <value>
+                <elementReference>CT_or_TUC_Progress_Note.VCC_Systolic_Blood_Pressure__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Temperature_F_Method__c</field>
+            <value>
+                <elementReference>forTemperatureFMethod</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Temperature__c</field>
+            <value>
+                <elementReference>CT_or_TUC_Progress_Note.VCC_Temperature__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Weight_Method__c</field>
+            <value>
+                <elementReference>forWeightMethod</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Weight__c</field>
+            <value>
+                <elementReference>CT_or_TUC_Progress_Note.VCC_Weight__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>VCC_Progress_Note__c</object>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Account</name>
+        <label>Get Account</label>
+        <locationX>562</locationX>
+        <locationY>626</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>GetVirtualVisitRecordType</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Get_Account_Error</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Case_Record.Account.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Get Case Record ID</description>
+        <name>Get_Case_Record</name>
+        <label>Get Case Record</label>
+        <locationX>664</locationX>
+        <locationY>182</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_TUC_Progress_Note</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Get_Case_Error</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>This Get is used to retrieve 3 field values on the current progress note that was created in this flow. These fields will be used to update the Problems, Allergies, and Medications fields on the Progress note. (Formulas: allergiesCombined, medicationsCombined, problemsCombined)</description>
+        <name>Get_Current_Progress_Note_Infos</name>
+        <label>Get Current Progress Note Infos</label>
+        <locationX>667</locationX>
+        <locationY>3082</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_Virtual_Visit_PN</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Get_Current_Progress_Note_Error</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>NewProgressNoteID</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>VCC_Progress_Note__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>VCC_Problems__c</queriedFields>
+        <queriedFields>TUC_Active_Outpatient_Medications__c</queriedFields>
+        <queriedFields>VCC_Allergies__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Progress_Note</name>
+        <label>Get Progress Note</label>
+        <locationX>875</locationX>
+        <locationY>620</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_CT_Pre_Reported_Info</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Get_Progress_Note_Error</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>VCC_Case__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Case_Record.Parent.Id</elementReference>
+            </value>
+        </filters>
+        <object>VCC_Progress_Note__c</object>
+        <outputReference>CT_or_TUC_Progress_Note</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>CreatedDate</queriedFields>
+        <queriedFields>VCC_Triage_Date__c</queriedFields>
+        <queriedFields>VCC_Blood_Pressure__c</queriedFields>
+        <queriedFields>VCC_Diastolic_Blood_Pressure__c</queriedFields>
+        <queriedFields>VCC_Systolic_Blood_Pressure__c</queriedFields>
+        <queriedFields>VCC_Pulse__c</queriedFields>
+        <queriedFields>VCC_Pulse_Oximetry__c</queriedFields>
+        <queriedFields>VCC_Temperature__c</queriedFields>
+        <queriedFields>VCC_Height__c</queriedFields>
+        <queriedFields>VCC_Weight__c</queriedFields>
+        <queriedFields>VCC_Pain_Score__c</queriedFields>
+        <queriedFields>VCC_Respiratory_Rate__c</queriedFields>
+        <queriedFields>VCC_Serum_Glucose__c</queriedFields>
+        <queriedFields>VCC_Medications_Refill_Renewal_Request__c</queriedFields>
+        <queriedFields>VCC_NonVA_Medications_Renewal_Request__c</queriedFields>
+        <queriedFields>VCC_Allergies__c</queriedFields>
+        <queriedFields>VCC_Problems__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <description>Retrieves the tele-ec progress note associated with the case that this flow was run from</description>
+        <name>Get_TUC_Progress_Note</name>
+        <label>Get TUC Progress Note</label>
+        <locationX>665</locationX>
+        <locationY>294</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Does_TUC_Progress_Note_exist</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Get_Tele_EC_PN_Error</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>VCC_Case__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <object>VCC_Progress_Note__c</object>
+        <outputReference>CT_or_TUC_Progress_Note</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>CreatedDate</queriedFields>
+        <queriedFields>VCC_Triage_Date__c</queriedFields>
+        <queriedFields>VCC_Blood_Pressure__c</queriedFields>
+        <queriedFields>VCC_Diastolic_Blood_Pressure__c</queriedFields>
+        <queriedFields>VCC_Systolic_Blood_Pressure__c</queriedFields>
+        <queriedFields>VCC_Pulse__c</queriedFields>
+        <queriedFields>VCC_Pulse_Oximetry__c</queriedFields>
+        <queriedFields>VCC_Temperature__c</queriedFields>
+        <queriedFields>VCC_Height__c</queriedFields>
+        <queriedFields>VCC_Weight__c</queriedFields>
+        <queriedFields>VCC_Pain_Score__c</queriedFields>
+        <queriedFields>VCC_Respiratory_Rate__c</queriedFields>
+        <queriedFields>VCC_Serum_Glucose__c</queriedFields>
+        <queriedFields>TUC_Active_Outpatient_Medications__c</queriedFields>
+        <queriedFields>VCC_Problems__c</queriedFields>
+        <queriedFields>VCC_Allergies__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <description>When a Tele-EC Progress Note creation is cancelled the &quot;Draft&quot; version of the Progress Note that is saved should default to a PN Tele-EC Record Type</description>
+        <name>GetVirtualVisitRecordType</name>
+        <label>GetVirtualVisitRecordType</label>
+        <locationX>672</locationX>
+        <locationY>772</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>CT_RN_Triage_Completed</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Get_Record_Type_Error</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>VCC_Progress_Note__c</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>TUC_Virtual_Visit</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Get Record Type for Tele-EC MP Chart Review Progress Note</description>
+        <name>MP_Chart_Review_Record_Type</name>
+        <label>MP Chart Review Record Type</label>
+        <locationX>526</locationX>
+        <locationY>1845</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_PN_Record_Type</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Chart_Record_Type_Error</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>VCC_Progress_Note__c</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>TUC_Chart_Review</stringValue>
+            </value>
+        </filters>
+        <object>RecordType</object>
+        <outputAssignments>
+            <assignToReference>ProgressNoteRecordTypeId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <description>Get Record Type for Tele-EC MP Virtual Visit Progress Note</description>
+        <name>MP_Virtual_Visit_Record_Type</name>
+        <label>MP Virtual Visit Record Type</label>
+        <locationX>773</locationX>
+        <locationY>2005</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Update_PN_Record_Type</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Virtual_Record_Type_Error</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>VCC_Progress_Note__c</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>TUC_Virtual_Visit</stringValue>
+            </value>
+        </filters>
+        <object>RecordType</object>
+        <outputAssignments>
+            <assignToReference>ProgressNoteRecordTypeId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordUpdates>
+        <description>Update Flag from True (default value) to False. This field works in the backend for Tele-EC Progress Note Flows, and &apos;Vital Signs Time Stamp Update&apos; Record Triggered Flow.</description>
+        <name>Update_IsScreenFlow_Flag</name>
+        <label>Update IsScreenFlow Flag</label>
+        <locationX>664</locationX>
+        <locationY>3330</locationY>
+        <connector>
+            <targetReference>New_Progress_Note_Created</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Update_Flag_Error</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>NewProgressNoteID</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>TED_Is_ScreenFlow_Update__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>VCC_Progress_Note__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_PN_Record_Type</name>
+        <label>Update PN Record Type</label>
+        <locationX>665</locationX>
+        <locationY>2126</locationY>
+        <connector>
+            <targetReference>Tele_EC_MP_Virtual_Visit_Screen_2_Vital_Signs</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Update_Record_Error</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>NewProgressNoteID</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>ProgressNoteRecordTypeId</elementReference>
+            </value>
+        </inputAssignments>
+        <object>VCC_Progress_Note__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Virtual_Visit_PN</name>
+        <label>Update Virtual Visit PN</label>
+        <locationX>664</locationX>
+        <locationY>3195</locationY>
+        <connector>
+            <targetReference>Update_IsScreenFlow_Flag</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Update_Record_Error_0</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>NewProgressNoteID</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>TED_Blood_Pressure_Date_Time__c</field>
+            <value>
+                <elementReference>Date_Time_Recorded_BloodPressure</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TED_Is_ScreenFlow_Update__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TED_Pulse_Date_Time__c</field>
+            <value>
+                <elementReference>Date_Time_Recorded_Pulse</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TED_Pulse_Method__c</field>
+            <value>
+                <elementReference>Pulse_Method</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TED_Pulse_Oximetry_Date_Time__c</field>
+            <value>
+                <elementReference>Date_Time_Recorded_PulseOximetry</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TED_Reason_for_Referral__c</field>
+            <value>
+                <elementReference>ReasonFor_Referral</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TED_Temperature_F_Date_Time__c</field>
+            <value>
+                <elementReference>Date_Time_Recorded_Temperature</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TED_Veteran_Current_Email_Address__c</field>
+            <value>
+                <elementReference>CurrentEmail_Input</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TED_Weight_Date_Time__c</field>
+            <value>
+                <elementReference>Date_Time_Recorded_Weight</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TUC_Active_Outpatient_Medications__c</field>
+            <value>
+                <elementReference>medicationsCombined</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TUC_Confirmed_Veteran_Location_and_Phone__c</field>
+            <value>
+                <elementReference>ConfirmedCurrentLocationAndPhone_Input</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TUC_Consult_Origin__c</field>
+            <value>
+                <elementReference>Get_Case_Record.Origin</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TUC_Discharge_Instructions_Were_Reviewed__c</field>
+            <value>
+                <elementReference>DischargedInstructions_Input</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TUC_Med_Reconciliation_Done__c</field>
+            <value>
+                <elementReference>MedicalReconciliationDone_Input</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TUC_Objective__c</field>
+            <value>
+                <elementReference>Objective_Input</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TUC_Other_Reason_forReferral__c</field>
+            <value>
+                <elementReference>Other_Reason_for_Referral</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TUC_Outcome_Detail__c</field>
+            <value>
+                <elementReference>OutcomeDetailResult</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TUC_Outcome__c</field>
+            <value>
+                <elementReference>Outcome</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TUC_Phone_Visit_Consent__c</field>
+            <value>
+                <elementReference>Phone_Consent</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TUC_Plan__c</field>
+            <value>
+                <elementReference>Plan</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TUC_Progress_Note_Type__c</field>
+            <value>
+                <elementReference>dpProgressNoteType.topValue</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TUC_Pt_Verbalizes_Understanding_of_CP__c</field>
+            <value>
+                <elementReference>PatientVerbalizesUnderstanding_Input</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TUC_Subjective__c</field>
+            <value>
+                <elementReference>Subjective</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TUC_Time_Spent_in_consultation_CR__c</field>
+            <value>
+                <elementReference>TimeSpent_Input</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TUC_Triage_Time_is_Downgraded__c</field>
+            <value>
+                <elementReference>TriageTimeInterval_Downgraded_Input</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TUC_Triage_Time_is_Upgraded__c</field>
+            <value>
+                <elementReference>TriageTimeInterval_Upgraded_Input</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TUC_Type_of_Visit__c</field>
+            <value>
+                <elementReference>dpProgressNoteType.middleValue</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TUC_Video_Visit_Consent__c</field>
+            <value>
+                <elementReference>Video_Consent</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Allergies__c</field>
+            <value>
+                <elementReference>allergiesCombined</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Blood_Pressure_Method__c</field>
+            <value>
+                <elementReference>Blood_Pressure_Method</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Caller_Recipient_Verified__c</field>
+            <value>
+                <elementReference>varCallerVerified</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Current_Address__c</field>
+            <value>
+                <elementReference>CurrentLocation_Input</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Current_Location__c</field>
+            <value>
+                <elementReference>CurrentLocation_Input</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Diastolic_Blood_Pressure__c</field>
+            <value>
+                <elementReference>Diastolic_Blood_Pressure</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Height__c</field>
+            <value>
+                <elementReference>Height</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Impression_Assessment__c</field>
+            <value>
+                <elementReference>ImpressionAssessment</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Pain_Score__c</field>
+            <value>
+                <elementReference>Pain_Score</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Problems__c</field>
+            <value>
+                <elementReference>problemsToUpdate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Pulse_Oximeter_Method__c</field>
+            <value>
+                <elementReference>Pulse_Oximetry_Method</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Pulse_Oximetry__c</field>
+            <value>
+                <elementReference>Pulse_Oximetry</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Pulse__c</field>
+            <value>
+                <elementReference>Pulse</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Respiratory_Rate__c</field>
+            <value>
+                <elementReference>Respiratory_Rate_per_Minute</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Serum_Glucose__c</field>
+            <value>
+                <elementReference>Serum_Glucose</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Systolic_Blood_Pressure__c</field>
+            <value>
+                <elementReference>Systolic_Blood_Pressure</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Temperature_F_Method__c</field>
+            <value>
+                <elementReference>Temperature_F_Method</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Temperature__c</field>
+            <value>
+                <elementReference>Temperature</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Vitals_Comments__c</field>
+            <value>
+                <elementReference>Vital_Comments</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Weight_Method__c</field>
+            <value>
+                <elementReference>Weight_Method</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VCC_Weight__c</field>
+            <value>
+                <elementReference>Weight</elementReference>
+            </value>
+        </inputAssignments>
+        <object>VCC_Progress_Note__c</object>
+    </recordUpdates>
+    <screens>
+        <name>Chart_Record_Type_Error</name>
+        <label>Chart Record Type Error</label>
+        <locationX>402</locationX>
+        <locationY>1850</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>false</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>ErrorMessage_0_0_0_0_0</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(196, 18, 48);&quot;&gt;{!$Flow.FaultMessage}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Create_Tele_EC_PN_Error</name>
+        <label>Create Tele-EC PN Error</label>
+        <locationX>806</locationX>
+        <locationY>1194</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>false</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>ErrorMessage_0_0_0_0</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(196, 18, 48);&quot;&gt;{!$Flow.FaultMessage}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>Progress Note Type and Consult Origin</description>
+        <name>Evaluation_Type_and_Consult_Origin</name>
+        <label>Evaluation Type and Consult Origin</label>
+        <locationX>665</locationX>
+        <locationY>1590</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Type_of_Pogress_Note</targetReference>
+        </connector>
+        <fields>
+            <name>dpProgressNoteType</name>
+            <extensionName>flowruntime:dependentPicklists</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>dependencyWrapperApiName</name>
+                <value>
+                    <stringValue>VCC_Progress_Note__c</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>topPicklistApiName</name>
+                <value>
+                    <stringValue>TUC_Progress_Note_Type__c</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>middlePicklistApiName</name>
+                <value>
+                    <stringValue>TUC_Type_of_Visit__c</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>topLabel</name>
+                <value>
+                    <stringValue>Evaluation Type</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>topValue</name>
+                <value>
+                    <elementReference>varEvaluationType</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>middleLabel</name>
+                <value>
+                    <stringValue>Type of Visit</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>middleValue</name>
+                <value>
+                    <elementReference>Get_Case_Record.TUC_Callback_Type__c</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>topRequired</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>middleRequired</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>Phone_Consent_Disclosure</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, Oxygen, Ubuntu, &amp;quot;Fira Sans&amp;quot;, &amp;quot;Droid Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; color: rgb(23, 43, 77);&quot;&gt;Telehealth Disclosure:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, Oxygen, Ubuntu, &amp;quot;Fira Sans&amp;quot;, &amp;quot;Droid Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; color: rgb(23, 43, 77);&quot;&gt;Visit conducted by synchronous telehealth.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, Oxygen, Ubuntu, &amp;quot;Fira Sans&amp;quot;, &amp;quot;Droid Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; color: rgb(23, 43, 77);&quot;&gt;Patient verbal consent obtained.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, Oxygen, Ubuntu, &amp;quot;Fira Sans&amp;quot;, &amp;quot;Droid Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; color: rgb(23, 43, 77);&quot;&gt;Location/emergency number confirmed.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>dpProgressNoteType.middleValue</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Phone</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Phone_Visit_Consent</name>
+            <dataType>Boolean</dataType>
+            <defaultValue>
+                <booleanValue>false</booleanValue>
+            </defaultValue>
+            <fieldText>Phone Visit Consent</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <validationRule>
+                <errorMessage>&lt;p&gt;Consent needs to be obtained before proceeding&lt;/p&gt;</errorMessage>
+                <formulaExpression>{!Phone_Visit_Consent} == true</formulaExpression>
+            </validationRule>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>dpProgressNoteType.middleValue</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Phone</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>VVC_Consent_Disclosure</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, Oxygen, Ubuntu, &amp;quot;Fira Sans&amp;quot;, &amp;quot;Droid Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; color: rgb(23, 43, 77);&quot;&gt;Telehealth Disclosure:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, Oxygen, Ubuntu, &amp;quot;Fira Sans&amp;quot;, &amp;quot;Droid Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; color: rgb(23, 43, 77);&quot;&gt;Visit conducted by synchronous telehealth.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, Oxygen, Ubuntu, &amp;quot;Fira Sans&amp;quot;, &amp;quot;Droid Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; color: rgb(23, 43, 77);&quot;&gt;Patient verbal consent obtained.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, Oxygen, Ubuntu, &amp;quot;Fira Sans&amp;quot;, &amp;quot;Droid Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; color: rgb(23, 43, 77);&quot;&gt;Location/emergency number confirmed.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, Oxygen, Ubuntu, &amp;quot;Fira Sans&amp;quot;, &amp;quot;Droid Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; color: rgb(23, 43, 77);&quot;&gt;Environment surveyed and all participants identified.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, Roboto, Oxygen, Ubuntu, &amp;quot;Fira Sans&amp;quot;, &amp;quot;Droid Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; color: rgb(23, 43, 77);&quot;&gt;Virtual conference room locked.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>or</conditionLogic>
+                <conditions>
+                    <leftValueReference>dpProgressNoteType.middleValue</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>VVC</stringValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>dpProgressNoteType.middleValue</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>CVT</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Video_Visit_Consent</name>
+            <dataType>Boolean</dataType>
+            <defaultValue>
+                <booleanValue>false</booleanValue>
+            </defaultValue>
+            <fieldText>Video Visit Consent</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <validationRule>
+                <errorMessage>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Consent needs to be obtained before proceeding&lt;/span&gt;&lt;/p&gt;</errorMessage>
+                <formulaExpression>{!Video_Visit_Consent} == true</formulaExpression>
+            </validationRule>
+            <visibilityRule>
+                <conditionLogic>or</conditionLogic>
+                <conditions>
+                    <leftValueReference>dpProgressNoteType.middleValue</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>VVC</stringValue>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>dpProgressNoteType.middleValue</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>CVT</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Get_Account_Error</name>
+        <label>Get Account Error</label>
+        <locationX>366</locationX>
+        <locationY>683</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>false</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>ErrorMessage_0_0</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(196, 18, 48);&quot;&gt;{!$Flow.FaultMessage}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Get_Case_Error</name>
+        <label>Get Case Error</label>
+        <locationX>799</locationX>
+        <locationY>181</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>false</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>ErrorMessage</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(196, 18, 48);&quot;&gt;{!$Flow.FaultMessage}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Get_Current_Progress_Note_Error</name>
+        <label>Get Current Progress Note Error</label>
+        <locationX>901</locationX>
+        <locationY>3132</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>false</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>GetCurrentProgressNoteErrorMessage</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(196, 18, 48);&quot;&gt;{!$Flow.FaultMessage}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Get_Progress_Note_Error</name>
+        <label>Get Progress Note Error</label>
+        <locationX>997</locationX>
+        <locationY>616</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>false</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>ErrorMessage_0</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(196, 18, 48);&quot;&gt;{!$Flow.FaultMessage}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Get_Record_Type_Error</name>
+        <label>Get Record Type Error</label>
+        <locationX>803</locationX>
+        <locationY>776</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>false</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>ErrorMessage_0_0_0</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(196, 18, 48);&quot;&gt;{!$Flow.FaultMessage}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Get_Tele_EC_PN_Error</name>
+        <label>Get Tele-EC Progress Note Error</label>
+        <locationX>797</locationX>
+        <locationY>299</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>false</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>ErrorMessage_0_0_0_0_0_0_0_0_0</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(196, 18, 48);&quot;&gt;{!$Flow.FaultMessage}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>New_Progress_Note_Created</name>
+        <label>New Progress Note Created</label>
+        <locationX>664</locationX>
+        <locationY>3453</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>openNewSubtab</targetReference>
+        </connector>
+        <fields>
+            <name>NewProgressNoteConfirmation</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;A new Progress Note has been created.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>Provide information about a Patient&apos;s Vital Signs</description>
+        <name>Tele_EC_MP_Virtual_Visit_Screen_2_Vital_Signs</name>
+        <label>Tele-EC MP Virtual Visit Screen 2 Vital Signs</label>
+        <locationX>664</locationX>
+        <locationY>2244</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Tele_EC_MP_Virtual_Visit_Screen_3</targetReference>
+        </connector>
+        <fields>
+            <name>Subjective</name>
+            <fieldText>Subjective</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Reported_Active_Outpatient_Problems</name>
+            <defaultValue>
+                <stringValue>{!Problem_Info}</stringValue>
+            </defaultValue>
+            <fieldText>Reported Active Outpatient Problems</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isReadOnly>
+                <booleanValue>false</booleanValue>
+            </isReadOnly>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>ActiveProblems</name>
+            <extensionName>c:vccProblemList</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>NewProgressNoteID</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>Problems_Allergies_Field_Spacing</name>
+            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;           &lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Reported_Active_Outpatient_Allergies</name>
+            <defaultValue>
+                <stringValue>{!Allergy_Info}</stringValue>
+            </defaultValue>
+            <fieldText>Reported Active Outpatient Allergies</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isReadOnly>
+                <booleanValue>false</booleanValue>
+            </isReadOnly>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Allergies</name>
+            <extensionName>c:vccAllergyList</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>NewProgressNoteID</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>Allergies_Meds_Field_Spacing</name>
+            <fieldText>&lt;p&gt;   &lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Reported_Active_Outpatient_Medications</name>
+            <defaultValue>
+                <stringValue>{!Medications_Info}</stringValue>
+            </defaultValue>
+            <fieldText>Reported Active Outpatient Medications</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isReadOnly>
+                <booleanValue>false</booleanValue>
+            </isReadOnly>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Medications</name>
+            <extensionName>c:vccMedicationList</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>recordId</name>
+                <value>
+                    <elementReference>NewProgressNoteID</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>flowRecordObjectApiName</name>
+                <value>
+                    <stringValue>VCC_Progress_Note__c</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>MedicalReconciliationDone</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Current Medications reviewed with patient/caregiver and reconciliation of medications related to today&apos;s visit completed, including non-VA medication and discrepancies, if identified, were addressed. Medication changes and the importance of  medication management were reviewed with the patient/caregiver today based on individual needs. Patient/caregiver acknowledged understanding of instructions as stated.</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>dpProgressNoteType.middleValue</leftValueReference>
+                    <operator>NotEqualTo</operator>
+                    <rightValue>
+                        <stringValue>Chart Consult</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Tele_EC_MP_Virtual_Visit_Screen_2_Vital_Signs_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Tele_EC_MP_Virtual_Visit_Screen_2_Vital_Signs_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Temperature</name>
+                    <dataType>Number</dataType>
+                    <defaultValue>
+                        <elementReference>CT_or_TUC_Progress_Note.VCC_Temperature__c</elementReference>
+                    </defaultValue>
+                    <fieldText>Temperature</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <scale>1</scale>
+                </fields>
+                <fields>
+                    <name>Pulse</name>
+                    <dataType>Number</dataType>
+                    <defaultValue>
+                        <elementReference>CT_or_TUC_Progress_Note.VCC_Pulse__c</elementReference>
+                    </defaultValue>
+                    <fieldText>Pulse</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <scale>0</scale>
+                </fields>
+                <fields>
+                    <name>Systolic_Blood_Pressure</name>
+                    <dataType>Number</dataType>
+                    <defaultValue>
+                        <elementReference>CT_or_TUC_Progress_Note.VCC_Systolic_Blood_Pressure__c</elementReference>
+                    </defaultValue>
+                    <fieldText>Systolic Blood Pressure</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <scale>0</scale>
+                </fields>
+                <fields>
+                    <name>Diastolic_Blood_Pressure</name>
+                    <dataType>Number</dataType>
+                    <defaultValue>
+                        <elementReference>CT_or_TUC_Progress_Note.VCC_Diastolic_Blood_Pressure__c</elementReference>
+                    </defaultValue>
+                    <fieldText>Diastolic Blood Pressure</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <scale>0</scale>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Tele_EC_MP_Virtual_Visit_Screen_2_Vital_Signs_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Temperature_F_Method</name>
+                    <choiceReferences>TemperatureMethod</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>forTemperatureFMethod</elementReference>
+                    </defaultValue>
+                    <fieldText>Temperature *F Method</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <fields>
+                    <name>Pulse_Method</name>
+                    <choiceReferences>cPulseMethod</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>forPulseMethod</elementReference>
+                    </defaultValue>
+                    <fieldText>Pulse Method</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <fields>
+                    <name>Blood_Pressure_Method</name>
+                    <choiceReferences>BloodPressureMethod</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>forBloodPressureMethod</elementReference>
+                    </defaultValue>
+                    <fieldText>Blood Pressure Method</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Tele_EC_MP_Virtual_Visit_Screen_2_Vital_Signs_Section1_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Date_Time_Recorded_Temperature</name>
+                    <dataType>DateTime</dataType>
+                    <defaultValue>
+                        <elementReference>forTemperatureTimeStamp</elementReference>
+                    </defaultValue>
+                    <fieldText>Date/Time Recorded</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <fields>
+                    <name>Date_Time_Recorded_Pulse</name>
+                    <dataType>DateTime</dataType>
+                    <defaultValue>
+                        <elementReference>forPulseTimeStamp</elementReference>
+                    </defaultValue>
+                    <fieldText>Date/Time Recorded</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <fields>
+                    <name>Date_Time_Recorded_BloodPressure</name>
+                    <dataType>DateTime</dataType>
+                    <defaultValue>
+                        <elementReference>forBloodPressureTimeStamp</elementReference>
+                    </defaultValue>
+                    <fieldText>Date/Time Recorded</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>5</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Respiratory_Rate_per_Minute</name>
+            <dataType>Number</dataType>
+            <defaultValue>
+                <elementReference>CT_or_TUC_Progress_Note.VCC_Respiratory_Rate__c</elementReference>
+            </defaultValue>
+            <fieldText>Respiratory Rate per Minute</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <scale>0</scale>
+        </fields>
+        <fields>
+            <name>Tele_EC_MP_Virtual_Visit_Screen_2_Vital_Signs_Section2</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Tele_EC_MP_Virtual_Visit_Screen_2_Vital_Signs_Section2_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Pulse_Oximetry</name>
+                    <dataType>Number</dataType>
+                    <defaultValue>
+                        <elementReference>CT_or_TUC_Progress_Note.VCC_Pulse_Oximetry__c</elementReference>
+                    </defaultValue>
+                    <fieldText>Pulse Oximetry</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <scale>0</scale>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Tele_EC_MP_Virtual_Visit_Screen_2_Vital_Signs_Section2_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Pulse_Oximetry_Method</name>
+                    <choiceReferences>PulseOximeterMethod</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>forPulseOximetryMethod</elementReference>
+                    </defaultValue>
+                    <fieldText>Pulse Oximetry Method</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Tele_EC_MP_Virtual_Visit_Screen_2_Vital_Signs_Section2_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Date_Time_Recorded_PulseOximetry</name>
+                    <dataType>DateTime</dataType>
+                    <defaultValue>
+                        <elementReference>forPulseOximetryTimeStamp</elementReference>
+                    </defaultValue>
+                    <fieldText>Date/Time Recorded</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>5</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Pain_Score</name>
+            <choiceReferences>PainScore</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>CT_or_TUC_Progress_Note.VCC_Pain_Score__c</elementReference>
+            </defaultValue>
+            <fieldText>Pain Score</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Height</name>
+            <choiceReferences>PatientHeight</choiceReferences>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>CT_or_TUC_Progress_Note.VCC_Height__c</elementReference>
+            </defaultValue>
+            <fieldText>Height</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Tele_EC_MP_Virtual_Visit_Screen_2_Vital_Signs_Section3</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Tele_EC_MP_Virtual_Visit_Screen_2_Vital_Signs_Section3_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Weight</name>
+                    <dataType>Number</dataType>
+                    <defaultValue>
+                        <elementReference>CT_or_TUC_Progress_Note.VCC_Weight__c</elementReference>
+                    </defaultValue>
+                    <fieldText>Weight (lbs)</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <scale>0</scale>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Tele_EC_MP_Virtual_Visit_Screen_2_Vital_Signs_Section3_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Weight_Method</name>
+                    <choiceReferences>WeightMethod</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>forWeightMethod</elementReference>
+                    </defaultValue>
+                    <fieldText>Weight Method</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Tele_EC_MP_Virtual_Visit_Screen_2_Vital_Signs_Section3_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Date_Time_Recorded_Weight</name>
+                    <dataType>DateTime</dataType>
+                    <defaultValue>
+                        <elementReference>forWeightTimeStamp</elementReference>
+                    </defaultValue>
+                    <fieldText>Date/Time Recorded</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>5</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Serum_Glucose</name>
+            <dataType>Number</dataType>
+            <defaultValue>
+                <elementReference>CT_or_TUC_Progress_Note.VCC_Serum_Glucose__c</elementReference>
+            </defaultValue>
+            <fieldText>Serum Glucose</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <scale>0</scale>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>dpProgressNoteType.middleValue</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Chart Consult</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Vital_Comments</name>
+            <fieldText>Vital Comments</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Objective</name>
+            <fieldText>Objective</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>dpProgressNoteType.middleValue</leftValueReference>
+                    <operator>NotEqualTo</operator>
+                    <rightValue>
+                        <stringValue>Chart Consult</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>Provide information about a Plan, Outcome and Referrals</description>
+        <name>Tele_EC_MP_Virtual_Visit_Screen_3</name>
+        <label>Tele-EC MP Virtual Visit Screen 3</label>
+        <locationX>664</locationX>
+        <locationY>2354</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Outcome_Detail_Choice</targetReference>
+        </connector>
+        <fields>
+            <name>ReasonFor_Referral</name>
+            <choiceReferences>TED_Reason_for_Referral</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Reason for Referral</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Other_Reason_for_Referral</name>
+            <dataType>String</dataType>
+            <fieldText>Other Reason for Referral</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>ReasonFor_Referral</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Other</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>ImpressionAssessment</name>
+            <fieldText>Impression Assessment</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Plan</name>
+            <fieldText>Plan</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Outcome</name>
+            <choiceReferences>c911</choiceReferences>
+            <choiceReferences>Emergency_Department</choiceReferences>
+            <choiceReferences>Urgent_Care</choiceReferences>
+            <choiceReferences>Acute_Issue_Resolved</choiceReferences>
+            <choiceReferences>Care_Incomplete</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Outcome</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Outcome_Detail_Urgent</name>
+            <choiceReferences>Community_Urgent_Care</choiceReferences>
+            <choiceReferences>VA_Urgent_Care</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Outcome Detail</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Outcome</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Urgent_Care</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Outcome_Detail_Emergency</name>
+            <choiceReferences>Community_Emergency_Department</choiceReferences>
+            <choiceReferences>VA_Emergency_Department</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Outcome Detail</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Outcome</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Emergency_Department</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Outcome_Detail_Acute</name>
+            <choiceReferences>Referred_to_Primary_Care_Pact</choiceReferences>
+            <choiceReferences>Referred_to_Specialty_Care</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Outcome Detail</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Outcome</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Acute_Issue_Resolved</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Outcome_Detail_Care_Inc</name>
+            <choiceReferences>Declined_by_Veteran</choiceReferences>
+            <choiceReferences>Connection_Failure</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Outcome Detail</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Outcome</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Care_Incomplete</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>PatientVerbalizesUnderstanding_of_the_Care_Plan</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Patient Verbalizes Understanding of the Care Plan</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>dpProgressNoteType.middleValue</leftValueReference>
+                    <operator>NotEqualTo</operator>
+                    <rightValue>
+                        <stringValue>Chart Consult</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>DischargedInstructionsWereReviewed</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Discharged Instructions Were Reviewed</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>dpProgressNoteType.middleValue</leftValueReference>
+                    <operator>NotEqualTo</operator>
+                    <rightValue>
+                        <stringValue>Chart Consult</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Time_Spent_in_Virtual_Visit</name>
+            <dataType>Number</dataType>
+            <fieldText>Time Spent in Virtual Visit (Enter up to 2 digits to reflect time in Minutes)</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <scale>0</scale>
+            <validationRule>
+                <errorMessage>&lt;p&gt;Please input up to 2 digits to reflect time in Minutes&lt;/p&gt;</errorMessage>
+                <formulaExpression>LEN(TEXT({!Time_Spent_in_Virtual_Visit})) &lt;=2</formulaExpression>
+            </validationRule>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>dpProgressNoteType.middleValue</leftValueReference>
+                    <operator>NotEqualTo</operator>
+                    <rightValue>
+                        <stringValue>Chart Consult</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Triage_Time_Interval_Downgraded</name>
+            <choiceReferences>TUC_TriageTimeDowngraded</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Triage Time Interval Downgraded</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>dpProgressNoteType.middleValue</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Chart Consult</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Triage_Time_Interval_Upgraded</name>
+            <choiceReferences>TUC_TriageTimeUpgraded</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Triage Time Interval Upgraded</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>dpProgressNoteType.middleValue</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Chart Consult</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Time_Spent_in_Consultation_Chart_Review</name>
+            <dataType>Number</dataType>
+            <fieldText>Time Spent in Consultation/Chart Review (Enter up to 2 digits to reflect time in Minutes)</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <scale>0</scale>
+            <validationRule>
+                <errorMessage>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Please input up to 2 digits to reflect time in Minutes&lt;/span&gt;&lt;/p&gt;</errorMessage>
+                <formulaExpression>LEN(TEXT({!Time_Spent_in_Consultation_Chart_Review}))&lt;=2</formulaExpression>
+            </validationRule>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>dpProgressNoteType.middleValue</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <stringValue>Chart Consult</stringValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <nextOrFinishButtonLabel>Save</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>Patient&apos;s Current Location (can be an address or a description of a location) and Callback Phone Number</description>
+        <name>TUC_Patient_Location_and_Callback_Number_0</name>
+        <label>Patient Location and Callback Number</label>
+        <locationX>767</locationX>
+        <locationY>1860</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>MP_Virtual_Visit_Record_Type</targetReference>
+        </connector>
+        <fields>
+            <name>VeteranName</name>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Veteran&apos;s Name:&lt;/strong&gt; &lt;span style=&quot;font-size: 14px;&quot;&gt;{!Get_Account.FirstName} {!Get_Account.LastName}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;SSN: &lt;/strong&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;{!Get_Account.HealthCloudGA__TaxId__c}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;DOB:&lt;/strong&gt; {!Get_Account.PersonBirthdate}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Veteran_s_name_SSN_and_DOB_were_verified</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Veteran&apos;s name, SSN, and DOB were verified?</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>TUC_Current_Location</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Get_Case_Record.TUC_Current_Location__c</elementReference>
+            </defaultValue>
+            <fieldText>Current Location</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>TUC_CallbackNumber</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <elementReference>Get_Case_Record.TUC_Callback_Number__c</elementReference>
+            </defaultValue>
+            <fieldText>Callback Number</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>false</isRequired>
+        </fields>
+        <fields>
+            <name>Current_Email_Address</name>
+            <extensionName>flowruntime:email</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Current Email Address</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>disabled</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>value</name>
+                <value>
+                    <elementReference>Get_Case_Record.TED_Contact_Current_Email__c</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>Confirmed_Veteran_s_Current_Location_and_Phone_Number</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Confirmed Veteran&apos;s Current Location and Phone Number</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Update_Flag_Error</name>
+        <label>Update Flag Error</label>
+        <locationX>802</locationX>
+        <locationY>3332</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>false</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>ErrorMessage_0_0_0_0_0_0_0_0_0_0</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(196, 18, 48);&quot;&gt;{!$Flow.FaultMessage}&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Update_Record_Error</name>
+        <label>Update Record Error</label>
+        <locationX>785</locationX>
+        <locationY>2128</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>false</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>ErrorMessage_0_0_0_0_0_0_0</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(196, 18, 48);&quot;&gt;{!$Flow.FaultMessage}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Update_Record_Error_0</name>
+        <label>Update Record Error</label>
+        <locationX>803</locationX>
+        <locationY>3199</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>false</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>ErrorMessage_0_0_0_0_0_0_0_0</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(196, 18, 48);&quot;&gt;{!$Flow.FaultMessage}&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Virtual_Record_Type_Error</name>
+        <label>Virtual Record Type Error</label>
+        <locationX>897</locationX>
+        <locationY>2012</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>false</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>ErrorMessage_0_0_0_0_0_0</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(196, 18, 48);&quot;&gt;{!$Flow.FaultMessage}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>538</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Get_Case_Record</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>allergiesToUpdate</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;{!allergiesCombined}&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <description>This template uses the linebreak constants to create a double line space break so the format of the medications, problems, and allergies can be maintained</description>
+        <name>linebreakTemplate</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!lineBreak}
+{!lineBreak}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>medicationsToUpdate</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;{!medicationsCombined}&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>problemsToUpdate</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!problemsCombined}</text>
+    </textTemplates>
+    <variables>
+        <name>AccountId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>This variable holds a text description of all allergies related to the specified progress note</description>
+        <name>Allergy_Info</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>CallbackNumber_Input</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ConfirmedCurrentLocationAndPhone_Input</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>This variable holds the most recent progress note. Where all data will be copied from and onto the flow and new progress note.</description>
+        <name>CT_or_TUC_Progress_Note</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>VCC_Progress_Note__c</objectType>
+    </variables>
+    <variables>
+        <name>CurrentEmail_Input</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>CurrentLocation_Input</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>DischargedInstructions_Input</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>MedicalReconciliationDone_Input</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>This variable holds a text description of all medications related to the specified progress note</description>
+        <name>Medications_Info</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>NewProgressNoteID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Objective_Input</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>OutcomeChoice</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>OutcomeDetailChoice</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>OutcomeDetailResult</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>PatientVerbalizesUnderstanding_Input</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>Phone_Consent</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <description>This variable holds a text description of all problems related to the specified progress note</description>
+        <name>Problem_Info</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ProgressNoteRecordTypeId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>TUC Case Record ID</description>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>RedirectType</name>
+        <dataType>Picklist</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SerumGlucose_Input</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>TimeSpent_Input</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+    <variables>
+        <name>TriageTimeInterval_Downgraded_Input</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>TriageTimeInterval_Upgraded_Input</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Variable to store the current project ID</description>
+        <name>TUC_CurrentCaseRecordID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>recordId</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <name>TUC_ProgressNoteID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>TUC Virtual Visit Record Type to create a Progress Note</description>
+        <name>TUC_VirtualVisitRecordType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Variable to be used for Virtual Visit and Chart Consult Progress Notes when a Veteran&apos;s Name, SSN, and DOB has been verified, by checking the Caller/Recipient Verified Checkbox in the Patient Location and Callback Number Screen. ** For Chart Consult, value defaulted to False. Current functionality does not include Caller Verification.</description>
+        <name>varCallerVerified</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varEvaluationType</name>
+        <dataType>Picklist</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varProgressNoteId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>The variable will assign a Date/Time value for when Vitals Signs were registered. If a Triage tool was used the Date/Time value will be Triage Date, if not, the Clinical Triage Progress Note Created Date/Time.</description>
+        <name>varTriage_or_PNDate</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Video_Consent</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+</Flow>

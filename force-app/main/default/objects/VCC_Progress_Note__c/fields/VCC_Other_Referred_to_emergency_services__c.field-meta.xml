@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Other_Referred_to_emergency_services__c</fullName>
+    <description>Populated when &quot;Referred patient to emergency services&quot; is checked and an &quot;Other&quot; action is taken</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>Populate when &quot;Referred patient to emergency services&quot; is checked and an &quot;Other&quot; action is taken</inlineHelpText>
+    <label>Other Description</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

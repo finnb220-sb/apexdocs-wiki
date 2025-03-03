@@ -1,0 +1,242 @@
+<template>
+    <lightning-modal-header label="Edit Mailing Addresses"></lightning-modal-header>
+
+    <lightning-modal-body>
+        <div lwc:if={isLoading} class="slds-is-relative slds-m-around_xx-large" style="height: 300px">
+            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+        </div>
+        <div lwc:else>
+            <template lwc:if={page.one}>
+                <c-base-error-message
+                    variant="note"
+                    message="Address change will be applied to all selected facilities">
+                </c-base-error-message>
+                <div class="slds-grid slds-var-m-top_x-large">
+                    <div class="slds-col slds-size_1-of-13 slds-large-size_1-of-12"></div>
+
+                    <!-- Left Section for Selected Facilities -->
+                    <div class="slds-col slds-size_1-of-3 slds-large-size_1-of-4">
+                        <div class="slds-var-m-around_x-large">
+                            <h3 style="font-weight: bold">Selected Facilities:</h3>
+                            <ul class="slds-list_bare">
+                                <template for:each={addresses} for:item="site">
+                                    <li key={site.facilityId}>{site.facilityName}</li>
+                                </template>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Right Section for Address Input Fields -->
+                    <div
+                        class="slds-col slds-size_2-of-3 slds-large-size_1-of-2 slds-border_left slds-border_color_gray">
+                        <div class="slds-var-m-horizontal_xx-large">
+                            <lightning-combobox
+                                label="Enter new address or use existing mailing address"
+                                value="New Address"
+                                data-field="addressSelector"
+                                options={addressOptions}
+                                onchange={handleAddressChange}>
+                            </lightning-combobox>
+
+                            <!-- Address Input Fields -->
+                            <div class="slds-grid slds-gutters slds-wrap">
+                                <template for:each={mailFields} for:item="field">
+                                    <lightning-input
+                                        key={field.key}
+                                        lwc:if={field.text}
+                                        data-id={field.key}
+                                        data-field="mailing"
+                                        lwc:spread={field.properties}
+                                        onchange={handleInputChange}>
+                                    </lightning-input>
+                                    <lightning-combobox
+                                        key={field.key}
+                                        lwc:if={field.combobox}
+                                        data-id={field.key}
+                                        data-field="mailing"
+                                        lwc:spread={field.properties}
+                                        onchange={handleInputChange}>
+                                    </lightning-combobox>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-13 slds-large-size_1-of-12"></div>
+                </div>
+            </template>
+
+            <template lwc:if={page.two}>
+                <div lwc:if={noMatchingAddress} class="slds-var-m-bottom_x-large slds-m-horizontal_xx-large">
+                    <c-base-error-message variant="warning" message={noMatchingMessage}></c-base-error-message>
+                </div>
+                <div lwc:if={noValidation} class="slds-var-m-bottom_x-large slds-m-horizontal_xx-large">
+                    <c-base-error-message variant="warning" message={noValidationMessage}></c-base-error-message>
+                </div>
+                <div class="slds-var-m-bottom_x-large slds-m-horizontal_xx-large">
+                    <c-base-error-message variant="note" message={noteSitesToSet}></c-base-error-message>
+                </div>
+
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-8 slds-large-size_1-of-6"></div>
+                    <div class="slds-col slds-size_3-of-4 slds-large-size_2-of-3">
+                        <fieldset class="slds-form-element form-container">
+                            <legend class="slds-form-element__legend slds-form-element__label picker-label"></legend>
+                            <div class="form-wrapper slds-form-element__control">
+                                <div class="slds-grid slds-gutters">
+                                    <!-- User Input Address Card -->
+                                    <div class="slds-col slds-size_1-of-2">
+                                        <div class="slds-visual-picker slds-visual-picker_vertical" style="width: 100%">
+                                            <input
+                                                checked={selectedUser}
+                                                type="checkbox"
+                                                data-item="userAddress"
+                                                id="userAddress"
+                                                value={selectedUser}
+                                                onchange={handleCheckboxSelect} />
+                                            <label for="userAddress">
+                                                <div class="" tabindex="0">
+                                                    <span
+                                                        class="slds-visual-picker__figure slds-visual-picker__text"
+                                                        style="width: 100%; height: auto">
+                                                        <div class="slds-text-title_bold" tabindex="0">
+                                                            Entered Address
+                                                        </div>
+                                                        <div>
+                                                            <p lwc:if={address.street1}>{address.street1}</p>
+                                                            <p lwc:if={address.street2}>{address.street2}</p>
+                                                            <p lwc:if={address.street3}>{address.street3}</p>
+                                                            <p>{address.city}, {address.state} {address.zipExt}</p>
+                                                        </div>
+                                                    </span>
+                                                    <span class="slds-icon_container slds-visual-picker__text-check">
+                                                        <lightning-icon
+                                                            variant="inverse"
+                                                            icon-name="utility:check"
+                                                            size="x-small"
+                                                            class="slds-icon-text-check"></lightning-icon>
+                                                    </span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- AVS Address Card -->
+                                    <div class="slds-col slds-size_1-of-2">
+                                        <div class="slds-visual-picker slds-visual-picker_vertical" style="width: 100%">
+                                            <input
+                                                checked={selectedAvs}
+                                                disabled={avsDisableCard}
+                                                type="checkbox"
+                                                data-item="avsAddress"
+                                                id="avsAddress"
+                                                value={selectedAvs}
+                                                onchange={handleCheckboxSelect} />
+                                            <label for="avsAddress">
+                                                <div class="" tabindex="0">
+                                                    <span
+                                                        class="slds-visual-picker__figure slds-visual-picker__text"
+                                                        style="width: 100%; height: auto">
+                                                        <div class="slds-text-title_bold" tabindex="0">
+                                                            USPS Confirmed Address
+                                                        </div>
+                                                        <div if:false={avsDisableCard}>
+                                                            <p lwc:if={avsAddress.street1}>{avsAddress.street1}</p>
+                                                            <p lwc:if={avsAddress.street2}>{avsAddress.street2}</p>
+                                                            <p lwc:if={avsAddress.street3}>{avsAddress.street3}</p>
+                                                            <p>
+                                                                {avsAddress.city}, {avsAddress.state}
+                                                                {avsAddress.zipExt}
+                                                            </p>
+                                                        </div>
+                                                    </span>
+                                                    <span class="slds-icon_container slds-visual-picker__text-check">
+                                                        <lightning-icon
+                                                            variant="inverse"
+                                                            icon-name="utility:check"
+                                                            size="x-small"
+                                                            class="slds-icon-text-check"></lightning-icon>
+                                                    </span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <p class="slds-m-vertical_large">Would you still like to continue?</p>
+                    </div>
+                    <div class="slds-col slds-size_1-of-8 slds-large-size_1-of-6"></div>
+                </div>
+            </template>
+
+            <template lwc:if={page.three}>
+                <div lwc:if={siteUpdateFailed} class="slds-var-m-vertical_x-large slds-m-horizontal_xx-large">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_1-of-8 slds-large-size_1-of-4"></div>
+                        <div class="slds-col slds-size_3-of-4 slds-large-size_1-of-2">
+                            <c-base-error-message variant="error" message={siteFailedMessage}></c-base-error-message>
+                            <template for:each={siteUpdateFailed} for:item="site">
+                                <p key={site.key} class="slds-var-m-vertical_medium">{site.label}</p>
+                            </template>
+                        </div>
+                        <div class="slds-col slds-size_1-of-8 slds-large-size_1-of-4"></div>
+                    </div>
+                </div>
+                <div lwc:if={siteUpdateSuccess} class="slds-var-m-bottom_x-large slds-m-horizontal_xx-large">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_1-of-8 slds-large-size_1-of-4"></div>
+                        <div class="slds-col slds-size_3-of-4 slds-large-size_1-of-2">
+                            <c-base-error-message variant="success" message={siteSuccessMessage}></c-base-error-message>
+                            <template for:each={siteUpdateSuccess} for:item="site">
+                                <p key={site.key} class="slds-var-m-vertical_medium">{site.label}</p>
+                            </template>
+                        </div>
+                        <div class="slds-col slds-size_1-of-8 slds-large-size_1-of-4"></div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </lightning-modal-body>
+
+    <lightning-modal-footer>
+        <div class="slds-grid slds-gutters slds-grid_align-end">
+            <template lwc:if={page.one}>
+                <lightning-button class="slds-col" variant="neutral" label="Cancel" onclick={handleClose}>
+                </lightning-button>
+                <lightning-button
+                    class="slds-col slds-col_bump-left"
+                    variant="brand"
+                    label="Submit"
+                    disabled={fieldsInvalid}
+                    onclick={handleVerify}>
+                </lightning-button>
+            </template>
+            <template lwc:elseif={page.two}>
+                <lightning-button class="slds-col" variant="neutral" label="Back" onclick={handleBack}>
+                </lightning-button>
+                <lightning-button
+                    lwc:if={noMatchingAddress}
+                    class="slds-col slds-col_bump-left"
+                    disabled={noAddressCardSelected}
+                    variant="brand"
+                    label="Override"
+                    onclick={handleSubmit}>
+                </lightning-button>
+                <lightning-button
+                    lwc:else
+                    class="slds-col slds-col_bump-left"
+                    disabled={noAddressCardSelected}
+                    variant="brand"
+                    label="Confirm"
+                    onclick={handleSubmit}>
+                </lightning-button>
+            </template>
+            <template lwc:elseif={page.three}>
+                <lightning-button class="slds-col" variant="brand" label="Close" onclick={handleComplete}>
+                </lightning-button>
+            </template>
+        </div>
+    </lightning-modal-footer>
+</template>

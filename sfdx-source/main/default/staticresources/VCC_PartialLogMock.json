@@ -1,0 +1,73 @@
+{
+	"data": {
+		"items": [
+			{
+				"dispensedDate": "MAY 23, 1994@14:51",
+				"division": "YOUNGSTOWN",
+				"divisionName": "YOUNGSTOWN",
+				"loginDate": "MAY 23, 1994@14:51",
+				"lot#": "3141",
+				"ndc": "65702-04.38-10",
+				"partialDate": "MAY 23, 1994",
+				"pharmacistName": "MAURER,EDWARD E",
+				"qty": 10,
+				"releasedDate/Time": "MAY 23, 1994@15:23:53",
+				"routing": "MAIL"
+			},
+			{
+				"dispensedDate": "JUN 29, 1997@12:54",
+				"division": "YOUNGSTOWN",
+				"divisionName": "YOUNGSTOWN",
+				"loginDate": "JUN 29, 1997@12:54",
+				"lot#": "5236",
+				"ndc": "65702-04.38-10",
+				"partialDate": "JUN 29, 1997",
+				"pharmacistName": "MAURER,EDWARD E",
+				"qty": 20,
+				"releasedDate/Time": "JUN 29, 1997@13:25:41",
+				"routing": "WINDOW"
+			},
+			{
+				"dispensedDate": "AUG 24, 1994@11:08",
+				"division": "YOUNGSTOWN",
+				"divisionName": "YOUNGSTOWN",
+				"loginDate": "AUG 24, 1994@11:08",
+				"lot#": "3233",
+				"ndc": "65702-04.38-10",
+				"partialDate": "AUG 24, 1994",
+				"pharmacistName": "FLANCINBAUM, CASPER",
+				"qty": 10,
+				"releasedDate/Time": "AUG 24, 1994@11:30:20",
+				"routing": "WINDOW"
+			},
+			{
+				"dispensedDate": "AUG 14, 1999@11:08",
+				"division": "YOUNGSTOWN",
+				"divisionName": "YOUNGSTOWN",
+				"loginDate": "AUG 14, 1999@11:08",
+				"lot#": "8517",
+				"ndc": "65702-04.38-10",
+				"partialDate": "AUG 14, 1999",
+				"pharmacistName": "BRIGSTOCK, KELVIN",
+				"qty": 10,
+				"releasedDate/Time": "AUG 14, 1999@11:30:20",
+				"routing": "MAIL"
+			},
+			{
+				"dispensedDate": "JUN 13, 2001@11:08",
+				"division": "YOUNGSTOWN",
+				"divisionName": "YOUNGSTOWN",
+				"loginDate": "JUN 13, 2001@11:08",
+				"lot#": "4342",
+				"ndc": "65702-04.38-10",
+				"partialDate": "JUN 13, 2001",
+				"pharmacistName": "GRACE, JASMINE",
+				"qty": 10,
+				"releasedDate/Time": "JUN 13, 2001@11:30:20",
+				"routing": "WINDOW"
+			}
+		],
+		"total items": 5,
+		"updated": "20221109155228-0400"
+	}
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enforce_Location_Case_and_Peer_Review</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND ( NTSP_Facility__c != NTSP_Case__r.NTSP_Facility__c, RecordType.Name = &apos;Triage Nurse Peer Review&apos; )</errorConditionFormula>
+    <errorDisplayField>NTSP_Facility__c</errorDisplayField>
+    <errorMessage>Peer review facility must match with case facility</errorMessage>
+</ValidationRule>

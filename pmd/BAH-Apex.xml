@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ruleset
+    name="BAHApex"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd"
+>
+    <description>Booz Allen Code Enforcement</description>
+
+    <rule
+        name="CRUDMustBeInRepo"
+        language="apex"
+        class="com.bah.pmd.apex.rule.bestpractices.CRUDMustBeInRepo"
+        message="CRUD operations such as SOQL statements and DML operations must be within a Repository class."
+    >
+        <description>
+            Crud Operations are not allowed outside of Repository classes.
+        </description>
+        <priority>2</priority>
+        <properties>
+            <property name="deescalate-tests" value="true" />
+            <property name="deescalate-tests-level" value="5" />
+            <property name="repo-name-regex" value="^VCR_\w*Repo$" />
+        </properties>
+        <example><![CDATA[
+            // This example follows the accepted standard regarding placement and API visibility of repo (data access) classes.
+            public with sharing class VCC_SomeObjectRepo extends BaseRepo{
+            }
+        ]]></example>
+    </rule>
+    <rule name="DescriptionMustHaveText" language="apex" class="com.bah.pmd.apex.rule.documentation.DescriptionMustHaveText" message="description ApexDoc tags must have associated text.">
+        <description><![CDATA[@description ApexDoc tags must have associated text that is longer than ten characters.]]></description>
+        <priority>3</priority>
+        <properties>
+            <property name="minLength" value="10" />
+            <property name="descriptionFormat" value="@description\s+.*length,}+\s" />
+        </properties>
+    </rule>
+
+    <rule name="ExtendedClassNamingConventionsRule" language="apex" class="com.bah.pmd.apex.rule.codestyle.ExtendedClassNamingConventionsRule" message="Classes must be named according to accepted standards. The name {0} for {1} does not follow the regular expression {1}">
+        <description><![CDATA[Classes must be named in accordance with accepted standards]]>
+        </description>
+        <priority>3</priority>
+        <properties>
+            <property
+                name="patternOuterClass"
+                description="Strongly typed regular expression. Validates that the outer class has a prefix indicating the 'namespace'."
+                value="(VATEST?|[A-Z]{2,4})_[a-zA-Z0-9]*" />
+            <property
+                name="patternTestClass"
+                description="Strongly typed regular expression. Validates that the outer class has a prefix indicating the 'namespace'."
+                value="(VATEST?|[A-Z]{2,4})_[a-zA-Z0-9]*" />
+            <property
+                name="patternAbstractClass"
+                description="Strongly typed regular expression. Validates that the abstract has a prefix indicating the 'namespace'."
+                value="(VATEST?|[A-Z]{2,4})_[a-zA-Z0-9]*" />
+            <property
+                name="patternInterface"
+                description="Strongly typed regular expression. Validates that the interface has a prefix indicating the 'namespace'."
+                value="(VATEST?|[A-Z]{2,4})_[a-zA-Z0-9]*" />
+            <property
+                name="patternInnerClass"
+                description="Strongly typed regular expression. Validates that the inner class has no prefix."
+                value="[A-Z][a-zA-Z0-9]*" />
+        </properties>
+        <example><![CDATA[
+            // This example is a naming standard violation, as it is in an inner class and needs no prefix.
+
+            public with sharing class VCC_MyOuter{
+
+                public class VCC_MyOuter_MyInner{
+                }
+            }
+        ]]></example>
+    </rule>
+    <rule
+        name="SafeRepoCheckRule"
+        language="apex"
+        class="com.bah.pmd.apex.rule.security.SafeRepoCheckRule"
+        message="Unsafe operations within a repository class require a @justification tag in the class header. Violation details: {9}">
+
+    </rule>
+
+
+
+
+</ruleset>

@@ -1,0 +1,181 @@
+* {
+    --slds-c-card-header-spacing-inline-start: 0rem;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row; /*aligning elements in div horizontally*/
+    gap: 0.5rem; /*assigning gap between items in row*/
+    justify-content: flex-end; /*aligning content on the right side of the div*/
+}
+
+.pagination_wrapper {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.record_count_wrapper {
+    text-align: center;
+    min-width: 12ch;
+}
+
+.parent {
+    position: relative;
+}
+
+.bottom {
+    position: absolute;
+    top: 72.5%;
+    left: 40%;
+}
+
+[data-id='search'] {
+    width: 25%;
+}
+
+[data-id='date-search'] {
+    margin-left: auto;
+    width: 360px;
+}
+
+.slds-card__header-title {
+    font-size: 16px !important;
+}
+
+.horizontal {
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+}
+
+.vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 0.75rem;
+}
+
+.info {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.pagination-buttons {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.center {
+    justify-content: center !important;
+}
+
+.center.horizontal {
+    gap: 3rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    padding: none;
+}
+
+.grid {
+    padding-top: 1%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 0.5rem 2rem;
+    align-items: stretch;
+}
+
+.grid > *:nth-child(2n-1):nth-last-of-type(1) {
+    grid-column: span 2;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+}
+
+.detail-cell {
+    /* gap: .5rem; */
+    border-bottom: 0.5px solid lightgray;
+    padding: 5px;
+    min-height: 42px;
+}
+
+.displayCards {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1%;
+    gap: 1rem;
+}
+
+.vital-single-table {
+    border-bottom: none !important;
+}
+
+.pagination-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.pagination-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+/* lightning-button {
+    --sds-c-button-brand-color-background: white;
+    --sds-c-button-brand-text-color:#6B6B6B;
+    --sds-c-button-brand-text-color-hover:#6B6B6B;
+    --sds-c-button-brand-color-background-hover: white;
+    --sds-c-button-brand-text-color-active:#6B6B6B;
+    --sds-c-button-brand-color-background-active: white;
+    --sds-c-button-brand-color-border: #6B6B6B;
+    --sds-c-button-brand-color-border-hover: #6B6B6B;
+} */
+
+:host .High {
+    --sds-c-icon-color-foreground-default: red;
+    /* --sds-c-icon-color-background: red; */
+}
+
+:host .Normal {
+    --sds-c-icon-color-foreground-default: green;
+    /* --sds-c-icon-color-background: grey; */
+}
+
+:host .Low {
+    --sds-c-icon-color-foreground-default: blue;
+    /* --sds-c-icon-color-background: blue; */
+}
+
+.units {
+    display: flex;
+    flex-direction: row;
+    gap: none;
+}
+
+.columns-no-gap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.height-limit {
+    min-height: 200px;
+}
+
+lightning-spinner {
+    background-color: white;
+}

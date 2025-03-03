@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Queue__c</fullName>
+    <description>The name of the Call Center that the softphone caller is calling from. E.g. Scheduling. Maps to the Bucher + Suter variable &quot;callVariable5&quot;</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>The name of the Call Center that the softphone caller is calling from. E.g. Scheduling</inlineHelpText>
+    <label>Queue</label>
+    <length>100</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

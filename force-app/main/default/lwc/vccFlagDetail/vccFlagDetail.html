@@ -1,0 +1,47 @@
+<template>
+    <lightning-layout multiple-rows horizontal-align="spread" tabindex="0">
+        <lightning-layout-item size="6" class="slds-var-p-right_large">
+            <c-vcc-base-detail-field label="Status" value={selectedRecord.status}></c-vcc-base-detail-field>
+        </lightning-layout-item>
+        <lightning-layout-item size="6" class="slds-var-p-left_large">
+            <c-vcc-base-detail-field label="Flag Type" value={selectedRecord.flagType}></c-vcc-base-detail-field>
+        </lightning-layout-item>
+
+        <lightning-layout-item size="6" class="slds-var-p-right_large">
+            <c-vcc-base-detail-field label="Category" value={selectedRecord.category.value}></c-vcc-base-detail-field>
+        </lightning-layout-item>
+        <lightning-layout-item size="6" class="slds-var-p-left_large">
+            <c-vcc-base-detail-field
+                label="Originating Site"
+                value={selectedRecord.origSite.name}></c-vcc-base-detail-field>
+        </lightning-layout-item>
+
+        <lightning-layout-item size="6" class="slds-var-p-right_large">
+            <c-vcc-base-detail-field
+                label="Approved By"
+                value={selectedRecord.approvedBy.name}></c-vcc-base-detail-field>
+        </lightning-layout-item>
+        <lightning-layout-item size="6" class="slds-var-p-left_large">
+            <c-vcc-base-detail-field
+                label="Initial Assignment Date"
+                value={selectedRecord.assigned.assignedDate}
+                type="date-local"></c-vcc-base-detail-field>
+        </lightning-layout-item>
+
+        <lightning-layout-item size="6" class="slds-var-p-right_large">
+            <c-vcc-base-detail-field
+                label="Next Review Date"
+                value={selectedRecord.reviewDue.reviewDate}
+                type="date-local"></c-vcc-base-detail-field>
+        </lightning-layout-item>
+        <lightning-layout-item size="6" class="slds-var-p-left_large">
+            <c-vcc-base-detail-field label="Owner Site" value={selectedRecord.ownSite.name}></c-vcc-base-detail-field>
+        </lightning-layout-item>
+
+        <lightning-layout-item size="12">
+            <c-vcc-base-detail-field
+                label="Assignment Narrative"
+                value={selectedRecord.content.content}></c-vcc-base-detail-field>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Provided_Needs_Vitals_Value</fullName>
+    <active>true</active>
+    <errorConditionFormula>BEGINS( RecordType.DeveloperName, &quot;VCC_&quot;) &amp;&amp; !$Permission.DisableTriggersFlag &amp;&amp; AND ( RecordType.DeveloperName =
+        &quot;VCC_Virtual_Visit_Progress_Note&quot;, OR ( ISCHANGED(VCC_Blood_Pressure__c), ISCHANGED(VCC_Blood_Pressure_Method__c), ISCHANGED(VCC_Temperature__c),
+        ISCHANGED(VCC_Temperature_F_Method__c), ISCHANGED(VCC_Heart_Rate__c), ISCHANGED(VCC_Heart_Rate_BPM_Method__c), ISCHANGED(VCC_Pulse_Oximeter__c),
+        ISCHANGED(VCC_Pulse_Oximeter_Method__c), ISCHANGED(VCC_Weight__c), ISCHANGED(VCC_Weight_Method__c)), OR (ISBLANK(VCC_Blood_Pressure__c) &amp;&amp; NOT(ISPICKVAL(
+        VCC_Blood_Pressure_Method__c, &quot;&quot; )), ISBLANK( VCC_Temperature__c ) &amp;&amp; NOT(ISPICKVAL( VCC_Temperature_F_Method__c , &quot;&quot; )), ISBLANK(
+        VCC_Heart_Rate__c ) &amp;&amp; NOT(ISPICKVAL( VCC_Heart_Rate_BPM_Method__c , &quot;&quot; )), ISBLANK( VCC_Pulse_Oximeter__c ) &amp;&amp; NOT(ISPICKVAL(
+        VCC_Pulse_Oximeter_Method__c , &quot;&quot; )), ISBLANK( VCC_Weight__c ) &amp;&amp; NOT(ISPICKVAL( VCC_Weight_Method__c , &quot;&quot; ))) )</errorConditionFormula>
+    <errorMessage>Vitals Methods cannot be Provided or Observed, If Vitals are not entered.</errorMessage>
+</ValidationRule>

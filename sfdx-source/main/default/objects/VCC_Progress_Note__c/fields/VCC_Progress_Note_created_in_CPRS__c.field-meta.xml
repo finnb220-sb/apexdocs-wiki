@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Progress_Note_created_in_CPRS__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description
+    >Used to indicate if a note has been created in CPRS. This field was created for Jira ticket number CCCM-14686 and used when signing a note and a duplicate patient is found
+        in VistA.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Please check the checkbox if you have created and signed the note above as a new Progress Note in CPRS</inlineHelpText>
+    <label>Progress Note created in CPRS</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

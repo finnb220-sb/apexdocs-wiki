@@ -1,0 +1,21 @@
+<template>
+    <c-logger></c-logger>
+    <!-- <lightning-card> -->
+    <!-- <slot name="title" class="slds-text-align_center slds-text-heading_medium">
+            <h1>{labels.vccPatientRegisteredFacilitiesTitle}</h1>
+        </slot> -->
+    <template if:true={isLoading}>
+        <lightning-spinner style="z-index: 0" alternative-text="Loading" size="medium"></lightning-spinner>
+    </template>
+    <template if:false={isLoading}>
+        <c-vcc-preferred-facilities
+            mpi-data={mpiData}
+            has-error={hasError}
+            hidecheckboxcolumn={hidecheckboxcolumn}
+            onrowselect={handleRowSelect}
+            preselectedrows={selectedFacilitySiteNameArray}
+        >
+        </c-vcc-preferred-facilities>
+    </template>
+    <!-- </lightning-card> -->
+</template>

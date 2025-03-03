@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Recent_View_Reset__c</fullName>
+    <description>This field is used for the VAHC team to reset the recent view record timer when a user completes a scheduling action</description>
+    <encryptionScheme>None</encryptionScheme>
+    <label>Recent View Reset</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Addiction Medicine</fullName>
+        <default>false</default>
+        <label>Addiction Medicine</label>
+    </customValue>
+    <customValue>
+        <fullName>Allergy/Immunology</fullName>
+        <default>false</default>
+        <label>Allergy/Immunology</label>
+    </customValue>
+    <customValue>
+        <fullName>Amputation Clinic</fullName>
+        <default>false</default>
+        <label>Amputation Clinic</label>
+    </customValue>
+    <customValue>
+        <fullName>Anesthesiology</fullName>
+        <default>false</default>
+        <label>Anesthesiology</label>
+    </customValue>
+    <customValue>
+        <fullName>Anti-Coagulation Clinic</fullName>
+        <default>false</default>
+        <label>Anti-Coagulation Clinic</label>
+    </customValue>
+    <customValue>
+        <fullName>Audiology</fullName>
+        <default>false</default>
+        <label>Audiology</label>
+    </customValue>
+    <customValue>
+        <fullName>Blood Pressure Evaluation</fullName>
+        <default>false</default>
+        <label>Blood Pressure Evaluation</label>
+    </customValue>
+    <customValue>
+        <fullName>Brain Injury</fullName>
+        <default>false</default>
+        <label>Brain Injury</label>
+    </customValue>
+    <customValue>
+        <fullName>Bros (Blind Rehab O/P Spec)</fullName>
+        <default>false</default>
+        <label>Bros (Blind Rehab O/P Spec)</label>
+    </customValue>
+    <customValue>
+        <fullName>Cardiac Catheterization</fullName>
+        <default>false</default>
+        <label>Cardiac Catheterization</label>
+    </customValue>
+    <customValue>
+        <fullName>Cardiac Implantable Electronic Devices (Cied)</fullName>
+        <default>false</default>
+        <label>Cardiac Implantable Electronic Devices (Cied)</label>
+    </customValue>
+    <customValue>
+        <fullName>Cardiac Surgery</fullName>
+        <default>false</default>
+        <label>Cardiac Surgery</label>
+    </customValue>
+    <customValue>
+        <fullName>Cardiology</fullName>
+        <default>false</default>
+        <label>Cardiology</label>
+    </customValue>
+    <customValue>
+        <fullName>Chart Consult</fullName>
+        <default>false</default>
+        <label>Chart Consult</label>
+    </customValue>
+    <customValue>
+        <fullName>Clinical Pharmacy</fullName>
+        <default>false</default>
+        <label>Clinical Pharmacy</label>
+    </customValue>
+    <customValue>
+        <fullName>Community Care Consult</fullName>
+        <default>false</default>
+        <label>Community Care Consult</label>
+    </customValue>
+    <customValue>
+        <fullName>Community Nursing Home (Cnh) Follow-Up</fullName>
+        <default>false</default>
+        <label>Community Nursing Home (Cnh) Follow-Up</label>
+    </customValue>
+    <customValue>
+        <fullName>Computerized Tomography (Ct)</fullName>
+        <default>false</default>
+        <label>Computerized Tomography (Ct)</label>
+    </customValue>
+    <customValue>
+        <fullName>Cysto Room Unit For Outpatient</fullName>
+        <default>false</default>
+        <label>Cysto Room Unit For Outpatient</label>
+    </customValue>
+    <customValue>
+        <fullName>Dental</fullName>
+        <default>false</default>
+        <label>Dental</label>
+    </customValue>
+    <customValue>
+        <fullName>Dermatology</fullName>
+        <default>false</default>
+        <label>Dermatology</label>
+    </customValue>
+    <customValue>
+        <fullName>Diabetes</fullName>
+        <default>false</default>
+        <label>Diabetes</label>
+    </customValue>
+    <customValue>
+        <fullName>Eeg</fullName>
+        <default>false</default>
+        <label>Eeg</label>
+    </customValue>
+    <customValue>
+        <fullName>Emergency Medicine</fullName>
+        <default>false</default>
+        <label>Emergency Medicine</label>
+    </customValue>
+    <customValue>
+        <fullName>Endocrinology</fullName>
+        <default>false</default>
+        <label>Endocrinology</label>
+    </customValue>
+    <customValue>
+        <fullName>Epilepsy</fullName>
+        <default>false</default>
+        <label>Epilepsy</label>
+    </customValue>
+    <customValue>
+        <fullName>Eye Telehealth Screening</fullName>
+        <default>false</default>
+        <label>Eye Telehealth Screening</label>
+    </customValue>
+    <customValue>
+        <fullName>Gastroenterology</fullName>
+        <default>false</default>
+        <label>Gastroenterology</label>
+    </customValue>
+    <customValue>
+        <fullName>General Internal Medicine</fullName>
+        <default>false</default>
+        <label>General Internal Medicine</label>
+    </customValue>
+    <customValue>
+        <fullName>General Surgery</fullName>
+        <default>false</default>
+        <label>General Surgery</label>
+    </customValue>
+    <customValue>
+        <fullName>Genomic Care</fullName>
+        <default>false</default>
+        <label>Genomic Care</label>
+    </customValue>
+    <customValue>
+        <fullName>Geriatric Eval &amp; Mgmt (Gem)</fullName>
+        <default>false</default>
+        <label>Geriatric Eval &amp; Mgmt (Gem)</label>
+    </customValue>
+    <customValue>
+        <fullName>Geriatric Problem-Focused Consultation Clinic</fullName>
+        <default>false</default>
+        <label>Geriatric Problem-Focused Consultation Clinic</label>
+    </customValue>
+    <customValue>
+        <fullName>Geriatric Psychiatry</fullName>
+        <default>false</default>
+        <label>Geriatric Psychiatry</label>
+    </customValue>
+    <customValue>
+        <fullName>Geriatrics</fullName>
+        <default>false</default>
+        <label>Geriatrics</label>
+    </customValue>
+    <customValue>
+        <fullName>Geripact</fullName>
+        <default>false</default>
+        <label>Geripact</label>
+    </customValue>
+    <customValue>
+        <fullName>Geropsych Group</fullName>
+        <default>false</default>
+        <label>Geropsych Group</label>
+    </customValue>
+    <customValue>
+        <fullName>Geropsych Indiv</fullName>
+        <default>false</default>
+        <label>Geropsych Indiv</label>
+    </customValue>
+    <customValue>
+        <fullName>Gi Endoscopy</fullName>
+        <default>false</default>
+        <label>Gi Endoscopy</label>
+    </customValue>
+    <customValue>
+        <fullName>Grecc Clinical Demo</fullName>
+        <default>false</default>
+        <label>Grecc Clinical Demo</label>
+    </customValue>
+    <customValue>
+        <fullName>Gynecology</fullName>
+        <default>false</default>
+        <label>Gynecology</label>
+    </customValue>
+    <customValue>
+        <fullName>Hbpc - Physician</fullName>
+        <default>false</default>
+        <label>Hbpc - Physician</label>
+    </customValue>
+    <customValue>
+        <fullName>Hchv/Hcmi</fullName>
+        <default>false</default>
+        <label>Hchv/Hcmi</label>
+    </customValue>
+    <customValue>
+        <fullName>Hematology/Oncology</fullName>
+        <default>false</default>
+        <label>Hematology/Oncology</label>
+    </customValue>
+    <customValue>
+        <fullName>Hospice Care</fullName>
+        <default>false</default>
+        <label>Hospice Care</label>
+    </customValue>
+    <customValue>
+        <fullName>Hypertension</fullName>
+        <default>false</default>
+        <label>Hypertension</label>
+    </customValue>
+    <customValue>
+        <fullName>Infection Prevention</fullName>
+        <default>false</default>
+        <label>Infection Prevention</label>
+    </customValue>
+    <customValue>
+        <fullName>Infectious Disease</fullName>
+        <default>false</default>
+        <label>Infectious Disease</label>
+    </customValue>
+    <customValue>
+        <fullName>Intensive Community Mental Health Recovery Services (Icmhr)-Individual</fullName>
+        <default>false</default>
+        <label>Intensive Community Mental Health Recovery Services (Icmhr)-Individual</label>
+    </customValue>
+    <customValue>
+        <fullName>Intensive Sub Use Disorder Group</fullName>
+        <default>false</default>
+        <label>Intensive Sub Use Disorder Group</label>
+    </customValue>
+    <customValue>
+        <fullName>Interventional Radiography (Ir) Procedure</fullName>
+        <default>false</default>
+        <label>Interventional Radiography (Ir) Procedure</label>
+    </customValue>
+    <customValue>
+        <fullName>Kinesiotherapy</fullName>
+        <default>false</default>
+        <label>Kinesiotherapy</label>
+    </customValue>
+    <customValue>
+        <fullName>Laboratory</fullName>
+        <default>false</default>
+        <label>Laboratory</label>
+    </customValue>
+    <customValue>
+        <fullName>Medical Foster Home</fullName>
+        <default>false</default>
+        <label>Medical Foster Home</label>
+    </customValue>
+    <customValue>
+        <fullName>Mh Clinic Group</fullName>
+        <default>false</default>
+        <label>Mh Clinic Group</label>
+    </customValue>
+    <customValue>
+        <fullName>Mh Clinic Ind</fullName>
+        <default>false</default>
+        <label>Mh Clinic Ind</label>
+    </customValue>
+    <customValue>
+        <fullName>Mh Medical Primary Care</fullName>
+        <default>false</default>
+        <label>Mh Medical Primary Care</label>
+    </customValue>
+    <customValue>
+        <fullName>Mh Risk Factor Reduction Grp</fullName>
+        <default>false</default>
+        <label>Mh Risk Factor Reduction Grp</label>
+    </customValue>
+    <customValue>
+        <fullName>Neurology</fullName>
+        <default>false</default>
+        <label>Neurology</label>
+    </customValue>
+    <customValue>
+        <fullName>Neurosurgery</fullName>
+        <default>false</default>
+        <label>Neurosurgery</label>
+    </customValue>
+    <customValue>
+        <fullName>Not Recorded</fullName>
+        <default>false</default>
+        <label>Not Recorded</label>
+    </customValue>
+    <customValue>
+        <fullName>Nuclear Medicine And Pet (Nm &amp; Pet)</fullName>
+        <default>false</default>
+        <label>Nuclear Medicine And Pet (Nm &amp; Pet)</label>
+    </customValue>
+    <customValue>
+        <fullName>Nursing</fullName>
+        <default>false</default>
+        <label>Nursing</label>
+    </customValue>
+    <customValue>
+        <fullName>Nutrition</fullName>
+        <default>false</default>
+        <label>Nutrition</label>
+    </customValue>
+    <customValue>
+        <fullName>OB/GYN</fullName>
+        <default>false</default>
+        <label>OB/GYN</label>
+    </customValue>
+    <customValue>
+        <fullName>Occupational Medicine</fullName>
+        <default>false</default>
+        <label>Occupational Medicine</label>
+    </customValue>
+    <customValue>
+        <fullName>Occupational Therapy</fullName>
+        <default>false</default>
+        <label>Occupational Therapy</label>
+    </customValue>
+    <customValue>
+        <fullName>Oncology/Tumor</fullName>
+        <default>false</default>
+        <label>Oncology/Tumor</label>
+    </customValue>
+    <customValue>
+        <fullName>Ophthalmology</fullName>
+        <default>false</default>
+        <label>Ophthalmology</label>
+    </customValue>
+    <customValue>
+        <fullName>Optometry</fullName>
+        <default>false</default>
+        <label>Optometry</label>
+    </customValue>
+    <customValue>
+        <fullName>Orthopedics/Joint Surgery</fullName>
+        <default>false</default>
+        <label>Orthopedics/Joint Surgery</label>
+    </customValue>
+    <customValue>
+        <fullName>Otolaryngology/ENT</fullName>
+        <default>false</default>
+        <label>Otolaryngology/ENT</label>
+    </customValue>
+    <customValue>
+        <fullName>Pain</fullName>
+        <default>false</default>
+        <label>Pain</label>
+    </customValue>
+    <customValue>
+        <fullName>Palliative Care</fullName>
+        <default>false</default>
+        <label>Palliative Care</label>
+    </customValue>
+    <customValue>
+        <fullName>Pathology</fullName>
+        <default>false</default>
+        <label>Pathology</label>
+    </customValue>
+    <customValue>
+        <fullName>Pharmacy</fullName>
+        <default>false</default>
+        <label>Pharmacy</label>
+    </customValue>
+    <customValue>
+        <fullName>Physical Therapy</fullName>
+        <default>false</default>
+        <label>Physical Therapy</label>
+    </customValue>
+    <customValue>
+        <fullName>Plastic Surgery</fullName>
+        <default>false</default>
+        <label>Plastic Surgery</label>
+    </customValue>
+    <customValue>
+        <fullName>Pm&amp;Rs Physician</fullName>
+        <default>false</default>
+        <label>Pm&amp;Rs Physician</label>
+    </customValue>
+    <customValue>
+        <fullName>Podiatry</fullName>
+        <default>false</default>
+        <label>Podiatry</label>
+    </customValue>
+    <customValue>
+        <fullName>Polytrauma/Traumatic Brain Injury (Tbi)-Individual</fullName>
+        <default>false</default>
+        <label>Polytrauma/Traumatic Brain Injury (Tbi)-Individual</label>
+    </customValue>
+    <customValue>
+        <fullName>Primary Care/Medicine</fullName>
+        <default>false</default>
+        <label>Primary Care/Medicine</label>
+    </customValue>
+    <customValue>
+        <fullName>Primary Consult</fullName>
+        <default>false</default>
+        <label>Primary Consult</label>
+    </customValue>
+    <customValue>
+        <fullName>Prosthetic &amp; Sensory Aids Service</fullName>
+        <default>false</default>
+        <label>Prosthetic &amp; Sensory Aids Service</label>
+    </customValue>
+    <customValue>
+        <fullName>Psychiatry</fullName>
+        <default>false</default>
+        <label>Psychiatry</label>
+    </customValue>
+    <customValue>
+        <fullName>Psychology</fullName>
+        <default>false</default>
+        <label>Psychology</label>
+    </customValue>
+    <customValue>
+        <fullName>Ptsd Outpatient Specialty &amp; Residential Programs: Group</fullName>
+        <default>false</default>
+        <label>Ptsd Outpatient Specialty &amp; Residential Programs: Group</label>
+    </customValue>
+    <customValue>
+        <fullName>Ptsd Outpatient Specialty &amp; Residential Programs: Individual</fullName>
+        <default>false</default>
+        <label>Ptsd Outpatient Specialty &amp; Residential Programs: Individual</label>
+    </customValue>
+    <customValue>
+        <fullName>Pulmonary</fullName>
+        <default>false</default>
+        <label>Pulmonary</label>
+    </customValue>
+    <customValue>
+        <fullName>Pulmonary/Chest</fullName>
+        <default>false</default>
+        <label>Pulmonary/Chest</label>
+    </customValue>
+    <customValue>
+        <fullName>Pulmonary Function</fullName>
+        <default>false</default>
+        <label>Pulmonary Function</label>
+    </customValue>
+    <customValue>
+        <fullName>Radiation Oncology/Radiation Therapy</fullName>
+        <default>false</default>
+        <label>Radiation Oncology/Radiation Therapy</label>
+    </customValue>
+    <customValue>
+        <fullName>Recreation Therapy Service</fullName>
+        <default>false</default>
+        <label>Recreation Therapy Service</label>
+    </customValue>
+    <customValue>
+        <fullName>Renal/Nephrology</fullName>
+        <default>false</default>
+        <label>Renal/Nephrology</label>
+    </customValue>
+    <customValue>
+        <fullName>Rheumatology/Arthritis</fullName>
+        <default>false</default>
+        <label>Rheumatology/Arthritis</label>
+    </customValue>
+    <customValue>
+        <fullName>Rrtp Admission Screening Services</fullName>
+        <default>false</default>
+        <label>Rrtp Admission Screening Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Sci Home Care Program</fullName>
+        <default>false</default>
+        <label>Sci Home Care Program</label>
+    </customValue>
+    <customValue>
+        <fullName>Sleep</fullName>
+        <default>false</default>
+        <label>Sleep</label>
+    </customValue>
+    <customValue>
+        <fullName>Sleep Medicine</fullName>
+        <default>false</default>
+        <label>Sleep Medicine</label>
+    </customValue>
+    <customValue>
+        <fullName>Sleep Study</fullName>
+        <default>false</default>
+        <label>Sleep Study</label>
+    </customValue>
+    <customValue>
+        <fullName>Social Work</fullName>
+        <default>false</default>
+        <label>Social Work</label>
+    </customValue>
+    <customValue>
+        <fullName>Speech Language Pathology</fullName>
+        <default>false</default>
+        <label>Speech Language Pathology</label>
+    </customValue>
+    <customValue>
+        <fullName>Spinal Cord Injury</fullName>
+        <default>false</default>
+        <label>Spinal Cord Injury</label>
+    </customValue>
+    <customValue>
+        <fullName>Stroke</fullName>
+        <default>false</default>
+        <label>Stroke</label>
+    </customValue>
+    <customValue>
+        <fullName>Sub Use Disorder Group</fullName>
+        <default>false</default>
+        <label>Sub Use Disorder Group</label>
+    </customValue>
+    <customValue>
+        <fullName>Sub Use Disorder Indiv</fullName>
+        <default>false</default>
+        <label>Sub Use Disorder Indiv</label>
+    </customValue>
+    <customValue>
+        <fullName>Thoracic Surgery</fullName>
+        <default>false</default>
+        <label>Thoracic Surgery</label>
+    </customValue>
+    <customValue>
+        <fullName>Urology</fullName>
+        <default>false</default>
+        <label>Urology</label>
+    </customValue>
+    <customValue>
+        <fullName>Vascular Laboratory</fullName>
+        <default>false</default>
+        <label>Vascular Laboratory</label>
+    </customValue>
+    <customValue>
+        <fullName>Vascular Surgery</fullName>
+        <default>false</default>
+        <label>Vascular Surgery</label>
+    </customValue>
+    <customValue>
+        <fullName>Weight Management And Move! Program- Group</fullName>
+        <default>false</default>
+        <label>Weight Management And Move! Program- Group</label>
+    </customValue>
+    <customValue>
+        <fullName>Weight Management And Move! Program- Individual</fullName>
+        <default>false</default>
+        <label>Weight Management And Move! Program- Individual</label>
+    </customValue>
+    <customValue>
+        <fullName>Women&apos;s Health</fullName>
+        <default>false</default>
+        <label>Women&apos;s Health</label>
+    </customValue>
+    <customValue>
+        <fullName>X-Ray &amp; Fluoroscopy (Xr &amp; Rf)</fullName>
+        <default>false</default>
+        <label>X-Ray &amp; Fluoroscopy (Xr &amp; Rf)</label>
+    </customValue>
+    <customValue>
+        <fullName>Psych Testing</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Psych Testing</label>
+    </customValue>
+    <customValue>
+        <fullName>Radiation Oncology (Radiation Therapy)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Radiation Oncology (Radiation Therapy)</label>
+    </customValue>
+    <customValue>
+        <fullName>Renal/Nephrol(Except Dialysis)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Renal/Nephrol(Except Dialysis)</label>
+    </customValue>
+    <customValue>
+        <fullName>Social Work Service</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Social Work Service</label>
+    </customValue>
+    <customValue>
+        <fullName>Anesthesia Consult, Including Pre-Procedure, Expanded Post-Procedure Assess.</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Anesthesia Consult, Including Pre-Procedure, Expanded Post-Procedure Assess.</label>
+    </customValue>
+    <customValue>
+        <fullName>Hematology</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Hematology</label>
+    </customValue>
+    <customValue>
+        <fullName>Anesthesia Consult, Including Pre-Procedure, Expanded Post-Procedure Assessment</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Anesthesia Consult, Including Pre-Procedure, Expanded Post-Procedure Assessment</label>
+    </customValue>
+    <customValue>
+        <fullName>Comprehensive Women’s Primary Care Clinic</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Comprehensive Women’s Primary Care Clinic</label>
+    </customValue>
+    <customValue>
+        <fullName>Nutrition/Dietetics-Individual</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Nutrition/Dietetics-Individual</label>
+    </customValue>
+    <customValue>
+        <fullName>Otolaryngology (Ent)</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Otolaryngology (Ent)</label>
+    </customValue>
+    <customValue>
+        <fullName>Allergy Immunology</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Allergy Immunology</label>
+    </customValue>
+    <description>DO NOT CHANGE API NAME OF PICKLIST VALUES</description>
+    <masterLabel>PC Specialties</masterLabel>
+    <sorted>true</sorted>
+</GlobalValueSet>

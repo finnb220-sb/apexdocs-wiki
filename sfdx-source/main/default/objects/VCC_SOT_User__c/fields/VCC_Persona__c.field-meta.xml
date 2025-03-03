@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Persona__c</fullName>
+    <description>Field to display the Persona(s) of the SOT User.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the Contact&apos;s Persona.</inlineHelpText>
+    <label>Persona</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AMSA</fullName>
+                <default>false</default>
+                <label>AMSA</label>
+            </value>
+            <value>
+                <fullName>AMSA Supervisor</fullName>
+                <default>false</default>
+                <label>AMSA Supervisor</label>
+            </value>
+            <value>
+                <fullName>CT RN &amp; Tele-EC MP</fullName>
+                <default>false</default>
+                <label>CT RN &amp; Tele-EC MP</label>
+            </value>
+            <value>
+                <fullName>CT RN &amp; Tele-EC RN</fullName>
+                <default>false</default>
+                <label>CT RN &amp; Tele-EC RN</label>
+            </value>
+            <value>
+                <fullName>CT RN Only</fullName>
+                <default>false</default>
+                <label>CT RN Only</label>
+            </value>
+            <value>
+                <fullName>CT RN with Tele-EC Button</fullName>
+                <default>false</default>
+                <label>CT RN with Tele-EC Button</label>
+            </value>
+            <value>
+                <fullName>CT Supervisor &amp; Tele-EC MP</fullName>
+                <default>false</default>
+                <label>CT Supervisor &amp; Tele-EC MP</label>
+            </value>
+            <value>
+                <fullName>CT Supervisor &amp; Tele-EC RN</fullName>
+                <default>false</default>
+                <label>CT Supervisor &amp; Tele-EC RN</label>
+            </value>
+            <value>
+                <fullName>CT Supervisor Only</fullName>
+                <default>false</default>
+                <label>CT Supervisor Only</label>
+            </value>
+            <value>
+                <fullName>CT Supervisor with Tele-EC Button</fullName>
+                <default>false</default>
+                <label>CT Supervisor with Tele-EC Button</label>
+            </value>
+            <value>
+                <fullName>Integration Test Utility</fullName>
+                <default>false</default>
+                <label>Integration Test Utility</label>
+            </value>
+            <value>
+                <fullName>Reports Only</fullName>
+                <default>false</default>
+                <label>Reports Only</label>
+            </value>
+            <value>
+                <fullName>Tele-EC MP</fullName>
+                <default>false</default>
+                <label>Tele-EC MP</label>
+            </value>
+            <value>
+                <fullName>Tele-EC RN</fullName>
+                <default>false</default>
+                <label>Tele-EC RN</label>
+            </value>
+            <value>
+                <fullName>Tier I Pharmacy Technician</fullName>
+                <default>false</default>
+                <label>Tier I Pharmacy Technician</label>
+            </value>
+            <value>
+                <fullName>Tier II Pharmacy Technician</fullName>
+                <default>false</default>
+                <label>Tier II Pharmacy Technician</label>
+            </value>
+            <value>
+                <fullName>Tier III Pharmacy Technician</fullName>
+                <default>false</default>
+                <label>Tier III Pharmacy Technician</label>
+            </value>
+            <value>
+                <fullName>Tier I Pharmacy Technician Supervisor</fullName>
+                <default>false</default>
+                <label>Tier I Pharmacy Technician Supervisor</label>
+            </value>
+            <value>
+                <fullName>Tier II Pharmacy Technician Supervisor</fullName>
+                <default>false</default>
+                <label>Tier II Pharmacy Technician Supervisor</label>
+            </value>
+            <value>
+                <fullName>Tier III Pharmacy Technician Supervisor</fullName>
+                <default>false</default>
+                <label>Tier III Pharmacy Technician Supervisor</label>
+            </value>
+            <value>
+                <fullName>VCV CA</fullName>
+                <default>false</default>
+                <label>VCV CA</label>
+            </value>
+            <value>
+                <fullName>VCV Lead AMSA</fullName>
+                <default>false</default>
+                <label>VCV Lead AMSA</label>
+            </value>
+            <value>
+                <fullName>VCV MP</fullName>
+                <default>false</default>
+                <label>VCV MP</label>
+            </value>
+            <value>
+                <fullName>VCV MSA/AMSA</fullName>
+                <default>false</default>
+                <label>VCV MSA/AMSA</label>
+            </value>
+            <value>
+                <fullName>View Only</fullName>
+                <default>false</default>
+                <label>View Only</label>
+            </value>
+            <value>
+                <fullName>CT RN no Tele-EC,</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CT RN no Tele-EC,</label>
+            </value>
+            <value>
+                <fullName>CT Supervisor no Tele-EC</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CT Supervisor no Tele-EC</label>
+            </value>
+            <value>
+                <fullName>VCV AMSA/MSA</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>VCV AMSA/MSA</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

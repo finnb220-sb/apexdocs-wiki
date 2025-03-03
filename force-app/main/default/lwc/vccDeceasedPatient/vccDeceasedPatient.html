@@ -1,0 +1,27 @@
+<template>
+    <template if:true={isShowPopup}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" class="slds-modal slds-fade-in-open" style="top: 16%; z-index: 1000000">
+            <div class="slds-modal__container slds-p-around medium" style="max-width: 45rem; min-height: 20rem">
+                <!-- Header -->
+                <lightning-modal-header label="Deceased Patient" class="deceased-header"></lightning-modal-header>
+
+                <!-- Body -->
+                <lightning-modal-body>
+                    <!-- Warning Icon & Warning Message -->
+                    <div class="slds-grid slds-grid_align-center slds-grid_vertical-align-center slds-p-around medium">
+                        <lightning-icon class="slds-var-p-horizontal_x-large" icon-name="utility:warning" variant="warning" size="medium"></lightning-icon>
+                        <div style="white-space: break-spaces; font-size: 25px; font-weight: bold">WARNING: Patient is Deceased</div>
+                    </div>
+
+                    <div class="blue-text slds-p-around_x-large" style="font-size: 20px; font-weight: bold">{userName} ({dateStr})</div>
+                </lightning-modal-body>
+
+                <!-- Footer -->
+                <lightning-modal-footer>
+                    <a class="slds-button slds-button_neutral" aria-label="Home" href="/lightning/page/home">Go back to home</a>
+                    <button class="slds-button slds-button_brand" aria-label="Acknowledge and Continue" onclick={closePopup}>Acknowledge and Continue</button>
+                </lightning-modal-footer>
+            </div>
+        </section>
+    </template>
+</template>

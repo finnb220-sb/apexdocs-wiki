@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Pharmacy_CaseOutcome</fullName>
+    <active>true</active>
+    <description>If &quot;Other&quot; is selected for the Case Outcome for Pharmacy users, then they must provide a description in the &quot;Other Case Outcome&quot; field.</description>
+    <errorConditionFormula>!$Permission.DisableTriggersFlag &amp;&amp; RecordType.DeveloperName = &quot;VCC_Pharmacy&quot; &amp;&amp; (ISPICKVAL(VCC_Case_Outcome__c, &quot;Other&quot;) || INCLUDES(VCC_Case_Outcome_Multi__c,&apos;Other&apos;)) &amp;&amp;
+        ISBLANK(VCC_Other_Case_Outcome__c) &amp;&amp; !$Permission.VCC_Disable_Case_Validation_Rules</errorConditionFormula>
+    <errorDisplayField>VCC_Other_Case_Outcome__c</errorDisplayField>
+    <errorMessage>ERROR: &quot;Other&quot; has been selected for the Case Outcome, please provide a description in the Other Case Outcome field.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Time_From_Appt_Made_to_Appt_Date__c</fullName>
+    <description>Hours elapsed from Appointment Made Date/Time to Appointment Date/Time</description>
+    <externalId>false</externalId>
+    <formula>(VCC_Scheduled_Start__c - VCC_Appointment_Made_Date_Time__c) * 24</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Time From Appt Made to Appt Date (Hrs)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_CS_New_loss_of_taste_or_smell__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Ability to select New loss of taste or smell as a symptom through the Covid Screening</description>
+    <externalId>false</externalId>
+    <label>New loss of taste or smell</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

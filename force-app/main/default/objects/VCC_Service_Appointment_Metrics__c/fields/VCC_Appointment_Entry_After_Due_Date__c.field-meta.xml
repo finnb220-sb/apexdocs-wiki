@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Appointment_Entry_After_Due_Date__c</fullName>
+    <description>Returns true if the appointment was entered/created after the appointment due date.</description>
+    <externalId>false</externalId>
+    <formula>IF(VCC_Appointment_Made_Date_Time__c &gt; Case_Metrics__r.VCC_Appt_Due_Date__c, TRUE, FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Appointment Entry After Due Date</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sexual_Orientation__c</fullName>
+    <description>Value from API - a person&apos;s identity in relation to the gender or genders to which they are sexually attracted</description>
+    <externalId>false</externalId>
+    <inlineHelpText>A person&apos;s identity in relation to the gender or genders to which they are sexually attracted</inlineHelpText>
+    <label>Sexual Orientation</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>LGH - Lesbian, gay, or homosexual</fullName>
+                <default>false</default>
+                <label>LGH - Lesbian, gay, or homosexual</label>
+            </value>
+            <value>
+                <fullName>STH - Straight or heterosexual</fullName>
+                <default>false</default>
+                <label>STH - Straight or heterosexual</label>
+            </value>
+            <value>
+                <fullName>BIS - Bisexual</fullName>
+                <default>false</default>
+                <label>BIS - Bisexual</label>
+            </value>
+            <value>
+                <fullName>QER - Queer</fullName>
+                <default>false</default>
+                <label>QER - Queer</label>
+            </value>
+            <value>
+                <fullName>OTH - Another option, please describe</fullName>
+                <default>false</default>
+                <label>OTH - Another option, please describe</label>
+            </value>
+            <value>
+                <fullName>DTK - Don&apos;t know</fullName>
+                <default>false</default>
+                <label>DTK - Don&apos;t know</label>
+            </value>
+            <value>
+                <fullName>CND - Choose not to disclose</fullName>
+                <default>false</default>
+                <label>CND - Choose not to disclose</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

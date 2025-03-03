@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TUC_Veteran_Current_Address__c</fullName>
+    <description>Formula field that pulls account address fields from VCC Case</description>
+    <externalId>false</externalId>
+    <formula>VCC_Case__r.Account.BillingStreet &amp; BR() &amp; VCC_Case__r.Account.BillingCity &amp; BR() &amp; VCC_Case__r.Account.BillingState &amp; BR() &amp;
+        VCC_Case__r.Account.BillingPostalCode &amp;BR() &amp; VCC_Case__r.Account.BillingCountry</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Veteran&apos;s Current Address</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

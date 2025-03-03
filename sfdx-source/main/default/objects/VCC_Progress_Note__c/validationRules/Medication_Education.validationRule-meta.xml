@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Medication_Education</fullName>
+    <active>true</active>
+    <description>When &quot;No. Specify other reason&quot;  is selected, more info is required</description>
+    <errorConditionFormula>BEGINS( RecordType.DeveloperName, &quot;VCC_&quot;)
+&amp;&amp;
+!$Permission.DisableTriggersFlag
+&amp;&amp;
+
+
+ISPICKVAL(VCC_Medication_Education__c,&quot;No. Specify other reason&quot;)
+&amp;&amp;
+ISBLANK(VCC_Medication_Education_Additional_Info__c) &amp;&amp;
+!$Permission.VCC_Disable_Progress_Note_Validation_Rules</errorConditionFormula>
+    <errorDisplayField>VCC_Medication_Education_Additional_Info__c</errorDisplayField>
+    <errorMessage>ERROR: Additional information is required when &quot;No. Specify other reason&quot; is selected.</errorMessage>
+</ValidationRule>

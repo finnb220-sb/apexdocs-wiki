@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enforce_Last_4_Format</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( (!REGEX( Last_Four__c , &quot;^\\d{4}?$&quot;)), NOT(ISBLANK (Last_Four__c)) )</errorConditionFormula>
+    <errorDisplayField>Last_Four__c</errorDisplayField>
+    <errorMessage>Format must be four numbers</errorMessage>
+</ValidationRule>

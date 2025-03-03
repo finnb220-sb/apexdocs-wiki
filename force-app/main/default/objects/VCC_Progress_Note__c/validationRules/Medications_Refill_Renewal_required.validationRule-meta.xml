@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Medications_Refill_Renewal_required</fullName>
+    <active>true</active>
+    <description
+    >VCC_Medications_Refill_Renewal_Request__c needs to be required when the &quot;Medication Renewal&quot; picklist value is chosen for the VCC_Administrative_Note_Reason__c
+        field.</description>
+    <errorConditionFormula
+    >RecordType.DeveloperName = &apos;VCC_Scheduling_Progress_Note&apos; &amp;&amp; (ISPICKVAL( VCC_Administrative_Note_Reason__c, &apos;Medication Renewal&apos; ) &amp;&amp;
+        ISBLANK( VCC_Medications_Refill_Renewal_Request__c ) ) &amp;&amp; !ISNEW() &amp;&amp; !$Permission.DisableTriggersFlag</errorConditionFormula>
+    <errorDisplayField>VCC_Medications_Refill_Renewal_Request__c</errorDisplayField>
+    <errorMessage>Enter a value for Medications Refill/Renewal Request</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Progress_Note_Required</fullName>
+    <active>true</active>
+    <description>As a VAHC user, I need to be prevented from closing a Case if no Progress Note exists for a Clinical Triage Case that has a Case Sub-Type of Education or Triage, as these
+        types of Cases require a Progress Note.</description>
+    <errorConditionFormula>BEGINS( RecordType.DeveloperName, &quot;VCC_&quot;) &amp;&amp; !$Permission.DisableTriggersFlag &amp;&amp; OR( ISPICKVAL(Status, &quot;Closed - Resolved&quot;),
+        ISPICKVAL(Status, &quot;Closed - Transferred&quot;)) &amp;&amp; VCC_Electronic_Signature_Count__c = 0 &amp;&amp; VCC_Progress_Notes_Count__c = 0 &amp;&amp;
+        RecordType.DeveloperName = &quot;VCC_Clinical_Triage&quot; &amp;&amp; (ISPICKVAL(VCC_Case_Sub_Type__c,&apos;Triage&apos;) ||
+        ISPICKVAL(VCC_Case_Sub_Type__c,&apos;Education&apos;)) &amp;&amp; !$Permission.VCC_Disable_Case_Validation_Rules</errorConditionFormula>
+    <errorMessage>ERROR: A signed Progress Note is required to close the Case.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,293 @@
+name: pr-validate-deployment
+run-name: Validate a PR is deployable
+
+on:
+  workflow_call:
+
+jobs:
+  # This job's purpose is to validate that the PR doesn't contain any changes that would break the build.
+  # it's responsible for running the following steps:
+  # 1. Calculate the deployment environment based on the branch name
+  # 2. Install the sfdx-git-delta plugin - We use this to calculate the delta between the current branch and what's in the org.
+  # 3. Auth with the stage org
+  # 4. Intuit which test classes are related to classes that were changed in the PR. This is a heuristic based on filename. It's not perfect, but it's better than nothing.
+  # 5. Run a validation deployment to the stage org. This is a dry-run deployment that will run the tests that are related to the classes that were changed in the PR.
+  #    If no classes were modified, this step will run a validation deployment without running tests.
+  # 6. Post a code coverage comment on the PR. This will post a comment on the PR with the code coverage results.
+  # 7. Upload the code coverage report as an artifact. This will allow us to download the code coverage report from the GitHub UI.
+  validate-deployment:
+    name: Execute validation (dry-run) deployment of changed files to Stage1
+    runs-on: ubuntu-latest
+    container:
+      image: salesforce/cli:latest-full
+    steps:
+      # Checkout the source code. This is required to check out the code inside a docker container.
+      - name: 'add safe directory'
+        run: |
+          git config --global --add safe.directory /__w/va-teams/va-teams
+      - uses: actions/checkout@v4
+        with:
+          set-safe-directory: '/__w/va-teams/va-teams/*'
+          fetch-depth: ${{ github.event_name == 'pull_request' && 2 || 0 }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      # Calculate the deployment environment based on the branch name
+      # Kudos to Omar for the emoji's
+      - name: Calculate Deployment Environment
+        shell: bash
+        run: |
+          set -eu
+          current_branch=${{ github.event.pull_request.base.ref }}
+          release_trunk=`echo "${current_branch}" | cut -d '/' -f 2`
+          minor=`echo "${release_trunk}" | cut -d '.' -f 3`
+          echo "Current Branch:  ${current_branch} Trunk: ${release_trunk} Minor: ${minor}"
+          echo ${current_branch}
+
+          if [[ "${release_trunk}" = "1.9.1" ]]
+          then
+              echo "1.9.1 release is skipped"
+              exit 0
+          elif [[ "${release_trunk}" = "1.10.0" ]]
+          then
+              echo "1.10.0 release is skipped"
+              exit 0
+          elif [[ "${release_trunk}" = "1.10.1" ]]
+          then
+              echo "1.10.1 release is skipped"
+              exit 0
+          elif git tag | grep "^freeze/${release_trunk}$"
+          then
+              echo "🥶 This branch is post code freeze, deploying to STAGE THREE"
+              echo ${{secrets.CUMULUS_STAGE_THREE_AUTH}} > auth.txt
+          elif [[ "${minor}" = "0" || "${current_branch}" = "int/depeche" ]]
+          then
+              echo "🚀 Deploying to STAGE ONE"
+              echo ${{secrets.CUMULUS_STAGE_ONE_AUTH}} > auth.txt
+          else
+              echo "🚀 Deploying to STAGE TWO"
+              echo ${{secrets.CUMULUS_STAGE_TWO_AUTH}} > auth.txt
+          fi
+      # Install's the SFDX git delta plugin that helps us minimize our test deployment times
+      - name: Install the sfdx-git-delta plugin
+        run: |
+          echo y | sf plugins install sfdx-git-delta
+      # Authenticate to the stage org
+      - name: Auth with Stage
+        run: 'sf force auth sfdxurl store -f auth.txt -a stage -d'
+      # This step is responsible for identifying all the classes that have test in the name. We'll use this to determine which test classes to run.
+      - name: Find Test Class Files
+        id: find-test-files
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const testClasses = [];
+            const files = fs.readdirSync('./force-app/main/default/classes/.', { recursive: true });
+            for (const file of files) {
+              if (file.endsWith('.cls') && file.toLowerCase().includes('test')) {
+                testClasses.push(file.replace('.cls', ''));
+              }
+            }
+            console.log(`Test classes: ${testClasses.join(', ')}`);
+            return { testClasses: testClasses };
+      # This step is responsible for identifying all the classes that have changed in the PR. We'll use this to determine which test classes to run.
+      - name: Find Classes Changed In PR
+        id: find-changed-classes
+        uses: actions/github-script@v7
+        with:
+          script: |
+            let changedFiles;
+            if (context.eventName === 'pull_request') {
+              changedFiles = await github.rest.pulls.listFiles({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: context.issue.number
+              });
+            } else {
+              changedFiles = await github.rest.repos.compareCommits({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                base: context.payload.before,
+                head: context.payload.after
+              });
+            }
+            const changedClasses = changedFiles.data
+              .filter(file => file.filename.endsWith('.cls'))
+              .map(file => file.filename.split('/').at(-1).replace('.cls', ''));
+            return { changedClasses: changedClasses };
+      # This step is responsible for finding TestClasses that *start with* the name of a changed class. This is a heuristic, but it's better than nothing.
+      # This has a known issue where if you do not follow the test class naming convention, it will not find the related test class.
+      # it will find MyClassTest and MyClassTests, and even MyClassUnitTests, but it will not match TestMyClass.
+      - name: Generate List of Related Test Classes
+        id: related-tests
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const foundTestClasses = ${{ steps.find-test-files.outputs.result }};
+            const changedClasses = ${{ steps.find-changed-classes.outputs.result }};
+            
+            const foundTestClassesArray = [...foundTestClasses.testClasses];
+            const changedClassesArray = [...changedClasses.changedClasses];
+            
+            const relatedTests = new Set();
+            for (const changedClass of changedClassesArray) {
+              for (const testClass of foundTestClassesArray) {
+                let testClassSansPath = testClass.split('/').at(-1).replace('.cls', '');
+                if (testClassSansPath.startsWith(changedClass)) {
+                  relatedTests.add(testClassSansPath);
+                }
+              }
+            }
+            
+            return [...relatedTests].join(' ');
+      # This step is responsible for generating the deployment delta between the current branch and the previous branch. ie: what's changed in this PR.
+      # this isn't a perfect match - there are some branching edge cases here, but this is a 99% solution.
+      - name: Generate Deployment Delta
+        run: |
+          sf sgd source delta -t="HEAD" -f="HEAD~1" -o "." --loglevel=debug
+      - name: Set SF default options
+        run: sf config set org-metadata-rest-deploy true --global
+      - name: Debug Components to be deployed
+        run: |
+          echo "#### Package contents ####"
+          cat package/package.xml
+          echo "#### End Package Contents ####"
+      # This is the crux of this validation job. We're going to deploy the changes in this PR to the stage org.
+      # There are two versions of this - one with and one without tests.
+      - name: Deploy to Stage and run Tests (Check Only)
+        shell: bash
+        run: |
+          ### DO NOT EDIT THE LINES BETWEEN THE COMMENTS ###
+          ### There is a currently unresolved, and not-understood bug with between the interaction of Github Actions
+          ### and the SF cli. When this workflow determines which tests to run, it outputs those tests as a space
+          ### delimited string available to other workflow steps through the dollarSign-doubleCurlyBraces syntax. However, when we directly
+          ### pass that string to the --tests flag in the sf project deploy start command, the SF cli fails to parse
+          ### the tests and they're not run, resulting in a 0% code coverage error. To work around this, we're
+          ### using bash expansion to a variable to ensure that the tests are properly passed to the SF cli.
+          testsToRun=${{ steps.related-tests.outputs.result }}
+          ### YOU MAY RESUME EDITING BELOW THIS LINE.
+          if [[ -n $testsToRun ]]; then
+            echo "Running related tests: $testsToRun"
+            command="sf project deploy start --verbose --dry-run -x package/package.xml --target-org stage --ignore-conflicts --wait 45 --test-level RunSpecifiedTests --tests $testsToRun --coverage-formatters json"
+          else
+            echo "No related tests found. Deploying without running tests."
+            command="sf project deploy start --verbose --dry-run -x package/package.xml --target-org stage --ignore-conflicts --wait 45"
+          fi
+
+          output=$($command 2>&1) || {
+            printf "%s\n" "$output"
+            echo -e $output
+            # Check if the command failed due to "No local changes to deploy"
+            echo "Deploy failed but this can be the desired outcome when no changes are detected. Checking for 'No local changes to deploy' in the output."
+            if echo "$output" | grep -q "No local changes to deploy"; then
+              echo "Because no local changes were detected, the deploy was technically a failure, but in this particular situation it's expected and not an issue."
+            else
+              echo "The deployment command failed, and the logs above should specify the reason. Because the deployment failed, this PR may not be merged."
+              exit 1
+            fi
+          }
+      # Determines if the code coverage report exists. If it does, we'll generate a nice markdown comment with the results.
+      - name: Generate and post coverage table
+        if: ${{ !cancelled() }}
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const path = 'coverage/coverage/coverage.json';
+            
+            if (fs.existsSync(path)) {
+              const coverageData = JSON.parse(fs.readFileSync(path, 'utf8'));
+              if (Object.keys(coverageData).length === 0 && ${{ steps.related-tests.outputs.result }} === '') {
+                console.log('No coverage data found, but none was expected because no tests were executed.');
+                return;
+              }
+              let tableRows = [];
+              let summaryRows = [];
+              let totalCovered = 0;
+              let totalLines = 0;
+            
+              for (const [className, data] of Object.entries(coverageData)) {
+                const covered = Object.values(data.s).filter(count => count > 0).length;
+                const uncovered = Object.values(data.s).filter(count => count === 0).length;
+                const percentage = ((covered / (covered + uncovered)) * 100).toFixed(2);
+                const badgeColor = percentage >= 85 ? 'brightgreen' : 'red';
+                const checkMark = percentage >= 85 ? '✅' : '❌';
+                const workingClassName = className.split('/').at(-1);
+                tableRows.push(`| ${workingClassName} | ${covered}/${uncovered} | ![Coverage](https://img.shields.io/badge/Coverage-${percentage}%25-${badgeColor}) | ${checkMark} |`);
+                if (percentage < 85) {
+                  summaryRows.push(`| ${workingClassName} | ${covered}/${uncovered} | ![Coverage](https://img.shields.io/badge/Coverage-${percentage}%25-${badgeColor}) | ${checkMark} |`);
+                }
+                totalCovered += covered;
+                totalLines += covered + uncovered;
+              }
+            
+              const aggregatePercentage = ((totalCovered / totalLines) * 100).toFixed(2);
+              const aggregateBadgeColor = aggregatePercentage >= 85 ? 'brightgreen' : 'red';
+              const aggregateCheckMark = aggregatePercentage >= 85 ? '✅' : '❌';
+              const aggregateRow = `| Aggregate | ${totalCovered}/${totalLines - totalCovered} | ![Coverage](https://img.shields.io/badge/Coverage-${aggregatePercentage}%25-${aggregateBadgeColor}) | ${aggregateCheckMark} |`;
+            
+              let summaryTable = `
+              | Class Name | Covered/Uncovered Lines | Coverage Percentage | >=85% Coverage |
+              |------------|-------------------------|---------------------|----------------|`;
+
+              if (summaryRows.length > 0) {
+                summaryTable += `
+              ${summaryRows.join('\n')}`;
+              }
+
+              summaryTable += `
+              ${aggregateRow}
+              `;
+            
+              const detailsTable = `
+              <details>
+              <summary>Expand for detailed coverage table</summary>
+            
+              | Class Name | Covered/Uncovered Lines | Coverage Percentage | >=85% Coverage |
+              |------------|-------------------------|---------------------|----------------|
+              ${tableRows.join('\n')}
+              ${aggregateRow}
+            
+              </details>
+              `;
+            
+              const commentHeader = '### Code Coverage';
+              const commentBody = `${commentHeader}\n\n${summaryTable}\n\n${detailsTable}`;
+              const comments = await github.rest.issues.listComments({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+              });
+              const existingComment = comments.data.find(comment => comment.body.startsWith(commentHeader));
+              if (existingComment) {
+                await github.rest.issues.updateComment({
+                  comment_id: existingComment.id,
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  body: commentBody,
+                });
+              } else {
+                await github.rest.issues.createComment({
+                  issue_number: context.issue.number,
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  body: commentBody,
+                });
+              }
+              if (aggregatePercentage < 85) {
+                core.setFailed('Aggregate code coverage is below 85%');
+              }
+            } else {
+              console.log(`Coverage file not found at path: ${path}`);
+            }
+      # This step is responsible for uploading the code coverage report as an artifact. This will allow us to download the code coverage report from the GitHub UI.
+      - name: Upload Coverage Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: code-coverage
+          path: |
+            code-coverage-results.md
+            coverage/coverage/coverage.json
+          retention-days: 5

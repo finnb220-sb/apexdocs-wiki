@@ -1,0 +1,157 @@
+<template>
+    <c-logger></c-logger>
+    <template lwc:if={loading}>
+        <div>
+            <lightning-spinner alternative-text="Loading Clinic Information" size="medium"></lightning-spinner>
+        </div>
+    </template>
+    <template lwc:if={error}>
+        <div class="slds-p-bottom_x-large">
+            <p class="error-font-color error-font-size font-bold slds-float_left" tabindex="0">
+                <lightning-icon
+                    icon-name="utility:error"
+                    alternative-text="Error Symbol"
+                    variant="error"
+                    title="Error"></lightning-icon
+                >&nbsp; ERROR! Clinic Information failed to load.
+            </p>
+        </div>
+    </template>
+    <template lwc:if={clinicInfo}>
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item size="3">
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="12">
+                        <p class="font-bold" tabindex="0">Clinic Name</p>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12">
+                        <lightning-formatted-text value={clinicName} tabindex="0"></lightning-formatted-text>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+            <lightning-layout-item size="3">
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="12">
+                        <p class="font-bold" tabindex="0">Location/Address</p>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12">
+                        <lightning-formatted-text value={address} tabindex="0"></lightning-formatted-text>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+            <lightning-layout-item size="3">
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="12">
+                        <p class="font-bold" tabindex="0">Time Zone</p>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12">
+                        <lightning-formatted-text value={timeZone} tabindex="0"></lightning-formatted-text>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+            <lightning-layout-item size="3">
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="12">
+                        <p class="font-bold" tabindex="0">Active Flag</p>
+                    </lightning-layout-item>
+                    <lightning-input
+                        data-id="active"
+                        type="checkbox"
+                        disabled
+                        variant="label-hidden"
+                        value={activeFlag}
+                        checked={activeFlag}
+                        tabindex="0"></lightning-input>
+                </lightning-layout>
+            </lightning-layout-item>
+            <lightning-layout-item size="3">
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="12">
+                        <p class="font-bold" tabindex="0">Telephone Extension</p>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12">
+                        <lightning-formatted-text value={extension} tabindex="0"></lightning-formatted-text>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+            <lightning-layout-item size="3">
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="12">
+                        <p class="font-bold" tabindex="0">Telephone Number</p>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12">
+                        <lightning-formatted-text value={phone} tabindex="0"></lightning-formatted-text>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+            <lightning-layout-item size="3">
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="12">
+                        <p class="font-bold" tabindex="0">Overbooking Limit</p>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12">
+                        <lightning-formatted-number
+                            value={overbookingLimit}
+                            tabindex="0"
+                            maximum-fraction-digits="0"></lightning-formatted-number>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+            <lightning-layout-item size="3">
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="12">
+                        <p class="font-bold" tabindex="0">Variable Length Appointments</p>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12">
+                        <lightning-input
+                            type="checkbox"
+                            disabled
+                            variant="label-hidden"
+                            value={variableLengthAppointments}
+                            checked={variableLengthAppointments}
+                            tabindex="0"></lightning-input>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+            <lightning-layout-item size="2">
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="12">
+                        <p class="font-bold" tabindex="0">Appointment Length</p>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12">
+                        <lightning-formatted-number
+                            value={appointmentLength}
+                            tabindex="0"
+                            maximum-fraction-digits="0"></lightning-formatted-number>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+            <lightning-layout-item size="5" class="slds-p-top_xxx-small">
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="12">
+                        <p class="font-bold" tabindex="0">Providers</p>
+                    </lightning-layout-item>
+                    <div class="slds-box boxWidth">
+                        <lightning-layout-item size="12">
+                            <lightning-formatted-text value={providers} tabindex="0"></lightning-formatted-text>
+                        </lightning-layout-item>
+                    </div>
+                </lightning-layout>
+            </lightning-layout-item>
+            <lightning-layout-item size="5" class="slds-p-top_xxx-small">
+                <lightning-layout multiple-rows="true">
+                    <lightning-layout-item size="12">
+                        <p class="font-bold" tabindex="0">Special Instructions</p>
+                    </lightning-layout-item>
+                    <div class="slds-box boxWidth">
+                        <lightning-layout-item size="12">
+                            <lightning-formatted-text
+                                value={specialInstructions}
+                                tabindex="0"></lightning-formatted-text>
+                        </lightning-layout-item>
+                    </div>
+                </lightning-layout>
+            </lightning-layout-item>
+        </lightning-layout>
+    </template>
+</template>

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Build Nebula error log</description>
+        <name>Error_Log</name>
+        <label>Error Log</label>
+        <locationX>1163</locationX>
+        <locationY>294</locationY>
+        <actionName>FlowLogEntry</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Save_Log</targetReference>
+        </connector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>flowName</name>
+            <value>
+                <stringValue>VCC_Appointment_Subflow_GetVVSLink</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>loggingLevelName</name>
+            <value>
+                <stringValue>ERROR</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>message</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>FlowLogEntry</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <description>Do callout to get video link url
+Pass in a JSON string which will be deserialized into Map&lt;String, Object&gt;</description>
+        <name>Get_VVS_Link_Apex</name>
+        <label>Get VVS Link</label>
+        <locationX>776</locationX>
+        <locationY>424</locationY>
+        <actionName>VCC_CHROVVSAppointmentInvocable</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Assign_URL</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Error_Log</targetReference>
+        </faultConnector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>flowInput</name>
+            <value>
+                <elementReference>formulaVVSRQ</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>VCC_CHROVVSAppointmentInvocable</nameSegment>
+        <offset>0</offset>
+        <outputParameters>
+            <assignToReference>varResponseURL</assignToReference>
+            <name>output</name>
+        </outputParameters>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <description>Save Nebula Error Log</description>
+        <name>Save_Log</name>
+        <label>Save Log</label>
+        <locationX>1163</locationX>
+        <locationY>468</locationY>
+        <actionName>Logger</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Error_Toast_Screen</targetReference>
+        </connector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <nameSegment>Logger</nameSegment>
+        <offset>0</offset>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>62.0</apiVersion>
+    <assignments>
+        <description>Final element to complete the Flow whether callout was successful or not
+If success, it will return the URL
+If error, it will return empty blank string</description>
+        <name>Assign_URL</name>
+        <label>Assign URL</label>
+        <locationX>985</locationX>
+        <locationY>797</locationY>
+        <assignmentItems>
+            <assignToReference>varVVSLinkURL</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varResponseURL</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>Do CHRO callout to get VVS URL for video meeting</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Parse the Name portion from selectedFacility - ex. (SiteCode) Name</description>
+        <name>formulaSelectedFacilityName</name>
+        <dataType>String</dataType>
+        <expression>TRIM(RIGHT({!varSelectedFacility}, LEN({!varSelectedFacility}) - FIND(&quot;)&quot;, {!varSelectedFacility}) - 1))</expression>
+    </formulas>
+    <formulas>
+        <description>parse the SiteCode portion from selected facility - (SiteCode) Name</description>
+        <name>formulaSelectedFacilitySiteCode</name>
+        <dataType>String</dataType>
+        <expression>MID({!varSelectedFacility}, 2, FIND(&quot;)&quot;, {!varSelectedFacility}) - 2)</expression>
+    </formulas>
+    <formulas>
+        <description>Build VVS RQ body as a JSON string
+Note &apos;duration&apos; is an Integer, everything else is a String</description>
+        <name>formulaVVSRQ</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;application&quot;:&quot;&apos; &amp; &apos;VAHC&apos; &amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;dateTime&quot;:&quot;&apos; &amp; {!var_SchedStartTime} &amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;duration&quot;:&apos; &amp; TEXT(30) &amp;
+&apos;,&apos;&amp; &apos;&quot;patientICN&quot;:&quot;&apos; &amp;{!varPatientICN}&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;patientFirstName&quot;:&quot;&apos; &amp; {!varPatientFirstName}&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;patientLastName&quot;:&quot;&apos; &amp; {!var_PatientLastName}&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;patientEmail&quot;:&quot;&apos; &amp; {!varPatientEmail}&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;patientMobile&quot;:&quot;&apos; &amp; {!varPatientPhone}&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;timeZone&quot;:&quot;&apos; &amp; {!varSelectedTimeZone} &amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;providerEmail&quot;:&quot;&apos; &amp; {!varProviderEmail}&amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;providerAssigningAuthority&quot;:&quot;&apos; &amp; &apos;DFN-&apos; &amp; {!formulaSelectedFacilitySiteCode} &amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;providerId&quot;:&quot;&apos; &amp; {!Get_Provider_DUZ.DUZ__c} &amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;facilityName&quot;:&quot;&apos; &amp; {!formulaSelectedFacilityName} &amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;facilitySiteCode&quot;:&quot;&apos; &amp; {!formulaSelectedFacilitySiteCode} &amp;
+&apos;&quot;,&apos;&amp; &apos;&quot;facilityTimezone&quot;:&quot;&apos; &amp; {!varSelectedTimeZone} &amp;
+&apos;&quot;}&apos;</expression>
+    </formulas>
+    <interviewLabel>VCC_Appointment_Subflow_GetVVSLink {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>VCC_Appointment_Subflow_GetVVSLink</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <description>Get Provider DUZ, to use as providerId in VVS Callout</description>
+        <name>Get_Provider_DUZ</name>
+        <label>Get Provider DUZ</label>
+        <locationX>776</locationX>
+        <locationY>182</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_VVS_Link_Apex</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Error_Log</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>User_Id__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varProviderUserId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>IAM_SSOi_Vista_Instance_to_User_DUZ__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <runInMode>SystemModeWithoutSharing</runInMode>
+    <screens>
+        <name>Error_Toast_Screen</name>
+        <label>Error Toast Notification</label>
+        <locationX>1163</locationX>
+        <locationY>611</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_URL</targetReference>
+        </connector>
+        <fields>
+            <name>ToastErrorNotification</name>
+            <extensionName>c:vccFlowNotification</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>message</name>
+                <value>
+                    <stringValue>Please generate link and update manually.</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>mode</name>
+                <value>
+                    <stringValue>sticky</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>title</name>
+                <value>
+                    <stringValue>Error generating VVS Link</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>triggerNavigationNextEvent</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>variant</name>
+                <value>
+                    <stringValue>error</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <showFooter>false</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>650</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Get_Provider_DUZ</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Account.LastName</description>
+        <name>var_PatientLastName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Selected Start Time for Service Appointment</description>
+        <name>var_SchedStartTime</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Email from screen input when reviewing VCV appointment</description>
+        <name>varPatientEmail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Account.FirstName</description>
+        <name>varPatientFirstName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Account.VCC_MVI_External_Id__pc</description>
+        <name>varPatientICN</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Phone from screen input when reviewing VCV Service Appointment</description>
+        <name>varPatientPhone</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>ServiceResource.RelatedRecordId -&gt; User.Email</description>
+        <name>varProviderEmail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>ServiceResource.RelatedRecordId = User Id</description>
+        <name>varProviderUserId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Initialized to Blank Value (Empty String), if callout has an error the Blank Value will be returned</description>
+        <name>varResponseURL</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue />
+        </value>
+    </variables>
+    <variables>
+        <description>When scheduling VCV appointment, user selects VISN and then Facility which is the dependent picklist
+This variable holds the full value of the selected facility formatted like &apos;(SiteCode) Name&apos;
+It will be parsed out to SiteCode and Name in other formulas</description>
+        <name>varSelectedFacility</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Selected TimeZone, displayed as drop down on TimeSlot screen.  Ex. &apos;America/New_York&apos;, &apos;America/Denver&apos;</description>
+        <name>varSelectedTimeZone</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Final String value to return</description>
+        <name>varVVSLinkURL</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

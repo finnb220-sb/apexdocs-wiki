@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Patient_No_Show_no_welfare_check__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked if the patient was a no-show and a welfare check was not requested.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if the patient was a no-show and a welfare check was not requested.</inlineHelpText>
+    <label>Patient No Show (no welfare check)</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Only_VISN_members_can_edit_VISN</fullName>
+    <active>true</active>
+    <description>Only VISN CAs can change Operating Hours</description>
+    <errorConditionFormula>OR(
+ AND(
+ NOT(ISNEW()), 
+ ISCHANGED( VCC_VISN__c)),
+AND(
+OR(
+ISCHANGED( Description),
+ISCHANGED( TimeZone ),
+ISCHANGED( Name )),
+OR(
+AND(
+ISPICKVAL( VCC_VISN__c, &apos;VISN 1&apos;),
+$User.Division &lt;&gt; &apos;VISN 1&apos;,
+$User.Division &lt;&gt; &apos;VISN 2&apos;),
+AND(
+ISPICKVAL( VCC_VISN__c, &apos;VISN 7&apos;),
+$User.Division &lt;&gt; &apos;VISN 7&apos;,
+$User.Division &lt;&gt; &apos;VISN 8&apos;),
+AND(
+NOT(ISPICKVAL( VCC_VISN__c, &apos;VISN 1&apos;)),
+NOT(ISPICKVAL( VCC_VISN__c, &apos;VISN 7&apos;)),
+TEXT(VCC_VISN__c) &lt;&gt; $User.Division ))))
+&amp;&amp;
+$Permission.VCC_Edit_Operating_Hours &amp;&amp;
+!$Permission.DisableTriggersFlag &amp;&amp;
+$Permission.VCC_Appointment_Viewer</errorConditionFormula>
+    <errorMessage>Operating Hours can only be changed by members of the VISN</errorMessage>
+</ValidationRule>

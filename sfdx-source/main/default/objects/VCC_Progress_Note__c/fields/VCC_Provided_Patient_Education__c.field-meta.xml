@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Provided_Patient_Education__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates that the provider provided patient education</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if the provider provided patient education</inlineHelpText>
+    <label>Provided Patient Education</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

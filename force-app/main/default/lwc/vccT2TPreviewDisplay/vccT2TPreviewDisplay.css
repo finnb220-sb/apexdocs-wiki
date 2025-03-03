@@ -1,0 +1,72 @@
+/**
+ * Created by abaddon on 8/9/23.
+ */
+.not-available {
+    font-style: italic;
+}
+
+.expand-button-wrapper {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.full-payload-wrapper {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.card-container {
+    max-height: 60em;
+    overflow: hidden;
+}
+
+.card-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 15%;
+    background-image: linear-gradient(to bottom, transparent, #f2f2f2);
+}
+
+.view-all-button {
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.slds-text-align_center {
+    text-align: left;
+    padding-left: 2em;
+}
+
+.slds-m-bottom_small {
+    margin-bottom: 0.5rem; /* Adjust the value as needed */
+}
+
+.label-text {
+    white-space: pre-line; /* This makes sure that newlines are respected in the display */
+    display: inline-block;
+    max-width: 66ch; /* ch is a unit based on the width of the "0" glyph in the current font */
+    min-height: 10px;
+    font-size: 13px;
+}
+.response-text {
+    vertical-align: center;
+    white-space: pre-line; /* This makes sure that newlines are respected in the display */
+    display: inline-block;
+    max-width: 66ch; /* ch is a unit based on the width of the "0" glyph in the current font */
+    min-height: 10px;
+    font-size: 13px;
+}
+.indented-response {
+    padding-left: 4em; /* or whatever indentation you want */
+}
+.label-text,
+.response-text {
+    max-width: 95vw;
+}

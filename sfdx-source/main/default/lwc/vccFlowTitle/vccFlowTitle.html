@@ -1,0 +1,18 @@
+<template>
+    <div role="alert" tabindex="0">
+        <lightning-layout class={wrapperCssClass} vertical-align="center">
+            <lightning-layout-item lwc:if={showIcon}>
+                <lightning-icon
+                    lwc:ref="theIcon"
+                    icon-name={iconName}
+                    class={iconCssClassEvaluated}
+                    size={iconSize}
+                    variant={iconVariant}></lightning-icon>
+            </lightning-layout-item>
+
+            <lightning-layout-item>
+                <h2 class={titleCssClass}>{title}</h2>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>

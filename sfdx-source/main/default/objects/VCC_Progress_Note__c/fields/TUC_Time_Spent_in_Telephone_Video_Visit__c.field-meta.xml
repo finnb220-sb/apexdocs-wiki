@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TUC_Time_Spent_in_Telephone_Video_Visit__c</fullName>
+    <description>Only used in report type. Potentially depracated</description>
+    <externalId>false</externalId>
+    <label>Time Spent in Telephone/Video Visit</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Time</type>
+</CustomField>

@@ -1,0 +1,17 @@
+<template>
+    <div class="wrapper">
+        <div class={css.container} aria-live="assertive">
+            <lightning-icon
+                title={variant}
+                data-id="icon"
+                icon-name={iconName}
+                size="x-small"
+                class={css.icon}></lightning-icon>
+            <lightning-formatted-text
+                tabindex="0"
+                data-id="message"
+                value={_message}
+                class={css.message}></lightning-formatted-text>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,69 @@
+.refill_button {
+    width: fit-content;
+}
+
+lightning-datatable {
+    --slds-g-color-neutral-base-80: #181818;
+}
+
+c-fixed-column-datatable {
+    --slds-g-color-neutral-base-80: #181818;
+}
+
+.input-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 1rem;
+    width: 100%;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.component-options {
+    margin-left: auto;
+}
+
+.search-bar {
+    flex-basis: 50%;
+}
+
+.med-supply-filter {
+    width: 150px;
+}
+
+.start-range {
+    margin-left: auto;
+    font-size: 1.2rem;
+}
+
+.tableContainer {
+    height: 28rem;
+    margin-bottom: 1rem;
+}
+
+/* CSS for Fixed Column Datatable */
+.slds-box {
+    padding: 0;
+}
+.fixedPosition {
+    position: sticky;
+    z-index: 10;
+    left: 0;
+}
+.autoOverflow {
+    overflow: auto;
+}
+.containerClass {
+    display: inline-flex;
+}
+.heightLimit {
+    max-height: 28rem;
+}
+.fitWidthSticky {
+    width: fit-content;
+}

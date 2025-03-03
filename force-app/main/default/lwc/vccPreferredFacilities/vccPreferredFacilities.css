@@ -1,0 +1,6 @@
+.slds-spinner {
+    z-index: -1;
+}
+:host {
+    --slds-c-card-header-spacing-inline-start: 0rem;
+}

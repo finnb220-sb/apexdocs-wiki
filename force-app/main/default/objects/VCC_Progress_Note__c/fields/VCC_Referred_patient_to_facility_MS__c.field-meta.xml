@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Referred_patient_to_facility_MS__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked if the Agent referred the patient to facility/Member Services for registration and/or assignment</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if you referred the patient to facility/Member Services for registration and/or assignment</inlineHelpText>
+    <label>Referred patient to facility</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

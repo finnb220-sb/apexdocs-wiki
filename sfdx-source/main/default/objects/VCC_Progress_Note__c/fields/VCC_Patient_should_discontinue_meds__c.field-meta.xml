@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Patient_should_discontinue_meds__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates that the patient should discontinue taking medication</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if the patient should discontinue taking medication</inlineHelpText>
+    <label>Patient should discontinue medication(s)</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

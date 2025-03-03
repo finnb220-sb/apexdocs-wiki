@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Apex_Execution_Run_Time__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The run time of all test methods in milliseconds.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The run time of all test methods in milliseconds.</inlineHelpText>
+    <label>Total Apex Execution Run Time</label>
+    <summarizedField>Test_Run_Method_Result__c.Run_Time__c</summarizedField>
+    <summaryForeignKey>Test_Run_Method_Result__c.Test_Run__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

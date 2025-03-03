@@ -1,0 +1,36 @@
+{
+    "success": true,
+    "message": "prescription LABEL log found.",
+    "log": [
+        {
+            "labelComment": "From RX number 4040713",
+            "labelDateTime": "1994-05-23T14:47:56",
+            "printedBy": "MCCOY,TINA",
+            "rxReference": "ORIGINAL"
+        },
+        {
+            "labelComment": "From RX number 4040713 (PARTIAL)",
+            "labelDateTime": "1994-05-23T14:52:10",
+            "printedBy": "MCCOY,TINA",
+            "rxReference": "REFILL #98"
+        },
+        {
+            "labelComment": "From RX number 4040713 (PARTIAL)",
+            "labelDateTime": "1994-06-29T12:55:03",
+            "printedBy": "MCCOY,TINA",
+            "rxReference": "REFILL #97"
+        },
+        {
+            "labelComment": "From RX number 4040713",
+            "labelDateTime": "1994-06-29T12:55:36",
+            "printedBy": "MCCOY,TINA",
+            "rxReference": "REFILL #1"
+        },
+        {
+            "labelComment": "From RX number 4040713 (PARTIAL)",
+            "labelDateTime": "1994-08-24T11:08:50",
+            "printedBy": "MCCOY,TINA",
+            "rxReference": "REFILL #96"
+        }
+    ]
+}

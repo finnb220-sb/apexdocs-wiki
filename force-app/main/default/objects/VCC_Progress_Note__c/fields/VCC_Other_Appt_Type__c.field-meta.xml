@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Other_Appt_Type__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used by CCC MSA Patient is requesting a follow up appointment other than Virtual, Primary, Mental Health or Specialty Care.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Patient is requesting a follow up appointment other than Virtual, Primary, Mental Health or Specialty Care.</inlineHelpText>
+    <label>Other Appt Type</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

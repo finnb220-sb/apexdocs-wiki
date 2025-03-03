@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PrC_Specialist_Site_Id__c</fullName>
+    <description>Retrieves the Specialists Facility ID from the Location object and removes all characters except the 3 digit number.</description>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISBLANK(Assigned_Specialist__c)),
+
+IF(NOT(ISBLANK(Assigned_Specialist__r.PC_Location__c)),
+
+IF(AND(NOT(ISBLANK(Assigned_Specialist__r.PC_Location__r.VAF_Facility_ID__c)),
+
+LEN(Assigned_Specialist__r.PC_Location__r.VAF_Facility_ID__c) &gt;= 7),
+
+MID(Assigned_Specialist__r.PC_Location__r.VAF_Facility_ID__c,
+
+FIND(&apos;vha_&apos;, Assigned_Specialist__r.PC_Location__r.VAF_Facility_ID__c)+4,
+3),
+
+&apos;&apos;),
+&apos;&apos;),
+&apos;&apos;)</formula>
+    <label>PrC Specialist Site Id</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

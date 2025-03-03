@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TotalClassesUnder75PercentCoverage__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The total number of classes that had under 75% code coverage for the test run.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The total number of classes that had under 75% code coverage for the test run.</inlineHelpText>
+    <label>Total Classes Under 75 Percent Coverage</label>
+    <summaryFilterItems>
+        <field>CodeCoverage__c.CodeCoveragePercentage__c</field>
+        <operation>lessThan</operation>
+        <value>75.00</value>
+    </summaryFilterItems>
+    <summaryForeignKey>CodeCoverage__c.TestRun__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

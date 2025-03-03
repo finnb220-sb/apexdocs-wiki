@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_User_is_Owner__c</fullName>
+    <description>Shows if the current running user is also the owner of the Case. Will not be displayed on Case Layout, used for component filtering.</description>
+    <externalId>false</externalId>
+    <formula>Owner:User.Id = $User.Id</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>User is Owner?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_of_Birth_Sensitive__c</fullName>
+    <description>Formula field that displays the date of birth of the person account record if the record is not marked as sensitive or VA Employee. Displays SENSITIVE if the record is flagged as sensitive or VA Employee.</description>
+    <externalId>false</externalId>
+    <formula>IF( Sensitive__c = TRUE ||  VA_Employee__c =  TRUE , &apos;SENSITIVE&apos;, Date_of_Birth__c)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Displays “SENSITIVE” if the record is flagged as sensitive or VA Employee</inlineHelpText>
+    <label>Date of Birth</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,32 @@
+<template>
+    <!-- No Results -->
+    <template if:true={noResults}>
+        <c-base-empty-state type="gonefishing" msg={noCRMResultsMsg} sub-msg={searchExternallyMsg}></c-base-empty-state>
+    </template>
+
+    <!-- Results -->
+    <template if:false={noResults}>
+        <c-base-compact-card variant="base" oncardclick={handleCardClick} settings={settings} list={searchResults}></c-base-compact-card>
+    </template>
+
+    <lightning-layout class="slds-grid_align-spread">
+        <lightning-layout-item class="slds-var-p-around_large">
+            <!-- Back -->
+            <lightning-button variant="neutral" label="Back to Search" title="Back to Search" onclick={handleBackToSearchClick}></lightning-button>
+        </lightning-layout-item>
+        <lightning-layout-item class="slds-var-p-around_large">
+            <!-- Open In CRM -->
+            <lightning-button
+                variant="brand"
+                onclick={handleOpenRecordClick}
+                disabled={isOpenCrmRecordDisabled}
+                label="Open CRM Record"
+                icon-name="utility:open"
+            ></lightning-button>
+        </lightning-layout-item>
+        <lightning-layout-item class="slds-var-p-around_large">
+            <!-- Search External -->
+            <lightning-button variant="brand" label="Search External Records" title="Search External Records" onclick={handleViewExternalClick}></lightning-button>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

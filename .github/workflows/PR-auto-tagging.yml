@@ -1,0 +1,119 @@
+name: Manage Pull Request Labels
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+  pull_request_review:
+    types: [submitted, dismissed]
+  workflow_dispatch:
+
+jobs:
+  pre-checkout-labels:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add Target Branch Label
+        continue-on-error: true
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const targetBranch = context.payload.pull_request.base.ref;
+            const labelName = targetBranch.replace('release/', '');
+
+            await github.rest.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: [labelName]
+            });
+
+      - name: Add Branch Type Label
+        continue-on-error: true
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const headBranch = context.payload.pull_request.head.ref;
+            const bugLabel = 'bug';
+            const featureLabel = 'feature';
+            let labels = [];
+
+            if (headBranch.startsWith('fix/') || headBranch.startsWith('bug/')) {
+              labels.push(bugLabel);
+            } else if (headBranch.startsWith('feature/')) {
+              labels.push(featureLabel);
+            }
+
+            if (labels.length > 0) {
+              await github.rest.issues.addLabels({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                labels: labels
+              });
+            }
+
+      - name: Handle Draft Status
+        continue-on-error: true
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const draftLabel = 'draft';
+            const isDraft = context.payload.pull_request.draft; 
+            if (isDraft) {
+              await github.rest.issues.addLabels({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                labels: [draftLabel]
+              });
+            } else {
+              try {
+                await github.rest.issues.removeLabel({
+                  issue_number: context.issue.number,
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  name: draftLabel
+                });
+              } catch (error) {
+                if (error.status === 404) {
+                  console.log('Draft label not found on the pull request. Skipping removal.');
+                } else {
+                  throw error;
+                }
+              }
+            }
+
+      - name: Handle Review Status
+        continue-on-error: true
+        if: github.event_name == 'pull_request_review'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const reviewState = context.payload.review.state;
+            const changesRequestedLabel = 'Changes Requested';
+            const readyForReviewLabel = 'Ready for re-review';
+
+            if (reviewState === 'changes_requested') {
+              await github.rest.issues.addLabels({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                labels: [changesRequestedLabel]
+              });
+            } else if (reviewState === 'dismissed') {
+              await github.rest.issues.removeLabel({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                name: changesRequestedLabel
+              });
+              await github.rest.issues.addLabels({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                labels: [readyForReviewLabel]
+              });
+            }

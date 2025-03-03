@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Create a case for TED/TUC</description>
+    <flowDefinition>TUC_Escalate_to_TED</flowDefinition>
+    <label>Escalate To Tele-EC</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

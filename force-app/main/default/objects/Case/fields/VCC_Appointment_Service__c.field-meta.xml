@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Appointment_Service__c</fullName>
+    <description>Type of Appointment Requested by Patient.</description>
+    <externalId>false</externalId>
+    <label>Appointment Service</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CCC Virtual Clinic Visit (VCV)</fullName>
+                <default>false</default>
+                <label>CCC Virtual Clinic Visit (VCV)</label>
+            </value>
+            <value>
+                <fullName>Primary Care</fullName>
+                <default>false</default>
+                <label>Primary Care</label>
+            </value>
+            <value>
+                <fullName>Mental Health</fullName>
+                <default>false</default>
+                <label>Mental Health</label>
+            </value>
+            <value>
+                <fullName>Specialty Care</fullName>
+                <default>false</default>
+                <label>Specialty Care</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

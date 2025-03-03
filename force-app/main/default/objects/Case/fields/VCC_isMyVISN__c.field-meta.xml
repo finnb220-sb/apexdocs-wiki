@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_isMyVISN__c</fullName>
+    <description>Used for reporting by VISN. If the Case&apos;s Owner Division matches the current end user&apos;s VISN (division), then this field will automatically be
+        checked.</description>
+    <externalId>false</externalId>
+    <formula>IF( VCC_Owner_Division__c = $User.Division ,TRUE, FALSE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>isMyVISN</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

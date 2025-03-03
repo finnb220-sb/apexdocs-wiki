@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Progress_Note_Visit_Type__c</fullName>
+    <description>The modality of the visit.</description>
+    <externalId>false</externalId>
+    <label>Progress Note Visit Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Phone</fullName>
+                <default>false</default>
+                <label>Phone</label>
+            </value>
+            <value>
+                <fullName>VVC</fullName>
+                <default>false</default>
+                <label>VVC</label>
+            </value>
+            <value>
+                <fullName>Chart Consult</fullName>
+                <default>false</default>
+                <label>Chart Consult</label>
+            </value>
+            <value>
+                <fullName>Chat</fullName>
+                <default>false</default>
+                <label>Chat</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

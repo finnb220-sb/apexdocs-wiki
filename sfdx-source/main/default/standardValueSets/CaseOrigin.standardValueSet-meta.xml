@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Web</fullName>
+        <default>false</default>
+        <label>Web</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Inbound Call</fullName>
+        <default>false</default>
+        <label>Inbound Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Outbound Call</fullName>
+        <default>false</default>
+        <label>Outbound Call</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Phone</fullName>
+        <default>false</default>
+        <label>Phone</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Email</fullName>
+        <default>false</default>
+        <label>Email</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Clinical Contact Center</fullName>
+        <default>false</default>
+        <label>Clinical Contact Center</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Community Living Center/Nursing Facility</fullName>
+        <default>false</default>
+        <label>Community Living Center/Nursing Facility</label>
+    </standardValue>
+    <standardValue>
+        <fullName>VA Health Chat</fullName>
+        <default>false</default>
+        <label>VA Health Chat</label>
+    </standardValue>
+    <standardValue>
+        <fullName>PACT</fullName>
+        <default>false</default>
+        <label>PACT</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Provider Connect</fullName>
+        <default>false</default>
+        <label>Provider Connect</label>
+    </standardValue>
+</StandardValueSet>

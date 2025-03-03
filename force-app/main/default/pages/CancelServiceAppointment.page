@@ -1,0 +1,4 @@
+<apex:page standardController="ServiceAppointment" extensions="CancelServiceAppointment" action="{!startCancelServiceAppointmentFlow}" showHeader="false" sidebar="false">
+    <apex:includeLightning />
+    <div id="lightningComponentId"></div>
+</apex:page>

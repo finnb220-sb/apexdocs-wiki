@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Controlled_Non_VA_Medication__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates that the requested Non-VA medication is a controlled substance</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if the requested Non-VA medication is controlled substance. SUD Labs will auto populate on Save if selected.</inlineHelpText>
+    <label>Controlled Non-VA Medication</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

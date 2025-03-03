@@ -1,0 +1,91 @@
+<template>
+    <div>
+        <div class="slds-card slds-theme_default">
+            <!-- Header Bar -->
+            <div class="slds-var-p-around_medium slds-border_bottom">
+                <div class="slds-grid slds-grid_vertical-align-center">
+                    <!-- Title (Date) -->
+                    <div class="slds-col slds-text-align_center">
+                        <h1 class="slds-text-heading_medium slds-truncate">{formattedStartDate}</h1>
+                    </div>
+                    <!-- /Title (Date) -->
+
+                    <!-- Date Navigation -->
+                    <div class="slds-col slds-grow-none">
+                        <div class="slds-show_inline-block">
+                            <lightning-button-icon icon-name="utility:left" variant="border-filled" onclick={navigateToPrevious}></lightning-button-icon>
+                            <lightning-button label="Today" onclick={navigateToToday}></lightning-button>
+                            <lightning-button-icon icon-name="utility:right" variant="border-filled" onclick={navigateToNext}></lightning-button-icon>
+                        </div>
+                        <div class="slds-show_inline-block">
+                            <lightning-input
+                                label="Date"
+                                type="date"
+                                name="select-date"
+                                variant="label-hidden"
+                                class="lwc-datepicker slds-m-left_small"
+                                value={datePickerString}
+                                onchange={navigateToDay}
+                            ></lightning-input>
+                        </div>
+                    </div>
+                    <!-- /Date Navigation -->
+                </div>
+            </div>
+            <!-- /Header Bar -->
+
+            <!-- Gantt Chart -->
+            <div class="slds-scrollable_x">
+                <div class="slds-var-p-around_medium lwc-chart_container">
+                    <!-- Timeline -->
+                    <div class="slds-grid lwc-timeline">
+                        <div class="slds-col slds-size_1-of-6 slds-align-bottom">
+                            <div class="slds-text-heading_medium slds-var-p-around_small" style="font-weight: bold; background-color: #ececec; padding-left: 30px">{chartType}</div>
+                        </div>
+                        <div class="slds-col">
+                            <div class="slds-grid">
+                                <template for:each={hours} for:item="hour">
+                                    <div key={hour} class="slds-col lwc-timeline_month-container" style={hour.style}>
+                                        <div class="slds-grid">
+                                            <template for:each={hour.days} for:item="hr">
+                                                <div key={hr} class={hr.class}>
+                                                    <div if:true={hr.dayName}>{hr.dayName}</div>
+                                                    <div>{hr.label}</div>
+                                                </div>
+                                            </template>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Timeline -->
+
+                    <!-- Allocation Table -->
+                    <!-- Resource Rows -->
+                    <template if:true={skills.length}>
+                        <template for:each={skills} for:item="skill">
+                            <c-pc-gantt-chart-skill
+                                key={skill.Id}
+                                class="lwc-resource-component"
+                                skill={skill}
+                                date-increment={view.slotSize}
+                                start-time={startDate}
+                                onrefresh={handleRefresh}
+                            ></c-pc-gantt-chart-skill>
+                        </template>
+                    </template>
+                    <!-- /Resource Rows -->
+
+                    <!-- Empty State -->
+                    <div if:false={skills.length} class="slds-text-align_center slds-p-around_medium">
+                        <span class="slds-text-color_weak">No Resources to Show</span>
+                    </div>
+                    <!-- /Empty State -->
+                    <!-- /Allocation Table -->
+                </div>
+            </div>
+            <!-- /Gantt Chart -->
+        </div>
+    </div>
+</template>

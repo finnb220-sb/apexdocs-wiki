@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description
+    >Records of the Custom Metadata Type drive the behavior of the vccExternalVaLinks lightning web component. the &quot;vcc&quot; prefix has been deliberately omitted, as part
+        of a coordinated effort to build a Global Dynamic Links component. The vccExternalVaLinks component is slated for deprecation, and this MDT will survive to drive the
+        behavior of the generic &quot;ExternalVALinks&quot; lightning web component.</description>
+    <label>External VA Link</label>
+    <pluralLabel>External VA Links</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

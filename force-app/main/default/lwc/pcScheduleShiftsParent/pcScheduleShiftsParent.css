@@ -1,0 +1,9 @@
+.sizeOfWeek {
+    width: 225px;
+}
+
+.btnSizing {
+    display: block;
+    width: 95px;
+    float: right;
+}

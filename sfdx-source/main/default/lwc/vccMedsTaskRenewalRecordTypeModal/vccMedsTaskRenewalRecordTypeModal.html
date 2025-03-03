@@ -1,0 +1,18 @@
+<template>
+    <section>
+        <lightning-modal-header label="New Progress Note"></lightning-modal-header>
+        <lightning-modal-body>
+            <lightning-radio-group
+                name="recordTypeRadioGroup"
+                label="Progress Note Type"
+                options={radioButtonValues}
+                value={rtRadioValue}
+                onchange={handleRadioChange}
+                required
+                type="radio"></lightning-radio-group>
+        </lightning-modal-body>
+        <lightning-modal-footer>
+            <lightning-button variant="brand" label="Create Progress Note" onclick={handleSubmit}></lightning-button>
+        </lightning-modal-footer>
+    </section>
+</template>

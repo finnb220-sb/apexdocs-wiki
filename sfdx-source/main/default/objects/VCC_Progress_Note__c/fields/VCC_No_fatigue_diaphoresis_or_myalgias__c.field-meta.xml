@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_No_fatigue_diaphoresis_or_myalgias__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>True if these constitutional symptoms do not exist in patient during virtual visit</description>
+    <externalId>false</externalId>
+    <inlineHelpText>True if these constitutional symptoms do not exist in patient during virtual visit</inlineHelpText>
+    <label>No fatigue, diaphoresis, or myalgias</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

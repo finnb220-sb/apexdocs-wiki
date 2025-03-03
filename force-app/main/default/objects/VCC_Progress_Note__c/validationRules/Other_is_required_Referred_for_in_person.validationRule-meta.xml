@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_is_required_Referred_for_in_person</fullName>
+    <active>true</active>
+    <description>If &quot;Other - In-Person&quot; is checked, then &quot;Other -Referred for In-Person Appt.&quot; must be populated.</description>
+    <errorConditionFormula>BEGINS( RecordType.DeveloperName, &quot;VCC_&quot;) &amp;&amp; !$Permission.DisableTriggersFlag &amp;&amp; AND(VCC_Other_In_Person__c = True, ISBLANK (
+        VCC_Other_Referred_for_in_person_appt__c ), NOT $Permission.VCC_Disable_Progress_Note_Assignment_Rules)</errorConditionFormula>
+    <errorDisplayField>VCC_Other_Referred_for_in_person_appt__c</errorDisplayField>
+    <errorMessage>ERROR: Other -Referred for In-Person Appt. must be populated when &quot;Other - In-Person&quot; is checked.</errorMessage>
+</ValidationRule>

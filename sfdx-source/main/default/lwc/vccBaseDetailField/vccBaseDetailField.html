@@ -1,0 +1,25 @@
+<template>
+    <div tabindex="0" class="vertical detail-cell">
+        <div class="field-label">
+            <template lwc:if={formatAsDate}>
+                <label for="dateValue">{label}</label>
+            </template>
+            <template lwc:else>
+                <label for="textValue">{label}</label>
+            </template>
+        </div>
+        <div class="horizontal field-value">
+            <p>
+                <slot>
+                    <template lwc:if={formatAsDate}>
+                        <lightning-formatted-date-time
+                            id="dateValue"
+                            value={value}
+                            lwc:spread={dateFormattingOptions}></lightning-formatted-date-time>
+                    </template>
+                    <template lwc:else><span id="textValue">{value}</span></template>
+                </slot>
+            </p>
+        </div>
+    </div>
+</template>

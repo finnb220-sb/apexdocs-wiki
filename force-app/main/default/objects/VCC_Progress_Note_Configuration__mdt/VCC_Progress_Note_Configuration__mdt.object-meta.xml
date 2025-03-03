@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Used for identifying what Attributes belong to a particular Progress Note or Addendum Type.</description>
+    <label>VCC Progress Note Configuration</label>
+    <pluralLabel>Progress Note Configurations</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,60 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <div>
+        <lightning-card title={title} icon-name="standard:operating_hours">
+            <template if:true={hasHours}>
+                <lightning-button variant="brand-outline" label="Edit" title="Edit" onclick={editOperatingHours} class="slds-m-left_x-small" slot="actions"></lightning-button>
+            </template>
+
+            <div class="slds-p-around_medium">
+                <template if:true={isLoading}>
+                    <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+                </template>
+                <template if:true={isShow}>
+                    <div style="text-align: left">
+                        <span style="font-weight:600;font-size:18px;text-align;left;">Timezone</span>
+                    </div>
+                    <div style="text-align: left">
+                        <span style="font-weight:400;font-size:14px;text-align;left;">{timezone}</span>
+                    </div>
+
+                    <div style="margin: 20px"></div>
+
+                    <lightning-datatable
+                        data-recid="hoursTable"
+                        columns={hoursColumns}
+                        data={hoursData}
+                        key-field="Id"
+                        max-row-selection="1"
+                        onrowselection={handleRowSelection}
+                    ></lightning-datatable>
+
+                    <div style="margin: 20px"></div>
+
+                    <div style="text-align: left">
+                        <span style="font-weight:600;font-size:18px;text-align;left;">Exceptions</span>
+                    </div>
+                    <lightning-datatable columns={exceptionsColumns} data={exceptionsData} key-field="Id" hide-checkbox-column="true"></lightning-datatable>
+                </template>
+                <template if:false={isShow}>
+                    <div style="text-align: center">
+                        <span style="font-weight:600;font-size:16px;text-align;center;"> {msg}</span>
+                    </div>
+                </template>
+            </div>
+
+            <div style="text-align: right; margin-right: 10px">
+                <template if:true={hasData}>
+                    <lightning-button
+                        variant="brand-outline"
+                        label="New Exception"
+                        title="New Exception"
+                        onclick={createNewException}
+                        class="slds-m-left_x-small"
+                        slot="footer"
+                    ></lightning-button>
+                </template>
+            </div>
+        </lightning-card>
+    </div>
+</template>

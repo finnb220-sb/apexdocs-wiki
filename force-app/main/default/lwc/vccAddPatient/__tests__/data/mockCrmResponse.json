@@ -1,0 +1,11 @@
+{
+    "value": {
+        "accountList": [
+            {
+                "Name": "John CRM Doe",
+                "Id": "123456789"
+            }
+        ]
+    },
+    "kindString": "OK"
+}

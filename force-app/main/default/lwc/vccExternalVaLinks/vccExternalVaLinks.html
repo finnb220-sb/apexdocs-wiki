@@ -1,0 +1,82 @@
+<template>
+    <c-logger></c-logger>
+    <div class="slds-card">
+        <!-- Using inline styles to mimic legacy component -->
+        <header
+            class="slds-var-m-around_small"
+            style="text-align: center; color: rgb(107, 109, 112); font-size: 14px; font-weight: bold">
+            External VA Links
+        </header>
+
+        <template if:true={isLoading}>
+            <c-base-spinner alt-text="Loading VHA External Links..."> </c-base-spinner>
+        </template>
+
+        <template if:false={isLoading}>
+            <div class="slds-card__body slds-card__body_inner">
+                <div class="slds-var-m-around_x-small slds-var-m-bottom_medium">
+                    <!-- Conditional rendering if links are available -->
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-size_5-of-6">
+                            <template if:false={showEmptyState}>
+                                <template for:each={links} for:item="link">
+                                    <div key={link.Sort_Order__c}>
+                                        <b
+                                            ><a
+                                                alt-text={link.MasterLabel}
+                                                href="#"
+                                                onclick={navigateToLink}
+                                                data-id={link.Url__c}
+                                                data-url={link.URL__c}
+                                                class=""
+                                                >{link.MasterLabel}</a
+                                            ></b
+                                        >
+                                    </div>
+                                </template>
+                                <p tabindex="0">
+                                    <lightning-formatted-rich-text
+                                        value={labels.vclLabel}></lightning-formatted-rich-text>
+                                </p>
+                            </template>
+                        </div>
+                        <template lwc:if={showE911Button}>
+                            <div class="slds-col slds-size_1-of-6">
+                                <lightning-button
+                                    label="e911"
+                                    title="Invoke e911"
+                                    icon-name="action:call"
+                                    class="slds-var-m-left_x-small slds-float_right"
+                                    onclick={navigateToLink}></lightning-button>
+                            </div>
+                        </template>
+                    </div>
+                    <!-- Conditional rendering if links are unavailable -->
+                    <template if:true={showEmptyState}>
+                        <c-base-empty-state type="noResults" msg={labels.noResultsMessage}></c-base-empty-state>
+                    </template>
+                </div>
+            </div>
+        </template>
+    </div>
+
+    <template if:true={showE911FlowModal}>
+        <section
+            role="dialog"
+            tabindex="-1"
+            aria-label="e911"
+            aria-modal="true"
+            aria-describedby="activated e911 flow"
+            class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <lightning-flow
+                    flow-api-name="VCC_E911_Invokation_Flow"
+                    flow-input-variables={flowInputVars}
+                    flow-finish-behavior="NONE"
+                    onstatuschange={handleFlowStatusChange}>
+                </lightning-flow>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

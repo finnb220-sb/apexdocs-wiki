@@ -1,0 +1,3 @@
+SELECT Id, CreatedDate, Name, FirstName, LastName, OwnerId, Is_Training_Account_Master__c, Is_Training_Account__c, VCC_MVI_External_Id__pc
+FROM Account
+WHERE Is_Training_Account_Master__c = TRUE

@@ -1,0 +1,50 @@
+<template>
+    <template lwc:if={isLoading}>
+        <div class="spinner" role="Loading spinner">
+            <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+        </div>
+    </template>
+    <template lwc:if={hasData}>
+        <template lwc:if={initialized}>
+            <template lwc:if={combinedReport}>
+                <lightning-card hide-header="true" label="combined message">
+                    <div class="slds-align_absolute-center" style="font-weight: 600; text-align: center">
+                        <lightning-icon
+                            size="small"
+                            style={combinedIconStyle}
+                            icon-name={combinedIconName}
+                            alternative-text={combinedTitle}
+                            title={combinedTitle}></lightning-icon>
+                        <span style={combinedTextStyle}>&nbsp;{combinedMessage}</span>
+                    </div>
+                </lightning-card>
+            </template>
+            <template lwc:if={separateReport}>
+                <lightning-card hide-header="true" label="high acuity message">
+                    <div class="slds-align_absolute-center" style="font-weight: 600; text-align: center">
+                        <lightning-icon
+                            size="small"
+                            style={highAcuityIconStyle}
+                            icon-name={highAcuityIconName}
+                            alternative-text={highAcuityTitle}
+                            title={highAcuityTitle}></lightning-icon>
+                        <span style={highAcuityTextStyle}>&nbsp;{highAcuityMessage}</span>
+                    </div>
+                </lightning-card>
+                <div class="slds-var-m-top_small">
+                    <lightning-card hide-header="true" label="intermediate acuity message">
+                        <div class="slds-align_absolute-center" style="font-weight: 600; text-align: center">
+                            <lightning-icon
+                                size="small"
+                                style={intermediateAcuityIconStyle}
+                                icon-name={intermediateAcuityIconName}
+                                alternative-text={intermediateAcuityTitle}
+                                title={intermediateAcuityTitle}></lightning-icon>
+                            <span style={intermediateAcuityTextStyle}>&nbsp;{intermediateAcuityMessage}</span>
+                        </div>
+                    </lightning-card>
+                </div>
+            </template>
+        </template>
+    </template>
+</template>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Unable_to_assist_patient_NonTriage__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked when the patient is non-triage and the agent was unable to assist the patient</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if the patient is non-triage and the agent was unable to assist the patient</inlineHelpText>
+    <label>Unable to assist patient_NonTriage</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

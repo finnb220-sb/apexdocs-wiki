@@ -1,0 +1,27 @@
+name: Set Variable
+
+on:
+  workflow_call:
+    inputs:
+      variable_name:
+        description: 'Name of the variable to set'
+        required: true
+        type: string
+      variable_value:
+        description: 'Value to set for the variable'
+        required: true
+        type: string
+
+jobs:
+  set-variable:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set GitHub Action variable
+        env:
+          GITHUB_TOKEN: ${{ secrets.VARIABLE_UPDATE_PAT }}
+        run: |
+          gh api \
+            --method PUT \
+            -H "Accept: application/vnd.github+json" \
+            /orgs/${{ github.repository_owner }}/actions/variables/${{ inputs.variable_name }} \
+            -f value='${{ inputs.variable_value }}'

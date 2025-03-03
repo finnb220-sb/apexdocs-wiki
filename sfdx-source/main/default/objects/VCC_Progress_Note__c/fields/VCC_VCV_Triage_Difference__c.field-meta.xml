@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_VCV_Triage_Difference__c</fullName>
+    <description>Compare Numeric value of System Where to Nurse Recommendation Where, when either or both are recommending virtual/tele care. Used for reporting.</description>
+    <externalId>false</externalId>
+    <formula>IF( AND( VCC_Nurse_Where_Value__c =3, VCC_System_Where_Value__c &lt;&gt; 3), &apos;VCV Up-Triage&apos;, IF( AND( VCC_System_Where_Value__c =3, VCC_Nurse_Where_Value__c
+        &lt;&gt; 3), &apos;VCV Down-Triage&apos;, &apos;No Change&apos;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Compare Numeric value of System Where to Nurse Recommendation Where, when either or both are recommending virtual/tele care.</inlineHelpText>
+    <label>VCV Triage Difference</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

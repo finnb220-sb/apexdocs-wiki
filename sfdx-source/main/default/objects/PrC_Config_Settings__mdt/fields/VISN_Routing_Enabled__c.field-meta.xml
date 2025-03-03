@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VISN_Routing_Enabled__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Selected, this reflects if VISN-based case routing is active.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>If selected, Provider Connect is set to route communications by VISN.</inlineHelpText>
+    <label>VISN Routing Enabled</label>
+    <type>Checkbox</type>
+</CustomField>

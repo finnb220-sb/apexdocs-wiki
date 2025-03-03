@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_My_Unsigned_Addendums</fullName>
+    <columns>NAME</columns>
+    <columns>VCC_Related_Note__c</columns>
+    <columns>VCC_Patient_Name__c</columns>
+    <columns>VCC_Related_Case__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>VCC_Signed__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>My Unsigned Addendums</label>
+</ListView>

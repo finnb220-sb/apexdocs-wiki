@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Discussed_Exercise_with_patient__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates that Exercise was discussed with the patient</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if Exercise was discussed with the patient</inlineHelpText>
+    <label>Discussed Exercise with patient</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

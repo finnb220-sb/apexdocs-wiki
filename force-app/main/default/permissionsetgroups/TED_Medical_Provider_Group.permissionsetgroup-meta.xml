@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permission Sets for Tele-EC Medical Provider Persona.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Tele-EC Medical Provider Group</label>
+    <permissionSets>Accounts_Tab_Salesforce</permissionSets>
+    <permissionSets>LoggerEndUser</permissionSets>
+    <permissionSets>LoggerLogCreator</permissionSets>
+    <permissionSets>TED_Account_Access_RE</permissionSets>
+    <permissionSets>TED_Addendum_Access_CRED</permissionSets>
+    <permissionSets>TED_Case_Access</permissionSets>
+    <permissionSets>TED_Console_App_Access</permissionSets>
+    <permissionSets>TED_Contact_Access_R</permissionSets>
+    <permissionSets>TED_MP_Chart_Review_Progress_Note</permissionSets>
+    <permissionSets>TED_MP_Virtual_Visit_Progress_Note</permissionSets>
+    <permissionSets>TED_Medical_Provider</permissionSets>
+    <permissionSets>TED_RN_Triage_Progress_Note</permissionSets>
+    <permissionSets>TED_Reports_and_Dashboards</permissionSets>
+    <permissionSets>TED_Signers_Access_CRE</permissionSets>
+    <permissionSets>TED_Task_Access</permissionSets>
+    <permissionSets>TED_Transfer_Cases</permissionSets>
+    <permissionSets>Tasks_Tab_Salesforce</permissionSets>
+    <permissionSets>Tele_EC_Apex_Class</permissionSets>
+    <permissionSets>Tele_EC_CPT_to_PN_Mapping</permissionSets>
+    <permissionSets>Tele_EC_Columbia_Screening_Access</permissionSets>
+    <permissionSets>Tele_EC_Escalation_Status_Access_CRE</permissionSets>
+    <permissionSets>Tele_EC_Order_Component</permissionSets>
+    <permissionSets>Tele_EC_Platform_Events</permissionSets>
+    <permissionSets>User_UI_Event_Access_CRE</permissionSets>
+    <permissionSets>VAF_Base_User</permissionSets>
+    <permissionSets>VAHC_Read_Progress_Notes</permissionSets>
+    <permissionSets>VAHC_Standard_VCC_User</permissionSets>
+    <permissionSets>VAHC_View_PACT_Details</permissionSets>
+    <permissionSets>VAHC_eGain_Permission_Set</permissionSets>
+    <permissionSets>VCC_Bypass_Caller_Verification</permissionSets>
+    <permissionSets>VCC_DAS</permissionSets>
+    <permissionSets>VCC_Manage_Signers</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

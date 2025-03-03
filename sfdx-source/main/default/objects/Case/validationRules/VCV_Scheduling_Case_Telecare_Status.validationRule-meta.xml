@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCV_Scheduling_Case_Telecare_Status</fullName>
+    <active>true</active>
+    <description>Patient Telecare Status must be selected if the case is for virtual visit.</description>
+    <errorConditionFormula>BEGINS( RecordType.DeveloperName, &quot;VCC_&quot;) &amp;&amp; !$Permission.DisableTriggersFlag &amp;&amp; OR( ISPICKVAL(Status, &apos;Closed - Resolved&apos;),
+        ISPICKVAL(Status, &apos;Closed - Transferred&apos;)) &amp;&amp; CONTAINS(Subject, &apos;Schedule Virtual Care Visit&apos;) &amp;&amp;
+        ISPICKVAL(VCC_Patient_Telecare_Enabled__c , &quot;&quot;) &amp;&amp; !$Permission.VCC_Disable_Case_Validation_Rules</errorConditionFormula>
+    <errorDisplayField>VCC_Patient_Telecare_Enabled__c</errorDisplayField>
+    <errorMessage>ERROR: When scheduling a Virtual Care Visit, telecare status is required.</errorMessage>
+</ValidationRule>

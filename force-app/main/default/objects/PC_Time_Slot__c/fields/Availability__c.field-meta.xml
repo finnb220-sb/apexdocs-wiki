@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Availability__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>A specialist&apos;s availability</description>
+    <externalId>false</externalId>
+    <label>Availability</label>
+    <referenceTo>PC_Specialist_Availability__c</referenceTo>
+    <relationshipLabel>PC_Time Slots</relationshipLabel>
+    <relationshipName>PC_Time_Slots</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

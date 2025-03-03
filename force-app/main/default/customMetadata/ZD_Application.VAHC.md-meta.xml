@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomMetadata
+    xmlns="http://soap.sforce.com/2006/04/metadata"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>VAHC</label>
+    <protected>false</protected>
+    <values>
+        <field>VTC_Assigning_Authority__c</field>
+        <value xsi:type="xsd:string">USVHA</value>
+    </values>
+    <values>
+        <field>VTC_SSO_AuthProvider_FriendlyName__c</field>
+        <value xsi:type="xsd:string">VA SSOi</value>
+    </values>
+    <values>
+        <field>VTC_SSO_AuthProvider_Id__c</field>
+        <value xsi:type="xsd:string">0SO3d0000000048GAA</value>
+    </values>
+    <values>
+        <field>VTC_SSO_Mock_Token__c</field>
+        <value xsi:type="xsd:string">zBZZzbnVekogMzgJiEZ2x9ZmJZ9OmECyUW6o5vbR</value>
+    </values>
+    <values>
+        <field>VTC_Use_SSO_Mock__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_CRM_System_Modified_Output_To_VistA__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description
+    >LEAF-299 / CCCM-20147 This checkbox is checked if user input was modified during the process of sending the note to VistA (via DIP/VDIF). For example, the backslash
+        &quot;\&quot; is changed to a forward slash &quot;/&quot;.</description>
+    <externalId>false</externalId>
+    <label>CRM System Modified Output To VistA</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

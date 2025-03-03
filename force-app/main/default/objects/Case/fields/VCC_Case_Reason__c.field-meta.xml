@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Case_Reason__c</fullName>
+    <description>Reason for Case</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Reason for Case</inlineHelpText>
+    <label>Case Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>VCC_Case_Sub_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Appointments</fullName>
+                <default>false</default>
+                <label>Appointments</label>
+            </value>
+            <value>
+                <fullName>Back Ordered</fullName>
+                <default>false</default>
+                <label>Back Ordered</label>
+            </value>
+            <value>
+                <fullName>Benefits &amp; Enrollment</fullName>
+                <default>false</default>
+                <label>Benefits &amp; Enrollment</label>
+            </value>
+            <value>
+                <fullName>Cancel Appointment</fullName>
+                <default>false</default>
+                <label>Cancel Appointment</label>
+            </value>
+            <value>
+                <fullName>Change of Medication Status</fullName>
+                <default>false</default>
+                <label>Change of Medication Status</label>
+            </value>
+            <value>
+                <fullName>Community Care</fullName>
+                <default>false</default>
+                <label>Community Care</label>
+            </value>
+            <value>
+                <fullName>Community Care Information</fullName>
+                <default>false</default>
+                <label>Community Care Information</label>
+            </value>
+            <value>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+                <label>Complaint</label>
+            </value>
+            <value>
+                <fullName>Consult</fullName>
+                <default>false</default>
+                <label>Consult</label>
+            </value>
+            <value>
+                <fullName>Consult/Referral</fullName>
+                <default>false</default>
+                <label>Consult/Referral</label>
+            </value>
+            <value>
+                <fullName>Contacted Local Site Regarding Status of CC Rx</fullName>
+                <default>false</default>
+                <label>Contacted Local Site Regarding Status of CC Rx</label>
+            </value>
+            <value>
+                <fullName>COVID 19 Test Result</fullName>
+                <default>false</default>
+                <label>COVID 19 Test Result</label>
+            </value>
+            <value>
+                <fullName>Delivered</fullName>
+                <default>false</default>
+                <label>Delivered</label>
+            </value>
+            <value>
+                <fullName>Demographic Update</fullName>
+                <default>false</default>
+                <label>Demographic Update</label>
+            </value>
+            <value>
+                <fullName>Diagnostic Results</fullName>
+                <default>false</default>
+                <label>Diagnostic Results</label>
+            </value>
+            <value>
+                <fullName>Direct Scheduling</fullName>
+                <default>false</default>
+                <label>Direct Scheduling</label>
+            </value>
+            <value>
+                <fullName>Education</fullName>
+                <default>false</default>
+                <label>Education</label>
+            </value>
+            <value>
+                <fullName>Education (Clinical)</fullName>
+                <default>false</default>
+                <label>Education (Clinical)</label>
+            </value>
+            <value>
+                <fullName>Eligibility/Registration</fullName>
+                <default>false</default>
+                <label>Eligibility/Registration</label>
+            </value>
+            <value>
+                <fullName>Follow-up Call</fullName>
+                <default>false</default>
+                <label>Follow-up Call</label>
+            </value>
+            <value>
+                <fullName>General Inquiry</fullName>
+                <default>false</default>
+                <label>General Inquiry</label>
+            </value>
+            <value>
+                <fullName>Homicidal Ideation</fullName>
+                <default>false</default>
+                <label>Homicidal Ideation</label>
+            </value>
+            <value>
+                <fullName>Information</fullName>
+                <default>false</default>
+                <label>Information</label>
+            </value>
+            <value>
+                <fullName>In Transit</fullName>
+                <default>false</default>
+                <label>In Transit</label>
+            </value>
+            <value>
+                <fullName>Lost Delivery/Damaged Package</fullName>
+                <default>false</default>
+                <label>Lost Delivery/Damaged Package</label>
+            </value>
+            <value>
+                <fullName>Lost or Stolen</fullName>
+                <default>false</default>
+                <label>Lost or Stolen</label>
+            </value>
+            <value>
+                <fullName>Med Refill/Renewal</fullName>
+                <default>false</default>
+                <label>Med Refill/Renewal</label>
+            </value>
+            <value>
+                <fullName>Medication Counseling by Pharmacist</fullName>
+                <default>false</default>
+                <label>Medication Counseling by Pharmacist</label>
+            </value>
+            <value>
+                <fullName>Medication Extension Provided</fullName>
+                <default>false</default>
+                <label>Medication Extension Provided</label>
+            </value>
+            <value>
+                <fullName>Medication Recall</fullName>
+                <default>false</default>
+                <label>Medication Recall</label>
+            </value>
+            <value>
+                <fullName>Medication Refill</fullName>
+                <default>false</default>
+                <label>Medication Refill</label>
+            </value>
+            <value>
+                <fullName>Med List/Reconciliation</fullName>
+                <default>false</default>
+                <label>Med List/Reconciliation</label>
+            </value>
+            <value>
+                <fullName>Message to PACT</fullName>
+                <default>false</default>
+                <label>Message to PACT</label>
+            </value>
+            <value>
+                <fullName>Mission Act</fullName>
+                <default>false</default>
+                <label>Mission Act</label>
+            </value>
+            <value>
+                <fullName>Mission Act Information</fullName>
+                <default>false</default>
+                <label>Mission Act Information</label>
+            </value>
+            <value>
+                <fullName>New Appointment</fullName>
+                <default>false</default>
+                <label>New Appointment</label>
+            </value>
+            <value>
+                <fullName>No Action Taken</fullName>
+                <default>false</default>
+                <label>No Action Taken</label>
+            </value>
+            <value>
+                <fullName>Non-Va Med Requests</fullName>
+                <default>false</default>
+                <label>Non-Va Med Requests</label>
+            </value>
+            <value>
+                <fullName>Notification to Local Site</fullName>
+                <default>false</default>
+                <label>Notification to Local Site</label>
+            </value>
+            <value>
+                <fullName>Not Taking as Directed</fullName>
+                <default>false</default>
+                <label>Not Taking as Directed</label>
+            </value>
+            <value>
+                <fullName>Partial Rx Provided</fullName>
+                <default>false</default>
+                <label>Partial Rx Provided</label>
+            </value>
+            <value>
+                <fullName>Pending Order to be Processed</fullName>
+                <default>false</default>
+                <label>Pending Order to be Processed</label>
+            </value>
+            <value>
+                <fullName>Pending Rx</fullName>
+                <default>false</default>
+                <label>Pending Rx</label>
+            </value>
+            <value>
+                <fullName>Pharmacy</fullName>
+                <default>false</default>
+                <label>Pharmacy</label>
+            </value>
+            <value>
+                <fullName>Pharmacy Inquiry</fullName>
+                <default>false</default>
+                <label>Pharmacy Inquiry</label>
+            </value>
+            <value>
+                <fullName>Prep Instruction</fullName>
+                <default>false</default>
+                <label>Prep Instruction</label>
+            </value>
+            <value>
+                <fullName>Privacy Violation</fullName>
+                <default>false</default>
+                <label>Privacy Violation</label>
+            </value>
+            <value>
+                <fullName>Provided Facility Information</fullName>
+                <default>false</default>
+                <label>Provided Facility Information</label>
+            </value>
+            <value>
+                <fullName>Provided Status of CC RX</fullName>
+                <default>false</default>
+                <label>Provided Status of CC RX</label>
+            </value>
+            <value>
+                <fullName>Provided Status of Prescription</fullName>
+                <default>false</default>
+                <label>Provided Status of Prescription</label>
+            </value>
+            <value>
+                <fullName>Provided Tracking Information of Prescription</fullName>
+                <default>false</default>
+                <label>Provided Tracking Information of Prescription</label>
+            </value>
+            <value>
+                <fullName>Provider Message</fullName>
+                <default>false</default>
+                <label>Provider Message</label>
+            </value>
+            <value>
+                <fullName>Ready for Pick Up</fullName>
+                <default>false</default>
+                <label>Ready for Pick Up</label>
+            </value>
+            <value>
+                <fullName>Recalled</fullName>
+                <default>false</default>
+                <label>Recalled</label>
+            </value>
+            <value>
+                <fullName>Refill of Medication</fullName>
+                <default>false</default>
+                <label>Refill of Medication</label>
+            </value>
+            <value>
+                <fullName>Refill Processed</fullName>
+                <default>false</default>
+                <label>Refill Processed</label>
+            </value>
+            <value>
+                <fullName>Renewal of Medication</fullName>
+                <default>false</default>
+                <label>Renewal of Medication</label>
+            </value>
+            <value>
+                <fullName>Renewal Request to CCC RPh</fullName>
+                <default>false</default>
+                <label>Renewal Request to CCC RPh</label>
+            </value>
+            <value>
+                <fullName>Renewal Request to Provider</fullName>
+                <default>false</default>
+                <label>Renewal Request to Provider</label>
+            </value>
+            <value>
+                <fullName>Reporting of Lost Controlled Substance</fullName>
+                <default>false</default>
+                <label>Reporting of Lost Controlled Substance</label>
+            </value>
+            <value>
+                <fullName>Requested CC Rx Renewal</fullName>
+                <default>false</default>
+                <label>Requested CC Rx Renewal</label>
+            </value>
+            <value>
+                <fullName>Reschedule Appointment</fullName>
+                <default>false</default>
+                <label>Reschedule Appointment</label>
+            </value>
+            <value>
+                <fullName>RTC</fullName>
+                <default>false</default>
+                <label>RTC</label>
+            </value>
+            <value>
+                <fullName>Scheduling</fullName>
+                <default>false</default>
+                <label>Scheduling</label>
+            </value>
+            <value>
+                <fullName>Sent Progress Note for Renewal</fullName>
+                <default>false</default>
+                <label>Sent Progress Note for Renewal</label>
+            </value>
+            <value>
+                <fullName>Side Effect/ADR</fullName>
+                <default>false</default>
+                <label>Side Effect/ADR</label>
+            </value>
+            <value>
+                <fullName>Social Work</fullName>
+                <default>false</default>
+                <label>Social Work</label>
+            </value>
+            <value>
+                <fullName>Still Awaiting Order</fullName>
+                <default>false</default>
+                <label>Still Awaiting Order</label>
+            </value>
+            <value>
+                <fullName>Suspended/Not Due</fullName>
+                <default>false</default>
+                <label>Suspended/Not Due</label>
+            </value>
+            <value>
+                <fullName>Suicidal Ideation</fullName>
+                <default>false</default>
+                <label>Suicidal Ideation</label>
+            </value>
+            <value>
+                <fullName>Titration Rx</fullName>
+                <default>false</default>
+                <label>Titration Rx</label>
+            </value>
+            <value>
+                <fullName>Triage</fullName>
+                <default>false</default>
+                <label>Triage</label>
+            </value>
+            <value>
+                <fullName>Verify Appointment</fullName>
+                <default>false</default>
+                <label>Verify Appointment</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>CCC Requested Wrong Medication</fullName>
+                <default>false</default>
+                <label>CCC Requested Wrong Medication</label>
+            </value>
+            <value>
+                <fullName>Provider Entered Wrong Medication/Dose</fullName>
+                <default>false</default>
+                <label>Provider Entered Wrong Medication/Dose</label>
+            </value>
+            <value>
+                <fullName>Prescription was Misdelivered</fullName>
+                <default>false</default>
+                <label>Prescription was Misdelivered</label>
+            </value>
+            <value>
+                <fullName>Damaged</fullName>
+                <default>false</default>
+                <label>Damaged</label>
+            </value>
+            <value>
+                <fullName>Defective or Poor Quality Product</fullName>
+                <default>false</default>
+                <label>Defective or Poor Quality Product</label>
+            </value>
+            <value>
+                <fullName>Delayed or Lost</fullName>
+                <default>false</default>
+                <label>Delayed or Lost</label>
+            </value>
+            <value>
+                <fullName>Expiration Date Issue</fullName>
+                <default>false</default>
+                <label>Expiration Date Issue</label>
+            </value>
+            <value>
+                <fullName>Incorrect Document(s)</fullName>
+                <default>false</default>
+                <label>Incorrect Document(s)</label>
+            </value>
+            <value>
+                <fullName>Incorrect or Mixed NDC</fullName>
+                <default>false</default>
+                <label>Incorrect or Mixed NDC</label>
+            </value>
+            <value>
+                <fullName>Miscellaneous</fullName>
+                <default>false</default>
+                <label>Miscellaneous</label>
+            </value>
+            <value>
+                <fullName>Mis-delivered</fullName>
+                <default>false</default>
+                <label>Mis-delivered</label>
+            </value>
+            <value>
+                <fullName>Missing Cap or Loose Contents</fullName>
+                <default>false</default>
+                <label>Missing Cap or Loose Contents</label>
+            </value>
+            <value>
+                <fullName>Missing Document(s)</fullName>
+                <default>false</default>
+                <label>Missing Document(s)</label>
+            </value>
+            <value>
+                <fullName>Patient Label Issue</fullName>
+                <default>false</default>
+                <label>Patient Label Issue</label>
+            </value>
+            <value>
+                <fullName>Product Missing from Order</fullName>
+                <default>false</default>
+                <label>Product Missing from Order</label>
+            </value>
+            <value>
+                <fullName>Product Temperature Issue</fullName>
+                <default>false</default>
+                <label>Product Temperature Issue</label>
+            </value>
+            <value>
+                <fullName>Safety Cap Issue</fullName>
+                <default>false</default>
+                <label>Safety Cap Issue</label>
+            </value>
+            <value>
+                <fullName>Unlabeled Product</fullName>
+                <default>false</default>
+                <label>Unlabeled Product</label>
+            </value>
+            <value>
+                <fullName>Wrong Patient</fullName>
+                <default>false</default>
+                <label>Wrong Patient</label>
+            </value>
+            <value>
+                <fullName>Wrong Product</fullName>
+                <default>false</default>
+                <label>Wrong Product</label>
+            </value>
+            <value>
+                <fullName>Wrong Quantity</fullName>
+                <default>false</default>
+                <label>Wrong Quantity</label>
+            </value>
+            <value>
+                <fullName>Add Message to PACT</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Add Message to PACT</label>
+            </value>
+            <value>
+                <fullName>Address Update</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Address Update</label>
+            </value>
+            <value>
+                <fullName>Audiorenewal Follow Up</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Audiorenewal Follow Up</label>
+            </value>
+            <value>
+                <fullName>Audiorenewal Update</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Audiorenewal Update</label>
+            </value>
+            <value>
+                <fullName>Cancel/Hold Rx</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cancel/Hold Rx</label>
+            </value>
+            <value>
+                <fullName>Check Prescription Status</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Check Prescription Status</label>
+            </value>
+            <value>
+                <fullName>Clinical Question</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Clinical Question</label>
+            </value>
+            <value>
+                <fullName>Crisis Call</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Crisis Call</label>
+            </value>
+            <value>
+                <fullName>Diagnostic Results (Labs &amp; Radiology)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Diagnostic Results (Labs &amp; Radiology)</label>
+            </value>
+            <value>
+                <fullName>Facility Information</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Facility Information</label>
+            </value>
+            <value>
+                <fullName>Medication Identification</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Medication Identification</label>
+            </value>
+            <value>
+                <fullName>Non Clinical/Non Symptom</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Non Clinical/Non Symptom</label>
+            </value>
+            <value>
+                <fullName>Outside Med Request</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Outside Med Request</label>
+            </value>
+            <value>
+                <fullName>Prescription Question/Concern</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Prescription Question/Concern</label>
+            </value>
+            <value>
+                <fullName>Procedure Questions</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Procedure Questions</label>
+            </value>
+            <value>
+                <fullName>Refill Prescription</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Refill Prescription</label>
+            </value>
+            <value>
+                <fullName>Refill Request</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Refill Request</label>
+            </value>
+            <value>
+                <fullName>Renewal Request</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Renewal Request</label>
+            </value>
+            <value>
+                <fullName>Status of Rx</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Status of Rx</label>
+            </value>
+            <value>
+                <fullName>Verify Appointment Details</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Verify Appointment Details</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Non-Emergent</controllingFieldValue>
+            <controllingFieldValue>Emergent</controllingFieldValue>
+            <controllingFieldValue>Urgent</controllingFieldValue>
+            <valueName>Education</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Non-Emergent</controllingFieldValue>
+            <controllingFieldValue>Triage</controllingFieldValue>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <controllingFieldValue>Emergent</controllingFieldValue>
+            <controllingFieldValue>Urgent</controllingFieldValue>
+            <valueName>Triage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Community Care</controllingFieldValue>
+            <valueName>Contacted Local Site Regarding Status of CC Rx</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Community Care</controllingFieldValue>
+            <valueName>Provided Status of CC RX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Community Care</controllingFieldValue>
+            <valueName>Requested CC Rx Renewal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Community Care</controllingFieldValue>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <controllingFieldValue>Education</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Triage</controllingFieldValue>
+            <valueName>Homicidal Ideation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Triage</controllingFieldValue>
+            <valueName>Suicidal Ideation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharmacy Quality Assurance Issue</controllingFieldValue>
+            <valueName>Damaged</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharmacy Quality Assurance Issue</controllingFieldValue>
+            <valueName>Defective or Poor Quality Product</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharmacy Quality Assurance Issue</controllingFieldValue>
+            <valueName>Delayed or Lost</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharmacy Quality Assurance Issue</controllingFieldValue>
+            <valueName>Expiration Date Issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharmacy Quality Assurance Issue</controllingFieldValue>
+            <valueName>Incorrect Document(s)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharmacy Quality Assurance Issue</controllingFieldValue>
+            <valueName>Incorrect or Mixed NDC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharmacy Quality Assurance Issue</controllingFieldValue>
+            <valueName>Miscellaneous</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharmacy Quality Assurance Issue</controllingFieldValue>
+            <valueName>Mis-delivered</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharmacy Quality Assurance Issue</controllingFieldValue>
+            <valueName>Missing Cap or Loose Contents</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharmacy Quality Assurance Issue</controllingFieldValue>
+            <valueName>Missing Document(s)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharmacy Quality Assurance Issue</controllingFieldValue>
+            <valueName>Patient Label Issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharmacy Quality Assurance Issue</controllingFieldValue>
+            <valueName>Product Missing from Order</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharmacy Quality Assurance Issue</controllingFieldValue>
+            <valueName>Product Temperature Issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharmacy Quality Assurance Issue</controllingFieldValue>
+            <valueName>Safety Cap Issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharmacy Quality Assurance Issue</controllingFieldValue>
+            <valueName>Unlabeled Product</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharmacy Quality Assurance Issue</controllingFieldValue>
+            <valueName>Wrong Patient</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharmacy Quality Assurance Issue</controllingFieldValue>
+            <valueName>Wrong Product</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pharmacy Quality Assurance Issue</controllingFieldValue>
+            <valueName>Wrong Quantity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Appointments</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Benefits &amp; Enrollment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Community Care</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Community Care Information</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Complaint</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Consult/Referral</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>COVID 19 Test Result</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Demographic Update</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Diagnostic Results</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Eligibility/Registration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Follow-up Call</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>General Inquiry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Information</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Med Refill/Renewal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Medication Refill</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Med List/Reconciliation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Mission Act Information</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Notification to Local Site</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Pharmacy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Pharmacy Inquiry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Provided Facility Information</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Provider Message</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Refill of Medication</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Renewal of Medication</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Scheduling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Social Work</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administrative</controllingFieldValue>
+            <valueName>Verify Appointment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Education</controllingFieldValue>
+            <valueName>Education (Clinical)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Education</controllingFieldValue>
+            <valueName>Prep Instruction</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Scheduling</controllingFieldValue>
+            <valueName>Cancel Appointment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Scheduling</controllingFieldValue>
+            <valueName>Consult</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Scheduling</controllingFieldValue>
+            <valueName>Direct Scheduling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Scheduling</controllingFieldValue>
+            <valueName>New Appointment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Scheduling</controllingFieldValue>
+            <valueName>Reschedule Appointment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Scheduling</controllingFieldValue>
+            <valueName>RTC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medication Status</controllingFieldValue>
+            <valueName>Change of Medication Status</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medication Status</controllingFieldValue>
+            <valueName>Lost Delivery/Damaged Package</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medication Status</controllingFieldValue>
+            <valueName>Medication Counseling by Pharmacist</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medication Status</controllingFieldValue>
+            <valueName>Medication Recall</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medication Status</controllingFieldValue>
+            <valueName>Pending Order to be Processed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medication Status</controllingFieldValue>
+            <valueName>Provided Status of Prescription</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medication Status</controllingFieldValue>
+            <valueName>Provided Tracking Information of Prescription</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medication Status</controllingFieldValue>
+            <valueName>Reporting of Lost Controlled Substance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medication Status</controllingFieldValue>
+            <valueName>Side Effect/ADR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medication Status</controllingFieldValue>
+            <valueName>Still Awaiting Order</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Medication Status</controllingFieldValue>
+            <valueName>Suspended/Not Due</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Renew Medication</controllingFieldValue>
+            <valueName>Medication Extension Provided</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Renew Medication</controllingFieldValue>
+            <valueName>Sent Progress Note for Renewal</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

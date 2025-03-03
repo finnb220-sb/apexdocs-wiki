@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TUC_Triage_Time_is_Downgraded__c</fullName>
+    <description>Used in TED Nurse Progress Note, Medical Progress Note flows. Used to capture the triage time downgraded</description>
+    <externalId>false</externalId>
+    <label>Triage Time is Downgraded</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Now, 2-8 hours</fullName>
+                <default>false</default>
+                <label>Now, 2-8 hours</label>
+            </value>
+            <value>
+                <fullName>12-24 hours</fullName>
+                <default>false</default>
+                <label>12-24 hours</label>
+            </value>
+            <value>
+                <fullName>2 - 3 days</fullName>
+                <default>false</default>
+                <label>2 - 3 days</label>
+            </value>
+            <value>
+                <fullName>1 -2 weeks</fullName>
+                <default>false</default>
+                <label>1 -2 weeks</label>
+            </value>
+            <value>
+                <fullName>Self-care</fullName>
+                <default>false</default>
+                <label>Self-care</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

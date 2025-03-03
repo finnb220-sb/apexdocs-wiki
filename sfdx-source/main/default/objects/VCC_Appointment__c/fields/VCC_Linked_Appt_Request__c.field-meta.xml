@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Linked_Appt_Request__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>The Appointment Request related to the Appointment</description>
+    <externalId>false</externalId>
+    <label>Linked Appt Request</label>
+    <referenceTo>VCC_AppointmentRequest__c</referenceTo>
+    <relationshipLabel>Appointments</relationshipLabel>
+    <relationshipName>Appointments</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

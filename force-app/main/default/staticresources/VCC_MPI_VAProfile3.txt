@@ -1,0 +1,473 @@
+{
+    "vetsV1": [
+        {
+            "mviResult": "FOUND",
+            "eeResult": "FOUND",
+            "emisResult": "NO_REQUEST",
+            "vets360Result": "FOUND",
+            "bgsResult": "NO_REQUEST",
+            "mvi": {
+                "icn": "1013452276V180828",
+                "salesforceId": "0033500000PXG8eAAH",
+                "corpId": "600836725",
+                "edipi": "2109957383",
+                "brlsFilenumber": "762061503",
+                "mviIipt": "null",
+                "mviToken": "WSDOC2201171458210781988300316",
+                "personType": "PAT",
+                "vet360Id": "279487",
+                "prefixName": "null",
+                "suffixName": "null",
+                "firstName": "LAVERNA",
+                "lastName": "STOLZE",
+                "middleName": "null",
+                "mothersMaidenName": "null",
+                "cityOfBirth": "null",
+                "stateOfBirth": "null",
+                "dob": "88888888",
+                "dod": "88888888",
+                "ssn": "762061503",
+                "itin": "null",
+                "gender": "I",
+                "queryMatchObservation": "null",
+                "address": {
+                    "streetAddress": "3101 Townsend Angling Rd",
+                    "streetAddress2": "null",
+                    "streetAddress3": "null",
+                    "city": "Collins",
+                    "state": "OH",
+                    "postalCode": "44826-9723",
+                    "country": "USA",
+                    "addressTypeCode": "PHYS"
+                },
+                "phoneNumber": [
+                    {
+                        "value": "(703)256-8888",
+                        "use": "HP"
+                    }
+                ],
+                "medicalCenterFacilities": [],
+                "correlatedIds": [
+                    {
+                        "shortId": "1013452276V180828",
+                        "longId": "1013452276V180828^NI^200M^USVHA^P",
+                        "idType": "ICN_ID",
+                        "idStatus": "ACTIVE"
+                    },
+                    {
+                        "shortId": "279487",
+                        "longId": "279487^PI^200VETS^USDVA^A",
+                        "idType": "OTHER",
+                        "idStatus": "ACTIVE"
+                    },
+                    {
+                        "shortId": "161432",
+                        "longId": "161432^PI^668^USVHA^C",
+                        "idType": "VHA_CORRELATED_SYSTEMS_ID",
+                        "idStatus": "OTHER"
+                    },
+                    {
+                        "shortId": "2109957383",
+                        "longId": "2109957383^NI^200DOD^USDOD^A",
+                        "idType": "DOD_EDIPI_ID",
+                        "idStatus": "ACTIVE"
+                    },
+                    {
+                        "shortId": "0000001013452276V180828000000",
+                        "longId": "0000001013452276V180828000000^PI^200ESR^USVHA^A",
+                        "idType": "OTHER",
+                        "idStatus": "ACTIVE"
+                    },
+                    {
+                        "shortId": "600836725",
+                        "longId": "600836725^PI^200CORP^USVBA^A",
+                        "idType": "CORP_ID",
+                        "idStatus": "ACTIVE"
+                    },
+                    {
+                        "shortId": "762061503",
+                        "longId": "762061503^PI^200BRLS^USVBA^A",
+                        "idType": "BIRLS_ID",
+                        "idStatus": "ACTIVE"
+                    },
+                    {
+                        "shortId": "9109957383",
+                        "longId": "9109957383^NI^200DOD^USDOD^A",
+                        "idType": "DOD_EDIPI_ID",
+                        "idStatus": "ACTIVE"
+                    },
+                    {
+                        "shortId": "0033500000PXG8eAAH_vadufdc",
+                        "longId": "0033500000PXG8eAAH_vadufdc^PI^200DSLF^USDVA^A",
+                        "idType": "VA_SALESFORCE",
+                        "idStatus": "ACTIVE"
+                    },
+                    {
+                        "shortId": "0033500000PdEwaAAF_vadufdc",
+                        "longId": "0033500000PdEwaAAF_vadufdc^PI^200DSLF^USDVA^A",
+                        "idType": "VA_SALESFORCE",
+                        "idStatus": "ACTIVE"
+                    },
+                    {
+                        "shortId": "0033500000PXe1TAAT_vadufdc",
+                        "longId": "0033500000PXe1TAAT_vadufdc^PI^200DSLF^USDVA^A",
+                        "idType": "VA_SALESFORCE",
+                        "idStatus": "ACTIVE"
+                    },
+                    {
+                        "shortId": "0033500000PXX8vAAH_vadufdc",
+                        "longId": "0033500000PXX8vAAH_vadufdc^PI^200DSLF^USDVA^A",
+                        "idType": "VA_SALESFORCE",
+                        "idStatus": "ACTIVE"
+                    },
+                    {
+                        "shortId": "0033500000PXeMtAAL_vadufdc",
+                        "longId": "0033500000PXeMtAAL_vadufdc^PI^200DSLF^USDVA^A",
+                        "idType": "VA_SALESFORCE",
+                        "idStatus": "ACTIVE"
+                    },
+                    {
+                        "shortId": "0033500000PdDdpAAF_vadufdc",
+                        "longId": "0033500000PdDdpAAF_vadufdc^PI^200DSLF^USDVA^A",
+                        "idType": "VA_SALESFORCE",
+                        "idStatus": "ACTIVE"
+                    },
+                    {
+                        "shortId": "0033500000PdDX8AAN_vadufdc",
+                        "longId": "0033500000PdDX8AAN_vadufdc^PI^200DSLF^USDVA^A",
+                        "idType": "VA_SALESFORCE",
+                        "idStatus": "ACTIVE"
+                    },
+                    {
+                        "shortId": "0033500000PWvwJAAT_vadufdc",
+                        "longId": "0033500000PWvwJAAT_vadufdc^PI^200DSLF^USDVA^A",
+                        "idType": "VA_SALESFORCE",
+                        "idStatus": "ACTIVE"
+                    },
+                    {
+                        "shortId": "0033500000PXeHAAA1_vadufdc",
+                        "longId": "0033500000PXeHAAA1_vadufdc^PI^200DSLF^USDVA^A",
+                        "idType": "VA_SALESFORCE",
+                        "idStatus": "ACTIVE"
+                    },
+                    {
+                        "shortId": "0033500000PXhcAAAT_vadufdc",
+                        "longId": "0033500000PXhcAAAT_vadufdc^PI^200DSLF^USDVA^A",
+                        "idType": "VA_SALESFORCE",
+                        "idStatus": "ACTIVE"
+                    },
+                    {
+                        "shortId": "0033500000PdE7bAAF_vadufdc",
+                        "longId": "0033500000PdE7bAAF_vadufdc^PI^200DSLF^USDVA^A",
+                        "idType": "VA_SALESFORCE",
+                        "idStatus": "ACTIVE"
+                    },
+                    {
+                        "shortId": "0033500000PXS83AAH_vadufdc",
+                        "longId": "0033500000PXS83AAH_vadufdc^PI^200DSLF^USDVA^A",
+                        "idType": "VA_SALESFORCE",
+                        "idStatus": "ACTIVE"
+                    },
+                    {
+                        "shortId": "0033500000PdDh3AAF_vadufdc",
+                        "longId": "0033500000PdDh3AAF_vadufdc^PI^200DSLF^USDVA^A",
+                        "idType": "VA_SALESFORCE",
+                        "idStatus": "ACTIVE"
+                    },
+                    {
+                        "shortId": "0033500000PXi2EAAT_vadufdc",
+                        "longId": "0033500000PXi2EAAT_vadufdc^PI^200DSLF^USDVA^A",
+                        "idType": "VA_SALESFORCE",
+                        "idStatus": "ACTIVE"
+                    },
+                    {
+                        "shortId": "a1d3R0000000oLUQAY_vaccsfdc",
+                        "longId": "a1d3R0000000oLUQAY_vaccsfdc^PI^200DSLF^USDVA^A",
+                        "idType": "VA_SALESFORCE",
+                        "idStatus": "ACTIVE"
+                    },
+                    {
+                        "shortId": "a1d3S0000000sHPQAY_vaccsfdc",
+                        "longId": "a1d3S0000000sHPQAY_vaccsfdc^PI^200DSLF^USDVA^A",
+                        "idType": "VA_SALESFORCE",
+                        "idStatus": "ACTIVE"
+                    }
+                ],
+                "relationships": []
+            },
+            "ee": {
+                "eeVeteranStatus": "true",
+                "serviceConnectedPercentage": "null",
+                "eligibleForMedicaid": "null",
+                "priorityGroup": "null",
+                "monetaryBenefits": [
+                    {
+                        "monetaryBenefitIndicator": "false",
+                        "monetaryBenefitType": "VA Pension",
+                        "monetaryBenefitReportDate": "20201228"
+                    },
+                    {
+                        "monetaryBenefitIndicator": "false",
+                        "monetaryBenefitType": "Housebound",
+                        "monetaryBenefitReportDate": "20201228"
+                    },
+                    {
+                        "monetaryBenefitIndicator": "false",
+                        "monetaryBenefitType": "Disability Compensation",
+                        "monetaryBenefitReportDate": "20201228"
+                    },
+                    {
+                        "monetaryBenefitIndicator": "false",
+                        "monetaryBenefitType": "Aid And Attendance",
+                        "monetaryBenefitReportDate": "20201228"
+                    }
+                ],
+                "ratedDisabilities": [],
+                "serviceBranches": [],
+                "eeExtendedResponse": {
+                    "associations": [],
+                    "demographics": {
+                        "preferredFacility": "null",
+                        "assignmentDate": "null",
+                        "unassignmentDate": "null",
+                        "preferredFacilities": []
+                    },
+                    "eligibilityVerification": {
+                        "eligibilityStatus": "VERIFIED",
+                        "eligibilityStatusDate": "20201228",
+                        "verificationMethod": "test"
+                    },
+                    "enrollmentDetermination": {
+                        "effectiveDate": "20210817",
+                        "eligibleForMedicaid": "null",
+                        "endDate": "null",
+                        "enrollmentDate": "null",
+                        "enrollmentStatus": "Pending; Means Test Required",
+                        "enrollmentCategoryName": "In-Process",
+                        "monetaryBenefits": [
+                            {
+                                "monetaryBenefitIndicator": "false",
+                                "monetaryBenefitType": "VA Pension",
+                                "monetaryBenefitReportDate": "20201228"
+                            },
+                            {
+                                "monetaryBenefitIndicator": "false",
+                                "monetaryBenefitType": "Housebound",
+                                "monetaryBenefitReportDate": "20201228"
+                            },
+                            {
+                                "monetaryBenefitIndicator": "false",
+                                "monetaryBenefitType": "Disability Compensation",
+                                "monetaryBenefitReportDate": "20201228"
+                            },
+                            {
+                                "monetaryBenefitIndicator": "false",
+                                "monetaryBenefitType": "Aid And Attendance",
+                                "monetaryBenefitReportDate": "20201228"
+                            }
+                        ],
+                        "otherEligibilities": [
+                            {
+                                "indicator": "O",
+                                "type": "Radiation Exposure",
+                                "eligibilityReportDate": "20201228"
+                            }
+                        ],
+                        "primaryEligibility": {
+                            "indicator": "P",
+                            "type": "NSC",
+                            "eligibilityReportDate": "20201228"
+                        },
+                        "priorityGroup": "null",
+                        "prioritySubGroup": "null",
+                        "secondaryEligibilities": [
+                            {
+                                "indicator": "S",
+                                "type": "COMPACT Act Eligible",
+                                "eligibilityReportDate": "20210817"
+                            }
+                        ],
+                        "serviceConnectionAward": {
+                            "awardDate": "null",
+                            "combinedServiceConnectedPercentageEffectiveDate": "null",
+                            "permanentAndTotal": "null",
+                            "permanentAndTotalEffectiveDate": "null",
+                            "serviceConnectedIndicator": "false",
+                            "serviceConnectedPercentage": "null",
+                            "unemployable": "null",
+                            "scReportDate": "20201228"
+                        },
+                        "veteran": "true"
+                    },
+                    "insuranceList": [],
+                    "relations": [],
+                    "person": {},
+                    "healthBenefitPlans": []
+                }
+            },
+            "vaProfileV1": {
+                "vaProfileContactInfo": {
+                    "createDate": "2020-12-28T17:11:57Z",
+                    "sourceDate": "2020-12-28T17:09:51Z",
+                    "sourceSystem": "VHAES",
+                    "txAuditId": "8a5d613b-b68f-4439-8a92-513feda19029",
+                    "updateDate": "2020-12-28T17:11:57Z",
+                    "vet360Id": 279487,
+                    "addresses": [
+                        {
+                            "addressId": 210597,
+                            "addressLine1": "3101 Townsend Angling Rd",
+                            "addressPurposeOfUse": "CORRESPONDENCE",
+                            "addressType": "Domestic",
+                            "badAddress": false,
+                            "cityName": "Collins",
+                            "confidenceScore": "100",
+                            "countryCodeFips": "US",
+                            "countryCodeIso2": "US",
+                            "countryCodeIso3": "USA",
+                            "countryName": "United States",
+                            "county": {
+                                "countyCode": "39077",
+                                "countyName": "Huron County"
+                            },
+                            "createDate": "2020-12-28T17:11:57Z",
+                            "effectiveStartDate": "2022-01-04T18:58:28Z",
+                            "geocodeDate": "2022-01-04T18:58:30Z",
+                            "geocodePrecision": "31",
+                            "latitude": "41.2250",
+                            "longitude": "-82.4699",
+                            "overrideIndicator": false,
+                            "sourceDate": "2022-01-04T18:58:28Z",
+                            "sourceSystem": "DMC",
+                            "sourceSystemUser": "VED Supervisor User",
+                            "stateCode": "OH",
+                            "txAuditId": "d905958e-929d-4237-b773-573189949333",
+                            "updateDate": "2022-01-04T18:58:30Z",
+                            "vet360Id": 279487,
+                            "zipCode4": "9723",
+                            "zipCode5": "44826"
+                        },
+                        {
+                            "addressId": 219109,
+                            "addressLine1": "PSC 2 Box 15864",
+                            "addressPurposeOfUse": "RESIDENCE",
+                            "addressType": "Overseas Military",
+                            "badAddress": false,
+                            "cityName": "APO",
+                            "confidenceScore": "100",
+                            "countryCodeFips": "US",
+                            "countryCodeIso2": "US",
+                            "countryCodeIso3": "USA",
+                            "countryName": "United States",
+                            "county": {
+                                "countyCode": "36061",
+                                "countyName": "New York County"
+                            },
+                            "createDate": "2021-03-11T20:44:12Z",
+                            "effectiveStartDate": "2021-08-27T19:52:33Z",
+                            "geocodeDate": "2021-08-27T19:52:35Z",
+                            "geocodePrecision": "0",
+                            "latitude": "40.7142",
+                            "longitude": "-74.0059",
+                            "originatingSourceSystem": "HEC",
+                            "overrideIndicator": false,
+                            "sourceDate": "2021-08-27T19:52:33Z",
+                            "sourceSystem": "VHAES",
+                            "sourceSystemUser": "vacoZengc",
+                            "stateCode": "AE",
+                            "txAuditId": "f04b7248-d830-45d2-8606-c256afbc2748",
+                            "updateDate": "2021-08-27T19:52:35Z",
+                            "vet360Id": 279487,
+                            "zipCode4": "0159",
+                            "zipCode5": "09012"
+                        }
+                    ],
+                    "emails": [
+                        {
+                            "createDate": "2021-08-17T19:45:06Z",
+                            "effectiveStartDate": "2021-12-08T16:59:16Z",
+                            "emailAddressText": "turkeyday007@gmail.com",
+                            "emailId": 189325,
+                            "originatingSourceSystem": "HEC",
+                            "sourceDate": "2021-12-08T16:59:16Z",
+                            "sourceSystem": "VHAES",
+                            "sourceSystemUser": "vacoZengc",
+                            "txAuditId": "f689a572-e695-406d-b4ad-61f2a778c148",
+                            "updateDate": "2021-12-08T16:59:18Z",
+                            "vet360Id": 279487
+                        }
+                    ],
+                    "telephones": [
+                        {
+                            "areaCode": "202",
+                            "confirmationDate": "2021-11-29T15:49:55Z",
+                            "countryCode": "1",
+                            "createDate": "2021-08-17T19:45:06Z",
+                            "effectiveStartDate": "2021-11-29T15:49:55Z",
+                            "internationalIndicator": false,
+                            "phoneNumber": "3338885",
+                            "phoneType": "WORK",
+                            "sourceDate": "2021-11-29T15:49:55Z",
+                            "sourceSystem": "DMC",
+                            "sourceSystemUser": "VED User",
+                            "telephoneId": 257668,
+                            "txAuditId": "df9b985c-dd63-414a-9480-253137c18e52",
+                            "updateDate": "2021-11-29T15:49:57Z",
+                            "vet360Id": 279487
+                        },
+                        {
+                            "areaCode": "301",
+                            "confirmationDate": "2021-12-16T22:04:01Z",
+                            "countryCode": "1",
+                            "createDate": "2021-08-17T19:45:06Z",
+                            "effectiveStartDate": "2021-12-16T22:04:01Z",
+                            "internationalIndicator": false,
+                            "phoneNumber": "2897700",
+                            "phoneType": "MOBILE",
+                            "sourceDate": "2021-12-16T22:04:01Z",
+                            "sourceSystem": "DMC",
+                            "sourceSystemUser": "VED User",
+                            "telephoneId": 257669,
+                            "txAuditId": "e0cc95ab-3ee6-445b-b363-56be7a6a4468",
+                            "updateDate": "2021-12-16T22:04:03Z",
+                            "vet360Id": 279487
+                        },
+                        {
+                            "areaCode": "703",
+                            "countryCode": "1",
+                            "createDate": "2021-08-17T19:45:06Z",
+                            "effectiveStartDate": "2021-12-08T16:15:59Z",
+                            "internationalIndicator": false,
+                            "originatingSourceSystem": "vaprofile-test-partner",
+                            "phoneNumber": "2568888",
+                            "phoneType": "HOME",
+                            "sourceDate": "2021-12-08T16:15:59Z",
+                            "sourceSystem": "VAPROFILE-TEST-PARTNER",
+                            "sourceSystemUser": "Chang",
+                            "telephoneId": 257670,
+                            "txAuditId": "14499408-0b79-4a1a-b205-8ea5ebde399f",
+                            "updateDate": "2021-12-08T16:54:46Z",
+                            "vet360Id": 279487
+                        }
+                    ]
+                },
+                "vaProfilePersonAttributes": {
+                    "financialFraudInformation": {
+                        "financialFraudIndicator": true
+                    },
+                    "fiduciaryInformation": {
+                        "fiduciaryIndicator": true
+                    },
+                    "activePrescriptionBio": {
+                        "activePrescriptionIndicator": false
+                    }
+                },
+                "vaProfileIdentity": {
+                    "sensitivityInformation": {
+                        "sensitivityFlag": true
+                    }
+                }
+            }
+        }
+    ]
+}

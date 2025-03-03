@@ -1,0 +1,88 @@
+<template>
+    <article class="slds-card">
+        <header class="slds-p-horizontal_medium slds-page-header slds-page-header_joined">
+            <div class="header-wrapper">
+                <lightning-icon icon-name="standard:custom" size="small"></lightning-icon>
+                <h2 class="slds-card__header-title header">
+                    <a class="slds-card__header-link baseCard__header-title-container" onclick={handleViewAllClick} tabindex="0">
+                        <span class="slds-truncate slds-m-right--xx-small" title={componentTitle}>{componentTitle}</span>
+                    </a>
+                </h2>
+                <!-- <lightning-button-menu alternative-text="Show menu" icon-size="x-small">
+					<lightning-menu-item value="New" label="New"></lightning-menu-item>
+				</lightning-button-menu> -->
+            </div>
+        </header>
+        <template if:false={showError}>
+            <template if:true={showBodyAndFooter}>
+                <div class="body-wrapper slds-p-horizontal_medium slds-p-top_x-small">
+                    <template for:each={displayList} for:item="record">
+                        <div key={record.Id} class="slds-p-top_x-small slds-p-bottom_xx-small">
+                            <a href={record.addendumURL} title={record.Name}>{record.Name}</a><br />
+                            <div class="details-wrapper slds-list_horizontal slds-wrap">
+                                <div class="label slds-text-color_weak">Signed:</div>
+                                <div class="detail">
+                                    <lightning-input type="checkbox" label=" " name="Signed" checked={record.VCC_Signed__c} disabled></lightning-input>
+                                </div>
+
+                                <div class="label slds-text-color_weak">Signed By:</div>
+                                <div class="detail">{record.VCC_Electronic_Signature__c}</div>
+
+                                <div class="label slds-text-color_weak">Related Note:</div>
+                                <div class="detail"><a href={record.parentURL} title={record.VCC_Related_Note__r.Name}>{record.VCC_Related_Note__r.Name}</a><br /></div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+                <div class="slds-card__footer">
+                    <lightning-button
+                        variant="base"
+                        label="View All"
+                        title="View All"
+                        onclick={handleViewAllClick}
+                        class="slds-m-horizontal_small view-all-button"
+                    ></lightning-button>
+                </div>
+            </template>
+        </template>
+        <template if:true={showError}>
+            <c-base-empty-state type="balloon" msg={labels.addendumsErrorMessage} sub-msg={labels.addendumsErrorSubMessage} variant="error"></c-base-empty-state>
+        </template>
+    </article>
+    <c-base-modal size="medium">
+        <!-- <div slot="header" class="card-title">
+			<div class="slds-media__figure">
+				<lightning-icon size="small" icon-name="standard:custom" alternative-text="Addendums" title="Addendums"></lightning-icon>
+			</div>
+			<div class="slds-media__body">
+				<h2 class="slds-card__header-title">Addendums</h2>
+			</div>
+		</div> -->
+        <div slot="header" class="header-wrapper">
+            <lightning-icon icon-name="standard:custom" size="small"></lightning-icon>
+            <h2 class="slds-card__header-title header">Addendums</h2>
+            <!-- <lightning-button-menu alternative-text="Show menu" icon-size="x-small">
+				<lightning-menu-item value="New" label="New"></lightning-menu-item>
+			</lightning-button-menu> -->
+        </div>
+        <section class="container">
+            <div class="filter" if:true={showFilter}>
+                <div class="spacer"></div>
+                <c-base-double-filter onfilterlistbyfilter={handleFilterChange} list={_records} filter-api-names={filterFields}> </c-base-double-filter>
+            </div>
+            <c-base-table-details sorted-by={tableDetails.sortedBy} total={tableDetails.total}></c-base-table-details>
+            <lightning-datatable
+                key-field="id"
+                show-row-number-column
+                hide-checkbox-column
+                data={fullTableData}
+                onrowaction={handleRowAction}
+                onsort={handleSort}
+                sorted-direction={sortDirection}
+                sorted-by={sortedBy}
+                columns={columns}
+            >
+            </lightning-datatable>
+        </section>
+    </c-base-modal>
+</template>

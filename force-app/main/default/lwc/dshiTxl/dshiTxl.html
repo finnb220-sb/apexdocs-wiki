@@ -1,0 +1,33 @@
+<template>
+    <div data-id="txLibraryPanel">
+        <div data-id="txLibraryArticle">
+            <div data-id="txLibraryTitle">
+                <div data-id="txLibraryArticleTitle">
+                    <span data-id="txLibTitleText"></span>
+                    <span data-id="txLibTitleSearch"
+                        ><input type="text" data-id="txLibraryInput" placeholder="Begin typing to select topic..." autocomplete="off" />
+                        <ul data-id="txLibraryList" style="display: none" lwc:dom="manual"></ul>
+                    </span>
+                    <span data-id="txLibrarySearchBtn"></span>
+                </div>
+            </div>
+            <div data-id="txLibArticle" style="display: none">
+                <div data-id="txLibArticleMenu">
+                    <button data-id="txLibArticleNavBtn"></button>
+                    <div data-id="txLibPatientInformation">
+                        <div data-id="txLibWIBox">
+                            <label for="txLibWebInstructions">Web</label>
+                            <input type="checkbox" data-id="txLibWebInstructions" />
+                        </div>
+                        <div data-id="txLibVIBox">
+                            <label for="txLibVerbalInstructions">Verbal</label>
+                            <input type="checkbox" data-id="txLibVerbalInstructions" />
+                        </div>
+                    </div>
+                    <ul data-id="txLibrarySectionList" class="txDisplayList" lwc:dom="manual"></ul>
+                </div>
+                <div data-id="txLibArticleBody" lwc:dom="manual"></div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>VCC_Clinic_Sharing_Rule</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>VCC_Clinic__c sharing rule for VAHC Base User Group</description>
+        <label>Clinic Sharing Rule</label>
+        <sharedTo>
+            <group>VAHC_Base_Users</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>VAHC_Base_Users</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

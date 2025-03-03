@@ -1,0 +1,31 @@
+<!--
+    * DEPRECATED - 09 02 2022
+    * PLEASE USE vccPactDatatableV2 
+-->
+<template>
+    <lightning-card>
+        <span if:true={errorVisible} tabindex="0">
+            <span class="slds-assistive-text">Alert</span>
+            <lightning-card class="pact-error">No Local PACT assigned, however a remote assignment may exist. Please contact local PCMM Coordinator to review. </lightning-card>
+        </span>
+
+        <div class="slds-p-around_medium" style="height: 20rem">
+            <c-vcc-datatable-custom-types
+                if:false={cprsView}
+                key-field="id"
+                data={tableData}
+                columns={columns}
+                hide-checkbox-column
+                default-sort-direction={defaultSortDirection}
+                sorted-direction={sortDirection}
+                sorted-by={sortedBy}
+                onsort={handleSort}
+                onrowaction={handleRowAction}
+            >
+            </c-vcc-datatable-custom-types>
+            <lightning-formatted-rich-text if:true={cprsView} value={patientSummaryRaw}></lightning-formatted-rich-text>
+        </div>
+        <!-- <lightning-button if:true={enableAddSigners} slot="actions" onclick={handleAddAll} label="Add All">Add All</lightning-button> -->
+    </lightning-card>
+    <c-vcc-pact-details column-template={columnsTemplate} patient={currentPatientData} allpactdata={tableData}> </c-vcc-pact-details>
+</template>

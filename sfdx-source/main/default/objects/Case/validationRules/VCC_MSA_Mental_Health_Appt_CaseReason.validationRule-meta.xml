@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_MSA_Mental_Health_Appt_CaseReason</fullName>
+    <active>true</active>
+    <description>When an MSA chooses the &quot;Cancel Appointment&quot; picklist value for case reason, they must fill out the &quot;Mental Health Appointment?&quot; field.</description>
+    <errorConditionFormula>!$Permission.DisableTriggersFlag
+
+&amp;&amp;
+
+RecordType.DeveloperName = &quot;VCC_Administrative&quot;
+
+&amp;&amp;
+
+INCLUDES(VCC_Case_Reason_Multi__c,&apos;Cancel Appointment&apos;)
+
+&amp;&amp;
+
+ISPICKVAL(VCC_Mental_Health_Appointment__c , &quot;&quot;)
+
+&amp;&amp;
+
+!$Permission.VCC_Disable_Case_Validation_Rules</errorConditionFormula>
+    <errorDisplayField>VCC_Mental_Health_Appointment__c</errorDisplayField>
+    <errorMessage>&quot;Cancel Appointment&quot; has been selected for the Case Reason, please fill in the &quot;Mental Health Appointment?&quot; field</errorMessage>
+</ValidationRule>

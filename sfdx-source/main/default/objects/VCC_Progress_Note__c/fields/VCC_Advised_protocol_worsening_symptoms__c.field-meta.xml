@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Advised_protocol_worsening_symptoms__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field is used on the Clinical Triage Progress Note. Patient will call back if symptoms worsen or fail to improve over 48 hours; emergency department warnings
+        reviewed. True if medical practitioner reviewed emergency department warnings during virtual visit</description>
+    <externalId>false</externalId>
+    <inlineHelpText>*Caller/Patient* advised to call facilities VA Clinical Contact Center or seek immediate medical attention for new or worsening symptoms</inlineHelpText>
+    <label>Provided guidance for worsening symptoms</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Future_Renewal_Requests</fullName>
+    <columns>DUE_DATE</columns>
+    <columns>SUBJECT</columns>
+    <columns>Created_By__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>WHO_NAME</columns>
+    <columns>WHAT_NAME</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Task.VCC_Pharmacy_FRR</value>
+    </filters>
+    <filters>
+        <field>VCC_isMyVISN__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>IS_CLOSED</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Future Renewal Requests</label>
+</ListView>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>VCC_VAHC_View_MSA_Queues</name>
+    </customPermissions>
+    <description>Permission Set that includes custom permission for MSA/AMSA Leader/Administrative Supervisor to view the MSA Queues on the home page.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>VAHC View MSA Queues</label>
+</PermissionSet>

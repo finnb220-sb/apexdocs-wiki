@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PC_Operating_Hours__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Lookup to the Standard OperatingHours object. Likely not needed, can be removed later as we have a lookup field to the PC Operating Hours object</description>
+    <externalId>false</externalId>
+    <label>Operating Hours Standard</label>
+    <referenceTo>OperatingHours</referenceTo>
+    <relationshipName>Services_Standard</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

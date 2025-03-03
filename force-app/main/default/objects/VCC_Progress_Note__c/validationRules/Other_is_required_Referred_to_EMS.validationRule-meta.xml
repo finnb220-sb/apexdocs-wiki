@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_is_required_Referred_to_EMS</fullName>
+    <active>true</active>
+    <description>If &quot;Other - Emergency Services Referred&quot; is checked, then &quot;Other -Referred to Emergency Services&quot; must be populated.</description>
+    <errorConditionFormula>BEGINS( RecordType.DeveloperName, &quot;VCC_&quot;) &amp;&amp; !$Permission.DisableTriggersFlag &amp;&amp; AND(VCC_Other_Emergency_Services_Referred__c = True, ISBLANK (
+        VCC_Other_Referred_to_emergency_services__c ), NOT $Permission.VCC_Disable_Progress_Note_Assignment_Rules)</errorConditionFormula>
+    <errorDisplayField>VCC_Other_Referred_to_emergency_services__c</errorDisplayField>
+    <errorMessage>ERROR: Other -Referred to Emergency Services must be populated when &quot;Other - Emergency Services Referred&quot; is checked.</errorMessage>
+</ValidationRule>

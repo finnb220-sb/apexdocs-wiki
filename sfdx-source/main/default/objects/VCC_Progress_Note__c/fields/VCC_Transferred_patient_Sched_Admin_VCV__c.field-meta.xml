@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Transferred_patient_Sched_Admin_VCV__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked if the Agent referred the patient for CCC Virtual Clinic Visit and transferred the patient to CCC Scheduling &amp; Administration</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Check if you referred the patient for CCC Virtual Clinic Visit and transferred the patient to CCC Scheduling &amp; Administration</inlineHelpText>
+    <label>Transferred patient to Sched &amp; Admin-VCV</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

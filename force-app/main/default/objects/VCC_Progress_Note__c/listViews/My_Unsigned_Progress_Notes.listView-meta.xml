@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Unsigned_Progress_Notes</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>VCC_Patient_Name__c</columns>
+    <columns>PC_Case__c</columns>
+    <columns>PC_FrontLine_Provider__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>VCC_Signed__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>VCC_Progress_Note__c.PC_Provider_Connect_Progress_Note</value>
+    </filters>
+    <filters>
+        <field>PC_Completed_via_EHR__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>notEqual</operation>
+        <value>VCC_Progress_Note__c.PC_Provider_Connect_FLP_Progress_Note</value>
+    </filters>
+    <label>My Unsigned PRC Progress Notes</label>
+    <sharedTo>
+        <group>PC_Provider_Connect_Specialists</group>
+    </sharedTo>
+</ListView>

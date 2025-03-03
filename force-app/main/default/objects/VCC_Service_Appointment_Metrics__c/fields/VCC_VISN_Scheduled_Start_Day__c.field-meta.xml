@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_VISN_Scheduled_Start_Day__c</fullName>
+    <description>Get the date of the appointment and returns the day of the week</description>
+    <externalId>false</externalId>
+    <formula>Case(weekday(DATEVALUE( Service_Appointment__r.SchedStartTime )),
+1, &quot;Sunday&quot;,
+2, &quot;Monday&quot;,
+3, &quot;Tuesday&quot;,
+4, &quot;Wednesday&quot;,
+5, &quot;Thursday&quot;,
+6, &quot;Friday&quot;,
+7, &quot;Saturday&quot;,
+&quot;&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Appt Sched Start Day</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

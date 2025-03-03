@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_CS_POSITIVE_symptoms_or_exposure__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>To be checked when patient reports any symptoms or possible exposure</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Any symptoms or exposure equal a positive screen and requires further evaluation</inlineHelpText>
+    <label>POSITIVE symptom/s or exposure</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

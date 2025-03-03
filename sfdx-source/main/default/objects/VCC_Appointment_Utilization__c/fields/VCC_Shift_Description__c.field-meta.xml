@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Shift_Description__c</fullName>
+    <description>A descriptive field denoting the provider&apos;s shift(s) that day</description>
+    <encryptionScheme>None</encryptionScheme>
+    <label>Shift Description</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

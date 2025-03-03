@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Cannot_Comp_Scheduling_Action_Reason__c</fullName>
+    <description>Specify Reason why Scheduling Action not completed</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Specify Reason why Scheduling Action not completed</inlineHelpText>
+    <label>Cannot Complete Scheduling Action Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No Appointment Available</fullName>
+                <default>false</default>
+                <label>No Appointment Available</label>
+            </value>
+            <value>
+                <fullName>Restricted / Unavailable Clinic</fullName>
+                <default>false</default>
+                <label>Restricted / Unavailable Clinic</label>
+            </value>
+            <value>
+                <fullName>Self-Referred/ Out-of-Cycle Request</fullName>
+                <default>false</default>
+                <label>Self-Referred/ Out-of-Cycle Request</label>
+            </value>
+            <value>
+                <fullName>Consult/Referral Does Not Exist</fullName>
+                <default>false</default>
+                <label>Consult/Referral Does Not Exist</label>
+            </value>
+            <value>
+                <fullName>Consult Review Required</fullName>
+                <default>false</default>
+                <label>Consult Review Required</label>
+            </value>
+            <value>
+                <fullName>Not Authorized in Service Line Agreement</fullName>
+                <default>false</default>
+                <label>Not Authorized in Service Line Agreement</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

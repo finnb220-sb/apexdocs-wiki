@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Triage_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Triage Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Intake Complete</fullName>
+                <default>false</default>
+                <label>Intake Complete</label>
+            </value>
+            <value>
+                <fullName>Screening Complete</fullName>
+                <default>false</default>
+                <label>Screening Complete</label>
+            </value>
+            <value>
+                <fullName>Vitals Complete</fullName>
+                <default>false</default>
+                <label>Vitals Complete</label>
+            </value>
+            <value>
+                <fullName>TXC Complete</fullName>
+                <default>false</default>
+                <label>TXC Complete</label>
+            </value>
+            <value>
+                <fullName>Assessment Complete</fullName>
+                <default>false</default>
+                <label>Assessment Complete</label>
+            </value>
+            <value>
+                <fullName>Note Submitted</fullName>
+                <default>false</default>
+                <label>Note Submitted</label>
+            </value>
+            <value>
+                <fullName>Checked In</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Checked In</label>
+            </value>
+            <value>
+                <fullName>Triage Complete</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Triage Complete</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

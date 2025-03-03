@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reviews_Outside_of_8_Hour_Window</fullName>
+    <columns>NAME</columns>
+    <columns>NTSP_Case__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>NTSP_Facility__c</columns>
+    <columns>Reviewee__c</columns>
+    <columns>LKW_Time_from_Case__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LKW_Time_from_Case__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>8</value>
+    </filters>
+    <label>Calls Outside of 8 Hour Window</label>
+    <sharedTo>
+        <group>NTSP_Triage_Nurse_Managers</group>
+        <group>NTSP_Triage_Nurse_Peer_Reviewers</group>
+    </sharedTo>
+</ListView>

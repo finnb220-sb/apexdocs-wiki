@@ -1,0 +1,19 @@
+{
+    "value": {
+        "allData": [
+            {
+                "firstName": "Jane",
+                "lastName": "MPI",
+                "dob": "01/01/2005",
+                "icn": "987654321"
+            },
+            {
+                "firstName": "Johnny",
+                "lastName": "MPI",
+                "dob": "01/01/2006",
+                "icn": "987654321"
+            }
+        ]
+    },
+    "kindString": "OK"
+}

@@ -1,0 +1,17 @@
+[
+    {
+        "Id": "001",
+        "Name": "HealthCare Facility 1",
+        "VCC_VISN__c": "VISN 1"
+    },
+    {
+        "Id": "002",
+        "Name": "HealthCare Facility 2",
+        "VCC_VISN__c": "VISN 2"
+    },
+    {
+        "Id": "003",
+        "Name": "HealthCare Facility 3",
+        "VCC_VISN__c": "VISN 3"
+    }
+]

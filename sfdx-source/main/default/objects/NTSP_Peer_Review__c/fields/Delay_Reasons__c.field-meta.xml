@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delay_Reasons__c</fullName>
+    <description>Hidden field used for reporting and for filtering on list views. Creates a consolidated list of all call delay reason fields.</description>
+    <externalId>false</externalId>
+    <formula>IF( Site_Nurse_places_Triage_on_HOLD__c = TRUE, &quot;Site nurse places triage on HOLD&quot; &amp; &quot;; &quot;, null) &amp;
+IF( Site_places_Triage_on_HOLD_X2__c = TRUE, &quot;Site places triage on HOLD X2&quot; &amp; &quot;; &quot;, null) &amp;
+IF( Site_places_Triage_on_HOLD_X3__c = TRUE, &quot;Site places triage on HOLD X3&quot; &amp; &quot;; &quot;, null) &amp;
+IF( Site_Provider_places_Triage_on_HOLD__c  = TRUE, &quot;Site provider places triage on HOLD&quot; &amp; &quot;; &quot;, null) &amp;
+IF( Site_MSA_places_Triage_on_HOLD__c = TRUE, &quot;Site MSA places triage on HOLD&quot; &amp; &quot;; &quot;, null) &amp;
+IF( Site_unable_to_answer_questions__c = TRUE, &quot;Site unable to answer questions&quot; &amp; &quot;; &quot;, null) &amp;
+IF( Site_lacks_info_to_make_solid_decision__c = TRUE, &quot;Site lacks info to make solid decision&quot; &amp; &quot;; &quot;, null) &amp;
+IF( Provider_unclear_on_information__c = TRUE, &quot;Provider unclear on information&quot; &amp; &quot;; &quot;, null) &amp;
+IF( LKW_unclear_1_min_to_get_final_LKW__c = TRUE, &quot;LKW unclear, &gt;1 min to get final LKW&quot; &amp; &quot;; &quot;, null) &amp;
+IF( Criteria_not_met_site_policy_to_call__c = TRUE, &quot;Criteria not met - site policy to call&quot; &amp; &quot;; &quot;, null) &amp;
+IF( Can_t_hear_caller_Caller_can_t_hear_RN__c = TRUE, &quot;Can&apos;t hear caller/Caller can&apos;t hear RN&quot; &amp; &quot;; &quot;, null) &amp;
+IF( Call_confusing_while_gathering_symptoms__c = TRUE, &quot;Call confusing while gathering symptoms&quot; &amp; &quot;; &quot;, null) &amp;
+IF( Provider_didn_t_promptly_answer_call__c = TRUE, &quot;Provider didn&apos;t promptly answer call&quot; &amp; &quot;; &quot;, null) &amp;
+IF( LKW_is_unknown__c = TRUE, &quot;LKW is unknown&quot; &amp; &quot;; &quot;, null) &amp;
+IF( TS_provider_not_ready_for_report__c = TRUE, &quot;TS provider not ready for report&quot; &amp; &quot;; &quot;, null) &amp;
+IF( Lost_connection_of_call__c = TRUE, &quot;Lost connection of call&quot; &amp; &quot;; &quot;, null) &amp;
+IF( TS_provider_reassigns_report__c = TRUE, &quot;TS provider reassigns report&quot; &amp; &quot;; &quot;, null)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Delay Reasons</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

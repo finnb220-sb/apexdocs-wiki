@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Enables internal debugging/logging in Provider Connect.</description>
+    <isLicensed>false</isLicensed>
+    <label>PC-Enable Debug</label>
+</CustomPermission>

@@ -1,0 +1,19 @@
+/**
+ * Created by abaddon on 8/16/23.
+ */
+.slds-grid_align-space {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align children to the bottom */
+    height: 100%; /* Ensure it takes the full height of its parent */
+}
+
+.container {
+    display: flex;
+    align-items: flex-end;
+    width: 100%; /* Ensure it takes the full width */
+}
+
+.slds-col.slds-size_1-of-2 {
+    min-height: 32px; /* or whatever height you want it to have as a minimum */
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VAHC_Announcement</fullName>
+    <active>true</active>
+    <description>VAHC Specific Announcements displayed on the Home flexipage (vccAnnouncement LWC).</description>
+    <label>VAHC Announcement</label>
+</RecordType>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>VAHC_View_Partial_Refill_Log</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>VAHC_View_Refill_Log</name>
+    </customPermissions>
+    <description>Permission set that contains the Custom Permissions for viewing Activity logs within the Medications LWC component</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>VAHC Activity Logs</label>
+</PermissionSet>

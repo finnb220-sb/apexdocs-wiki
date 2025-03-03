@@ -1,0 +1,98 @@
+name: Send Slack Notification
+
+on:
+  workflow_call:
+    inputs:
+      pr_title:
+        required: true
+        type: string
+      pr_url:
+        required: true
+        type: string
+      pr_user:
+        required: true
+        type: string
+      pr_head_ref:
+        required: true
+        type: string
+      pr_base_ref:
+        required: true
+        type: string
+      pr_body:
+        required: true
+        type: string
+      pr_event_type:
+        required: true
+        type: string
+
+jobs:
+  notify-slack:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send notification to Slack
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.DEPECHE_CODE_PR_CHANNEL_WEBHOOK_URL }}
+          PR_TITLE: ${{ inputs.pr_title }}
+          PR_URL: ${{ inputs.pr_url }}
+          PR_USER: ${{ inputs.pr_user }}
+          PR_HEAD_REF: ${{ inputs.pr_head_ref }}
+          PR_BASE_REF: ${{ inputs.pr_base_ref }}
+          PR_BODY: ${{ inputs.pr_body }}
+          PR_EVENT_TYPE: ${{ inputs.pr_event_type }}
+        run: |
+          if [ "${PR_EVENT_TYPE}" = "opened" ]; then
+            TITLE=":tada: A new PR has been opened: *<${PR_URL}|${PR_TITLE}>*"
+          else
+            TITLE=":repeat: The PR has been updated: *<${PR_URL}|${PR_TITLE}>*"
+          fi
+
+          JSON_PAYLOAD=$(cat <<EOF
+          {
+            "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "${TITLE}"
+                }
+              },
+              {
+                "type": "section",
+                "fields": [
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Author:*\n${PR_USER}"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Branch:*\n${PR_HEAD_REF}"
+                  },
+                  {
+                    "type": "mrkdwn",
+                    "text": "*Base:*\n${PR_BASE_REF}"
+                  }
+                ]
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "*Description:*\n${PR_BODY}"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "<${PR_URL}|View PR>"
+                }
+              }
+            ]
+          }
+          EOF
+          )
+          echo "JSON payload to be sent to Slack:"
+          echo "${JSON_PAYLOAD}"
+
+          curl -X POST -H 'Content-type: application/json' --data "${JSON_PAYLOAD}" $SLACK_WEBHOOK_URL

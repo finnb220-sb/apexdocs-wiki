@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Channel that enables components rendered dynamically in the baseLightningModal component</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Base Lightning Modal Message Channel</masterLabel>
+</LightningMessageChannel>

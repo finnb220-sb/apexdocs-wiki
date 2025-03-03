@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Action_Requested_Completed__c</fullName>
+    <description>Indicates the route requested by the patient and completed by the pharmacy</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the route requested by the patient and completed by the pharmacy</inlineHelpText>
+    <label>Route</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Local Mail Prescription</fullName>
+                <default>false</default>
+                <label>Local Mail Prescription</label>
+            </value>
+            <value>
+                <fullName>CMOP Prescription</fullName>
+                <default>false</default>
+                <label>CMOP Prescription</label>
+            </value>
+            <value>
+                <fullName>Mail in Prescription</fullName>
+                <default>false</default>
+                <label>Mail in Prescription</label>
+            </value>
+            <value>
+                <fullName>Pick up Prescription at Window</fullName>
+                <default>false</default>
+                <label>Pick up Prescription at Window</label>
+            </value>
+            <value>
+                <fullName>Pick up Prescription outside VA</fullName>
+                <default>false</default>
+                <label>Pick up Prescription outside VA</label>
+            </value>
+            <value>
+                <fullName>Mail Prescription</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Mail Prescription</label>
+            </value>
+            <value>
+                <fullName>Overnight Local Mail</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Overnight Local Mail</label>
+            </value>
+            <value>
+                <fullName>Pick up at Window</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pick up at Window</label>
+            </value>
+            <value>
+                <fullName>VCC_Pick_up_at_Window</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pick up at Windows</label>
+            </value>
+            <value>
+                <fullName>VCC_Pick_up_outside_VA</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pick up outside VA</label>
+            </value>
+            <value>
+                <fullName>Pick up outside VA</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pick up outside VA2</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

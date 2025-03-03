@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_No_urethral_discharge__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>True if these genitourinary symptoms do not exist in patient during virtual visit</description>
+    <externalId>false</externalId>
+    <inlineHelpText>True if these genitourinary symptoms do not exist in patient during virtual visit</inlineHelpText>
+    <label>No urethral discharge</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,184 @@
+<template>
+    <div class="lwc-container slds-is-relative">
+        <template lwc:if={address.PersonMailingAddress}>
+            <lightning-spinner if:true={displaySpinner} alternative-text="Loading Refill..."> </lightning-spinner>
+            <template if:false={displaySpinner}>
+                <div>
+                    <div class="warning-label" tabindex="0">
+                        <c-base-error-message variant="warning" message={warning}></c-base-error-message>
+                    </div>
+                    <div class="address pad-left" tabindex="0">
+                        <b>VA Profile Mailing Address:</b>
+                        <lightning-formatted-address
+                            street={address.PersonMailingAddress.street}
+                            city={address.PersonMailingAddress.city}
+                            province={address.PersonMailingAddress.state}
+                            postal-code={address.PersonMailingAddress.postalCode}
+                            disabled></lightning-formatted-address>
+                    </div>
+                </div>
+
+                <fieldset class="slds-form-element form-container">
+                    <legend class="slds-form-element__legend slds-form-element__label picker-label"></legend>
+                    <div class="slds-align_absolute-center slds-text-title_bold bold">Medications and Facilities</div>
+                    <div class="form-wrapper slds-form-element__control">
+                        <template if:true={displayList} for:each={displayList} for:item="listItem">
+                            <div
+                                key={listItem.facility.id}
+                                class="list-item slds-visual-picker slds-visual-picker_vertical">
+                                <input
+                                    checked={listItem.facility.selected}
+                                    disabled={listItem.facility.fullyDisabled}
+                                    type="checkbox"
+                                    data-group="med-checkbox"
+                                    data-item={listItem.facility.id}
+                                    data-id={listItem.facility.id}
+                                    id={listItem.facility.id}
+                                    value={listItem.facility.id}
+                                    name="example-unique-name-35"
+                                    onchange={handleCheckboxSelect} />
+                                <label for={listItem.facility.id}>
+                                    <div class="address" tabindex="0">
+                                        <span class="slds-visual-picker__figure slds-visual-picker__text list-item">
+                                            <div class="slds-text-title_bold title-card" tabindex="0">
+                                                Facility: {listItem.facility.id}
+                                                <template lwc:if={listItem.facility.addressNotification}>
+                                                    &nbsp;- {listItem.facility.addressNotification}
+                                                </template>
+                                            </div>
+                                            <div class="container slds-grid slds-gutters">
+                                                <div
+                                                    class="slds-p-around_xx-small slds-text-title_bold text slds-col"
+                                                    tabindex="0">
+                                                    Mailing Address
+                                                </div>
+                                                <div class="box slds-col">
+                                                    <span class={listItem.facility.mailingClasses} tabindex="0">
+                                                        <p>{listItem.facility.address.streetLine1}</p>
+                                                        <p>
+                                                            {listItem.facility.address.city},
+                                                            {listItem.facility.address.stateProvince}
+                                                            {listItem.facility.address.postalCode}
+                                                        </p>
+                                                    </span>
+                                                </div>
+                                                <div class="error-message slds-col">
+                                                    <template lwc:if={isNotPharmacyUser}>
+                                                        <c-base-error-message
+                                                            class="slds-m-top_small"
+                                                            override="message-small"
+                                                            data-id="address-warning"
+                                                            if:true={listItem.facility.doesNotMatch}
+                                                            css={css}
+                                                            variant="important"
+                                                            message="Address does not match VA Profile."
+                                                            tabindex={listItem.facility.errorAddressMatchTabIndex}></c-base-error-message>
+                                                    </template>
+                                                </div>
+
+                                                <div
+                                                    class="slds-p-around_xx-small slds-text-title_bold text slds-col"
+                                                    tabindex="0">
+                                                    Temporary Address
+                                                </div>
+                                                <div class="box slds-col">
+                                                    <span class={listItem.facility.tempClasses} tabindex="0">
+                                                        <template lwc:if={listItem.facility.isTemp}>
+                                                            <template lwc:if={listItem.facility.tempAddress.hide}>
+                                                                -
+                                                            </template>
+                                                            <template lwc:else>
+                                                                <p lwc:if={listItem.facility.tempAddress.isFuture}>
+                                                                    - Future -
+                                                                </p>
+                                                                <p>{listItem.facility.tempAddress.address.street1}</p>
+                                                                <p>{listItem.facility.tempAddress.address.street2}</p>
+                                                                <p>{listItem.facility.tempAddress.address.street3}</p>
+                                                                <template lwc:if={listItem.facility.isDomesticAddress}>
+                                                                    <p>{listItem.facility.formattedAddress}</p>
+                                                                </template>
+                                                                <template lwc:else>
+                                                                    <p>{listItem.facility.formattedForeignAddress}</p>
+                                                                </template>
+                                                                <p>{listItem.facility.tempAddress.address.county}</p>
+                                                                <p>{listItem.facility.tempAddress.address.country}</p>
+                                                                <p>
+                                                                    Start Date:
+                                                                    <lightning-formatted-date-time
+                                                                        value={listItem.facility.tempAddress.startDate}
+                                                                        year="numeric"
+                                                                        month="numeric"
+                                                                        day="numeric"
+                                                                        time-zone="UTC"></lightning-formatted-date-time>
+                                                                </p>
+                                                                <p>
+                                                                    End Date:
+                                                                    <lightning-formatted-date-time
+                                                                        value={listItem.facility.tempAddress.endDate}
+                                                                        year="numeric"
+                                                                        month="numeric"
+                                                                        day="numeric"
+                                                                        time-zone="UTC"></lightning-formatted-date-time>
+                                                                </p>
+                                                            </template>
+                                                        </template>
+                                                        <template lwc:else>
+                                                            <p>No temporary address to display</p>
+                                                        </template>
+                                                    </span>
+                                                </div>
+                                                <div class="slds-col">
+                                                    <c-base-error-message
+                                                        lwc:if={listItem.facility.showForeignAddressWarning}
+                                                        tabindex={listItem.facility.errorTempAddressTabIndex}
+                                                        class="slds-m-top_small"
+                                                        override="message-small"
+                                                        data-id="address-warning"
+                                                        css={css}
+                                                        variant="important"
+                                                        message="Patient has a non-US address. Please note that VA can only mail prescriptions within the US, Puerto Rico and US Virgin Islands."></c-base-error-message>
+                                                </div>
+
+                                                <div
+                                                    class="slds-p-around_xx-small slds-text-title_bold text slds-col"
+                                                    tabindex="0">
+                                                    Medications for Refill
+                                                </div>
+                                                <div class="box slds-col">
+                                                    <span class="textarea-refill" tabindex="0">
+                                                        <textarea
+                                                            id="textarea-id-01"
+                                                            class="slds-textarea"
+                                                            readonly
+                                                            aria-live="assertive"
+                                                            disabled={listItem.facility.fullyDisabled}>
+                                            {listItem.facility.stringMeds}
+                                               </textarea
+                                                        >
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </span>
+                                        <span class="slds-icon_container slds-visual-picker__text-check">
+                                            <lightning-icon
+                                                variant="inverse"
+                                                icon-name="utility:check"
+                                                size="x-small"
+                                                class="slds-icon-text-check"></lightning-icon>
+                                        </span>
+                                    </div>
+                                </label>
+                            </div>
+                        </template>
+                    </div>
+                </fieldset>
+            </template>
+        </template>
+        <template lwc:else>
+            <c-base-empty-state
+                class="slds-align_absolute-center"
+                type="treasure"
+                msg="No Demographic Info Available For This Patient."></c-base-empty-state>
+        </template>
+    </div>
+</template>

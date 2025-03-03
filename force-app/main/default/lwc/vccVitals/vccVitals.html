@@ -1,0 +1,46 @@
+<template>
+    <c-logger></c-logger>
+    <c-base-spinner lwc:if={loading} alt-text="Loading Visits"></c-base-spinner>
+    <main lwc:else>
+        <template if:false={hasError}>
+            <c-base-h-d-r-frame
+                lwc:ref="hdrFrame"
+                onreloadhealthdata={handleReloadHealthData}
+                onloadmore={handleLoadMore}
+                actions-component={actionsComponent}
+                date-range-field="taken"
+                onrowselected={handleRowSelected}
+                onaddtonote={handleAddToNoteModalOpen}
+                if:false={loading}
+                settings={settings}
+                list={tableDisplayData}
+                columns={columns}
+                size={flexipageRegionWidth}
+                current-object={objectApiName}
+                hdr-message={hdrMessage}>
+            </c-base-h-d-r-frame>
+        </template>
+
+        <!-- error state -->
+        <template if:true={hasError}>
+            <c-base-empty-state type="rain" msg={errMessageTitle}></c-base-empty-state>
+            <div
+                id="variants"
+                class="slds-p-vertical_x-small slds-grid slds-grid_vertical-align-top slds-align_absolute-center slds-p-bottom_x-large">
+                <lightning-icon
+                    icon-name="utility:info_alt"
+                    alternative-text="Info!"
+                    variant="info"
+                    title="info variant small"
+                    size="xx-small">
+                </lightning-icon>
+                <lightning-formatted-text
+                    class="slds-form-element__label slds-p-left_xx-small"
+                    style="color: #042d60; font-weight: bold"
+                    value={errSubMessage}></lightning-formatted-text>
+            </div>
+            <div class="slds-p-top_medium"></div>
+        </template>
+        <!--        <c-base-chart chart-type={chartType} chart-labels={chartlabels} chart-datasets={chartDatasets}></c-base-chart>-->
+    </main>
+</template>

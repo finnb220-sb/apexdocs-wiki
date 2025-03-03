@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Parent_Case_Follow_Up_Appt_Needed_Hr__c</fullName>
+    <description>Converts the picklist values for the &apos;Follow Up Appt Needed&apos; field on the Parent Case from text to number for reporting purposes.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+  VCC_Case__r.Case_Record_Type_Name__c = &quot;VCC_Administrative&quot;  || VCC_Case__r.Case_Record_Type_Name__c = &quot;VCC_Vitrual_Clinic_Visit&quot;,
+Case ( TEXT( VCC_Case__r.Parent.VCC_Follow_Up_Appt_Needed__c  ),
+&quot;Within 8 hours&quot;, 8,
+&quot;Within 24 hours&quot;, 24,
+&quot;Within 24 Hrs&quot;, 24,
+&quot;Within 3 days&quot;, 72,
+&quot;Within 2 weeks&quot;, 336,
+1000000
+),
+NULL
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Parent Case Follow Up Appt Needed Hrs</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

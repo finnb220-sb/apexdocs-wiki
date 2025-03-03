@@ -1,0 +1,36 @@
+{
+    "success": true,
+    "message": "prescription PARTIALS log found.",
+    "log": [
+        {
+            "divisionNumber": "541BZ",
+            "divisionName": "YOUNGSTOWN",
+            "loginDateTime": "1994-05-23T14:51:00",
+            "partialDate": "1994-05-23",
+            "pharmacistName": "MAURER,EDWARD E",
+            "quantity": 10,
+            "releasedDateTime": "1994-05-23T15:23:53",
+            "routing": "WINDOW"
+        },
+        {
+            "divisionNumber": "541BZ",
+            "divisionName": "YOUNGSTOWN",
+            "loginDateTime": "1994-06-29T12:54:00",
+            "partialDate": "1994-06-29",
+            "pharmacistName": "MAURER,EDWARD E",
+            "quantity": 20,
+            "releasedDateTime": "1994-06-29T13:25:41",
+            "routing": "WINDOW"
+        },
+        {
+            "divisionNumber": "541BZ",
+            "divisionName": "YOUNGSTOWN",
+            "loginDateTime": "1994-08-24T11:08:00",
+            "partialDate": "1994-08-24",
+            "pharmacistName": "MAURER,EDWARD E",
+            "quantity": 10,
+            "releasedDateTime": "1994-08-24T11:30:20",
+            "routing": "WINDOW"
+        }
+    ]
+}

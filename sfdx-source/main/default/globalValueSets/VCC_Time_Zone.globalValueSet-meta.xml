@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Central Standard Time</fullName>
+        <default>false</default>
+        <label>Central Standard Time</label>
+    </customValue>
+    <customValue>
+        <fullName>Mountain Standard Time</fullName>
+        <default>false</default>
+        <label>Mountain Standard Time</label>
+    </customValue>
+    <customValue>
+        <fullName>Pacific Standard Time</fullName>
+        <default>false</default>
+        <label>Pacific Standard Time</label>
+    </customValue>
+    <customValue>
+        <fullName>Taipei Standard Time</fullName>
+        <default>false</default>
+        <label>Taipei Standard Time</label>
+    </customValue>
+    <customValue>
+        <fullName>Hawaiian Standard Time</fullName>
+        <default>false</default>
+        <label>Hawaiian Standard Time</label>
+    </customValue>
+    <customValue>
+        <fullName>Alaskan Standard Time</fullName>
+        <default>false</default>
+        <label>Alaskan Standard Time</label>
+    </customValue>
+    <customValue>
+        <fullName>Eastern Standard Time</fullName>
+        <default>false</default>
+        <label>Eastern Standard Time</label>
+    </customValue>
+    <customValue>
+        <fullName>Alaskan Daylight Time</fullName>
+        <default>false</default>
+        <label>Alaskan Daylight Time</label>
+    </customValue>
+    <customValue>
+        <fullName>Central Daylight Time</fullName>
+        <default>false</default>
+        <label>Central Daylight Time</label>
+    </customValue>
+    <customValue>
+        <fullName>Eastern Daylight Time</fullName>
+        <default>false</default>
+        <label>Eastern Daylight Time</label>
+    </customValue>
+    <customValue>
+        <fullName>Hawaii-Aleutian Daylight Time</fullName>
+        <default>false</default>
+        <label>Hawaii-Aleutian Daylight Time</label>
+    </customValue>
+    <customValue>
+        <fullName>Mountain Daylight Time</fullName>
+        <default>false</default>
+        <label>Mountain Daylight Time</label>
+    </customValue>
+    <customValue>
+        <fullName>Pacific Daylight Time</fullName>
+        <default>false</default>
+        <label>Pacific Daylight Time</label>
+    </customValue>
+    <description>Picklist values of time zones for the Service Onboarding Tracker App.</description>
+    <masterLabel>Time Zone</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

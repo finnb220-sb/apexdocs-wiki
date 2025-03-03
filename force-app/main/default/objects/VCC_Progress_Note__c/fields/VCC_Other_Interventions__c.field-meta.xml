@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Other_Interventions__c</fullName>
+    <complianceGroup>HIPAA</complianceGroup>
+    <description>Contains the Other Interventions that were provided to the patient on the Clinical Triage 2.0 Progress Note for SOAPIE template</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <label>Other Interventions</label>
+    <length>1200</length>
+    <securityClassification>Restricted</securityClassification>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

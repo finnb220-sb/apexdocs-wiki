@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Note_Reason__c</fullName>
+    <description>Reason for creation of a scheduling note for this patient.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Reason for creation of a scheduling note for this patient.</inlineHelpText>
+    <label>Note Reason</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cannot Complete RTC</fullName>
+                <default>false</default>
+                <label>Cannot Complete RTC</label>
+            </value>
+            <value>
+                <fullName>Veteran is Requesting RTC</fullName>
+                <default>false</default>
+                <label>Veteran is Requesting RTC</label>
+            </value>
+            <value>
+                <fullName>Lab Results</fullName>
+                <default>false</default>
+                <label>Lab Results</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,120 @@
+<template>
+    <article class="slds-card">
+        <header class="slds-p-horizontal_medium slds-page-header slds-page-header_joined">
+            <div class="header-wrapper">
+                <lightning-icon icon-name={iconName} size="small"></lightning-icon>
+                <h2 class="slds-card__header-title header">
+                    <a class="slds-card__header-link baseCard__header-title-container" onclick={handleViewAllClick}>
+                        <span class="slds-truncate slds-m-right--xx-small" title="View All">{componentTitle}</span>
+                    </a>
+                </h2>
+                <lightning-button
+                    variant="neutral"
+                    label={assignButtonTitle}
+                    title={assignButtonTitle}
+                    onclick={handleAssignButtonClick}
+                    class="slds-m-left_x-small"
+                ></lightning-button>
+            </div>
+        </header>
+        <template if:false={showError}>
+            <template if:true={showBodyAndFooter}>
+                <div class="body-wrapper slds-p-horizontal_medium slds-p-top_x-small">
+                    <template for:each={displayList} for:item="record">
+                        <div key={record.Id} class="slds-p-top_x-small slds-p-bottom_xx-small">
+                            <a href={record.recordURL}>{record.Name}</a><br />
+                            <div class="details-wrapper slds-list_horizontal slds-wrap">
+                                <div class="label slds-text-color_weak">Station Number:</div>
+                                <div class="detail">{record.StationNumber}</div>
+                                <!-- <div class="label slds-text-color_weak">
+									Created By:
+								</div>
+								<div class="detail">
+									{record.CreatedByName}
+								</div> -->
+
+                                <!-- <div class="label slds-text-color_weak">
+									Created Date:
+								</div>
+								<div class="detail">
+                                    <lightning-formatted-date-time
+                                        value={record.CreatedDate}
+                                        year="numeric"
+                                        month="numeric"
+                                        day="numeric">
+                                    </lightning-formatted-date-time>
+								</div> -->
+                            </div>
+                        </div>
+                    </template>
+                </div>
+                <div class="slds-card__footer">
+                    <lightning-button
+                        variant="base"
+                        label="View All"
+                        title="View All"
+                        onclick={handleViewAllClick}
+                        class="slds-m-horizontal_small view-all-button"
+                    ></lightning-button>
+                </div>
+            </template>
+        </template>
+        <template if:true={showError}> {error.body.message} </template>
+    </article>
+    <c-base-modal size="medium" class="viewAllModal" showfooter="false">
+        <template if:true={isSubmitting}>
+            <lightning-spinner alternative-text="Submitting..."> </lightning-spinner>
+        </template>
+        <div slot="header" class="header-wrapper">
+            <lightning-icon icon-name={iconName} size="small"></lightning-icon>
+            <h2 class="slds-card__header-title header">{_objectLabel}</h2>
+        </div>
+        <section class="container">
+            <div class="slds-box slds-box_x-small slds-theme_shade">
+                <template if:true={hasSelectedRecords}>
+                    <div class="slds-box slds-box_x-small slds-theme_default slds-m-bottom_x-small">
+                        <lightning-pill-container items={selectedRecords} onitemremove={handleItemRemove} is-collapsible is-expanded={isExpanded} onfocus={handlePillExpansion}>
+                        </lightning-pill-container>
+                    </div>
+                </template>
+                <c-base-search-bar class="search-bar" settings={searchBarSettings} onfilterlistbysearch={handleSearch} list={fullTableData}></c-base-search-bar>
+                <div class="slds-m-top_x-small">
+                    <lightning-formatted-text value={selectedRecordCountText}></lightning-formatted-text>
+                </div>
+            </div>
+            <div class="slds-box slds-box_x-small slds-m-top_x-small" style="height: 375px">
+                <!-- <div class="filter" if:true={showFilter}>
+					<c-base-double-filter
+						onfilterlistbyfilter={handleFilterChange}
+						list={_originalRecords}
+						filter-api-names={filterFields}>
+					</c-base-double-filter>
+				</div> -->
+                <div style="height: 97%">
+                    <!-- 97% width required to fit inside slds-box styled div-->
+                    <c-base-table-details sorted-by={tableDetails.sortedBy} total={tableDetails.total}></c-base-table-details>
+                    <lightning-datatable
+                        key-field="Id"
+                        columns={columns}
+                        data={paginatedTableData}
+                        onrowaction={handleRowAction}
+                        onrowselection={handleRowSelection}
+                        selected-rows={selectedTableRows}
+                        onsort={handleSort}
+                        sorted-direction={sortDirection}
+                        sorted-by={sortedBy}
+                        min-column-width="100"
+                    >
+                    </lightning-datatable>
+                </div>
+            </div>
+        </section>
+        <footer class="slds-modal__footer">
+            <c-base-pagination hide-buttons={hidePaginationBtns} onpagechange={handlePageChange} entries-per-page={entriesPerPage} list={fullTableData}> </c-base-pagination>
+            <div class="buttons">
+                <lightning-button variant="brand" label="Submit" title="Submit" onclick={handleSubmitClick} class="submit-button" disabled={disableSubmit}></lightning-button>
+                <lightning-button class="slds-var-m-left_small" label="Close" title="Close" onclick={handleClose}> </lightning-button>
+            </div>
+        </footer>
+    </c-base-modal>
+</template>

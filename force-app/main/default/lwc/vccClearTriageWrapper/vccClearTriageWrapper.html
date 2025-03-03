@@ -1,0 +1,13 @@
+<template>
+    <c-logger></c-logger>
+    <lightning-button lwc:if={showTriageButton} label="Start ClearTriage" onclick={onStartTriage}></lightning-button>
+    <template lwc:elseif={dataLoaded}>
+        <c-vcc-clear-triage
+            src-url={srcUrl}
+            ct-access-key={ctAccessKey}
+            user-visn={userVisn}
+            ondatachanged={handleDataReceived}
+            class="container app">
+        </c-vcc-clear-triage>
+    </template>
+</template>

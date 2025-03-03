@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Provided_info_Veterans_Crisis_Line__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Emergency care medical provider instructed patient to receive during Virtual Visit</description>
+    <externalId>false</externalId>
+    <inlineHelpText
+    >The Veterans Crisis Line connects Veterans, Service members and their loved ones in crisis with qualified, caring VA responders through a confidential toll-free hotline,
+        online chat, or text 24/7. Contact the Veterans Crisis Line: Dial 988 then Press 1, chat online, or text 838255.</inlineHelpText>
+    <label>Provided Info for Veteran Crisis Line</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

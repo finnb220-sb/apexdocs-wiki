@@ -1,0 +1,30 @@
+<template>
+    <lightning-quick-action-panel header="Create Task">
+        <lightning-spinner alternative-text="Loading" size="small" if:true={isSpinner}></lightning-spinner>
+        <div class="slds-p-around_medium">
+            <lightning-combobox name="Subject" label="Subject" value={Subject} options={SubjectOptions} onchange={handleSubjectChange} required="true"> </lightning-combobox>
+            <lightning-formatted-text value={SelectedSubjectError} style="color: red"></lightning-formatted-text>
+        </div>
+
+        <div class="slds-p-around_medium">
+            <lightning-input type="date" label="Task Order Date" name="TaskOrderDate" value={SelectedOrderDate} onchange={handleChange}> </lightning-input>
+        </div>
+
+        <div class="slds-p-around_medium">
+            <lightning-input type="date" label="Task Due Date" name="TaskDueDate" value={SelectedDueDate} onchange={handleChange}> </lightning-input>
+        </div>
+
+        <div class="slds-p-around_medium">
+            <lightning-textarea type="text" label="Specific Order" name="SpecificOrder" value={SpecificOrder} onchange={handleChange}> </lightning-textarea>
+        </div>
+
+        <div class="slds-p-around_medium">
+            <lightning-textarea type="text" label="Comments/Progress" name="CommentsProgress" value={CommentsProgress} onchange={handleChange}> </lightning-textarea>
+        </div>
+        <div slot="footer">
+            <lightning-button variant="Destructive" label="Cancel" onclick={closeAction}> </lightning-button>
+
+            <lightning-button label="Save" variant="brand" onclick={handleSave} class="slds-m-left_x-small"> </lightning-button>
+        </div>
+    </lightning-quick-action-panel>
+</template>

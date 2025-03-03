@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Primary_Care__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Veteran is requesting an appointment with primary care provider</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Veteran is requesting an appointment with primary care provider</inlineHelpText>
+    <label>Primary Care</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Temperature__c</fullName>
+    <description>Used for Vitals Intake. Patient&apos;s temperature within 95.0 and 105.7 F</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Patient&apos;s temperature within 95.0 and 105.7 F</inlineHelpText>
+    <label>Temperature *F</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

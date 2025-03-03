@@ -1,0 +1,1761 @@
+<ruleset
+    name="Access Insight Accessibility Rules"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd"
+>
+    <description>Access Insight Accessibility Rules</description>
+
+    <rule
+            language="html"
+            name="ImagesMustContainAltTextPropertiesRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.ImagesMustContainAltTextPropertiesRule"
+            message="Image tags must have alt text properties"
+    >
+        <description>Image tags must include an ALT property that is at least 5 characters long unless the role property
+            is set to presentation
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="InputElementsRequireAccesibleNameRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.InputElementsRequireAccesibleNameRule"
+            message="Input Elements must have an Accessible Name."
+    >
+        <description>Input elements must have an accessible name. Use a label element whos for attribute matches this
+            inputs Id or one of the following attributes Aria-label Aria-labelledby Title
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="PreferLightningInputElementsRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.PreferLightningInputElementsRule"
+            message="Consider using a Lightning-input element, rather than a raw html5 input element"
+    >
+        <description>Lightning-input elements take care of many accessibility concerns. Consider using a lightning-input
+            element here, rather than a raw html5 input element.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="TablesMustHaveAccessibleNamesRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.TablesMustHaveAccessibleNamesRule"
+            message="Tables must have an accessible name element"
+    >
+        <description>A screen reader user often has the capability to preview a list of data tables on the page. If data
+            tables arent named, then the user is forced to spend more time determining the meaning of each table. This
+            greatly decreases efficiency for users with vision disabilities when multiple tables exist on the page.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="FiguresMustHaveAccessibleNamesRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.FiguresMustHaveAccessibleNamesRule"
+            message="Figures must have an accessible name element"
+    >
+        <description>A screen reader would either read nothing for this element or may make a guess. A user with a
+            vision disability will not know the meaning of the figure.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="iFramesMustHaveAccessibleNamesRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.iFramesMustHaveAccessibleNamesRule"
+            message="Iframes must have an accessible name element"
+    >
+        <description>A screen reader user often has the capability to preview a list of iframes on the page. If the
+            iframes arent named, then the user must find another way to determine which iframe is which. This greatly
+            decreases efficiency for users with vision disabilities when multiple iframes exist on the page.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="DuplicateIDDetectedRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.DuplicateIDDetectedRule"
+            message="A duplicate element id has been discovered"
+    >
+        <description>It is an HTML requirement that element id values must be unique. Some accessibility components
+            reference other elements by their id. If ids are the same (duplicated) among several elements, an element
+            may be referencing the wrong element, and the screen reader output may not be correct. Accessibility
+            Components that use id references are: aria-labelledby, aria-describedby, table cell headers, the for
+            attribute of a label, and many other aria-* attributes. In addition to accessibility concerns, when ids are
+            not unique there may be JavaScript event issues if the duplicate ids are referenced by the beloved
+            JavaScript method getElementById.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="DuplicateForAttributesInLabelsDetectedRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.DuplicateForAttributesInLabelsDetectedRule"
+            message="A duplicate For value in a label has been discovered"
+    >
+        <description>When a screen reader is trying to make an associate between a form element and a label, if there
+            are multiple labels with the same for value, a screen reader might read the label that was not intended to
+            be associated with the element. W3C specifications do not explicitly state that duplicate for attributes
+            should not be used, however screen readers do not support such usage.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AriadescribedbyUsedAloneRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AriadescribedbyUsedAloneRule"
+            message="The only HTML markup found on the element that provides accessibility information is the aria-describedby attribute."
+    >
+        <description>Screen readers expect an accessible name to be provided when aria-describedby is used. If there is
+            no name, a screen reader might fail and read irrelevant text or make a guess.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="mispelledAriaLabelsRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.mispelledAriaLabelsRule"
+            message="The element contains a typo or misspelling of an ARIA attribute."
+    >
+        <description>Most screen readers do not check for attribute misspellings or attempt to interpret syntax errors.
+            Therefore, the misspelled ARIA attributes will not provide the intended accessibility information.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AriaRoleOfImageIsNotValidRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AriaRoleOfImageIsNotValidRule"
+            message="This element has a role attribute with a value of image."
+    >
+        <description>image is not a valid value for role. A screen reader will not recognize this element as an image.
+            Change the value to img, as in role=img so that the screen reader will recognize the element as an image.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AriaRoleMatchesCanonicalListRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AriaRoleMatchesCanonicalListRule"
+            message="This element has a role attribute that is not recognized as part of the html5.2 standard."
+    >
+        <description>This element has a role, which is good, but the role specified does not match any of the known
+            roles in the html5.2 standard. Could it be mispelled?
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertAccesskeyDuplicateRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertAccesskeyDuplicateRule"
+            message="This element has an accesskey attribute that matched another elements accesskey."
+    >
+        <description>The accesskey functionality may not work as intended. Accesskeys on buttons and links must be
+            unique. Some browsers allow for a focus jump functionality when duplicate accesskeys are placed on elements
+            that arent links and buttons. However, when a shared accesskey is placed on links or buttons, usually only
+            the first button or link will be selected.As a best practice, make each accesskey unique. If multiple
+            buttons or links share the same function, put the accesskey on only one. more info about accesskey
+        </description>
+        <priority>3</priority>
+    </rule>
+
+
+    <rule
+            language="html"
+            name="AlertAltOnlyForImagesRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertAltOnlyForImagesRule"
+            message="This element has an alt attribute and is not an image: img, input[type=image], or area."
+    >
+        <description>Not all screen readers will announce the alt attribute for non-image elements. Therefore, some
+            accessibility information that was intentionally added in the alt value may not be spoken. Do not use the
+            alt attribute for non-images. Instead use the global attribute aria-label to provide an accessible name or
+            title to provide an accessible description. more info about alt | more info about aria-label | more info
+            about title
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertAmbiguousLinkRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertAmbiguousLinkRule"
+            message="This link shares an identical accessible name and accessible description as another link on the page, but the hrefs are different. Essentially, the links do not have descriptive text."
+    >
+        <description>Ambiguous links are a potential problem for all users, not just users of assistive technologies
+            (screen readers). Because of this ambiguity (the name/description of the links are the same, but the
+            destinations are different) a user may navigate to an unintended location. Moreover, screen reader users
+            have the capability to bring up a list of links by which they can efficiently navigate. If the links in such
+            a list are not unique and self-defining, then the accessibility of the page is affected.If the hrefs are
+            different, the accessible name and accessible description of each link should be uniquely identified. Note
+            that, if the hrefs are identical, the link names/descriptions can be the same or different.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertAnchorTargetNotFoundRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertAnchorTargetNotFoundRule"
+            message="This links href points to the id of an element on the page that cannot be found. NOTE: ANDI should not throw this alert if a JavaScript click event handler is attached to this link."
+    >
+        <description>If this link is intended to be used as an in-page jump, or skip to content link, it may not
+            function as intended.Testers should click on the link to discover if the link is functional as an in-page
+            jump/bookmark. If the link has no function, add the element with the id to the page or remove the link.
+            Further evaluation or a discussion with the web author may be needed to determine the purpose of this link.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertAreaNotInMapRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertAreaNotInMapRule"
+            message="Found an image map element, (area), that is not contained within a map element."
+    >
+        <description>To create a proper client-side image map, area elements must be within a map element.</description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertARIAreferencedirectandindirectRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertARIAreferencedirectandindirectRule"
+            message="This element has an aria-labelledby or aria-describedby that is referencing an element both directly and indirectly. Directly because the referenced elements id is in the id reference list. Indirectly because the element is contained by an element that is being directly referenced."
+    >
+        <description>This may cause speech verbosity because the referenced element may be read more than once.Ensure
+            that any referenced elements that are not contained by other referenced elements.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertARIAReferenceIDNotFoundRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertARIAReferenceIDNotFoundRule"
+            message="This element has an aria-labelledby or aria-describedby that points to an id that cannot be found on the page."
+    >
+        <description>Important accessibility information might be missing. Screen readers will not notify a user that
+            the id could not be found.Deeper investigation of the code is needed. Attributes aria-labelledby and
+            aria-describedby should only contain id references, not text directly inserted into the attributes value.
+            Example: GOOD: aria-labelledby=id1 BAD: aria-labelledby=What is your favorite color? When multiple ids are
+            used, they should be space delimited, not comma delimited. Example: GOOD: aria-labelledby=id1 id2 id3 BAD:
+            aria-labelledby=id1,id2,id3 BAD: aria-labelledby=id1, id2, id3 more info about aria-labelledby | more info
+            about aria-describedby
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertARIAreferencinganARIAreferenceRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertARIAreferencinganARIAreferenceRule"
+            message="This element has an aria-labelledby|aria-describedby that is referencing an element that has an aria-labelledby|aria-describedby or contains an element that has an aria-labelledby|aria-describedby."
+    >
+        <description>While this arrangement should not directly cause an accessibility issue, the output may not be as
+            expected. When traversing an aria-labelledby|aria-describedby reference,
+            subsequent aria-labelledby|aria-describedby references will not be followed to prevent the possibility of
+            causing an infinite loop while trying to calculate the accessible name/description.Ensure that this elements
+            output is as expected.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertARIAreferencingidmultipletimesRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertARIAreferencingidmultipletimesRule"
+            message="This element has an aria-labelledby or aria-describedby that is referencing the same element more than once."
+    >
+        <description>This will directly cause speech verbosity because the referenced element will be read each time it
+            is referenced.Its rare that listing the same id multiple times in an ARIA reference is intentional. Most
+            likely it is a copy/paste coding error. Ensure that the output is as expected, and remove any unintended
+            duplicated id references in the elements aria-labelledby or aria-describedby attributes.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertARIAreferencinglegendRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertARIAreferencinglegendRule"
+            message="This element has an aria-labelledby or aria-describedby attribute that is referencing a legend element."
+    >
+        <description>Either remove the reference to the legend from the aria-labelledby/aria-describedby or change the
+            legend to a generic tag that carries no semantics such as strong.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertARIATableGridStructureIssueRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertARIATableGridStructureIssueRule"
+            message="This page has a tabular structure built using an ARIA table or ARIA grid design pattern, but there is an issue with the structure."
+    >
+        <description>A user who is visually impaired and relying on a screen reader will not be able to fully navigate
+            the ARIA table or ARIA grid when the proper structure is not in place.Correct the structure to abide by the
+            standards for an ARIA table, or ARIA grid.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertARIAdescribedByAloneRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertARIAdescribedByAloneRule"
+            message="The only HTML markup found on the element that provides accessibility information is the aria-describedby attribute."
+    >
+        <description>Screen readers expect an accessible name to be provided when aria-describedby is used. If there is
+            no name, a screen reader might fail and read irrelevant text or make a guess.One option is to simply use
+            aria-labelledby instead of aria-describedby. Another option is to provide an accessible name along with the
+            aria-describedby by adding an aria-labelledby, aria-label, or other element-specific Namer. more info about
+            aria-describedby
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertAriaLevelnotGreaterThanZeroIntegerRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertAriaLevelnotGreaterThanZeroIntegerRule"
+            message="The aria-level attribute is not greater than zero and/or is not an integer."
+    >
+        <description>When the aria-level on a role=heading element is not a greater than zero integer, a screen reader
+            will default the heading level to level 2.Ensure that the aria-level value is valid and is an appropriate
+            level for its location on the page.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertARIARoleNotValidRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertARIARoleNotValidRule"
+            message="The element contains an attribute that does not exist: aria-role."
+    >
+        <description>Most screen readers do not check for attribute misspellings or attempt to interpret syntax errors.
+            Therefore, aria-role will not provide the intended accessibility information.Most likely, the attribute role
+            was intended to be used on this element.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertAttributeLengthExceedsCharacterLimitRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertAttributeLengthExceedsCharacterLimitRule"
+            message="This elements title, alt, or aria-label attribute value has a length that exceeds 250 characters."
+    >
+        <description>An accessible name should be a concise identifier of an element. A screen reader has no way of
+            skipping through sections of long accessible names. Shortening the accessible name will help with efficient
+            page navigation using a screen reader.If a long amount of text is needed, shorten the accessible name and
+            use the aria-describedby attribute. The aria-describedby provides a screen reader user a way to make a
+            selection to hear more information about an element. more info about aria-describedby
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertBlinkFoundRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertBlinkFoundRule"
+            message="This element is a blink."
+    >
+        <description>This element can trigger seizures in some individuals when the content is large. In addition, the
+            blinking/flashing text within a blink element can be difficult to read for people with low vision or who
+            have cognition disorders like dyslexia.Do not use the blink tag and do not allow any text to repeatedly
+            blink or flash on the page.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertCanvasHasFocusableFallbackRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertCanvasHasFocusableFallbackRule"
+            message="A canvas element was found that has focusable elements within the fallback content. Some additional, manual testing is needed."
+    >
+        <description>A canvas by default is not keyboard accessible. When a canvas element is interactive, JavaScript is
+            used to control mouse click and hover events. Users who primarily rely on a keyboard for navigation cannot
+            interact with a canvas element unless keyboard accessible elements and event handling are provided.This
+            particular canvas has some focusable fallback content, which is good. However, some manual testing needs to
+            be done to determine if any important mouse accessible functionality has a keyboard accessible alternative.
+            If the canvas is interactive using a mouse, then the canvas should include keyboard-focusable (tabbable)
+            elements within the fallback content which will provide keyboard users with functionality that is equivalent
+            to what is available to mouse users. For example, if the canvas has several hit regions or clickable areas,
+            buttons could be provided within the canvas fallback content that will perform a similar function as the hit
+            regions. (As always any such controls should be properly named and described). To provide visual indication
+            of focus when a fallback control receives focus, a focus event should be added to the fallback control which
+            highlights the hit region with which it associates. It is acceptable if the keyboard functionality that
+            mimics mouse functionality exists outside of the canvas element or even exists outside this page. However,
+            users should be informed about any alternatives.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertCanvasNoFocusableFallbackRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertCanvasNoFocusableFallbackRule"
+            message="A canvas element was found that has no focusable elements within the fallback content."
+    >
+        <description>A canvas by default is not keyboard accessible. When a canvas element is interactive, JavaScript is
+            used to control mouse click and hover events. Users who primarily rely on a keyboard for navigation cannot
+            interact with a canvas element unless keyboard accessible elements and event handling are provided.Making a
+            canvas fully accessible requires a high degree of JavaScript skill. If the canvas is interactive using a
+            mouse, then the canvas should include keyboard-focusable (tabbable) elements within the fallback content
+            which will provide keyboard users with functionality that is equivalent to what is available to mouse users.
+            For example, if the canvas has several hit regions or clickable areas, buttons could be provided within the
+            canvas fallback content that will perform a similar function as the hit regions. (As always any such
+            controls should be properly named and described). To provide visual indication of focus when a fallback
+            control receives focus, a focus event should be added to the fallback control which highlights the hit
+            region with which it associates. It is acceptable if the keyboard functionality that mimics mouse
+            functionality exists outside of the canvas element or even exists outside this page. However, users should
+            be informed about any alternatives.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertConflictingHeadingLevelRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertConflictingHeadingLevelRule"
+            message="This heading elements heading level implied by its tag name, (h1 - h6) does not match the numeric aria-level value."
+    >
+        <description>The intended heading level may not be communicated to users of assistive technology.Always ensure
+            that the heading level used is the proper heading level in relation to the content and other headings on the
+            page. When role=heading is used, the aria-level will supersede the heading level from the tag name.
+            Therefore, either: Only use native semantics: Remove role=heading and the aria-level from the element which
+            will result in the level of the heading tag chosen. Doing so will resolve this alert. Use a generic element
+            like div with role=heading and the aria-level instead of an h1 - h6 heading element. Doing so will resolve
+            this alert. Disregard this alert and know that the aria-level supersedes the tag names heading level. As a
+            best practice, stick with native semantics instead of ARIA whenever possible.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertContentinjectedusingCSSRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertContentinjectedusingCSSRule"
+            message="This page has content injected using the CSS pseudo-elements ::before or ::after."
+    >
+        <description>Depending on the browser being used, Content injected using this technique may not recognized by
+            screen readers, therefore, the text may not be communicated to individuals using assistive technologies.
+            Specifically, in Internet Explorer screen readers will not detect recognize CSS pseudo-element content.If
+            the content is meaningful or important, it should be made apparent to a blind individual using a screen
+            reader. If the meaning of the injected content is available elsewhere on the page, no change is needed.
+            Otherwise, remediation options are as follows: Abandon the CSS content injection technique and place text
+            directly on the screen or use inline images. Properly name and describe elements with which the injected css
+            content associates.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertContrastratiominimumrequirementRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertContrastratiominimumrequirementRule"
+            message="This element has very low contrast between foreground and background colors. In other words, the background and foreground colors do not have a sufficient contrast ratio based on minimum requirements."
+    >
+        <description>Informational text should have a contrast ratio that allows the text to be readable by individuals
+            with moderately low vision.Adjust the text color and/or the background color of this element so that the
+            contrast ratio is at or above the minimum required contrast ratio. The WCAG AA Contrast Ratio requirement is
+            as follows: For Large Text (font-size of 18pt or font-size of 14pt and bold) a contrast ratio of at least
+            3:1 Otherwise a contrast ratio of at least 4.5:1 Logo, brand name, and decorative text does not have to meet
+            a contrast ratio requirement.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertDecorativeImageInTabOrderRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertDecorativeImageInTabOrderRule"
+            message="This image contains a programmatic contradiction: it was defined as decorative using role=presentation or alt=, but it has a non-negative tabindex which places it in the keyboard tab order."
+    >
+        <description>When tabbing to this decorative image, a screen reader may read nothing or may read
+            incorrectly.Decorative Images should not be in the tab order, therefore, remove the tabindex. If the image
+            is not decorative, include a text description of the image using the alt attribute. In general, images do
+            not have to be in the keyboard tab order.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertDeprecatedAttributeRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertDeprecatedAttributeRule"
+            message="ANDI detected an HTML5 doctype and the presence of a deprecated attribute or tag. A deprecated attribute or tag means it’s being phased out and there are better, more flexible alternatives. ANDI will throw this Alert when it finds: A summary attribute on a table A name attribute on an a link A scope attribute on an table td cell"
+    >
+        <description>Screen readers may not support deprecated HTML. Abide by the specifications of the doctype being
+            used. With HTML5, Instead of summary on a table, use aria-label or caption Instead of name on an a link, use
+            id. Instead of scope attribute on an td, use a th (table header) cell
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertDescriptionListItemNoContainerRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertDescriptionListItemNoContainerRule"
+            message="This description list item (dd or dt) is not contained by a description list container tag (dl)."
+    >
+        <description>Since the description list item tags carry semantic meaning, they should be contained within a
+            description list container. If the description list item (dd or dt) is meant to be part of a description
+            list, contain it within a description list container tag (dl). Otherwise, use a different tag for the item
+            such as strong, em, or span.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertDisabledElementContrastRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertDisabledElementContrastRule"
+            message="Disabled elements (disabled=disabled) were found on the page. Disabled elements are inactive user interface components and do not have color contrast requirements according to the WCAG AA Contrast Ratio requirement. "
+    >
+        <description>Some would argue that disabling elements is a bad design practice in general. Users may become
+            confused or frustrated if they dont know why an element is disabled or how they can make it become enabled.
+            The disabling of an element does not always equate to an accessibility issue. However, an argument can be
+            made that disabled elements violate some of the Four Principles of Accessibility. Namely, is the content
+            Perceivable? Is it Operable? Is it Understandable? There may be an opportunity to improve upon the design to
+            make it more accessible and usable by everyone. Here are a few things to consider: Leave the elements
+            disabled, but provide a description somewhere on the page letting users know that fields are disabled and
+            why they are disabled or how to enable them if its not intuitive. For native textbox elements, instead of
+            using the disabled attribute, use the readonly attribute combined with CSS to make the element look disabled
+            (grayed out). Instead of using the disabled attribute, keep the element in the tab order, use
+            aria-disabled=true, prevent the element from functioning using JavaScript, and modify CSS to make the
+            element look disabled (grayed out). Enable the element, and when the element is activated by the user,
+            display a popup or notification letting the user know why the element cannot be used at this moment. Convert
+            the element into screen text or a meaningful image with alternative text. Rather than display the element as
+            disabled, remove the element entirely if it is not necessary to reduce user frustration with disabled
+            elements. http://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertDisabledElementsFoundRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertDisabledElementsFoundRule"
+            message="Disabled elements (disabled=disabled) were found on the page."
+    >
+        <description>Elements disabled using the disabled attribute are not in the tab order by default and cannot be
+            placed in the tab order. Therefore, a person who is visually impaired and using a keyboard to tab through
+            the page may not know that the field is disabled (or even exists on the page).Some would argue that
+            disabling elements is a bad design practice in general. Users may become confused or frustrated if they dont
+            know why an element is disabled or how they can make it become enabled. The disabling of an element does not
+            always equate to an accessibility issue. However, an argument can be made that disabled elements violate
+            some of the Four Principles of Accessibility. Namely, is the content Perceivable? Is it Operable? Is it
+            Understandable? There may be an opportunity to improve upon the design to make it more accessible and usable
+            by everyone. Here are a few things to consider: Leave the elements disabled, but provide a description
+            somewhere on the page letting users know that fields are disabled and why they are disabled or how to enable
+            them if its not intuitive. For native textbox elements, instead of using the disabled attribute, use the
+            readonly attribute combined with CSS to make the element look disabled (grayed out). Instead of using the
+            disabled attribute, keep the element in the tab order, use aria-disabled=true, prevent the element from
+            functioning using JavaScript, and modify CSS to make the element look disabled (grayed out). Enable the
+            element, and when the element is activated by the user, display a popup or notification letting the user
+            know why the element cannot be used at this moment. Convert the element into screen text or a meaningful
+            image with alternative text. Rather than display the element as disabled, remove the element entirely if it
+            is not necessary to reduce user frustration with disabled elements.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertDuplicateForRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertDuplicateForRule"
+            message="This element is associated with a label whose for attribute value matches the value of another labels for attribute. i.e. a duplicate for."
+    >
+        <description>When a screen reader is trying to make an associate between a form element and a label, if there
+            are multiple labels with the same for value, a screen reader might read the label that was not intended to
+            be associated with the element. W3C specifications do not explicitly state that duplicate for attributes
+            should not be used, however screen readers do not support such usage.Ensure that the for attributes are
+            unique, and correctly pointing to the id of the associating form element. If the concatenation of the text
+            of multiple labels is the intention, then use the aria-labelledby attribute whose value is a space delimited
+            list of ids which point to the ids of the labels. more info about label
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertDuplicateIDRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertDuplicateIDRule"
+            message="This element has an accessibility component that is referencing a duplicate id."
+    >
+        <description>It is an HTML requirement that element id values must be unique. Some accessibility components
+            reference other elements by their id. If ids are the same (duplicated) among several elements, an element
+            may be referencing the wrong element, and the screen reader output may not be correct.The value of each id
+            on the page should be made unique.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertElementhasAriahiddenRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertElementhasAriahiddenRule"
+            message="This element has been hidden from a screen reader using aria-hidden=true. Note: The element may be contained by (an ancestor of) an element with aria-hidden=true."
+    >
+        <description>If the element is interactive or the sole source of meaningful information, it should be recognized
+            by a screen reader so that a user with a vision disability can interact with the element or access its
+            meaning. When an element is denoted as aria-hidden=true the screen reader will entirely ignore the
+            element.aria-hidden=true is meant to be used in specific situations. Its okay to use aria-hidden=true when:
+            The element contains visual information that is decorative only (not meaningful), The element contains
+            meaningful visual information that is communicated to screen reader users elsewhere on the page, or The
+            element is an interactive control that can only be controlled with a mouse and there exists a keyboard
+            accessible alternative to perform the functionality It is rare that focusable elements should have
+            aria-hidden=true. Most likely, if an element is focusable it should not have aria-hidden=true and should not
+            have an ancestor element with aria-hidden=true. If the element should not be used by all users, hide the
+            element using css display:none which will remove the element from the screen and will hide the element from
+            screen reader users. One example where aria-hidden=true usage is acceptable and common is in the case of
+            modal dialogs. When the modal is open, the grayed-out background should not be accessible to any user. This
+            inaccessible content may have aria-hidden=true to complement the grayed out visual cue.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertElementHasBackgroundImageRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertElementHasBackgroundImageRule"
+            message="This element is on top of a background-image, therefore, the contrast ratio cannot be automatically determined. The element background color could not be determined due to a background image."
+    >
+        <description>Informational text should have a contrast ratio that allows the text to be readable by people with
+            moderately low vision.Perform a manual contrast ratio test by selecting the primary color of the background
+            image and the primary foreground color of the text using a color selector tool (Colour Contrast Analyser
+            Installation). The WCAG AA Contrast Ratio requirement is as follows: For Large Text (font-size of 18pt or
+            font-size of 14pt and bold) a contrast ratio of at least 3:1 Otherwise a contrast ratio of at least 4.5:1
+            Logo or brand name text does not have to meet a contrast ratio requirement. Inactive (disabled) user
+            interface components have no contrast requirement.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertElementhasMultipleRolesRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertElementhasMultipleRolesRule"
+            message="This elements role attribute contains more than one value. For example, role=link presentation"
+    >
+        <description>Assistive Technology will attempt to use the first value in the sequence. If it doesnt recognize or
+            support the first value, it will attempt to use the next value in the sequence. And so on.Ensure that the
+            values provided in the list of values are acceptible for the application, and that the sequence is
+            intentional. As a best practice, and for the broadest support, the role attribute should contain a single
+            value, not a list. Warning, this can false positive when a role attributes value contains a leading or
+            trailing space.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertElementNotInTabOrderNoNameRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertElementNotInTabOrderNoNameRule"
+            message="This element has a tabindex value that is negative and it has no accessible name."
+    >
+        <description>Elements with negative tabindex values cannot achieve focus using the keyboards tab key. However,
+            focus can be placed on such elements programmatically using JavaScript. Also, elements must have an
+            accessible name.Ensure that not being able to tab to the element is acceptable and related functionality is
+            not restricted to mouse use only. Also ensure that when focus is shifted to the element, a proper accessible
+            name is provided. more info about tabindex | more info about accessible name
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertElementwithRoleNotInTabOrderRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertElementwithRoleNotInTabOrderRule"
+            message="This element has a role attribute with a value that tells a screen reader that the element is interactive (example: role=link, role=button) but it cannot be navigated to using the keyboard tab key."
+    >
+        <description>An individual that does not use a mouse (whether by necessity or choice) uses the tab key as the
+            primary means of navigating a page. Keyboard-only users expect most interactive elements (links, buttons,
+            form elements) to be in the tab order since that is the standard behavior for these types of elements. When
+            an HTML element is defined as an interactive element using the role attribute, additional handling often
+            needs to be added to ensure that the interactive element is accessible to keyboard users.If this element
+            should be in the tab order, add tabindex=0 to the element. Otherwise, if navigation to the element is
+            handled by other means (such as arrow keys), test to ensure that the element can be accessed using only a
+            keyboard. In addition, links and buttons should be able to be activated using only a keyboard (enter key for
+            links), (spacebar and enter key for buttons). Alternatively, use semantic HTML tags (a,button) instead of
+            generic tags with a role attribute (div role=link,div role=button) and the browser will automatically handle
+            most keyboard accessibility requirements.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertEmptyHeaderCellRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertEmptyHeaderCellRule"
+            message="This cell is a th and it is empty (has no Namer)."
+    >
+        <description>A screen reader will not read anything for this header since it is empty.Add text to categorize the
+            purpose of the column or row. Table header cells should not be empty. Exclusions With some table designs it
+            is acceptable for a header cell to be empty. For example, when it is at the intersection of a row of headers
+            and a column of headers. This alert will not be thrown for header cells at the upper left position of a
+            table.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertEmptyLiveRegionRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertEmptyLiveRegionRule"
+            message="This element has been designated as a live region, but its contents are empty (no innerHTML)."
+    >
+        <description>Because screen readers only monitor a live regions contents for changes, a screen reader will not
+            presently announce anything for this live region.This may not be an issue if the live region is supposed to
+            be empty at a given moment. When the live region is dynamically updated with content changes, refresh ANDI
+            and check the output. If the output still has this alert, it is likely that the live region is not being
+            used properly. Screen readers do not monitor a live regions HTML attributes for changes. For example, if the
+            live regions aria-label value is dynamically changing, a screen reader automatically speak the changes.
+            Ensure that dynamic content changes to the live region are occurring within the innerHTML of the live
+            region.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertEnsureBackgroundImagesAreDecorativeRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertEnsureBackgroundImagesAreDecorativeRule"
+            message="ANDI has found an element styled as a background-image using CSS. A manual evaluation of all background images is needed."
+    >
+        <description>When images contain important information, a person who is visually impaired will miss the
+            important information if the image does not have a text description or text equivalent somewhere on the
+            page. Screen readers consider all background images to be decorative and therefore visually impaired users
+            are not told about the presence of background images. Note: This is only an accessibility issue when
+            background images contain important information.Ensure that any background images that are meaningful have a
+            text alternative somewhere on the page. Graphics/Images ANDI has two helpful features to locate background
+            images: The Hide Background and Find Background buttons. If meaningful background images are found with no
+            text alternatives, consider these solutions: Instead of using CSS to display the image, make the image
+            inline by converting the element to a img tag and provide a text alternative for the image using the alt
+            attribute. This will make the image discoverable by screen reader users. Continue using CSS to display the
+            background-image, but add role=img to the element styled as a CSS background-image and provide an accessible
+            name using aria-label or aria-labelledby. This will make the image discoverable by screen reader users.
+            Provide a text description of the meaningful background image somewhere on the page.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertExplicitlabelForFormElementsRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertExplicitlabelForFormElementsRule"
+            message="The for attribute of a label is pointing to the id of this element which is not a form element. A form label must be associated with a control."
+    >
+        <description>This element does not derive its accessible name from label. Consider using aria-label or
+            aria-labelledby on the element. more info about label developerguide.html#label
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertFocusableElementNotInTabOrderRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertFocusableElementNotInTabOrderRule"
+            message="This element has a tabindex value that is negative. A negative tabindex is not always an accessibility issue, but youll need to do some manual inspection of this element."
+    >
+        <description>Elements with negative tabindex values cannot receive focus using the keyboards tab key. Users who
+            cannot use a mouse due to a disability and users who prefer a keyboard use the tab key as a primary means of
+            navigation. Keyboard users may not be able to access elements which are not in the tab order.Some manual
+            inspection of the element is needed. Test for keyboard operability. Ensure that the functionality of this
+            element is not restricted to mouse users only. If the element should be in the tab order, an easy way to do
+            so is to change the tabindex value to zero (tabindex=0). more info about tabindex
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertHeadersOnlyforTHTDRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertHeadersOnlyforTHTDRule"
+            message="ANDIs Table Analysis Mode is set to headers and this element has a headers attribute but is not a td or th If headers associations are not appropriate for this tables design, change the Table Analysis Mode to scope. How to choose the right Table Analysis Mode"
+    >
+        <description>A screen reader will not make the intended cell associations.Move the headers attribute to a table
+            cell such as a td or th and ensure that the reference id is pointing to the correct th.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertHeadersReferenceisTDRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertHeadersReferenceisTDRule"
+            message="ANDIs Table Analysis Mode is set to headers and this cell is referencing an element that is a td. If headers associations are not appropriate for this tables design, change the Table Analysis Mode to scope. How to choose the right Table Analysis Mode"
+    >
+        <description>A screen reader may not make the intended cell association.The headers attribute should reference
+            the id of a th. The web author may be able to simply convert the td into a th
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertHeadersReferenceNotTHRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertHeadersReferenceNotTHRule"
+            message="ANDIs Table Analysis Mode is set to headers and this cell is referencing an element that is not a th. If headers associations are not appropriate for this tables design, change the Table Analysis Mode to scope. How to choose the right Table Analysis Mode"
+    >
+        <description>A screen reader will not make the intended cell association.The headers attribute should reference
+            the id of a th.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertHeadersReferencesNoTextRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertHeadersReferencesNoTextRule"
+            message="ANDIs Table Analysis Mode is set to headers and this cell is using a headers attribute but the elements it references do not provide header cell association text. If headers associations are not appropriate for this tables design, change the Table Analysis Mode to scope. How to choose the right Table Analysis Mode"
+    >
+        <description>A screen reader will not communicate the intended header cell associations.Either modify the
+            referenced elements by adding text contents, or point the headers at the id of a different element that does
+            provide text.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertHeadersReferencingExternalElementRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertHeadersReferencingExternalElementRule"
+            message="This table cell has a headers attribute which is referencing the id of an element that is not in the same table."
+    >
+        <description>A screen reader most likely will not make this header association because a headers attribute
+            should only reference th cells in the same table.Ensure that all headers attributes are referencing th cells
+            in the same table.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertHeadingRoleNoAriaLevelRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertHeadingRoleNoAriaLevelRule"
+            message="This element was defined as a heading using role=heading but it was not given a heading level using aria-level."
+    >
+        <description>A screen reader will assume the heading level to be level 2 since 2 is the default aria-level.Use
+            semantic HTML headings (h1, h2, h3, h4, h5, h6) instead of role=heading or add the aria-level attribute to
+            the element and assign it a positive numeric value.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertIfImagesContainTextRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertIfImagesContainTextRule"
+            message="The page contains inline images (img, input[type=image], or svg)."
+    >
+        <description>If an image contains informational text, that text should have a contrast ratio that allows the
+            text to be readable by people with moderately low vision.If the images on this page contain informational
+            text, perform a manual contrast ratio test by selecting the primary background color and the primary
+            foreground color of the text using a color selector tool (Colour Contrast Analyser Installation). The WCAG
+            AA Contrast Ratio requirement is as follows: For Large Text (font-size of 18pt or font-size of 14pt and
+            bold) a contrast ratio of at least 3:1 Otherwise a contrast ratio of at least 4.5:1 Logo or brand name text
+            does not have to meet a contrast ratio requirement.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertIframeContentsNotInTabOrderRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertIframeContentsNotInTabOrderRule"
+            message="This iframe element has a tabindex value that is negative (such as tabindex=-1) and it contains focusable elements."
+    >
+        <description>Because this iframe has a negative tabindex, the contents of the iframe cannot be accessed (tabbed
+            to) using a keyboard. This means that users who cannot use a mouse and rely on a keyboard for navigation
+            will not be able to interact with elements inside this iframe.Remove the tabindex attribute from the iframe,
+            or set the tabindex to zero (tabindex=0).
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertImageAltFileNameRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertImageAltFileNameRule"
+            message="The image alt text contains a file name such as .jpg, .gif, .png."
+    >
+        <description>If the image does not have a text alternative description that contains a meaningful representation
+            of the image, then the image is not accessible to a person who is blind or visually impaired and uses a
+            screen reader.The image alt text or other Namer/Describer should provide a text alternative or brief
+            description of the image. Alternatively, if the image is purely decorative and does not require an
+            explanation, add role=presentation to the image or set the alt value to an empty string alt=. Doing so will
+            ensure that the screen reader does not try to describe the image.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertImageAltNotDescriptiveRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertImageAltNotDescriptiveRule"
+            message="This image has alt text that does not provide an equivalent text description conveying the purpose and/or function of the image."
+    >
+        <description>If the image does not have a text alternative description that contains a meaningful representation
+            of the image, then the image is not accessible to a person who is blind or visually impaired and uses a
+            screen reader.The image alt text or other Namer/Describer should provide a text alternative or brief
+            description of the image. Alternatively, if the image is purely decorative and does not require an
+            explanation, add role=presentation to the image or set the alt value to an empty string alt=. Doing so will
+            ensure that the screen reader does not try to describe the image.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertImageAltNotUsedRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertImageAltNotUsedRule"
+            message="This image has been declared presentational/decorative using role=presentation or role=none but it has a non-empty alt attribute."
+    >
+        <description>A screen reader will not speak the alt text since it sees the image as presentational or
+            decorative.If the image is truly decorative (non-meaningful) ensure that the output relating to this image
+            is as expected.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertImageAltRedundantPhraseRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertImageAltRedundantPhraseRule"
+            message="The image alt contains a redundant phrase such as image of .., photo of .."
+    >
+        <description>A screen reader will automatically announce the word graphic when an img tag is being used,
+            therefore, including the redundant phrase in the alt text increases verbosity.Remove the redundant phrase
+            from the alt value.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertImagemapreferencenotfoundRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertImagemapreferencenotfoundRule"
+            message="found an image map (map) that references an (img) that does not exist on the page."
+    >
+        <description>Ensure that the name attribute of the map points to an img that has a matching usemap.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertImproperReferenceAttributePossibleRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertImproperReferenceAttributePossibleRule"
+            message="More than one id referenced by an aria-labelledby, aria-describedby, or cell headers cannot be found on the page. ANDI suggests that the attribute is not being used properly."
+    >
+        <description>Important accessibility information might be missing. Screen readers will not notify a user when
+            the id references cannot be found.Ensure that the attribute is being used properly: A list of id references
+            only and not literal text. more info about aria-labelledby | more info about aria-describedby | more info
+            about data table cell associations
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertIsAnchorTargetNoFocusRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertIsAnchorTargetNoFocusRule"
+            message="This a element is the target of another links href. The element does not have a tabindex."
+    >
+        <description>Because this a element does not have a tabindex it is not focusable, therefore, there will be no
+            visual indication of focus when the link is followed. After following the link, sighted users may not be
+            able to track where focus has been placed.To ensure that the anchor target displays a visual indication of
+            focus when it receives focus add a tabindex attribute to the a target element. In addition, ensure that the
+            browsers default focus ring or enhanced focus styling is in place for the element.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertJavaScriptEventFoundRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertJavaScriptEventFoundRule"
+            message="This element has a JavaScript event. Events ANDI scans for: onBlur, onChange, onDblClick"
+    >
+        <description>The presence of JavaScript events does not mean there is a definite accessibility issue. However,
+            depending on what the JavaScript event was programmed to do, an accessibility issue could exist.
+            Examples:Test the element to ensure that the JavaScript events do not cause accessibility issues such as
+            focus loss or confusion, keyboard traps, or dynamic screen changes without notification.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertLabelWouldIncreaseClickableAreaRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertLabelWouldIncreaseClickableAreaRule"
+            message="This radio button or checkbox does not have an associated label and the size of the radio button or checkbox is less than 21px by 21px."
+    >
+        <description>People with motor disabilities who can used a mouse may have trouble clicking on a small target
+            less than 21px by 21px. Note: This size limit (21px by 21px) is arbitrarily determined and not an official
+            WCAG requirement.Adding an associated label to a radio button or checkbox allows a mouse user to click on
+            the label to select the radio button or checkbox. This increases the size of the clickable area. An
+            associated label is also a standard way of providing an accessible name for a radio button or checkbox.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertLegendAloneRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertLegendAloneRule"
+            message="This type of element, can make use of the legend tag, however the legend tag alone should not be used as the only means of which to name or describe an element."
+    >
+        <description>For all elements except a fieldset, legend does not technically provide a name. When used alone,
+            screen readers may not read correctly or may double speak.If a legend tag is being used to describe a group
+            of form elements, the best practice to name each individual form element is to add a label tag associated
+            with the form element (label for=id) or contain the form element within a label. more info about legend
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertLinkClickButNoKeyboardAccessRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertLinkClickButNoKeyboardAccessRule"
+            message="This link does not have an href or tabindex and a JavaScript click event was detected."
+    >
+        <description>This link performs some function but is not in the tab order. It may not be accessible to users who
+            navigate using a keyboard.Ensure that the ANDI Output is appropriate. Close ANDI and test whether the link
+            can be accessed using the tab key, shift+tab keys, arrow keys or other documented keys. For a link to be in
+            the keyboard tab order add an href=#, or href=javascript:void(0), or tabindex=0. If an href is not being
+            used it may be necessary to add role=link to the a element so that a screen reader will recognize the
+            element as a link and include it in its Links List functionality.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertListContainerHasNonListRoleRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertListContainerHasNonListRoleRule"
+            message="This list element li is contained by a list container element ol or ul but the list container has a role that changes its semantics to something that is not a list container."
+    >
+        <description>A screen reader will not recognize this as a list because the semantics of the list container have
+            been overridden with a role attribute.Remove the role from the list container, or if it is necessary, move
+            it to another containing element.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertListItemNoContainerRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertListItemNoContainerRule"
+            message="This list item (li) is not contained by a list container tag (ol or ul)."
+    >
+        <description>Since the list item tag carries a semantic meaning, it should be contained within a list
+            container.If the list item (li) is meant to be part of a list, contain it within a list container tag (ol or
+            ul). Otherwise, use a different tag for the item such as strong, em, or span.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertLiveRegionFormElementRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertLiveRegionFormElementRule"
+            message="There is a live region on this page (aria-live) that contains a form element."
+    >
+        <description>Screen readers monitor live regions and will speak changes whenever the content of the live region
+            changes. If a form element is contained within the live region, the screen reader will be reading out the
+            live region contents when the form element changes causing confusion and verbosity for screen reader
+            users.Remove form elements from the live region or move the aria-live to another element.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertLiveRegionNotContainerRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertLiveRegionNotContainerRule"
+            message="This element is not a container element (cannot contain text or other elements) and it is designated as a live region (aria-live)."
+    >
+        <description>Screen readers monitor live regions and will speak changes whenever the content of the live region
+            changes. Since this element is not a container element and therefore has no contents, the design will not
+            work as expected. i.e. screen readers will not recognize changes to this live region.Only container elements
+            (such as a div) can be designated as live regions. Changes to the contents (innerText) of the live region
+            will trigger the screen reader to speak the changed content.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertMarqueeFoundRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertMarqueeFoundRule"
+            message="This element is a marquee."
+    >
+        <description>A marquee, depending on its design, can cause flashing which can trigger seizures in some
+            individuals. In addition, the constantly moving text within a marquee can be difficult to read for people
+            with low vision or who have cognition disorders like dyslexia.It is best to not use the marquee tag and to
+            not allow any text to constantly move or scroll on the page.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertMisspelledattributeRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertMisspelledattributeRule"
+            message="The element contains a typo or misspelling of an ARIA attribute."
+    >
+        <description>Most screen readers do not check for attribute misspellings or attempt to interpret syntax errors.
+            Therefore, the misspelled ARIA attributes will not provide the intended accessibility information.The
+            misspelling should be corrected since a developer explicitly attempted to add additional accessibility
+            information. ANDI checks for the following misspellings: aria-labeledby arialabelledby labelledby
+            ariadescribedby describedby arialabel
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertMoreCaptionsThanTablesRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertMoreCaptionsThanTablesRule"
+            message="More caption tags were found on the page than table tags. What causes this? A caption could have been placed on the page without being contained in a table. Another possibility is that more than one caption could have been placed in a table."
+    >
+        <description>caption tags serve no semantic purpose outside of a table. Moreover, each table should contain only
+            one caption. Either of these scenarios could signify that a developer did not add proper markup to the page,
+            and therefore the accessible name and description of elements could be semantically incorrect.Ensure that
+            each of this pages caption tags are contained within a table and are at a 1:1 ratio. more info about caption
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertMoreFigcaptionsThanFiguresRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertMoreFigcaptionsThanFiguresRule"
+            message="More figcaption tags were found on the page than figure tags. What causes this? A figcaption could have been placed on the page without being contained in a figure. Another possibility is that more than one figcaption could have been placed in a figure."
+    >
+        <description>figcaption tags serve no semantic purpose outside of a figure. Moreover, each figure should contain
+            only one figcaption. Either of these scenarios could signify that a developer did not add proper markup to
+            the page, and therefore the accessible name and description of elements could be semantically
+            incorrect.Ensure that each of this pages figcaption tags are contained within a figure and are at a 1:1
+            ratio. Remember that a figcaption names a figure and by default does not name or describe other elements
+            contained within the figure. If an element within the figure should be named or described by the figcaption,
+            point an aria-labelledby or aria-describedby at the figcaption. more info about figcaption
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertMoreLegendsThanFieldsetsRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertMoreLegendsThanFieldsetsRule"
+            message="More legend tags were found on the page than fieldset tags. What causes this? A legend could have been placed on the page without being contained in a fieldset. Another possibility is that more than one legend could have been placed in a fieldset."
+    >
+        <description>legend tags serve no semantic purpose outside of a fieldset. Moreover, each fieldset should contain
+            only one legend. Either of these scenarios could signify that a developer did not add proper markup to the
+            page, and therefore the accessible name and descriptions of the form elements could be semantically
+            incorrect.Ensure that this pages legend tags are contained within a fieldset and are at a 1:1 ratio.
+            Remember that a legend only describes a group of form elements; each form element must have an explicit
+            label to provide an accessible name. more info about legend
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertMultiplePageTitlesRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertMultiplePageTitlesRule"
+            message="More than one title tag was found in the pages head."
+    >
+        <description>A screen reader will not read both title tags. Therefore, if any important information is in
+            another title, that information may not be spoken.To prevent any likelihood of an accessibility issue,
+            ensure that there is only one title and that title is in the head. Use ANDI (Structures), page title to view
+            the actual page title; determine if the title is sufficient.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertNameAttributeDeprecatedonltagtRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertNameAttributeDeprecatedonltagtRule"
+            message="This a element is the anchor target of an in-page link. It is using the name attribute, which is deprecated, instead of the id attribute."
+    >
+        <description>Replace the name attribute on the anchor target with an id attribute.</description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertNestedLabelForDoesntMatchRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertNestedLabelForDoesntMatchRule"
+            message="This element is nested within a label that has a for attribute that does not match the elements id."
+    >
+        <description>A screen reader may not announce the correct label for this element or another element, which may
+            cause a user with a vision disability to enter information in the wrong place.A form element should be
+            associated with its label explicitly (for/id match) and/or implicitly (nesting the element inside the
+            label). In this instance, the element is nested inside its label which establishes a programmatic
+            association, however, the labels for attribute does not match the id of the form element. This mismatch may
+            break the programmatic association, or cause an incorrect association with a different element. Ensure that
+            the labels for attribute matches the id of the form element.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertNoAccessibleNameFigureRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertNoAccessibleNameFigureRule"
+            message="This figure element has no HTML markup that would provide an accessible name for the element."
+    >
+        <description>A screen reader would either read nothing for this element or may make a guess. A user with a
+            vision disability will not know the meaning of the figure.Add HTML markup that will provide an accessible
+            name (alternative text) for the figure. The figcaption tag is the intended way to provide an accessible name
+            (alternative text) that appears on screen for a figure. The aria-labelledby or aria-label attributes can be
+            added to figure to provide an accessible name. Alternatively, the title attribute will name figure when no
+            other naming techniques are used. After making coding changes to provide an accessible name for the figure,
+            test the changes by launching ANDI and reading the updated ANDI Output. more info about accessible name
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertNoAccessibleNameFormElementRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertNoAccessibleNameFormElementRule"
+            message="This form element has no HTML markup that would provide an accessible name for the element."
+    >
+        <description>A screen reader would either read nothing for this form element or may make a guess. A user with a
+            vision disability will not know what information to enter into this form field.Add HTML markup that will
+            provide an accessible name for the form element. The label tag can be used to name a form element. To make
+            the association, the label must have a for attribute that references the id of the form element, or the
+            label must contain the form element. The aria-labelledby or aria-label attributes will provide an accessible
+            name for form elements. Alternatively, the title attribute will name a form element when no other naming
+            techniques are used. After making coding changes to provide a name for the form element, test the changes by
+            launching ANDI and reading the updated ANDI Output. more info about accessible name
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertNoAccessibleNameGeneralRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertNoAccessibleNameGeneralRule"
+            message="This element has no HTML markup that would provide an accessible name for the element."
+    >
+        <description>A screen reader would either read nothing for this element or may make a guess. A user with a
+            vision disability will not hear the information about this element.Add HTML markup that will provide an
+            accessible name for the element. The aria-labelledby or aria-label attributes can be added to any element to
+            provide an accessible name. Container type elements (p, div, li, etc.) can contain text that will provide an
+            accessible name. Alternatively, the title attribute will name most elements when no other naming techniques
+            are used. After making coding changes to provide an accessible name for the element, test the changes by
+            launching ANDI and reading the updated ANDI Output. more info about accessible name
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertNoAccessibleNameIframeRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertNoAccessibleNameIframeRule"
+            message="This iframe element has no HTML markup that would provide an accessible name for the element."
+    >
+        <description>A screen reader user often has the capability to preview a list of iframes on the page. If the
+            iframes arent named, then the user must find another way to determine which iframe is which. This greatly
+            decreases efficiency for users with vision disabilities when multiple iframes exist on the page.Add HTML
+            markup to provide an accessible name for any iframe that contains content presented to the user. The
+            aria-labelledby or aria-label attributes can be added to iframe to provide an accessible name. The title
+            attribute will name iframe when no other naming techniques are used. After making coding changes to provide
+            an accessible name for the iframe, test the changes by launching ANDI and reading the updated ANDI Output.
+            more info about accessible name
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertNoAccessibleNameImageRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertNoAccessibleNameImageRule"
+            message="This image element has no HTML markup that would provide an accessible name for the element."
+    >
+        <description>A screen reader would either read nothing for this element or may make a guess. A user with a
+            vision disability will not know if the image is meaningful.Determine if the image is meaningful or
+            decorative. If the image is meaningful, add HTML markup that will provide an accessible name (alternative
+            text) for the image. The aria-labelledby or aria-label attributes can be added to any element (including
+            images) to provide an accessible name. Images coded as img can use the alt attribute to provide an
+            accessible name (alternative text). Images coded as svg can use the title tag to provide an accessible name
+            (alternative text). Alternatively, the title attribute will name images when no other naming techniques are
+            used. If the image is decorative, add HTML markup that will communicate to a screen reader that the image is
+            not meaningful and can be ignored. aria-hidden=true can be used to declare images as decorative.
+            role=presentation can be used to declare images as decorative. alt= can be used on images coded as img to
+            declare them as decorative. After making coding changes to provide an accessible name for the element, test
+            the changes by launching ANDI and reading the updated ANDI Output. more info about accessible name
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertNoAccessibleNameTableRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertNoAccessibleNameTableRule"
+            message="This table element has no HTML markup that would provide an accessible name for the table."
+    >
+        <description>A screen reader user often has the capability to preview a list of data tables on the page. If data
+            tables arent named, then the user is forced to spend more time determining the meaning of each table. This
+            greatly decreases efficiency for users with vision disabilities when multiple tables exist on the
+            page.Determine if the table is a true data table or if the html table structure is being used for layout and
+            alignment purposes. If it is a data table, add HTML markup that will provide an accessible name that
+            summarizes the data table. The caption tag can be used to provide an accessible name to data tables coded as
+            native html table. The aria-labelledby or aria-label attributes can be added to tables to provide an
+            accessible name. The summary attribute is a deprecated way to provide an accessible name to data tables
+            coded as native html table Alternatively, the title attribute will name data tables when no other naming
+            techniques are used. If it is not a data table, add HTML markup that will communicate to a screen reader
+            that the html table markup should be ignored and considered to be non-semantic containers used for layout
+            purposes. Adding role=presentation to the table tag will tell a screen reader that the table and all child
+            table tags (tr, th, td) are to be considered non-semantic containers used for layout purposes.
+            Alternatively, re-build the HTML structure using non-semantic containers (such as div) and use CSS to
+            provide the intended layout. Yikes! After making the appropriate coding changes test the changes by
+            relaunching ANDI. more info about accessible name
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertNoPageTitleRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertNoPageTitleRule"
+            message="A title tag could not be found in the pages head or the document.title was not set."
+    >
+        <description>A screen reader would not read a concise, logical title for the page, and would instead read the
+            url.Add a title tag in the pages head.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertNoScopeatTHIntersectionRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertNoScopeatTHIntersectionRule"
+            message="This table contains column or row headers (th) that intersect. One or more th at the intersection positions are missing a required scope attribute."
+    >
+        <description>When a th cell is positioned at an intersection of table headers a screen reader may not be able to
+            correctly assume the direction in which the th points.To all th cells at table header intersections, add a
+            scope attribute with a value that indicates the direction in which the cell points. (scope=col or
+            scope=row).
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertNoTHorTDRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertNoTHorTDRule"
+            message="This table has no th cells or td cells."
+    >
+        <description>If this table has no cells, is it really a data table? Users with a vision disability who use a
+            screen reader may not understand how to navigate this table.If the table element is a data table, it should
+            contain th and td element. If the table element does not contain tabular data and is instead used for
+            structural layout, it should have role=presentation. If the table element is a placeholder container for
+            dynamically propagating table data (using JavaScript to dynamically inject the data), then ignore this
+            alert.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertNonUniqueButtonRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertNonUniqueButtonRule"
+            message="This button has the same accessible name and description as another button."
+    >
+        <description>If these buttons perform different functions or use a different set of data, then they each need to
+            be uniquely identified. A person who is visually impaired may not be aware of the buttons context (its
+            location on the page). If two or more buttons have the same accessible name and description, then
+            functionality should also be the same no matter which buttons is pressed. For example, consider a data table
+            with buttons labeled Delete on every row. An identifying description about what is going to be deleted must
+            be programmatically associated with the button, otherwise a user may delete the wrong item.If the buttons
+            perform a different function or use a different set of data, either rename the buttons or attach a unique
+            description to the button using the aria-describedby or title attributes. Otherwise, if the buttons are
+            truly identical and perform the same function using the same data, no change is required.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertNotRecognizedAsLinkRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertNotRecognizedAsLinkRule"
+            message="This a element has a tabindex but it does not have an href."
+    >
+        <description>A screen reader may not identify this element as a link and the user may not know that the element
+            is actionable. Does this element function like a link? Click on it using a mouse. Navigate to it using the
+            keyboard and press the enter key. If the element performs a function, add role=link to the element or add an
+            href. Doing so will ensure that the screen reader will identify the element as a link. NOTE: If the element
+            appears and operates like a button, add role=button and ensure that the element can be pressed using the
+            space bar key. If this element does not perform a function when clicked, this element might be an anchor
+            target, in which case, disregard this alert.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertNotUsingSemanticHeadingMarkupRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertNotUsingSemanticHeadingMarkupRule"
+            message="This element appears to be a false heading."
+    >
+        <description>Headings (text that is concise, has a large font size or bold font weight) provide a way to
+            visually organize and categorize sections of a page. Users of assistive technology are able to quickly
+            navigate web pages when headings exist on a page. However, headings must be coded properly using semantic
+            heading tags (h1 through h6) in order for users of AT to navigate.Convert this false heading, and any others
+            on the page, into one of the semantic heading tags: h1, h2, h3, h4, h5, h6.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertOpacityLessThan100Rule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertOpacityLessThan100Rule"
+            message="This element has a CSS property opacity with a value that is less than 1, thus making it semi-transparent."
+    >
+        <description>By reducing the opacity value to less than one, the elements foreground color and background color
+            is affected and will lower the contrast ratio. Informational text should have a contrast ratio that allows
+            the text to be readable by people with moderately low vision. Is this really an issue? (disabled elements)
+            Sometimes developers use CSS opacity to make an element appear disabled. Disabled elements do not need to be
+            included in a contrast test, but it is up to the tester to determine if the element is in a disabled state.
+            Moreover, to communicate to a screen reader user that an element is disabled, the element should
+            have aria-disabled=true.If the text is not in a disabled state, perform a manual contrast ratio test by
+            selecting the primary color of the background image and the primary foreground color of the text using a
+            color selector tool (Colour Contrast Analyser Installation). The WCAG AA Contrast Ratio requirement is as
+            follows: For Large Text (font-size of 18pt or font-size of 14pt and bold) a contrast ratio of at least 3:1
+            Otherwise a contrast ratio of at least 4.5:1 Logo or brand name text does not have to meet a contrast ratio
+            requirement.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertPageTitleEmptyRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertPageTitleEmptyRule"
+            message="A title tag was found in the pages head but the contents were empty."
+    >
+        <description>A screen reader would not read a concise, logical title for the page, and would instead read the
+            url.Add text contents to the title tag in the pages head.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertPossibleMouseonlyLinkRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertPossibleMouseonlyLinkRule"
+            message="This element is not in the tab order (no href or tabindex) yet the a tag was used. This is an indication that it might function as a link that may only be available to mouse users."
+    >
+        <description>This element might be missing some important components which would allow it to be accessible to
+            users who use the keyboard to navigate.Some manual testing and investigating is needed. First, determine if
+            there is a keyboard access issue with this element: Use a mouse to click on the element and observe. Any
+            functionality that occurs using a mouse, should be able to be performed using only a keyboard. If nothing
+            happens when the element is clicked with the mouse, then there is no issue - disregard this alert. Its
+            possible that this a element is not a link but instead an anchor target for another link. Otherwise, if
+            clicking/hovering with a mouse triggers some functionality, then this element does function as a link and
+            there may be a keyboard access issue: Try to navigate to and activate the link using the keyboard. If its
+            impossible to use the link only with a keyboard, then there is an accessibility issue. Read on for
+            solutions. The most common (classic) way to create a link is to use the a tag and include an href that
+            points to the links destination page. Sometimes developers will make a conscious choice to use the a tag but
+            prefer not to use an href to handle the links activation logic and instead use JavaScript to do some
+            processing before redirecting the user. When an href is not present on an a element but the a element does
+            function like a link, role=link should be applied so that a screen reader knows that the element is, indeed,
+            a link. Or, if the element behaves more like a button (performing actions), rather than a link
+            (redirecting), role=button can be a better idea. Or better still, just use button. Furthermore, to ensure
+            that the link is in the tab order, an href or tabindex=0 should be applied. If the link has a negative
+            tabindex, then some manual testing is necessary to ensure that the link is keyboard accessible. Finally,
+            once the link is recognized by the screen reader as a link, and can be navigated to, ensure that the link
+            can be operated using the keyboard by pressing the enter key.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertPresentationTableMarkupRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertPresentationTableMarkupRule"
+            message="This layout table, marked with role=presentation, has HTML markup reserved for data tables."
+    >
+        <description>A screen reader may see the data table markup, and make cell associations or add verbosity to the
+            elements within the presentation table.For this presentation table, remove HTML markup intended for data
+            tables. caption: replace with a heading tag (h1, h2, h3..) th: replace with td scope: remove this attribute
+            headers/id: remove any headers attributes summary: remove this attribute
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertRoleImageisInvalidRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertRoleImageisInvalidRule"
+            message="This element has a role attribute with a value of image."
+    >
+        <description>image is not a valid value for role. A screen reader will not recognize this element as an
+            image.Change the value to img, as in role=img so that the screen reader will recognize the element as an
+            image.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertScopeValueInvalidRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertScopeValueInvalidRule"
+            message="ANDIs Table Analysis Mode is set to scope and this element has a scope attribute but the value is invalid. If scope associations are not appropriate for this tables design, change the Table Analysis Mode to headers. How to choose the right Table Analysis Mode"
+    >
+        <description>A screen reader will not make the correct cell associations if the value is invalid.Change the
+            value of the scope attribute to col, row, colgroup, or rowgroup.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertServerSideImageMapRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertServerSideImageMapRule"
+            message="This element contains a sever side image map."
+    >
+        <description>Server side image maps cannot be navigated by screen reader users and users who do not use a
+            mouse.Do not use server side image maps. Client side image maps are acceptable but must be made accessible
+            by adding alt attributes to the area tags.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertSwitchTableAnalysisModeRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertSwitchTableAnalysisModeRule"
+            message="ANDI is suggesting that the user test the table in the other Table Analysis Mode because it has detected accessibility markup for the other mode."
+    >
+        <description>Change the Table Analysis Mode and determine if the table is accessible. How to choose the right
+            Table Analysis Mode modules.html#tANDI-tableAnalysisMode
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertTabindexNotANumberRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertTabindexNotANumberRule"
+            message="An element was found on the page with a non-numeric value for the tabindex attribute."
+    >
+        <description>Browser behavior is inconsistent in this scenario. Some browsers will replace the value with a
+            negative tabindex, others will not change the value. Regardless, a keyboard user will not be able to place
+            focus on such an element.Ensure that the value of the tabindex attribute is a numeric, positive or negative
+            integer. Remember that only positive values allow for keyboard focus using the tab key. Negative values are
+            meant for programmatically controlling focus with JavaScript. more info about tabindex
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertTableCellsnotContainedbyRowRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertTableCellsnotContainedbyRowRule"
+            message="This [role=table] or [role=grid] element has [role=cell] or [role=gridcell] cells that are not contained by an element with [role=row]."
+    >
+        <description>A screen reader user may skip these cells while navigating this table/grid since they are not
+            programmatically part of the table.Adjust the structure of this table or grid so that each cell is contained
+            by a row (an element with [role=row]). Example: div role=table aria-label=Fruit Inventory div role=row div
+            role=cell Apples /div div role=cell Oranges /div /div .. /div
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertTableHasNoHeadersIDRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertTableHasNoHeadersIDRule"
+            message="ANDIs Table Analysis Mode is set to headers and This table has no headers/id associations. If headers associations are not appropriate for this tables design, change the Table Analysis Mode to scope. How to choose the right Table Analysis Mode"
+    >
+        <description>A screen reader may not correctly associate header cells to the data cells.
+            Tables must make header cell associations using either headers/id or scope. If applicable for this table,
+            add id attributes to the th cells and headers attributes to the td cells which point at the id
+            of their associated th. More information here: How to make data table cell associations.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertTableHasNoScopeRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertTableHasNoScopeRule"
+            message="ANDIs Table Analysis Mode is set to scope and this table has no scope attributes. If scope associations are not appropriate for this tables design, change the Table Analysis Mode to headers. How to choose the right Table Analysis Mode"
+    >
+        <description>A screen reader may not correctly associate header cells to the data cells.Tables must make header
+            cell associations using additional markup. If applicable for this table design, add scope attributes to the
+            th cells using the appropriate values: col, row, colgroup, or rowgroup. More information here: How to make
+            data table cell associations.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertTableHasNoTHRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertTableHasNoTHRule"
+            message="This table doesnt have any th cells."
+    >
+        <description>A data table should have th cells so that a screen reader can associate header cells with the data
+            cells.If the table is a presentation table used for layout instead of data, then role=presentation should be
+            added to the table and no th tags should be used. Otherwise, if the table is intended to provide data, use
+            th cells to make the header associations. In addition, for accessibility, table headers must have additional
+            markup to make the associations: scope or headers/id. More information here: How to make data table cell
+            associations.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertTableHeaderMissingRoleRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertTableHeaderMissingRoleRule"
+            message="This table has an ARIA role of table|grid|treegrid and contains th cells that dont have the role of columnheader or rowheader."
+    >
+        <description>A screen reader may not make the correct cell to header associations when native html is mixed with
+            ARIA.Within an ARIA table, the role of each header cell should be explicitly defined. Ensure that each
+            header cell has a role attribute with the value of columnheader or rowheader. Furthermore, each data cell
+            should have a role attribute with the value of cell or gridcell.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertTableMixingScopeandHeadersRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertTableMixingScopeandHeadersRule"
+            message="This table has cells using both scope attributes and headers/id."
+    >
+        <description>A screen reader may not correctly associate the cells since it has to account for
+            both scope and headers/id. If modifications are made to this table in the future, the associations may
+            become broken and its accessibility would suffer.As a best practice, choose one cell association method
+            appropriate for the table design: either scope or headers/id. More information here: How to make data table
+            cell associations.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertTablewithNontypicalRoleRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertTablewithNontypicalRoleRule"
+            message="This table has a role with a value that is not presentation, none, table, grid, or treegrid."
+    >
+        <description>An elements role overrides the semantics of the tagname. This means a screen reader only considers
+            the role value and does not recognize that the elements tagname is table.If this table element looks like a
+            data table (contains cells with organized data), then it should have either no role or a role that signifies
+            a data table such as role=table. If the table is primarily used for presentation/layout, then the role
+            should be role=presentation. Otherwise, test the element according to the role.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertTestRoleGridNavigationRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertTestRoleGridNavigationRule"
+            message="An element with role=grid was detected on the page."
+    >
+        <description>When the grid receives focus, a screen reader will announce specific navigation instructions.
+            Therefore, users have certain expectations on how a grid should operate.Developers should follow W3C
+            WAI-ARIA Authoring Practices for Grids. The developer must manage focus within the grid using JavaScript and
+            a tester should ensure that proper navigation has been implemented. It is advisable to close ANDI while
+            testing the navigation of the Grid, however, ANDI can be used to test the naming and describing (ANDI
+            Output) of the elements within the grid. Summary of grid operation expectations: Only one element in the
+            grid should be in the tab order at one time (roving tabindex concept). All focusable elements in the grid
+            should be navigable using the arrow keys. Other key commands can be used to navigate the grid (e.g. Page Up,
+            Page Down, Home, End) If the grid contains interactive elements (such as form fields or buttons), focus
+            should be sent to the interactive element and not the gridcell that contains it. A properly implemented grid
+            is an excellent, usable, accessible interface. A developer should have advanced knowledge of accessibility
+            requirements and must implement the grid to the specifications of the WAI ARIA Authoring Practices. In many
+            instances, native HTML data table markup using table structure or ARIA role=table structure should
+            sufficiently meet the needs of the user.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertTooManyScopeLevelsRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertTooManyScopeLevelsRule"
+            message="ANDIs Table Analysis Mode is set to scope and this table has cells using the scope attribute but there are more than two levels. The following is an example of a table with too many levels of scope. Notice that the third row exceeds the scope limit of 2 levels max. If scope associations are not appropriate for this tables design, change the Table Analysis Mode to headers. How to choose the right Table Analysis Mode"
+    >
+        <description>A screen reader may not associate all header cells intended.There are several remediation options:
+            Reorganize the table to minimize the complexity and depth of header cells. Divide the table into multiple
+            tables. Remove all scope attributes and strictly use headers/id. More information here: How to make data
+            table cell associations
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertUnreliableComponentCombinationRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertUnreliableComponentCombinationRule"
+            message="This element contains multiple accessibility components which ANDIs One Namer, One Describer methodology discourages."
+    >
+        <description>When elements have multiple Namers or multiple Describers, screen reader precedence differs wildly.
+            To minimize these differences and ensure consistent screen reader output, follow ANDIs methodology.Only one
+            Namer should be used at a time. Only one Describer should be used at a time. ANDI defines the following
+            components as Namers. Choose one: aria-labelledby aria-label label (form elements) alt (images) value (input
+            buttons) figcaption (figure) caption (table) innerText (container elements) ANDI defines the following
+            components as Describers. Choose one: aria-describedby legend (form elements &amp; only with label) title
+            more info about Namers | more info about Describers
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertUnsupportedValueforRoleRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertUnsupportedValueforRoleRule"
+            message="This elements role attribute contains a value that is not present in the Core Accessibility API Role Mapping Table."
+    >
+        <description>Assistive Technology will not be able to communicate the semantics of the element because
+            the role value is, essentially, not supported.Change the role value to one in the Core Accessibility API
+            Role Mapping Table.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule
+            language="html"
+            name="AlertVagueLinkTextRule"
+            class="com.bah.accessinsight.pmd.html.rule.accessibility.AlertVagueLinkTextRule"
+            message="The accessible name and description of this link is vague and does not provide a meaningful context."
+    >
+        <description>A person who is visually impaired may not be able to determine the full purpose of this link
+            without seeking out its context in relation to nearby elements on the page.Provide a meaningful accessible
+            name/description for this link.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+</ruleset>

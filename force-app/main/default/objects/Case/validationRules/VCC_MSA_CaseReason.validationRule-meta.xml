@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_MSA_CaseReason</fullName>
+    <active>true</active>
+    <description>When an MSA chooses the &quot;Other&quot; picklist value for case reason then they will be required to fill out the &quot;Other Case Reason&quot; free text
+        field.</description>
+    <errorConditionFormula>!$Permission.DisableTriggersFlag &amp;&amp; RecordType.DeveloperName = &quot;VCC_Administrative&quot; &amp;&amp; INCLUDES(VCC_Case_Reason_Multi__c,&apos;Other&apos;)
+        &amp;&amp; ISBLANK(VCC_Other_Case_Reason__c) &amp;&amp; !$Permission.VCC_Disable_Case_Validation_Rules</errorConditionFormula>
+    <errorDisplayField>VCC_Other_Case_Reason__c</errorDisplayField>
+    <errorMessage>ERROR: Provide a description in the Other Case Reason field.</errorMessage>
+</ValidationRule>

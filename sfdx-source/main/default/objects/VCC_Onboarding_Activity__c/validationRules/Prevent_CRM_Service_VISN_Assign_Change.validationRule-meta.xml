@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_CRM_Service_VISN_Assign_Change</fullName>
+    <active>true</active>
+    <description>Prevents the CRM Service VISN assignment field from being updated.</description>
+    <errorConditionFormula>ISCHANGED(VCC_CRM_VISN_Service_Assignment__c) &amp;&amp; !$Permission.DisableTriggersFlag</errorConditionFormula>
+    <errorMessage>Do NOT edit this field. Instead, create a new Onboarding Activity with the correct CRM Service VISN Assignment.</errorMessage>
+</ValidationRule>

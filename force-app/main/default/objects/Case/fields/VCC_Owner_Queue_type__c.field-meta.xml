@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Owner_Queue_type__c</fullName>
+    <description
+    >Displays the end of the queue name to determine the type of queue the case is for. Used in VISN Queue Formula formula field. VISN 99 is a Mock/Test VISN</description>
+    <externalId>false</externalId>
+    <formula>IF(CONTAINS(Owner:Queue.DeveloperName,&apos;10&apos;) || CONTAINS(Owner:Queue.DeveloperName,&apos;11&apos;) || CONTAINS(Owner:Queue.DeveloperName,&apos;12&apos;) ||
+        CONTAINS(Owner:Queue.DeveloperName,&apos;13&apos;) || CONTAINS(Owner:Queue.DeveloperName,&apos;14&apos;) || CONTAINS(Owner:Queue.DeveloperName,&apos;15&apos;) ||
+        CONTAINS(Owner:Queue.DeveloperName,&apos;16&apos;) || CONTAINS(Owner:Queue.DeveloperName,&apos;17&apos;) || CONTAINS(Owner:Queue.DeveloperName,&apos;18&apos;) ||
+        CONTAINS(Owner:Queue.DeveloperName,&apos;19&apos;) || CONTAINS(Owner:Queue.DeveloperName,&apos;20&apos;) || CONTAINS(Owner:Queue.DeveloperName,&apos;21&apos;) ||
+        CONTAINS(Owner:Queue.DeveloperName,&apos;22&apos;) || CONTAINS(Owner:Queue.DeveloperName,&apos;23&apos;) || CONTAINS(Owner:Queue.DeveloperName,&apos;99&apos;) ,
+        MID(Owner:Queue.DeveloperName, 8,30), MID(Owner:Queue.DeveloperName, 7,30) )</formula>
+    <label>Owner Queue Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

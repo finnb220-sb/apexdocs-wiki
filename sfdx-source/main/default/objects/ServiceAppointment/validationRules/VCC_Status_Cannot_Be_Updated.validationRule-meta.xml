@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Status_Cannot_Be_Updated</fullName>
+    <active>true</active>
+    <description>Checks if the status is changed outside a flow without using the bypass validation flag. User can only update the appointment status using flows.</description>
+    <errorConditionFormula>AND (!(ISPICKVAL(Status, &quot;&quot;))  , 
+     ISCHANGED(Status) ,
+     VCC_Bypass_Validation__c &lt;&gt; &apos;YES&apos;,
+     RecordType.DeveloperName = &apos;VCC_Virtual_Clinic_Visit&apos;)
+&amp;&amp;
+!$Permission.DisableTriggersFlag &amp;&amp;
+$Permission.VCC_Appointment_Viewer</errorConditionFormula>
+    <errorDisplayField>Status</errorDisplayField>
+    <errorMessage>Error! Status of Service Appointments cannot be edited from this screen.</errorMessage>
+</ValidationRule>

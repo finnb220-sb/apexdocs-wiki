@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Scheduling_Note_Reason2__c</fullName>
+    <description>Multi Picklist Field to provide why Scheduling Progress Note was Created, based on the Cannot Complete Scheduling Action Reason Field.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Why Progress Note was created</inlineHelpText>
+    <label>Scheduling Note Reason</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Patient is Requesting Follow Up Appointment</fullName>
+                <default>false</default>
+                <label>Patient is Requesting Follow Up Appointment</label>
+            </value>
+            <value>
+                <fullName>Patient is Requesting Consult/ Referral</fullName>
+                <default>false</default>
+                <label>Patient is Requesting Consult/ Referral</label>
+            </value>
+            <value>
+                <fullName>Cannot Complete Appointment Request</fullName>
+                <default>false</default>
+                <label>Cannot Complete Appointment Request</label>
+            </value>
+            <value>
+                <fullName>Completed Scheduling Action</fullName>
+                <default>false</default>
+                <label>Completed Scheduling Action</label>
+            </value>
+            <value>
+                <fullName>Veteran is Requesting Consult/ Referral</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Veteran is Requesting Consult/ Referral</label>
+            </value>
+            <value>
+                <fullName>Veteran is Requesting Follow Up Appointment</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Veteran is Requesting Follow Up Appointment</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

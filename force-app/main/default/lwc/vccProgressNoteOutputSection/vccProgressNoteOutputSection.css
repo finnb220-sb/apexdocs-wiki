@@ -1,0 +1,47 @@
+/* 
+    Styling hooks:
+    --emphasized-border-width
+    --emphasized-border-color
+    --emphasized-border-style
+    --section-padding
+*/
+:host {
+    --default-section-padding: 5px;
+    --default-emphasized-border-width: 1px;
+    --default-emphasized-background-color: rgb(252, 252, 252);
+    --default-emphasized-border-style: solid;
+    --default-emphasized-border-color: gray;
+    --calculated-section-padding: calc(var(--section-padding, var(--default-section-padding)) + var(--emphasized-border-width, var(--default-emphasized-border-width)));
+}
+
+:host section.emphasized {
+    background-color: var(--emphasized-background-color, var(--default-emphasized-background-color));
+    padding: var(--section-padding, var(--default-section-padding));
+    border-width: var(--emphasized-border-width, var(--default-emphasized-border-width));
+    border-color: var(--emphasized-border-color, var(--default-emphasized-border-color));
+    border-style: var(--emphasized-border-style, var(--default-emphasized-border-style));
+    border-radius: 3px;
+}
+
+:host section:not(.emphasized) {
+    padding: var(--calculated-section-padding);
+}
+
+.section-name {
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+:host .field {
+    padding: 5px;
+}
+
+:host .field .field-label {
+    font-weight: 550;
+    white-space: break-spaces;
+}
+
+:host .field .field-value {
+    padding: 0 0 0 5px;
+    white-space: break-spaces;
+}

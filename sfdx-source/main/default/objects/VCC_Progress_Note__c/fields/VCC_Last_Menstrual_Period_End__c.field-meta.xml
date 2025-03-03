@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Last_Menstrual_Period_End__c</fullName>
+    <description>Used by CCC Medical Provider to enter patient&apos;s last day of last period.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter patient&apos;s last day of last period.</inlineHelpText>
+    <label>Last Menstrual Period End</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

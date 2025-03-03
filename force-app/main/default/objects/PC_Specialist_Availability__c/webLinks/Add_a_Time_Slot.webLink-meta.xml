@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Add_a_Time_Slot</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Add a Time Slot</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/lightning/o/PC_Time_Slot__c/new?&amp;defaultFieldValues=Availability__c={!
+        PC_Specialist_Availability__c.Id},PC_Service_Resource__c={!PC_Specialist_Availability__c.PC_Service_ResourceId__c}&amp;navigationLocation=RELATED_LIST&amp;backgroundContext=%2Flightning%2Fr%2FPC_Specialist_Availability__c%2F{!PC_Specialist_Availability__c.Id}%2Fview&amp;saveURL=%2F{!PC_Specialist_Availability__c.Id}&amp;retURL=%2F{!PC_Specialist_Availability__c.Id}</url>
+</WebLink>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Test_to_Treat_Outcome</fullName>
+    <active>true</active>
+    <description>When an RN selects &quot;Yes&quot; for acknowledging a COVID test, they must identify the Outcome.</description>
+    <errorConditionFormula
+    >BEGINS( RecordType.DeveloperName, &quot;VCC_&quot;) &amp;&amp; !$Permission.DisableTriggersFlag &amp;&amp; AND( ISPICKVAL(VCC_CS_Has_patient_had_a_test__c,
+        &quot;Yes&quot;), ISBLANK(TEXT(VCC_Test_to_Treat_PILOT_PROGRAM__c)), RecordType.DeveloperName = &quot;VCC_Clinical_Triage_Note_Progress_Note&quot;, NOT
+        $Permission.VCC_Disable_Progress_Note_Assignment_Rules )</errorConditionFormula>
+    <errorDisplayField>VCC_Test_to_Treat_PILOT_PROGRAM__c</errorDisplayField>
+    <errorMessage>Please select an outcome for the COVID test to treat.</errorMessage>
+</ValidationRule>

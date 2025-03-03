@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Cannot_Change_Contact_Name</fullName>
+    <active>true</active>
+    <description>Veteran name can not be changed.</description>
+    <errorConditionFormula>BEGINS( RecordType.DeveloperName, &quot;VCC_&quot;) &amp;&amp; !$Permission.DisableTriggersFlag &amp;&amp; OR( ISCHANGED(FirstName), ISCHANGED(LastName),
+        ISCHANGED(MiddleName), ISCHANGED( Salutation)) &amp;&amp; RecordType.DeveloperName = &quot;Person Account&quot; &amp;&amp; NOT
+        $Permission.VCC_Disable_Account_Validation_Rules</errorConditionFormula>
+    <errorMessage>Veteran name cannot be changed.</errorMessage>
+</ValidationRule>

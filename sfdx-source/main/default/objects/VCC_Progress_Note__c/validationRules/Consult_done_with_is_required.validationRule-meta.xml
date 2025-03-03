@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Consult_done_with_is_required</fullName>
+    <active>true</active>
+    <description>If &quot;Consult done prior to recommendation&quot; is checked, &quot;Consult done with?&quot; is required.</description>
+    <errorConditionFormula
+    >BEGINS( RecordType.DeveloperName, &quot;VCC_&quot;) &amp;&amp; !$Permission.DisableTriggersFlag &amp;&amp; AND(VCC_Consult_done_prior_to_recommendation__c = True,
+        ISPICKVAL( VCC_Consult_done_with__c , &quot;&quot;), NOT ($Permission.VCC_Disable_Progress_Note_Assignment_Rules))</errorConditionFormula>
+    <errorDisplayField>VCC_Consult_done_with__c</errorDisplayField>
+    <errorMessage>If &quot;Consult done prior to recommendation&quot; is checked, &quot;Consult done with?&quot; is required.</errorMessage>
+</ValidationRule>

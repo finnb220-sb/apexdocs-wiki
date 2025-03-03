@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TUC_Reason_for_Referral__c</fullName>
+    <description>Only used in report type. Potentially depracated</description>
+    <externalId>false</externalId>
+    <label>Reason for Referral</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cardiovascular</fullName>
+                <default>false</default>
+                <label>Cardiovascular</label>
+            </value>
+            <value>
+                <fullName>Ear/Nose/Throat/Respiratory</fullName>
+                <default>false</default>
+                <label>Ear/Nose/Throat/Respiratory</label>
+            </value>
+            <value>
+                <fullName>Endocrine</fullName>
+                <default>false</default>
+                <label>Endocrine</label>
+            </value>
+            <value>
+                <fullName>Eye</fullName>
+                <default>false</default>
+                <label>Eye</label>
+            </value>
+            <value>
+                <fullName>Gastrointestinal</fullName>
+                <default>false</default>
+                <label>Gastrointestinal</label>
+            </value>
+            <value>
+                <fullName>Genitourinary</fullName>
+                <default>false</default>
+                <label>Genitourinary</label>
+            </value>
+            <value>
+                <fullName>Mental Health</fullName>
+                <default>false</default>
+                <label>Mental Health</label>
+            </value>
+            <value>
+                <fullName>Musculoskeletal</fullName>
+                <default>false</default>
+                <label>Musculoskeletal</label>
+            </value>
+            <value>
+                <fullName>Neurologic</fullName>
+                <default>false</default>
+                <label>Neurologic</label>
+            </value>
+            <value>
+                <fullName>Skin</fullName>
+                <default>false</default>
+                <label>Skin</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

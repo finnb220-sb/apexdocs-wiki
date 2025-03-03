@@ -1,0 +1,433 @@
+{
+
+    "sites": [
+
+        {
+
+            "results": {
+
+                "radiologyExams": {
+
+                    "total": "4",
+
+                    "radiology": [
+
+                        {
+
+                            "dateTime": {
+
+                                "value": "3180212.071"
+
+                            },
+
+                            "imagingType": {
+
+                                "code": "US",
+
+                                "name": "ULTRASOUND"
+
+                            },
+
+                            "name": {
+
+                                "value": "Unknown"
+
+                            },
+
+                            "hasImages": {
+
+                                "value": "0"
+
+                            },
+
+                            "location": {
+
+                                "code": "1339",
+
+                                "name": "ULTRASOUND"
+
+                            },
+
+                            "id": {
+
+                                "value": "6819787.9289-1"
+
+                            },
+
+                            "category": {
+
+                                "value": "RA"
+
+                            },
+
+                            "facility": {
+
+                                "code": "660",
+
+                                "name": "SALT LAKE CITY HCS"
+
+                            },
+
+                            "case": {
+
+                                "value": "89"
+
+                            },
+
+                            "documents": {
+
+                                "document": []
+
+                            },
+
+                            "type": {},
+
+                            "provider": {},
+
+                            "status": {},
+
+                            "encounter": {},
+
+                            "interpretation": {},
+
+                            "modifiers": {
+
+                                "modifier": []
+
+                            },
+
+                            "order": {},
+
+                            "urgency": {}
+
+                        },
+
+                        {
+
+                            "dateTime": {
+
+                                "value": "3180205.1214"
+
+                            },
+
+                            "imagingType": {
+
+                                "code": "US",
+
+                                "name": "ULTRASOUND"
+
+                            },
+
+                            "name": {
+
+                                "value": "Unknown"
+
+                            },
+
+                            "hasImages": {
+
+                                "value": "0"
+
+                            },
+
+                            "location": {
+
+                                "code": "1339",
+
+                                "name": "ULTRASOUND"
+
+                            },
+
+                            "id": {
+
+                                "value": "6819794.8785-1"
+
+                            },
+
+                            "category": {
+
+                                "value": "RA"
+
+                            },
+
+                            "facility": {
+
+                                "code": "660",
+
+                                "name": "SALT LAKE CITY HCS"
+
+                            },
+
+                            "case": {
+
+                                "value": "92"
+
+                            },
+
+                            "documents": {
+
+                                "document": []
+
+                            },
+
+                            "type": {},
+
+                            "provider": {},
+
+                            "status": {},
+
+                            "encounter": {},
+
+                            "interpretation": {},
+
+                            "modifiers": {
+
+                                "modifier": []
+
+                            },
+
+                            "order": {},
+
+                            "urgency": {}
+
+                        },
+
+                        {
+
+                            "dateTime": {
+
+                                "value": "3180205.1212"
+
+                            },
+
+                            "imagingType": {
+
+                                "code": "US",
+
+                                "name": "ULTRASOUND"
+
+                            },
+
+                            "name": {
+
+                                "value": "Unknown"
+
+                            },
+
+                            "hasImages": {
+
+                                "value": "0"
+
+                            },
+
+                            "location": {
+
+                                "code": "1339",
+
+                                "name": "ULTRASOUND"
+
+                            },
+
+                            "id": {
+
+                                "value": "6819794.8787-1"
+
+                            },
+
+                            "category": {
+
+                                "value": "RA"
+
+                            },
+
+                            "facility": {
+
+                                "code": "660",
+
+                                "name": "SALT LAKE CITY HCS"
+
+                            },
+
+                            "case": {
+
+                                "value": "90"
+
+                            },
+
+                            "documents": {
+
+                                "document": []
+
+                            },
+
+                            "type": {},
+
+                            "provider": {},
+
+                            "status": {},
+
+                            "encounter": {},
+
+                            "interpretation": {},
+
+                            "modifiers": {
+
+                                "modifier": []
+
+                            },
+
+                            "order": {},
+
+                            "urgency": {}
+
+                        },
+
+                        {
+
+                            "dateTime": {
+
+                                "value": "3180205.1203"
+
+                            },
+
+                            "imagingType": {
+
+                                "code": "RAD",
+
+                                "name": "GENERAL RADIOLOGY"
+
+                            },
+
+                            "name": {
+
+                                "value": "ABDOMEN 1 VIEW (KUB)"
+
+                            },
+
+                            "hasImages": {
+
+                                "value": "0"
+
+                            },
+
+                            "location": {
+
+                                "code": "1003",
+
+                                "name": "RADIOLOGY"
+
+                            },
+
+                            "id": {
+
+                                "value": "6819794.8796-1"
+
+                            },
+
+                            "category": {
+
+                                "value": "RA"
+
+                            },
+
+                            "facility": {
+
+                                "code": "660",
+
+                                "name": "SALT LAKE CITY HCS"
+
+                            },
+
+                            "case": {
+
+                                "value": "89"
+
+                            },
+
+                            "documents": {
+
+                                "document": [
+
+                                    {
+
+                                        "nationalTitle": "RADIOLOGY REPORT",
+
+                                        "localTitle": "ABDOMEN 1 VIEW (KUB)",
+
+                                        "id": "6819794.8796-1",
+
+                                        "vuid": "4695068",
+
+                                        "status": "Verified"
+
+                                    }
+
+                                ]
+
+                            },
+
+                            "type": {
+
+                                "code": "74000",
+
+                                "name": "RADIOLOGIC EXAMINATION, ABDOMEN; SINGLE ANTEROPOSTERIOR VIEW"
+
+                            },
+
+                            "provider": {
+
+                                "taxonomyCode": "2085R0202X",
+
+                                "code": "5201",
+
+                                "service": "RADIOLOGY",
+
+                                "name": "ZWIEBEL,WILLIAM",
+
+                                "specialization": "Diagnostic Radiology",
+
+                                "analogPager": "8885555656",
+
+                                "classification": "Radiology",
+
+                                "providerType": "Allopathic and Osteopathic Physicians"
+
+                            },
+
+                            "status": {
+
+                                "value": "COMPLETE"
+
+                            },
+
+                            "encounter": {},
+
+                            "interpretation": {},
+
+                            "modifiers": {
+
+                                "modifier": []
+
+                            },
+
+                            "order": {},
+
+                            "urgency": {}
+
+                        }
+
+                    ]
+
+                },
+
+                "timeZone": "-0400",
+
+                "version": "1.13"
+
+            }
+
+        }
+
+    ]
+
+}

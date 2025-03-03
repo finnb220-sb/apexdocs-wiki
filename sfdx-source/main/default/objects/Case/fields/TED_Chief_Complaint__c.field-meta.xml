@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TED_Chief_Complaint__c</fullName>
+    <description>Chief Complaint will be used and visible to Tele-EC Users instead of Salesforce&apos;s standard &quot;Subject&quot; case field. This language is more relevant to health care providers.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>Main reason for seeking medical attention.</inlineHelpText>
+    <label>Chief Complaint</label>
+    <length>255</length>
+    <required>false</required>
+    <securityClassification>Internal</securityClassification>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

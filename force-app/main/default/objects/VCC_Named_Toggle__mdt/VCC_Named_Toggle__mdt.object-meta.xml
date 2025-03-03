@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description
+    >Used for &quot;one-offs&quot; where a feature may need to be enabled or disabled for one reason or another. Originally created for deploying a feature that was dependent
+        on a data load, which may or may not have been in the destination org.</description>
+    <label>Named Toggle</label>
+    <pluralLabel>Named Toggles</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Diagnosis_Code__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Diagnosis (ICD10) Code</description>
+    <externalId>false</externalId>
+    <label>Diagnosis Code</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>CodeSet.CodeSetType</field>
+            <operation>equals</operation>
+            <value>Diagnosis (ICD10)</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>CodeSet</referenceTo>
+    <relationshipLabel>Progress Notes (Diagnosis Code)</relationshipLabel>
+    <relationshipName>Progress_Notes3</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

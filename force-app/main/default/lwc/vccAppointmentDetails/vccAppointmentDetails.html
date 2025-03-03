@@ -1,0 +1,79 @@
+<template>
+    <div slot="header" class="card-title">
+        <div class="slds-media__figure">
+            <lightning-icon
+                size="small"
+                icon-name="custom:custom94"
+                alternative-text="Appointment Details"
+                title="Appointment Details"></lightning-icon>
+        </div>
+        <div class="slds-media__body">
+            <h2 class="slds-card__header-title">Appointment Details</h2>
+        </div>
+    </div>
+    <section class="container" if:true={selectedRecord}>
+        <div class="grid" tabindex="0">
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Date/Time</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{selectedRecord.appointmentDateTimeString}</p>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Clinic Name</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{selectedRecord.locationIdentifierName}</p>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Location</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{selectedRecord.division}</p>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Medical Center</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{selectedRecord.locationOfficialVAName}</p>
+                </div>
+            </div>
+
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Title</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{selectedRecord.providerTitle}</p>
+                </div>
+            </div>
+
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Provider</p>
+                </div>
+
+                <div class="horizontal info">
+                    <p>{selectedRecord.providerName}</p>
+                </div>
+            </div>
+            <div tabindex="0" class="vertical detail-cell">
+                <div class="title">
+                    <p>Status</p>
+                </div>
+                <div class="horizontal info">
+                    <p>{selectedRecord.status}</p>
+                </div>
+            </div>
+            <!-- spacer -->
+            <div></div>
+        </div>
+    </section>
+</template>

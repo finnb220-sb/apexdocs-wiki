@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>PC_Enable_Debug</name>
+    </customPermissions>
+    <description>WARNING: Only apply this permission set if using in conjunction with internal debugging for Provider Connect. Remove when finished. Impacts performance 6-23-2023 -
+        Supports CometD subscribe/unsubscribe debugging in the pcTeleHealthConsult LWC</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>PC-EnableDebugCustomPermission</label>
+</PermissionSet>

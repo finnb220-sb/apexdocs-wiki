@@ -1,0 +1,3 @@
+SELECT Id, CreatedDate, Account__r.OwnerId, Account__r.Owner.Name, Type__c, Data__c, Account__r.Name, Account__r.FirstName, Account__r.LastName,  Account__r.Is_Training_Account__c, Account__r.Is_Training_Account_Master__c
+FROM VCC_Training_Mode_Data__c
+WHERE Account__r.OwnerId = '0053R000000xdgKQAQ'

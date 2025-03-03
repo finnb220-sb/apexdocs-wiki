@@ -1,0 +1,29 @@
+# default repository code owner / reviewers (unused)
+#* @department-of-veterans-affairs/dtc-architects
+
+# ALL repositories - config
+/config/ @department-of-veterans-affairs/dtc-architects
+/.vscode/ @department-of-veterans-affairs/dtc-architects
+.gitignore @department-of-veterans-affairs/dtc-architects
+/.github/ @department-of-veterans-affairs/dtc-architects @department-of-veterans-affairs/DTC-SFDX-ADMIN
+code-analyzer*.* @department-of-veterans-affairs/dtc-architects
+
+# ALL repositories - metadata
+*.cls @department-of-veterans-affairs/dtc-architects
+*.trigger @department-of-veterans-affairs/dtc-architects
+*.page @department-of-veterans-affairs/dtc-architects
+*.component @department-of-veterans-affairs/dtc-architects
+*.cmp @department-of-veterans-affairs/dtc-architects
+*.js @department-of-veterans-affairs/dtc-architects
+*.html @department-of-veterans-affairs/dtc-architects
+
+# DX repositoris
+#*.profile-meta.xml @department-of-veterans-affairs/dtc-architects
+#*.permissionset-meta.xml @department-of-veterans-affairs/dtc-architects
+#*field-meta.xml @department-of-veterans-affairs/dtc-architects
+#*object-meta.xml @department-of-veterans-affairs/dtc-architects
+#*flow-meta.xml @department-of-veterans-affairs/dtc-architects
+
+# Metadata repositories
+#*.profile @department-of-veterans-affairs/dtc-architects
+#*.permissionset@department-of-veterans-affairs/dtc-architects

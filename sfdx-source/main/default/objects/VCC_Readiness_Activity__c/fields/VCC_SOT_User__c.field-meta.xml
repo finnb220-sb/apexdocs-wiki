@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_SOT_User__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>A lookup field connecting the Readiness Activity to the SOT User for which the Readiness Activity is created.</description>
+    <externalId>false</externalId>
+    <label>SOT User</label>
+    <referenceTo>VCC_SOT_User__c</referenceTo>
+    <relationshipLabel>Readiness Activities</relationshipLabel>
+    <relationshipName>Readiness_Activities</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

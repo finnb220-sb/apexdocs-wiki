@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TUC_Video_Visit_Consent__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Has the patient given consent for a VVC Video Visit?</description>
+    <externalId>false</externalId>
+    <label>Video Visit Consent Obtained</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

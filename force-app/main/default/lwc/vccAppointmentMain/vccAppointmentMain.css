@@ -1,0 +1,273 @@
+.container {
+    max-width: 1300px;
+    background-color: #ffffff;
+    border-radius: 0.25rem;
+    position: relative;
+    min-height: 250px;
+}
+
+.slds-card__header {
+    margin-bottom: 0px;
+    padding: 0px;
+    padding-left: 9px;
+    padding-top: 5px;
+    height: 34px;
+}
+
+.card-title {
+    /*font-family: 'Salesforce Sans'; */
+    /* font-weight: 600; */
+    font-size: 16px;
+    color: #080707;
+}
+.slds-media__body {
+    position: relative;
+}
+/* .slds-media__figure{
+    padding-left:.4rem;
+    padding-top:.4rem;
+} */
+.close-container {
+    position: absolute;
+    right: 9px;
+    top: -3px;
+}
+
+.slds-card__body_inner {
+    margin-top: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.date-container {
+    margin-top: -3px;
+    margin-bottom: 15px;
+}
+thead {
+    width: 100%;
+}
+tbody {
+    max-height: 160px;
+    overflow: auto;
+    width: 100%;
+}
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+thead th {
+    height: 30px;
+    background: #fafaf9;
+    /* font-family: 'Salesforce Sans'; */
+    font-weight: bold;
+    font-size: 12px;
+    color: #3e3e3c;
+    padding-left: 5px;
+    width: 25%;
+}
+/*
+
+thead th:first-child{
+    width:173px;
+    min-width: 173px;
+    max-width: 173px;
+}
+thead th:nth-child(2){
+    width:149px;
+    min-width: 149px;
+    max-width: 149px;
+}
+thead th:nth-child(3){
+    width:151px;
+    min-width: 151px;
+    max-width: 151px;
+}
+thead th:nth-child(4){
+    width: 140px;
+    min-width: 140px;
+    max-width: 140px;
+}
+
+
+tbody td:first-child{
+    width:173px;
+    min-width: 173px;
+    max-width: 173px
+}
+tbody td:nth-child(2){
+    width:149px;
+    min-width: 149px;
+    max-width: 149px;
+}
+tbody td:nth-child(3){
+    width:151px;
+    min-width: 151px;
+    max-width: 151px;
+}
+tbody td:nth-child(4){
+    width: 140px;
+    min-width: 140px;
+    max-width: 140px;
+}
+*/
+td {
+    height: 30px;
+    color: #080707;
+    font-size: 11px;
+    padding-left: 5px;
+    border: 1px solid #dddbda;
+    border-left: none;
+    border-right: none;
+}
+
+.slds-table:not(.slds-no-row-hover) tbody tr:hover > td,
+.slds-table:not(.slds-no-row-hover) tbody tr:hover > th,
+.slds-table:not(.slds-no-row-hover) tbody tr:focus > td,
+.slds-table:not(.slds-no-row-hover) tbody tr:focus > th {
+    background-color: #e8f3fd;
+    font-weight: bold;
+}
+
+.pagination-container {
+    padding-top: 60px;
+}
+
+.slds-button_neutral {
+    border: 1px solid #7b7b7b;
+    border-radius: 3px;
+    /* font-family: 'Salesforce Sans'; */
+    font-size: 11px;
+    color: #6b6b6b;
+    margin-left: 6px;
+}
+.pagination-page-counter {
+    /* font-family: 'Salesforce Sans'; */
+    font-size: 11px;
+    color: #3e3e3c;
+    text-align: center;
+}
+
+.medicine-info-container {
+    padding-top: 30px;
+}
+.medicine-heading-name {
+    /* font-family: 'Salesforce Sans'; */
+    font-size: 15px;
+    font-weight: 600;
+    color: #3e3e3c;
+}
+
+.medicine-info-th {
+    /* font-family: 'Salesforce Sans'; */
+    font-size: 12px;
+    color: #3e3e3c;
+    padding: 3px 0px;
+}
+
+.medicine-info-td {
+    /* font-family: 'Salesforce Sans'; */
+    font-weight: 600;
+    font-size: 12px;
+    color: #3e3e3c;
+    padding: 3px 0px;
+}
+
+.medicine-use-container {
+    padding-top: 30px;
+}
+.medicine-instruction-heading {
+    /* font-family: 'Salesforce Sans'; */
+    font-weight: 600;
+    font-size: 13px;
+    color: #737272;
+}
+.medicine-instruction {
+    /* font-family: 'Salesforce Sans'; */
+    font-size: 13px;
+    color: #3e3e3c;
+}
+
+.slds-icon-utility-chevrondown {
+    padding-left: 10px;
+}
+.slds-icon-utility-chevronup {
+    padding-left: 10px;
+}
+
+.action-button-container {
+    padding-top: 60px;
+    padding-bottom: 15px;
+    text-align: right;
+    padding-right: 8px;
+}
+
+.action-button-container button {
+    background: #0070d2;
+    border-color: #0070d2;
+}
+
+.selected-row {
+    background-color: #e8f3fd;
+    font-weight: bold;
+}
+
+.appointment-detail-container {
+    max-height: 200px;
+    overflow: auto;
+}
+
+.backgroundInverse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slds-icon-utility-chevrondown {
+    cursor: pointer;
+}
+.slds-icon-utility-chevronup {
+    cursor: pointer;
+}
+.overflow-auto {
+    overflow: auto;
+}
+.total-dischargeSummary-title {
+    padding: 0.2rem;
+    color: #3e3e3c;
+}
+
+.slds-icon-utility-arrowup {
+    line-height: 1.1rem;
+}
+.slds-icon-utility-arrowdown {
+    line-height: 1.1rem;
+}
+
+.slds-icon_container-css {
+    right: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    text-align: right;
+    height: 1.3rem;
+}
+.slds-icon-utility-chevrondown {
+    cursor: pointer;
+}
+.slds-icon-utility-chevronup {
+    cursor: pointer;
+}
+.table-col-data {
+    line-height: 1.3rem;
+    position: relative;
+}

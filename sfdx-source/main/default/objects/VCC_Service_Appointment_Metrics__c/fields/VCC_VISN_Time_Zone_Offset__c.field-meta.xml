@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_VISN_Time_Zone_Offset__c</fullName>
+	<description>The number of hours for the GMT time zone offset based on the VISN operating hours</description>
+    <externalId>false</externalId>
+    <formula>CASE( Text(Service_Appointment__r.ServiceTerritory.OperatingHours.TimeZone),
+&quot;America/New_York&quot;, -5,
+&quot;America/Chicago&quot;, -6,
+&quot;America/Denver &quot;, -7,
+&quot;America/Los_Angeles&quot;, -8,
+&quot;America/Juneau&quot;, -9,
+&quot;Pacific/Honolulu&quot;, -10,
+0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>VISN Time Zone Offset</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

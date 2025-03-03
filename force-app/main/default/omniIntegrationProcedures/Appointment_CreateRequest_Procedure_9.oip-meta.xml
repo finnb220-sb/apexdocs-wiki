@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OmniIntegrationProcedure xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customJavaScript>{
+    &quot;AppointmentRequestType&quot;: &quot;Recall&quot;,
+    &quot;ChronosApptType&quot;: &quot;OTHER&quot;,
+    &quot;ChronosClinicIEN&quot;: &quot;4568&quot;,
+    &quot;ChronosClinicName&quot;: &quot;ISS UAT DAYTSHR MH MD 01 DS&quot;,
+    &quot;ChronosComment&quot;: &quot;RECALL Request IEN test v4&quot;,
+    &quot;ChronosInstitutionNumber&quot;: &quot;984&quot;,
+    &quot;ChronosPatientICN&quot;: &quot;1013698358V691983&quot;,
+    &quot;ChronosPreferredDate&quot;: &quot;2024-09-14&quot;,
+    &quot;ChronosProviderIEN&quot;: &quot;1&quot;,
+    &quot;ChronosLabs&quot;: true,
+    &quot;ChronosAppointmentLength&quot;: 30,
+    &quot;MockData&quot;: &quot;false&quot;
+}</customJavaScript>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>true</isActive>
+    <isIntegrationProcedure>true</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>Procedure</language>
+    <name>VCC_IPCreateAppointmentRequests</name>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>CreateAppointmentRequestHTTP</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;useFormulas&quot; : true,
+  &quot;additionalInput&quot; : {
+    &quot;postBody&quot; : &quot;=%SetPOSTBody:postBody%&quot;,
+    &quot;vistaSiteId&quot; : &quot;=%SetJSONValues:institutionNumber%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;failureResponse&quot; : { },
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;preActionLogging&quot; : &quot;%endpoint%&quot;,
+  &quot;postActionLogging&quot; : &quot;&quot;,
+  &quot;restPath&quot; : &quot;/svas/createRequest&quot;,
+  &quot;restMethod&quot; : &quot;POST&quot;,
+  &quot;retryCount&quot; : 0,
+  &quot;restOptions&quot; : {
+    &quot;clientCertificateName&quot; : &quot;&quot;,
+    &quot;headers&quot; : {
+      &quot;Content-Type&quot; : &quot;application/json&quot;,
+      &quot;clientId&quot; : &quot;{!$Credential.username}&quot;,
+      &quot;clientSecret&quot; : &quot;{!$Credential.password}&quot;,
+      &quot;oauthToken&quot; : &quot;%oAuthSettings:token%&quot;
+    },
+    &quot;isCompressed&quot; : false,
+    &quot;params&quot; : { },
+    &quot;sendBody&quot; : true,
+    &quot;timeout&quot; : 0,
+    &quot;xmlEscapeResponse&quot; : false
+  },
+  &quot;namedCredential&quot; : &quot;%namedCredential%&quot;,
+  &quot;type&quot; : &quot;Integration&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;HTTPAction1&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>3.0</sequenceNumber>
+            <type>Rest Action</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>SetJSONValues</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;elementValueMap&quot; : {
+    &quot;apptRequestType&quot; : &quot;=%ChronosApptRequestType%&quot;,
+    &quot;apptType&quot; : &quot;=%ChronosApptType%&quot;,
+    &quot;clinicIEN&quot; : &quot;=%ChronosClinicIEN%&quot;,
+    &quot;clinicName&quot; : &quot;=%ChronosClinicName%&quot;,
+    &quot;comments&quot; : &quot;=%ChronosComment%&quot;,
+    &quot;institutionNumber&quot; : &quot;=%SetPatientAndInstitution:InstitutionNumber%&quot;,
+    &quot;patientIcn&quot; : &quot;=%SetPatientAndInstitution:PatientICN%&quot;,
+    &quot;preferredDate&quot; : &quot;=%ChronosPreferredDate%&quot;,
+    &quot;priority&quot; : &quot;=\&quot;ASAP\&quot;&quot;,
+    &quot;providerIEN&quot; : &quot;=%ChronosProviderIEN%&quot;,
+    &quot;providerName&quot; : &quot;=%ChronosProviderName%&quot;,
+    &quot;requestedBy&quot; : &quot;=%ChronosApptRequestedBy%&quot;,
+    &quot;reqPatientStatus&quot; : &quot;=%ChronosPatientStatus%&quot;
+  },
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;SetValues2&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Set Values</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>SetPOSTBody</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;elementValueMap&quot; : {
+    &quot;postBody&quot; : {
+      &quot;apptRequestType&quot; : &quot;%SetJSONValues:apptRequestType%&quot;,
+      &quot;apptType&quot; : &quot;%SetJSONValues:apptType%&quot;,
+      &quot;clinic&quot; : {
+        &quot;displayToPatients&quot; : false,
+        &quot;ien&quot; : &quot;%SetJSONValues:clinicIEN%&quot;,
+        &quot;name&quot; : &quot;%SetJSONValues:clinicName%&quot;,
+        &quot;stopCode&quot; : {
+          &quot;amis&quot; : &quot;&quot;,
+          &quot;name&quot; : &quot;&quot;
+        }
+      },
+      &quot;comments&quot; : &quot;%SetJSONValues:comments%&quot;,
+      &quot;contactSummary&quot; : {
+        &quot;email&quot; : 0,
+        &quot;letter&quot; : 0,
+        &quot;message&quot; : 0,
+        &quot;phone&quot; : 0,
+        &quot;text&quot; : 0,
+        &quot;total&quot; : 0
+      },
+      &quot;enrollmentPriorityGroup&quot; : &quot;GROUP 1&quot;,
+      &quot;institution&quot; : {
+        &quot;number&quot; : &quot;%SetJSONValues:institutionNumber%&quot;
+      },
+      &quot;mrtc&quot; : {
+        &quot;mrtc&quot; : false
+      },
+      &quot;mseMet&quot; : false,
+      &quot;parentRequest&quot; : &quot;&quot;,
+      &quot;patient&quot; : {
+        &quot;identifiers&quot; : {
+          &quot;icn&quot; : &quot;%SetJSONValues:patientIcn%&quot;
+        }
+      },
+      &quot;patientStatus&quot; : &quot;%SetJSONValues:reqPatientStatus%&quot;,
+      &quot;pidChangeAllowed&quot; : true,
+      &quot;preferredDate&quot; : &quot;%SetJSONValues:preferredDate%&quot;,
+      &quot;priority&quot; : &quot;%SetJSONValues:priority%&quot;,
+      &quot;provider&quot; : {
+        &quot;identifiers&quot; : {
+          &quot;duz&quot; : &quot;%SetJSONValues:providerIEN%&quot;
+        },
+        &quot;name&quot; : &quot;%SetJSONValues:providerName%&quot;
+      },
+      &quot;requestType&quot; : &quot;AppointmentRequest&quot;,
+      &quot;requestedBy&quot; : &quot;%SetJSONValues:requestedBy%&quot;,
+      &quot;serviceConnectedPercentage&quot; : 0,
+      &quot;serviceConnectedPriority&quot; : false,
+      &quot;status&quot; : &quot;proposed&quot;,
+      &quot;timeSensitive&quot; : false
+    }
+  },
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;SetValues1&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>2.0</sequenceNumber>
+            <type>Set Values</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>ConditionalBlock1</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;%AppointmentRequestType% == \&quot;APPT\&quot;&quot;,
+  &quot;isIfElseBlock&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;ConditionalBlock1&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>4.0</sequenceNumber>
+        <type>Conditional Block</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>CreateRecallAppointmentRequestHTTP</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;useFormulas&quot; : true,
+  &quot;additionalInput&quot; : {
+    &quot;postBody&quot; : &quot;=%SetRecallPOSTBody:postBody%&quot;,
+    &quot;vistaSiteId&quot; : &quot;%SetRecallJSONValue:institutionNumber%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;failureResponse&quot; : { },
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;preActionLogging&quot; : &quot;%endpoint%&quot;,
+  &quot;postActionLogging&quot; : &quot;&quot;,
+  &quot;restPath&quot; : &quot;/svas/createRequest&quot;,
+  &quot;restMethod&quot; : &quot;POST&quot;,
+  &quot;retryCount&quot; : 0,
+  &quot;restOptions&quot; : {
+    &quot;clientCertificateName&quot; : &quot;&quot;,
+    &quot;headers&quot; : {
+      &quot;Content-Type&quot; : &quot;application/json&quot;,
+      &quot;clientId&quot; : &quot;{!$Credential.username}&quot;,
+      &quot;clientSecret&quot; : &quot;{!$Credential.password}&quot;,
+      &quot;oauthToken&quot; : &quot;%oAuthSettings:token%&quot;
+    },
+    &quot;isCompressed&quot; : false,
+    &quot;params&quot; : { },
+    &quot;sendBody&quot; : true,
+    &quot;timeout&quot; : 0,
+    &quot;xmlEscapeResponse&quot; : false
+  },
+  &quot;namedCredential&quot; : &quot;%namedCredential%&quot;,
+  &quot;type&quot; : &quot;Integration&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;HTTPAction1&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>3.0</sequenceNumber>
+            <type>Rest Action</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>SetRecallJSONValue</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;elementValueMap&quot; : {
+    &quot;clinicIEN&quot; : &quot;=%ChronosClinicIEN%&quot;,
+    &quot;clinicName&quot; : &quot;=%ChronosClinicName%&quot;,
+    &quot;comments&quot; : &quot;=%ChronosComment%&quot;,
+    &quot;institutionNumber&quot; : &quot;=%SetPatientAndInstitution:InstitutionNumber%&quot;,
+    &quot;patientIcn&quot; : &quot;=%SetPatientAndInstitution:PatientICN%&quot;,
+    &quot;recallApptType&quot; : &quot;=%ChronosApptType%&quot;,
+    &quot;recallDate&quot; : &quot;=%ChronosPreferredDate%&quot;,
+    &quot;recallProviderIen&quot; : &quot;=%ChronosProviderIEN%&quot;,
+    &quot;recallLengthOfAppt&quot; : &quot;=%ChronosAppointmentLength%&quot;,
+    &quot;recallLabs&quot; : &quot;=%ChronosLabs%&quot;
+  },
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;SetValues2&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Set Values</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>SetRecallPOSTBody</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;elementValueMap&quot; : {
+    &quot;postBody&quot; : {
+      &quot;clinic&quot; : {
+        &quot;displayToPatients&quot; : false,
+        &quot;ien&quot; : &quot;%SetRecallJSONValue:clinicIEN%&quot;,
+        &quot;name&quot; : &quot;%SetRecallJSONValue:clinicName%&quot;,
+        &quot;stopCode&quot; : {
+          &quot;amis&quot; : &quot;&quot;,
+          &quot;name&quot; : &quot;&quot;
+        }
+      },
+      &quot;comments&quot; : &quot;%SetRecallJSONValue:comments%&quot;,
+      &quot;contactSummary&quot; : {
+        &quot;email&quot; : 0,
+        &quot;lastLetterSent&quot; : &quot;&quot;,
+        &quot;letter&quot; : 0,
+        &quot;message&quot; : 0,
+        &quot;phone&quot; : 0,
+        &quot;text&quot; : 0,
+        &quot;total&quot; : 0
+      },
+      &quot;fasting&quot; : &quot;%SetRecallJSONValue:recallLabs%&quot;,
+      &quot;gafScore&quot; : &quot;New GAF Required&quot;,
+      &quot;lengthOfAppt&quot; : &quot;%SetRecallJSONValue:recallLengthOfAppt%&quot;,
+      &quot;patient&quot; : {
+        &quot;identifiers&quot; : {
+          &quot;icn&quot; : &quot;%SetRecallJSONValue:patientIcn%&quot;
+        }
+      },
+      &quot;provider&quot; : {
+        &quot;identifiers&quot; : {
+          &quot;duz&quot; : &quot;&quot;,
+          &quot;recallProviderIen&quot; : &quot;%SetRecallJSONValue:recallProviderIen%&quot;,
+          &quot;secId&quot; : &quot;&quot;
+        }
+      },
+      &quot;recallApptType&quot; : &quot;%SetRecallJSONValue:recallApptType%&quot;,
+      &quot;recallDate&quot; : &quot;%SetRecallJSONValue:recallDate%&quot;,
+      &quot;requestType&quot; : &quot;RecallReminder&quot;,
+      &quot;status&quot; : &quot;proposed&quot;
+    }
+  },
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;SetValues1&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>2.0</sequenceNumber>
+            <type>Set Values</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>ConditionalBlock2</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;%AppointmentRequestType% != \&quot;APPT\&quot;&quot;,
+  &quot;isIfElseBlock&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;ConditionalBlock1&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>5.0</sequenceNumber>
+        <type>Conditional Block</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>DataRaptorPostAction1</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;useFormulas&quot; : true,
+  &quot;additionalInput&quot; : {
+    &quot;PatientDFN&quot; : &quot;=%patientDFN%&quot;,
+    &quot;RequestExternalId&quot; : &quot;=%RequestExternalId%&quot;,
+    &quot;RequestIEN&quot; : &quot;=%RequestIEN%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;failureResponse&quot; : { },
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;responseJSONPath&quot; : &quot;VCC_AppointmentRequest__c_1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;bundle&quot; : &quot;VCCDRCreateAppointmentRequest&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;DataRaptorPostAction1&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>12.0</sequenceNumber>
+        <type>DataRaptor Post Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>getOAuthSettings</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;elementValueMap&quot; : {
+    &quot;oAuthSettings&quot; : &quot;=FUNCTION(&apos;VCC_IntegrationProcedureUtilities&apos;,&apos;getSchedulingSSOToken&apos;,&apos;&apos;,&apos;&apos;))&quot;
+  },
+  &quot;responseJSONPath&quot; : &quot;oAuthSettings&quot;,
+  &quot;responseJSONNode&quot; : &quot;oAuthSettings&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;SetValues4&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SearchAppointmentRequestHTTP</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;%AppointmentRequestType% == \&quot;APPT\&quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;useFormulas&quot; : true,
+  &quot;additionalInput&quot; : {
+    &quot;patientIcn&quot; : &quot;=%SetPatientAndInstitution:PatientICN%&quot;,
+    &quot;vistaSiteId&quot; : &quot;=%SetPatientAndInstitution:InstitutionNumber%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;failureResponse&quot; : { },
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;preActionLogging&quot; : &quot;%endpoint%&quot;,
+  &quot;postActionLogging&quot; : &quot;&quot;,
+  &quot;restPath&quot; : &quot;/svas/requests&quot;,
+  &quot;restMethod&quot; : &quot;POST&quot;,
+  &quot;retryCount&quot; : 0,
+  &quot;restOptions&quot; : {
+    &quot;clientCertificateName&quot; : &quot;&quot;,
+    &quot;headers&quot; : {
+      &quot;Content-Type&quot; : &quot;application/json&quot;,
+      &quot;clientId&quot; : &quot;{!$Credential.username}&quot;,
+      &quot;clientSecret&quot; : &quot;{!$Credential.password}&quot;,
+      &quot;oauthToken&quot; : &quot;%oAuthSettings:token%&quot;
+    },
+    &quot;isCompressed&quot; : false,
+    &quot;params&quot; : { },
+    &quot;sendBody&quot; : true,
+    &quot;timeout&quot; : 0,
+    &quot;xmlEscapeResponse&quot; : false
+  },
+  &quot;namedCredential&quot; : &quot;%namedCredential%&quot;,
+  &quot;type&quot; : &quot;Integration&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;HTTPAction1&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>6.0</sequenceNumber>
+        <type>Rest Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetApptExternalId</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;%AppointmentRequestType% == \&quot;APPT\&quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;elementValueMap&quot; : {
+    &quot;RequestExternalId&quot; : &quot;=%SortAppointmentRequestByCreatedDate|1:id%&quot;
+  },
+  &quot;responseJSONPath&quot; : &quot;RequestExternalId&quot;,
+  &quot;responseJSONNode&quot; : &quot;RequestExternalId&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;SetValues10&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>8.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetExternalIdSplitFromLocation</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;%AppointmentRequestType% != \&quot;APPT\&quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;elementValueMap&quot; : {
+    &quot;RecallList&quot; : &quot;=SPLIT(%CreateRecallAppointmentRequestHTTP:location%, \&quot;/\&quot;)&quot;
+  },
+  &quot;responseJSONPath&quot; : &quot;RecallList|%RecallListSize%&quot;,
+  &quot;responseJSONNode&quot; : &quot;RequestExternalId&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;SetValues11&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>10.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>setNamedCredential</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;elementValueMap&quot; : {
+    &quot;namedCredential&quot; : &quot;=IF(%oAuthSettings:isProd%,&apos;vccChronosProd&apos;,&apos;vccChronosQA&apos;)&quot;
+  },
+  &quot;responseJSONPath&quot; : &quot;namedCredential&quot;,
+  &quot;responseJSONNode&quot; : &quot;namedCredential&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;SetValues5&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetOutput</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;useFormulas&quot; : true,
+  &quot;additionalOutput&quot; : {
+    &quot;output_appt_request&quot; : &quot;%DataRaptorPostAction1|1%&quot;
+  },
+  &quot;returnOnlyAdditionalOutput&quot; : true,
+  &quot;returnFullDataJSON&quot; : true,
+  &quot;responseFormat&quot; : &quot;JSON&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;responseDefaultData&quot; : { },
+  &quot;vlcResponseHeaders&quot; : {
+    &quot;output_appt_request&quot; : &quot;%DataRaptorPostAction1|1%&quot;
+  },
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;ResponseAction1&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>13.0</sequenceNumber>
+        <type>Response Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetPatientAndInstitution</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;elementValueMap&quot; : {
+    &quot;InstitutionNumber&quot; : &quot;=%ChronosInstitutionNumber%&quot;,
+    &quot;PatientICN&quot; : &quot;=%ChronosPatientICN%&quot;
+  },
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;SetValues8&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetPtCSchRecallSplitSize</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;%AppointmentRequestType% != \&quot;APPT\&quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;elementValueMap&quot; : {
+    &quot;RecallListSize&quot; : &quot;=LISTSIZE(SPLIT(%CreateRecallAppointmentRequestHTTP:location%, \&quot;/\&quot;))&quot;
+  },
+  &quot;responseJSONPath&quot; : &quot;RecallListSize&quot;,
+  &quot;responseJSONNode&quot; : &quot;RecallListSize&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;SetValues9&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>9.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetRequestIEN</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;%AppointmentRequestType% != \&quot;APPT\&quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;elementValueMap&quot; : {
+    &quot;RequestIEN&quot; : &quot;=SUBSTRING(%RequestExternalId%,4)&quot;
+  },
+  &quot;responseJSONPath&quot; : &quot;RequestIEN&quot;,
+  &quot;responseJSONNode&quot; : &quot;RequestIEN&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;SetValues11&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>11.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SortAppointmentRequestByCreatedDate</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;%AppointmentRequestType% == \&quot;APPT\&quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;useFormulas&quot; : true,
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;failureResponse&quot; : { },
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;advancedMerge&quot; : false,
+  &quot;advancedMergeMap&quot; : [ ],
+  &quot;preventIntraListMerge&quot; : false,
+  &quot;mergeFields&quot; : [ ],
+  &quot;allowMergeNulls&quot; : true,
+  &quot;hasPrimary&quot; : false,
+  &quot;primaryListKey&quot; : &quot;&quot;,
+  &quot;sortBy&quot; : [ &quot;created&quot; ],
+  &quot;sortInDescendingOrder&quot; : true,
+  &quot;mergeListsOrder&quot; : [ &quot;SearchAppointmentRequestHTTP:data&quot; ],
+  &quot;filterListFormula&quot; : &quot;&quot;,
+  &quot;dynamicOutputFields&quot; : &quot;&quot;,
+  &quot;updateFieldValue&quot; : { },
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;ListAction1&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>7.0</sequenceNumber>
+        <type>List Merge Action</type>
+    </omniProcessElements>
+    <omniProcessKey>Appointment_CreateRequest</omniProcessKey>
+    <omniProcessType>Integration Procedure</omniProcessType>
+    <propertySetConfig>{
+  &quot;linkToExternalObject&quot; : &quot;&quot;,
+  &quot;trackingCustomData&quot; : { },
+  &quot;includeAllActionsInResponse&quot; : false,
+  &quot;columnsPropertyMap&quot; : [ ],
+  &quot;relationshipFieldsMap&quot; : [ ],
+  &quot;labelSingular&quot; : &quot;&quot;,
+  &quot;labelPlural&quot; : &quot;&quot;,
+  &quot;description&quot; : &quot;&quot;,
+  &quot;nameColumn&quot; : &quot;&quot;,
+  &quot;rollbackOnError&quot; : false,
+  &quot;chainableQueriesLimit&quot; : 50,
+  &quot;chainableDMLStatementsLimit&quot; : null,
+  &quot;chainableCpuLimit&quot; : 2000,
+  &quot;chainableHeapSizeLimit&quot; : null,
+  &quot;chainableDMLRowsLimit&quot; : null,
+  &quot;chainableQueryRowsLimit&quot; : null,
+  &quot;chainableSoslQueriesLimit&quot; : null,
+  &quot;chainableActualTimeLimit&quot; : null,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;queueableChainableQueriesLimit&quot; : 120,
+  &quot;queueableChainableCpuLimit&quot; : 40000,
+  &quot;queueableChainableHeapSizeLimit&quot; : 6,
+  &quot;ttlMinutes&quot; : 5,
+  &quot;mockResponseMap&quot; : { }
+}</propertySetConfig>
+    <subType>CreateRequest</subType>
+    <type>Appointment</type>
+    <uniqueName>Appointment_CreateRequest_Procedure_9</uniqueName>
+    <versionNumber>9.0</versionNumber>
+    <webComponentKey>68ca2013-2389-0f8a-2483-8824244664fd</webComponentKey>
+</OmniIntegrationProcedure>

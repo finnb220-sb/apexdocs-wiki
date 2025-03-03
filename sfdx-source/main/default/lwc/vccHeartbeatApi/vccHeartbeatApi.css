@@ -1,0 +1,61 @@
+.vcc-container {
+    width: 900px;
+}
+
+.vcc-background-white {
+    background-color: #fff;
+}
+
+.vcc-padded-10 {
+    padding: 10px 10px 10px 10px;
+}
+
+.vcc-padded-top-10 {
+    padding-top: 10px;
+}
+
+.vcc-param-name {
+    width: 50%;
+    padding: 5px;
+}
+
+.vcc-param-desc {
+    width: 50%;
+    padding: 5px;
+}
+
+.vcc-param-format {
+    width: 25%;
+    padding: 5px;
+}
+
+.vcc-data-type {
+    width: 25%;
+    padding: 5px;
+}
+
+.vcc-param-required {
+    width: 25%;
+    padding: 30px 0px 0px 10px;
+}
+
+.vcc-param-delete {
+    width: 25%;
+    padding: 25px 0px 0px 0px;
+}
+
+.vcc-param-line {
+    border-bottom: solid 1px #eaeaea;
+}
+
+.vcc-param-padded {
+    padding: 5px;
+}
+
+.vcc-response {
+    height: 200px;
+}
+
+.vcc-page {
+    min-height: 500px;
+}

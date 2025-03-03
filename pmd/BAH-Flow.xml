@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset xmlns="http://pmd.sourceforge.net/ruleset/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="FlowRules" xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+    <description>BAH PMD Salesforce Flow Extended Rules</description>
+    <rule name="RecordUpdateMissingFaultConnector"
+          language="xml"
+          message="A recordUpdates CRUD element is missing a fault connector path"
+          class="net.sourceforge.pmd.lang.rule.xpath.XPathRule">
+        <description>
+            In order to facilitate clear and concise error handling,
+            Flow CRUD elements should have a faultConnector path in order
+            to take action when an error is raised.
+        </description>
+        <priority>3</priority>
+        <properties>
+            <property name="crudElementTag" type="String" value="recordUpdates" description="Tag string that matches the CRUD element in the flow XML."/>
+            <property name="xpath">
+                <value>
+                    <![CDATA[
+//Flow[(//triggerType[text()!='RecordBeforeSave']) and count(//recordUpdates) and and (//recordUpdates[count(faultConnector)=0])]
+]]>
+                </value>
+            </property>
+        </properties>
+    </rule>
+
+    <rule name="RecordUpsertsMissingFaultConnector"
+          language="xml"
+          message="A recordUpserts CRUD element is missing a fault connector path"
+          class="net.sourceforge.pmd.lang.rule.xpath.XPathRule">
+        <description>
+            In order to facilitate clear and concise error handling,
+            Flow CRUD elements should have a faultConnector path in order
+            to take action when an error is raised.
+        </description>
+        <priority>3</priority>
+        <properties>
+            <property name="crudElementTag" type="String" value="recordUpserts" description="Tag string that matches the CRUD element in the flow XML."/>
+            <property name="xpath">
+                <value>
+                    <![CDATA[
+//Flow[(//triggerType[text()!='RecordBeforeSave']) and count(//recordUpserts) and and (//recordUpdates[count(faultConnector)=0])]
+]]>
+                </value>
+            </property>
+        </properties>
+    </rule>
+    <rule name="RecordCreatesMissingFaultConnector"
+          language="xml"
+          message="A recordCreates CRUD element is missing a fault connector path"
+          class="net.sourceforge.pmd.lang.rule.xpath.XPathRule">
+        <description>
+            In order to facilitate clear and concise error handling,
+            Flow CRUD elements should have a faultConnector path in order
+            to take action when an error is raised.
+        </description>
+        <priority>3</priority>
+        <properties>
+            <property name="crudElementTag" type="String" value="recordCreates" description="Tag string that matches the CRUD element in the flow XML."/>
+            <property name="xpath">
+                <value>
+                    <![CDATA[
+//Flow[(//triggerType[text()!='RecordBeforeSave']) and count(//recordCreates) and (//recordCreates[count(faultConnector)=0])]
+]]>
+                </value>
+            </property>
+        </properties>
+    </rule>
+    <rule name="RecordDeletesMissingFaultConnector"
+          language="xml"
+          message="A recordDeletes CRUD element is missing a fault connector path"
+          class="net.sourceforge.pmd.lang.rule.xpath.XPathRule">
+        <description>
+            In order to facilitate clear and concise error handling,
+            Flow CRUD elements should have a faultConnector path in order
+            to take action when an error is raised.
+        </description>
+        <priority>3</priority>
+        <properties>
+            <property name="crudElementTag" type="String" value="recordDeletes" description="Tag string that matches the CRUD element in the flow XML."/>
+            <property name="xpath">
+                <value>
+                    <![CDATA[
+//Flow[(//triggerType[text()!='RecordBeforeSave']) and count(//recordDeletes) and (//recordDeletes[count(faultConnector)=0])]
+]]>
+                </value>
+            </property>
+        </properties>
+    </rule>
+    <rule name="ElementsRequireDescriptions" language="xml" class="com.bah.pmd.xml.ElementsRequireDescriptions" message="Flow elements require a description.">
+        <description>Flow elements require a description that is over ten characters long.</description>
+        <priority>3</priority>
+    </rule>
+    <rule name="VariableNamesMustFollowStandard" language="xml" class="com.bah.pmd.xml.VariableNamesMustFollowStandard" message="Flow variable names must follow the same standard as Apex variable names.">
+        <description>Flow variable names must be greater than three characters in length and formatted as camelCase.</description>
+        <priority>3</priority>
+        <properties>
+            <property name="varformat" value="[a-z]+((\d)|([A-Z0-9][a-z0-9]+))*([A-Z])?" />
+            <property name="varlength" value="3" />
+        </properties>
+    </rule>
+    <!--rule name="CRUDFlowWithoutFaultPaths" language="xml" message="Flows that execute CRUD operations need to have fault paths.">
+        <priority>3</priority>
+        <properties>
+            <property name="xpath"><value><![CDATA[//*[starts-with(name(), 'record') and (name()!='recordLookups') and (name()!='recordTriggerType') and not(descendant::*[local-name() = 'faultConnector'])] and //triggerType[text() != 'RecordBeforeSave']
+            ]]></value>
+            </property>
+        </properties>
+    </rule-->
+</ruleset>

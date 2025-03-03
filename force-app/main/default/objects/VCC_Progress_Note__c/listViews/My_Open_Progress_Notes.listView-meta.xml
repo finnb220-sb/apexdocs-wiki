@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Open_Progress_Notes</fullName>
+    <columns>NAME</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>VCC_Patient_Name__c</columns>
+    <columns>VCC_Case__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>VCC_Electronic_Signature__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>notEqual</operation>
+        <value>VCC_Progress_Note__c.PC_Provider_Connect_FLP_Progress_Note,VCC_Progress_Note__c.PC_Provider_Connect_Progress_Note</value>
+    </filters>
+    <label>My Unsigned Progress Notes</label>
+    <sharedTo>
+        <group>VAHC_Base_Users</group>
+    </sharedTo>
+</ListView>

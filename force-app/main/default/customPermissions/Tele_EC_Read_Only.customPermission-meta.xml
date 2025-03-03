@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>A user with Tele-EC Read Only will be able to view Tele-EC applications and objects but not edit them</description>
+    <isLicensed>false</isLicensed>
+    <label>Tele-EC Read Only</label>
+</CustomPermission>

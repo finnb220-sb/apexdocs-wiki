@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Appt_Outcome_Bucket__c</fullName>
+    <description>Group some outcomes together. A dot is needed for Missed Opportunity to make it appear first when sorted</description>
+    <externalId>false</externalId>
+    <formula>IF ( Service_Appointment__r.Cancelled_Date__c &gt; Service_Appointment__r.SchedStartTime ,
+&quot;.Missed Opportunity&quot;,
+( Case ( Text(Case__r.VCC_Case_Outcome__c) ,
+&quot;Patient was No Show (No Welfare check)&quot;, &quot;.Missed Opportunity&quot;,
+&quot;Patient was No Show (Welfare check requested)&quot;, &quot;.Missed Opportunity&quot;,
+&quot;&quot;, &quot;.N/A&quot;,
+&quot;VCV Appointment Canceled&quot;, &quot;Early Cancellation&quot;,
+Text(Case__r.VCC_Case_Outcome__c))
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Appt Outcome Bucket</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,60 @@
+<template>
+    <c-logger></c-logger>
+    <template if:true={isShowSpinner}>
+        <c-base-spinner alt-text="Loading Orders"></c-base-spinner>
+    </template>
+    <template if:true={maxRecordReached}>
+        <c-base-empty-state type="rain" msg={maxRecordMessage} sub-msg={customMessage}> </c-base-empty-state>
+    </template>
+    <template if:false={isShowSpinner}>
+        <template if:false={hasError}>
+            <c-base-h-d-r-frame
+                lwc:ref="hdrFrame"
+                actions-component={actionsComponent}
+                onloadmore={handleLoadMore}
+                onreloadhealthdata={handleReloadHealthData}
+                date-range-field="start"
+                onrowselected={handleRowSelected}
+                if:false={noConnection}
+                settings={settings}
+                list={hdrData}
+                columns={columns}
+                onsort={handleSort}
+                size={flexipageRegionWidth}
+                current-object={objectApiName}
+                show-add-to-note={showAddToNote}
+                hdr-message={hdrMessage}>
+            </c-base-h-d-r-frame>
+        </template>
+        <!-- error state -->
+        <template if:true={hasError}>
+            <c-base-empty-state type="rain" msg={errMessageTitle}></c-base-empty-state>
+            <div
+                id="variants"
+                class="slds-p-vertical_x-small slds-grid slds-grid_vertical-align-top slds-align_absolute-center slds-p-bottom_x-large">
+                <lightning-icon
+                    icon-name="utility:info_alt"
+                    alternative-text="Info!"
+                    variant="info"
+                    title="info variant small"
+                    size="xx-small">
+                </lightning-icon>
+                <lightning-formatted-text
+                    class="slds-form-element__label slds-p-left_xx-small"
+                    style="color: #042d60; font-weight: bold"
+                    value={errSubMessage}></lightning-formatted-text>
+            </div>
+            <div class="slds-p-top_medium"></div>
+        </template>
+    </template>
+
+    <c-base-modal
+        size="medium"
+        onnextvaluechange={nextValueChange}
+        nextdisable={nxtBtn}
+        prevdisable={prevBtn}
+        showbtns={ShowBtns}
+        recordcount={totalRecordsDetails}>
+        <c-vcc-order-details if:true={selectedRecord} selected-record={selectedRecord}></c-vcc-order-details>
+    </c-base-modal>
+</template>

@@ -1,0 +1,3120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>CASE_ALREADY_CLOSED_STATUS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Requires the user to refresh the page because the case is already closed.</shortDescription>
+        <value>This case is already closed. Please refresh the page.</value>
+    </labels>
+    <labels>
+        <fullName>CASE_CANCELED_STATUS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case Cancelled Status Message</shortDescription>
+        <value>Cancelled</value>
+    </labels>
+    <labels>
+        <fullName>CASE_ID_BLANK_ERROR_MESSAGE</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Prevents Provider Connect Case Id&apos;s from being blank</shortDescription>
+        <value>Provided PC Case Id cannot be blank.</value>
+    </labels>
+    <labels>
+        <fullName>CCC_V8_PHARMACY_DROPPED_CALL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>V8-PHARMACY DROPPED CALL Queue</shortDescription>
+        <value>00G3R000000NalG</value>
+    </labels>
+    <labels>
+        <fullName>CIP_Copy_Note_Success_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Copy Note Success Message</shortDescription>
+        <value>Note has been copied successfully to your clipboard.</value>
+    </labels>
+    <labels>
+        <fullName>CIP_Copy_Note_Success_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Copy Note Success Title</shortDescription>
+        <value>Copy Note Successful</value>
+    </labels>
+    <labels>
+        <fullName>CIP_Copy_Note_Unsuccessful_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Copy Note Unsuccessful Message</shortDescription>
+        <value>Copy Note was not successful. Please contact the Help Desk.</value>
+    </labels>
+    <labels>
+        <fullName>CIP_Copy_Note_Unsuccessful_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Copy Note Unsuccessful Title</shortDescription>
+        <value>Copy Note Unsuccessful</value>
+    </labels>
+    <labels>
+        <fullName>CIP_Copy_Note_Validation_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Copy Note Validation Message</shortDescription>
+        <value>Progress Note is not valid to copy. Please complete the TXC Process.</value>
+    </labels>
+    <labels>
+        <fullName>COMMCalloutErrorMessage</fullName>
+        <categories>COMM_CalloutErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMM Callout Error Message</shortDescription>
+        <value>The interface is not available at this time. Please try again later.</value>
+    </labels>
+    <labels>
+        <fullName>COMM_Flag_Patient_Warning_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMM Flag Patient Warning Message</shortDescription>
+        <value>This Veteran has the following flag(s): {0}</value>
+    </labels>
+    <labels>
+        <fullName>COMM_Prevent_Delete_NonOwner_Progress_Note</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Prevent Delete NonOwner Progress Note</shortDescription>
+        <value>Only the owner of the Progress Note can delete the record.</value>
+    </labels>
+    <labels>
+        <fullName>COMM_Prevent_Delete_Signed_Progress_Note</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Prevent Delete Signed Progress Note</shortDescription>
+        <value>Cannot delete signed Progress Note.</value>
+    </labels>
+    <labels>
+        <fullName>COMM_Prevent_Delete_Task_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Prevent Delete Task Message</shortDescription>
+        <value>Cannot delete Task.</value>
+    </labels>
+    <labels>
+        <fullName>COMM_Sensitive_Patient_Warning_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMM Sensitive Patient Warning Message</shortDescription>
+        <value>Sensitive patient; user has proper security and access has been logged.</value>
+    </labels>
+    <labels>
+        <fullName>COMM_Sign_Note_Flow_Invalid_eSig</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invalid eSignature</shortDescription>
+        <value>The signature you entered is not valid, please try again.</value>
+    </labels>
+    <labels>
+        <fullName>COMM_Sign_Note_Flow_May_Not_Sign</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>May Not Sign Error Message</shortDescription>
+        <value>You are not authorized to sign this note.</value>
+    </labels>
+    <labels>
+        <fullName>COMM_Sign_Note_Flow_Prodedure_Diagnosis_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error message for sign note flow procedure/diagnosis &apos;validation&apos;</shortDescription>
+        <value>You must select both Procedure Code and Diagnosis Code or neither.</value>
+    </labels>
+    <labels>
+        <fullName>DeactivationEmail</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DeactivationEmail</shortDescription>
+        <value>Good morning. You have failed to log into Salesforce.com for over 90 days. Your account has been deactivated. If you have questions about this email, please call the
+            DTC Customer Support Line at: (202) 921-0911, Mon.-Fri., 0800-1600.</value>
+    </labels>
+    <labels>
+        <fullName>DeactivationEmailSubject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DeactivationEmailSubject</shortDescription>
+        <value>EMAIL NOTIFICATIONS FOR SALESFORCE: Your User Account is Scheduled for Deactivation</value>
+    </labels>
+    <labels>
+        <fullName>DynamicCorrelateCredentials</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DynamicCorrelateCredentials</shortDescription>
+        <value>DIP_MPI_nc/mpiCorrelate</value>
+    </labels>
+    <labels>
+        <fullName>DynamicSearchCredentials</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DynamicSearchCredentials</shortDescription>
+        <value>DIP_MPI_nc/mpiSearch</value>
+    </labels>
+    <labels>
+        <fullName>EMPTY_FILE</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSV file is empty.</shortDescription>
+        <value>CSV file is empty.</value>
+    </labels>
+    <labels>
+        <fullName>ERROR_JSON_BAD_FORMAT</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The provided Json String was badly formatted.</shortDescription>
+        <value>The provided Json String was badly formatted.</value>
+    </labels>
+    <labels>
+        <fullName>ERROR_JSON_EMPTY</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No field values were found in the Json String.</shortDescription>
+        <value>No field values were found in the Json String.</value>
+    </labels>
+    <labels>
+        <fullName>ERROR_OP_FAILED</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Operation failed, please check messages!</shortDescription>
+        <value>Operation failed, please check messages!</value>
+    </labels>
+    <labels>
+        <fullName>ERROR_REQUEST_FAILED_NO_ERROR</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Request failed with no specified error.</shortDescription>
+        <value>Request failed with no specified error.</value>
+    </labels>
+    <labels>
+        <fullName>ERROR_UNAUTHORIZED_ENDPOINT</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Unauthorized endpoint, please check Setup</shortDescription>
+        <value>Unauthorized endpoint, please check Setup</value>
+    </labels>
+    <labels>
+        <fullName>FILE_MISSING</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please provide a comma separated file.</shortDescription>
+        <value>Please provide a comma separated file.</value>
+    </labels>
+    <labels>
+        <fullName>INVALID_FILE_ROW_SIZE_DOESNT_MATCH</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The number of field values does not match the number of header fields on line</shortDescription>
+        <value>The number of field values does not match the number of header fields on line</value>
+    </labels>
+    <labels>
+        <fullName>LA_Waiting_Error_ErrorNoAgentBodyApology_04IOD0000000006_1092381</fullName>
+        <categories>Snap-ins</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LA_Waiting_Error_ErrorNoAgentBodyApology_04IOD0000000006_1092381</shortDescription>
+        <value>Please dial 988 then press 1 from your phone,</value>
+    </labels>
+    <labels>
+        <fullName>LA_Waiting_Error_ErrorNoAgentBodyApology_04IOD000000000f_6999791</fullName>
+        <categories>Snap-ins</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LA_Waiting_Error_ErrorNoAgentBodyApology_04IOD000000000f_6999791</shortDescription>
+        <value>Please dial 988 then press 1 from your phone, or text 838255 vcl333</value>
+    </labels>
+    <labels>
+        <fullName>LA_Waiting_Error_ErrorNoAgentBodyRequest_04IOD0000000006_8409684</fullName>
+        <categories>Snap-ins</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LA_Waiting_Error_ErrorNoAgentBodyRequest_04IOD0000000006_8409684</shortDescription>
+        <value>or text 838255.</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Business_Unit_MPIE2API</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Business Unit MPIE2API</shortDescription>
+        <value>mpie2api</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Business_Unit_MPIE3API</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Business Unit MPIE3API</shortDescription>
+        <value>mpie3api</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_CorrelationRequester_Field</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE CorrelationRequester Field</shortDescription>
+        <value>MPI_Correlation_Requester__c</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_CorrelationRequester_User_Field</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE CorrelationRequester User Field</shortDescription>
+        <value>MPI_Correlation_Requester_User__c</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_CorrelationStatus_Completed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE CorrelationStatus Success Value</shortDescription>
+        <value>Completed</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_CorrelationStatus_Deprecated</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE CorrelationStatus Deprecated Value</shortDescription>
+        <value>Deprecated</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_CorrelationStatus_Deprecated_Value</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE CorrelationStatus Deprecated Value</shortDescription>
+        <value>Deprecated</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_CorrelationStatus_Failure_Value</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE CorrelationStatus Failure Value</shortDescription>
+        <value>Error</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_CorrelationStatus_Success_Value</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE CorrelationStatus Success Value</shortDescription>
+        <value>Completed</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_CorrelationStatus_Waiting_Value</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE CorrelationStatus Waiting Value</shortDescription>
+        <value>Waiting</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Correlation_Batch_Size</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Correlation Batch Size</shortDescription>
+        <value>10</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_ICN_Historical_Field</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE ICN Historical Field</shortDescription>
+        <value>icnHistorical</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_ID_Type_CorrelationId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE ID Type CorrelationId</shortDescription>
+        <value>correlationId</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_ID_Type_ICN</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE ID Type ICN</shortDescription>
+        <value>icn</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_ID_Type_SalesforceId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE ID Type SalesforceId</shortDescription>
+        <value>salesforceId</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Identity_Correlation_Requester_Field</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Identity Correlation Requester Field</shortDescription>
+        <value>correlationRequester</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Identity_Correlation_Requester_User_Field</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Identity Correlation Requester User Field</shortDescription>
+        <value>correlationRequesterUser</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Identity_Correlation_Status_Field</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Identity Correlation Status Field</shortDescription>
+        <value>correlationStatus</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Identity_Record_Type_Dev_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Identity Record Type Dev Name</shortDescription>
+        <value>WH_VA_Call_Center_Veteran,NonVAEmployeeAndNonVeteran,Unverified_Veteran</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Children_Record_Size_In_One_Batch</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Children Record Size In One Batch</shortDescription>
+        <value>3000</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Deprecated_Fields</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Deprecated Fields</shortDescription>
+        <value>icn, cernerIcn, ssn, mPICorrelationRequester,  mPICorrelationRequesterUser</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Deprecated_Prefix_Value</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Deprecated Prefix Value</shortDescription>
+        <value>*Deprecated*</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Deprecated_Record_Type_Dev_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Deprecated Record Type Dev Name</shortDescription>
+        <value>Duplicate_Contact</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Deprecated_Update_Identity_Lookup_Field</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Deprecated Update Identity Lookup Field</shortDescription>
+        <value>activeMPIIdentity</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Deprecated_Update_Last_Name_Field</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Deprecated Update Last Name Field</shortDescription>
+        <value>lastName</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Request_Auto_Reparent_Batch_Depth</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Request Auto Reparent Batch Depth</shortDescription>
+        <value>5</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Request_Auto_Reparent_Batch_Size</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Request Auto Reparent Batch Size</shortDescription>
+        <value>3</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Request_Auto_Response_Batch_Size</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Request Auto Response Batch Size</shortDescription>
+        <value>50</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Request_DTC_Team_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Request DTC Team Name</shortDescription>
+        <value>DTC</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Request_Exception_Batch_Depth</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Request Exception Batch Depth</shortDescription>
+        <value>3</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Request_Exception_Batch_Size</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Request Exception Batch Size</shortDescription>
+        <value>1</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Request_Record_Per_Auto_Reparent_Job</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Request Record Per Auto Reparent Job</shortDescription>
+        <value>1</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Request_Record_Per_Exception_Process</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Request Record Per Exception Process</shortDescription>
+        <value>1</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Null_String</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Null String</shortDescription>
+        <value>null</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Process_Correlate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Process Correlate</shortDescription>
+        <value>Correlate</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Process_InitializeCorrelationId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Process InitializeCorrelationId</shortDescription>
+        <value>InitializeCorrelationId</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Process_Link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Process Link</shortDescription>
+        <value>Link</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Process_UpdateIcn</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Process UpdateIcn</shortDescription>
+        <value>updateIcn</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Process_Update_Deprecated</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Process Update Deprecated</shortDescription>
+        <value>UpdateDeprecated</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Process_Update_Surviving</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Process Update Surviving</shortDescription>
+        <value>updateSurviving</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Salesforce_Org_Label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Salesforce Org Label</shortDescription>
+        <value>VA VET</value>
+    </labels>
+    <labels>
+        <fullName>MSA_Queue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MSA Queue</shortDescription>
+        <value>00G3R000000OEvi</value>
+    </labels>
+    <labels>
+        <fullName>MSG_CHECK_API_NAMES</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please check the Api names!</shortDescription>
+        <value>Please check the Api names!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_CS_MDT_EXISTS</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Make sure Custom Setting and Custom Metadata Types exists in the org!</shortDescription>
+        <value>Make sure Custom Setting and Custom Metadata Types exists in the org!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_CS_MDT_FIELD_NAME_FORMAT</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please check the format, Custom Setting.field and Custom Metadata Types.field</shortDescription>
+        <value>Please check the format, Custom Setting.field and Custom Metadata Types.field</value>
+    </labels>
+    <labels>
+        <fullName>MSG_CS_MDT_FIELD_NAME_REQ</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Custom Setting Name/Field Name and CMT/Field Name names are required!</shortDescription>
+        <value>Custom Setting Name/Field Name and CMT/Field Name names are required!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_CS_MDT_MAPPING_REQ</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Custom Setting Name, Custom Metadata Types and Json Mapping names are required!</shortDescription>
+        <value>Custom Setting Name, Custom Metadata Types and Json Mapping names are required!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_CS_MDT_REQ</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Custom Setting Api Name and Custom Metadata Types Api names are required!</shortDescription>
+        <value>Custom Setting Api Name and Custom Metadata Types Api names are required!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_CUSTOM_SETTINGS_EXISTS</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Make sure Custom Setting exists in the org!</shortDescription>
+        <value>Make sure Custom Setting exists in the org!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_JSON_API_NAMES</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please check the Api names in Json!</shortDescription>
+        <value>Please check the Api names in Json!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_JSON_FORMAT</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please check the Json format!</shortDescription>
+        <value>Please check the Json format!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_MDT_END</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Custom Metadata Types name should end with</shortDescription>
+        <value>Custom Metadata Types name should end with</value>
+    </labels>
+    <labels>
+        <fullName>MSG_MIGRATION_COMPLETED</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration Completed!</shortDescription>
+        <value>Migration Completed!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_MIGRATION_IN_PROGRESS</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration In Progress, check status under Deploy -&gt; Deployment Status, Job Id:</shortDescription>
+        <value>Migration In Progress, check status under Deploy -&gt; Deployment Status, Job Id:</value>
+    </labels>
+    <labels>
+        <fullName>MSG_NOT_SUPPORTED</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Not Supported!!!</shortDescription>
+        <value>Not Supported!!!</value>
+    </labels>
+    <labels>
+        <fullName>No_Specialists_Available</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Used when there are no Specialists available under the NDTH Agreements AM page</shortDescription>
+        <value>There are no Specialists available under the NDTH Agreements servicing your current location. Please change your current location or reach out to your System Administrator.</value>
+    </labels>
+    <labels>
+        <fullName>PC_Availability_Matrix_CometD_Connection_Failure_Message</fullName>
+        <categories>Provider Connect</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Availability Matrix CometD Connection Failure Message</shortDescription>
+        <value>Manual refresh of the Availability Matrix required. Please click OK to facilitate manual refresh. Multiple attempts may be necessary or select cancel to bypass the refresh.</value>
+    </labels>
+    <labels>
+        <fullName>PC_Duplicate_Service_Team_Member</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PC_Duplicate_Service_Team_Member</shortDescription>
+        <value>&apos;The Specialist: &quot;{specialist}&quot; already exists in this Service</value>
+    </labels>
+    <labels>
+        <fullName>PC_No_NDTH_Agreements</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Used when there are no NDTH Agreements on AM page</shortDescription>
+        <value>There are no NDTH Agreements servicing your current location. Please change your current location or reach out to your System Administrator.</value>
+    </labels>
+    <labels>
+        <fullName>PC_No_Specialties_Available</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Used when there are no Specialties available under the NDTH Agreements AM page</shortDescription>
+        <value>There are no Specialties available under the NDTH Agreements servicing your current location. Please change your current location or reach out to your System Administrator.</value>
+    </labels>
+    <labels>
+        <fullName>PC_Specialist_No_Longer_Available</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Used when Specialist no longer be available on AM page</shortDescription>
+        <value>The specialist you requested may no longer be available, please try again.</value>
+    </labels>
+    <labels>
+        <fullName>Phone_Number</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Field label override for VccVaProfileInput,VccEditAddress: Phone Number</shortDescription>
+        <value>Phone Number</value>
+    </labels>
+    <labels>
+        <fullName>Problem_List</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Field label override for VccProblemList: Problem List</shortDescription>
+        <value>Problem List</value>
+    </labels>
+    <labels>
+        <fullName>RN_Queue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RN Queue</shortDescription>
+        <value>00G3R000000NalJ</value>
+    </labels>
+    <labels>
+        <fullName>Rx_TIER_II_Queue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Rx TIER II Queue</shortDescription>
+        <value>00G3R000000NalI</value>
+    </labels>
+    <labels>
+        <fullName>Rx_TIER_I_Queue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Rx Tier I Queue</shortDescription>
+        <value>00G3R000000NalH</value>
+    </labels>
+    <labels>
+        <fullName>SalesforceDetails</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DeactivationEmailParagraph2</shortDescription>
+        <value>Details: Salesforce is a customer relationship management (SAAS) solution. It is one integrated CRM platform that gives all your departments — including marketing,
+            sales, commerce, and service — a single, shared view of every customer. For details on how your team may utilize Salesforce, please see the following:</value>
+    </labels>
+    <labels>
+        <fullName>TYPE_OPTION_NOT_SELECTED</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please choose a valid custom metadata type.</shortDescription>
+        <value>Please choose a valid custom metadata type.</value>
+    </labels>
+    <labels>
+        <fullName>TeleECNoPauseControlMetadataFound</fullName>
+        <categories>Tele-EC Labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Pause Control Metdata Found Error Message</shortDescription>
+        <value>Tele-EC Automated VISN Pause - No returned Pause Control Metadata records were found. Consult with Tele-EC to see if all VISNs are currently opted-out of this scheduled code, or if an error has occurred.</value>
+    </labels>
+    <labels>
+        <fullName>VAHC_No_Add_Signers_Err</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VAHC No Add Signers Err</shortDescription>
+        <value>Additional signers unavailable for document type &quot;TEST ERROR&quot; with uid &quot;xxx:xx:-&quot;|Invalid filter &quot;TEST&quot;. The filter schema is NOT loaded
+            in cache. Reason is TEST REASON: Value &apos;XXXXXXXXXX&apos; is not facet-valid with respect to pattern &apos;TEST PATTERN&apos; for type &apos;TEST TYPE&apos; (Note
+            that this message is a test and is a hard coded static string)</value>
+    </labels>
+    <labels>
+        <fullName>VAHC_Pending_Medications_message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VAHC Pending Medications message</shortDescription>
+        <value>Veteran has pending, transmitted, or suspended prescriptions in the system. Completing the address change at this time may interfere with the delivery of those
+            prescriptions.</value>
+    </labels>
+    <labels>
+        <fullName>VAHC_Wellhive_Scheduler_Group</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VAHC Wellhive Scheduler Group</shortDescription>
+        <value>VAHC_Wellhive_Scheduler_User</value>
+    </labels>
+    <labels>
+        <fullName>VAHC_Wellhive_Scheduler_Permission</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VAHC Wellhive Scheduler Permission</shortDescription>
+        <value>VAHC_Wellhive_Scheduler</value>
+    </labels>
+    <labels>
+        <fullName>VAHC_Wellhive_Scheduling_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VAHC Wellhive Scheduling URL</shortDescription>
+        <value>https://app.pre-prod.wellhive.com/partner-patient/{ICN}/detail/appointments/?embedded=true</value>
+    </labels>
+    <labels>
+        <fullName>VAVET_Community_My_Domain</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VA-VET Community My Domain</shortDescription>
+        <value>https://va-vet.my.site.com/</value>
+    </labels>
+    <labels>
+        <fullName>VAVET_Salesforce_Sites_My_Domain</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VA-VET Salesforce Sites My Domain</shortDescription>
+        <value>https://va-vet.my.salesforce-sites.com</value>
+    </labels>
+    <labels>
+        <fullName>VA_Integrated_Enterprise_Workflow_Solution</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VA Integrated Enterprise Workflow Solution</shortDescription>
+        <value>VA Integrated Enterprise Workflow Solution (VIEWS): &lt;a
+            href=&quot;https://vaww.oit.va.gov/oit-topic-library/va-integrated-enterprise-workflow-solution&quot;&gt;https://vaww.oit.va.gov/oit-topic-library/va-integrated-enterprise-workflow-solution&lt;/a&gt;</value>
+    </labels>
+    <labels>
+        <fullName>VA_Intranet_Website</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VA Intranet Website</shortDescription>
+        <value>VA Intranet Website: &lt;a href=&quot;https://vaww.oit.va.gov/?s=salesforce&quot;&gt;https://vaww.oit.va.gov/?s=salesforce&lt;/a&gt;</value>
+    </labels>
+    <labels>
+        <fullName>VA_Salesforce_Sites_Helpdesk</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VA Salesforce Sites Helpdesk</shortDescription>
+        <value>https://va.my.salesforce-sites.com/helpdesk</value>
+    </labels>
+    <labels>
+        <fullName>VCCCalloutErrorMessage</fullName>
+        <categories>VCC_CalloutErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Callout Error Message</shortDescription>
+        <value>The interface is not available at this time. Please try again later.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Add_Patient_Deceased_Date</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Add Patient Deceased Date</shortDescription>
+        <value>Veteran unable to be added to CRM; Deceased date of: {0}</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Add_SIgner_Component_Generic_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Add SIgner Component Generic Error</shortDescription>
+        <value>Hmm something went wrong... please contact the helpdesk if the problem persists.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Add_Signers_Provider_Search_Helptext</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Add Signers Provider Search Helptext</shortDescription>
+        <value>Match provider name from left column to provider name on the right, select &quot;done&quot; to add to progress note.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_ApptCommentNLT</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>V8-PHARMACY DROPPED CALL Queue</shortDescription>
+        <value>00G3R000000NalG</value>
+    </labels>
+    <labels>
+        <fullName>CIP_Copy_Note_Success_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Copy Note Success Message</shortDescription>
+        <value>Note has been copied successfully to your clipboard.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Recent_SUD_Labs_No_Results</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recent SUD Labs No Results</shortDescription>
+        <value>No SUD Labs Found for Patient. Please verify in EHR.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Recent_SUD_Labs_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recent SUD Labs Error</shortDescription>
+        <value>Error pulling SUD Labs for Patient. Please verify in EHR.</value>
+    </labels>
+    <labels>
+        <fullName>CIP_Copy_Note_Success_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Copy Note Success Title</shortDescription>
+        <value>Copy Note Successful</value>
+    </labels>
+    <labels>
+        <fullName>CIP_Copy_Note_Unsuccessful_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Copy Note Unsuccessful Message</shortDescription>
+        <value>Copy Note was not successful. Please contact the Help Desk.</value>
+    </labels>
+    <labels>
+        <fullName>CIP_Copy_Note_Unsuccessful_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Copy Note Unsuccessful Title</shortDescription>
+        <value>Copy Note Unsuccessful</value>
+    </labels>
+    <labels>
+        <fullName>CIP_Copy_Note_Validation_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Copy Note Validation Message</shortDescription>
+        <value>Progress Note is not valid to copy. Please complete the TXC Process.</value>
+    </labels>
+    <labels>
+        <fullName>COMMCalloutErrorMessage</fullName>
+        <categories>COMM_CalloutErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMM Callout Error Message</shortDescription>
+        <value>The interface is not available at this time. Please try again later.</value>
+    </labels>
+    <labels>
+        <fullName>COMM_Flag_Patient_Warning_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMM Flag Patient Warning Message</shortDescription>
+        <value>This Veteran has the following flag(s): {0}</value>
+    </labels>
+    <labels>
+        <fullName>COMM_Prevent_Delete_NonOwner_Progress_Note</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Prevent Delete NonOwner Progress Note</shortDescription>
+        <value>Only the owner of the Progress Note can delete the record.</value>
+    </labels>
+    <labels>
+        <fullName>COMM_Prevent_Delete_Signed_Progress_Note</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Prevent Delete Signed Progress Note</shortDescription>
+        <value>Cannot delete signed Progress Note.</value>
+    </labels>
+    <labels>
+        <fullName>COMM_Prevent_Delete_Task_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Prevent Delete Task Message</shortDescription>
+        <value>Cannot delete Task.</value>
+    </labels>
+    <labels>
+        <fullName>COMM_Sensitive_Patient_Warning_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>COMM Sensitive Patient Warning Message</shortDescription>
+        <value>Sensitive patient; user has proper security and access has been logged.</value>
+    </labels>
+    <labels>
+        <fullName>COMM_Sign_Note_Flow_Invalid_eSig</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invalid eSignature</shortDescription>
+        <value>The signature you entered is not valid, please try again.</value>
+    </labels>
+    <labels>
+        <fullName>COMM_Sign_Note_Flow_May_Not_Sign</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>May Not Sign Error Message</shortDescription>
+        <value>You are not authorized to sign this note.</value>
+    </labels>
+    <labels>
+        <fullName>COMM_Sign_Note_Flow_Prodedure_Diagnosis_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error message for sign note flow procedure/diagnosis &apos;validation&apos;</shortDescription>
+        <value>You must select both Procedure Code and Diagnosis Code or neither.</value>
+    </labels>
+    <labels>
+        <fullName>DeactivationEmail</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DeactivationEmail</shortDescription>
+        <value>Good morning. You have failed to log into Salesforce.com for over 90 days. Your account has been deactivated. If you have questions about this email, please call the
+            DTC Customer Support Line at: (202) 921-0911, Mon.-Fri., 0800-1600.</value>
+    </labels>
+    <labels>
+        <fullName>DeactivationEmailSubject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DeactivationEmailSubject</shortDescription>
+        <value>EMAIL NOTIFICATIONS FOR SALESFORCE: Your User Account is Scheduled for Deactivation</value>
+    </labels>
+    <labels>
+        <fullName>DynamicCorrelateCredentials</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DynamicCorrelateCredentials</shortDescription>
+        <value>DIP_MPI_nc/mpiCorrelate</value>
+    </labels>
+    <labels>
+        <fullName>DynamicSearchCredentials</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DynamicSearchCredentials</shortDescription>
+        <value>DIP_MPI_nc/mpiSearch</value>
+    </labels>
+    <labels>
+        <fullName>EMPTY_FILE</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSV file is empty.</shortDescription>
+        <value>CSV file is empty.</value>
+    </labels>
+    <labels>
+        <fullName>ERROR_JSON_BAD_FORMAT</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The provided Json String was badly formatted.</shortDescription>
+        <value>The provided Json String was badly formatted.</value>
+    </labels>
+    <labels>
+        <fullName>ERROR_JSON_EMPTY</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No field values were found in the Json String.</shortDescription>
+        <value>No field values were found in the Json String.</value>
+    </labels>
+    <labels>
+        <fullName>ERROR_OP_FAILED</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Operation failed, please check messages!</shortDescription>
+        <value>Operation failed, please check messages!</value>
+    </labels>
+    <labels>
+        <fullName>ERROR_REQUEST_FAILED_NO_ERROR</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Request failed with no specified error.</shortDescription>
+        <value>Request failed with no specified error.</value>
+    </labels>
+    <labels>
+        <fullName>ERROR_UNAUTHORIZED_ENDPOINT</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Unauthorized endpoint, please check Setup</shortDescription>
+        <value>Unauthorized endpoint, please check Setup</value>
+    </labels>
+    <labels>
+        <fullName>FILE_MISSING</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please provide a comma separated file.</shortDescription>
+        <value>Please provide a comma separated file.</value>
+    </labels>
+    <labels>
+        <fullName>INVALID_FILE_ROW_SIZE_DOESNT_MATCH</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>The number of field values does not match the number of header fields on line</shortDescription>
+        <value>The number of field values does not match the number of header fields on line</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Business_Unit_MPIE2API</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Business Unit MPIE2API</shortDescription>
+        <value>mpie2api</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Business_Unit_MPIE3API</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Business Unit MPIE3API</shortDescription>
+        <value>mpie3api</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_CorrelationRequester_Field</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE CorrelationRequester Field</shortDescription>
+        <value>MPI_Correlation_Requester__c</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_CorrelationRequester_User_Field</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE CorrelationRequester User Field</shortDescription>
+        <value>MPI_Correlation_Requester_User__c</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_CorrelationStatus_Deprecated_Value</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE CorrelationStatus Deprecated Value</shortDescription>
+        <value>Deprecated</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_CorrelationStatus_Failure_Value</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE CorrelationStatus Failure Value</shortDescription>
+        <value>Error</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_CorrelationStatus_Success_Value</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE CorrelationStatus Success Value</shortDescription>
+        <value>Completed</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_CorrelationStatus_Waiting_Value</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE CorrelationStatus Waiting Value</shortDescription>
+        <value>Waiting</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Correlation_Batch_Size</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Correlation Batch Size</shortDescription>
+        <value>10</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_ICN_Historical_Field</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE ICN Historical Field</shortDescription>
+        <value>icnHistorical</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_ID_Type_CorrelationId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE ID Type CorrelationId</shortDescription>
+        <value>correlationId</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_ID_Type_ICN</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE ID Type ICN</shortDescription>
+        <value>icn</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_ID_Type_SalesforceId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE ID Type SalesforceId</shortDescription>
+        <value>salesforceId</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Identity_Correlation_Requester_Field</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Identity Correlation Requester Field</shortDescription>
+        <value>correlationRequester</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Identity_Correlation_Requester_User_Field</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Identity Correlation Requester User Field</shortDescription>
+        <value>correlationRequesterUser</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Identity_Correlation_Status_Field</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Identity Correlation Status Field</shortDescription>
+        <value>correlationStatus</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Identity_Record_Type_Dev_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Identity Record Type Dev Name</shortDescription>
+        <value>WH_VA_Call_Center_Veteran,NonVAEmployeeAndNonVeteran</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Children_Record_Size_In_One_Batch</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Children Record Size In One Batch</shortDescription>
+        <value>3000</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Deprecated_Fields</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Deprecated Fields</shortDescription>
+        <value>icn, cernerIcn, ssn, mPICorrelationRequester, mPICorrelationRequesterUser</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Deprecated_Prefix_Value</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Deprecated Prefix Value</shortDescription>
+        <value>*Deprecated*</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Deprecated_Record_Type_Dev_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Deprecated Record Type Dev Name</shortDescription>
+        <value>Duplicate_Contact</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Deprecated_Update_Identity_Lookup_Field</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Deprecated Update Identity Lookup Field</shortDescription>
+        <value>activeMPIIdentity</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Deprecated_Update_Last_Name_Field</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Deprecated Update Last Name Field</shortDescription>
+        <value>lastName</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Request_Auto_Reparent_Batch_Depth</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Request Auto Reparent Batch Depth</shortDescription>
+        <value>5</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Request_Auto_Reparent_Batch_Size</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Request Auto Reparent Batch Size</shortDescription>
+        <value>3</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Request_Auto_Response_Batch_Size</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Request Auto Response Batch Size</shortDescription>
+        <value>50</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Request_DTC_Team_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Request DTC Team Name</shortDescription>
+        <value>DTC</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Request_Exception_Batch_Depth</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Request Exception Batch Depth</shortDescription>
+        <value>3</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Request_Exception_Batch_Size</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Request Exception Batch Size</shortDescription>
+        <value>1</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Request_Record_Per_Auto_Reparent_Job</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Request Record Per Auto Reparent Job</shortDescription>
+        <value>1</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Link_Request_Record_Per_Exception_Process</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Link Request Record Per Exception Process</shortDescription>
+        <value>1</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Null_String</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Null String</shortDescription>
+        <value>null</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Process_Correlate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Process Correlate</shortDescription>
+        <value>Correlate</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Process_InitializeCorrelationId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Process InitializeCorrelationId</shortDescription>
+        <value>InitializeCorrelationId</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Process_Link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Process Link</shortDescription>
+        <value>Link</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Process_UpdateIcn</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Process UpdateIcn</shortDescription>
+        <value>updateIcn</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Process_Update_Deprecated</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Process Update Deprecated</shortDescription>
+        <value>UpdateDeprecated</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Process_Update_Surviving</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Process Update Surviving</shortDescription>
+        <value>updateSurviving</value>
+    </labels>
+    <labels>
+        <fullName>MPIE_Salesforce_Org_Label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPIE Salesforce Org Label</shortDescription>
+        <value>VA VET</value>
+    </labels>
+    <labels>
+        <fullName>MSA_Queue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MSA Queue</shortDescription>
+        <value>00G3R000000OEvi</value>
+    </labels>
+    <labels>
+        <fullName>MSG_CHECK_API_NAMES</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please check the Api names!</shortDescription>
+        <value>Please check the Api names!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_CS_MDT_EXISTS</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Make sure Custom Setting and Custom Metadata Types exists in the org!</shortDescription>
+        <value>Make sure Custom Setting and Custom Metadata Types exists in the org!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_CS_MDT_FIELD_NAME_FORMAT</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please check the format, Custom Setting.field and Custom Metadata Types.field</shortDescription>
+        <value>Please check the format, Custom Setting.field and Custom Metadata Types.field</value>
+    </labels>
+    <labels>
+        <fullName>MSG_CS_MDT_FIELD_NAME_REQ</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Custom Setting Name/Field Name and CMT/Field Name names are required!</shortDescription>
+        <value>Custom Setting Name/Field Name and CMT/Field Name names are required!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_CS_MDT_MAPPING_REQ</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Custom Setting Name, Custom Metadata Types and Json Mapping names are required!</shortDescription>
+        <value>Custom Setting Name, Custom Metadata Types and Json Mapping names are required!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_CS_MDT_REQ</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Custom Setting Api Name and Custom Metadata Types Api names are required!</shortDescription>
+        <value>Custom Setting Api Name and Custom Metadata Types Api names are required!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_CUSTOM_SETTINGS_EXISTS</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Make sure Custom Setting exists in the org!</shortDescription>
+        <value>Make sure Custom Setting exists in the org!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_JSON_API_NAMES</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please check the Api names in Json!</shortDescription>
+        <value>Please check the Api names in Json!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_JSON_FORMAT</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please check the Json format!</shortDescription>
+        <value>Please check the Json format!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_MDT_END</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Custom Metadata Types name should end with</shortDescription>
+        <value>Custom Metadata Types name should end with</value>
+    </labels>
+    <labels>
+        <fullName>MSG_MIGRATION_COMPLETED</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration Completed!</shortDescription>
+        <value>Migration Completed!</value>
+    </labels>
+    <labels>
+        <fullName>MSG_MIGRATION_IN_PROGRESS</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Migration In Progress, check status under Deploy -&gt; Deployment Status, Job Id:</shortDescription>
+        <value>Migration In Progress, check status under Deploy -&gt; Deployment Status, Job Id:</value>
+    </labels>
+    <labels>
+        <fullName>MSG_NOT_SUPPORTED</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Not Supported!!!</shortDescription>
+        <value>Not Supported!!!</value>
+    </labels>
+    <labels>
+        <fullName>Phone_Number</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Field label override for VccVaProfileInput,VccEditAddress: Phone Number</shortDescription>
+        <value>Phone Number</value>
+    </labels>
+    <labels>
+        <fullName>Problem_List</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Field label override for VccProblemList: Problem List</shortDescription>
+        <value>Problem List</value>
+    </labels>
+    <labels>
+        <fullName>RN_Queue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RN Queue</shortDescription>
+        <value>00G3R000000NalJ</value>
+    </labels>
+    <labels>
+        <fullName>Rx_TIER_II_Queue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Rx TIER II Queue</shortDescription>
+        <value>00G3R000000NalI</value>
+    </labels>
+    <labels>
+        <fullName>Rx_TIER_I_Queue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Rx Tier I Queue</shortDescription>
+        <value>00G3R000000NalH</value>
+    </labels>
+    <labels>
+        <fullName>SalesforceDetails</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DeactivationEmailParagraph2</shortDescription>
+        <value>Details: Salesforce is a customer relationship management (SAAS) solution. It is one integrated CRM platform that gives all your departments — including marketing,
+            sales, commerce, and service — a single, shared view of every customer. For details on how your team may utilize Salesforce, please see the following:</value>
+    </labels>
+    <labels>
+        <fullName>TYPE_OPTION_NOT_SELECTED</fullName>
+        <categories>CMT</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Please choose a valid custom metadata type.</shortDescription>
+        <value>Please choose a valid custom metadata type.</value>
+    </labels>
+    <labels>
+        <fullName>VAHC_No_Add_Signers_Err</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VAHC No Add Signers Err</shortDescription>
+        <value>Additional signers unavailable for document type &quot;TEST ERROR&quot; with uid &quot;xxx:xx:-&quot;|Invalid filter &quot;TEST&quot;. The filter schema is NOT loaded
+            in cache. Reason is TEST REASON: Value &apos;XXXXXXXXXX&apos; is not facet-valid with respect to pattern &apos;TEST PATTERN&apos; for type &apos;TEST TYPE&apos; (Note
+            that this message is a test and is a hard coded static string)</value>
+    </labels>
+    <labels>
+        <fullName>VAHC_Pending_Medications_message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VAHC Pending Medications message</shortDescription>
+        <value>Veteran has pending, transmitted, or suspended prescriptions in the system. Completing the address change at this time may interfere with the delivery of those
+            prescriptions.</value>
+    </labels>
+    <labels>
+        <fullName>VAHC_Wellhive_Scheduler_Group</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VAHC Wellhive Scheduler Group</shortDescription>
+        <value>VAHC_Wellhive_Scheduler_User</value>
+    </labels>
+    <labels>
+        <fullName>VAHC_Wellhive_Scheduler_Permission</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VAHC Wellhive Scheduler Permission</shortDescription>
+        <value>VAHC_Wellhive_Scheduler</value>
+    </labels>
+    <labels>
+        <fullName>VAHC_Wellhive_Scheduling_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VAHC Wellhive Scheduling URL</shortDescription>
+        <value>https://app.pre-prod.wellhive.com/partner-patient/{ICN}/detail/appointments/?embedded=true</value>
+    </labels>
+    <labels>
+        <fullName>VA_Integrated_Enterprise_Workflow_Solution</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VA Integrated Enterprise Workflow Solution</shortDescription>
+        <value>VA Integrated Enterprise Workflow Solution (VIEWS): &lt;a
+            href=&quot;https://vaww.oit.va.gov/oit-topic-library/va-integrated-enterprise-workflow-solution&quot;&gt;https://vaww.oit.va.gov/oit-topic-library/va-integrated-enterprise-workflow-solution&lt;/a&gt;</value>
+    </labels>
+    <labels>
+        <fullName>VA_Intranet_Website</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VA Intranet Website</shortDescription>
+        <value>VA Intranet Website: &lt;a href=&quot;https://vaww.oit.va.gov/?s=salesforce&quot;&gt;https://vaww.oit.va.gov/?s=salesforce&lt;/a&gt;</value>
+    </labels>
+    <labels>
+        <fullName>VCCCalloutErrorMessage</fullName>
+        <categories>VCC_CalloutErrorMessage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Callout Error Message</shortDescription>
+        <value>The interface is not available at this time. Please try again later.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Add_Patient_Deceased_Date</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Add Patient Deceased Date</shortDescription>
+        <value>Veteran unable to be added to CRM; Deceased date of: {0}</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Add_SIgner_Component_Generic_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Add SIgner Component Generic Error</shortDescription>
+        <value>Hmm something went wrong... please contact the helpdesk if the problem persists.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Add_Signers_Provider_Search_Helptext</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Add Signers Provider Search Helptext</shortDescription>
+        <value>Match provider name from left column to provider name on the right, select &quot;done&quot; to add to progress note.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_ApptCommentNLT</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NLT String</shortDescription>
+        <value>#NLT#</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Available_Facilities</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Preferred Facilities Available Title</shortDescription>
+        <value>Available Facilities</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Bad_Address_Error_Non_Pharmacy</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Bad Address Error Non Pharmacy</shortDescription>
+        <value>This patient has a Bad Address or Mail Status Indicator in Facility {1}.
+Please contact VA Health Connect pharmacy services or outpatient pharmacy to process.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Bad_Address_Error_Pharmacy</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Bad Address Error Pharmacy</shortDescription>
+        <value>This patient has a Bad Address or Mail Status indicator in Facility {1}.
+Please update in EHR and submit a Refill there.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_CMOP_Log_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC CMOP Log URL</shortDescription>
+        <value>https://vaww.cmop.med.va.gov/CMOPNationalWebApplication/</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Caller_Recipient_Verified_c_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_Caller_Recipient_Verified__c Error</shortDescription>
+        <value>Error! You must acknowledge the caller recipient relation, emergency contact, current address and call back number are verified.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_DAS_EndpointService_APP_NAME</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_DAS_EndpointService APP_NAME</shortDescription>
+        <value>DAS</value>
+    </labels>
+    <labels>
+        <fullName>VCC_DAS_EndpointService_BAD_CONFIGURATION</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_DAS_EndpointService BAD_CONFIGURATION</shortDescription>
+        <value>An error occurred when generating the DAS endpoint. Please check for the existence and proper configuration of DAS NamedCredential, VCC_Org_Settings__mdt, and
+            vccEndpoint__mdt.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_DAS_EndpointService_UNMAPPED_ENDPOINT</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_DAS_EndpointService UNMAPPED_ENDPOINT</shortDescription>
+        <value>The specified endpoint has not been mapped.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_DAS_EndpointService_VCC_DAS_LOGGER_TAG</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_DAS_EndpointService VCC_DAS_LOGGER_TAG</shortDescription>
+        <value>DAS</value>
+    </labels>
+    <labels>
+        <fullName>VCC_DAS_Exception_EXCEPTION_TEMPLATE</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_DAS_Exception EXCEPTION_TEMPLATE</shortDescription>
+        <value>({0}) {1}</value>
+    </labels>
+    <labels>
+        <fullName>VCC_DAS_HttpService_BAD_STATUS_CODE_TEMPLATE</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_DAS_HttpService BAD_STATUS_CODE_TEMPLATE</shortDescription>
+        <value>{0}: {1}</value>
+    </labels>
+    <labels>
+        <fullName>VCC_DAS_HttpService_INVALID_REQUEST_MESSAGE</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_DAS_HttpService INVALID_REQUEST_MESSAGE</shortDescription>
+        <value>Provided request is invalid. Unable to perform callout.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_DAS_TransactionId_BAD_ID_TYPE_EXCEPTION_MESSAGE</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_TransactionId BAD_ID_TYPE_EXCEPTION_MESSAGE</shortDescription>
+        <value>The Id provided to the VCC_TransactionId constructor is not one of SObjectType VCC_Progress_Note__c or VCC_Addendum__c. Cannot generate transaction Id.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_DAS_TransactionId_NULL_INPUT_EXCEPTION_MESSAGE</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_TransactionId NULL_INPUT_EXCEPTION_MESSAGE</shortDescription>
+        <value>One or both parameters provided to the VCC_TransactionId constructor are null. Cannot generate transaction Id.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_DAS_TransactionId_TRANSACTION_ID_TEMPLATE</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_TransactionId TRANSACTION_ID_TEMPLATE</shortDescription>
+        <value>{0};{1};{2};{3}</value>
+    </labels>
+    <labels>
+        <fullName>VCC_DAS_TransactionId_UNMAPPED_ENDPOINT_EXCEPTION_MESSAGE</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_TransactionId UNMAPPED_ENDPOINT_EXCEPTION_MESSAGE</shortDescription>
+        <value>The VCC_DAS.Endpoint provided to the VCC_TransactionId constructor is not mapped to an associated String. Cannot generate transaction Id.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_DAS_Version_Number</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DAS Version Number</shortDescription>
+        <value>1.1</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Date_Not_In_Future</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Date selected by the User is not in the future</shortDescription>
+        <value>Your selected date is not a future date, please retry.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Delete_Progress_Note_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Delete Progress Note Message</shortDescription>
+        <value>Cannot delete signed Progress Note.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Entry_is_too_long_error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>When input entry is too long for the field</shortDescription>
+        <value>You have exceeded the character limit, please retry with fewer records.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Entry_reached_max_error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>When input entry has reached the maximum input length for the field</shortDescription>
+        <value>You have reached the character limit.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Facility_Popup</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Facility Popup</shortDescription>
+        <value>The selected medications are not from the same facility. If the selected medications need to be renewed from the same facility select Continue. Otherwise, select Cancel.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Flag_Patient_Warning_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Flag Patient Warning Message</shortDescription>
+        <value>This Veteran has the following flag(s): {0}</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Generic_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Generic Error</shortDescription>
+        <value>{0}: An unexpected error has occurred.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Generic_Sub_error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Generic Sub-error</shortDescription>
+        <value>Please try again shortly. If the problem persists, please contact the Help Desk.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Generic_message_for_null_search_results</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Generic message for null search results</shortDescription>
+        <value>No {0} Results Returned in Search</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Generic_sub_message_for_null_search_results</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Generic sub message for null search results</shortDescription>
+        <value>Please modify your search and/or filters and try again.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_HDR_Date_Range_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HDR date range message for LWC components</shortDescription>
+        <value>You can only view and filter records from Today {1} to {2}. If you need to see more data, please visit EHR.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_HDR_ERROR_LABEL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HDR Error Label</shortDescription>
+        <value>Health Data Repository Unavailable</value>
+    </labels>
+    <labels>
+        <fullName>VCC_HeaderName_B3</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_HeaderName_B3</shortDescription>
+        <value>b3</value>
+    </labels>
+    <labels>
+        <fullName>VCC_HeaderName_B3TraceId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_HeaderName_B3TraceId</shortDescription>
+        <value>X-B3-TraceId</value>
+    </labels>
+    <labels>
+        <fullName>VCC_HeaderName_ConversationId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_HeaderName_ConversationId</shortDescription>
+        <value>x-conversationId</value>
+    </labels>
+    <labels>
+        <fullName>VCC_HeaderName_SiteId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_HeaderName_SiteId</shortDescription>
+        <value>x-siteId</value>
+    </labels>
+    <labels>
+        <fullName>VCC_HttpHeaderName_CallingAppName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_HttpHeaderName_CallingAppName</shortDescription>
+        <value>x-calling-app-name</value>
+    </labels>
+    <labels>
+        <fullName>VCC_MPI_Search_More_Than_10_Results</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Message for more than 10 results from MPI Search</shortDescription>
+        <value>More than 10 results found. Please refine your search.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_MPI_Search_No_Results</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Message for No results from MPI Search</shortDescription>
+        <value>No results found. Please refine your search.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Max_100_Records_Returned_Note</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Max 100 Records Returned Note</shortDescription>
+        <value>Up to 100 records can be returned. Please refer to CPRS/VistA to view more records.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Max_Character_For_VCC_Call_Attempts_c</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Max Character Limit Error Message for VCC_Call_Attempts__c</shortDescription>
+        <value>Error! The maximum character limit has been reached. You are not able to add anymore timestamps.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Medications_Data_Error_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Meds component error message for bad data</shortDescription>
+        <value>The patient has {0} that have missing values and have not been retrieved.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Medications_Data_Error_Sub_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Meds component error message for bad data</shortDescription>
+        <value>The medication list may be incomplete, please review the patient&apos;s medical records in EHR.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Meds_Address_Warning</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Meds Address Warning</shortDescription>
+        <value>Please review the addresses for each refill and associated warnings. If address changes are required, please update the incorrect EHR address(es) on the patient account before submitting a refill.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Meds_Address_Warning_Non_Pharmacy</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Meds Address Warning for non Pharmacy users</shortDescription>
+        <value>Please review the addresses for each refill and associated warnings. If address changes are required, please update the VA Profile Mailing Address on the patient account OR contact VA Health Connect pharmacy services or outpatient pharmacy to update the Temporary Address and process the refill.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Message_for_empty_Appointment_HDR_Response</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Message for empty Appointment HDR Response</shortDescription>
+        <value>No Appointment Results Returned in Search</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Message_for_empty_DischargeSummary_HDR_Response</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Message for empty Discharge Summary HDR Response</shortDescription>
+        <value>No Discharge Summary Results Returned in Search</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Message_for_empty_Immunizations_HDR_Response</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Message for empty Immunizations HDR Response</shortDescription>
+        <value>No Immunization Results Returned in Search</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Message_for_empty_Orders_HDR_Response</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Message for empty Orders HDR Response</shortDescription>
+        <value>No Order Results Returned in Search</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Message_for_empty_Problems_HDR_Response</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Message for empty Problems HDR Response</shortDescription>
+        <value>No Problem Results Returned in Search</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Message_for_empty_Rediology_HDR_Response</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Message for empty Radiology HDR Response</shortDescription>
+        <value>No Imaging Results Returned in Search</value>
+    </labels>
+    <labels>
+        <fullName>VCC_No_Available_Facilities_Returned</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Preferred Facilities Avail Facilities Returned</shortDescription>
+        <value>No Available Facilities Returned</value>
+    </labels>
+    <labels>
+        <fullName>VCC_No_CRM_Results</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No CRM Results</shortDescription>
+        <value>No CRM Results</value>
+    </labels>
+    <labels>
+        <fullName>VCC_No_Refill_Logs</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC No Refill Logs</shortDescription>
+        <value>There are no Refill Log entries available for this prescription</value>
+    </labels>
+    <labels>
+        <fullName>VCC_No_Unavailable_Facilities_Returned</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Preferred Facilities Unavail Facilities Returned</shortDescription>
+        <value>No Unavailable Facilities Returned</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Patient_Registered_Facilities_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Patient Registered Facilities Title</shortDescription>
+        <value>Patient Registered Facilities</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Pending_Meds_Fail</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pending Meds Fail</shortDescription>
+        <value>This veteran may have pending or transmitted medications. An address change may interfere with the delivery of these medications.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Prevent_Create_Followup_Task_Queue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Prevent create followup task in task queue</shortDescription>
+        <value>New tasks for the VCV Task Queue cannot be created here. Please return to the patient&apos;s VCV progress note to add a new task</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Prevent_Delete_Generic_Task_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Prevent Delete Generic Task Message</shortDescription>
+        <value>Cannot delete Tasks</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Prevent_Delete_NonOwner_Progress_Note</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Prevent Delete NonOwner Progress Note</shortDescription>
+        <value>Only the owner of the Progress Note can delete the record.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Prevent_Delete_Signed_Progress_Note</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Prevent Delete Signed Progress Note</shortDescription>
+        <value>Cannot delete signed Progress Note.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Prevent_Delete_Task_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Prevent Delete Task Message</shortDescription>
+        <value>Task cannot be deleted from the VCV Tasks Queue. Please move to a Canceled status and place a comment if the task is no longer applicable.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Prevent_New_Case_Owner_From_Taking_Case</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Prevent New Case Owner From Taking Case</shortDescription>
+        <value>ERROR: The new owner cannot take this case because they do not have permission to work on {0} Cases</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Prevent_New_Event_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Prevent New Event Toast Message</shortDescription>
+        <value>Please do not create Events from this screen.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Prevent_New_Event_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Prevent New Event Toast Title</shortDescription>
+        <value>VAHC User</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Prevent_Queue_From_Taking_Case</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Prevent Queue From Taking Case</shortDescription>
+        <value>ERROR: This Queue cannot accept non-{0} cases.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Prevent_New_Task_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>This message shows on the vccNewTask LWC</shortDescription>
+        <value>New tasks for the VCV Task Queue cannot be created here. Please return to the patient&apos;s VCV progress note to add a new task</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Prevent_New_Task_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>This title shows on the vccNewTask LWC</shortDescription>
+        <value>VAHC User</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Progress_Note_Flow_Triage_Incomplete_Warning</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Progress Note Flow Triage Incomplete Warning</shortDescription>
+        <value>Triage is incomplete. If you choose to continue, the triage will end, and information entered will not be written to the progress note nor EHR.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Search_Externally</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search Externally</shortDescription>
+        <value>Search externally to add a veteran not in the CRM, or refine search.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Sensitive_Patient_Popup_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Sensitive Patient Popup Message</shortDescription>
+        <value>***WARNING***{0}***RESTRICTED RECORD***{0}{0}1. STOP{0}2. Confirm you need access to this Restricted patient record{0}{0}This record is protected by the Privacy Act of 1974 and the Health Insurance Portability and Accountability Act (HIPAA) Privacy Rule.{0}* Access to this patient record is tracked and monitored.{0}* You must have need for this record to accomplish officially authorized and assigned duties, such as direct patient care, to proceed.{0}* You must provide justification for your access upon request.{0}* Failure to comply may result in disciplinary or adverse action up to and including removal from Federal service, and civil and criminal penalties.{0}{0}Do you want to continue accessing this patient record?{0}</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Sensitive_Patient_Warning_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Sensitive Patient Warning Message</shortDescription>
+        <value>Sensitive patient; user has proper security and access has been logged.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Sign_Note_Flow_Exception_AddSigners</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Sign Note Flow Exception AddSigners</shortDescription>
+        <value>A system error has occurred while adding the additional signers, please try again. If the problem persists, contact the helpdesk.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Sign_Note_Flow_Exception_Auth</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Sign Note Flow Exception Auth</shortDescription>
+        <value>An error has occurred during authentication, please try again. If the problem persists, please contact the helpdesk.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Sign_Note_Flow_Exception_CreateAddendum</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Sign Note Flow Exception CreateAddendum</shortDescription>
+        <value>A system error has occurred during addendum creation, please try again. If the problem persists, contact the helpdesk.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Sign_Note_Flow_Exception_CreateEncounter</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Sign Note Flow Exception CreateEncounter</shortDescription>
+        <value>An error has occurred when attempting to create an encounter, please try again. If the problem persists, contact the helpdesk.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Sign_Note_Flow_Exception_CustomSettings</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Sign Note Flow Exception CustomSettings</shortDescription>
+        <value>The system failed to retrieve one or more values required for this transaction, please try again. If the problem persists, contact the helpdesk.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Sign_Note_Flow_Exception_GetEncounterString</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Sign Note Flow Exception GetEncounterString</shortDescription>
+        <value>A system error occurred while preparing to send the progress note, please try again. If the problem persists, contact the helpdesk.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Sign_Note_Flow_Exception_GetNoteText</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Sign Note Flow Exception GetNoteText</shortDescription>
+        <value>A system error occurred while parsing the note text, please try again. If the problem persists, contact the helpdesk.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Sign_Note_Flow_Exception_SIgnNote</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Sign Note Flow Exception SIgnNote</shortDescription>
+        <value>An error has occurred when attempting to sign the progress note/addendum, please contact the helpdesk.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Sign_Note_Flow_Exception_ValidateEsig</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Sign Note Flow Exception ValidateEsig</shortDescription>
+        <value>A system error has occurred while attempting to validate your esig, please try again. If the problem persists, contact the helpdesk.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Sign_Note_Flow_Exception_VisitRelatedTos</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Sign Note Flow Exception VisitRelatedTos</shortDescription>
+        <value>A system error has occurred when fetching visit related information, please try again. If the problem persists, contact the helpdesk.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Sign_Note_Flow_Exception_WriteNote</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Sign Note Flow Exception WriteNote</shortDescription>
+        <value>A system error has occurred while sending the note to VISTA, please try again. If the problem persists, please contact the helpdesk.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Sign_Note_Flow_Invalid_eSig</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invalid eSignature</shortDescription>
+        <value>The signature you entered is not valid, please try again.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Sign_Note_Flow_May_Not_Sign</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>May Not Sign Error Message</shortDescription>
+        <value>You are not authorized to sign this note.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Sign_Note_Flow_No_DUZ</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_Sign_Note_Flow_No_DUZ</shortDescription>
+        <value>Unauthorized: A DUZ was not found at this facility for your user ID.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Sign_Note_Flow_Prodedure_Diagnosis_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error message for sign note flow procedure/diagnosis &apos;validation&apos;</shortDescription>
+        <value>You must select both Procedure Code and Diagnosis Code or neither.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Sign_Note_Required_Facility</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC Sign Note Required Facility</shortDescription>
+        <value>You are required to select an available facility before proceeding to the next step.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_TriageController_isNotStartableReason_must_be_creator</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_TriageController isNotStartableReason must be creator</shortDescription>
+        <value>You must be the creator of the progress note to perform a triage.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_TriageController_isNotStartableReason_no_dob</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_TriageController_isNotStartableReason_no_dob</shortDescription>
+        <value>Unable to start triage due to missing date of birth.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_TriageController_isNotStartableReason_progress_note_signed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_TriageController isNotStartableReason progress note signed</shortDescription>
+        <value>This progress note has been signed and cannot be modified.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_TriageController_isNotStartableReason_triage_complete</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_TriageController isNotStartableReason triage complete</shortDescription>
+        <value>Triage process has been completed.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Unavailable_Facilities</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Preferred Facilities Unavailable Title</shortDescription>
+        <value>Unavailable Facilities</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Triage_Date_Format_String</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Triage Date Format String</shortDescription>
+        <value>MM/dd/yyyy, hh:mm a</value>
+    </labels>
+    <labels>
+        <fullName>VCC_VAHC_AppName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_VAHC_AppName</shortDescription>
+        <value>VAHC</value>
+    </labels>
+    <labels>
+        <fullName>VCC_VA_Profile_Address_Error_Not_Found</fullName>
+        <categories>Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC VA Profile Address Error Not Found</shortDescription>
+        <value>The Address could not be found.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_VA_Profile_Address_Error_POBOX</fullName>
+        <categories>Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_VA_Profile_Address_Error_POBOX</shortDescription>
+        <value>PO Box could not be validated.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_VA_Profile_Invalid_Address_Title</fullName>
+        <categories>Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC VA Profile Invalid Address Title</shortDescription>
+        <value>Warning! Invalid Address</value>
+    </labels>
+    <labels>
+        <fullName>VCC_VA_Profile_Postal_Code_Error</fullName>
+        <categories>Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC VA Profile Postal Code Error</shortDescription>
+        <value>Incorrect format for postal code. (12345 or 12345-1234)</value>
+    </labels>
+    <labels>
+        <fullName>VCC_VA_Profile_Postal_Code_RegEx</fullName>
+        <categories>RegEx</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC VA Profile Postal Code RegEx</shortDescription>
+        <value>^\d{5}(?:[-]\d{4})?$</value>
+    </labels>
+    <labels>
+        <fullName>VCC_VA_Profile_Special_Characters_Error</fullName>
+        <categories>Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC VA Profile Special Characters Error</shortDescription>
+        <value>Please remove special characters. (example: !@$%\&amp;)</value>
+    </labels>
+    <labels>
+        <fullName>VCC_VA_Profile_State_Code_Error</fullName>
+        <categories>Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC VA Profile State Code Error</shortDescription>
+        <value>State abbreviation must be 2 characters.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_VA_Profile_State_Code_RegEx</fullName>
+        <categories>RegEx</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC VA Profile State Code RegEx</shortDescription>
+        <value>^[a-zA-Z]+</value>
+    </labels>
+    <labels>
+        <fullName>VCC_VDIF_LoggerTag</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_VDIF_LoggerTag</shortDescription>
+        <value>VDIF</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Verified_Patient_Identifiers_c_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_Verified_Patient_Identifiers__c Error</shortDescription>
+        <value>Error! You must acknowledge two patient identifiers have been verified.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_Veteran_Crisis_Line</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Veteran Crisis Line info for external va links component</shortDescription>
+        <value>&amp;lt;strong&amp;gt;Veterans Crisis Line:&amp;lt;/strong&amp;gt; 1-800-273-8255 select 1</value>
+    </labels>
+    <labels>
+        <fullName>VCC_active_Prescription_Indicator</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Active Prescription Indicator</shortDescription>
+        <value>Active Prescription Indicator</value>
+    </labels>
+    <labels>
+        <fullName>VCC_different_facility_error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC different facility error</shortDescription>
+        <value>Medications from different Facilities cannot be added to the same Progress Note. Please select medications from the same facility</value>
+    </labels>
+    <labels>
+        <fullName>VCC_different_facility_warning</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC different facility warning</shortDescription>
+        <value>For Renewals please ensure you only add medications from the same facility. To renew medications from multiple facilities please create a separate Progress Note per
+            facility.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_facility_message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC facility message</shortDescription>
+        <value>For Renewals, please ensure you add medications that require being sent to the same facility for processing. To renew medications from multiple facilities please create a separate Progress Note per facility.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_fiduciary_Indicator</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Fiduciary Indicator</shortDescription>
+        <value>Fiduciary Indicator</value>
+    </labels>
+    <labels>
+        <fullName>VCC_financial_Fraud_Indicator</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Financial Fraud Indicator</shortDescription>
+        <value>Financial Fraud Indicator</value>
+    </labels>
+    <labels>
+        <fullName>VCC_lab_Disclaimer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>lab data</shortDescription>
+        <value>For complete laboratory results please review in Cerner/CPRS</value>
+    </labels>
+    <labels>
+        <fullName>VCC_max_Record_Limit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC max Record Limit</shortDescription>
+        <value>The Number of Records Returned Exceeds the Loading Capacity</value>
+    </labels>
+    <labels>
+        <fullName>VCC_max_Record_Limit_pt2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC max Record Limit pt2</shortDescription>
+        <value>Please go to VistA/CPRS to review the patient&apos;s {0}</value>
+    </labels>
+    <labels>
+        <fullName>VCC_sensitive_Patient_Indicator</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sensitivity Patient Indicator</shortDescription>
+        <value>Sensitive Patient Indicator</value>
+    </labels>
+    <labels>
+        <fullName>VCL_ApplicationName</fullName>
+        <categories>VCL</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>VCL Application Name</shortDescription>
+        <value>MEDORAFORCE</value>
+    </labels>
+    <labels>
+        <fullName>VTAAnnoucement_Posted_Message</fullName>
+        <categories>VTA</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VTAAnnoucement Posted Message</shortDescription>
+        <value>Posted</value>
+    </labels>
+    <labels>
+        <fullName>VTAAnnouncement_No_Events_Message</fullName>
+        <categories>VTA</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VTAAnnouncement No Events Message</shortDescription>
+        <value>There are currently no calendar events to report.</value>
+    </labels>
+    <labels>
+        <fullName>VTACase_Header_CaseId</fullName>
+        <categories>VTA</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VTACase Header CaseId</shortDescription>
+        <value>Case Number</value>
+    </labels>
+    <labels>
+        <fullName>VTACase_Header_CaseStatus</fullName>
+        <categories>VTA</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VTACase Header CaseStatus</shortDescription>
+        <value>Case Status</value>
+    </labels>
+    <labels>
+        <fullName>VTACase_Header_Component</fullName>
+        <categories>VTA</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VTACase Header Component</shortDescription>
+        <value>Component</value>
+    </labels>
+    <labels>
+        <fullName>VTACase_Header_DOB</fullName>
+        <categories>VTA</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VTACase Header DOB</shortDescription>
+        <value>DOB</value>
+    </labels>
+    <labels>
+        <fullName>VTACase_Header_DutyStatus</fullName>
+        <categories>VTA</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VTACase Header DutyStatus</shortDescription>
+        <value>Duty Status</value>
+    </labels>
+    <labels>
+        <fullName>VTACase_Header_EDIPI</fullName>
+        <categories>VTA</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VTACase Header EDIPI</shortDescription>
+        <value>EDIPI</value>
+    </labels>
+    <labels>
+        <fullName>VTACase_Header_Gender</fullName>
+        <categories>VTA</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VTACase Header Gender</shortDescription>
+        <value>Gender</value>
+    </labels>
+    <labels>
+        <fullName>VTACase_Header_MEBMTF</fullName>
+        <categories>VTA</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VTACase Header MEBMTF</shortDescription>
+        <value>MEB MTF</value>
+    </labels>
+    <labels>
+        <fullName>VTACase_Header_MscAssigned</fullName>
+        <categories>VTA</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VTACase Header MscAssigned</shortDescription>
+        <value>MSC Assigned</value>
+    </labels>
+    <labels>
+        <fullName>VTACase_Header_Name</fullName>
+        <categories>VTA</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VTACase Header Name</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>VTACase_Header_PebAdminAssigned</fullName>
+        <categories>VTA</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VTACase Header PebAdminAssigned</shortDescription>
+        <value>PEB Admin Assigned</value>
+    </labels>
+    <labels>
+        <fullName>VTACase_Header_PebLocation</fullName>
+        <categories>VTA</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VTACase Header PebLocation</shortDescription>
+        <value>PEB Location</value>
+    </labels>
+    <labels>
+        <fullName>VTACase_Header_PebloAssigned</fullName>
+        <categories>VTA</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VTACase Header PebloAssigned</shortDescription>
+        <value>PEBLO Assigned</value>
+    </labels>
+    <labels>
+        <fullName>VTACase_Header_Rank</fullName>
+        <categories>VTA</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VTACase Header Rank</shortDescription>
+        <value>Rank</value>
+    </labels>
+    <labels>
+        <fullName>VTACase_Header_ReferringMtf</fullName>
+        <categories>VTA</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VTACase Header ReferringMtf</shortDescription>
+        <value>Referring MTF</value>
+    </labels>
+    <labels>
+        <fullName>VTACase_Header_SSN</fullName>
+        <categories>VTA</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VTACase Header SSN</shortDescription>
+        <value>SSN</value>
+    </labels>
+    <labels>
+        <fullName>VTACase_Header_Service</fullName>
+        <categories>VTA</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VTACase Header Service</shortDescription>
+        <value>Service</value>
+    </labels>
+    <labels>
+        <fullName>VTACase_Header_Title</fullName>
+        <categories>VTA</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VTACase Header Title</shortDescription>
+        <value>Integrated Disability Evaluation System (IDES)</value>
+    </labels>
+    <labels>
+        <fullName>VTACase_Header_VrcAssigned</fullName>
+        <categories>VTA</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VTACase Header VrcAssigned</shortDescription>
+        <value>VR&amp;E VRC Assigned</value>
+    </labels>
+    <labels>
+        <fullName>VTA_Case_Deferment_Guidance_Text</fullName>
+        <categories>VTA</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VTA Case Deferment Guidance Text</shortDescription>
+        <value>The Case Deferment function is intended to capture elapsed time for cases that cannot move forward in IDES due to external delays lasting a minimum of 30 days. Examples of such cases include but are not limited to: pending Dual Action; approved leave/TAD/TDY; additional medical treatment is needed; Service member is placed on Continuation on Active Duty (COAD), Continuation on Active Reserve (COAR), Permanent Limited Duty (PLD) or Limited Assignment Status (LAS) for less than one year. This function is not intended to be used when cases are awaiting correction to the case file (e.g. return to an earlier step in the process, additional diagnostic exam, missing signature) to continue processing as those should be captured using the Corrective Action function in VTA. Only PEBLOs, PEB Admins, DoD Support Team and Admins may initiate, update or close deferment actions.</value>
+    </labels>
+    <labels>
+        <fullName>WarningEmail</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WarningEmail76DaysPara1A</shortDescription>
+        <value>Good morning. You have failed to log into Salesforce.com for {0} days. Your account will be deactivated on {1} if you fail to log into your account. If you need to
+            keep this Salesforce user account active, please log in here; {2}. If you have questions about this email, please call the DTC Customer Support Line at: (202) 921-0911,
+            Mon.-Fri., 0800-1600.</value>
+    </labels>
+    <labels>
+        <fullName>WarningEmailSubject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WarningEmailSubject</shortDescription>
+        <value>EMAIL NOTIFICATIONS FOR SALESFORCE: Your User Account is Scheduled for Deactivation</value>
+    </labels>
+    <labels>
+        <fullName>commEeNoFacilities</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>commEeNoFacilities</shortDescription>
+        <value>No facilities found.</value>
+    </labels>
+    <labels>
+        <fullName>fbc_AccessLevel</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccessLevel</shortDescription>
+        <value>Access Level</value>
+    </labels>
+    <labels>
+        <fullName>fbc_Back</fullName>
+        <categories>Buttons,Filters,Title</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back</shortDescription>
+        <value>Back</value>
+    </labels>
+    <labels>
+        <fullName>fbc_ButtonIsNotSupportedMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonIsNotSupportedMessage</shortDescription>
+        <value>Following buttons are note supported:</value>
+    </labels>
+    <labels>
+        <fullName>fbc_ConditionLogicHelpText</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ConditionLogicHelpText</shortDescription>
+        <value>Use parentheses, AND, OR, and NOT to customize the logic. For example, if you enter “(1 AND 2 AND 3) OR 4”, the flow evaluates whether the first three conditions are
+            true or only the fourth condition is true.</value>
+    </labels>
+    <labels>
+        <fullName>fbc_Delete</fullName>
+        <categories>labels, buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Delete</shortDescription>
+        <value>Delete</value>
+    </labels>
+    <labels>
+        <fullName>fbc_FieldIsNotSupportedMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FieldIsNotSupportedMessage</shortDescription>
+        <value>Following fields are not supported:</value>
+    </labels>
+    <labels>
+        <fullName>fbc_For</fullName>
+        <categories>Buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>For</shortDescription>
+        <value>For</value>
+    </labels>
+    <labels>
+        <fullName>fbc_LackingPermissions</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LackingPermissions</shortDescription>
+        <value>You don\&apos;t have the proper permissions for ths action</value>
+    </labels>
+    <labels>
+        <fullName>fbc_ManagerEmptyMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ManagerEmptyMessage</shortDescription>
+        <value>&quot;Manager APEX Class&quot; can not be empty</value>
+    </labels>
+    <labels>
+        <fullName>fbc_MultipleGroupsForRole</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MultipleGroupsForRole</shortDescription>
+        <value>There are multiple groups for that role</value>
+    </labels>
+    <labels>
+        <fullName>fbc_Name</fullName>
+        <categories>quicklinks, Labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Name</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>fbc_NonePicklistValueLabel</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NonePicklistValueLabel</shortDescription>
+        <value>-- None --</value>
+    </labels>
+    <labels>
+        <fullName>fbc_OWDReadWrite</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OWDReadWrite</shortDescription>
+        <value>Sharing Settings must be private or public read/write to enable manual sharing</value>
+    </labels>
+    <labels>
+        <fullName>fbc_OwnerAdminModify</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OwnerAdminModify</shortDescription>
+        <value>Only the record owner or administrators can modify permissions</value>
+    </labels>
+    <labels>
+        <fullName>fbc_PublicGroups</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PublicGroups</shortDescription>
+        <value>Public Groups</value>
+    </labels>
+    <labels>
+        <fullName>fbc_Queues</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Queues</shortDescription>
+        <value>Queues</value>
+    </labels>
+    <labels>
+        <fullName>fbc_Read</fullName>
+        <categories>labels, buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Read</shortDescription>
+        <value>Read</value>
+    </labels>
+    <labels>
+        <fullName>fbc_ReadWrite</fullName>
+        <categories>labels, buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReadWrite</shortDescription>
+        <value>Read / Write</value>
+    </labels>
+    <labels>
+        <fullName>fbc_Reason</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Reason</shortDescription>
+        <value>Reason</value>
+    </labels>
+    <labels>
+        <fullName>fbc_RelatedUsers</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RelatedUsers</shortDescription>
+        <value>Related Users</value>
+    </labels>
+    <labels>
+        <fullName>fbc_Roles</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Roles</shortDescription>
+        <value>Roles</value>
+    </labels>
+    <labels>
+        <fullName>fbc_Search</fullName>
+        <categories>Actions,Buttons,quicklinks</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search in</shortDescription>
+        <value>Search in</value>
+    </labels>
+    <labels>
+        <fullName>fbc_SearchFor</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SearchFor</shortDescription>
+        <value>For</value>
+    </labels>
+    <labels>
+        <fullName>fbc_SetAccessLevel</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SetAccessLevel</shortDescription>
+        <value>Set Access Level</value>
+    </labels>
+    <labels>
+        <fullName>fbc_SupportedAddCapabilitiesEmptyMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SupportedAddCapabilitiesEmptyMessage</shortDescription>
+        <value>&quot;Add Capabilities&quot; can not be empty</value>
+    </labels>
+    <labels>
+        <fullName>fbc_SupportedButtonsEmptyMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SupportedButtonsEmptyMessage</shortDescription>
+        <value>&quot;Supported Buttons&quot; can not be empty</value>
+    </labels>
+    <labels>
+        <fullName>fbc_SupportedEditCapabilitiesEmptyMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SupportedEditCapabilitiesEmptyMessage</shortDescription>
+        <value>&quot;Edit Capabilities&quot; can not be empty</value>
+    </labels>
+    <labels>
+        <fullName>fbc_TooManyResultsMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TooManyResultsMessage</shortDescription>
+        <value>Your search found more than 200 results. Keep typing to make it more specific</value>
+    </labels>
+    <labels>
+        <fullName>fbc_Type</fullName>
+        <categories>Buttons,Filters,Title</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Type</shortDescription>
+        <value>Type</value>
+    </labels>
+    <labels>
+        <fullName>fbc_UserOrGroup</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UserOrGroup</shortDescription>
+        <value>User Or Group</value>
+    </labels>
+    <labels>
+        <fullName>fbc_Users</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Users</shortDescription>
+        <value>Users</value>
+    </labels>
+    <labels>
+        <fullName>fflib_QueryFactory_crossobject_fieldsets_not_allowed_error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error when selecting a cross-object fieldsset is not allowed and attempted.</shortDescription>
+        <value>Cross-object fields not allowed and field &quot;{0}&quot; is a cross-object field.</value>
+    </labels>
+    <labels>
+        <fullName>fflib_QueryFactory_fieldset_wrong_sobject_error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error when selecting a field set for a different sobject type.</shortDescription>
+        <value>Field set &quot;{0}&quot; is not for SObject type &quot;{1}&quot;</value>
+    </labels>
+    <labels>
+        <fullName>fflib_QueryFactory_recursive_subquery_error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Presented when attempting to nest subqueries.</shortDescription>
+        <value>Invalid call to subselectQuery. You may not add a subselect query to a subselect query.</value>
+    </labels>
+    <labels>
+        <fullName>fflib_QueryFactory_subquery_invalid_relationship</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Presented when attempting to create a subquery from an invalid relationship.</shortDescription>
+        <value>Invalid call to subselectQuery. Invalid relationship for table.</value>
+    </labels>
+    <labels>
+        <fullName>fflib_security_error_field_not_insertable</fullName>
+        <categories>security,error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>fflib_security_error_field_not_insertable</shortDescription>
+        <value>You do not have permission to insert field {1} on {0}</value>
+    </labels>
+    <labels>
+        <fullName>fflib_security_error_field_not_readable</fullName>
+        <categories>security,error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>fflib_security_error_field_not_readable</shortDescription>
+        <value>You do not have permission to read the field {1} on {0}</value>
+    </labels>
+    <labels>
+        <fullName>fflib_security_error_field_not_updateable</fullName>
+        <categories>security,error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>fflib_security_error_field_not_updateable</shortDescription>
+        <value>You do not have permission to update the field {1} on {0}</value>
+    </labels>
+    <labels>
+        <fullName>fflib_security_error_object_not_deletable</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>fflib_security_error_object_not_deletable</shortDescription>
+        <value>You do not have permission to delete {0}</value>
+    </labels>
+    <labels>
+        <fullName>fflib_security_error_object_not_insertable</fullName>
+        <categories>security,error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>fflib_security_error_object_not_insertable</shortDescription>
+        <value>You do not have permission to insert {0}</value>
+    </labels>
+    <labels>
+        <fullName>fflib_security_error_object_not_readable</fullName>
+        <categories>security,error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>fflib_security_error_object_not_readable</shortDescription>
+        <value>You do not have permission to read {0}</value>
+    </labels>
+    <labels>
+        <fullName>fflib_security_error_object_not_updateable</fullName>
+        <categories>security,error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>fflib_security_error_object_not_updateable</shortDescription>
+        <value>You do not have permission to update {0}</value>
+    </labels>
+    <labels>
+        <fullName>vccAddPatient_Date_of_Birth_Max</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>vccAddPatient_Date_of_Birth_Max</shortDescription>
+        <value>Date must be today or earlier.</value>
+    </labels>
+    <labels>
+        <fullName>vccAddPatient_Date_of_Birth_Min</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>vccAddPatient_Date_of_Birth_Min</shortDescription>
+        <value>Date cannot be more than 150 years ago.</value>
+    </labels>
+    <labels>
+        <fullName>vccAddPatient_Greater_Than_Two_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>vccAddPatient_Greater_Than_Two_Message</shortDescription>
+        <value>Input be 2 or more characters long.</value>
+    </labels>
+    <labels>
+        <fullName>vccAddPatient_Greater_Than_Two_Regex</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>vccAddPatient_Greater_Than_Two_Regex</shortDescription>
+        <value>.{2,}</value>
+    </labels>
+    <labels>
+        <fullName>vccAddPatient_SSN_Regex</fullName>
+        <categories>RegEx</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>vccAddPatient SSN Regex</shortDescription>
+        <value>(?:\d{3}-\d{2}-\d{4})|(?:\d{3}\d{2}\d{4})</value>
+    </labels>
+    <labels>
+        <fullName>vccAddPatient_pattern_mismatch_message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>vccAddPatient pattern mismatch message</shortDescription>
+        <value>Format must be ###-##-#### or #########.</value>
+    </labels>
+    <labels>
+        <fullName>vccAddSignerNoResultsLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>vccAddSignerNoResultsLabel</shortDescription>
+        <value>No providers found. Please refine your search.</value>
+    </labels>
+    <labels>
+        <fullName>vccAddSignersSelectLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>vccAddSignersSelectLabel</shortDescription>
+        <value>Click the plus sign on the desired provider to add.</value>
+    </labels>
+    <labels>
+        <fullName>vccAddSignersTitleLabel</fullName>
+        <categories>VCC Sign Progress Note With Callouts Flow</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>vccAddSignersTitleLabel</shortDescription>
+        <value>Selected Signers</value>
+    </labels>
+    <labels>
+        <fullName>vccEeNoFacilities</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>vccEeNoFacilities</shortDescription>
+        <value>No facilities found.</value>
+    </labels>
+    <labels>
+        <fullName>vccErrorDisplay_Default_Friendly_Mesage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>vccErrorDisplay Default Friendly Mesage</shortDescription>
+        <value>An unexpected error has occurred. If needed, please contact the helpdesk with the details of this error.</value>
+    </labels>
+    <labels>
+        <fullName>vccInPatientWarningMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>vccInPatientWarningMessage</shortDescription>
+        <value>This patient is currently an inpatient. Direct call per local policy.</value>
+    </labels>
+    <labels>
+        <fullName>vccMPINoRecordsReturned</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>vccMPINoRecordsReturned</shortDescription>
+        <value>No records found.</value>
+    </labels>
+    <labels>
+        <fullName>vccMpiBatchSize</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>vccMpiBatchSize</shortDescription>
+        <value>5</value>
+    </labels>
+    <labels>
+        <fullName>vccMpiCorrelationRequesterDefault</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>vccMpiCorrelationRequesterDefault</shortDescription>
+        <value>VCC</value>
+    </labels>
+    <labels>
+        <fullName>vccNoPactMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Pact Message</shortDescription>
+        <value>No PACT assigned at any VA location.</value>
+    </labels>
+    <labels>
+        <fullName>vccSearchResultsLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Signer Search Results Label</shortDescription>
+        <value>Search Results</value>
+    </labels>
+    <labels>
+        <fullName>vccVaProfileAccociatedPersonsRelationshipValues</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>vccVaProfileAccociatedPersonsRelationshipValues</shortDescription>
+        <value>BROTHER, SISTER, SON, STEPCHILD, UNRELATED FRIEND, WARD, WIFE, CHILD-IN-LAW, DAUGHTER, EXTENDED FAMILY MEMBER, FATHER, GRANDCHILD, HUSBAND, MOTHER, NIECE/NEPHEW</value>
+    </labels>
+    <labels>
+        <fullName>vccVaProfileBadAddressTooltip</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>vccVaProfileBadAddressTooltip</shortDescription>
+        <value>This has been flagged as a bad address.</value>
+    </labels>
+    <labels>
+        <fullName>vccVaProfileNoIndicators</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>vccVaProfileNoIndicators</shortDescription>
+        <value>No Indicators Found.</value>
+    </labels>
+    <labels>
+        <fullName>vcc_MPI_unexpected_error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MPI unexpected error</shortDescription>
+        <value>An unexpected error has occurred, unable to communicate with MPI</value>
+    </labels>
+    <labels>
+        <fullName>VCC_HDR_Date_Range_Message_Load_More</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HDR date range message for LWC components when Load More is used</shortDescription>
+        <value>Records between {1} and {2} have been loaded</value>
+    </labels>
+    <labels>
+        <fullName>VCC_HDR_Directives_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_HDR_Directives_Message</shortDescription>
+        <value>All Advance Directive records have been loaded. Progress Note Advance Directive records between {1} to {2} have been loaded.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_HDR_Directives_Message2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC_HDR_Directives_Message2</shortDescription>
+        <value>All Advance Directive records have been loaded. You can only view and filter Progress Note Advance Directive records from Today {2} to {1}. If you need to see more data, please visit EHR.</value>
+    </labels>
+    <labels>
+        <fullName>VCC_max_Record_Limit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC max Record Limit</shortDescription>
+        <value>The Number of Records Returned Exceeds the Loading Capacity</value>
+    </labels>
+    <labels>
+        <fullName>VCC_max_Record_Limit_pt2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VCC max Record Limit pt2</shortDescription>
+        <value>Please go to VistA/CPRS to review the patient&apos;s {0}</value>
+    </labels>
+    <labels>
+        <fullName>PC_Duplicate_Service_Team_Member</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PC_Duplicate_Service_Team_Member</shortDescription>
+        <value>&apos;The Specialist: &quot;{specialist}&quot; already exists in this Service</value>
+    </labels>
+</CustomLabels>

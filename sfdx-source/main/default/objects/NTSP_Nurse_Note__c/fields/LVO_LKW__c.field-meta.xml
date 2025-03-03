@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LVO_LKW__c</fullName>
+    <externalId>false</externalId>
+    <label>LVO LKW</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Within 23 Hours</fullName>
+                <default>false</default>
+                <label>Within 23 Hours</label>
+            </value>
+            <value>
+                <fullName>Greater than 23 Hours</fullName>
+                <default>false</default>
+                <label>Greater than 23 Hours</label>
+            </value>
+            <value>
+                <fullName>Wake Up Stroke</fullName>
+                <default>false</default>
+                <label>Wake Up Stroke</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

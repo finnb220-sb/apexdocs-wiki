@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Covid_Test_Type</fullName>
+    <active>true</active>
+    <description>When an RN selects &quot;Yes&quot; for Has patient had a test, they must select either Home Test or Other Test</description>
+    <errorConditionFormula
+    >BEGINS( RecordType.DeveloperName, &quot;VCC_&quot;) &amp;&amp; !$Permission.DisableTriggersFlag &amp;&amp; AND( VCC_CS_Home_Test__c = FALSE, ISBLANK(VCC_CS_Other_Test__c),
+        ISPICKVAL(VCC_CS_Has_patient_had_a_test__c, &quot;Yes&quot;), RecordType.DeveloperName = &quot;VCC_Clinical_Triage_Note_Progress_Note&quot;, NOT
+        $Permission.VCC_Disable_Progress_Note_Assignment_Rules )</errorConditionFormula>
+    <errorDisplayField>VCC_CS_Has_patient_had_a_test__c</errorDisplayField>
+    <errorMessage>ERROR: Check either Home Test or Other Test if the patient confirmed they had a COVID test.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VCC_Lock_Written_Addendum</fullName>
+    <active>true</active>
+    <description>Lock a signed Addendum. The rule will not run on an Addendum that has been transferred.</description>
+    <errorConditionFormula
+    >!$Permission.DisableTriggersFlag &amp;&amp; !VCC_Transferred_Addendum__c &amp;&amp; /* Addendums that have been transferred by the flow will be excluded from this rule */
+        !ISNEW() &amp;&amp; !ISBLANK(PRIORVALUE( VCC_itemId__c )) &amp;&amp; !( ISCHANGED( VCC_Signed__c ) &amp;&amp; PRIORVALUE( VCC_Signed__c ) == false &amp;&amp; ISCHANGED(
+        VCC_Electronic_Signature__c ) &amp;&amp; ISBLANK(PRIORVALUE( VCC_Electronic_Signature__c )) &amp;&amp; !ISCHANGED( VCC_itemId__c ) ) &amp;&amp; NOT
+        $Permission.VCC_Disable_Progress_Note_Assignment_Rules &amp;&amp; NOT(ISCHANGED( VCC_CRM_System_Modified_Output_To_VistA__c ))</errorConditionFormula>
+    <errorMessage>The Addendum is signed and cannot be edited</errorMessage>
+</ValidationRule>

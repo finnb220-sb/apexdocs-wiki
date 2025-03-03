@@ -1,0 +1,76 @@
+{
+    "sites": [
+        {
+            "results": {
+                "meds": {
+                    "total":"",
+                    "med":[]
+                }
+            },
+            "apiVersion": "1.01",
+            "params": {
+                "domain": "TEST.MARTINSBURG.MED.VA.GOV",
+                "systemId": "9ABC"
+            },
+            "data": {
+                "updated": "20210622172323",
+                "totalItems": "1",
+                "items": [
+                    {
+                        "documentClass": "PROGRESS NOTES",
+                        "documentTypeCode": "PN",
+                        "documentTypeName": "Progress Note",
+                        "encounterName": "AUDIO/SPEECH/1ST FLOOR/1D160 Sep 08, 2016",
+                        "encounterUid": "urn:va:visit:9ABC:202243:7883605",
+                        "entered": "20160908161229",
+                        "facilityCode": "613",
+                        "facilityName": "MARTINSBURG VAMC",
+                        "localId": "4942837",
+                        "localTitle": "ASI-ADDICTION SEVERITY INDEX",
+                        "nationalTitle": {},
+                        "nationalTitleType": {},
+                        "referenceDateTime": "20160908161224",
+                        "statusName": "completed",
+                        "text": [
+                            {
+                                "clinicians": [
+                                    {
+                                        "name": "NICHOLLS,LORI E JR",
+                                        "role": "A",
+                                        "uid": "urn:va:user:9ABC:65321"
+                                    },
+                                    {
+                                        "name": "NICHOLLS,LORI E JR",
+                                        "role": "S",
+                                        "uid": "urn:va:user:9ABC:65321",
+                                        "signature": "LORI E NICHOLLS JR ",
+                                        "signedDateTime": "20160908161230"
+                                    },
+                                    {
+                                        "name": "NICHOLLS,LORI E JR",
+                                        "role": "X",
+                                        "uid": "urn:va:user:9ABC:65321"
+                                    }
+                                ],
+                                "content": "This is a test notef24e6f0a-251b-421b-9ea8-69e655c44fc0\r\n",
+                                "dateTime": "20160908161224",
+                                "status": "completed",
+                                "uid": "urn:va:document:9ABC:202243:4942837"
+                            }
+                        ],
+                        "uid": "urn:va:document:9ABC:202243:4942837",
+                        "nationalTitleSubject": {},
+                        "nationalTitleService": {},
+                        "nationalTitleRole": {},
+                        "nationalTitleSetting": {}
+                    }
+                ]
+            },
+            "errorSection": {
+                "errors": [],
+                "fatalErrors": [],
+                "warnings": []
+            }
+        }
+    ]
+}

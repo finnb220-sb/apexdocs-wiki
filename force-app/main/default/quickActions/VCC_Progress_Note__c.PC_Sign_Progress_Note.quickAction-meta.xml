@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Triggers the Sign Note process specific to Provider Connect.</description>
+    <flowDefinition>PC_Sign_Note_Pre_Verification</flowDefinition>
+    <label>Sign Progress Note</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

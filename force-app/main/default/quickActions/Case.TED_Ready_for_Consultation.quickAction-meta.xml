@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Changes owner to appropriate Queue, updates status to TED Ready for Consultation</description>
+    <flowDefinition>TED_Ready_for_Consultation</flowDefinition>
+    <label>Ready for MP</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

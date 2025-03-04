@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Enforce_comments_when_unresolved</fullName>
-    <active>false</active>
-    <description>Requires the specialist notes field to be populated when changing status to closed unresolved.</description>
-    <errorConditionFormula>AND( !$Permission.DisableTriggersFlag, ISPICKVAL(Status__c,&quot;Closed Unresolved&quot; ) &amp;&amp; Specialist_Notes__c = Null)</errorConditionFormula>
-    <errorMessage>You must enter a cancellation reason in the Specialist Notes field when setting a case to Closed Unresolved.</errorMessage>
-</ValidationRule>

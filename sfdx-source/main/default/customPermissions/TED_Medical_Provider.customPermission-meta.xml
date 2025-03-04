@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>TED Medical Provider. Used to control visibility to components based on user type, used in validation Rules, and specific FLS differences.</description>
-    <isLicensed>false</isLicensed>
-    <label>TED Medical Provider</label>
-</CustomPermission>

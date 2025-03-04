@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>VCC_TimeSlot_WorkType_Required</fullName>
-    <active>true</active>
-    <errorConditionFormula>ISBLANK( WorkTypeGroup.Id) &amp;&amp; !$Permission.DisableTriggersFlag</errorConditionFormula>
-    <errorMessage>Appointment Topic required. If on the New/Edit Time Slot screen, select Appointment Topic. If not on the New/Edit Time Slot screen, hit cancel and navigate to: Operating Hours Tab ➜ Operating Hours from list view ➜ Related Tab ➜ Time Slots New/Edit button</errorMessage>
-</ValidationRule>

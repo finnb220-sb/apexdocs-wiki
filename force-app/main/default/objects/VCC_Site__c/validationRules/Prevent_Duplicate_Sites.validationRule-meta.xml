@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Prevent_Duplicate_Sites</fullName>
-    <active>true</active>
-    <description>Rule to prevent duplicate Site records based on the Name.</description>
-    <errorConditionFormula>AND(VLOOKUP($ObjectType.VCC_Site__c.Fields.Name, $ObjectType.VCC_Site__c.Fields.Name, Name) = Name, OR(ISNEW(), ISCHANGED(Name)))</errorConditionFormula>
-    <errorMessage>This Site already exists.</errorMessage>
-</ValidationRule>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>Provides users extended capabilities to Provider Connect select users.</description>
-    <hasActivationRequired>false</hasActivationRequired>
-    <label>PrC User Extended Access</label>
-    <permissionSets>PC_User_BaseObjectWithTabVisibility_ReadWrite</permissionSets>
-    <status>Updated</status>
-</PermissionSetGroup>

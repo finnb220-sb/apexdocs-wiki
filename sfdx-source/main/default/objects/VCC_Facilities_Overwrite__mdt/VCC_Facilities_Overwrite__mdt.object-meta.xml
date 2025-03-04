@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>This custom metadata stores facility names that will overwrite specific facility codes.</description>
-    <label>VCC Facilities Overwrite</label>
-    <pluralLabel>VCC Facilities Overwrites</pluralLabel>
-    <visibility>Public</visibility>
-</CustomObject>

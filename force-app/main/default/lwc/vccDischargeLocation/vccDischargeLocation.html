@@ -1,9 +1,0 @@
-<template>
-    <div class="slds-card" style="height: 100%; width: 100%">
-        <lightning-spinner if:true={isLoading} size="x-small" alternative-text="loading location name"></lightning-spinner>
-        <template if:false={isLoading}>
-            <c-vcc-error-display if:true={errorMsg.length} variant="tiny" system={errorMsg}></c-vcc-error-display>
-            <template if:false={errorMsg.length}> {locationName} </template>
-        </template>
-    </div>
-</template>

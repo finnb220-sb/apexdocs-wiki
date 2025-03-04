@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>CIP_Triage_RespiratoryRate</fullName>
-    <active>false</active>
-    <description>CIP Triage Respiratory Rate: Value should be between 0 and 99</description>
-    <errorConditionFormula>Respiratory_Rate__c &lt; 0 || Respiratory_Rate__c &gt; 99</errorConditionFormula>
-    <errorDisplayField>Respiratory_Rate__c</errorDisplayField>
-    <errorMessage>Please enter a value between 0 and 99</errorMessage>
-</ValidationRule>

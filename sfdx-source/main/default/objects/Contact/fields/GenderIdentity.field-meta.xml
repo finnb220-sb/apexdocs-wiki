@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>GenderIdentity</fullName>
-    <description>Value from API - a person&apos;s deeply felt, internal and individual experience of their gender(s).</description>
-    <trackFeedHistory>false</trackFeedHistory>
-    <type>Picklist</type>
-</CustomField>

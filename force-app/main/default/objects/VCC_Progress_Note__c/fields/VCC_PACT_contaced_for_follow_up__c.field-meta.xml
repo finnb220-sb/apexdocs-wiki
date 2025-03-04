@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>VCC_PACT_contaced_for_follow_up__c</fullName>
-    <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
-    <label>PACT contaced for follow up</label>
-    <trackTrending>false</trackTrending>
-    <type>Checkbox</type>
-</CustomField>

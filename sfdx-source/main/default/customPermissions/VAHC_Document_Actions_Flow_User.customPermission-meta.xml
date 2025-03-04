@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>Users will need this custom permission to be able to view the Document Scheduling &amp; Administrative Actions Flow on the VCC_Person_Account</description>
-    <isLicensed>false</isLicensed>
-    <label>VAHC Document Actions Flow User</label>
-</CustomPermission>

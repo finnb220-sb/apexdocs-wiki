@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Enforce_VISN_name_format</fullName>
-    <active>true</active>
-    <description>Enforces a name format for VISN records.</description>
-    <errorConditionFormula>LEFT(Name,5) != &quot;VISN &quot; || IF( LEN(Name) = 7, NOT(ISNUMBER(RIGHT(Name,2))),NOT(ISNUMBER(RIGHT(Name,1))) ) || LEN(Name) &lt; 6 || LEN(Name) &gt;
-        7</errorConditionFormula>
-    <errorMessage>VISNs must be named in the following format: &quot;VISN #&quot;. Names must be unique.</errorMessage>
-</ValidationRule>

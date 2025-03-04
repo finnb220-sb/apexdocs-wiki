@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>CIP_Triage_SerumGlucose</fullName>
-    <active>false</active>
-    <description>CIP Triage Serum Glucose: Value should be between 0 and 999</description>
-    <errorConditionFormula>Serum_Glucose__c &lt; 0 || Serum_Glucose__c &gt; 999</errorConditionFormula>
-    <errorDisplayField>Serum_Glucose__c</errorDisplayField>
-    <errorMessage>Please enter a value between 0 and 999</errorMessage>
-</ValidationRule>

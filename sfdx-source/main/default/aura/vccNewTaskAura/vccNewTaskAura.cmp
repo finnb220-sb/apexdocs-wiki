@@ -1,3 +1,0 @@
-<aura:component implements="lightning:actionOverride" access="global">
-    <c:vccNewTask/>
-</aura:component>

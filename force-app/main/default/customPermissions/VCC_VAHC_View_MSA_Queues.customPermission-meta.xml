@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>Permission for the MSA/AMSA Leader or Supervisor to view the My VISN MSA Queue on the home page.</description>
-    <isLicensed>false</isLicensed>
-    <label>VAHC View MSA Queues</label>
-</CustomPermission>

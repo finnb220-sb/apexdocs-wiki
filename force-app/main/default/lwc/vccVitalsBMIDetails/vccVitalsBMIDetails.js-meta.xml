@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>60.0</apiVersion>
-    <description>Modal that displays a patients BMI readings over time in a chart and table form.</description>
-    <isExposed>true</isExposed>
-    <masterLabel>Vcc Vitals Bmi Details</masterLabel>
-</LightningComponentBundle>

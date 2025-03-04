@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Cannot_Peer_Review_Self_TN_Plus_Consult</fullName>
-    <active>true</active>
-    <errorConditionFormula>IF( RecordType.Name = &apos;Triage Nurse Peer Review&apos;, NTSP_Case__r.CreatedById = $User.Id , NTSP_Case__r.Telestroke_Consultant__r.Id =
-        $User.Id)</errorConditionFormula>
-    <errorMessage>You cannot peer review yourself</errorMessage>
-</ValidationRule>

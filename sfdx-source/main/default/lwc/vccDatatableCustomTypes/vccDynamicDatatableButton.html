@@ -1,9 +1,0 @@
-<template>
-    <template if:false={value.isLoading}>
-        <lightning-button-icon if:true={value.isAdd} icon-name="utility:add" variant="brand" disabled={value.isDisabled} onclick={value.handleClick}></lightning-button-icon>
-        <lightning-button-icon if:false={value.isAdd} icon-name="utility:dash" onclick={value.handleClick}></lightning-button-icon>
-    </template>
-    <span if:true={value.isLoading}>
-        <lightning-spinner size="x-small" alternative-text="Processing request."></lightning-spinner>
-    </span>
-</template>

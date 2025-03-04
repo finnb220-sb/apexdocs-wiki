@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>BEFAST_Walking_Difficulty__c</fullName>
-    <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
-    <label>Walking Difficulty</label>
-    <trackTrending>false</trackTrending>
-    <type>Checkbox</type>
-</CustomField>

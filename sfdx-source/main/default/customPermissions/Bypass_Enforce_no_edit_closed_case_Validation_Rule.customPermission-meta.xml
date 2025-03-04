@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>This custom permission will be used to bypass &quot;Enforce no edit closed case&quot; validation rule on Prc Case object. This custom permission will allow PrC Specialist Manager Users to update the Training Case flag at Prc Case object</description>
-    <isLicensed>false</isLicensed>
-    <label>&quot;Bypass Enforce no edit closed case&quot; Validation Rule.</label>
-</CustomPermission>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>VAHC_Phonebook</fullName>
-    <fields>Name</fields>
-    <fields>Phone</fields>
-    <fields>VCC_Notes__c</fields>
-    <label>VAHC Phonebook</label>
-</CompactLayout>

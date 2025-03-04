@@ -2,7 +2,7 @@
 SCRIPT_PATH=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 cd $SCRIPT_PATH/..
 
-APEXDOC_DIR="${GITHUB_WORKSPACE}/documentation/ApexDoc"
+APEXDOC_DIR="${GITHUB_WORKSPACE}/force-app/main/default/docs"
 
 # Remove old docs
 echo "Removing old version..." && \

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>This custom metadata type is used to store endpoints (ie. trailing path information) that, when combined with a Named Credential, will form a complete URL:
-        {host}/{endpoint}</description>
-    <label>Endpoint</label>
-    <pluralLabel>Endpoints</pluralLabel>
-    <visibility>Public</visibility>
-</CustomObject>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <customSettingsType>List</customSettingsType>
-    <description>Custom Setting to host the Mapping for Location and Addendum Title IENs</description>
-    <enableFeeds>false</enableFeeds>
-    <label>Location to Addendum IEN Mapping</label>
-    <visibility>Public</visibility>
-</CustomObject>

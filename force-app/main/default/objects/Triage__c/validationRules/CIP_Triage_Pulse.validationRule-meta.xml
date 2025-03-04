@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>CIP_Triage_Pulse</fullName>
-    <active>false</active>
-    <description>CIP Triage Object: Pulse should be between 0 and 300</description>
-    <errorConditionFormula>Pulse__c &lt; 0 || Pulse__c &gt; 300</errorConditionFormula>
-    <errorDisplayField>Pulse__c</errorDisplayField>
-    <errorMessage>Please enter a value between 0 and 300</errorMessage>
-</ValidationRule>

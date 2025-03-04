@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Enforce_Consult_Date</fullName>
-    <active>true</active>
-    <errorConditionFormula>Consult_Date__c &gt; TODAY()</errorConditionFormula>
-    <errorDisplayField>Consult_Date__c</errorDisplayField>
-    <errorMessage>Consult date cannot be later than today.</errorMessage>
-</ValidationRule>

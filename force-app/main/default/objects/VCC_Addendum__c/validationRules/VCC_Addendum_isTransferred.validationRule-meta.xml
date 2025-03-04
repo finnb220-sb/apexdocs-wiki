@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>VCC_Addendum_isTransferred</fullName>
-    <active>true</active>
-    <description>The Addendum cannot be edited if VCC_Transferred_Addendum__c is changed and is &quot;True&quot;.</description>
-    <errorConditionFormula>!$Permission.DisableTriggersFlag &amp;&amp; VCC_Transferred_Addendum__c &amp;&amp; !ISCHANGED ( VCC_Signed__c) &amp;&amp;
-        !ISCHANGED(VCC_Transferred_Addendum__c)</errorConditionFormula>
-    <errorMessage>The Addendum has been transferred and cannot be edited.</errorMessage>
-</ValidationRule>

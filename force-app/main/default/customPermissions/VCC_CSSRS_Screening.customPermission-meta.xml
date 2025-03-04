@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>This custom permission determines whether the Columbia Protocol tab is accessible to the user on the Progress Note Clinical Triage flexipage</description>
-    <isLicensed>false</isLicensed>
-    <label>VCC C-SSRS Screening</label>
-</CustomPermission>

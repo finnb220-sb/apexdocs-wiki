@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
-    <cacheControl>Private</cacheControl>
-    <contentType>text/css</contentType>
-    <description>Toast CSS File that allows for Line Breaks in Toast Message. Needs to be imported into lwc component to override standard toast component.</description>
-</StaticResource>

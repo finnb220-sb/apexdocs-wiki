@@ -1,5 +1,0 @@
-<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
-	<aura:handler event="aura:locationChange" action="{!c.handleLocationChange}"/>
-    <aura:handler name="change" value="{!v.recordId}" action="{!c.handleRecordIdChange}"></aura:handler>
-    <c:vccClearTriageWrapper aura:id='clearTriageWrapper' recordId="{!v.recordId}"></c:vccClearTriageWrapper>
-</aura:component>

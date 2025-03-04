@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Prevent_Duplicate_VISN_Records</fullName>
-    <active>true</active>
-    <description>Prevents duplicate VISN records by checking the VISN Name doesn&apos;t already exist.</description>
-    <errorConditionFormula>AND(VLOOKUP($ObjectType.VCC_VISN__c.Fields.Name, $ObjectType.VCC_VISN__c.Fields.Name, Name) = Name, OR(ISNEW(), ISCHANGED(Name)))</errorConditionFormula>
-    <errorMessage>This VISN already exists.</errorMessage>
-</ValidationRule>

@@ -1,6 +1,6 @@
 name: Generate ApexDocs Deploy To Wiki
 # This workflow is triggered on pull requests to release branches.
-# The majority of this logic is in the ApexDocWikiManager.ts file, which is compiled to a mjs file in the steps below.
+# The majority of this logic is in the ApexDocWikiManager.ts file, which is compiled to a js file in the steps below.
 # Typescript gives us a lot of type safety and allows us to write more maintainable code, but needs to be compiled to run in the github actions environment.
 # The 'Compile Typescript' step uses bun to compile the typescript file to a mjs file, which is then imported and run in the 'Generate & Publish ApexDocs' step.
 # Please see the <root>./github/workflows/lib/ApexDocWikiManager.mts file for the main logic of this action.
@@ -27,7 +27,7 @@ jobs:
 
       - name: Compile Typescript
         run: |
-          bun build --target node .github/workflows/lib/ApexDocWikiManager.mts --outfile .github/workflows/lib/ApexDocWikiManager.mjs --format esm
+          bun build --target node .github/workflows/lib/ApexDocWikiManager.ts --outfile .github/workflows/lib/ApexDocWikiManager.js --format esm
 
       - uses: actions/github-script@v7
         continue-on-error: true

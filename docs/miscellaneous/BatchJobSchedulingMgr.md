@@ -1,16 +1,15 @@
 # BatchJobSchedulingMgr Class
 
+`APIVERSION: 62`
+`STATUS: ACTIVE`
+
 Name: BatchJobSchedulingMgr
 
 **Author** Brenda Finn
 
 **Date** 11/14/21
 
-**See** BMAccountSuspendLicenseBatch.cls
-
-**See** BatchJobSchedulingMgrTest.cls for unit tests
-
-**See** Do_Not_Run_Automations_Day__mdt custom metadata
+**See** [BatchJobSchedulingMgrTest](BatchJobSchedulingMgrTest.md)
 
 ## Fields
 ### `testConfigs`

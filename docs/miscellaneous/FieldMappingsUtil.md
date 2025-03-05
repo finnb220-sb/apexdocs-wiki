@@ -1,5 +1,8 @@
 # FieldMappingsUtil Class
 
+`APIVERSION: 62`
+`STATUS: ACTIVE`
+
 Created by: DC Solutions 
 Created on: 2019-11-06 
  

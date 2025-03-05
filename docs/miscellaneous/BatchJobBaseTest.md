@@ -1,6 +1,8 @@
 # BatchJobBaseTest Class
 
 `ISTEST`
+`APIVERSION: 62`
+`STATUS: ACTIVE`
 
 Name: BatchJobBaseTest
 
@@ -8,9 +10,9 @@ Name: BatchJobBaseTest
 
 **Date** 2021-11-16
 
-**See** BatchJobBase.cls
+**See** [BatchJobBase](BatchJobBase.md)
 
-**See** BatchJobBaseTest.cls for mock subclass for testing
+**See** [BatchJobBaseTest](BatchJobBaseTest.md)
 
 ## Fields
 ### `TEST_ACCOUNT_NAME`

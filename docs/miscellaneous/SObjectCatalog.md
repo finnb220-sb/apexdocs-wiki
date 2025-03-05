@@ -1,5 +1,8 @@
 # SObjectCatalog Class
 
+`APIVERSION: 46`
+`STATUS: ACTIVE`
+
 SObjectCatalog 
  
 Description: Collection-like utility class with convenience methods 

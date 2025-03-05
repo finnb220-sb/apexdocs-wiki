@@ -1,6 +1,8 @@
 # FieldMappingsUtilTest Class
 
 `ISTEST`
+`APIVERSION: 62`
+`STATUS: ACTIVE`
 
 Created by DC Solutions on 2019-11-06. 
 Description: Unit test for FieldMappingsUtil class

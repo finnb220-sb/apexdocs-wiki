@@ -1,9 +1,11 @@
 # BatchJobBase Class
 `abstract`
 
+`APIVERSION: 63`
+`STATUS: ACTIVE`
+
 Provides common variables, methods and handling for all Batch Jobs. 
- 
-Subclasses must add following to class declaration (NOTE: Implementation provided here) 
+Subclasses must add following to class declaration even though the implementation is provided in this class 
 implements Database.Batchable&lt;sObject&gt;, Schedulable 
 Subclasses must provide implementation for these abstract methods 
 global String getJobName() - for logging purposes - return the name of Job (ie Account Batch) 
@@ -15,6 +17,14 @@ global void handleException(Exception exc) - handle exception
 **Author** Brenda Finn
 
 **Date** on 2021-11-10
+
+**See** [BatchJobBaseMock](BatchJobBaseMock.md)
+
+**See** [BatchJobBaseTest](BatchJobBaseTest.md)
+
+**See** [BatchJobConstants](BatchJobConstants.md)
+
+**See** [BatchJobSchedulingMgr](BatchJobSchedulingMgr.md)
 
 **Implements**
 

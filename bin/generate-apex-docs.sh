@@ -12,7 +12,7 @@ rm -rf $APEXDOC_DIR && \
 # Generate Apex doc files
 echo "Generating Apex doc files..." && \
 mkdir -pv $APEXDOC_DIR && \
-"${GITHUB_WORKSPACE}/node_modules/.bin/apexdocs" markdown -p global public private protected namespaceaccessible -s "${GITHUB_WORKSPACE}/force-app/main/default/classes" -t "${APEXDOC_DIR}" && \
+"${GITHUB_WORKSPACE}/node_modules/.bin/apexdocs" markdown -p global public private protected namespaceaccessible -s "${GITHUB_WORKSPACE}/force-app/main/default/classes" -t "${APEXDOC_DIR}" --includeMetadata && \
 
 # Flatten directory structure
 # TODO: Do we want to flatten directory structure? Revisit

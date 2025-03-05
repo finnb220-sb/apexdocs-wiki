@@ -1,6 +1,8 @@
 # SObjectCatalogTest Class
 
 `ISTEST`
+`APIVERSION: 46`
+`STATUS: ACTIVE`
 
 ## Fields
 ### `opp`

@@ -1,14 +1,17 @@
 # BatchJobConstants Class
 
+`APIVERSION: 62`
+`STATUS: ACTIVE`
+
 Name: BatchJobConstants
 
 **Author** Brenda Finn
 
 **Date** 12/20/21
 
-**See** BatchJobBase.cls for usage
+**See** [BatchJobBase](BatchJobBase.md)
 
-**See** BatchJobSchedulingMgr.cls for usage
+**See** [BatchJobSchedulingMgr](BatchJobSchedulingMgr.md)
 
 ## Fields
 ### `USE_START_DATE`

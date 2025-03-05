@@ -16,8 +16,8 @@ mkdir -pv $APEXDOC_DIR && \
 
 # Flatten directory structure
 # TODO: Do we want to flatten directory structure? Revisit
-echo "Flattening directory structure..." && \
-find "$APEXDOC_DIR/"* -mindepth 1 -type f -exec mv -i '{}' $APEXDOC_DIR ';' && \
+#echo "Flattening directory structure..." && \
+#find "$APEXDOC_DIR/"* -mindepth 1 -type f -exec mv -i '{}' $APEXDOC_DIR ';' && \
 
 # Remove empty folders
 echo "Removing empty folders..." && \

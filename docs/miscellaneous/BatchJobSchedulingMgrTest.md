@@ -1,6 +1,8 @@
 # BatchJobSchedulingMgrTest Class
 
 `ISTEST`
+`APIVERSION: 62`
+`STATUS: ACTIVE`
 
 Name: BatchJobSchedulingMgrTest
 
@@ -8,7 +10,7 @@ Name: BatchJobSchedulingMgrTest
 
 **Date** 11/14/21
 
-**See** BatchJobSchedulingMgr.cls
+**See** [BatchJobSchedulingMgr](BatchJobSchedulingMgr.md)
 
 ## Methods
 ### `buildData()`

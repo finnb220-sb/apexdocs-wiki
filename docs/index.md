@@ -5,8 +5,7 @@
 ### [BatchJobBase](miscellaneous/BatchJobBase.md)
 
 Provides common variables, methods and handling for all Batch Jobs. 
- 
-Subclasses must add following to class declaration (NOTE: Implementation provided here) 
+Subclasses must add following to class declaration even though the implementation is provided in this class 
 implements Database.Batchable&lt;sObject&gt;, Schedulable 
 Subclasses must provide implementation for these abstract methods 
 global String getJobName() - for logging purposes - return the name of Job (ie Account Batch) 

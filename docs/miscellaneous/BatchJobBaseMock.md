@@ -1,6 +1,8 @@
 # BatchJobBaseMock Class
 
 `ISTEST`
+`APIVERSION: 62`
+`STATUS: ACTIVE`
 
 Name: BatchJobBaseMock
 
@@ -8,9 +10,9 @@ Name: BatchJobBaseMock
 
 **Date** 11/16/21
 
-**See** BatchJobBase.cls
+**See** [BatchJobBase](BatchJobBase.md)
 
-**See** BatchJobBaseTest.cls for related test
+**See** [BatchJobBaseTest](BatchJobBaseTest.md)
 
 **Inheritance**
 

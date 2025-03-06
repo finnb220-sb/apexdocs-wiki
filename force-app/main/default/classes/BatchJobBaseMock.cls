@@ -5,8 +5,8 @@
  * 
  * @description Mock sub-class of BatchJobBase for unit tests
  *
- * @see BatchJobBase.cls
- * @see BatchJobBaseTest.cls for related test
+ * @see BatchJobBase
+ * @see BatchJobBaseTest
  */
 @IsTest
 global class BatchJobBaseMock extends BatchJobBase

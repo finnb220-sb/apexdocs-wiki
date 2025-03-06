@@ -3,6 +3,7 @@ SCRIPT_PATH=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 cd $SCRIPT_PATH/..
 
 APEXDOC_DIR="${GITHUB_WORKSPACE}/docs"
+VITEPRESS_APEXDOC_DIR="${GITHUB_WORKSPACE}/apexdocs"
 APEXDOC_ROOT_URL="https://finnb220-sb.github.io/apexdocs-wiki/docs/"
 
 # Remove old docs
@@ -21,29 +22,31 @@ mkdir -pv $APEXDOC_DIR && \
 
 # Remove empty folders
 echo "Removing empty folders..." && \
-find "$APEXDOC_DIR/"* -type d -empty -delete
+find "$APEXDOC_DIR/"* -type d -empty -delete &&
 
+echo "Copying markdown to $VITEPRESS_APEXDOC_DIR directory" &&
+cp -r "$APEXDOC_DIR/"* $VITEPRESS_APEXDOC_DIR
 # Move index.md to root directory & update all links
 # find will print content of each md file to stdout which is stdin for xargs
 # xargs will take that input and parse it using sed utility
 # sed will
-echo "Replacing relative links"
-
-directory="$APEXDOC_DIR"
-
-if [ ! -d "$APEXDOC_DIR" ]; then
-  echo "Error: Directory '$APEXDOC_DIR' not found."
-  exit 1
-fi
-
-for file in "$APEXDOC_DIR"/*; do
-  if [ -f "$file" ]; then
-    echo "Processing file: $file"
-    # Add your commands to process the file here
-    # For example, to print the file content:
-    # cat "$file"
-  fi
-done
+#echo "Replacing relative links"
+#
+#directory="$APEXDOC_DIR"
+#
+#if [ ! -d "$APEXDOC_DIR" ]; then
+#  echo "Error: Directory '$APEXDOC_DIR' not found."
+#  exit 1
+#fi
+#
+#for file in "$APEXDOC_DIR"/*; do
+#  if [ -f "$file" ]; then
+#    echo "Processing file: $file"
+#    # Add your commands to process the file here
+#    # For example, to print the file content:
+#    # cat "$file"
+#  fi
+#done
 #find "$APEXDOC_DIR" -type f -name "*.md" -print0 | xargs -0 sed -i "" -E "s@]\(\.\/(.*)\.md@](/docs/\1@g)" && \
 #find "$APEXDOC_DIR" -type f -name "*.md" -print0 | xargs -0 sed -i "" -E "s@\]\(\.\.\/.*\/(.*)\.md@](/docs/\1@g)"
 #find "$APEXDOC_DIR" -type f -name "*.md" -print0 | xargs -0 sed -i "" -E "s@]\(\.\/(.*)\.md@]($APEXDOC_ROOT_URL/\1@g" && \

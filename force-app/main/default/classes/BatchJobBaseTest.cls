@@ -4,8 +4,8 @@
  * @date 2021-11-16
  * @description Unit test class for BatchJobBase
  *
- * @See BatchJobBase.cls
- * @See BatchJobBaseTest.cls for mock subclass for testing
+ * @See BatchJobBase
+ * @See BatchJobBaseTest
  */
 @IsTest
 private class BatchJobBaseTest {

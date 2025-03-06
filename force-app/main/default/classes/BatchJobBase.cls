@@ -3,8 +3,7 @@
  * @date on 2021-11-10
  * 
  * @description Provides common variables, methods and handling for all Batch Jobs.
- *
- *  Subclasses must add following to class declaration (NOTE: Implementation provided here)
+ *  Subclasses must add following to class declaration even though the implementation is provided in this class
  *      implements Database.Batchable<sObject>, Schedulable
  *  Subclasses must provide implementation for these abstract methods
  *      global String getJobName() - for logging purposes - return the name of Job (ie Account Batch)
@@ -13,6 +12,10 @@
  *      global void execute(List<SObject> scope) - Actually perform processing on scope
  *      global void handleException(Exception exc) - handle exception
  *
+ * @see BatchJobBaseMock
+ * @see BatchJobBaseTest
+ * @see BatchJobConstants
+ * @see BatchJobSchedulingMgr
  */
 global abstract with sharing class BatchJobBase implements Database.Stateful {
     global Integer numSuccesses;
@@ -32,8 +35,7 @@ global abstract with sharing class BatchJobBase implements Database.Stateful {
     /**
      * @description Set our configuration to details in ourConfig record
      *
-     * @param ourConfig instance of Batch Job Config metadata containing configuration details
-     *  such as batch size, schedule, query filters.
+     * @param ourConfig instance of Batch Job Config metadata containing configuration details such as batch size, schedule, query filters.
      */
     global void setConfig(Batch_Job_Config__mdt ourConfig) {
         this.config = ourConfig;

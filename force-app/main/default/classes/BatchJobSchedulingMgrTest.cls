@@ -3,9 +3,9 @@
  * @author Brenda Finn
  * @date 11/14/21
  * 
- * @description Unit tests for BatchJobSchedulingMgrT
+ * @description Unit tests for BatchJobSchedulingMgr
  *
- * @see BatchJobSchedulingMgr.cls
+ * @see BatchJobSchedulingMgr
  */
 @IsTest
 private class BatchJobSchedulingMgrTest {

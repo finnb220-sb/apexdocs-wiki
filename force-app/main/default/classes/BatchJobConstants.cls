@@ -5,8 +5,8 @@
  * 
  * @description Constants for Batch Job Framework
  *
- * @see BatchJobBase.cls for usage
- * @see BatchJobSchedulingMgr.cls for usage
+ * @see BatchJobBase
+ * @see BatchJobSchedulingMgr
  */
 public with sharing class BatchJobConstants {
     public static final String USE_START_DATE = 'Use Start Date';

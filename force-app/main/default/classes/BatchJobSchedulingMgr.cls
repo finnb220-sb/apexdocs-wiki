@@ -4,11 +4,9 @@
  * @date 11/14/21
  * 
  * @description Class that controls whether an automated job should run making use of custom
- *      metadata that
+ *      metadata with configuration values so it can be controlled declaratively
  *
- * @see BMAccountSuspendLicenseBatch.cls
- * @see BatchJobSchedulingMgrTest.cls for unit tests
- * @see Do_Not_Run_Automations_Day__mdt custom metadata
+ * @see BatchJobSchedulingMgrTest
  */
 public with sharing class BatchJobSchedulingMgr {
     @TestVisible private static List<Do_Not_Run_Automations_Day__mdt> testConfigs;

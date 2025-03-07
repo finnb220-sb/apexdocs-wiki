@@ -5,7 +5,7 @@ export default defineConfig({
   title: "VitePress ApexDocs",
   description: "Generated documentation from Salesforce Apex Class Files",
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
+    // For reference, here is default theme: https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: 'index' }
     ],

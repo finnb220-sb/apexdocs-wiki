@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<Group xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>Initially being used to grant IVC users Read-only access to the cases of all VAHC record types</description>
-    <doesIncludeBosses>true</doesIncludeBosses>
-    <name>VAHC IVC Users</name>
-</Group>

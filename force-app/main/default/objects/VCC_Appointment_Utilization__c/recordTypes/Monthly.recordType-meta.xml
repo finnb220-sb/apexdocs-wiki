@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Monthly</fullName>
-    <active>true</active>
-    <description>Monthly time scale for progressive data resolution for reporting on appointment utilization</description>
-    <label>Monthly</label>
-</RecordType>

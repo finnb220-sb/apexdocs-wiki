@@ -1,9 +1,0 @@
-<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId">
-    <aura:attribute name="recordId" type="String" />
-    <aura:attribute name="componentName" type="String" />
-    <lightning:messageChannel
-        type="vccUIUpdate__c"
-        aura:id="recordSelected"
-        onMessage="{!c.handleMessage}"
-    />
-</aura:component>	

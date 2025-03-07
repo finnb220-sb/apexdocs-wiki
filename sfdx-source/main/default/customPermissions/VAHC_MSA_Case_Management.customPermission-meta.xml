@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>This permission is for the Admin and Scheduling MSA to have access to the Case Object &apos;Change Owner&apos; and &apos;Assign to Me&apos; Button</description>
-    <isLicensed>false</isLicensed>
-    <label>VAHC MSA Case Management</label>
-</CustomPermission>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Scheduling_Compact_Layout</fullName>
-    <fields>VCC_Scheduling_Action__c</fields>
-    <fields>VCC_Clinic__c</fields>
-    <fields>VCC_Location__c</fields>
-    <fields>VCC_Stop_Code__c</fields>
-    <label>Scheduling Compact Layout</label>
-</CompactLayout>

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>Permission to grant access to the Future Renewal Request function of the Medications Lightning Web Component.</description>
-    <isLicensed>false</isLicensed>
-    <label>VAHC Access Future Renewal Request</label>
-</CustomPermission>

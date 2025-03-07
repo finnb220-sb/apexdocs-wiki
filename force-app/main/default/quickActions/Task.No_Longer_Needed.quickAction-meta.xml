@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>Used on FRR tasks when the owner decides the task is no longer needed and closes it.</description>
-    <flowDefinition>VCC_Pharmacy_FRR_No_Longer_Needed</flowDefinition>
-    <label>No Longer Needed</label>
-    <optionsCreateFeedItem>false</optionsCreateFeedItem>
-    <type>Flow</type>
-</QuickAction>

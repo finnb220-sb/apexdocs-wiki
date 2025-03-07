@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>VCC_Pharm_FRR_Cannot_Reopen</fullName>
-    <active>true</active>
-    <description>Can not reopen a pharmacy future renewal task if already closed.</description>
-    <errorConditionFormula>BEGINS( RecordType.DeveloperName, &apos;VCC_Pharmacy_FRR&apos;) &amp;&amp; !$Permission.DisableTriggersFlag &amp;&amp; AND(ISCHANGED(Status), OR(
-        ISPICKVAL(PRIORVALUE(Status),&apos;Completed&apos;), ISPICKVAL(PRIORVALUE(Status),&apos;No Longer Needed&apos;) ) )</errorConditionFormula>
-    <errorMessage>You cannot edit a closed Future Renewal Request task.</errorMessage>
-</ValidationRule>

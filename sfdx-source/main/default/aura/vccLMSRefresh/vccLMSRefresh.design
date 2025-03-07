@@ -1,4 +1,0 @@
-<design:component>
-    <design:attribute name="recordId" label="recordId" description="recordId to listen to for a refresh" />
-    <design:attribute name="componentName" label="Component Name" description="Unique name to compare against LMS vccUIUpdate message" />
-</design:component>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>62.0</apiVersion>
-    <description>Renders a field label and field value in a uniform manner. Intended for use in HDR detail modal components</description>
-    <isExposed>false</isExposed>
-    <masterLabel>Vcc Base Detail Field</masterLabel>
-</LightningComponentBundle>

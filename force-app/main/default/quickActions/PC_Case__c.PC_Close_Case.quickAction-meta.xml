@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>This button triggers the PrC Close Case functionality.</description>
-    <flowDefinition>PC_Close_Case</flowDefinition>
-    <label>Close Case</label>
-    <optionsCreateFeedItem>false</optionsCreateFeedItem>
-    <type>Flow</type>
-</QuickAction>

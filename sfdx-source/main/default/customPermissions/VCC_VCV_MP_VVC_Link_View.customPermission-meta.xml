@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>A user with &quot;VCV MP VVC Link View&quot; will be able to view the VA Video Connect Link (LWC) on the VCV Case and Progress Note record pages.</description>
-    <isLicensed>false</isLicensed>
-    <label>VCC VCV MP VVC Link View</label>
-</CustomPermission>

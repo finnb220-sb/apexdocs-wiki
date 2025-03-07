@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>VCC_Task_Created_by_Flow</fullName>
-    <active>true</active>
-    <errorConditionFormula
-    >OR( BEGINS( RecordType.DeveloperName, &quot;VCC_VCV_Follow_Up&quot;), BEGINS( RecordType.DeveloperName, &quot;VCC_Calls&quot;)) &amp;&amp; !$Permission.DisableTriggersFlag
-        &amp;&amp; $Permission.VCC_Medical_Provider &amp;&amp; Task_Creation_Origin__c &lt;&gt; &quot;VCC Create Task&quot; &amp;&amp;ISNEW()</errorConditionFormula>
-    <errorMessage>New tasks for the VCV Task Queue cannot be created here. Please return to the patient&apos;s VCV progress note to add a new task.</errorMessage>
-</ValidationRule>

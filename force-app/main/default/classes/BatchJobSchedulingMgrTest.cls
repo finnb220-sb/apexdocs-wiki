@@ -5,6 +5,7 @@
  * 
  * @description Unit tests for BatchJobSchedulingMgr
  *
+ * @group Batch Framework
  * @see BatchJobSchedulingMgr
  */
 @IsTest

@@ -5,6 +5,7 @@
  * 
  * @description Constants for Batch Job Framework
  *
+ * @group Batch Framework
  * @see BatchJobBase
  * @see BatchJobSchedulingMgr
  */

@@ -2,6 +2,7 @@
  * Created by DC Solutions on 2019-11-06.
  * Description: Unit test for FieldMappingsUtil class
  *
+ * @group Field Mapping Utility
  * @see FieldMappingsUtil.cls
  * @see FieldMapping custom metadata type
  */

@@ -4,8 +4,9 @@
  * @date 11/14/21
  * 
  * @description Class that controls whether an automated job should run making use of custom
- *      metadata with configuration values so it can be controlled declaratively
+ * metadata with configuration values so it can be controlled declaratively
  *
+ * @group Batch Framework
  * @see BatchJobSchedulingMgrTest
  */
 public with sharing class BatchJobSchedulingMgr {

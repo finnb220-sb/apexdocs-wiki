@@ -1,3 +1,11 @@
+/**
+ * @description Apex Unit Test for Collection-like utility class
+ *
+ * @Author Dupont Circle Solutions (Tim Phang)
+ *
+ * @group SObject Collection Utility
+ * @see SObjectCatalog
+ */
 @isTest
 private class SObjectCatalogTest {
   static Opportunity opp = new Opportunity(Name = 'Test', StageName = 'Prospecting', CloseDate = Date.Today());

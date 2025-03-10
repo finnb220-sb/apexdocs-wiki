@@ -4,6 +4,7 @@
  * @date 2021-11-16
  * @description Unit test class for BatchJobBase
  *
+ * @group Batch Framework
  * @See BatchJobBase
  * @See BatchJobBaseTest
  */

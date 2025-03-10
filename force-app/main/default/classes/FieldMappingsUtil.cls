@@ -5,6 +5,7 @@
  * Description: Utility class to parse out and use Field Mapping metadata to copy fields from
  *      one object (source) to another (target)
  *
+ * @group Field Mapping Utility
  * @See FieldMapping custom metadata type
  */
 public class FieldMappingsUtil {

@@ -22,7 +22,7 @@ If you do not modify the `package.json` in this repository, then you can generat
 1. The `apexdocs` target generates the file(s) in your configured `apexdocs` directory creating a subdirectory called `guide`.
 2. The `docs:preview` target starts a local server to preview the generated content as follows 
    -  Source directory is `apexdocs/.vitepress/dist`
-   -  Content is deployed at [this url](http://localhost:5173)  
+   -  Content is deployed locally at http://localhost:5173  
 ```sh
 npm run apexdocs
 npm run docs:preview

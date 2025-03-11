@@ -3,7 +3,7 @@ The documentation found here has been auto-generated from the Apex source files 
 
 The site content is created/updated by a github action configured in your repository. By default, the action is named `deploy-apexdocs-to-vitepress.yml` and fires when the `master` and `release` branches are updated. See details about Vitepress [here](https://vitepress.dev). Keep reading for how to get started!
 
-### [ApexDoc on Vitepress](guide)
+### [Head](guide) to Latest Release Documentation Now 
 
 ## Annotate Your Code
 It is simple to document your code as you are developing it. Just follow the guidelines laid out in ApexDocs annotating class, methods & fields with the relevant @ tags and it will get picked up & transformed when ApexDocs generator fires.

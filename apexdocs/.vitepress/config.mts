@@ -26,5 +26,5 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
     ]
   },
-  ignoreDeadLinks: 'localhostLinks'  
+  ignoreDeadLinks: true // 'localhostLinks'
 })

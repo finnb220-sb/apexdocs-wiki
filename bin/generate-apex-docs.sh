@@ -16,4 +16,4 @@ mkdir -pv $APEXDOC_GUIDE_DIR && \
 
 # Remove empty folders
 echo "Removing empty folders..." && \
-find "$APEXDOC_GUIDE_DIR/"* -type d -empty -delete && \
+find "$APEXDOC_GUIDE_DIR/"* -type d -empty -delete 

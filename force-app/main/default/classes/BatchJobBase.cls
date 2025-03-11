@@ -1,7 +1,7 @@
 /**
  * @author Brenda Finn 
  * @date on 2021-11-10
- * 
+ *
  * @description Provides common variables, methods and handling for all Batch Jobs.
  *  Subclasses must add following to class declaration even though the implementation is provided in this class
  *  `implements Database.Batchable<sObject>, Schedulable`
@@ -19,9 +19,13 @@
  * @see BatchJobSchedulingMgr
  */
 global abstract with sharing class BatchJobBase implements Database.Stateful {
+    /** @description Number of records successfully processed **/
     global Integer numSuccesses;
+    /** @description Number of records that errored out **/
     global Integer numErrors {get {return errors.size();} private set;}
+    /** @description List of error message string for troubleshooting & logging **/
     global List<String> errors;
+    /** @description Batch Job configuration specifying batch size and other details **/
     global Batch_Job_Config__mdt config;
 
     /**

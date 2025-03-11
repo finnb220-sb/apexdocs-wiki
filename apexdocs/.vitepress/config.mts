@@ -16,9 +16,19 @@ export default defineConfig({
       {
         text: 'Contents',
         items: [
-          { text: 'Home', link: '/index' },
-          { text: 'ApexDocs', link: '/guide' },
-        ]
+          {text: 'Home', link: '/index' },
+          {
+            text: 'Versions',
+            items: [
+              {
+                text: 'Latest Release', link:'/guide'
+              },
+              {
+                text: 'Release 1.0', link:'/guide/v1.0'
+              }
+            ]
+          }
+          ]
       }
     ],
 

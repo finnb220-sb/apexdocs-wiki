@@ -10,8 +10,6 @@ import * as github from '@actions/github';
 import { Context } from '@actions/github/lib/context';
 import { ExecOptions } from '@actions/exec';
 
-
-
 interface ActionParameters {
     github: typeof github;
     context: Context;
@@ -29,7 +27,6 @@ export class ApexDocWikiManager {
     private targetBranch: string;
     private ROOT_WORK_DIR = '/home/runner/work/va-teams/va-teams/';
 
-
     constructor(github: any, context: any, wikiRepoToken: string, targetBranch: string, useShellExecution: boolean = true) {
         this.github = github;
         this.context = context;
@@ -39,31 +36,31 @@ export class ApexDocWikiManager {
     }
 
     async generateAndPublishDocs(): Promise<void> {
-        console.log('=====> calling generateApexDocs()');
-        await this.generateApexDocs();
+        console.log('=====> calling getReleaseBranches()');
+        const releases = await this.getReleaseBranches();
+        // console.log('=====> calling generateApexDocs()');
+        // await this.generateApexDocs();
         // console.log('=====> calling getReleaseBranches()');
         // const releases = await this.getReleaseBranches();
         // Kevin - releases is empty - I do not know why but I also do not think we need to get release branches.
         // we should be able to get the target branch from the context argument
         // core.info('======> releases = ' + JSON.stringify(releases));
         // todo: get list of branches from repo using graphQl, not hard-coded.
-        console.log('=====> calling generateHomeMd()');
-        let releases: string[] = [
-            '1.16',
-            '1.15',
-            '1.14'];
-        await this.generateHomeMd(releases);
-        console.log('=====> calling commitToWiki()');
-        await this.commitToWiki(releases);
-        console.log('=====> calling updateHeadersInAllFiles()');
-        await this.updateHeadersInAllFiles(releases);
+        // console.log('=====> calling generateHomeMd()');
+        // let releases: string[] = [
+        //     '1.16',
+        //     '1.15',
+        //     '1.14'];
+        // await this.generateHomeMd(releases);
+        // console.log('=====> calling commitToWiki()');
+        // await this.commitToWiki(releases);
+        // console.log('=====> calling updateHeadersInAllFiles()');
+        // await this.updateHeadersInAllFiles(releases);
     }
 
     private async generateApexDocs(): Promise<void> {
         if (this.useShellExecution) {
             await this.generateApexDocsViaShell();
-        } else {
-            await this.generateApexDocsViaLibrary();
         }
     }
 
@@ -86,12 +83,6 @@ export class ApexDocWikiManager {
                 }
             );
         });
-    }
-
-    private async generateApexDocsViaLibrary(): Promise<void> {
-        // TODO: ApexDocs's Author and I have been having an ongoing conversation about how to use his work as a library
-        // TODO: rather than requiring shell execution. This is a placeholder for now.
-        console.log('Direct library usage not implemented yet');
     }
 
     private async getReleaseBranches(): Promise<string[]> {

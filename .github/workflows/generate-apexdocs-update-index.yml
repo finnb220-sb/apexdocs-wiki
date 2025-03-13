@@ -54,7 +54,7 @@ jobs:
             const path = require('path')
             const file = '.github/workflows/lib/ApexDocContentManager.js'
             // Import the module (ts file) and generate the ApexDocs
-            const apexDocContentManager = await import('${{ github.workspace }}/${{ file }}');
+            const apexDocContentManager = await import('${{ github.workspace }}/.github/workflows/lib/ApexDocContentManager.js');
             if (apexDocContentManager) {
               console.log('======> Generating ApexDoc');
               // For some reason, I cannot access the target branch from within the apexDocContentManager context so passing it in.

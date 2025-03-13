@@ -18,7 +18,7 @@ export default defineConfig({
         items: [
           {text: 'Home', link: '/index' },
           {
-            text: 'Versions',
+            text: 'Releases',
             items: [
               {
                 text: 'Latest Release', link:'/guide'
@@ -28,7 +28,7 @@ export default defineConfig({
               }
             ]
           }
-          ]
+        ]
       }
     ],
 

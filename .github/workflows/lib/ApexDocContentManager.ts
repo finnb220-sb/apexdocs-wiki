@@ -141,10 +141,12 @@ export class ApexDocContentManager {
             console.log('=====> Adding item to content ' + item);
             content += `{ ${item} },\n`;
         });
-        content -= ',\n';
+        consolog.log('=====> after forEach loop, content = ' + content);
+        content = content.substring(0, content.lastIndexOf(',\n'));
+        consolog.log('=====> after removall of trailing comma & newline, content = ' + content);
         content += '}]';
         content += '\n\n';
-        console.log('======> New sidebar content is "%o"', content);
+        console.log('======> Final sidebar content is ' + content);
         // try {
         //     // todo: Replace with call to graphQl to get contents
         //     const { data: existingHome } = await this.github.rest.repos.getContent({

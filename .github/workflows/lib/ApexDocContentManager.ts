@@ -124,15 +124,26 @@ export class ApexDocContentManager {
     // }
 
     private async updateReleasesInSidebar(releases: string[]): Promise<void> {
-        let content = 'sidebar: [\n{\n'; // text: \'Contents\',\n        items: [\n          {text: \'Home\', link: \'/index\' },\n          {\n            text: \'Releases\',\n            items: [\n              {\n                text: \'Latest Release\', link:\'/guide\'\n              },\n              {\n                text: \'Release 1.0\', link:\'/guide/v1.0\'\n              }\n            ]\n          }\n        ]\n      }\n    ]';
+        let content = 'sidebar:[{text: \'Contents\',items: [{text: \'Home\', link: \'/index\' },{text: \'Releases\',items: [{';
+        const placeholder = 'POPULATE_ME';
+        const link = '/guide/';
+        // text: 'Contents', items: [
+        // {text: 'Home', link: '/index' },
+        // {text: 'Releases',
+        //     items: [
+        //     {text: 'Latest Release', link:'/guide'},
+        //     {text: 'Release 1.0', link:'/guide/v1.0'}
+        // ]}]}]';
         core.info('======> releases = ' + JSON.stringify(releases));
         releases.forEach((release, index) => {
-            const label = index === 0 ? `Current (${release})` : release;
-            content += `- [${label}](#/apexdocx/guide/releases/${release}/Home)\n`;
+            const item = index === 0 ? `text: \'Current release (${release})\', link:\'${link}\'` :
+                `text: \'Release ${release}\', link:\'${link}/v${release}\'` ;
+            content += `{${item}},\n`;
         });
+        content -= ',\n';
         content += '}]';
         content += '\n\n';
-
+        console.log('======> New sidebar content is "%o"', content);
         // try {
         //     // todo: Replace with call to graphQl to get contents
         //     const { data: existingHome } = await this.github.rest.repos.getContent({

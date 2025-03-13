@@ -138,7 +138,8 @@ export class ApexDocContentManager {
         releases.forEach((release, index) => {
             const item = index === 0 ? `text: \'Current release (${release})\', link:\'${link}\'` :
                 `text: \'Release ${release}\', link:\'${link}/v${release}\'` ;
-            content += `{${item}},\n`;
+            console.log('=====> Adding item to content ' + item);
+            content += `{ ${item} },\n`;
         });
         content -= ',\n';
         content += '}]';

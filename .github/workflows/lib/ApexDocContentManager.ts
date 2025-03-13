@@ -141,9 +141,9 @@ export class ApexDocContentManager {
             console.log('=====> Adding item to content ' + item);
             content += `{ ${item} },\n`;
         });
-        consolog.log('=====> after forEach loop, content = ' + content);
+        console.log('=====> after forEach loop, content = ' + content);
         content = content.substring(0, content.lastIndexOf(',\n'));
-        consolog.log('=====> after removall of trailing comma & newline, content = ' + content);
+        console.log('=====> after removall of trailing comma & newline, content = ' + content);
         content += '}]';
         content += '\n\n';
         console.log('======> Final sidebar content is ' + content);

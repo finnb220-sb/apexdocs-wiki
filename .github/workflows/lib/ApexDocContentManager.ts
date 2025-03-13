@@ -30,7 +30,7 @@ export class ApexDocContentManager {
         this.context = context;
         this.targetBranch = targetBranch;
         this.useShellExecution = useShellExecution;
-        this.rootDir = '/home/runner/work/' + this.context.repo.repo.owner + '/' + this.context.repo.repo;
+        this.rootDir = '/home/runner/work/' + this.context.repo.owner + '/' + this.context.repo.repo;
         console.log('=======> rootDir = ' +  this.rootDir);
     }
 
@@ -38,12 +38,8 @@ export class ApexDocContentManager {
         console.log('=====> calling getReleaseBranches()');
         const releases = await this.getReleaseBranches();
         core.info('======> releases = ' + JSON.stringify(releases));
-        // console.log('=====> calling generateHomeMd()');
-        // let releases: string[] = [
-        //     '1.16',
-        //     '1.15',
-        //     '1.14'];
-        // await this.generateHomeMd(releases);
+        console.log('=====> calling generateHomeMd()');
+        await this.updateReleasesInSidebar(releases);
         // console.log('=====> calling commitToWiki()');
         // await this.commitToWiki(releases);
         // console.log('=====> calling updateHeadersInAllFiles()');
@@ -127,34 +123,34 @@ export class ApexDocContentManager {
     //     return result;
     // }
 
-    private async generateSidebar(releases: string[]): Promise<void> {
+    private async updateReleasesInSidebar(releases: string[]): Promise<void> {
         let content = 'sidebar: [\n{\n'; // text: \'Contents\',\n        items: [\n          {text: \'Home\', link: \'/index\' },\n          {\n            text: \'Releases\',\n            items: [\n              {\n                text: \'Latest Release\', link:\'/guide\'\n              },\n              {\n                text: \'Release 1.0\', link:\'/guide/v1.0\'\n              }\n            ]\n          }\n        ]\n      }\n    ]';
         core.info('======> releases = ' + JSON.stringify(releases));
         releases.forEach((release, index) => {
             const label = index === 0 ? `Current (${release})` : release;
             content += `- [${label}](#/apexdocx/guide/releases/${release}/Home)\n`;
         });
-
+        content += '}]';
         content += '\n\n';
 
-        try {
-            // todo: Replace with call to graphQl to get contents
-            const { data: existingHome } = await this.github.rest.repos.getContent({
-                owner: this.context.repo.owner,
-                repo: `${this.context.repo.repo}.wiki`,
-                path: 'Home.md',
-            });
-            console.log('=====> existingHome = %o', existingHome);
-            if ('content' in existingHome) {
-                const existingContent = Buffer.from(existingHome.content, 'base64').toString('utf-8');
-                const existingContentWithoutHeader = existingContent.split('\n\n').slice(2).join('\n\n');
-                content += existingContentWithoutHeader;
-            }
-        } catch (error) {
-            console.log('No existing Home.md found. Creating a new one.');
-        }
-        console.log('======> Writing content %o to Home.md', content);
-        fs.writeFileSync('Home.md', content);
+        // try {
+        //     // todo: Replace with call to graphQl to get contents
+        //     const { data: existingHome } = await this.github.rest.repos.getContent({
+        //         owner: this.context.repo.owner,
+        //         repo: `${this.context.repo.repo}.wiki`,
+        //         path: 'Home.md',
+        //     });
+        //     console.log('=====> existingHome = %o', existingHome);
+        //     if ('content' in existingHome) {
+        //         const existingContent = Buffer.from(existingHome.content, 'base64').toString('utf-8');
+        //         const existingContentWithoutHeader = existingContent.split('\n\n').slice(2).join('\n\n');
+        //         content += existingContentWithoutHeader;
+        //     }
+        // } catch (error) {
+        //     console.log('No existing Home.md found. Creating a new one.');
+        // }
+        // console.log('======> Writing content %o to Home.md', content);
+        // fs.writeFileSync('Home.md', content);
     }
 
     private async commitContent(releases: string[]): Promise<void> {

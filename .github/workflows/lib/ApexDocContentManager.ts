@@ -3,10 +3,8 @@ import * as fs from 'fs';
 import * as path from 'path';
 // @ts-ignore
 import semver from 'semver';
-// import { getOctokit } from '@actions/github';
-// import { getInput } from '@actions/core';
 import * as core from '@actions/core';
-import * as github from '@actions/github';
+import * as github from '@actions/github'; // https://github.com/actions/toolkit/tree/main/packages/github
 import { Context } from '@actions/github/lib/context';
 import { ExecOptions } from '@actions/exec';
 
@@ -71,6 +69,8 @@ export class ApexDocContentManager {
     private async getReleaseBranches(): Promise<string[]> {
         core.info('======> this.context.repo.repo = ' + this.context.repo.repo );
         core.info('======> this.context.repo.owner = ' + this.context.repo.owner );
+        this.github.rest.repos
+        core.info('======> this.github.rest.repos = ' + JSON.stringify(this.github.rest.repos) );
         const { data: branches } = await this.github.rest.repos.listBranches({
             owner: this.context.repo.owner,
             repo: this.context.repo.repo,
@@ -78,11 +78,13 @@ export class ApexDocContentManager {
         core.info('======>All branches = ' + JSON.stringify(branches) );
 
         // Pages REST API https://api.github.com/repos/OWNER/REPO/pages
-        const { data: pages } = await this.github.rest.repos.repo.pages({
-            owner: this.context.repo.owner,
-            repo: this.context.repo.repo,
-        });
-        core.info('======> pages = ' + JSON.stringify(pages));
+        // const myToken = core.getInput('myToken');
+        // const octokit = this.github.getOctokit(myToken)
+        // const { data: pages } = await octokit.rest.repos.({
+        //     owner: this.context.repo.owner,
+        //     repo: this.context.repo.repo,
+        // });
+        // core.info('======> pages = ' + JSON.stringify(pages));
 
 
         return branches

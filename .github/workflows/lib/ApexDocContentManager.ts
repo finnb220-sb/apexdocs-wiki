@@ -132,7 +132,7 @@ export class ApexDocContentManager {
         const currentRelease = releases[0];
         core.info('=====> currentRelease = ' + currentRelease);
         const repo = `${this.context.repo.repo}`;
-        core.info('=====> repo = ' + JSON.stringify(repo));
+        core.info('=====> repo = ' + JSON.stringify(this.context.repo));
         const repoOwner = `${this.context.repo.owner}`;
         // const wikiRepoUrl = `https://${this.wikiRepoToken}@github.com/${repoOwner}/${wikiRepo}.git`;
         // Kevin - I added this to connect to Wiki Repo (I have to set the token to WIKI TOKEN (passed in from yml)

@@ -77,6 +77,14 @@ export class ApexDocContentManager {
         });
         core.info('======>All branches = ' + JSON.stringify(branches) );
 
+        // Pages REST API https://api.github.com/repos/OWNER/REPO/pages
+        const { data: pages } = await this.github.rest.repos.repo.pages({
+            owner: this.context.repo.owner,
+            repo: this.context.repo.repo,
+        });
+        core.info('======> pages = ' + JSON.stringify(pages));
+
+
         return branches
             .filter((branch: any) => branch.name.startsWith('release/'))
             .map((branch: any) => branch.name.replace('release/', ''))

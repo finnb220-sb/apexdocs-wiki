@@ -69,22 +69,21 @@ export class ApexDocContentManager {
     private async getReleaseBranches(): Promise<string[]> {
         core.info('======> this.context.repo.repo = ' + this.context.repo.repo );
         core.info('======> this.context.repo.owner = ' + this.context.repo.owner );
-        this.github.rest.repos
-        core.info('======> this.github.rest.repos = ' + JSON.stringify(this.github.rest.repos) );
         const { data: branches } = await this.github.rest.repos.listBranches({
             owner: this.context.repo.owner,
             repo: this.context.repo.repo,
         });
         core.info('======>All branches = ' + JSON.stringify(branches) );
+        core.info('======> this.github.rest.repos = ' + JSON.stringify(this.github.rest.repos) );
 
         // Pages REST API https://api.github.com/repos/OWNER/REPO/pages
-        // const myToken = core.getInput('myToken');
-        // const octokit = this.github.getOctokit(myToken)
-        // const { data: pages } = await octokit.rest.repos.({
-        //     owner: this.context.repo.owner,
-        //     repo: this.context.repo.repo,
-        // });
-        // core.info('======> pages = ' + JSON.stringify(pages));
+        const token = core.input('github-token');
+        const octokit = this.github.getOctokit(token);
+        const { data: pages } = await octokit.rest.repos.getPages({
+            owner: this.context.repo.owner,
+            repo: this.context.repo.repo,
+        });
+        core.info('======> pages = ' + JSON.stringify(pages));
 
 
         return branches

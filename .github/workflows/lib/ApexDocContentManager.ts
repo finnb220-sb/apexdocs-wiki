@@ -74,23 +74,15 @@ export class ApexDocContentManager {
             repo: this.context.repo.repo,
         });
         core.info('======>All branches = ' + JSON.stringify(branches) );
-        core.info('======> this.github.rest.repos = ' + JSON.stringify(this.github.rest.repos) );
 
         // Pages REST API https://api.github.com/repos/OWNER/REPO/pages
         const token = core.getInput('github-token');
-        // const octokit = this.github.octokit; // getOctokit(token);
         const { data: pages } = await this.github.request(`GET /repos/{owner}/{repo}/pages`, {
                 owner:  this.context.repo.owner,
                 repo: `${this.context.repo.repo}`
         });
         core.info('======> pages = ' + JSON.stringify(pages));
-        // const { data: pages } = await octokit.rest.repos.getPages({
-        //     owner: this.context.repo.owner,
-        //     repo: this.context.repo.repo,
-        // });
-        // core.info('======> pages = ' + JSON.stringify(pages));
-
-
+        core.info('======> pages branch = ' + pages.source.branch + ', path = ' + pages.source.path);
         return branches
             .filter((branch: any) => branch.name.startsWith('release/'))
             .map((branch: any) => branch.name.replace('release/', ''))

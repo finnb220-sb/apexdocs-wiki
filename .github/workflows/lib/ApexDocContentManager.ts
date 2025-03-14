@@ -78,12 +78,17 @@ export class ApexDocContentManager {
 
         // Pages REST API https://api.github.com/repos/OWNER/REPO/pages
         const token = core.getInput('github-token');
-        const octokit = this.github.getOctokit(token);
-        const { data: pages } = await octokit.rest.repos.getPages({
-            owner: this.context.repo.owner,
-            repo: this.context.repo.repo,
+        // const octokit = this.github.octokit; // getOctokit(token);
+        const { data: pages } = await this.github.request(`GET /repos/{owner}/{repo}/pages`, {
+                owner:  this.context.repo.owner,
+                repo: `${this.context.repo.repo}`
         });
         core.info('======> pages = ' + JSON.stringify(pages));
+        // const { data: pages } = await octokit.rest.repos.getPages({
+        //     owner: this.context.repo.owner,
+        //     repo: this.context.repo.repo,
+        // });
+        // core.info('======> pages = ' + JSON.stringify(pages));
 
 
         return branches

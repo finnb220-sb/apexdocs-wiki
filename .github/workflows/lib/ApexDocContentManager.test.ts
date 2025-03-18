@@ -34,6 +34,7 @@ describe('ApexDocContentManager', () => {
                     getContent: jest.fn(),
                 },
             },
+            request: jest.fn()
         };
 
         mockContext = {
@@ -77,6 +78,11 @@ describe('ApexDocContentManager', () => {
                 ],
             });
 
+            mockGithub.request.mockResolvedValue({
+                data:
+                    {"url":"https://api.github.com/repos/finnb220-sb/apexdocs-wiki/pages","status":"built","cname":null,"custom_404":false,"html_url":"https://finnb220-sb.github.io/apexdocs-wiki/","build_type":"workflow","source":{"branch":"release/1.0","path":"/docs"},"public":true,"protected_domain_state":null,"pending_domain_unverified_at":null,"https_enforced":true}
+            });
+
             const result = await (apexDocContentManager as any).getReleaseBranches();
             expect(result).toEqual(['2.0.0', '1.5.0', '1.0.0']);
         });
@@ -107,7 +113,9 @@ describe('ApexDocContentManager', () => {
         it('should generate sidebar content without existing content', async () => {
             const releases = ['2.0.0', '1.0.0'];
             mockGithub.rest.repos.getContent.mockRejectedValue(new Error('Not found'));
-
+            // jest.spyOn(apexDocContentManager as any, 'publishDocs').mockRejectedValue(new Error('Test error'));
+            //
+            // await expect(apexDocContentManager.publishDocs()).rejects.toThrow('Test error');
             await (apexDocContentManager as any).updateReleasesInSidebar(releases);
 
             //TODO: Readd this in once completed rewrite of config file

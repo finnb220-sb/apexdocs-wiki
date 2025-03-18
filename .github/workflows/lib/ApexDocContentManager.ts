@@ -37,8 +37,8 @@ export class ApexDocContentManager {
         core.info('======> releases = ' + JSON.stringify(releases));
         console.log('=====> calling updateReleasesInSidebar()');
         await this.updateReleasesInSidebar(releases);
-        console.log('=====> calling commitContent()');
-        await this.commitContent(releases);
+        // console.log('=====> calling commitContent()');
+        // await this.commitContent(releases);
         // console.log('=====> calling updateHeadersInAllFiles()');
         // await this.updateHeadersInAllFiles(releases);
     }
@@ -122,21 +122,20 @@ export class ApexDocContentManager {
         content += ']';
         content += '\n\n';
         console.log('======> Final sidebar content is ' + content);
-        // try {
+        try {
             const { data: existingConfig } = await this.github.rest.repos.getContent({
                 owner: this.context.repo.owner,
                 repo: this.context.repo.repo,
                 path: '/apexdocs/.vitepress/config.mts',
             });
-            console.log('=====> existingConfig = %o', existingHome);
+            console.log('=====> existingConfig = %o', existingConfig);
         //     if ('content' in existingHome) {
         //         const existingContent = Buffer.from(existingHome.content, 'base64').toString('utf-8');
         //         const existingContentWithoutHeader = existingContent.split('\n\n').slice(2).join('\n\n');
         //         content += existingContentWithoutHeader;
-        //     }
-        // } catch (error) {
-        //     console.log('No existing Home.md found. Creating a new one.');
-        // }
+        } catch (caughtError) {
+            console.log('No existing config.mts found. Creating a new one.');
+        }
         // console.log('======> Writing content %o to Home.md', content);
         // fs.writeFileSync('Home.md', content);
     }

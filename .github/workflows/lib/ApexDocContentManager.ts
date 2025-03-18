@@ -115,13 +115,12 @@ export class ApexDocContentManager {
         content += '\n\n';
         console.log('======> Final sidebar content is ' + content);
         // try {
-        //     // todo: Replace with call to graphQl to get contents
-        //     const { data: existingHome } = await this.github.rest.repos.getContent({
-        //         owner: this.context.repo.owner,
-        //         repo: `${this.context.repo.repo}.wiki`,
-        //         path: 'Home.md',
-        //     });
-        //     console.log('=====> existingHome = %o', existingHome);
+            const { data: existingConfig } = await this.github.rest.repos.getContent({
+                owner: this.context.repo.owner,
+                repo: this.context.repo.repo,
+                path: '/apexdocs/.vitepress/config.mts',
+            });
+            console.log('=====> existingConfig = %o', existingHome);
         //     if ('content' in existingHome) {
         //         const existingContent = Buffer.from(existingHome.content, 'base64').toString('utf-8');
         //         const existingContentWithoutHeader = existingContent.split('\n\n').slice(2).join('\n\n');

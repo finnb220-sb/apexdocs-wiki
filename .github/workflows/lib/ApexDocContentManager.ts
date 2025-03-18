@@ -90,7 +90,7 @@ export class ApexDocContentManager {
     }
 
     private async updateReleasesInSidebar(releases: string[]): Promise<void> {
-        let content = 'sidebar:[{text: \'Contents\',items: [{text: \'Home\', link: \'/index\' },{text: \'Releases\',items: [{';
+        let content = 'sidebar:[{text: \'Contents\',items: [{text: \'Home\', link: \'/index\' },{text: \'Releases\',items: [';
         const placeholder = 'POPULATE_ME';
         const link = '/guide/';
         // text: 'Contents', items: [
@@ -102,8 +102,8 @@ export class ApexDocContentManager {
         // ]}]}]';
         core.info('======> releases = ' + JSON.stringify(releases));
         releases.forEach((release, index) => {
-            // if this is the first release, then it is the
-            const item = index === 0 ? `text: \'Latest release (${release})\', link:\'${link}\'` :
+            // if we are processing the first release in the list, then it is the latest as they in descending numeric order
+            const item = index === 0 ? `text: \'Latest Release (${release})\', link:\'${link}\'` :
                 `text: \'Release ${release}\', link:\'${link}/v${release}\'` ;
             console.log('=====> Adding item to content ' + item);
             content += `{ ${item} },\n`;
@@ -111,7 +111,7 @@ export class ApexDocContentManager {
         console.log('=====> after forEach loop, content = ' + content);
         content = content.substring(0, content.lastIndexOf(',\n'));
         console.log('=====> after removal of trailing comma & newline, content = ' + content);
-        content += '}]';
+        content += ']';
         content += '\n\n';
         console.log('======> Final sidebar content is ' + content);
         // try {

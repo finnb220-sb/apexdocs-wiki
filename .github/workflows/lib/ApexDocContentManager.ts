@@ -83,10 +83,18 @@ export class ApexDocContentManager {
         });
         core.info('======> pages = ' + JSON.stringify(pages));
         core.info('======> pages branch = ' + pages.source.branch + ', path = ' + pages.source.path);
-        return branches
-            .filter((branch: any) => branch.name.startsWith('release/'))
-            .map((branch: any) => branch.name.replace('release/', ''))
-            .sort((a: string, b: string) =>  semver.rcompare(a, b));
+        let filteredBranches = branches.filter((branch: any) => branch.name.startsWith('release/'));
+        core.info('======> filtered branches = ' + JSON.stringify(filteredBranches));
+        let mapBranches = filteredBranches.map((branch: any) => branch.name.replace('release/', ''));
+        core.info('======> map of branches = ' + JSON.stringify(mapBranches));
+        let sortedBranches = mapBranches.sort((a: string, b: string) =>  semver.rcompare(a, b));
+        core.info('======> sorted branches = ' + JSON.stringify(sortedBranches));
+
+        return sortedBranches;
+        // return branches
+        //     .filter((branch: any) => branch.name.startsWith('release/'))
+        //     .map((branch: any) => branch.name.replace('release/', ''))
+        //     .sort((a: string, b: string) =>  semver.rcompare(a, b));
     }
 
     private async updateReleasesInSidebar(releases: string[]): Promise<void> {

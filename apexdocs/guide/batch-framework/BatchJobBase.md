@@ -35,6 +35,8 @@ Database.Stateful
 ## Fields
 ### `numSuccesses`
 
+Number of records successfully processed
+
 #### Signature
 ```apex
 global numSuccesses
@@ -47,6 +49,8 @@ Integer
 
 ### `errors`
 
+List of error message string for troubleshooting &amp; logging
+
 #### Signature
 ```apex
 global errors
@@ -58,6 +62,8 @@ List&lt;String&gt;
 ---
 
 ### `config`
+
+Batch Job configuration specifying batch size and other details
 
 #### Signature
 ```apex
@@ -83,6 +89,8 @@ List&lt;SObject&gt;
 
 ## Properties
 ### `numErrors`
+
+Number of records that errored out
 
 #### Signature
 ```apex

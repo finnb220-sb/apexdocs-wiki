@@ -71,6 +71,8 @@ Boolean
 
 *Inherited*
 
+Number of records successfully processed
+
 #### Signature
 ```apex
 global numSuccesses
@@ -85,6 +87,8 @@ Integer
 
 *Inherited*
 
+List of error message string for troubleshooting &amp; logging
+
 #### Signature
 ```apex
 global errors
@@ -98,6 +102,8 @@ List&lt;String&gt;
 ### `config`
 
 *Inherited*
+
+Batch Job configuration specifying batch size and other details
 
 #### Signature
 ```apex
@@ -127,6 +133,8 @@ List&lt;SObject&gt;
 ### `numErrors`
 
 *Inherited*
+
+Number of records that errored out
 
 #### Signature
 ```apex

@@ -1,57 +1,37 @@
-# Reference Guide
+# Apex Classes Documentation
+The documentation found here has been auto-generated from the Apex source files using the ApexDocs tool. See [ApexDocs Reference](https://github.com/cesarParra/apexdocs) for more details. It is modeled after the JavaDoc tool.
 
-## Miscellaneous
+The site content is created/updated by a github action configured in your repository. By default, the action is named `deploy-apexdocs-to-vitepress.yml` and fires when the `master` and `release` branches are updated. See details about Vitepress [here](https://vitepress.dev). Keep reading for how to get started!
 
-### [BatchJobBase](miscellaneous/BatchJobBase.md)
+### [Head](guide) to Latest Release Documentation Now 
 
-Provides common variables, methods and handling for all Batch Jobs. 
-Subclasses must add following to class declaration even though the implementation is provided in this class 
-implements Database.Batchable&lt;sObject&gt;, Schedulable 
-Subclasses must provide implementation for these abstract methods 
-global String getJobName() - for logging purposes - return the name of Job (ie Account Batch) 
-global String getQueryString() - return a string with the query to be executed (no dynamic variables) 
-global String getEmailGroupName() - return the name of the Group that specifies users who should receive emails 
-global void execute(List&lt;SObject&gt; scope) - Actually perform processing on scope 
-global void handleException(Exception exc) - handle exception
+## Annotate Your Code
+It is simple to document your code as you are developing it. Just follow the guidelines laid out in ApexDocs annotating class, methods & fields with the relevant @ tags and it will get picked up & transformed when ApexDocs generator fires.
+## Install & Configure Vitepress
+You can get started using VitePress right away using node! See Vitepress documentation for more configuration details and tips.
 
-### [BatchJobBaseMock](miscellaneous/BatchJobBaseMock.md)
+```sh
+npm add -D vitepress
+npm init
+npx vitepress init
+npm run docs:build 
+```
 
-Name: BatchJobBaseMock
+## Generate Github Documentation & Test It Out! 
+If you do not modify the `package.json` in this repository, then you can generate your documentation by running the following commands
+1. The `apexdocs` target generates the file(s) in your configured `apexdocs` directory creating a subdirectory called `guide`.
+2. The `docs:preview` target starts a local server to preview the generated content as follows 
+   -  Source directory is `apexdocs/.vitepress/dist`
+   -  Content is deployed locally at http://localhost:5173  
+```sh
+npm run apexdocs
+npm run docs:preview
+```
 
-### [BatchJobBaseTest](miscellaneous/BatchJobBaseTest.md)
 
-Name: BatchJobBaseTest
+## References
+ [Vitepress](https://vitepress.dev)
 
-### [BatchJobConstants](miscellaneous/BatchJobConstants.md)
+ [ApexDocs](https://github.com/cesarParra/apexdocs)
 
-Name: BatchJobConstants
-
-### [BatchJobSchedulingMgr](miscellaneous/BatchJobSchedulingMgr.md)
-
-Name: BatchJobSchedulingMgr
-
-### [BatchJobSchedulingMgrTest](miscellaneous/BatchJobSchedulingMgrTest.md)
-
-Name: BatchJobSchedulingMgrTest
-
-### [FieldMappingsUtil](miscellaneous/FieldMappingsUtil.md)
-
-Created by: DC Solutions 
-Created on: 2019-11-06 
- 
-Description: Utility class to parse out and use Field Mapping metadata to copy fields from 
-one object (source) to another (target)
-
-### [FieldMappingsUtilTest](miscellaneous/FieldMappingsUtilTest.md)
-
-Created by DC Solutions on 2019-11-06. 
-Description: Unit test for FieldMappingsUtil class
-
-### [SObjectCatalog](miscellaneous/SObjectCatalog.md)
-
-SObjectCatalog 
- 
-Description: Collection-like utility class with convenience methods 
-for commonly used SObject patterns
-
-### [SObjectCatalogTest](miscellaneous/SObjectCatalogTest.md)
+ [Github Pages](https://github.com/cesarParra/apexdocs)

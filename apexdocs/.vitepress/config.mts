@@ -8,21 +8,33 @@ export default defineConfig({
   themeConfig: {
     // For reference, here is default theme: https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/index' }
+      { text: 'Home', link: '/index' },
+      { text: 'ApexDocs Reference', link: 'https://github.com/cesarParra/apexdocs/' }
     ],
 
     sidebar: [
       {
         text: 'Contents',
         items: [
-          { text: 'Apex Classes', link: '/#miscellaneous' },
-          { text: 'Back to Home', link: '/index' }
+          {text: 'Home', link: '/index' },
+          {
+            text: 'Releases',
+            items: [
+              {
+                text: 'Latest Release', link:'/guide'
+              },
+              {
+                text: 'Release 1.0', link:'/guide/v1.0'
+              }
+            ]
+          }
         ]
       }
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
     ]
-  }
+  },
+  ignoreDeadLinks: true // 'localhostLinks'
 })

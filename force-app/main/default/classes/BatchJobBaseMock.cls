@@ -5,6 +5,7 @@
  * 
  * @description Mock sub-class of BatchJobBase for unit tests
  *
+ * @group Batch Framework
  * @see BatchJobBase
  * @see BatchJobBaseTest
  */
